@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Accueil",
+    "claims": "Mes demandes",
+    "scan": "Envoyer un reçu",
+    "inbox": "Boîte de réception",
+    "reports": "Rapports"
+  },
+  "home": {
+    "morning": "Bonjour",
+    "afternoon": "Bon après-midi",
+    "evening": "Bonsoir",
+    "subtitle": "Votre petite caisse en un coup d'œil."
+  },
+  "placeholder": {
+    "home": "Vos chiffres, les demandes en attente et l'activité récente s'afficheront ici.",
+    "claims": "Chaque demande avec son statut, son circuit d'approbation et son reçu.",
+    "scan": "Prenez une facture en photo. L'IA la lit et vous vérifiez les détails.",
+    "inbox": "Les demandes qui attendent votre décision ou votre accusé de réception.",
+    "reports": "Dépenses par catégorie, service et mois.",
+    "next": "En conception"
+  },
+  "settings": {
+    "title": "Réglages",
+    "open": "Ouvrir les réglages",
+    "language": "Langue",
+    "about": "À propos",
+    "mode": "Mode",
+    "modeDemo": "Démo, avec des données d'exemple",
+    "modeLive": "En direct",
+    "version": "Version",
+    "done": "Terminé"
+  }
+}

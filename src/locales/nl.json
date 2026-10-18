@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Start",
+    "claims": "Mijn declaraties",
+    "scan": "Bon indienen",
+    "inbox": "Inbox",
+    "reports": "Rapporten"
+  },
+  "home": {
+    "morning": "Goedemorgen",
+    "afternoon": "Goedemiddag",
+    "evening": "Goedenavond",
+    "subtitle": "Je kleine kas in één oogopslag."
+  },
+  "placeholder": {
+    "home": "Hier zie je je cijfers, openstaande declaraties en recente activiteit.",
+    "claims": "Elke declaratie met status, goedkeuringsroute en bon.",
+    "scan": "Maak een foto van een bon. De AI leest hem en jij controleert de gegevens.",
+    "inbox": "Verzoeken die wachten op jouw beslissing of bevestiging.",
+    "reports": "Uitgaven per categorie, afdeling en maand.",
+    "next": "Wordt ontworpen"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "open": "Instellingen openen",
+    "language": "Taal",
+    "about": "Over de app",
+    "mode": "Modus",
+    "modeDemo": "Demo, met voorbeeldgegevens",
+    "modeLive": "Live",
+    "version": "Versie",
+    "done": "Klaar"
+  }
+}

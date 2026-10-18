@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Utama",
+    "claims": "Tuntutan Saya",
+    "scan": "Hantar Bil",
+    "inbox": "Peti Masuk",
+    "reports": "Laporan"
+  },
+  "home": {
+    "morning": "Selamat pagi",
+    "afternoon": "Selamat tengah hari",
+    "evening": "Selamat petang",
+    "subtitle": "Wang runcit anda sepintas lalu."
+  },
+  "placeholder": {
+    "home": "Angka anda, tuntutan yang menunggu dan aktiviti terkini akan dipaparkan di sini.",
+    "claims": "Setiap tuntutan dengan status, aliran kelulusan dan resitnya.",
+    "scan": "Ambil gambar bil. AI membacanya dan anda menyemak butirannya.",
+    "inbox": "Permintaan yang menunggu keputusan atau pengesahan penerimaan anda.",
+    "reports": "Perbelanjaan mengikut kategori, jabatan dan bulan.",
+    "next": "Sedang direka"
+  },
+  "settings": {
+    "title": "Tetapan",
+    "open": "Buka tetapan",
+    "language": "Bahasa",
+    "about": "Perihal",
+    "mode": "Mod",
+    "modeDemo": "Demo, dengan data contoh",
+    "modeLive": "Langsung",
+    "version": "Versi",
+    "done": "Selesai"
+  }
+}

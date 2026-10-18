@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Trang chủ",
+    "claims": "Yêu cầu của tôi",
+    "scan": "Gửi hóa đơn",
+    "inbox": "Hộp thư",
+    "reports": "Báo cáo"
+  },
+  "home": {
+    "morning": "Chào buổi sáng",
+    "afternoon": "Chào buổi chiều",
+    "evening": "Chào buổi tối",
+    "subtitle": "Quỹ tiền mặt nhỏ của bạn trong nháy mắt."
+  },
+  "placeholder": {
+    "home": "Số liệu của bạn, yêu cầu đang chờ và hoạt động gần đây sẽ hiển thị tại đây.",
+    "claims": "Mỗi yêu cầu kèm trạng thái, quy trình duyệt và biên lai.",
+    "scan": "Chụp ảnh hóa đơn. AI đọc và bạn kiểm tra thông tin.",
+    "inbox": "Các yêu cầu đang chờ bạn quyết định hoặc xác nhận đã nhận.",
+    "reports": "Chi tiêu theo danh mục, phòng ban và tháng.",
+    "next": "Đang thiết kế"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "open": "Mở cài đặt",
+    "language": "Ngôn ngữ",
+    "about": "Giới thiệu",
+    "mode": "Chế độ",
+    "modeDemo": "Demo, với dữ liệu mẫu",
+    "modeLive": "Trực tiếp",
+    "version": "Phiên bản",
+    "done": "Xong"
+  }
+}

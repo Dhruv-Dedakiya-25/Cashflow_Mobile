@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Início",
+    "claims": "Meus reembolsos",
+    "scan": "Enviar nota",
+    "inbox": "Caixa de entrada",
+    "reports": "Relatórios"
+  },
+  "home": {
+    "morning": "Bom dia",
+    "afternoon": "Boa tarde",
+    "evening": "Boa noite",
+    "subtitle": "Seu caixa pequeno num relance."
+  },
+  "placeholder": {
+    "home": "Aqui aparecerão seus números, reembolsos pendentes e atividades recentes.",
+    "claims": "Cada reembolso com status, fluxo de aprovação e comprovante.",
+    "scan": "Fotografe a nota. A IA a lê e você confere os dados.",
+    "inbox": "Solicitações aguardando sua decisão ou confirmação de recebimento.",
+    "reports": "Gastos por categoria, departamento e mês.",
+    "next": "Em design"
+  },
+  "settings": {
+    "title": "Configurações",
+    "open": "Abrir configurações",
+    "language": "Idioma",
+    "about": "Sobre",
+    "mode": "Modo",
+    "modeDemo": "Demonstração, com dados de exemplo",
+    "modeLive": "Ao vivo",
+    "version": "Versão",
+    "done": "Concluído"
+  }
+}

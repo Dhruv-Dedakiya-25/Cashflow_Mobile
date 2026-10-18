@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Start",
+    "claims": "Moje wnioski",
+    "scan": "Wyślij paragon",
+    "inbox": "Skrzynka",
+    "reports": "Raporty"
+  },
+  "home": {
+    "morning": "Dzień dobry",
+    "afternoon": "Dzień dobry",
+    "evening": "Dobry wieczór",
+    "subtitle": "Twoja kasa podręczna w skrócie."
+  },
+  "placeholder": {
+    "home": "Tutaj pojawią się Twoje dane, oczekujące wnioski i ostatnia aktywność.",
+    "claims": "Każdy wniosek ze statusem, ścieżką akceptacji i paragonem.",
+    "scan": "Zrób zdjęcie rachunku. AI go odczyta, a Ty sprawdzisz dane.",
+    "inbox": "Prośby czekające na Twoją decyzję lub potwierdzenie odbioru.",
+    "reports": "Wydatki według kategorii, działu i miesiąca.",
+    "next": "W projektowaniu"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "open": "Otwórz ustawienia",
+    "language": "Język",
+    "about": "O aplikacji",
+    "mode": "Tryb",
+    "modeDemo": "Demo, z przykładowymi danymi",
+    "modeLive": "Na żywo",
+    "version": "Wersja",
+    "done": "Gotowe"
+  }
+}

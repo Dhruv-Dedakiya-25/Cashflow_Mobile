@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Beranda",
+    "claims": "Klaim Saya",
+    "scan": "Kirim Nota",
+    "inbox": "Kotak Masuk",
+    "reports": "Laporan"
+  },
+  "home": {
+    "morning": "Selamat pagi",
+    "afternoon": "Selamat siang",
+    "evening": "Selamat malam",
+    "subtitle": "Kas kecil Anda dalam sekilas."
+  },
+  "placeholder": {
+    "home": "Angka Anda, klaim yang menunggu, dan aktivitas terbaru akan tampil di sini.",
+    "claims": "Setiap klaim dengan status, alur persetujuan, dan struknya.",
+    "scan": "Foto nota Anda. AI membacanya dan Anda memeriksa detailnya.",
+    "inbox": "Permintaan yang menunggu keputusan atau konfirmasi Anda.",
+    "reports": "Pengeluaran per kategori, departemen, dan bulan.",
+    "next": "Sedang dirancang"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "open": "Buka pengaturan",
+    "language": "Bahasa",
+    "about": "Tentang",
+    "mode": "Mode",
+    "modeDemo": "Demo, dengan data contoh",
+    "modeLive": "Langsung",
+    "version": "Versi",
+    "done": "Selesai"
+  }
+}

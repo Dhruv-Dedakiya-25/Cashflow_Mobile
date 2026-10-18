@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Start",
+    "claims": "Meine Anträge",
+    "scan": "Beleg einreichen",
+    "inbox": "Posteingang",
+    "reports": "Berichte"
+  },
+  "home": {
+    "morning": "Guten Morgen",
+    "afternoon": "Guten Tag",
+    "evening": "Guten Abend",
+    "subtitle": "Ihre Handkasse auf einen Blick."
+  },
+  "placeholder": {
+    "home": "Hier erscheinen Ihre Zahlen, offene Anträge und die letzten Aktivitäten.",
+    "claims": "Jeder Antrag mit Status, Genehmigungsverlauf und Beleg.",
+    "scan": "Fotografieren Sie einen Beleg. Die KI liest ihn, und Sie prüfen die Angaben.",
+    "inbox": "Anfragen, die auf Ihre Entscheidung oder Bestätigung warten.",
+    "reports": "Ausgaben nach Kategorie, Abteilung und Monat.",
+    "next": "Wird gestaltet"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "open": "Einstellungen öffnen",
+    "language": "Sprache",
+    "about": "Über die App",
+    "mode": "Modus",
+    "modeDemo": "Demo, mit Beispieldaten",
+    "modeLive": "Live",
+    "version": "Version",
+    "done": "Fertig"
+  }
+}

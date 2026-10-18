@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Ana Sayfa",
+    "claims": "Taleplerim",
+    "scan": "Fiş Gönder",
+    "inbox": "Gelen Kutusu",
+    "reports": "Raporlar"
+  },
+  "home": {
+    "morning": "Günaydın",
+    "afternoon": "İyi günler",
+    "evening": "İyi akşamlar",
+    "subtitle": "Küçük kasanız bir bakışta."
+  },
+  "placeholder": {
+    "home": "Rakamlarınız, bekleyen talepler ve son hareketler burada görünecek.",
+    "claims": "Her talep durumu, onay akışı ve fişiyle birlikte.",
+    "scan": "Fişin fotoğrafını çekin. Yapay zekâ okur, siz bilgileri kontrol edersiniz.",
+    "inbox": "Kararınızı veya teslim onayınızı bekleyen istekler.",
+    "reports": "Kategori, departman ve aya göre harcamalar.",
+    "next": "Tasarlanıyor"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "open": "Ayarları aç",
+    "language": "Dil",
+    "about": "Hakkında",
+    "mode": "Mod",
+    "modeDemo": "Demo, örnek verilerle",
+    "modeLive": "Canlı",
+    "version": "Sürüm",
+    "done": "Bitti"
+  }
+}

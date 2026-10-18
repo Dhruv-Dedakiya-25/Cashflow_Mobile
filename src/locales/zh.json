@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "首页",
+    "claims": "我的报销",
+    "scan": "提交票据",
+    "inbox": "待办",
+    "reports": "报表"
+  },
+  "home": {
+    "morning": "早上好",
+    "afternoon": "下午好",
+    "evening": "晚上好",
+    "subtitle": "一眼掌握您的备用金。"
+  },
+  "placeholder": {
+    "home": "您的数据、待处理的报销和最近动态将显示在这里。",
+    "claims": "每笔报销的状态、审批流程和票据。",
+    "scan": "拍下票据，AI 识别内容，您核对信息。",
+    "inbox": "等待您审批或确认接收的请求。",
+    "reports": "按类别、部门和月份统计支出。",
+    "next": "设计中"
+  },
+  "settings": {
+    "title": "设置",
+    "open": "打开设置",
+    "language": "语言",
+    "about": "关于",
+    "mode": "模式",
+    "modeDemo": "演示（示例数据）",
+    "modeLive": "正式",
+    "version": "版本",
+    "done": "完成"
+  }
+}

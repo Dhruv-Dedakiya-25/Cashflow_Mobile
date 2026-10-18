@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Home",
+    "claims": "My Claims",
+    "scan": "Submit Bill",
+    "inbox": "Inbox",
+    "reports": "Reports"
+  },
+  "home": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "subtitle": "Your petty cash at a glance."
+  },
+  "placeholder": {
+    "home": "Your figures, waiting claims and recent activity will show here.",
+    "claims": "Every claim with its status, approval timeline and receipt.",
+    "scan": "Take a photo of a bill. The AI reads it and you check the details.",
+    "inbox": "Requests waiting for your decision or acknowledgement.",
+    "reports": "Spending by category, department and month.",
+    "next": "Being designed"
+  },
+  "settings": {
+    "title": "Settings",
+    "open": "Open settings",
+    "language": "Language",
+    "about": "About",
+    "mode": "Mode",
+    "modeDemo": "Demo, with sample data",
+    "modeLive": "Live",
+    "version": "Version",
+    "done": "Done"
+  }
+}

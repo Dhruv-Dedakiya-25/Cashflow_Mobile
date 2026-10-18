@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Home",
+    "claims": "I miei rimborsi",
+    "scan": "Invia scontrino",
+    "inbox": "In arrivo",
+    "reports": "Report"
+  },
+  "home": {
+    "morning": "Buongiorno",
+    "afternoon": "Buon pomeriggio",
+    "evening": "Buonasera",
+    "subtitle": "La tua piccola cassa in breve."
+  },
+  "placeholder": {
+    "home": "Qui vedrai i tuoi dati, i rimborsi in attesa e le attività recenti.",
+    "claims": "Ogni rimborso con stato, percorso di approvazione e ricevuta.",
+    "scan": "Fotografa lo scontrino. L'IA lo legge e tu controlli i dati.",
+    "inbox": "Richieste in attesa della tua decisione o conferma.",
+    "reports": "Spese per categoria, reparto e mese.",
+    "next": "In progettazione"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "open": "Apri impostazioni",
+    "language": "Lingua",
+    "about": "Informazioni",
+    "mode": "Modalità",
+    "modeDemo": "Demo, con dati di esempio",
+    "modeLive": "Reale",
+    "version": "Versione",
+    "done": "Fine"
+  }
+}

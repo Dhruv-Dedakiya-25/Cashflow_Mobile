@@ -1,0 +1,34 @@
+{
+  "tabs": {
+    "home": "Inicio",
+    "claims": "Mis reembolsos",
+    "scan": "Enviar factura",
+    "inbox": "Bandeja",
+    "reports": "Informes"
+  },
+  "home": {
+    "morning": "Buenos días",
+    "afternoon": "Buenas tardes",
+    "evening": "Buenas noches",
+    "subtitle": "Tu caja chica de un vistazo."
+  },
+  "placeholder": {
+    "home": "Aquí verás tus cifras, los reembolsos pendientes y la actividad reciente.",
+    "claims": "Cada reembolso con su estado, el recorrido de aprobación y el recibo.",
+    "scan": "Toma una foto de la factura. La IA la lee y tú revisas los datos.",
+    "inbox": "Solicitudes que esperan tu decisión o tu confirmación.",
+    "reports": "Gastos por categoría, departamento y mes.",
+    "next": "En diseño"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "open": "Abrir ajustes",
+    "language": "Idioma",
+    "about": "Acerca de",
+    "mode": "Modo",
+    "modeDemo": "Demo, con datos de ejemplo",
+    "modeLive": "En vivo",
+    "version": "Versión",
+    "done": "Listo"
+  }
+}
