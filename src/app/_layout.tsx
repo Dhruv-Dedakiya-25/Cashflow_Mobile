@@ -9,6 +9,7 @@ import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
+import { Platform, View } from 'react-native';
 
 import { restoreThemeChoice, useColorScheme } from '@/hooks/use-color-scheme';
 import { restoreLanguage } from '@/i18n';
@@ -42,24 +43,29 @@ export default function RootLayout() {
         ...base,
         colors: { ...base.colors, primary: palette.primary, background: palette.bg, card: palette.card, text: palette.text, border: palette.border },
       }}>
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: palette.bg } }}>
-        <Stack.Protected guard={!!session}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="profile" />
-          <Stack.Screen name="language" />
-          <Stack.Screen name="claim/[id]" />
-          <Stack.Screen name="scan-review" />
-          <Stack.Screen name="scan-done" options={{ gestureEnabled: false }} />
-          <Stack.Screen name="review/[kind]/[id]" />
-          <Stack.Screen name="acknowledge/[id]" />
-          <Stack.Screen name="petty-cash" />
-          <Stack.Screen name="report/[view]" />
-        </Stack.Protected>
-        <Stack.Protected guard={!session}>
-          <Stack.Screen name="sign-in" />
-          <Stack.Screen name="two-factor" />
-        </Stack.Protected>
-      </Stack>
+      {/* In a laptop browser the app keeps a phone's width, centred; on a phone it fills the screen as usual. */}
+      <View style={{ flex: 1, backgroundColor: palette.surfaceStrong }}>
+        <View style={{ flex: 1, width: '100%', maxWidth: Platform.OS === 'web' ? 480 : undefined, alignSelf: 'center', overflow: 'hidden', borderLeftWidth: Platform.OS === 'web' ? 1 : 0, borderRightWidth: Platform.OS === 'web' ? 1 : 0, borderColor: palette.border }}>
+          <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: palette.bg } }}>
+            <Stack.Protected guard={!!session}>
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name="profile" />
+              <Stack.Screen name="language" />
+              <Stack.Screen name="claim/[id]" />
+              <Stack.Screen name="scan-review" />
+              <Stack.Screen name="scan-done" options={{ gestureEnabled: false }} />
+              <Stack.Screen name="review/[kind]/[id]" />
+              <Stack.Screen name="acknowledge/[id]" />
+              <Stack.Screen name="petty-cash" />
+              <Stack.Screen name="report/[view]" />
+            </Stack.Protected>
+            <Stack.Protected guard={!session}>
+              <Stack.Screen name="sign-in" />
+              <Stack.Screen name="two-factor" />
+            </Stack.Protected>
+          </Stack>
+        </View>
+      </View>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
     </ThemeProvider>
   );
