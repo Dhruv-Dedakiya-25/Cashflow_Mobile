@@ -24,6 +24,17 @@ const light = {
   teal: '#0F766E',
   tealSoft: '#E6F4F2',
   shadow: '#0F172A',
+  // The navy brand band on the sign-in screen.
+  hero: '#0F172A',
+  heroText: '#FFFFFF',
+  heroMuted: '#A9B8CE',
+  heroAccent: 'rgba(91,139,247,0.20)',
+  heroAccentText: '#A8C0FF',
+  // The summary card at the top of Home: brand blue on the light theme.
+  summary: '#2563EB',
+  summaryText: '#FFFFFF',
+  summaryMuted: '#EEF3FF',
+  summaryAccent: 'rgba(255,255,255,0.14)',
 };
 
 const dark: typeof light = {
@@ -49,6 +60,15 @@ const dark: typeof light = {
   teal: '#3CC2B2',
   tealSoft: '#123430',
   shadow: '#000000',
+  hero: '#131F3B',
+  heroText: '#FFFFFF',
+  heroMuted: '#A9B8CE',
+  heroAccent: 'rgba(91,139,247,0.22)',
+  heroAccentText: '#A8C0FF',
+  summary: '#131F3B',
+  summaryText: '#FFFFFF',
+  summaryMuted: '#A9B8CE',
+  summaryAccent: 'rgba(91,139,247,0.22)',
 };
 
 export type Palette = typeof light;

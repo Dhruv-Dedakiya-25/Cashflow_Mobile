@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "추가",
+    "addEntity": "{{entity}} 추가",
+    "back": "뒤로",
+    "cancel": "취소",
+    "clearAll": "모두 지우기",
+    "close": "닫기",
+    "create": "생성",
+    "delete": "삭제",
+    "edit": "편집",
+    "export": "내보내기",
+    "retry": "다시 시도",
+    "save": "저장",
+    "saveChanges": "변경사항 저장",
+    "search": "검색",
+    "view": "보기",
+    "viewAll": "전체 보기"
+  },
+  "status": {
+    "active": "활성",
+    "all": "전체",
+    "inactive": "비활성",
+    "no": "아니요",
+    "yes": "예"
+  },
+  "txn": {
+    "action": {
+      "cancel": "요청 취소",
+      "saveDraft": "임시 저장",
+      "submit": "승인 요청",
+      "submitForApproval": "승인 요청"
+    },
+    "filter": {
+      "allStatuses": "모든 상태",
+      "from": "시작",
+      "to": "종료"
+    },
+    "history": {
+      "acknowledged": "님이 수령을 확인했습니다",
+      "approved": "님이 승인했습니다",
+      "cancelled": "님이 취소했습니다",
+      "created": "님이 요청을 만들었습니다",
+      "disbursed": "님이 금액을 지급했습니다",
+      "edited": "님이 변경했습니다",
+      "empty": "(비어 있음)",
+      "paid": "님이 지급했습니다",
+      "rejected": "님이 거부했습니다",
+      "resubmitted": "님이 다시 승인 요청했습니다",
+      "returned": "님이 수정을 위해 반려했습니다",
+      "submitted": "님이 승인 요청했습니다",
+      "title": "기록",
+      "reallocated": "님이 재배정했습니다",
+      "takenOver": "님이 인수했습니다"
+    },
+    "notFound": "이 기록이 없거나, 볼 수 있는 범위 밖에 있습니다.",
+    "path": {
+      "decidedBy": {
+        "approved": "{{name}}님이 {{time}}에 승인",
+        "rejected": "{{name}}님이 {{time}}에 거부",
+        "returned": "{{name}}님이 {{time}}에 반려"
+      },
+      "notSent": "아직 승인 요청하지 않았습니다.",
+      "overdue": "연체",
+      "state": {
+        "approved": "승인됨",
+        "pending": "대기 중",
+        "rejected": "반려됨",
+        "returned": "반려됨",
+        "skipped": "건너뜀",
+        "waiting": "아직 도달하지 않음"
+      },
+      "title": "승인 경로",
+      "waitingSince": "{{time}}부터 대기 중 · {{hours}}시간 허용",
+      "willGoTo": "보낼 대상"
+    },
+    "reason": "사유",
+    "reasonRequired": "사유를 입력하세요. 요청 기록에 남습니다.",
+    "refusal": {
+      "alreadyPosted": "이미 원장에 기록되어 있어 아무것도 변경되지 않았습니다.",
+      "amount": "0보다 크고 소수점 셋째 자리까지인 금액을 입력하세요.",
+      "amountTooLarge": "금액은 {{max}} OMR을 넘을 수 없습니다.",
+      "noApprover": "워크플로의 한 단계에 이 요청을 받을 사람이 없습니다. 관리자에게 워크플로 설정 확인을 요청하세요.",
+      "noWorkflow": "이 요청을 다루는 활성 워크플로가 없습니다. 관리자에게 워크플로 설정 확인을 요청하세요.",
+      "nobodyLeft": "이 요청을 승인할 수 있는 모든 사람이 요청 당사자라서 승인할 사람이 남지 않았습니다. 요청 대상을 바꾸거나, 관리자에게 워크플로 설정 확인을 요청하세요.",
+      "notAllowed": "역할상 이 작업을 할 수 없습니다.",
+      "notEditable": "초안이나 반려된 요청만 변경할 수 있습니다.",
+      "notFound": "이 기록이 없거나, 볼 수 있는 범위 밖에 있습니다.",
+      "notNow": "요청의 현재 상태에서는 할 수 없습니다.",
+      "onlyDrafts": "초안만 삭제할 수 있습니다. 대신 취소하세요.",
+      "reasonRequired": "사유를 입력하세요.",
+      "savedMeanwhile": "그 사이에 다른 사람이 저장하여 아무것도 변경되지 않았습니다. 새로 고친 후 다시 시도하세요.",
+      "signedOut": "세션이 종료되었습니다. 다시 로그인하세요.",
+      "underApproval": "승인자를 기다리고 있습니다. 결정을 기다리거나 반려를 요청하세요."
+    },
+    "returnedBecause": "수정을 위해 반려됨:",
+    "status": {
+      "acknowledged": "확인됨",
+      "active": "활성",
+      "approved": "승인됨",
+      "cancelled": "취소됨",
+      "closed": "폐쇄",
+      "disbursed": "수령 확인 대기",
+      "draft": "임시저장",
+      "inApproval": "승인 중",
+      "paid": "지급 완료",
+      "rejected": "반려됨",
+      "returned": "반려됨",
+      "submitted": "제출일"
+    }
+  },
+  "auth": {
+    "brandTagline": "소액 현금 관리",
+    "company": "회사",
+    "demoBadge": "데모",
+    "demoNotice": "데모 모드: 로그인은 시뮬레이션이며, API가 연결될 때까지 모든 화면에 샘플 데이터가 표시됩니다.",
+    "feature": {
+      "allocations": "부서 및 프로젝트 배정",
+      "permissions": "역할 권한 매트릭스",
+      "selfService": "직원 및 관리자 셀프서비스",
+      "thresholds": "한도 모니터링",
+      "twoFactor": "2단계 로그인",
+      "workflows": "지출 전후 승인"
+    },
+    "password": "비밀번호",
+    "passwordDemoHint": "데모에서는 확인하지 않습니다. 실제 시스템에서는 로그인 시 비밀번호와 2단계 인증 코드를 확인합니다.",
+    "persona": {
+      "auditor": "감사인(읽기 전용)",
+      "employee": "직원 셀프서비스",
+      "finance": "재무 책임자 / 관리자",
+      "manager": "부서 / 프로젝트 관리자"
+    },
+    "personaLabel": "데모 페르소나",
+    "pitch": "소액 현금을 배정하고, 계획된 지출을 승인하고, 실제 지출을 환급하고, 조직 전반에 승인을 전달하고, AI로 영수증을 읽고, 모든 거래를 대사하세요.",
+    "rememberMe": "로그인 상태 유지",
+    "signIn": "로그인",
+    "signInButton": "로그인",
+    "signInHint": "데모 페르소나를 선택하면 해당 역할이 사용하는 화면을 볼 수 있습니다.",
+    "twoFactor": {
+      "back": "뒤로",
+      "demoHint": "데모: 아무 6자리 숫자나 입력할 수 있습니다.",
+      "digit": "6자리 중 {{n}}번째 숫자",
+      "incomplete": "6자리를 모두 입력하세요.",
+      "panelText": "인증 앱의 코드로 본인임을 확인합니다. 정책에 따라 모든 사용자, 역할별 또는 선택한 사용자에게 필수로 지정할 수 있습니다.",
+      "panelTitle": "2단계 인증",
+      "subtitle": "인증 앱에 표시된 6자리 코드를 입력하세요.",
+      "title": "인증 코드 입력",
+      "trustDevice": "이 기기를 30일 동안 신뢰",
+      "verify": "확인 후 계속",
+      "wrongCode": "코드가 올바르지 않습니다. 다시 시도하세요.",
+      "expired": "이 로그인은 만료되었습니다. 돌아가서 다시 로그인하세요.",
+      "useRecovery": "대신 복구 코드 사용",
+      "useApp": "대신 인증 앱 사용",
+      "recoveryTitle": "복구 코드 입력",
+      "recoveryHint": "저장해 둔 복구 코드 중 하나를 입력하세요. 각 코드는 한 번만 사용할 수 있습니다.",
+      "trustDeviceDays": "이 기기를 {{n}}일 동안 신뢰",
+      "enrollTitle": "2단계 로그인 설정",
+      "enrollSubtitle": "이 계정은 인증 앱을 사용해야 합니다. 로그인을 마치려면 지금 설정하세요."
+    },
+    "twoFactorNote": "2단계 로그인은 끄거나, 선택 사항으로 두거나, 역할별로 필수로 지정할 수 있습니다.",
+    "username": "이메일 또는 사용자 이름",
+    "signInHintApi": "CashFlow 계정으로 로그인하세요.",
+    "error": {
+      "invalid": "사용자 이름 또는 비밀번호가 올바르지 않습니다.",
+      "tooMany": "시도 횟수가 너무 많습니다. 1분 후에 다시 시도하세요.",
+      "noApi": "서버에 연결할 수 없습니다. 잠시 후 다시 시도하세요."
+    }
+  },
+  "scan": {
+    "aiConfidence": "신뢰도 {{confidence}}%",
+    "aiOff": "AI 및 문서 처리에서 AI 추출이 꺼져 있습니다. 영수증은 계속 확인되고 첨부되므로 내용을 직접 입력하세요.",
+    "checkThis": "확인 필요",
+    "col": {
+      "claim": "청구 값",
+      "field": "항목",
+      "read": "AI 판독값"
+    },
+    "corrected": "수정됨",
+    "createClaim": "환급 만들기",
+    "extractionTitle": "AI 추출",
+    "fact": {
+      "file": "파일",
+      "hash": "SHA-256",
+      "size": "크기",
+      "type": "유형",
+      "typeChecked": "{{type}}, 내용으로 확인됨"
+    },
+    "field": {
+      "category": "추천 범주",
+      "expenseDate": "일자",
+      "grossAmount": "합계",
+      "merchant": "가맹점",
+      "receiptNo": "영수증 번호",
+      "vatAmount": "부가세"
+    },
+    "keptApart": "AI 판독값은 입력값 옆에 그대로 남아 수정 내용이 보입니다. {{min}}% 미만 판독은 강조 표시됩니다.",
+    "lowHint": "AI 확신도가 {{confidence}}%뿐입니다. 영수증과 대조하세요.",
+    "minConfidence": "{{min}}% 미만 값은 강조 표시",
+    "noPreview": "이 브라우저는 HEIC 이미지를 표시할 수 없습니다. 파일은 확인되어 첨부되었습니다.",
+    "noReceipt": "영수증이 없나요?",
+    "readBy": "{{provider}} 판독",
+    "receiptTitle": "영수증",
+    "sampleNote": "샘플 인식: 데모에서는 파일이 브라우저 외부로 전송되지 않으므로 모든 영수증이 이 샘플로 읽힙니다.",
+    "stage": {
+      "extracted": "추출됨",
+      "extractedHint": "AI가 읽은 항목",
+      "normalizing": "정규화",
+      "normalizingHint": "기울기 보정, 자르기, 압축",
+      "pdfReady": "PDF 준비됨",
+      "pdfReadyHint": "표준 PDF, 원본 보관",
+      "skipped": "AI 꺼짐",
+      "uploaded": "업로드됨",
+      "uploadedHint": "형식·크기·해시 확인됨",
+      "verified": "확인됨",
+      "verifiedHint": "본인 확인"
+    },
+    "stagesTitle": "문서 단계",
+    "startAgain": "다른 영수증 스캔",
+    "subtitle": "휴대폰으로 촬영하거나 청구서를 업로드한 후, 청구를 만들기 전에 추출된 항목을 검토하세요.",
+    "tip": {
+      "light": "밝은 곳에서, 합계에 그림자가 지지 않게.",
+      "private": "데모에서는 파일이 이 브라우저에 유지됩니다.",
+      "whole": "가장자리까지 영수증 전체가 화면에 들어오게."
+    },
+    "title": "영수증 스캔 및 AI 추출",
+    "typeIt": "영수증의 내용을 입력하세요.",
+    "uploadHint": "카메라를 열거나 영수증 업로드",
+    "useSample": "샘플 영수증 사용해 보기",
+    "waitingForReceipt": "읽을 영수증을 추가하세요.",
+    "working": {
+      "normalizing": "이미지를 보정하고 정리하는 중…",
+      "pdfReady": "표준 PDF를 만드는 중…",
+      "uploaded": "파일 확인 중…"
+    },
+    "aiPhotoOnly": "AI 판독은 JPG 및 PNG 사진에서만 사용할 수 있습니다.",
+    "aiUnclear": "영수증 세부 정보를 명확하게 읽을 수 없습니다. 직접 입력해 주세요.",
+    "aiUnreachable": "AI 모델에 연결할 수 없습니다. 영수증 세부 정보를 직접 입력해 주세요.",
+    "aiQuota": "AI 요청 한도에 도달했습니다. 잠시 기다리거나 영수증 세부정보를 직접 입력하세요.",
+    "aiBusy": "Google AI가 현재 사용 중입니다. 잠시 후 다시 시도하거나 세부 정보를 직접 입력해 주세요."
+  },
+  "approval": {
+    "action": {
+      "review": "검토"
+    },
+    "attachmentTitle": "증빙 서류",
+    "availableNow": "현재 {{amount}} 사용 가능",
+    "backToInbox": "승인함으로 돌아가기",
+    "changes": {
+      "after": "{{name}}이(가) {{time}}에 반려한 후 수정됨:",
+      "title": "반려 후 변경됨"
+    },
+    "column": {
+      "amount": "금액",
+      "person": "사람",
+      "reference": "참조번호",
+      "step": "상태 / 현재 단계",
+      "submitted": "제출일시",
+      "type": "유형 / 부서"
+    },
+    "days": "{{count}}일",
+    "decision": {
+      "approve": "승인",
+      "comment": "의견(반려 또는 거부 시 필수)",
+      "noMoney": "승인으로는 돈이 움직이지 않습니다. 지급은 재무 정산에서만 합니다.",
+      "placeholder": "요청자가 알아야 하거나 수정할 사항은?",
+      "reasonNeeded": "반려 또는 거부 사유를 입력하세요. 요청자에게 표시됩니다.",
+      "reject": "반려",
+      "return": "수정 요청 반려",
+      "title": "내 결정"
+    },
+    "detailsTitle": {
+      "additionalCash": "추가 현금 요청",
+      "allocation": "배정",
+      "preExpense": "사전 지출 요청",
+      "reimbursement": "청구",
+      "reallocation": "재배정 요청"
+    },
+    "dueIn": "{{span}} 후 기한",
+    "empty": {
+      "decided": "아직 결정한 요청이 없습니다.",
+      "scope": "내 범위에서 승인 요청된 항목이 없습니다.",
+      "waiting": "결정을 기다리는 항목이 없습니다."
+    },
+    "ended": {
+      "approved": "{{name}}이(가) {{time}}에 승인했습니다.",
+      "cancelled": "{{time}}에 {{name}}님이 철회했습니다.",
+      "rejected": "{{time}}에 {{name}}님이 거절했습니다.",
+      "returned": "{{time}}에 {{name}}님이 수정을 위해 반려했습니다."
+    },
+    "entity": "건의 요청",
+    "filter": {
+      "allTypes": "모든 요청 유형",
+      "allUnits": "전체 세대"
+    },
+    "flag": {
+      "changed": "반려 후 변경됨",
+      "duplicate": "중복 청구서 가능성",
+      "onBehalf": "다른 사람이 이 사람 대신 입력함",
+      "overAvailable": "배정의 사용 가능액 초과",
+      "lowConfidence": "AI 영수증 인식 신뢰도가 낮습니다"
+    },
+    "hours": "{{count}}시간",
+    "kind": {
+      "additionalCash": "추가 현금",
+      "allocation": "배정",
+      "preExpense": "사전 지출",
+      "reimbursement": "경비 환급",
+      "reallocation": "재배정"
+    },
+    "next": "다음",
+    "openFile": "열기",
+    "openRecord": "전체 기록 열기",
+    "othersTurn": "{{n}}단계에서 {{names}}의 결정을 기다립니다. 여기서 진행 상황을 볼 수 있으며, 결정은 그들만 할 수 있습니다.",
+    "outcome": {
+      "cash": "내가 마지막 단계입니다. 승인하면 지급을 위해 재무팀에 넘기며, 현금 관리자가 수령을 확인하면 반영됩니다.",
+      "claim": "내가 마지막 단계입니다. 승인하면 재무팀이 지급할 때까지 배정에 금액을 예약합니다.",
+      "next": "승인하면 다음 단계({{step}})로 넘어갑니다: {{names}}.",
+      "preExpense": "내가 마지막 단계입니다. 승인하면 직원이 지출할 수 있고, 청구될 때까지 금액을 확보합니다.",
+      "salary": "내가 마지막 단계입니다. 승인하면 다음 급여와 함께 지급하도록 재무팀에 넘깁니다.",
+      "reallocation": "마지막 단계입니다. 승인하면 현금이 새 보관자에게 넘어가며, 새 보관자가 수령을 확인하거나 인수합니다. 재무팀은 지급하지 않습니다."
+    },
+    "overAvailable": "{{reference}}의 사용 가능액({{available}})을 초과합니다. 지급 전에 재무팀이 추가 지급해야 합니다.",
+    "overAvailableBlocked": "{{reference}}의 사용 가능액({{available}})을 초과하며, 잔액은 0 아래로 내려갈 수 없습니다. 최종 승인 전에 추가 지급이 필요합니다.",
+    "overdueBy": "{{span}} 지연",
+    "position": "{{n}} / {{total}}",
+    "previous": "이전",
+    "refusal": {
+      "changed": "연 후에 이 요청이 변경되었습니다. 결정하기 전에 다시 불러와 변경 사항을 확인하세요.",
+      "decided": "이미 결정된 요청입니다.",
+      "notEnoughCash": "{{reference}}의 사용 가능액은 OMR {{available}}뿐이며, 잔액은 0 아래로 내려갈 수 없습니다. 요청을 반려하거나 먼저 재무팀에 추가 지급을 요청하세요.",
+      "notYourStep": "이 단계는 나를 기다리고 있지 않습니다.",
+      "ownRequest": "내가 당사자인 요청은 결정할 수 없습니다."
+    },
+    "refusalHint": "{{reference}}의 사용 가능액은 {{available}}뿐이며, 잔액은 0 아래로 내려갈 수 없습니다. 반려하거나 먼저 재무팀에 추가 지급을 요청하세요.",
+    "search": "번호, 사람 또는 목적 검색",
+    "sentAt": "{{time}} 제출",
+    "subtitle": "내 결정을 기다리는 요청, 내 범위의 모든 요청, 내가 결정한 요청.",
+    "tile": {
+      "decided": "내가 결정함",
+      "decidedNote": "승인, 반려 또는 거부됨",
+      "overdue": "연체",
+      "overdueNote": "워크플로 설정의 허용 시간을 초과함",
+      "scope": "승인 중",
+      "summary": "승인 요약",
+      "waiting": "내 결정 대기"
+    },
+    "title": "승인함",
+    "toast": {
+      "approve": "{{reference}}이(가) 승인되었습니다.",
+      "reject": "{{reference}}이(가) 거부되었습니다.",
+      "return": "{{reference}}이(가) 수정 요청으로 반려되었습니다."
+    },
+    "view": {
+      "decided": "내가 결정함",
+      "scope": "내 범위 전체",
+      "waiting": "내 결정 대기"
+    },
+    "views": "승인함 보기",
+    "where": {
+      "approved": "재무팀 지급 대기",
+      "disbursed": "재무팀이 지급함",
+      "returned": "요청자가 수정 중",
+      "spendable": "지금 지출 후 환급 청구 가능"
+    },
+    "yourTurn": "{{n}}단계에서 내 결정을 기다립니다: {{step}}.",
+    "yoursToWatch": "이 요청의 당사자이므로 결정할 수 없습니다. {{n}}단계에서 {{names}}의 결정을 기다립니다.",
+    "openSourceRecord": "배정 열기"
+  },
+  "ack": {
+    "action": "확인",
+    "amountReceived": "수납 금액",
+    "bannerHint": "현금 도착을 확인해야 잔액이 늘어납니다.",
+    "bannerNone": "수령 확인을 기다리는 항목이 없습니다.",
+    "bannerWaiting": "수령 확인 대기 중: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "금액",
+      "issued": "발급됨",
+      "payment": "지급 방법 / 참조",
+      "recipient": "수령인",
+      "reference": "참조번호",
+      "scope": "배정 범위",
+      "status": "상태"
+    },
+    "confirm": "금액 수령 확인",
+    "dialogTitle": "소액 현금 수령 확인",
+    "entity": "지급",
+    "filter": {
+      "allTypes": "모든 유형"
+    },
+    "kind": {
+      "additionalCash": "추가 지급",
+      "allocation": "배정",
+      "topUpOf": "{{reference}} 추가 지급",
+      "handover": "인수인계",
+      "reallocatedFrom": "{{reference}}에서 재배정"
+    },
+    "openAllocation": "배정 열기",
+    "refusal": {
+      "already": "이미 수령이 확인되었습니다. 아무것도 변경되지 않았습니다.",
+      "notRecipient": "현금을 받은 사람만 수령을 확인할 수 있습니다."
+    },
+    "remarks": "메모(선택)",
+    "remarksPlaceholder": "예: 세어 보고 전액 받았습니다.",
+    "search": "참조번호, 수령인 또는 지급 참조 검색",
+    "state": {
+      "acknowledged": "확인됨",
+      "waiting": "수령 확인 대기"
+    },
+    "statement": "확인하면 위에 표시된 금액을 받았음을 인정합니다. 그 후 배정 잔액에 더해지며, 되돌릴 수 없습니다.",
+    "subtitle": "재무팀이 지급한 소액 현금의 수령을 확인하고 지급 전표를 인쇄합니다.",
+    "title": "배정 수령 확인",
+    "toast": {
+      "done": "수령을 확인했습니다. 이제 {{reference}}에서 {{amount}}을(를) 사용할 수 있습니다."
+    },
+    "waitingFor": "{{name}}님 대기 중",
+    "reallocatedBy": "{{name}} 님이 재배정",
+    "takeOverTitle": "배정 인수",
+    "takeOverStatement": "이 배정의 현금과 기록을 받았으며 이제 제가 보관하고 있음을 확인합니다.",
+    "takeOver": "인수"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "철회"
+    },
+    "categoryPlaceholder": "환급 범주 검색…",
+    "check": {
+      "beneficiary": "이 직원의 요청은 입력할 수 없습니다. 내 범위의 사람만 선택할 수 있습니다.",
+      "beneficiaryFixed": "요청을 보낸 후에는 직원을 바꿀 수 없습니다.",
+      "category": "사용 중인 경비 범주를 선택하세요.",
+      "chooseCategory": "경비 범주를 선택하세요.",
+      "chooseEmployee": "직원을 선택하세요.",
+      "costUnit": "이 직원이 속한 단위를 선택하세요. 비활성 단위에는 부과할 수 없습니다.",
+      "merchant": "가맹점 또는 수취인을 입력하세요.",
+      "purpose": "업무 목적을 간단히 적어 주세요.",
+      "vendor": "이 거래처는 비활성 상태입니다. 다른 거래처를 선택하거나 가맹점 이름을 입력하세요."
+    },
+    "costHint": "이 사람이 속한 단위에만 비용을 부과할 수 있습니다.",
+    "employeePlaceholder": "직원 이름 또는 사번 입력…",
+    "ended": {
+      "cancelled": "{{time}}에 {{name}}님이 철회했습니다.",
+      "rejected": "{{time}}에 {{name}}님이 거절했습니다.",
+      "returned": "{{time}}에 {{name}}님이 수정을 위해 반려했습니다."
+    },
+    "enteredBy": "입력자 {{name}}",
+    "field": {
+      "attachment": "증빙 서류",
+      "category": "경비 범주",
+      "chargedTo": "부과 대상",
+      "costLevel": "비용 배분 유형",
+      "costUnit": "부과 대상",
+      "created": "생성",
+      "employee": "직원",
+      "enteredBy": "입력자",
+      "for": "대상",
+      "merchant": "가맹점 / 수취인",
+      "submitFor": "신청 대상"
+    },
+    "filter": {
+      "allEmployees": "모든 직원"
+    },
+    "merchantHint": "거래처 마스터에서 선택하거나, 목록에 없으면 가맹점 또는 수취인을 입력하세요.",
+    "merchantPlaceholder": "거래처를 검색하거나 새 이름 입력…",
+    "noAttachment": "첨부 없음",
+    "noMerchant": "입력되지 않음",
+    "onBehalfHint": "내 범위의 사람만 표시됩니다. 입력자로 내가 기록됩니다.",
+    "refusal": {
+      "notRequester": "이 요청은 입력한 사람이나 대상자 본인만 변경할 수 있습니다."
+    },
+    "submitFor": {
+      "onBehalf": "다른 직원 대신",
+      "self": "본인"
+    },
+    "toast": {
+      "withdrawn": "{{reference}}을(를) 철회했습니다."
+    },
+    "withdrawText": "요청을 수정해 다시 보내지 않고 종료합니다. 사유는 이력에 남습니다.",
+    "withdrawTitle": "{{reference}}을(를) 철회할까요?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "계속 편집",
+      "correct": "수정 후 재제출"
+    },
+    "amount": {
+      "asEntered": "입력값",
+      "gross": "부가세 포함 합계",
+      "net": "부가세 제외 금액",
+      "noVat": "부가세 (이 청구서에는 없음)",
+      "paid": "총 지급액"
+    },
+    "approvedNote": "승인됨. 금액은 배정에서 확보되어 있으며, 재무팀이 정산할 때 지급되고 원장에 기록됩니다.",
+    "approvedSalaryNote": "승인됨. 재무팀이 다음 급여 지급 때 지급하고 급여 참조번호를 기록합니다.",
+    "backToClaim": "청구로 돌아가기",
+    "backToList": "경비 환급으로 돌아가기",
+    "basis": {
+      "direct": "사후 직접 환급",
+      "directHint": "사전 승인 없이 이미 쓴 돈.",
+      "directShort": "직접",
+      "noneOpen": "이 직원에게 잔액이 있는 승인 요청이 없습니다.",
+      "preApproved": "사전 승인된 지출 기반",
+      "preApprovedHint": "잔액이 있는 승인 요청: {{count}}"
+    },
+    "chargeTitle": "부과 및 지급",
+    "check": {
+      "basis": "청구 근거를 선택하세요.",
+      "choosePreApproval": "이 청구가 사용할 승인 요청을 선택하세요.",
+      "expenseDate": "돈을 쓴 날짜를 선택하세요.",
+      "fixFields": "확인이 필요한 항목이 있습니다. 빨간색으로 표시된 항목을 확인하세요.",
+      "futureDate": "지출일은 미래일 수 없습니다.",
+      "noAllocation": "이 단위에는 활성 배정이 없어 청구를 소액 현금으로 지급할 수 없습니다. 직원 급여를 선택하거나 재무팀에 문의하세요.",
+      "notEnoughCash": "{{reference}}의 사용 가능액은 OMR {{available}}뿐이며, 잔액은 0 아래로 내려갈 수 없습니다. 금액을 줄이거나, 직원 급여를 선택하거나, 보충을 요청하세요.",
+      "overPreApproval": "청구액이 사전 승인의 잔액(OMR {{remaining}})보다 많습니다. 줄이거나 차액을 직접 청구하세요.",
+      "preApproval": "이 사전 승인은 사용할 수 없습니다. 이 직원의 것이고, 승인되었으며, 잔액이 있어야 합니다.",
+      "preApprovalUnit": "사전 승인 기반 청구는 사전 승인과 같은 단위에 부과됩니다.",
+      "receiptRequired": "이 청구를 보내기 전에 영수증을 첨부하세요. 이 범주 또는 설정에서 필수입니다.",
+      "settlement": "청구 지급 방법을 선택하세요.",
+      "vat": "금액에 부가세를 어떻게 적용할지 선택하세요."
+    },
+    "column": {
+      "amount": "금액",
+      "basisPayment": "근거 / 지급",
+      "date": "일자",
+      "employee": "직원",
+      "expenseDate": "지출일",
+      "merchant": "가맹점 / 범주",
+      "reference": "참조번호",
+      "status": "상태"
+    },
+    "costFromPreApproval": "사전 승인이 금액을 확보한 곳에 부과됩니다.",
+    "deleteText": "청구 초안이 삭제됩니다. 되돌릴 수 없습니다.",
+    "deleteTitle": "{{reference}}을(를) 삭제할까요?",
+    "descriptionPlaceholder": "무엇을 샀는지와 업무상 이유.",
+    "detailsTitle": "청구 상세",
+    "duplicate": {
+      "detailText": "보낼 때 같은 가맹점과 같은 영수증 번호, 또는 같은 날짜와 금액의 다른 청구가 있었습니다. 같은 영수증이 아닌지 확인하세요:",
+      "formText": "다른 청구에 같은 가맹점과 같은 영수증 번호, 또는 같은 날짜와 금액이 있습니다. 그래도 제출할 수 있으며, 승인자는 다음을 보게 됩니다:",
+      "title": "중복 가능성.",
+      "tooltip": "{{references}}과(와) 중복 가능성"
+    },
+    "editTitle": "{{reference}} 수정",
+    "entity": "경비 환급",
+    "field": {
+      "amount": "금액 (OMR)",
+      "amountNet": "부가세 전 금액 (OMR)",
+      "basis": "청구 근거",
+      "description": "경비 설명 / 업무 목적",
+      "expenseDate": "지출일",
+      "gross": "부가세 포함 합계",
+      "paidFrom": "지급 출처",
+      "preApproval": "사전 승인 참조번호",
+      "receipt": "영수증 / 청구서",
+      "receiptNo": "영수증 / 송장 번호",
+      "settlement": "결제 방법",
+      "vatTreatment": "부가세 처리"
+    },
+    "filter": {
+      "allBases": "모든 청구 근거",
+      "allSettlements": "모든 지급 방법"
+    },
+    "fromScan": "영수증 스캔으로 채웠습니다. AI 판독 신뢰도는 {{confidence}}%입니다. 제출 전에 각 값을 영수증과 대조하세요.",
+    "leftOf": "{{amount}} 중 {{left}} 남음",
+    "new": "새 경비 환급",
+    "newSubtitle": "실제 지출한 경비의 환급을 신청합니다.",
+    "newTitle": "새 경비 환급",
+    "noAllocationNow": "현재 이 단위에는 활성 배정이 없습니다",
+    "noReceipt": "첨부된 영수증이 없습니다.",
+    "notEditable": "이 청구는 수정 단계를 지나 더 이상 변경할 수 없습니다.",
+    "notInLedger": "기록 안 됨: 급여로 지급",
+    "notScanned": "AI 판독 없이 업로드했습니다. 값은 직접 입력했습니다.",
+    "openScan": "스캔하면 AI가 청구를 채워 줍니다",
+    "orScan": "영수증이 있나요?",
+    "preApprovalHint": "이 직원의 잔액이 있는 승인 요청만 표시됩니다.",
+    "preApprovalPlaceholder": "승인된 요청 선택…",
+    "receiptHint": "여기에 영수증을 놓거나 파일을 선택하세요",
+    "receiptNeeded": "이 범주는 청구를 보내기 전에 영수증이 필요합니다.",
+    "receiptNoPlaceholder": "영수증 또는 송장 번호",
+    "receiptOptional": "이 범주는 영수증이 선택 사항입니다.",
+    "receiptReplaced": "{{date}}에 업로드한 {{name}}을(를) 대체합니다.",
+    "receiptTitle": "영수증 / 청구서",
+    "required": "필수",
+    "resubmitNote": "다시 보내면 버전 {{version}}이 됩니다. 승인자는 변경 내용을 볼 수 있습니다.",
+    "scanReceipt": "영수증 스캔",
+    "search": "참조번호, 직원, 가맹점, 영수증 번호 검색",
+    "section": {
+      "amount": "금액 및 부가세",
+      "charge": "부과 및 지급",
+      "expense": "경비",
+      "receipt": "영수증 / 청구서"
+    },
+    "settlement": {
+      "pettyCash": "소액 현금",
+      "pettyCashFrom": "{{reference}}에서 · 사용 가능 {{available}}",
+      "pettyCashHint": "단위의 소액 현금 배정에서 지급합니다.",
+      "salary": "직원 급여",
+      "salaryHint": "다음 급여와 함께 지급합니다. 소액 현금은 변하지 않습니다."
+    },
+    "subtitle": "이미 쓴 돈에 대한 청구입니다. 직접 청구하거나 승인된 사전 지출 요청에 연결합니다.",
+    "summary": {
+      "allocationLeft": "사용 가능",
+      "claiming": "청구 금액",
+      "heldByPreApproval": "사전 승인으로 이미 확보됨:",
+      "noAllocation": "이 단위에는 활성 배정이 없습니다. 재무팀이 다른 방법으로 지급할 수 있습니다.",
+      "noAllocationBlocked": "이 단위에는 활성 배정이 없어 소액 현금으로 지급할 수 없습니다. 직원 급여를 선택하거나 재무팀에 문의하세요.",
+      "preApprovalLeft": "잔액",
+      "routeLater": "금액과 단위를 입력하면 승인자가 여기에 표시됩니다.",
+      "salary": "급여로 지급: 소액 현금 잔액은 변하지 않습니다.",
+      "short": "배정의 사용 가능액보다 많습니다. 재무팀이 먼저 보충해야 합니다.",
+      "shortBlocked": "배정의 사용 가능액보다 많고, 잔액은 0 아래로 내려갈 수 없습니다. 금액을 줄이거나, 직원 급여를 선택하거나, 보충을 요청하세요.",
+      "title": "청구 요약"
+    },
+    "tile": {
+      "claims": "청구",
+      "paid": "이번 달 지급",
+      "paidNote": "지급된 청구: {{count}}",
+      "pending": "승인 중",
+      "summary": "환급 요약",
+      "toPay": "승인됨, 지급 대기"
+    },
+    "title": "경비 환급",
+    "toast": {
+      "deleted": "{{reference}}을(를) 삭제했습니다.",
+      "saved": "{{reference}}을(를) 초안으로 저장했습니다.",
+      "submitted": "{{reference}}을(를) 승인 요청했습니다."
+    },
+    "vat": {
+      "exclusive": "부가세 별도",
+      "inclusive": "부가세 포함",
+      "none": "부가세 없음"
+    },
+    "vatOnReceipt": "AI가 읽은 영수증의 부가세: OMR {{vat}}",
+    "vatShort": "부가세 {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "{{amount}}(부가세 {{rate}}% 전)로 입력됨.",
+      "inclusive": "{{amount}}(부가세 {{rate}}% 포함)로 입력됨.",
+      "none": "{{amount}}로 입력됨. 청구서에 부가세가 없습니다."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "확인",
+      "allClaims": "내 청구 전체",
+      "claimsCount": "청구: {{count}}",
+      "column": {
+        "amount": "금액",
+        "date": "일자",
+        "documents": "서류",
+        "employee": "직원",
+        "lastClaim": "최근 청구",
+        "open": "미처리 요청",
+        "purpose": "목적",
+        "reference": "참조번호",
+        "status": "상태",
+        "thisMonth": "이번 달"
+      },
+      "custodianTitle": "내 소액 현금: {{unit}}",
+      "decisionsTitle": "나의 결정 대기 ({{count}})",
+      "enteredFor": "{{name}}님 대신 입력",
+      "greeting": "{{name}}님, 다시 오신 것을 환영합니다. 내 요청, 나의 결정을 기다리는 건, 내가 보관 중인 현금.",
+      "hasReceipt": "영수증 첨부됨",
+      "lowHint": "잔액이 부족해지고 있습니다: 소진되기 전에 추가 지급을 요청하세요.",
+      "managerText": "권한이 있는 단위 안에서 팀원을 대신해 사전 지출 또는 경비 청구를 제출하세요.",
+      "managerTitle": "관리자 셀프 서비스",
+      "movements": "최근 거래",
+      "newPreExpense": "사전 지출 요청",
+      "newReimbursement": "경비 환급",
+      "noMovements": "아직 거래가 없습니다.",
+      "noRequests": "아직 요청이 없습니다. 위에서 시작하세요.",
+      "openInbox": "승인함",
+      "overdue": "기한 초과: {{count}}",
+      "paidOn": "{{amount}}, {{date}} 지급",
+      "preExpenseBehalf": "대리 사전 지출",
+      "recentTitle": "내 최근 요청",
+      "reimbursementBehalf": "대리 경비 청구",
+      "requestTopUp": "추가 지급 요청",
+      "shortcut": {
+        "preExpense": "사전 지출 승인",
+        "preExpenseText": "지출 전에 승인을 받으세요. 승인된 금액은 소속 단위의 배정에서 예약됩니다.",
+        "reimbursement": "경비 환급",
+        "reimbursementText": "이미 지출한 비용을 영수증을 첨부하거나 스캔해 청구하세요.",
+        "scan": "영수증 스캔",
+        "scanText": "AI가 영수증에서 가맹점, 날짜, 부가세, 금액, 카테고리를 읽습니다."
+      },
+      "shortcuts": "요청 시작",
+      "subtitle": "내 요청, 나의 결정을 기다리는 건, 내가 보관 중인 현금.",
+      "teamTitle": "내 팀 ({{count}})",
+      "tile": {
+        "approved": "내 승인 / 사용 가능",
+        "approvedNote": "청구할 승인된 사전 지출: {{count}}",
+        "awaiting": "승인 대기",
+        "nothingReturned": "수정할 항목 없음",
+        "paid": "이번 달 지급",
+        "paidNote": "지급된 청구: {{count}}",
+        "returned": "나에게 반려됨",
+        "returnedNote": "조치 필요"
+      },
+      "title": "내 대시보드",
+      "toAcknowledge": "나에게 지급된 현금이 수령 확인을 기다리고 있습니다 ({{count}})",
+      "topUpPending": "추가 지급 진행 중:",
+      "voucher": "전표 {{voucher}}",
+      "waitingFor": "{{names}}님 검토 중",
+      "monthTitle": "월별 내 청구",
+      "monthSubtitle": "지출일 기준, {{from}} ~ {{to}}",
+      "categoryTitle": "카테고리별 내 지출",
+      "categorySubtitle": "올해 날짜의 내 청구, {{period}}",
+      "claimedThisYear": "올해 청구액",
+      "noClaims": "아직 청구가 없습니다."
+    },
+    "chart": {
+      "amount": "금액",
+      "businessUnit": "사업부",
+      "category": "분류",
+      "categoryTitle": "카테고리별 지출",
+      "claims": "청구",
+      "funded": "입금",
+      "month": "월",
+      "noMovement": "이 기간에 현금 이동이 없습니다.",
+      "noPaid": "이 기간에 지급된 청구가 없습니다.",
+      "otherCategories": "기타 카테고리 ({{count}})",
+      "paidInPeriod": "기간 내 지급액",
+      "pettyCash": "소액 현금",
+      "salary": "급여와 함께",
+      "share": "비중",
+      "spent": "지출",
+      "total": "합계",
+      "trendSubtitle": "지급된 청구, {{from}} ~ {{to}}",
+      "trendTitle": "월별 지출",
+      "unitSubtitle": "각 단위의 배정에 수령 확인되고 그곳에서 지급된 현금, {{period}}",
+      "unitTitle": "사업부별 입금 및 지출"
+    },
+    "finance": {
+      "attentionTitle": "확인 필요 ({{count}})",
+      "noAttention": "확인할 항목이 없습니다.",
+      "noPositions": "이 단위에 수령 확인된 배정이 없습니다.",
+      "positionTitle": "배정 현황",
+      "positionTotal": "배정: {{count}}",
+      "showAll": "모두 보기 ({{count}})",
+      "showFewer": "간단히 보기",
+      "subtitle": "모든 사업부, 부서, 프로젝트의 소액 현금: 보유 현황, 조치가 필요한 일, 돈이 쓰인 곳.",
+      "thresholdsLink": "기준",
+      "title": "재무 대시보드"
+    },
+    "column": {
+      "allocation": "배정",
+      "available": "사용 가능",
+      "band": "등급",
+      "financeUser": "지급자",
+      "float": "정액 자금",
+      "inUse": "사용 + 예약",
+      "level": "수준",
+      "position": "현황",
+      "reserved": "예약됨",
+      "used": "사용량",
+      "utilization": "사용률"
+    },
+    "attention": {
+      "exceeded": "초과: 사용액과 예약액이 입금액보다 {{amount}} 많음",
+      "near": "기준 근접: 정액 자금 {{percent}}% 남음",
+      "notAcknowledged": "{{span}} 전 지급, 아직 수령 확인 안 됨",
+      "notAcknowledgedToday": "오늘 지급, 아직 수령 확인 안 됨",
+      "overdueWith": "{{names}}님 대기 중",
+      "paidTo": "{{name}}님에게 지급: {{amount}}",
+      "preparedBy": "{{name}}님 작성",
+      "review": "검토자 대기 중 · {{reference}}",
+      "toPay": "지급할 승인된 청구: {{count}}",
+      "toPayNote": "{{amount}} · 가장 오래된 건은 {{span}} 전 승인",
+      "toPayNoteToday": "{{amount}} · 오늘 승인",
+      "watch": "주의: 정액 자금 {{percent}}% 남음"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "초과",
+      "near": "기준 근접",
+      "normal": "보통",
+      "pending": "아직 입금되지 않음",
+      "watch": "주의"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "잔액",
+      "bar": "막대",
+      "followsFilters": "위의 기간과 필터를 따릅니다.",
+      "line": "추이",
+      "lineHint": "기간 중 상위 5개 행의 추이.",
+      "metric": "측정 항목",
+      "name": "이름",
+      "others": "기타",
+      "period": "기간",
+      "pie": "비중",
+      "type": "차트 유형"
+    },
+    "column": {
+      "allocated": "배정됨",
+      "approved": "승인됨",
+      "available": "사용 가능",
+      "businessUnit": "사업부",
+      "category": "분류",
+      "charged": "부과 대상",
+      "claimed": "청구됨",
+      "claims": "청구",
+      "date": "일자",
+      "department": "부서",
+      "departments": "부서",
+      "employee": "직원",
+      "employeeId": "사번",
+      "employees": "직원",
+      "head": {
+        "businessUnit": "사업부장",
+        "department": "부서장",
+        "project": "프로젝트 관리자"
+      },
+      "lastClaim": "최근 청구",
+      "lastExpense": "최근 경비",
+      "net": "순액",
+      "paid": "지급 완료",
+      "paidOn": "지급일",
+      "pending": "미지급",
+      "project": "프로젝트",
+      "projectCode": "프로젝트 코드",
+      "recipient": "직원 / 수령인",
+      "reference": "참조번호",
+      "referenceDate": "참조 번호 / 일자",
+      "reimbursed": "환급됨",
+      "share": "지출 비중",
+      "status": "상태",
+      "statusPaid": "상태 / 지급일",
+      "topVendor": "주요 가맹점",
+      "total": "합계",
+      "transactions": "거래",
+      "vat": "부가세",
+      "vatin": "VAT 번호",
+      "vendor": "공급업체 / 가맹점",
+      "vendorCategory": "가맹점 / 범주",
+      "voucher": "전표 번호"
+    },
+    "countedNote": "청구는 제출 후 경비 일자 기준으로 집계됩니다: 승인 중, 승인되어 지급 대기 중, 또는 지급 완료. 임시 저장, 반려 및 취소된 청구는 제외됩니다.",
+    "empty": "이 기간에 보고할 내용이 없습니다.",
+    "filter": {
+      "allCategories": "모든 분류",
+      "allEmployees": "모든 직원",
+      "allStatuses": "모든 상태",
+      "allVendors": "모든 가맹점",
+      "search": "검색",
+      "status": "상태",
+      "unit": "조직 단위"
+    },
+    "metric": {
+      "amount": "금액",
+      "available": "사용 가능 잔액",
+      "count": "청구 건수",
+      "paid": "지급 완료",
+      "pending": "미지급"
+    },
+    "noMatch": "이 필터와 일치하는 항목이 없습니다.",
+    "notListed": "공급업체 기준 정보에 없음",
+    "openClaims": "이 청구 열기",
+    "openingOn": "{{date}} 말 기준 기초 잔액:",
+    "periodClaims": "{{from}} – {{to}}, 경비 일자 기준",
+    "periodLedger": "{{from}} – {{to}}, 원장 일자 기준",
+    "purpose": {
+      "businessUnit": "사업부 비용(소속 부서와 프로젝트 포함)과 해당 소액 현금.",
+      "category": "경비 분류별 지출과 지출이 가장 많은 가맹점, 분류별 비중.",
+      "department": "부서 비용: 각 부서에 부과된 청구와 해당 소액 현금.",
+      "employee": "직원별 청구: 청구액, 승인액, 지급액, 미지급액.",
+      "ledger": "기간 중 자금 지급, 경비, 조정과 배정별 누적 잔액.",
+      "project": "프로젝트 비용: 각 프로젝트에 부과된 청구와 해당 소액 현금.",
+      "transactions": "기간 중 모든 청구와 가맹점, 부과 대상, 현재 상태.",
+      "vendor": "돈이 쓰이는 곳: 가맹점별 청구. 공급업체 기준 정보에 있거나 청구서에 입력된 가맹점."
+    },
+    "refusal": {
+      "period": "하루부터 같은 날 또는 그 이후 날짜까지의 기간을 선택하세요."
+    },
+    "search": {
+      "ledger": "원장 번호, 참조번호, 전표, 사람 또는 적요로 검색",
+      "summary": "이 보고서에서 이름 검색",
+      "transactions": "참조 번호, 사람, 가맹점 또는 설명 검색"
+    },
+    "status": {
+      "approved": "승인됨, 미지급",
+      "inApproval": "승인 중",
+      "paid": "지급 완료"
+    },
+    "summary": "보고서 요약",
+    "tile": {
+      "claimed": "총 청구액",
+      "claimedNote": "승인 중, 승인됨, 지급 완료",
+      "claims": "청구",
+      "claimsNote": "인원: {{count}}",
+      "paid": "지급 완료",
+      "paidNote": "전체의 {{percent}}%",
+      "pending": "미지급",
+      "pendingNote": "승인 중 또는 지급 대기"
+    },
+    "totalRow": "합계",
+    "view": {
+      "chart": "차트",
+      "table": "표"
+    },
+    "viewAs": "보기 방식"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "계좌이체",
+      "cash": "현금",
+      "cheque": "수표",
+      "salary": "급여"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "건너뜀: 같은 사람이 이전 단계를 이미 승인합니다",
+        "belowAmount": "건너뜀: 금액이 기준을 넘지 않음",
+        "incomplete": "승인자 결정 방식을 선택하세요",
+        "noApprover": "활성 승인자를 찾지 못했습니다",
+        "noProject": "건너뜀: 이 요청에 프로젝트가 없음",
+        "selfApproval": "건너뜀: 신청자가 자신의 요청을 승인하게 됨"
+      }
+    }
+  }
+}

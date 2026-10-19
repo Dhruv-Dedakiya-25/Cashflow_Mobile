@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Tambah",
+    "addEntity": "Tambah {{entity}}",
+    "back": "Kembali",
+    "cancel": "Batal",
+    "clearAll": "Hapus semua",
+    "close": "Tutup",
+    "create": "Buat",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "export": "Ekspor",
+    "retry": "Coba lagi",
+    "save": "Simpan",
+    "saveChanges": "Simpan perubahan",
+    "search": "Cari",
+    "view": "Lihat",
+    "viewAll": "Lihat semua"
+  },
+  "status": {
+    "active": "Aktif",
+    "all": "Semua",
+    "inactive": "Tidak aktif",
+    "no": "Tidak",
+    "yes": "Ya"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Batalkan Permintaan",
+      "saveDraft": "Simpan draf",
+      "submit": "Kirim untuk persetujuan",
+      "submitForApproval": "Ajukan untuk disetujui"
+    },
+    "filter": {
+      "allStatuses": "Semua status",
+      "from": "Dari",
+      "to": "Sampai"
+    },
+    "history": {
+      "acknowledged": "mengonfirmasi penerimaan",
+      "approved": "menyetujuinya",
+      "cancelled": "membatalkannya",
+      "created": "membuat permintaan",
+      "disbursed": "membayarkan jumlahnya",
+      "edited": "membuat perubahan",
+      "empty": "(kosong)",
+      "paid": "membayarnya",
+      "rejected": "menolaknya",
+      "resubmitted": "mengirimnya lagi untuk persetujuan",
+      "returned": "mengembalikannya untuk perbaikan",
+      "submitted": "mengirimnya untuk persetujuan",
+      "title": "Riwayat",
+      "reallocated": "mengalihkannya",
+      "takenOver": "mengambil alihnya"
+    },
+    "notFound": "Catatan ini tidak ada, atau di luar cakupan yang dapat Anda lihat.",
+    "path": {
+      "decidedBy": {
+        "approved": "Disetujui oleh {{name}} pada {{time}}",
+        "rejected": "Ditolak oleh {{name}} pada {{time}}",
+        "returned": "Dikembalikan oleh {{name}} pada {{time}}"
+      },
+      "notSent": "Belum dikirim untuk persetujuan.",
+      "overdue": "Terlambat",
+      "state": {
+        "approved": "Disetujui",
+        "pending": "Menunggu",
+        "rejected": "Ditolak",
+        "returned": "Dikembalikan",
+        "skipped": "Dilewati",
+        "waiting": "Belum tercapai"
+      },
+      "title": "Jalur Persetujuan",
+      "waitingSince": "Menunggu sejak {{time}} · batas {{hours}} jam",
+      "willGoTo": "Akan dikirim ke"
+    },
+    "reason": "Alasan",
+    "reasonRequired": "Masukkan alasan. Alasan disimpan dalam riwayat permintaan.",
+    "refusal": {
+      "alreadyPosted": "Ini sudah ada di buku besar, jadi tidak ada yang berubah.",
+      "amount": "Masukkan jumlah di atas nol dengan paling banyak tiga desimal.",
+      "amountTooLarge": "Jumlah tidak boleh lebih dari OMR {{max}}.",
+      "noApprover": "Satu langkah alur kerja tidak memiliki siapa pun untuk menerima permintaan ini. Minta administrator memeriksa Pengaturan Alur Kerja.",
+      "noWorkflow": "Tidak ada alur kerja aktif yang mencakup permintaan ini. Minta administrator memeriksa Pengaturan Alur Kerja.",
+      "nobodyLeft": "Semua yang dapat menyetujui permintaan ini terlibat di dalamnya, jadi tidak ada yang tersisa untuk menyetujuinya. Ubah untuk siapa permintaan ini, atau minta administrator memeriksa Pengaturan Alur Kerja.",
+      "notAllowed": "Peran Anda tidak mengizinkan ini.",
+      "notEditable": "Hanya draf atau permintaan yang dikembalikan yang dapat diubah.",
+      "notFound": "Catatan ini tidak ada, atau di luar cakupan yang dapat Anda lihat.",
+      "notNow": "Ini tidak dapat dilakukan dalam status permintaan saat ini.",
+      "onlyDrafts": "Hanya draf yang dapat dihapus. Batalkan saja.",
+      "reasonRequired": "Masukkan alasan.",
+      "savedMeanwhile": "Orang lain telah menyimpan ini sementara itu, jadi tidak ada yang berubah. Muat ulang dan coba lagi.",
+      "signedOut": "Sesi Anda telah berakhir. Masuk lagi.",
+      "underApproval": "Permintaan menunggu penyetuju. Tunggu keputusannya, atau minta agar dikembalikan."
+    },
+    "returnedBecause": "Dikembalikan untuk perbaikan:",
+    "status": {
+      "acknowledged": "Telah dikonfirmasi",
+      "active": "Aktif",
+      "approved": "Disetujui",
+      "cancelled": "Dibatalkan",
+      "closed": "Tutup",
+      "disbursed": "Menunggu Tanda Terima",
+      "draft": "Draf",
+      "inApproval": "Dalam Persetujuan",
+      "paid": "Lunas",
+      "rejected": "Ditolak",
+      "returned": "Dikembalikan",
+      "submitted": "Diajukan"
+    }
+  },
+  "auth": {
+    "brandTagline": "Manajemen Kas Kecil",
+    "company": "Perusahaan",
+    "demoBadge": "Demo",
+    "demoNotice": "Mode demo: proses masuk disimulasikan dan setiap layar menampilkan data contoh sampai API tersedia.",
+    "feature": {
+      "allocations": "Alokasi departemen & proyek",
+      "permissions": "Matriks peran dan hak akses",
+      "selfService": "Layanan mandiri karyawan & manajer",
+      "thresholds": "Pemantauan ambang batas",
+      "twoFactor": "Masuk dua faktor",
+      "workflows": "Persetujuan sebelum & sesudah pengeluaran"
+    },
+    "password": "Kata sandi",
+    "passwordDemoHint": "Tidak diperiksa dalam demo. Pada sistem nyata, proses masuk memverifikasi kata sandi dan kode autentikasi dua faktor Anda.",
+    "persona": {
+      "auditor": "Auditor (Hanya Baca)",
+      "employee": "Layanan Mandiri Karyawan",
+      "finance": "Kepala Keuangan / Administrator",
+      "manager": "Manajer Departemen / Proyek"
+    },
+    "personaLabel": "Persona demo",
+    "pitch": "Alokasikan kas kecil, setujui pengeluaran yang direncanakan, ganti pengeluaran nyata, arahkan persetujuan di organisasi Anda, baca kuitansi dengan AI, dan rekonsiliasi setiap transaksi.",
+    "rememberMe": "Tetap masuk",
+    "signIn": "Masuk",
+    "signInButton": "Masuk",
+    "signInHint": "Pilih persona demo untuk melihat layar yang digunakan peran tersebut.",
+    "twoFactor": {
+      "back": "Kembali",
+      "demoHint": "Demo: enam digit apa pun diterima.",
+      "digit": "Digit {{n}} dari 6",
+      "incomplete": "Masukkan keenam digit.",
+      "panelText": "Kode dari aplikasi autentikator memastikan bahwa itu memang Anda. Kebijakan dapat mewajibkannya untuk semua orang, per peran, atau untuk pengguna tertentu.",
+      "panelTitle": "Verifikasi dua langkah",
+      "subtitle": "Masukkan kode 6 digit dari aplikasi autentikator Anda.",
+      "title": "Masukkan kode verifikasi",
+      "trustDevice": "Percayai perangkat ini selama 30 hari",
+      "verify": "Verifikasi & lanjutkan",
+      "wrongCode": "Kode itu tidak benar. Coba lagi.",
+      "expired": "Proses masuk ini sudah kedaluwarsa. Kembali dan masuk lagi.",
+      "useRecovery": "Gunakan kode pemulihan saja",
+      "useApp": "Gunakan aplikasi autentikator saja",
+      "recoveryTitle": "Masukkan kode pemulihan",
+      "recoveryHint": "Ketik salah satu kode pemulihan yang Anda simpan. Setiap kode hanya berlaku sekali.",
+      "trustDeviceDays": "Percayai perangkat ini selama {{n}} hari",
+      "enrollTitle": "Siapkan masuk dua faktor",
+      "enrollSubtitle": "Akun Anda wajib menggunakan aplikasi autentikator. Siapkan sekarang untuk menyelesaikan proses masuk."
+    },
+    "twoFactorNote": "Masuk dua faktor bisa nonaktif, opsional, atau wajib per peran.",
+    "username": "Email atau nama pengguna",
+    "signInHintApi": "Masuk dengan akun CashFlow Anda.",
+    "error": {
+      "invalid": "Nama pengguna atau kata sandi salah.",
+      "tooMany": "Terlalu banyak percobaan. Tunggu satu menit, lalu coba lagi.",
+      "noApi": "Tidak dapat menghubungi server. Coba lagi sebentar lagi."
+    }
+  },
+  "scan": {
+    "aiConfidence": "Keyakinan {{confidence}}%",
+    "aiOff": "Ekstraksi AI dimatikan di AI & Pemrosesan Dokumen. Kuitansi tetap diperiksa dan dilampirkan; ketik sendiri detailnya.",
+    "checkThis": "Periksa ini",
+    "col": {
+      "claim": "Pada klaim",
+      "field": "Kolom",
+      "read": "Bacaan AI"
+    },
+    "corrected": "Dikoreksi",
+    "createClaim": "Buat Penggantian",
+    "extractionTitle": "Ekstraksi AI",
+    "fact": {
+      "file": "Berkas",
+      "hash": "SHA-256",
+      "size": "Ukuran",
+      "type": "Tipe",
+      "typeChecked": "{{type}}, diperiksa dari isinya"
+    },
+    "field": {
+      "category": "Kategori yang Disarankan",
+      "expenseDate": "Tanggal",
+      "grossAmount": "Jumlah Total",
+      "merchant": "Merchant",
+      "receiptNo": "No. Kuitansi",
+      "vatAmount": "PPN"
+    },
+    "keptApart": "Bacaan AI disimpan apa adanya, di samping isian Anda, agar koreksi tetap terlihat. Bacaan di bawah {{min}}% disorot.",
+    "lowHint": "AI hanya {{confidence}}% yakin. Periksa ini dengan kuitansi.",
+    "minConfidence": "nilai di bawah {{min}}% disorot",
+    "noPreview": "Peramban ini tidak dapat menampilkan gambar HEIC. File telah diperiksa dan dilampirkan.",
+    "noReceipt": "Tidak ada kuitansi?",
+    "readBy": "Dibaca oleh {{provider}}",
+    "receiptTitle": "Kuitansi",
+    "sampleNote": "Pembacaan contoh: dalam demo setiap tanda terima dibaca sebagai contoh ini, karena file tidak pernah keluar dari browser.",
+    "stage": {
+      "extracted": "Diekstraksi",
+      "extractedHint": "Kolom yang dibaca AI",
+      "normalizing": "Normalisasi",
+      "normalizingHint": "Diluruskan, dipotong, dikompres",
+      "pdfReady": "PDF Siap",
+      "pdfReadyHint": "PDF standar, file asli disimpan",
+      "skipped": "AI dimatikan",
+      "uploaded": "Diunggah",
+      "uploadedHint": "Jenis, ukuran, dan hash diperiksa",
+      "verified": "Terverifikasi",
+      "verifiedHint": "Diperiksa oleh Anda"
+    },
+    "stagesTitle": "Tahapan dokumen",
+    "startAgain": "Pindai Lagi",
+    "subtitle": "Ambil dari ponsel atau unggah tagihan, lalu tinjau kolom hasil ekstraksi sebelum membuat klaim.",
+    "tip": {
+      "light": "Cahaya cukup, tanpa bayangan di atas total.",
+      "private": "Dalam demo file tetap berada di browser ini.",
+      "whole": "Seluruh kuitansi di dalam bingkai, termasuk tepinya."
+    },
+    "title": "Pindai Kuitansi & Ekstraksi AI",
+    "typeIt": "Ketik detail dari kuitansi.",
+    "uploadHint": "Buka kamera atau unggah kuitansi",
+    "useSample": "Coba kuitansi contoh",
+    "waitingForReceipt": "Tambahkan kuitansi untuk dibaca.",
+    "working": {
+      "normalizing": "Meluruskan dan membersihkan gambar…",
+      "pdfReady": "Membuat PDF standar…",
+      "uploaded": "Memeriksa file…"
+    },
+    "aiPhotoOnly": "Pembacaan AI hanya tersedia untuk foto berformat JPG dan PNG.",
+    "aiUnclear": "Tidak dapat membaca rincian struk dengan jelas. Silakan masukkan secara manual.",
+    "aiUnreachable": "Tidak dapat menjangkau model AI. Masukkan rincian struk secara manual.",
+    "aiQuota": "Batas kecepatan AI tercapai. Harap tunggu sebentar atau masukkan rincian tanda terima secara manual.",
+    "aiBusy": "AI Google sedang sibuk saat ini. Coba lagi sebentar lagi, atau ketik detailnya secara manual."
+  },
+  "approval": {
+    "action": {
+      "review": "Tinjau"
+    },
+    "attachmentTitle": "Dokumen Pendukung",
+    "availableNow": "{{amount}} tersedia sekarang",
+    "backToInbox": "Kembali ke Kotak Persetujuan",
+    "changes": {
+      "after": "Diperbaiki setelah {{name}} mengembalikannya pada {{time}}:",
+      "title": "Diubah sejak dikembalikan"
+    },
+    "column": {
+      "amount": "Jumlah",
+      "person": "Orang",
+      "reference": "Referensi",
+      "step": "Status / Langkah Saat Ini",
+      "submitted": "Dikirim",
+      "type": "Jenis / Unit"
+    },
+    "days": "{{count}} h",
+    "decision": {
+      "approve": "Setujui",
+      "comment": "Komentar (wajib untuk mengembalikan atau menolak)",
+      "noMoney": "Menyetujui tidak memindahkan uang. Hanya Penyelesaian Keuangan yang membayar.",
+      "placeholder": "Apa yang perlu diketahui atau diperbaiki pemohon?",
+      "reasonNeeded": "Berikan alasan untuk mengembalikan atau menolak. Pemohon akan melihatnya.",
+      "reject": "Tolak",
+      "return": "Kembalikan untuk Perbaikan",
+      "title": "Keputusan Anda"
+    },
+    "detailsTitle": {
+      "additionalCash": "Permintaan Kas Tambahan",
+      "allocation": "Alokasi",
+      "preExpense": "Permintaan Pra-Pengeluaran",
+      "reimbursement": "Klaim",
+      "reallocation": "Permintaan Pengalihan"
+    },
+    "dueIn": "Jatuh tempo dalam {{span}}",
+    "empty": {
+      "decided": "Anda belum memutuskan permintaan apa pun.",
+      "scope": "Belum ada permintaan yang dikirim untuk persetujuan dalam cakupan Anda.",
+      "waiting": "Tidak ada yang menunggu keputusan Anda."
+    },
+    "ended": {
+      "approved": "Disetujui oleh {{name}} pada {{time}}.",
+      "cancelled": "Ditarik oleh {{name}} pada {{time}}.",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}.",
+      "returned": "Dikembalikan untuk perbaikan oleh {{name}} pada {{time}}."
+    },
+    "entity": "permintaan",
+    "filter": {
+      "allTypes": "Semua jenis permintaan",
+      "allUnits": "Semua unit"
+    },
+    "flag": {
+      "changed": "Diubah sejak dikembalikan",
+      "duplicate": "Kemungkinan tagihan ganda",
+      "onBehalf": "Dimasukkan orang lain atas nama orang ini",
+      "overAvailable": "Melebihi yang tersedia di alokasinya",
+      "lowConfidence": "Tingkat keyakinan pembacaan struk oleh AI rendah"
+    },
+    "hours": "{{count}} j",
+    "kind": {
+      "additionalCash": "Kas Tambahan",
+      "allocation": "Alokasi",
+      "preExpense": "Pra-Pengeluaran",
+      "reimbursement": "Penggantian Biaya",
+      "reallocation": "Pengalihan"
+    },
+    "next": "Berikutnya",
+    "openFile": "Buka",
+    "openRecord": "Buka catatan lengkap",
+    "othersTurn": "Menunggu {{names}} di langkah {{n}}. Anda dapat memantaunya di sini; hanya mereka yang dapat memutuskan.",
+    "outcome": {
+      "cash": "Langkah Anda yang terakhir. Menyetujui meneruskannya ke Keuangan untuk dicairkan; dihitung setelah pemegang kas memberi tanda terima.",
+      "claim": "Langkah Anda yang terakhir. Menyetujui mencadangkan jumlah pada alokasi sampai Keuangan membayarnya.",
+      "next": "Menyetujui meneruskannya ke langkah berikutnya ({{step}}): {{names}}.",
+      "preExpense": "Langkah Anda yang terakhir. Menyetujui memungkinkan karyawan berbelanja, dan menahan jumlahnya sampai diklaim.",
+      "salary": "Langkah Anda yang terakhir. Menyetujui meneruskannya ke Keuangan untuk dibayar bersama gaji berikutnya.",
+      "reallocation": "Langkah Anda adalah yang terakhir. Menyetujui memindahkan uang ke pemegang baru, yang lalu mengonfirmasi atau mengambil alihnya. Keuangan tidak membayar apa pun."
+    },
+    "overAvailable": "Ini melebihi yang tersedia di {{reference}} ({{available}}). Keuangan perlu menambah dananya sebelum membayar.",
+    "overAvailableBlocked": "Ini melebihi yang tersedia di {{reference}} ({{available}}), dan saldo tidak boleh di bawah nol. Persetujuan akhir memerlukan tambahan dana terlebih dahulu.",
+    "overdueBy": "Terlambat {{span}}",
+    "position": "{{n}} dari {{total}}",
+    "previous": "Sebelumnya",
+    "refusal": {
+      "changed": "Permintaan ini berubah sejak Anda membukanya. Muat ulang dan periksa perubahannya sebelum memutuskan.",
+      "decided": "Permintaan ini sudah diputuskan.",
+      "notEnoughCash": "{{reference}} hanya memiliki OMR {{available}} tersedia, dan saldo tidak boleh di bawah nol. Kembalikan permintaan, atau minta tambahan dana dari Keuangan terlebih dahulu.",
+      "notYourStep": "Langkah ini tidak menunggu Anda.",
+      "ownRequest": "Anda tidak dapat memutuskan permintaan yang melibatkan Anda."
+    },
+    "refusalHint": "{{reference}} hanya memiliki {{available}} tersedia, dan saldo tidak boleh di bawah nol. Kembalikan, atau minta tambahan dana dari Keuangan terlebih dahulu.",
+    "search": "Cari referensi, orang, atau tujuan",
+    "sentAt": "dikirim {{time}}",
+    "subtitle": "Permintaan yang menunggu keputusan Anda, semua dalam cakupan Anda, dan yang sudah Anda putuskan.",
+    "tile": {
+      "decided": "Anda Putuskan",
+      "decidedNote": "Disetujui, dikembalikan, atau ditolak",
+      "overdue": "Terlambat",
+      "overdueNote": "Melewati waktu yang diizinkan Pengaturan Alur Kerja",
+      "scope": "Dalam Persetujuan",
+      "summary": "Ringkasan persetujuan",
+      "waiting": "Menunggu Anda"
+    },
+    "title": "Kotak Persetujuan",
+    "toast": {
+      "approve": "{{reference}} telah disetujui.",
+      "reject": "{{reference}} telah ditolak.",
+      "return": "{{reference}} telah dikembalikan untuk perbaikan."
+    },
+    "view": {
+      "decided": "Saya putuskan",
+      "scope": "Semua dalam cakupan saya",
+      "waiting": "Menunggu saya"
+    },
+    "views": "Tampilan kotak persetujuan",
+    "where": {
+      "approved": "Di Keuangan untuk dibayar",
+      "disbursed": "Dibayarkan oleh Keuangan",
+      "returned": "Di pemohon untuk diperbaiki",
+      "spendable": "Kini bisa dibelanjakan, lalu diklaim"
+    },
+    "yourTurn": "Menunggu keputusan Anda di langkah {{n}}: {{step}}.",
+    "yoursToWatch": "Anda adalah pihak dalam permintaan ini, jadi tidak dapat memutuskannya. Permintaan ini menunggu {{names}} di langkah {{n}}.",
+    "openSourceRecord": "Buka alokasi"
+  },
+  "ack": {
+    "action": "Konfirmasi",
+    "amountReceived": "Jumlah diterima",
+    "bannerHint": "Saldo hanya naik setelah Anda mengonfirmasi uang tunai telah tiba.",
+    "bannerNone": "Tidak ada yang menunggu konfirmasi Anda.",
+    "bannerWaiting": "Menunggu konfirmasi Anda: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Jumlah",
+      "issued": "Diterbitkan",
+      "payment": "Metode / Referensi Pembayaran",
+      "recipient": "Penerima",
+      "reference": "Referensi",
+      "scope": "Cakupan Alokasi",
+      "status": "Keadaan"
+    },
+    "confirm": "Konfirmasi Penerimaan Jumlah",
+    "dialogTitle": "Konfirmasi Penerimaan Kas Kecil",
+    "entity": "pembayaran",
+    "filter": {
+      "allTypes": "Semua jenis"
+    },
+    "kind": {
+      "additionalCash": "Tambahan dana",
+      "allocation": "Alokasi",
+      "topUpOf": "Tambahan dana {{reference}}",
+      "handover": "Serah terima",
+      "reallocatedFrom": "Dialihkan dari {{reference}}"
+    },
+    "openAllocation": "Buka alokasi",
+    "refusal": {
+      "already": "Ini sudah dikonfirmasi. Tidak ada yang berubah.",
+      "notRecipient": "Hanya orang yang menerima uang tunai yang dapat mengonfirmasi penerimaannya."
+    },
+    "remarks": "Catatan (opsional)",
+    "remarksPlaceholder": "Misalnya: dihitung dan diterima lengkap.",
+    "search": "Cari referensi, penerima, atau referensi pembayaran",
+    "state": {
+      "acknowledged": "Telah dikonfirmasi",
+      "waiting": "Menunggu Tanda Terima"
+    },
+    "statement": "Dengan mengonfirmasi, Anda menyatakan telah menerima jumlah di atas. Jumlah itu lalu ditambahkan ke saldo alokasi, dan ini tidak dapat dibatalkan.",
+    "subtitle": "Konfirmasikan penerimaan kas kecil yang dibayarkan Keuangan, dan cetak voucher pembayarannya.",
+    "title": "Tanda Terima Alokasi",
+    "toast": {
+      "done": "Dikonfirmasi. {{amount}} kini tersedia di {{reference}}."
+    },
+    "waitingFor": "Menunggu {{name}}",
+    "reallocatedBy": "Dialihkan oleh {{name}}",
+    "takeOverTitle": "Ambil alih alokasi",
+    "takeOverStatement": "Saya mengonfirmasi telah menerima uang dan catatan alokasi ini, dan kini memegangnya.",
+    "takeOver": "Ambil alih"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Tarik"
+    },
+    "categoryPlaceholder": "Cari kategori penggantian…",
+    "check": {
+      "beneficiary": "Anda tidak dapat memasukkan permintaan untuk karyawan ini. Hanya orang dalam cakupan Anda yang bisa dipilih.",
+      "beneficiaryFixed": "Karyawan tidak dapat diubah setelah permintaan dikirim.",
+      "category": "Pilih kategori pengeluaran yang aktif.",
+      "chooseCategory": "Pilih kategori pengeluaran.",
+      "chooseEmployee": "Pilih karyawan.",
+      "costUnit": "Pilih unit tempat karyawan ini bernaung. Unit tidak aktif tidak dapat dibebani.",
+      "merchant": "Masukkan pedagang atau penerima.",
+      "purpose": "Jelaskan tujuan bisnisnya dalam beberapa kata.",
+      "vendor": "Vendor ini tidak aktif. Pilih yang lain, atau ketik nama pedagang."
+    },
+    "costHint": "Hanya unit tempat orang ini bernaung yang dapat dibebani.",
+    "employeePlaceholder": "Ketik nama atau ID karyawan…",
+    "ended": {
+      "cancelled": "Ditarik oleh {{name}} pada {{time}}.",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}.",
+      "returned": "Dikembalikan untuk perbaikan oleh {{name}} pada {{time}}."
+    },
+    "enteredBy": "Dimasukkan oleh {{name}}",
+    "field": {
+      "attachment": "Dokumen Pendukung",
+      "category": "Kategori Pengeluaran",
+      "chargedTo": "Dibebankan ke",
+      "costLevel": "Jenis Alokasi Biaya",
+      "costUnit": "Dibebankan ke",
+      "created": "Dibuat",
+      "employee": "Karyawan",
+      "enteredBy": "Dimasukkan oleh",
+      "for": "Untuk",
+      "merchant": "Pedagang / Penerima",
+      "submitFor": "Ajukan untuk"
+    },
+    "filter": {
+      "allEmployees": "Semua karyawan"
+    },
+    "merchantHint": "Pilih dari Master Vendor, atau ketik nama pedagang atau penerima jika tidak tercantum.",
+    "merchantPlaceholder": "Cari vendor atau ketik nama baru…",
+    "noAttachment": "Tidak ada lampiran",
+    "noMerchant": "Tidak diisi",
+    "onBehalfHint": "Hanya orang dalam cakupan Anda yang ditampilkan. Anda tercatat sebagai orang yang memasukkannya.",
+    "refusal": {
+      "notRequester": "Hanya orang yang memasukkan permintaan ini, atau orang yang dituju, yang dapat mengubahnya."
+    },
+    "submitFor": {
+      "onBehalf": "Atas nama karyawan lain",
+      "self": "Diri sendiri"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} telah ditarik."
+    },
+    "withdrawText": "Permintaan ditutup alih-alih diperbaiki dan dikirim ulang. Alasannya disimpan dalam riwayatnya.",
+    "withdrawTitle": "Tarik {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Lanjutkan Mengedit",
+      "correct": "Perbaiki dan Kirim Ulang"
+    },
+    "amount": {
+      "asEntered": "sesuai input",
+      "gross": "Total termasuk PPN",
+      "net": "Jumlah tanpa PPN",
+      "noVat": "PPN (tidak ada pada tagihan ini)",
+      "paid": "Total Dibayar"
+    },
+    "approvedNote": "Disetujui. Jumlahnya ditahan di alokasi; baru dibayar dan dicatat di buku besar saat Keuangan menyelesaikannya.",
+    "approvedSalaryNote": "Disetujui. Keuangan membayarnya pada penggajian berikutnya dan mencatat referensi penggajian.",
+    "backToClaim": "Kembali ke klaim",
+    "backToList": "Kembali ke Penggantian Biaya",
+    "basis": {
+      "direct": "Penggantian Langsung Pasca-Pengeluaran",
+      "directHint": "Uang sudah dibelanjakan, tanpa meminta persetujuan sebelumnya.",
+      "directShort": "Langsung",
+      "noneOpen": "Tidak ada permintaan disetujui dengan sisa untuk karyawan ini.",
+      "preApproved": "Atas Pengeluaran yang Sudah Disetujui",
+      "preApprovedHint": "Permintaan disetujui dengan sisa: {{count}}"
+    },
+    "chargeTitle": "Pembebanan dan Pembayaran",
+    "check": {
+      "basis": "Pilih dasar klaim.",
+      "choosePreApproval": "Pilih permintaan disetujui yang digunakan klaim ini.",
+      "expenseDate": "Pilih tanggal uang dibelanjakan.",
+      "fixFields": "Beberapa kolom perlu diperhatikan. Periksa yang ditandai merah.",
+      "futureDate": "Tanggal pengeluaran tidak boleh di masa depan.",
+      "noAllocation": "Unit ini tidak memiliki alokasi aktif, jadi klaim tidak dapat dibayar dari kas kecil. Pilih Gaji Karyawan, atau tanyakan ke Keuangan.",
+      "notEnoughCash": "{{reference}} hanya memiliki OMR {{available}} tersedia, dan saldo tidak boleh di bawah nol. Turunkan jumlah, pilih Gaji Karyawan, atau minta tambahan.",
+      "overPreApproval": "Klaim melebihi sisa pra-persetujuan (OMR {{remaining}}). Turunkan, atau klaim selisihnya secara langsung.",
+      "preApproval": "Pra-persetujuan ini tidak dapat digunakan: harus milik karyawan ini, disetujui, dan masih bersisa.",
+      "preApprovalUnit": "Klaim atas pra-persetujuan dibebankan ke unit yang sama dengan pra-persetujuannya.",
+      "receiptRequired": "Lampirkan kuitansi sebelum mengirim klaim ini. Kategori ini, atau pengaturan, mewajibkannya.",
+      "settlement": "Pilih cara klaim dibayar.",
+      "vat": "Pilih bagaimana PPN berlaku untuk jumlah."
+    },
+    "column": {
+      "amount": "Jumlah",
+      "basisPayment": "Dasar / Pembayaran",
+      "date": "Tanggal",
+      "employee": "Karyawan",
+      "expenseDate": "Tanggal Pengeluaran",
+      "merchant": "Pedagang / Kategori",
+      "reference": "Referensi",
+      "status": "Keadaan"
+    },
+    "costFromPreApproval": "Dibebankan di tempat pra-persetujuan menahan dananya.",
+    "deleteText": "Draf klaim dihapus. Tindakan ini tidak dapat dibatalkan.",
+    "deleteTitle": "Hapus {{reference}}?",
+    "descriptionPlaceholder": "Apa yang dibeli, dan alasan bisnisnya.",
+    "detailsTitle": "Detail Klaim",
+    "duplicate": {
+      "detailText": "Saat dikirim, ada klaim lain dengan pedagang dan nomor kuitansi yang sama, atau tanggal dan jumlah yang sama. Pastikan bukan tagihan yang sama:",
+      "formText": "Klaim lain memiliki pedagang yang sama dengan nomor kuitansi yang sama, atau tanggal dan jumlah yang sama. Anda tetap bisa mengajukan; penyetuju akan melihat ini:",
+      "title": "Kemungkinan duplikat.",
+      "tooltip": "Kemungkinan duplikat dari {{references}}"
+    },
+    "editTitle": "Perbaiki {{reference}}",
+    "entity": "penggantian biaya",
+    "field": {
+      "amount": "Jumlah (OMR)",
+      "amountNet": "Jumlah sebelum PPN (OMR)",
+      "basis": "Dasar Klaim",
+      "description": "Deskripsi Pengeluaran / Tujuan Bisnis",
+      "expenseDate": "Tanggal Pengeluaran",
+      "gross": "Total termasuk PPN",
+      "paidFrom": "Dibayar dari",
+      "preApproval": "Referensi Pra-Persetujuan",
+      "receipt": "Kuitansi / Tagihan",
+      "receiptNo": "No. Struk / Faktur",
+      "settlement": "Metode pembayaran",
+      "vatTreatment": "Perlakuan PPN"
+    },
+    "filter": {
+      "allBases": "Semua dasar klaim",
+      "allSettlements": "Semua metode pembayaran"
+    },
+    "fromScan": "Diisi dari Pindai Kuitansi. AI membacanya dengan keyakinan {{confidence}}%: periksa setiap nilai terhadap kuitansi sebelum mengajukan.",
+    "leftOf": "sisa {{left}} dari {{amount}}",
+    "new": "Penggantian Biaya Baru",
+    "newSubtitle": "Ajukan pengeluaran nyata untuk diganti.",
+    "newTitle": "Penggantian Biaya Baru",
+    "noAllocationNow": "Saat ini tidak ada alokasi aktif untuk unit ini",
+    "noReceipt": "Tidak ada kuitansi terlampir.",
+    "notEditable": "Klaim ini sudah melewati tahap perbaikan: tidak bisa diubah lagi.",
+    "notInLedger": "Tidak dicatat: dibayar bersama gaji",
+    "notScanned": "Diunggah tanpa pembacaan AI. Nilai diketik manual.",
+    "openScan": "Pindai dan biarkan AI mengisi klaim",
+    "orScan": "Kuitansinya ada?",
+    "preApprovalHint": "Hanya permintaan disetujui milik karyawan ini yang masih bersisa yang ditampilkan.",
+    "preApprovalPlaceholder": "Pilih permintaan yang disetujui…",
+    "receiptHint": "Letakkan kuitansi di sini, atau pilih file",
+    "receiptNeeded": "Kategori ini memerlukan kuitansi sebelum klaim dikirim.",
+    "receiptNoPlaceholder": "Referensi kuitansi atau faktur",
+    "receiptOptional": "Kuitansi opsional untuk kategori ini.",
+    "receiptReplaced": "Menggantikan {{name}}, diunggah {{date}}.",
+    "receiptTitle": "Kuitansi / Tagihan",
+    "required": "Wajib",
+    "resubmitNote": "Mengirim ulang membuat versi {{version}}. Penyetuju melihat apa yang Anda ubah.",
+    "scanReceipt": "Pindai Kuitansi",
+    "search": "Cari referensi, karyawan, pedagang, atau no. kuitansi",
+    "section": {
+      "amount": "Jumlah dan PPN",
+      "charge": "Pembebanan dan Pembayaran",
+      "expense": "Pengeluaran",
+      "receipt": "Kuitansi / Tagihan"
+    },
+    "settlement": {
+      "pettyCash": "Kas Kecil",
+      "pettyCashFrom": "Dari {{reference}} · tersedia {{available}}",
+      "pettyCashHint": "Dibayar dari alokasi kas kecil unit.",
+      "salary": "Gaji Karyawan",
+      "salaryHint": "Dibayar bersama gaji berikutnya. Kas kecil tidak tersentuh."
+    },
+    "subtitle": "Klaim untuk uang yang sudah dibelanjakan, langsung atau atas permintaan pra-pengeluaran yang disetujui.",
+    "summary": {
+      "allocationLeft": "Tersedia di",
+      "claiming": "Anda mengklaim",
+      "heldByPreApproval": "Sudah ditahan oleh pra-persetujuan di",
+      "noAllocation": "Unit ini tidak memiliki alokasi aktif. Keuangan mungkin membayarnya dengan cara lain.",
+      "noAllocationBlocked": "Unit ini tidak memiliki alokasi aktif, jadi tidak dapat dibayar dari kas kecil. Pilih Gaji Karyawan, atau tanyakan ke Keuangan.",
+      "preApprovalLeft": "Sisa di",
+      "routeLater": "Penyetuju akan tampil di sini setelah jumlah dan unit diisi.",
+      "salary": "Dibayar bersama gaji: tidak ada saldo kas kecil yang berubah.",
+      "short": "Melebihi yang tersedia di alokasi. Keuangan perlu menambahnya terlebih dahulu.",
+      "shortBlocked": "Melebihi yang tersedia di alokasi, dan saldo tidak boleh di bawah nol. Turunkan jumlah, pilih Gaji Karyawan, atau minta tambahan.",
+      "title": "Ringkasan klaim"
+    },
+    "tile": {
+      "claims": "Klaim",
+      "paid": "Dibayar Bulan Ini",
+      "paidNote": "Klaim dibayar: {{count}}",
+      "pending": "Dalam Persetujuan",
+      "summary": "Ringkasan penggantian",
+      "toPay": "Disetujui, Menunggu Pembayaran"
+    },
+    "title": "Penggantian Biaya",
+    "toast": {
+      "deleted": "{{reference}} telah dihapus.",
+      "saved": "{{reference}} disimpan sebagai draf.",
+      "submitted": "{{reference}} telah dikirim untuk persetujuan."
+    },
+    "vat": {
+      "exclusive": "Belum termasuk PPN",
+      "inclusive": "Termasuk PPN",
+      "none": "Tanpa PPN"
+    },
+    "vatOnReceipt": "PPN pada kuitansi, menurut bacaan AI: OMR {{vat}}",
+    "vatShort": "PPN {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Dimasukkan sebagai {{amount}} sebelum PPN {{rate}}%.",
+      "inclusive": "Dimasukkan sebagai {{amount}} termasuk PPN {{rate}}%.",
+      "none": "Dimasukkan sebagai {{amount}}. Tagihan tidak mengandung PPN."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Konfirmasi",
+      "allClaims": "Semua klaim saya",
+      "claimsCount": "Klaim: {{count}}",
+      "column": {
+        "amount": "Jumlah",
+        "date": "Tanggal",
+        "documents": "Dokumen",
+        "employee": "Karyawan",
+        "lastClaim": "Klaim Terakhir",
+        "open": "Permintaan terbuka",
+        "purpose": "Tujuan",
+        "reference": "Referensi",
+        "status": "Keadaan",
+        "thisMonth": "Bulan Ini"
+      },
+      "custodianTitle": "Kas Kecil Saya: {{unit}}",
+      "decisionsTitle": "Menunggu Keputusan Saya ({{count}})",
+      "enteredFor": "Dimasukkan untuk {{name}}",
+      "greeting": "Selamat datang kembali, {{name}}. Permintaan Anda, keputusan yang menunggu Anda, dan kas yang Anda pegang.",
+      "hasReceipt": "Struk terlampir",
+      "lowHint": "Hampir habis: minta tambahan dana sebelum habis.",
+      "managerText": "Ajukan pra-pengeluaran atau penggantian untuk anggota tim Anda, dalam unit yang boleh Anda tangani.",
+      "managerTitle": "Layanan Mandiri Manajer",
+      "movements": "Mutasi terbaru",
+      "newPreExpense": "Permintaan Pra-Pengeluaran",
+      "newReimbursement": "Penggantian Biaya",
+      "noMovements": "Belum ada mutasi.",
+      "noRequests": "Belum ada permintaan. Mulai satu di atas.",
+      "openInbox": "Kotak Persetujuan",
+      "overdue": "Terlambat: {{count}}",
+      "paidOn": "{{amount}} dibayar pada {{date}}",
+      "preExpenseBehalf": "Pra-Pengeluaran atas Nama Orang Lain",
+      "recentTitle": "Permintaan Terbaru Saya",
+      "reimbursementBehalf": "Penggantian atas Nama Orang Lain",
+      "requestTopUp": "Minta Tambahan Dana",
+      "shortcut": {
+        "preExpense": "Persetujuan Pra-Pengeluaran",
+        "preExpenseText": "Minta izin sebelum membelanjakan. Jumlah yang disetujui dipesan dari alokasi unit Anda.",
+        "reimbursement": "Penggantian Biaya",
+        "reimbursementText": "Klaim pengeluaran yang sudah dibayar, dengan struk dilampirkan atau dipindai.",
+        "scan": "Pindai Kuitansi",
+        "scanText": "Biarkan AI membaca pedagang, tanggal, PPN, jumlah, dan kategori dari struk."
+      },
+      "shortcuts": "Mulai permintaan",
+      "subtitle": "Permintaan Anda, keputusan yang menunggu Anda, dan kas yang Anda pegang.",
+      "teamTitle": "Tim Saya ({{count}})",
+      "tile": {
+        "approved": "Disetujui / Tersedia Saya",
+        "approvedNote": "Pra-pengeluaran disetujui untuk diklaim: {{count}}",
+        "awaiting": "Menunggu persetujuan",
+        "nothingReturned": "Tidak ada yang perlu diperbaiki",
+        "paid": "Dibayar Bulan Ini",
+        "paidNote": "Klaim dibayar: {{count}}",
+        "returned": "Dikembalikan ke Saya",
+        "returnedNote": "Perlu tindakan"
+      },
+      "title": "Dasbor Saya",
+      "toAcknowledge": "Kas yang dibayarkan kepada Anda menunggu konfirmasi Anda ({{count}})",
+      "topUpPending": "Tambahan dana dalam proses:",
+      "voucher": "Voucher {{voucher}}",
+      "waitingFor": "Di {{names}}",
+      "monthTitle": "Klaim Saya per Bulan",
+      "monthSubtitle": "Menurut tanggal pengeluaran, {{from}} sampai {{to}}",
+      "categoryTitle": "Pengeluaran Saya per Kategori",
+      "categorySubtitle": "Klaim saya bertanggal tahun ini, {{period}}",
+      "claimedThisYear": "Diklaim tahun ini",
+      "noClaims": "Belum ada klaim."
+    },
+    "chart": {
+      "amount": "Jumlah",
+      "businessUnit": "Unit Bisnis",
+      "category": "Kategori",
+      "categoryTitle": "Pengeluaran per Kategori",
+      "claims": "Klaim",
+      "funded": "Didanai",
+      "month": "Bulan",
+      "noMovement": "Tidak ada pergerakan kas pada periode ini.",
+      "noPaid": "Tidak ada klaim yang dibayar pada periode ini.",
+      "otherCategories": "Kategori lain ({{count}})",
+      "paidInPeriod": "Dibayar dalam periode",
+      "pettyCash": "Kas kecil",
+      "salary": "Bersama gaji",
+      "share": "Porsi",
+      "spent": "Dibelanjakan",
+      "total": "Jumlah Total",
+      "trendSubtitle": "Klaim yang dibayar, {{from}} sampai {{to}}",
+      "trendTitle": "Pengeluaran per Bulan",
+      "unitSubtitle": "Kas yang dikonfirmasi masuk ke alokasi tiap unit dan dibayarkan darinya, {{period}}",
+      "unitTitle": "Didanai dan Dibelanjakan per Unit Bisnis"
+    },
+    "finance": {
+      "attentionTitle": "Perlu Perhatian ({{count}})",
+      "noAttention": "Tidak ada yang perlu diperhatikan.",
+      "noPositions": "Tidak ada alokasi yang dikonfirmasi untuk unit ini.",
+      "positionTitle": "Posisi Alokasi",
+      "positionTotal": "Alokasi: {{count}}",
+      "showAll": "Tampilkan semua ({{count}})",
+      "showFewer": "Tampilkan lebih sedikit",
+      "subtitle": "Kas kecil di semua unit bisnis, departemen, dan proyek: apa yang ada, apa yang perlu ditindaklanjuti, dan ke mana uangnya pergi.",
+      "thresholdsLink": "Ambang",
+      "title": "Dasbor keuangan"
+    },
+    "column": {
+      "allocation": "Alokasi",
+      "available": "Tersedia",
+      "band": "Tingkat",
+      "financeUser": "Dibayar oleh",
+      "float": "Plafon kas",
+      "inUse": "Terpakai + dipesan",
+      "level": "Level",
+      "position": "Posisi",
+      "reserved": "Dipesan",
+      "used": "Terpakai",
+      "utilization": "Pemakaian"
+    },
+    "attention": {
+      "exceeded": "Terlampaui: terpakai dan dipesan {{amount}} lebih dari yang didanai",
+      "near": "Mendekati batas: tersisa {{percent}}% dari plafon kas",
+      "notAcknowledged": "Dibayar {{span}} lalu, belum dikonfirmasi",
+      "notAcknowledgedToday": "Dibayar hari ini, belum dikonfirmasi",
+      "overdueWith": "menunggu {{names}}",
+      "paidTo": "dibayarkan kepada {{name}}: {{amount}}",
+      "preparedBy": "Disiapkan oleh {{name}}",
+      "review": "menunggu peninjau · {{reference}}",
+      "toPay": "Klaim disetujui untuk dibayar: {{count}}",
+      "toPayNote": "{{amount}} · yang tertua disetujui {{span}} lalu",
+      "toPayNoteToday": "{{amount}} · disetujui hari ini",
+      "watch": "Dipantau: tersisa {{percent}}% dari plafon kas"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Terlampaui",
+      "near": "Mendekati batas",
+      "normal": "Normal",
+      "pending": "Belum didanai",
+      "watch": "Dipantau"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Saldo",
+      "bar": "Batang",
+      "followsFilters": "Mengikuti periode dan filter di atas.",
+      "line": "Tren",
+      "lineHint": "Selama periode, untuk lima baris terbesar.",
+      "metric": "Ukuran",
+      "name": "Nama",
+      "others": "Lainnya",
+      "period": "Periode",
+      "pie": "Porsi",
+      "type": "Jenis grafik"
+    },
+    "column": {
+      "allocated": "Dialokasikan",
+      "approved": "Disetujui",
+      "available": "Tersedia",
+      "businessUnit": "Unit Bisnis",
+      "category": "Kategori",
+      "charged": "Dibebankan ke",
+      "claimed": "Diklaim",
+      "claims": "Klaim",
+      "date": "Tanggal",
+      "department": "Departemen",
+      "departments": "Departemen",
+      "employee": "Karyawan",
+      "employeeId": "ID Karyawan",
+      "employees": "Karyawan",
+      "head": {
+        "businessUnit": "Kepala Unit Bisnis",
+        "department": "Kepala Departemen",
+        "project": "Manajer Proyek"
+      },
+      "lastClaim": "Klaim Terakhir",
+      "lastExpense": "Pengeluaran Terakhir",
+      "net": "Neto",
+      "paid": "Dibayar",
+      "paidOn": "Dibayar Pada",
+      "pending": "Belum Dibayar",
+      "project": "Proyek",
+      "projectCode": "Kode Proyek",
+      "recipient": "Karyawan / Penerima",
+      "reference": "Referensi",
+      "referenceDate": "Referensi / Tanggal",
+      "reimbursed": "Diganti",
+      "share": "% Pengeluaran",
+      "status": "Keadaan",
+      "statusPaid": "Status / Dibayar Pada",
+      "topVendor": "Merchant Teratas",
+      "total": "Jumlah Total",
+      "transactions": "Transaksi",
+      "vat": "PPN",
+      "vatin": "No. PPN",
+      "vendor": "Vendor / Merchant",
+      "vendorCategory": "Pedagang / Kategori",
+      "voucher": "No. Voucher"
+    },
+    "countedNote": "Klaim dihitung setelah diajukan, menurut tanggal pengeluaran: dalam persetujuan, disetujui dan menunggu pembayaran, atau dibayar. Draf serta klaim yang ditolak dan dibatalkan tidak dihitung.",
+    "empty": "Tidak ada yang dilaporkan untuk periode ini.",
+    "filter": {
+      "allCategories": "Semua kategori",
+      "allEmployees": "Semua karyawan",
+      "allStatuses": "Semua status",
+      "allVendors": "Semua merchant",
+      "search": "Cari",
+      "status": "Keadaan",
+      "unit": "Unit"
+    },
+    "metric": {
+      "amount": "Jumlah",
+      "available": "Saldo Tersedia",
+      "count": "Jumlah Klaim",
+      "paid": "Dibayar",
+      "pending": "Belum Dibayar"
+    },
+    "noMatch": "Tidak ada yang cocok dengan filter ini.",
+    "notListed": "Tidak ada di Master Vendor",
+    "openClaims": "Buka klaim ini",
+    "openingOn": "saldo awal pada akhir {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, menurut tanggal pengeluaran",
+    "periodLedger": "{{from}} – {{to}}, menurut tanggal buku",
+    "purpose": {
+      "businessUnit": "Biaya unit bisnis, termasuk departemen dan proyeknya, di samping kas kecilnya.",
+      "category": "Pengeluaran per kategori, dengan merchant tempat pengeluaran terbesar dan porsi setiap kategori.",
+      "department": "Biaya departemen: klaim yang dibebankan ke setiap departemen, di samping kas kecilnya.",
+      "employee": "Klaim per karyawan: diklaim, disetujui, dibayar, dan belum dibayar.",
+      "ledger": "Pendanaan, pengeluaran, dan penyesuaian selama periode, dengan saldo berjalan setiap alokasi.",
+      "project": "Biaya proyek: klaim yang dibebankan ke setiap proyek, di samping kas kecilnya.",
+      "transactions": "Setiap klaim dalam periode, dengan merchant, pembebanan, dan posisinya.",
+      "vendor": "Ke mana uang dibelanjakan: klaim per merchant, yang terdaftar di Master Vendor atau diketik pada klaim."
+    },
+    "refusal": {
+      "period": "Pilih periode dari satu hari hingga hari yang sama atau hari berikutnya."
+    },
+    "search": {
+      "ledger": "Cari entri, referensi, voucher, orang, atau keterangan",
+      "summary": "Cari nama dalam laporan ini",
+      "transactions": "Cari referensi, orang, merchant, atau deskripsi"
+    },
+    "status": {
+      "approved": "Disetujui, Belum Dibayar",
+      "inApproval": "Dalam Persetujuan",
+      "paid": "Dibayar"
+    },
+    "summary": "Ringkasan laporan",
+    "tile": {
+      "claimed": "Total Diklaim",
+      "claimedNote": "Dalam persetujuan, disetujui, dan dibayar",
+      "claims": "Klaim",
+      "claimsNote": "Orang: {{count}}",
+      "paid": "Dibayar",
+      "paidNote": "{{percent}}% dari total",
+      "pending": "Belum Dibayar",
+      "pendingNote": "Dalam persetujuan atau menunggu pembayaran"
+    },
+    "totalRow": "Jumlah Total",
+    "view": {
+      "chart": "Grafik",
+      "table": "Tabel"
+    },
+    "viewAs": "Tampilkan sebagai"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Transfer bank",
+      "cash": "Tunai",
+      "cheque": "Cek",
+      "salary": "Gaji"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Dilewati: orang yang sama sudah menyetujui langkah sebelumnya",
+        "belowAmount": "Dilewati: jumlah tidak melebihi ambang",
+        "incomplete": "Pilih sumber penyetuju",
+        "noApprover": "Tidak ditemukan penyetuju aktif",
+        "noProject": "Dilewati: permintaan ini tidak punya proyek",
+        "selfApproval": "Dilewati: pemohon akan menyetujui permintaannya sendiri"
+      }
+    }
+  }
+}

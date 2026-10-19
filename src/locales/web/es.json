@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Añadir",
+    "addEntity": "Añadir {{entity}}",
+    "back": "Atrás",
+    "cancel": "Cancelar",
+    "clearAll": "Borrar todo",
+    "close": "Cerrar",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "export": "Exportar",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "saveChanges": "Guardar cambios",
+    "search": "Buscar",
+    "view": "Ver",
+    "viewAll": "Ver todo"
+  },
+  "status": {
+    "active": "Activo",
+    "all": "Todos",
+    "inactive": "Inactivo",
+    "no": "No",
+    "yes": "Sí"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Cancelar solicitud",
+      "saveDraft": "Guardar borrador",
+      "submit": "Enviar a aprobación",
+      "submitForApproval": "Enviar para aprobación"
+    },
+    "filter": {
+      "allStatuses": "Todos los estados",
+      "from": "Desde",
+      "to": "Hasta"
+    },
+    "history": {
+      "acknowledged": "acusó recibo",
+      "approved": "la aprobó",
+      "cancelled": "la canceló",
+      "created": "creó la solicitud",
+      "disbursed": "pagó el importe",
+      "edited": "hizo cambios",
+      "empty": "(vacío)",
+      "paid": "la pagó",
+      "rejected": "la rechazó",
+      "resubmitted": "la volvió a enviar a aprobación",
+      "returned": "la devolvió para corrección",
+      "submitted": "la envió a aprobación",
+      "title": "Historial",
+      "reallocated": "la reasignó",
+      "takenOver": "la asumió"
+    },
+    "notFound": "Este registro no existe o está fuera de lo que puede ver.",
+    "path": {
+      "decidedBy": {
+        "approved": "Aprobada por {{name}} el {{time}}",
+        "rejected": "Rechazada por {{name}} el {{time}}",
+        "returned": "Devuelta por {{name}} el {{time}}"
+      },
+      "notSent": "Aún no enviada a aprobación.",
+      "overdue": "Vencido",
+      "state": {
+        "approved": "Aprobado",
+        "pending": "En espera",
+        "rejected": "Rechazado",
+        "returned": "Devuelta",
+        "skipped": "Omitido",
+        "waiting": "Aún no alcanzado"
+      },
+      "title": "Ruta de aprobación",
+      "waitingSince": "Esperando desde {{time}} · {{hours}} h permitidas",
+      "willGoTo": "Irá a"
+    },
+    "reason": "Motivo",
+    "reasonRequired": "Indique un motivo. Se guarda en el historial de la solicitud.",
+    "refusal": {
+      "alreadyPosted": "Ya está en el libro mayor, así que no se cambió nada.",
+      "amount": "Introduzca un importe mayor que cero con un máximo de tres decimales.",
+      "amountTooLarge": "El importe no puede superar {{max}} OMR.",
+      "noApprover": "Un paso del flujo no tiene a quién enviar esta solicitud. Pida a un administrador que revise la configuración de flujos.",
+      "noWorkflow": "Ningún flujo activo cubre esta solicitud. Pida a un administrador que revise la configuración de flujos.",
+      "nobodyLeft": "Todos los que podrían aprobar esta solicitud forman parte de ella, así que no queda nadie para aprobarla. Cambie el beneficiario o pida a un administrador que revise la configuración de flujos.",
+      "notAllowed": "Su rol no lo permite.",
+      "notEditable": "Solo se puede cambiar un borrador o una solicitud devuelta.",
+      "notFound": "Este registro no existe o está fuera de lo que puede ver.",
+      "notNow": "No se puede hacer con la solicitud en su estado actual.",
+      "onlyDrafts": "Solo se puede eliminar un borrador. Cancélela en su lugar.",
+      "reasonRequired": "Indique un motivo.",
+      "savedMeanwhile": "Otra persona guardó esto mientras tanto, así que no se cambió nada. Vuelva a cargar e inténtelo de nuevo.",
+      "signedOut": "Su sesión ha terminado. Inicie sesión de nuevo.",
+      "underApproval": "Está esperando a un aprobador. Espere la decisión o pida que se devuelva."
+    },
+    "returnedBecause": "Devuelta para corrección:",
+    "status": {
+      "acknowledged": "Confirmado",
+      "active": "Activo",
+      "approved": "Aprobado",
+      "cancelled": "Cancelado",
+      "closed": "Cerrado",
+      "disbursed": "Pendiente de acuse",
+      "draft": "Borrador",
+      "inApproval": "En aprobación",
+      "paid": "Pagado",
+      "rejected": "Rechazado",
+      "returned": "Devuelta",
+      "submitted": "Enviado"
+    }
+  },
+  "auth": {
+    "brandTagline": "Gestión de caja chica",
+    "company": "Empresa",
+    "demoBadge": "Demo",
+    "demoNotice": "Modo demo: el inicio de sesión es simulado y cada pantalla muestra datos de ejemplo hasta que llegue la API.",
+    "feature": {
+      "allocations": "Asignaciones por departamento y proyecto",
+      "permissions": "Matriz de roles y permisos",
+      "selfService": "Autoservicio para empleados y responsables",
+      "thresholds": "Supervisión de umbrales",
+      "twoFactor": "Inicio de sesión en dos pasos",
+      "workflows": "Aprobaciones antes y después del gasto"
+    },
+    "password": "Contraseña",
+    "passwordDemoHint": "No se verifica en la demo. En el sistema real, el inicio de sesión comprueba tu contraseña y el código de doble factor.",
+    "persona": {
+      "auditor": "Auditor (solo lectura)",
+      "employee": "Autoservicio del empleado",
+      "finance": "Jefe de finanzas / Administrador",
+      "manager": "Responsable de departamento / proyecto"
+    },
+    "personaLabel": "Perfil de demostración",
+    "pitch": "Asigne caja chica, apruebe gastos previstos, reembolse los reales, dirija las aprobaciones por su organización, lea recibos con IA y concilie cada transacción.",
+    "rememberMe": "Mantener la sesión iniciada",
+    "signIn": "Iniciar sesión",
+    "signInButton": "Iniciar sesión",
+    "signInHint": "Elija un perfil de demostración para ver las pantallas que usa ese rol.",
+    "twoFactor": {
+      "back": "Atrás",
+      "demoHint": "Demo: se acepta cualquier combinación de seis dígitos.",
+      "digit": "Dígito {{n}} de 6",
+      "incomplete": "Introduzca los seis dígitos.",
+      "panelText": "Un código de una app de autenticación confirma que realmente es usted. La política puede exigirlo a todos, por rol o a usuarios seleccionados.",
+      "panelTitle": "Verificación en dos pasos",
+      "subtitle": "Introduzca el código de 6 dígitos de su app de autenticación.",
+      "title": "Introduzca el código de verificación",
+      "trustDevice": "Confiar en este dispositivo durante 30 días",
+      "verify": "Verificar y continuar",
+      "wrongCode": "Ese código no es correcto. Vuelva a intentarlo.",
+      "expired": "Este inicio de sesión ha caducado. Vuelva atrás e inicie sesión de nuevo.",
+      "useRecovery": "Usar un código de recuperación",
+      "useApp": "Usar la app de autenticación",
+      "recoveryTitle": "Introduzca un código de recuperación",
+      "recoveryHint": "Escriba uno de los códigos de recuperación que guardó. Cada código funciona una sola vez.",
+      "trustDeviceDays": "Confiar en este dispositivo durante {{n}} días",
+      "enrollTitle": "Configurar el inicio de sesión en dos pasos",
+      "enrollSubtitle": "Su cuenta debe usar una app de autenticación. Configúrela ahora para terminar de iniciar sesión."
+    },
+    "twoFactorNote": "El inicio de sesión en dos pasos puede estar desactivado, ser opcional u obligatorio por rol.",
+    "username": "Correo o nombre de usuario",
+    "signInHintApi": "Inicie sesión con su cuenta de CashFlow.",
+    "error": {
+      "invalid": "Nombre de usuario o contraseña no válidos.",
+      "tooMany": "Demasiados intentos. Espere un minuto y vuelva a intentarlo.",
+      "noApi": "No se puede contactar con el servidor. Vuelva a intentarlo en un momento."
+    }
+  },
+  "scan": {
+    "aiConfidence": "{{confidence}} % de confianza",
+    "aiOff": "La extracción con IA está desactivada en IA y procesamiento de documentos. El recibo igualmente se comprueba y se adjunta; escriba usted los datos.",
+    "checkThis": "Revisar",
+    "col": {
+      "claim": "En la reclamación",
+      "field": "Campo",
+      "read": "Leído por IA"
+    },
+    "corrected": "Corregido",
+    "createClaim": "Crear reembolso",
+    "extractionTitle": "Extracción con IA",
+    "fact": {
+      "file": "Archivo",
+      "hash": "SHA-256",
+      "size": "Tamaño",
+      "type": "Tipo",
+      "typeChecked": "{{type}}, comprobado por su contenido"
+    },
+    "field": {
+      "category": "Categoría sugerida",
+      "expenseDate": "Fecha",
+      "grossAmount": "Total",
+      "merchant": "Comercio",
+      "receiptNo": "N.º de recibo",
+      "vatAmount": "IVA"
+    },
+    "keptApart": "Lo que leyó la IA se conserva tal cual, junto a lo que usted ingresa, para que una corrección siga visible. Se resaltan las lecturas por debajo del {{min}} %.",
+    "lowHint": "La IA solo tiene un {{confidence}} % de certeza. Compruébelo con el recibo.",
+    "minConfidence": "se resaltan los valores por debajo del {{min}} %",
+    "noPreview": "Este navegador no puede mostrar imágenes HEIC. El archivo se comprobó y está adjunto.",
+    "noReceipt": "¿No tiene un recibo a mano?",
+    "readBy": "Leído por {{provider}}",
+    "receiptTitle": "Recibo",
+    "sampleNote": "Lectura de muestra: en la demo cada recibo se lee como esta muestra, porque el archivo nunca sale del navegador.",
+    "stage": {
+      "extracted": "Extraído",
+      "extractedHint": "Campos leídos por la IA",
+      "normalizing": "Normalizando",
+      "normalizingHint": "Enderezado, recortado, comprimido",
+      "pdfReady": "PDF listo",
+      "pdfReadyHint": "PDF estándar, original conservado",
+      "skipped": "La IA está desactivada",
+      "uploaded": "Subido",
+      "uploadedHint": "Tipo, tamaño y hash comprobados",
+      "verified": "Verificado",
+      "verifiedHint": "Revisado por usted"
+    },
+    "stagesTitle": "Etapas del documento",
+    "startAgain": "Escanear otro",
+    "subtitle": "Capture desde el móvil o suba una factura y revise los campos extraídos antes de crear una reclamación.",
+    "tip": {
+      "light": "Buena luz, sin sombras sobre el total.",
+      "private": "En la demo el archivo permanece en este navegador.",
+      "whole": "El recibo completo en el encuadre, bordes incluidos."
+    },
+    "title": "Escaneo de recibos y extracción con IA",
+    "typeIt": "Escriba los datos del recibo.",
+    "uploadHint": "Abra la cámara o suba un recibo",
+    "useSample": "Probar el recibo de muestra",
+    "waitingForReceipt": "Añada un recibo para leerlo.",
+    "working": {
+      "normalizing": "Enderezando y limpiando la imagen…",
+      "pdfReady": "Generando el PDF estándar…",
+      "uploaded": "Comprobando el archivo…"
+    },
+    "aiPhotoOnly": "La lectura por IA solo está disponible para fotos JPG y PNG.",
+    "aiUnclear": "No se pudieron leer con claridad los detalles del recibo. Escríbalos manualmente.",
+    "aiUnreachable": "No se puede acceder al modelo de IA. Ingrese los detalles del recibo manualmente.",
+    "aiQuota": "Límite de velocidad de IA alcanzado. Espere un momento o introduzca los datos del recibo manualmente.",
+    "aiBusy": "La IA de Google está ocupada en este momento. Inténtelo de nuevo en un momento o escriba los detalles."
+  },
+  "approval": {
+    "action": {
+      "review": "Revisar"
+    },
+    "attachmentTitle": "Documento de soporte",
+    "availableNow": "{{amount}} disponibles ahora",
+    "backToInbox": "Volver a la bandeja de aprobaciones",
+    "changes": {
+      "after": "Corregida después de que {{name}} la devolviera el {{time}}:",
+      "title": "Cambiada desde su devolución"
+    },
+    "column": {
+      "amount": "Importe",
+      "person": "Persona",
+      "reference": "Referencia",
+      "step": "Estado / Paso actual",
+      "submitted": "Enviada",
+      "type": "Tipo / Unidad"
+    },
+    "days": "{{count}} d",
+    "decision": {
+      "approve": "Aprobar",
+      "comment": "Comentario (necesario para devolver o rechazar)",
+      "noMoney": "Aprobar no mueve dinero. Solo Liquidación financiera paga.",
+      "placeholder": "¿Qué debe saber o corregir el solicitante?",
+      "reasonNeeded": "Indique un motivo para devolver o rechazar. El solicitante lo verá.",
+      "reject": "Rechazar",
+      "return": "Devolver para corrección",
+      "title": "Su decisión"
+    },
+    "detailsTitle": {
+      "additionalCash": "Solicitud de efectivo adicional",
+      "allocation": "Asignación",
+      "preExpense": "Solicitud de gasto previo",
+      "reimbursement": "Reclamación",
+      "reallocation": "Solicitud de Reasignación"
+    },
+    "dueIn": "Vence en {{span}}",
+    "empty": {
+      "decided": "Aún no ha decidido ninguna solicitud.",
+      "scope": "No se han enviado solicitudes a aprobación en su ámbito.",
+      "waiting": "Nada espera su decisión."
+    },
+    "ended": {
+      "approved": "Aprobada por {{name}} el {{time}}.",
+      "cancelled": "Retirada por {{name}} el {{time}}.",
+      "rejected": "Rechazada por {{name}} el {{time}}.",
+      "returned": "Devuelta para corrección por {{name}} el {{time}}."
+    },
+    "entity": "solicitudes",
+    "filter": {
+      "allTypes": "Todos los tipos de solicitud",
+      "allUnits": "Todas las unidades"
+    },
+    "flag": {
+      "changed": "Cambiada desde su devolución",
+      "duplicate": "Posible factura duplicada",
+      "onBehalf": "Registrada por otra persona en nombre de esta",
+      "overAvailable": "Más de lo que su asignación tiene disponible",
+      "lowConfidence": "La lectura del recibo por IA tiene baja confianza"
+    },
+    "hours": "{{count}} h",
+    "kind": {
+      "additionalCash": "Efectivo adicional",
+      "allocation": "Asignación",
+      "preExpense": "Gasto previo",
+      "reimbursement": "Reembolso de gastos",
+      "reallocation": "Reasignación"
+    },
+    "next": "Siguiente",
+    "openFile": "Abrir",
+    "openRecord": "Abrir el registro completo",
+    "othersTurn": "Espera a {{names}} en el paso {{n}}. Puede seguirla aquí; solo ellos pueden decidir.",
+    "outcome": {
+      "cash": "Su paso es el último. Aprobar la pasa a Finanzas para desembolsarla; cuenta cuando el custodio acusa recibo.",
+      "claim": "Su paso es el último. Aprobar reserva el importe en la asignación hasta que Finanzas lo pague.",
+      "next": "Aprobar la envía al siguiente paso ({{step}}): {{names}}.",
+      "preExpense": "Su paso es el último. Aprobar permite al empleado gastar y retiene el importe hasta que se reclame.",
+      "salary": "Su paso es el último. Aprobar la pasa a Finanzas para pagarla con el próximo salario.",
+      "reallocation": "Su paso es el último. Aprobar pasa el efectivo al nuevo custodio, que confirma su recepción o lo asume. Finanzas no paga nada."
+    },
+    "overAvailable": "Es más de lo que {{reference}} tiene disponible ({{available}}). Finanzas tendrá que reponerla antes de pagar.",
+    "overAvailableBlocked": "Es más de lo que {{reference}} tiene disponible ({{available}}), y un saldo no puede quedar por debajo de cero. La aprobación final necesita antes una reposición.",
+    "overdueBy": "Vencida hace {{span}}",
+    "position": "{{n}} de {{total}}",
+    "previous": "Anterior",
+    "refusal": {
+      "changed": "Esta solicitud cambió desde que la abrió. Vuelva a cargarla y revise los cambios antes de decidir.",
+      "decided": "Esta solicitud ya fue decidida.",
+      "notEnoughCash": "{{reference}} solo tiene OMR {{available}} disponible, y un saldo no puede quedar por debajo de cero. Devuelva la solicitud o pida antes una reposición a Finanzas.",
+      "notYourStep": "Este paso no le espera a usted.",
+      "ownRequest": "No puede decidir una solicitud de la que es parte."
+    },
+    "refusalHint": "{{reference}} solo tiene {{available}} disponible, y un saldo no puede quedar por debajo de cero. Devuélvala o pida antes una reposición a Finanzas.",
+    "search": "Buscar referencia, persona o propósito",
+    "sentAt": "enviada {{time}}",
+    "subtitle": "Solicitudes que esperan su decisión, todo lo de su ámbito y lo que usted ha decidido.",
+    "tile": {
+      "decided": "Decididas por usted",
+      "decidedNote": "Aprobadas, devueltas o rechazadas",
+      "overdue": "Vencido",
+      "overdueNote": "Supera el plazo que permite la configuración de flujos",
+      "scope": "En aprobación",
+      "summary": "Resumen de aprobaciones",
+      "waiting": "Esperan por usted"
+    },
+    "title": "Bandeja de aprobaciones",
+    "toast": {
+      "approve": "{{reference}} fue aprobada.",
+      "reject": "{{reference}} fue rechazada.",
+      "return": "{{reference}} fue devuelta para corrección."
+    },
+    "view": {
+      "decided": "Decididas por mí",
+      "scope": "Todo mi ámbito",
+      "waiting": "Esperan por mí"
+    },
+    "views": "Vistas de la bandeja",
+    "where": {
+      "approved": "Con Finanzas para pagar",
+      "disbursed": "Pagada por Finanzas",
+      "returned": "Con el solicitante para corregir",
+      "spendable": "Ya se puede gastar y luego reclamar"
+    },
+    "yourTurn": "Espera su decisión en el paso {{n}}: {{step}}.",
+    "yoursToWatch": "Usted es parte de esta solicitud, así que no puede decidirla. Espera a {{names}} en el paso {{n}}.",
+    "openSourceRecord": "Abrir la asignación"
+  },
+  "ack": {
+    "action": "Confirmar",
+    "amountReceived": "Importe recibido",
+    "bannerHint": "El saldo solo sube cuando confirma que el efectivo llegó.",
+    "bannerNone": "No hay nada pendiente de su acuse.",
+    "bannerWaiting": "Pendiente de su acuse: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Importe",
+      "issued": "Emitido",
+      "payment": "Forma de pago / Referencia",
+      "recipient": "Receptor",
+      "reference": "Referencia",
+      "scope": "Ámbito de la asignación",
+      "status": "Estado"
+    },
+    "confirm": "Acusar recibo del importe",
+    "dialogTitle": "Acusar recibo de caja chica",
+    "entity": "pago",
+    "filter": {
+      "allTypes": "Todos los tipos"
+    },
+    "kind": {
+      "additionalCash": "Reposición",
+      "allocation": "Asignación",
+      "topUpOf": "Reposición de {{reference}}",
+      "handover": "Entrega",
+      "reallocatedFrom": "Reasignada desde {{reference}}"
+    },
+    "openAllocation": "Abrir la asignación",
+    "refusal": {
+      "already": "Ya se acusó recibo. No se cambió nada.",
+      "notRecipient": "Solo quien recibió el efectivo puede acusar recibo."
+    },
+    "remarks": "Observaciones (opcional)",
+    "remarksPlaceholder": "Por ejemplo: contado y recibido completo.",
+    "search": "Buscar referencia, receptor o referencia de pago",
+    "state": {
+      "acknowledged": "Confirmado",
+      "waiting": "Pendiente de acuse"
+    },
+    "statement": "Al confirmar, reconoce que recibió el importe indicado arriba. Se suma entonces al saldo de la asignación, y no se puede deshacer.",
+    "subtitle": "Confirme la recepción de la caja chica pagada por Finanzas e imprima los comprobantes de pago.",
+    "title": "Acuses de asignaciones",
+    "toast": {
+      "done": "Recibo acusado. {{amount}} ya está disponible en {{reference}}."
+    },
+    "waitingFor": "Esperando a {{name}}",
+    "reallocatedBy": "Reasignada por {{name}}",
+    "takeOverTitle": "Asumir una asignación",
+    "takeOverStatement": "Confirmo que he recibido el efectivo y los registros de esta asignación y que ahora la custodio.",
+    "takeOver": "Asumir"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Retirar"
+    },
+    "categoryPlaceholder": "Buscar categoría de reembolso…",
+    "check": {
+      "beneficiary": "No puede registrar una solicitud para este empleado. Solo se pueden elegir personas de su ámbito.",
+      "beneficiaryFixed": "No se puede cambiar el empleado una vez enviada la solicitud.",
+      "category": "Elija una categoría de gasto activa.",
+      "chooseCategory": "Elija una categoría de gasto.",
+      "chooseEmployee": "Elija el empleado.",
+      "costUnit": "Elija una unidad a la que pertenezca este empleado. No se puede cargar a unidades inactivas.",
+      "merchant": "Indique el comercio o beneficiario.",
+      "purpose": "Describa el propósito comercial en pocas palabras.",
+      "vendor": "Este proveedor está inactivo. Elija otro o escriba el nombre del comercio."
+    },
+    "costHint": "Solo se puede cargar a las unidades a las que pertenece esta persona.",
+    "employeePlaceholder": "Escriba el nombre o ID del empleado…",
+    "ended": {
+      "cancelled": "Retirada por {{name}} el {{time}}.",
+      "rejected": "Rechazada por {{name}} el {{time}}.",
+      "returned": "Devuelta para corrección por {{name}} el {{time}}."
+    },
+    "enteredBy": "Registrado por {{name}}",
+    "field": {
+      "attachment": "Documento de soporte",
+      "category": "Categoría de gasto",
+      "chargedTo": "Cargado a",
+      "costLevel": "Tipo de imputación de costos",
+      "costUnit": "Cargado a",
+      "created": "Creada",
+      "employee": "Empleado",
+      "enteredBy": "Registrado por",
+      "for": "Para",
+      "merchant": "Comercio / Beneficiario",
+      "submitFor": "Presentar para"
+    },
+    "filter": {
+      "allEmployees": "Todos los empleados"
+    },
+    "merchantHint": "Elija del maestro de proveedores o escriba el comercio o beneficiario si no está en la lista.",
+    "merchantPlaceholder": "Busque un proveedor o escriba un nombre nuevo…",
+    "noAttachment": "Sin adjunto",
+    "noMerchant": "No indicado",
+    "onBehalfHint": "Solo se muestran personas de su ámbito. Usted queda registrado como quien lo ingresó.",
+    "refusal": {
+      "notRequester": "Solo quien registró esta solicitud, o la persona para quien es, puede modificarla."
+    },
+    "submitFor": {
+      "onBehalf": "En nombre de otro empleado",
+      "self": "Para mí"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} se retiró."
+    },
+    "withdrawText": "La solicitud se cierra en lugar de corregirse y enviarse de nuevo. El motivo queda en su historial.",
+    "withdrawTitle": "¿Retirar {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Seguir editando",
+      "correct": "Corregir y reenviar"
+    },
+    "amount": {
+      "asEntered": "según lo ingresado",
+      "gross": "Total con IVA",
+      "net": "Importe sin IVA",
+      "noVat": "IVA (ninguno en esta factura)",
+      "paid": "Total pagado"
+    },
+    "approvedNote": "Aprobado. El importe queda reservado en la asignación; solo se paga y se registra en el libro cuando Finanzas lo liquida.",
+    "approvedSalaryNote": "Aprobado. Finanzas lo paga en la próxima nómina y registra la referencia de nómina.",
+    "backToClaim": "Volver a la reclamación",
+    "backToList": "Volver a reembolsos",
+    "basis": {
+      "direct": "Reembolso directo posterior al gasto",
+      "directHint": "Dinero ya gastado, sin aprobación solicitada de antemano.",
+      "directShort": "Directo",
+      "noneOpen": "No hay solicitudes aprobadas con saldo para este empleado.",
+      "preApproved": "Sobre un gasto aprobado previamente",
+      "preApprovedHint": "Solicitudes aprobadas con saldo: {{count}}"
+    },
+    "chargeTitle": "Imputación y pago",
+    "check": {
+      "basis": "Elija una base de reclamación.",
+      "choosePreApproval": "Elija la solicitud aprobada que usa esta reclamación.",
+      "expenseDate": "Elija la fecha en que se gastó el dinero.",
+      "fixFields": "Algunos campos requieren atención. Revise los marcados en rojo.",
+      "futureDate": "La fecha del gasto no puede ser futura.",
+      "noAllocation": "Esta unidad no tiene asignación activa, así que la reclamación no puede pagarse con caja chica. Elija Salario del empleado o consulte a Finanzas.",
+      "notEnoughCash": "{{reference}} solo tiene OMR {{available}} disponible, y un saldo no puede quedar por debajo de cero. Reduzca el importe, elija Salario del empleado o pida una reposición.",
+      "overPreApproval": "La reclamación supera lo que queda de la aprobación previa (OMR {{remaining}}). Redúzcala o reclame la diferencia directamente.",
+      "preApproval": "No se puede usar esta aprobación previa: debe ser de este empleado, estar aprobada y tener saldo.",
+      "preApprovalUnit": "Una reclamación sobre una aprobación previa se carga a la misma unidad que la aprobación previa.",
+      "receiptRequired": "Adjunte el recibo antes de enviar esta reclamación. Esta categoría o la configuración lo exigen.",
+      "settlement": "Elija cómo se paga la reclamación.",
+      "vat": "Elija cómo se aplica el IVA al importe."
+    },
+    "column": {
+      "amount": "Importe",
+      "basisPayment": "Base / pago",
+      "date": "Fecha",
+      "employee": "Empleado",
+      "expenseDate": "Fecha del gasto",
+      "merchant": "Comercio / categoría",
+      "reference": "Referencia",
+      "status": "Estado"
+    },
+    "costFromPreApproval": "Se carga donde la aprobación previa reserva su importe.",
+    "deleteText": "Se elimina el borrador de la reclamación. No se puede deshacer.",
+    "deleteTitle": "¿Eliminar {{reference}}?",
+    "descriptionPlaceholder": "Qué se compró y el motivo comercial.",
+    "detailsTitle": "Detalles de la reclamación",
+    "duplicate": {
+      "detailText": "Al enviarse, otra reclamación tenía el mismo comercio con el mismo número de recibo, o la misma fecha e importe. Compruebe que no sea la misma factura:",
+      "formText": "Otra reclamación tiene el mismo comercio con el mismo número de recibo, o la misma fecha e importe. Aún puede enviarla; quien aprueba verá esto:",
+      "title": "Posible duplicado.",
+      "tooltip": "Posible duplicado de {{references}}"
+    },
+    "editTitle": "Corregir {{reference}}",
+    "entity": "reembolsos",
+    "field": {
+      "amount": "Importe (OMR)",
+      "amountNet": "Importe antes de IVA (OMR)",
+      "basis": "Base de la reclamación",
+      "description": "Descripción del gasto / propósito comercial",
+      "expenseDate": "Fecha del gasto",
+      "gross": "Total con IVA",
+      "paidFrom": "Pagado desde",
+      "preApproval": "Referencia de aprobación previa",
+      "receipt": "Recibo / factura",
+      "receiptNo": "N.º de recibo / factura",
+      "settlement": "Método de pago",
+      "vatTreatment": "Tratamiento del IVA"
+    },
+    "filter": {
+      "allBases": "Todas las bases de reclamación",
+      "allSettlements": "Todos los métodos de pago"
+    },
+    "fromScan": "Completado desde Escaneo de recibos. La IA lo leyó con un {{confidence}} % de confianza: compare cada valor con el recibo antes de enviar.",
+    "leftOf": "Quedan {{left}} de {{amount}}",
+    "new": "Nuevo reembolso",
+    "newSubtitle": "Presente un gasto real para su reembolso.",
+    "newTitle": "Nuevo reembolso de gasto",
+    "noAllocationNow": "Ahora no hay asignación activa para esta unidad",
+    "noReceipt": "No hay recibo adjunto.",
+    "notEditable": "Esta reclamación ya no admite corrección: no se puede modificar.",
+    "notInLedger": "No registrado: pagado con el salario",
+    "notScanned": "Subido sin lectura de IA. Los valores se escribieron a mano.",
+    "openScan": "Escanéelo y deje que la IA complete la reclamación",
+    "orScan": "¿Tiene el recibo a mano?",
+    "preApprovalHint": "Solo se muestran las solicitudes aprobadas de este empleado con saldo.",
+    "preApprovalPlaceholder": "Elija una solicitud aprobada…",
+    "receiptHint": "Suelte el recibo aquí o elija un archivo",
+    "receiptNeeded": "Esta categoría exige el recibo antes de enviar la reclamación.",
+    "receiptNoPlaceholder": "Referencia del recibo o factura",
+    "receiptOptional": "El recibo es opcional para esta categoría.",
+    "receiptReplaced": "Reemplaza a {{name}}, subido el {{date}}.",
+    "receiptTitle": "Recibo / factura",
+    "required": "Obligatorio",
+    "resubmitNote": "Enviarlo de nuevo crea la versión {{version}}. Quien aprueba verá lo que cambió.",
+    "scanReceipt": "Escanear recibo",
+    "search": "Buscar referencia, empleado, comercio o n.º de recibo",
+    "section": {
+      "amount": "Importe e IVA",
+      "charge": "Imputación y pago",
+      "expense": "Gasto",
+      "receipt": "Recibo / factura"
+    },
+    "settlement": {
+      "pettyCash": "Caja chica",
+      "pettyCashFrom": "De {{reference}} · {{available}} disponible",
+      "pettyCashHint": "Se paga con la asignación de caja chica de la unidad.",
+      "salary": "Salario del empleado",
+      "salaryHint": "Se paga con el próximo salario. La caja chica no se toca."
+    },
+    "subtitle": "Reclamaciones de dinero ya gastado, directas o sobre una solicitud de gasto previo aprobada.",
+    "summary": {
+      "allocationLeft": "Disponible en",
+      "claiming": "Está reclamando",
+      "heldByPreApproval": "Ya reservado por la aprobación previa en",
+      "noAllocation": "Esta unidad no tiene asignación activa. Finanzas puede pagarlo de otra forma.",
+      "noAllocationBlocked": "Esta unidad no tiene asignación activa, así que no puede pagarse con caja chica. Elija Salario del empleado o consulte a Finanzas.",
+      "preApprovalLeft": "Restante en",
+      "routeLater": "Aquí aparece quién lo aprueba cuando se completen el importe y la unidad.",
+      "salary": "Se paga con el salario: ningún saldo de caja chica cambia.",
+      "short": "Más de lo disponible en la asignación. Finanzas tendrá que reponerla primero.",
+      "shortBlocked": "Más de lo disponible en la asignación, y un saldo no puede quedar por debajo de cero. Reduzca el importe, elija Salario del empleado o pida una reposición.",
+      "title": "Resumen de la reclamación"
+    },
+    "tile": {
+      "claims": "Reclamaciones",
+      "paid": "Pagado este mes",
+      "paidNote": "Reclamaciones pagadas: {{count}}",
+      "pending": "En aprobación",
+      "summary": "Resumen de reembolsos",
+      "toPay": "Aprobado, pendiente de pago"
+    },
+    "title": "Reembolsos de gastos",
+    "toast": {
+      "deleted": "{{reference}} se eliminó.",
+      "saved": "{{reference}} se guardó como borrador.",
+      "submitted": "{{reference}} se envió a aprobación."
+    },
+    "vat": {
+      "exclusive": "Sin IVA incluido",
+      "inclusive": "Incluye IVA",
+      "none": "Sin IVA"
+    },
+    "vatOnReceipt": "IVA en el recibo, según la IA: OMR {{vat}}",
+    "vatShort": "IVA {{rate}} %",
+    "vatTreatmentNote": {
+      "exclusive": "Ingresado como {{amount}} antes del {{rate}} % de IVA.",
+      "inclusive": "Ingresado como {{amount}} con {{rate}} % de IVA incluido.",
+      "none": "Ingresado como {{amount}}. La factura no lleva IVA."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Confirmar",
+      "allClaims": "Todos mis reembolsos",
+      "claimsCount": "Reembolsos: {{count}}",
+      "column": {
+        "amount": "Importe",
+        "date": "Fecha",
+        "documents": "Documentos",
+        "employee": "Empleado",
+        "lastClaim": "Último reembolso",
+        "open": "Solicitudes abiertas",
+        "purpose": "Motivo",
+        "reference": "Referencia",
+        "status": "Estado",
+        "thisMonth": "Este mes"
+      },
+      "custodianTitle": "Mi caja chica: {{unit}}",
+      "decisionsTitle": "Esperando mi decisión ({{count}})",
+      "enteredFor": "Registrada para {{name}}",
+      "greeting": "Bienvenido de nuevo, {{name}}. Sus solicitudes, las decisiones que le esperan y el efectivo que custodia.",
+      "hasReceipt": "Recibo adjunto",
+      "lowHint": "Queda poco: solicite una reposición antes de que se agote.",
+      "managerText": "Presente un gasto previo o un reembolso para alguien de su equipo, en las unidades en las que puede actuar.",
+      "managerTitle": "Autoservicio del responsable",
+      "movements": "Últimos movimientos",
+      "newPreExpense": "Solicitud de gasto previo",
+      "newReimbursement": "Reembolso de gastos",
+      "noMovements": "Aún no hay movimientos.",
+      "noRequests": "Aún no hay solicitudes. Inicie una arriba.",
+      "openInbox": "Bandeja de aprobaciones",
+      "overdue": "Vencidas: {{count}}",
+      "paidOn": "{{amount}} pagado el {{date}}",
+      "preExpenseBehalf": "Gasto previo en nombre de otro",
+      "recentTitle": "Mis solicitudes recientes",
+      "reimbursementBehalf": "Reembolso en nombre de otro",
+      "requestTopUp": "Solicitar reposición",
+      "shortcut": {
+        "preExpense": "Aprobación de gasto previo",
+        "preExpenseText": "Pida antes de gastar. El importe aprobado se reserva en la asignación de su unidad.",
+        "reimbursement": "Reembolso de gastos",
+        "reimbursementText": "Reclame un gasto ya pagado, con el recibo adjunto o escaneado.",
+        "scan": "Escanear recibo",
+        "scanText": "Deje que la IA lea el comercio, la fecha, el IVA, el importe y la categoría de un recibo."
+      },
+      "shortcuts": "Iniciar una solicitud",
+      "subtitle": "Sus solicitudes, las decisiones que le esperan y el efectivo que custodia.",
+      "teamTitle": "Mi equipo ({{count}})",
+      "tile": {
+        "approved": "Mis aprobados / disponibles",
+        "approvedNote": "Gastos previos aprobados por reclamar: {{count}}",
+        "awaiting": "Pendiente de aprobación",
+        "nothingReturned": "Nada que corregir",
+        "paid": "Pagado este mes",
+        "paidNote": "Reclamaciones pagadas: {{count}}",
+        "returned": "Devueltas a mí",
+        "returnedNote": "Requiere acción"
+      },
+      "title": "Mi panel",
+      "toAcknowledge": "Hay efectivo pagado a usted esperando su confirmación ({{count}})",
+      "topUpPending": "Reposición en camino:",
+      "voucher": "Comprobante {{voucher}}",
+      "waitingFor": "Con {{names}}",
+      "monthTitle": "Mis reclamaciones por mes",
+      "monthSubtitle": "Por fecha del gasto, de {{from}} a {{to}}",
+      "categoryTitle": "Mi gasto por categoría",
+      "categorySubtitle": "Mis reclamaciones con fecha de este año, {{period}}",
+      "claimedThisYear": "Reclamado este año",
+      "noClaims": "Aún no hay reclamaciones."
+    },
+    "chart": {
+      "amount": "Importe",
+      "businessUnit": "Unidad de negocio",
+      "category": "Categoría",
+      "categoryTitle": "Gasto por categoría",
+      "claims": "Reclamaciones",
+      "funded": "Aportado",
+      "month": "Mes",
+      "noMovement": "No hubo movimiento de efectivo en este periodo.",
+      "noPaid": "No se pagó ningún reembolso en este periodo.",
+      "otherCategories": "Otras categorías ({{count}})",
+      "paidInPeriod": "Pagado en el periodo",
+      "pettyCash": "Caja chica",
+      "salary": "Con el salario",
+      "share": "Proporción",
+      "spent": "Gastado",
+      "total": "Total",
+      "trendSubtitle": "Reembolsos pagados, de {{from}} a {{to}}",
+      "trendTitle": "Gasto por mes",
+      "unitSubtitle": "Efectivo confirmado en las asignaciones de cada unidad y pagado desde ellas, {{period}}",
+      "unitTitle": "Aportado y gastado por unidad de negocio"
+    },
+    "finance": {
+      "attentionTitle": "Requiere atención ({{count}})",
+      "noAttention": "Nada requiere atención.",
+      "noPositions": "No hay asignaciones confirmadas para esta unidad.",
+      "positionTitle": "Situación de las asignaciones",
+      "positionTotal": "Asignaciones: {{count}}",
+      "showAll": "Ver todo ({{count}})",
+      "showFewer": "Ver menos",
+      "subtitle": "La caja chica en todas las unidades de negocio, departamentos y proyectos: qué hay, qué requiere acción y adónde fue el dinero.",
+      "thresholdsLink": "Umbrales",
+      "title": "Panel financiero"
+    },
+    "column": {
+      "allocation": "Asignación",
+      "available": "Disponible",
+      "band": "Nivel de alerta",
+      "financeUser": "Pagado por",
+      "float": "Fondo fijo",
+      "inUse": "Utilizado + reservado",
+      "level": "Nivel",
+      "position": "Situación",
+      "reserved": "Reservado",
+      "used": "Utilizado",
+      "utilization": "Utilización"
+    },
+    "attention": {
+      "exceeded": "Excedido: {{amount}} más utilizado y reservado que aportado",
+      "near": "Cerca del umbral: queda el {{percent}} % del fondo fijo",
+      "notAcknowledged": "Pagado hace {{span}}, aún sin confirmar",
+      "notAcknowledgedToday": "Pagado hoy, aún sin confirmar",
+      "overdueWith": "esperando a {{names}}",
+      "paidTo": "pagado a {{name}}: {{amount}}",
+      "preparedBy": "Preparada por {{name}}",
+      "review": "esperando revisor · {{reference}}",
+      "toPay": "Reembolsos aprobados por pagar: {{count}}",
+      "toPayNote": "{{amount}} · el más antiguo aprobado hace {{span}}",
+      "toPayNoteToday": "{{amount}} · aprobados hoy",
+      "watch": "En vigilancia: queda el {{percent}} % del fondo fijo"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Excedido",
+      "near": "Cerca del umbral",
+      "normal": "Normal",
+      "pending": "Aún sin fondos",
+      "watch": "En vigilancia"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Saldo",
+      "bar": "Barras",
+      "followsFilters": "Sigue el periodo y los filtros de arriba.",
+      "line": "Tendencia",
+      "lineHint": "A lo largo del periodo, para las cinco filas mayores.",
+      "metric": "Medida",
+      "name": "Nombre",
+      "others": "Otros",
+      "period": "Periodo",
+      "pie": "Proporción",
+      "type": "Tipo de gráfico"
+    },
+    "column": {
+      "allocated": "Asignado",
+      "approved": "Aprobado",
+      "available": "Disponible",
+      "businessUnit": "Unidad de negocio",
+      "category": "Categoría",
+      "charged": "Cargado a",
+      "claimed": "Reclamado",
+      "claims": "Reclamaciones",
+      "date": "Fecha",
+      "department": "Departamento",
+      "departments": "Departamentos",
+      "employee": "Empleado",
+      "employeeId": "ID de empleado",
+      "employees": "Empleados",
+      "head": {
+        "businessUnit": "Responsable de la unidad de negocio",
+        "department": "Jefe de departamento",
+        "project": "Jefe de proyecto"
+      },
+      "lastClaim": "Último reembolso",
+      "lastExpense": "Último gasto",
+      "net": "Neto",
+      "paid": "Pagado",
+      "paidOn": "Pagado el",
+      "pending": "Aún no pagado",
+      "project": "Proyecto",
+      "projectCode": "Código de proyecto",
+      "recipient": "Empleado / Beneficiario",
+      "reference": "Referencia",
+      "referenceDate": "Referencia / Fecha",
+      "reimbursed": "Reembolsado",
+      "share": "% del gasto",
+      "status": "Estado",
+      "statusPaid": "Estado / Pagado el",
+      "topVendor": "Comercio principal",
+      "total": "Total",
+      "transactions": "Transacciones",
+      "vat": "IVA",
+      "vatin": "NIF-IVA",
+      "vendor": "Proveedor / Comercio",
+      "vendorCategory": "Comercio / categoría",
+      "voucher": "N.º de comprobante"
+    },
+    "countedNote": "Las reclamaciones cuentan desde su envío, por fecha del gasto: en aprobación, aprobadas y pendientes de pago, o pagadas. Se excluyen los borradores y las reclamaciones rechazadas o canceladas.",
+    "empty": "No hay nada que informar en este periodo.",
+    "filter": {
+      "allCategories": "Todas las categorías",
+      "allEmployees": "Todos los empleados",
+      "allStatuses": "Todos los estados",
+      "allVendors": "Todos los comercios",
+      "search": "Buscar",
+      "status": "Estado",
+      "unit": "Unidad"
+    },
+    "metric": {
+      "amount": "Importe",
+      "available": "Saldo disponible",
+      "count": "Número de reclamaciones",
+      "paid": "Pagado",
+      "pending": "Aún no pagado"
+    },
+    "noMatch": "Nada coincide con estos filtros.",
+    "notListed": "No está en el maestro de proveedores",
+    "openClaims": "Abrir estas reclamaciones",
+    "openingOn": "saldo inicial al cierre del {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, por fecha del gasto",
+    "periodLedger": "{{from}} – {{to}}, por fecha del asiento",
+    "purpose": {
+      "businessUnit": "Coste de las unidades de negocio, incluidos sus departamentos y proyectos, junto a su caja chica.",
+      "category": "Gasto por categoría, con el comercio de mayor gasto y la proporción de cada categoría.",
+      "department": "Coste de departamentos: las reclamaciones cargadas a cada departamento, junto a su caja chica.",
+      "employee": "Reclamaciones por empleado: reclamado, aprobado, pagado y aún no pagado.",
+      "ledger": "Aportaciones, gastos y ajustes del periodo, con el saldo acumulado de cada asignación.",
+      "project": "Coste de proyectos: las reclamaciones cargadas a cada proyecto, junto a su caja chica.",
+      "transactions": "Cada reclamación del periodo, con su comercio, dónde se carga y en qué estado está.",
+      "vendor": "Dónde se gasta el dinero: reclamaciones por comercio, del maestro de proveedores o escrito en la reclamación."
+    },
+    "refusal": {
+      "period": "Elija un periodo de un día al mismo día o a uno posterior."
+    },
+    "search": {
+      "ledger": "Buscar asiento, referencia, comprobante, persona o concepto",
+      "summary": "Buscar nombres en este informe",
+      "transactions": "Buscar referencia, persona, comercio o descripción"
+    },
+    "status": {
+      "approved": "Aprobado, no pagado",
+      "inApproval": "En aprobación",
+      "paid": "Pagado"
+    },
+    "summary": "Resumen del informe",
+    "tile": {
+      "claimed": "Total reclamado",
+      "claimedNote": "En aprobación, aprobadas y pagadas",
+      "claims": "Reclamaciones",
+      "claimsNote": "Personas: {{count}}",
+      "paid": "Pagado",
+      "paidNote": "{{percent}} % del total",
+      "pending": "Aún no pagado",
+      "pendingNote": "En aprobación o pendiente de pago"
+    },
+    "totalRow": "Total",
+    "view": {
+      "chart": "Gráfico",
+      "table": "Tabla"
+    },
+    "viewAs": "Ver como"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Transferencia bancaria",
+      "cash": "Efectivo",
+      "cheque": "Cheque",
+      "salary": "Nómina"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Omitido: la misma persona ya aprueba un paso anterior",
+        "belowAmount": "Omitido: el importe no supera el umbral",
+        "incomplete": "Elija un origen de aprobador",
+        "noApprover": "No se encontró un aprobador activo",
+        "noProject": "Omitido: la solicitud no tiene proyecto",
+        "selfApproval": "Omitido: el solicitante aprobaría su propia solicitud"
+      }
+    }
+  }
+}

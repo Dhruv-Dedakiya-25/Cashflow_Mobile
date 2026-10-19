@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Toevoegen",
+    "addEntity": "{{entity}} toevoegen",
+    "back": "Terug",
+    "cancel": "Annuleren",
+    "clearAll": "Alles wissen",
+    "close": "Sluiten",
+    "create": "Aanmaken",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "export": "Exporteren",
+    "retry": "Opnieuw proberen",
+    "save": "Opslaan",
+    "saveChanges": "Wijzigingen opslaan",
+    "search": "Zoeken",
+    "view": "Bekijken",
+    "viewAll": "Alles bekijken"
+  },
+  "status": {
+    "active": "Actief",
+    "all": "Alle",
+    "inactive": "Inactief",
+    "no": "Nee",
+    "yes": "Ja"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Aanvraag annuleren",
+      "saveDraft": "Concept opslaan",
+      "submit": "Ter goedkeuring sturen",
+      "submitForApproval": "Ter goedkeuring indienen"
+    },
+    "filter": {
+      "allStatuses": "Alle statussen",
+      "from": "Van",
+      "to": "Tot"
+    },
+    "history": {
+      "acknowledged": "heeft de ontvangst bevestigd",
+      "approved": "heeft deze goedgekeurd",
+      "cancelled": "heeft deze geannuleerd",
+      "created": "heeft de aanvraag gemaakt",
+      "disbursed": "heeft het bedrag uitbetaald",
+      "edited": "heeft wijzigingen aangebracht",
+      "empty": "(leeg)",
+      "paid": "heeft deze betaald",
+      "rejected": "heeft deze afgewezen",
+      "resubmitted": "heeft deze opnieuw ter goedkeuring gestuurd",
+      "returned": "heeft deze teruggestuurd voor correctie",
+      "submitted": "heeft deze ter goedkeuring gestuurd",
+      "title": "Geschiedenis",
+      "reallocated": "heeft deze overgedragen",
+      "takenOver": "heeft deze overgenomen"
+    },
+    "notFound": "Dit record bestaat niet, of valt buiten wat u mag zien.",
+    "path": {
+      "decidedBy": {
+        "approved": "Goedgekeurd door {{name}} op {{time}}",
+        "rejected": "Afgewezen door {{name}} op {{time}}",
+        "returned": "Teruggestuurd door {{name}} op {{time}}"
+      },
+      "notSent": "Nog niet ter goedkeuring gestuurd.",
+      "overdue": "Achterstallig",
+      "state": {
+        "approved": "Goedgekeurd",
+        "pending": "Wachtend",
+        "rejected": "Afgewezen",
+        "returned": "Teruggestuurd",
+        "skipped": "Overgeslagen",
+        "waiting": "Nog niet bereikt"
+      },
+      "title": "Goedkeuringsroute",
+      "waitingSince": "Wacht sinds {{time}} · {{hours}} u toegestaan",
+      "willGoTo": "Gaat naar"
+    },
+    "reason": "Reden",
+    "reasonRequired": "Geef een reden op. Die wordt bewaard in de geschiedenis van de aanvraag.",
+    "refusal": {
+      "alreadyPosted": "Dit staat al in het grootboek, dus er is niets gewijzigd.",
+      "amount": "Voer een bedrag boven nul in met hoogstens drie decimalen.",
+      "amountTooLarge": "Het bedrag mag niet hoger zijn dan {{max}} OMR.",
+      "noApprover": "Een stap van de workflow heeft niemand om deze aanvraag naar te sturen. Vraag een beheerder de workflow-instellingen te controleren.",
+      "noWorkflow": "Geen actieve workflow dekt deze aanvraag. Vraag een beheerder de workflow-instellingen te controleren.",
+      "nobodyLeft": "Iedereen die deze aanvraag kan goedkeuren is er zelf bij betrokken, dus er blijft niemand over om goed te keuren. Wijzig voor wie hij is, of vraag een beheerder de workflow-instellingen te controleren.",
+      "notAllowed": "Uw rol staat dit niet toe.",
+      "notEditable": "Alleen een concept of een teruggestuurde aanvraag kan worden gewijzigd.",
+      "notFound": "Dit record bestaat niet, of valt buiten wat u mag zien.",
+      "notNow": "Dit kan niet in de huidige status van de aanvraag.",
+      "onlyDrafts": "Alleen een concept kan worden verwijderd. Annuleer hem in plaats daarvan.",
+      "reasonRequired": "Geef een reden op.",
+      "savedMeanwhile": "Iemand anders heeft dit intussen opgeslagen, dus er is niets gewijzigd. Laad opnieuw en probeer het nog eens.",
+      "signedOut": "Uw sessie is verlopen. Meld u opnieuw aan.",
+      "underApproval": "Hij wacht op een goedkeurder. Wacht op de beslissing of vraag om terugsturen."
+    },
+    "returnedBecause": "Teruggestuurd voor correctie:",
+    "status": {
+      "acknowledged": "Bevestigd",
+      "active": "Actief",
+      "approved": "Goedgekeurd",
+      "cancelled": "Geannuleerd",
+      "closed": "Gesloten",
+      "disbursed": "Wacht op ontvangstbevestiging",
+      "draft": "Concept",
+      "inApproval": "In goedkeuring",
+      "paid": "Betaald",
+      "rejected": "Afgewezen",
+      "returned": "Teruggestuurd",
+      "submitted": "Ingediend"
+    }
+  },
+  "auth": {
+    "brandTagline": "Beheer van de kleine kas",
+    "company": "Bedrijf",
+    "demoBadge": "Demo",
+    "demoNotice": "Demomodus: aanmelden is gesimuleerd en elk scherm toont voorbeeldgegevens totdat de API er is.",
+    "feature": {
+      "allocations": "Toewijzingen per afdeling & project",
+      "permissions": "Rollen- en rechtenmatrix",
+      "selfService": "Selfservice voor medewerkers & managers",
+      "thresholds": "Drempelbewaking",
+      "twoFactor": "Aanmelden in twee stappen",
+      "workflows": "Goedkeuring voor & na de uitgave"
+    },
+    "password": "Wachtwoord",
+    "passwordDemoHint": "Niet gecontroleerd in de demo. In het echte systeem controleert de aanmelding uw wachtwoord en tweefactorcode.",
+    "persona": {
+      "auditor": "Auditor (alleen lezen)",
+      "employee": "Selfservice medewerker",
+      "finance": "Hoofd financiën / Beheerder",
+      "manager": "Afdelings- / projectmanager"
+    },
+    "personaLabel": "Demoprofiel",
+    "pitch": "Wijs kleine kas toe, keur geplande uitgaven goed, vergoed werkelijke uitgaven, stuur goedkeuringen door uw organisatie, lees bonnen met AI en stem elke transactie af.",
+    "rememberMe": "Ingelogd blijven",
+    "signIn": "Inloggen",
+    "signInButton": "Inloggen",
+    "signInHint": "Kies een demoprofiel om de schermen van die rol te zien.",
+    "twoFactor": {
+      "back": "Terug",
+      "demoHint": "Demo: elke zes cijfers worden geaccepteerd.",
+      "digit": "Cijfer {{n}} van 6",
+      "incomplete": "Voer alle zes cijfers in.",
+      "panelText": "Een code uit een authenticator-app bevestigt dat u het echt bent. Beleid kan dit verplichten voor iedereen, per rol of voor gekozen gebruikers.",
+      "panelTitle": "Tweestapsverificatie",
+      "subtitle": "Voer de 6-cijferige code uit uw authenticator-app in.",
+      "title": "Voer de verificatiecode in",
+      "trustDevice": "Dit apparaat 30 dagen vertrouwen",
+      "verify": "Verifiëren & doorgaan",
+      "wrongCode": "Die code klopt niet. Probeer het opnieuw.",
+      "expired": "Deze aanmelding is verlopen. Ga terug en meld u opnieuw aan.",
+      "useRecovery": "Gebruik in plaats daarvan een herstelcode",
+      "useApp": "Gebruik in plaats daarvan de authenticator-app",
+      "recoveryTitle": "Voer een herstelcode in",
+      "recoveryHint": "Typ een van de herstelcodes die u hebt bewaard. Elke code werkt één keer.",
+      "trustDeviceDays": "Dit apparaat {{n}} dagen vertrouwen",
+      "enrollTitle": "Aanmelden in twee stappen instellen",
+      "enrollSubtitle": "Uw account moet een authenticator-app gebruiken. Stel deze nu in om het aanmelden af te ronden."
+    },
+    "twoFactorNote": "Aanmelden in twee stappen kan uit, optioneel of per rol verplicht zijn.",
+    "username": "E-mail of gebruikersnaam",
+    "signInHintApi": "Meld u aan met uw CashFlow-account.",
+    "error": {
+      "invalid": "Ongeldige gebruikersnaam of ongeldig wachtwoord.",
+      "tooMany": "Te veel pogingen. Wacht een minuut en probeer het opnieuw.",
+      "noApi": "Kan de server niet bereiken. Probeer het zo meteen opnieuw."
+    }
+  },
+  "scan": {
+    "aiConfidence": "{{confidence}}% zekerheid",
+    "aiOff": "AI-extractie staat uit in AI & documentverwerking. De bon wordt toch gecontroleerd en bijgevoegd; vul de gegevens zelf in.",
+    "checkThis": "Controleren",
+    "col": {
+      "claim": "Op de declaratie",
+      "field": "Veld",
+      "read": "Gelezen door AI"
+    },
+    "corrected": "Gecorrigeerd",
+    "createClaim": "Declaratie maken",
+    "extractionTitle": "AI-extractie",
+    "fact": {
+      "file": "Bestand",
+      "hash": "SHA-256",
+      "size": "Grootte",
+      "type": "Type",
+      "typeChecked": "{{type}}, gecontroleerd aan de inhoud"
+    },
+    "field": {
+      "category": "Voorgestelde categorie",
+      "expenseDate": "Datum",
+      "grossAmount": "Totaal",
+      "merchant": "Winkel",
+      "receiptNo": "Bonnr.",
+      "vatAmount": "Btw"
+    },
+    "keptApart": "Wat AI las, blijft ongewijzigd naast wat u invoert, zodat een correctie zichtbaar blijft. Uitlezingen onder {{min}}% zijn gemarkeerd.",
+    "lowHint": "AI is maar {{confidence}}% zeker. Controleer dit op de bon.",
+    "minConfidence": "waarden onder {{min}}% zijn gemarkeerd",
+    "noPreview": "Deze browser kan geen HEIC-afbeeldingen tonen. Het bestand is gecontroleerd en bijgevoegd.",
+    "noReceipt": "Geen bon bij de hand?",
+    "readBy": "Gelezen door {{provider}}",
+    "receiptTitle": "Bon",
+    "sampleNote": "Voorbeelduitlezing: in de demo wordt elke bon als dit voorbeeld gelezen, omdat het bestand de browser nooit verlaat.",
+    "stage": {
+      "extracted": "Uitgelezen",
+      "extractedHint": "Velden gelezen door AI",
+      "normalizing": "Normaliseren",
+      "normalizingHint": "Rechtgezet, bijgesneden, gecomprimeerd",
+      "pdfReady": "PDF klaar",
+      "pdfReadyHint": "Standaard-PDF, origineel bewaard",
+      "skipped": "AI staat uit",
+      "uploaded": "Geüpload",
+      "uploadedHint": "Type, grootte en hash gecontroleerd",
+      "verified": "Geverifieerd",
+      "verifiedHint": "Door u gecontroleerd"
+    },
+    "stagesTitle": "Documentstadia",
+    "startAgain": "Nog een scannen",
+    "subtitle": "Leg vast met uw telefoon of upload een rekening en controleer de uitgelezen velden voordat u een declaratie maakt.",
+    "tip": {
+      "light": "Goed licht, geen schaduw over het totaal.",
+      "private": "In de demo blijft het bestand in deze browser.",
+      "whole": "De hele bon in beeld, randen inbegrepen."
+    },
+    "title": "Bonnen scannen & AI-extractie",
+    "typeIt": "Typ de gegevens van de bon.",
+    "uploadHint": "Open de camera of upload een bon",
+    "useSample": "Probeer de voorbeeldbon",
+    "waitingForReceipt": "Voeg een bon toe om te laten uitlezen.",
+    "working": {
+      "normalizing": "Afbeelding wordt rechtgezet en opgeschoond…",
+      "pdfReady": "Standaard-PDF wordt gemaakt…",
+      "uploaded": "Bestand wordt gecontroleerd…"
+    },
+    "aiPhotoOnly": "AI-uitlezing is alleen beschikbaar voor JPG- en PNG-foto's.",
+    "aiUnclear": "Kon de bongegevens niet duidelijk lezen. Typ ze handmatig in.",
+    "aiUnreachable": "Kan het AI-model niet bereiken. Voer de bongegevens handmatig in.",
+    "aiQuota": "AI-tarieflimiet bereikt. Wacht even of voer de bongegevens handmatig in.",
+    "aiBusy": "De AI van Google is momenteel bezet. Probeer het over een ogenblik opnieuw of typ de gegevens handmatig."
+  },
+  "approval": {
+    "action": {
+      "review": "Beoordelen"
+    },
+    "attachmentTitle": "Ondersteunend document",
+    "availableNow": "{{amount}} nu beschikbaar",
+    "backToInbox": "Terug naar Goedkeuringen",
+    "changes": {
+      "after": "Gecorrigeerd nadat {{name}} hem op {{time}} terugstuurde:",
+      "title": "Gewijzigd sinds het werd teruggestuurd"
+    },
+    "column": {
+      "amount": "Bedrag",
+      "person": "Persoon",
+      "reference": "Referentie",
+      "step": "Status / Huidige stap",
+      "submitted": "Ingediend",
+      "type": "Type / Eenheid"
+    },
+    "days": "{{count}} d",
+    "decision": {
+      "approve": "Goedkeuren",
+      "comment": "Opmerking (nodig om terug te sturen of af te wijzen)",
+      "noMoney": "Goedkeuren verplaatst geen geld. Alleen Financiële afwikkeling betaalt.",
+      "placeholder": "Wat moet de aanvrager weten of corrigeren?",
+      "reasonNeeded": "Geef een reden om terug te sturen of af te wijzen. De aanvrager ziet die.",
+      "reject": "Afwijzen",
+      "return": "Terugsturen ter correctie",
+      "title": "Uw beslissing"
+    },
+    "detailsTitle": {
+      "additionalCash": "Aanvraag extra contant geld",
+      "allocation": "Toewijzing",
+      "preExpense": "Aanvraag uitgave vooraf",
+      "reimbursement": "Declaratie",
+      "reallocation": "Overdrachtsverzoek"
+    },
+    "dueIn": "Over {{span}}",
+    "empty": {
+      "decided": "U hebt nog over geen enkele aanvraag beslist.",
+      "scope": "Er zijn binnen uw bereik geen aanvragen ter goedkeuring ingediend.",
+      "waiting": "Er wacht niets op uw beslissing."
+    },
+    "ended": {
+      "approved": "Goedgekeurd door {{name}} op {{time}}.",
+      "cancelled": "Ingetrokken door {{name}} op {{time}}.",
+      "rejected": "Afgewezen door {{name}} op {{time}}.",
+      "returned": "Ter correctie teruggestuurd door {{name}} op {{time}}."
+    },
+    "entity": "aanvragen",
+    "filter": {
+      "allTypes": "Alle aanvraagtypen",
+      "allUnits": "Alle eenheden"
+    },
+    "flag": {
+      "changed": "Gewijzigd sinds het werd teruggestuurd",
+      "duplicate": "Mogelijk dubbele rekening",
+      "onBehalf": "Door iemand anders voor deze persoon ingevoerd",
+      "overAvailable": "Meer dan de toewijzing beschikbaar heeft",
+      "lowConfidence": "AI-bonuitlezing heeft een lage betrouwbaarheid"
+    },
+    "hours": "{{count}} u",
+    "kind": {
+      "additionalCash": "Extra contant geld",
+      "allocation": "Toewijzing",
+      "preExpense": "Uitgave vooraf",
+      "reimbursement": "Onkostendeclaratie",
+      "reallocation": "Overdracht"
+    },
+    "next": "Volgende",
+    "openFile": "Openen",
+    "openRecord": "Volledig record openen",
+    "othersTurn": "Wacht op {{names}} bij stap {{n}}. U kunt het hier volgen; alleen zij kunnen beslissen.",
+    "outcome": {
+      "cash": "Uw stap is de laatste. Goedkeuren geeft hem aan Financiën om uit te keren; het telt zodra de kasbeheerder de ontvangst bevestigt.",
+      "claim": "Uw stap is de laatste. Goedkeuren reserveert het bedrag op de toewijzing tot Financiën het betaalt.",
+      "next": "Goedkeuren stuurt hem door naar de volgende stap ({{step}}): {{names}}.",
+      "preExpense": "Uw stap is de laatste. Goedkeuren laat de medewerker uitgeven en houdt het bedrag vast tot het gedeclareerd is.",
+      "salary": "Uw stap is de laatste. Goedkeuren geeft hem aan Financiën om met het volgende salaris te betalen.",
+      "reallocation": "Uw stap is de laatste. Goedkeuren draagt het geld over aan de nieuwe beheerder, die het bevestigt of overneemt. Financiën betaalt niets."
+    },
+    "overAvailable": "Dit is meer dan {{reference}} beschikbaar heeft ({{available}}). Financiën moet eerst aanvullen voordat er betaald wordt.",
+    "overAvailableBlocked": "Dit is meer dan {{reference}} beschikbaar heeft ({{available}}), en een saldo mag niet onder nul. De laatste goedkeuring vraagt eerst een aanvulling.",
+    "overdueBy": "{{span}} te laat",
+    "position": "{{n}} van {{total}}",
+    "previous": "Vorige",
+    "refusal": {
+      "changed": "Deze aanvraag is gewijzigd sinds u hem opende. Laad hem opnieuw en bekijk de wijzigingen voordat u beslist.",
+      "decided": "Over deze aanvraag is al beslist.",
+      "notEnoughCash": "{{reference}} heeft maar OMR {{available}} beschikbaar, en een saldo mag niet onder nul. Stuur de aanvraag terug of vraag Financiën eerst om een aanvulling.",
+      "notYourStep": "Deze stap wacht niet op u.",
+      "ownRequest": "U kunt niet beslissen over een aanvraag waarbij u betrokken bent."
+    },
+    "refusalHint": "{{reference}} heeft maar {{available}} beschikbaar, en een saldo mag niet onder nul. Stuur hem terug of vraag Financiën eerst om een aanvulling.",
+    "search": "Zoek referentie, persoon of doel",
+    "sentAt": "ingediend {{time}}",
+    "subtitle": "Aanvragen die op uw beslissing wachten, alles binnen uw bereik en wat u hebt beslist.",
+    "tile": {
+      "decided": "Door u beslist",
+      "decidedNote": "Goedgekeurd, teruggestuurd of afgewezen",
+      "overdue": "Achterstallig",
+      "overdueNote": "Langer dan de workflow-instellingen toestaan",
+      "scope": "In goedkeuring",
+      "summary": "Overzicht goedkeuringen",
+      "waiting": "Wacht op u"
+    },
+    "title": "Goedkeuringen",
+    "toast": {
+      "approve": "{{reference}} is goedgekeurd.",
+      "reject": "{{reference}} is afgewezen.",
+      "return": "{{reference}} is teruggestuurd ter correctie."
+    },
+    "view": {
+      "decided": "Door mij beslist",
+      "scope": "Alles binnen mijn bereik",
+      "waiting": "Wacht op mij"
+    },
+    "views": "Weergaven van goedkeuringen",
+    "where": {
+      "approved": "Bij Financiën om te betalen",
+      "disbursed": "Uitbetaald door Financiën",
+      "returned": "Bij de aanvrager om te corrigeren",
+      "spendable": "Kan nu worden uitgegeven en daarna gedeclareerd"
+    },
+    "yourTurn": "Wacht op uw beslissing bij stap {{n}}: {{step}}.",
+    "yoursToWatch": "U bent betrokken bij deze aanvraag en kunt er dus niet over beslissen. Hij wacht op {{names}} bij stap {{n}}.",
+    "openSourceRecord": "Toewijzing openen"
+  },
+  "ack": {
+    "action": "Bevestigen",
+    "amountReceived": "Ontvangen bedrag",
+    "bannerHint": "Het saldo stijgt pas als u bevestigt dat het geld is aangekomen.",
+    "bannerNone": "Niets wacht op uw ontvangstbevestiging.",
+    "bannerWaiting": "Wacht op uw ontvangstbevestiging: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Bedrag",
+      "issued": "Uitgegeven",
+      "payment": "Betaalwijze / Referentie",
+      "recipient": "Ontvanger",
+      "reference": "Referentie",
+      "scope": "Bereik van de toewijzing",
+      "status": "Toestand"
+    },
+    "confirm": "Ontvangst van het bedrag bevestigen",
+    "dialogTitle": "Ontvangst kleine-kasgeld bevestigen",
+    "entity": "betaling",
+    "filter": {
+      "allTypes": "Alle soorten"
+    },
+    "kind": {
+      "additionalCash": "Aanvulling",
+      "allocation": "Toewijzing",
+      "topUpOf": "Aanvulling van {{reference}}",
+      "handover": "Overname",
+      "reallocatedFrom": "Overgedragen van {{reference}}"
+    },
+    "openAllocation": "Toewijzing openen",
+    "refusal": {
+      "already": "De ontvangst is al bevestigd. Er is niets gewijzigd.",
+      "notRecipient": "Alleen wie het geld heeft ontvangen kan de ontvangst bevestigen."
+    },
+    "remarks": "Opmerkingen (optioneel)",
+    "remarksPlaceholder": "Bijvoorbeeld: geteld en volledig ontvangen.",
+    "search": "Zoek referentie, ontvanger of betalingsreferentie",
+    "state": {
+      "acknowledged": "Bevestigd",
+      "waiting": "Wacht op ontvangstbevestiging"
+    },
+    "statement": "Door te bevestigen verklaart u het bovenstaande bedrag te hebben ontvangen. Het wordt dan aan het saldo van de toewijzing toegevoegd, en dat kan niet ongedaan worden gemaakt.",
+    "subtitle": "Bevestig de ontvangst van kleine-kasgeld dat Financiën heeft uitbetaald, en druk de betaalbonnen af.",
+    "title": "Ontvangstbevestigingen",
+    "toast": {
+      "done": "Ontvangst bevestigd. {{amount}} is nu beschikbaar in {{reference}}."
+    },
+    "waitingFor": "Wacht op {{name}}",
+    "reallocatedBy": "Overgedragen door {{name}}",
+    "takeOverTitle": "Toewijzing overnemen",
+    "takeOverStatement": "Ik bevestig dat ik het geld en de stukken van deze toewijzing heb ontvangen en dat ik deze nu beheer.",
+    "takeOver": "Overnemen"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Intrekken"
+    },
+    "categoryPlaceholder": "Zoek een declaratiecategorie…",
+    "check": {
+      "beneficiary": "U kunt voor deze medewerker geen aanvraag invoeren. Alleen mensen binnen uw bereik kunnen worden gekozen.",
+      "beneficiaryFixed": "De medewerker kan niet worden gewijzigd nadat de aanvraag is verzonden.",
+      "category": "Kies een actieve uitgavencategorie.",
+      "chooseCategory": "Kies een uitgavencategorie.",
+      "chooseEmployee": "Kies de medewerker.",
+      "costUnit": "Kies een eenheid waartoe deze medewerker behoort. Inactieve eenheden kunnen niet worden belast.",
+      "merchant": "Vul de winkel of begunstigde in.",
+      "purpose": "Beschrijf het zakelijke doel in een paar woorden.",
+      "vendor": "Deze leverancier is inactief. Kies een andere of typ de naam van de winkel."
+    },
+    "costHint": "Alleen de eenheden waartoe deze persoon behoort, kunnen worden belast.",
+    "employeePlaceholder": "Typ naam of personeelsnummer…",
+    "ended": {
+      "cancelled": "Ingetrokken door {{name}} op {{time}}.",
+      "rejected": "Afgewezen door {{name}} op {{time}}.",
+      "returned": "Ter correctie teruggestuurd door {{name}} op {{time}}."
+    },
+    "enteredBy": "Ingevoerd door {{name}}",
+    "field": {
+      "attachment": "Ondersteunend document",
+      "category": "Uitgavencategorie",
+      "chargedTo": "Belast op",
+      "costLevel": "Type kostentoewijzing",
+      "costUnit": "Belast op",
+      "created": "Aangemaakt",
+      "employee": "Medewerker",
+      "enteredBy": "Ingevoerd door",
+      "for": "Voor",
+      "merchant": "Handelaar / Begunstigde",
+      "submitFor": "Indienen voor"
+    },
+    "filter": {
+      "allEmployees": "Alle medewerkers"
+    },
+    "merchantHint": "Kies uit het leveranciersbestand, of typ de winkel of begunstigde als die niet in de lijst staat.",
+    "merchantPlaceholder": "Zoek een leverancier of typ een nieuwe naam…",
+    "noAttachment": "Geen bijlage",
+    "noMerchant": "Niet opgegeven",
+    "onBehalfHint": "Alleen mensen binnen uw bereik worden getoond. U wordt vastgelegd als degene die het invoerde.",
+    "refusal": {
+      "notRequester": "Alleen wie deze aanvraag invoerde, of voor wie ze is, kan haar wijzigen."
+    },
+    "submitFor": {
+      "onBehalf": "Namens een andere medewerker",
+      "self": "Voor mezelf"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} is ingetrokken."
+    },
+    "withdrawText": "De aanvraag wordt gesloten in plaats van gecorrigeerd en opnieuw verzonden. De reden blijft in de geschiedenis.",
+    "withdrawTitle": "{{reference}} intrekken?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Verder bewerken",
+      "correct": "Corrigeren en opnieuw indienen"
+    },
+    "amount": {
+      "asEntered": "zoals ingevoerd",
+      "gross": "Totaal incl. btw",
+      "net": "Bedrag excl. btw",
+      "noVat": "Btw (niet op deze rekening)",
+      "paid": "Totaal betaald"
+    },
+    "approvedNote": "Goedgekeurd. Het bedrag is gereserveerd op de toewijzing; het wordt pas betaald en in het grootboek geboekt als Financiën het afrekent.",
+    "approvedSalaryNote": "Goedgekeurd. Financiën betaalt het met de volgende salarisrun en legt de salarisreferentie vast.",
+    "backToClaim": "Terug naar de declaratie",
+    "backToList": "Terug naar declaraties",
+    "basis": {
+      "direct": "Directe declaratie achteraf",
+      "directHint": "Al uitgegeven geld, zonder vooraf goedkeuring te vragen.",
+      "directShort": "Direct",
+      "noneOpen": "Geen goedgekeurde aanvraag met saldo voor deze medewerker.",
+      "preApproved": "Op een vooraf goedgekeurde uitgave",
+      "preApprovedHint": "Goedgekeurde aanvragen met saldo: {{count}}"
+    },
+    "chargeTitle": "Belasting en betaling",
+    "check": {
+      "basis": "Kies een declaratiegrondslag.",
+      "choosePreApproval": "Kies de goedgekeurde aanvraag die deze declaratie gebruikt.",
+      "expenseDate": "Kies de datum waarop het geld is uitgegeven.",
+      "fixFields": "Enkele velden vragen aandacht. Controleer de rood gemarkeerde.",
+      "futureDate": "De uitgavedatum mag niet in de toekomst liggen.",
+      "noAllocation": "Deze eenheid heeft geen actieve toewijzing, dus de declaratie kan niet uit de kleine kas worden betaald. Kies Salaris van de medewerker of vraag het Financiën.",
+      "notEnoughCash": "{{reference}} heeft maar OMR {{available}} beschikbaar, en een saldo mag niet onder nul. Verlaag het bedrag, kies Salaris van de medewerker of vraag een aanvulling.",
+      "overPreApproval": "De declaratie is hoger dan het restant van de voorafgaande goedkeuring (OMR {{remaining}}). Verlaag haar of declareer het verschil direct.",
+      "preApproval": "Deze voorafgaande goedkeuring kan niet worden gebruikt: ze moet van deze medewerker zijn, goedgekeurd en met saldo.",
+      "preApprovalUnit": "Een declaratie op een voorafgaande goedkeuring wordt op dezelfde eenheid belast als de goedkeuring.",
+      "receiptRequired": "Voeg de bon toe voordat u deze declaratie verzendt. Deze categorie of de instellingen vereisen er een.",
+      "settlement": "Kies hoe de declaratie wordt betaald.",
+      "vat": "Kies hoe de btw op het bedrag van toepassing is."
+    },
+    "column": {
+      "amount": "Bedrag",
+      "basisPayment": "Grondslag / betaling",
+      "date": "Datum",
+      "employee": "Medewerker",
+      "expenseDate": "Uitgavedatum",
+      "merchant": "Winkel / categorie",
+      "reference": "Referentie",
+      "status": "Toestand"
+    },
+    "costFromPreApproval": "Belast waar de voorafgaande goedkeuring haar bedrag reserveert.",
+    "deleteText": "Het concept van de declaratie wordt verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "deleteTitle": "{{reference}} verwijderen?",
+    "descriptionPlaceholder": "Wat er is gekocht en de zakelijke reden.",
+    "detailsTitle": "Declaratiegegevens",
+    "duplicate": {
+      "detailText": "Bij verzending had een andere declaratie dezelfde winkel met hetzelfde bonnummer, of dezelfde datum en hetzelfde bedrag. Controleer dat het niet dezelfde rekening is:",
+      "formText": "Een andere declaratie heeft dezelfde winkel met hetzelfde bonnummer, of dezelfde datum en hetzelfde bedrag. U kunt toch indienen; de goedkeurder ziet dit:",
+      "title": "Mogelijk duplicaat.",
+      "tooltip": "Mogelijk duplicaat van {{references}}"
+    },
+    "editTitle": "{{reference}} corrigeren",
+    "entity": "declaraties",
+    "field": {
+      "amount": "Bedrag (OMR)",
+      "amountNet": "Bedrag vóór btw (OMR)",
+      "basis": "Declaratiegrondslag",
+      "description": "Omschrijving uitgave / zakelijk doel",
+      "expenseDate": "Uitgavedatum",
+      "gross": "Totaal incl. btw",
+      "paidFrom": "Betaald uit",
+      "preApproval": "Referentie voorafgaande goedkeuring",
+      "receipt": "Bon / factuur",
+      "receiptNo": "Bon-/factuurnr.",
+      "settlement": "Betaalmethode",
+      "vatTreatment": "Btw-behandeling"
+    },
+    "filter": {
+      "allBases": "Alle declaratiegrondslagen",
+      "allSettlements": "Alle betaalwijzen"
+    },
+    "fromScan": "Ingevuld via Bon scannen. AI las hem met {{confidence}}% zekerheid: controleer elke waarde op de bon voordat u indient.",
+    "leftOf": "{{left}} over van {{amount}}",
+    "new": "Nieuwe declaratie",
+    "newSubtitle": "Dien een werkelijke uitgave in ter vergoeding.",
+    "newTitle": "Nieuwe onkostendeclaratie",
+    "noAllocationNow": "Nu geen actieve toewijzing voor deze eenheid",
+    "noReceipt": "Geen bon bijgevoegd.",
+    "notEditable": "Deze declaratie kan niet meer worden gecorrigeerd of gewijzigd.",
+    "notInLedger": "Niet geboekt: betaald met salaris",
+    "notScanned": "Geüpload zonder AI-uitlezing. De waarden zijn ingetypt.",
+    "openScan": "Scan hem en laat AI de declaratie invullen",
+    "orScan": "Heeft u de bon bij de hand?",
+    "preApprovalHint": "Alleen goedgekeurde aanvragen van deze medewerker met saldo worden getoond.",
+    "preApprovalPlaceholder": "Kies een goedgekeurde aanvraag…",
+    "receiptHint": "Sleep de bon hierheen, of kies een bestand",
+    "receiptNeeded": "Deze categorie vereist de bon voordat de declaratie wordt verzonden.",
+    "receiptNoPlaceholder": "Bon- of factuurreferentie",
+    "receiptOptional": "Een bon is optioneel voor deze categorie.",
+    "receiptReplaced": "Vervangt {{name}}, geüpload op {{date}}.",
+    "receiptTitle": "Bon / factuur",
+    "required": "Verplicht",
+    "resubmitNote": "Opnieuw verzenden maakt versie {{version}}. De goedkeurder ziet wat u hebt gewijzigd.",
+    "scanReceipt": "Bon scannen",
+    "search": "Zoek op referentie, medewerker, winkel of bonnummer",
+    "section": {
+      "amount": "Bedrag en btw",
+      "charge": "Belasting en betaling",
+      "expense": "Uitgave",
+      "receipt": "Bon / factuur"
+    },
+    "settlement": {
+      "pettyCash": "Kleine kas",
+      "pettyCashFrom": "Uit {{reference}} · {{available}} beschikbaar",
+      "pettyCashHint": "Betaald uit de kleinekastoewijzing van de eenheid.",
+      "salary": "Salaris van de medewerker",
+      "salaryHint": "Betaald met het volgende salaris. De kleine kas blijft onaangeroerd."
+    },
+    "subtitle": "Declaraties van al uitgegeven geld, direct of op een goedgekeurde aanvraag vooraf.",
+    "summary": {
+      "allocationLeft": "Beschikbaar in",
+      "claiming": "U declareert",
+      "heldByPreApproval": "Al gereserveerd door de voorafgaande goedkeuring in",
+      "noAllocation": "Deze eenheid heeft geen actieve toewijzing. Financiën betaalt mogelijk op een andere manier.",
+      "noAllocationBlocked": "Deze eenheid heeft geen actieve toewijzing, dus betalen uit de kleine kas kan niet. Kies Salaris van de medewerker of vraag het Financiën.",
+      "preApprovalLeft": "Over op",
+      "routeLater": "Wie goedkeurt verschijnt hier zodra bedrag en eenheid zijn ingevuld.",
+      "salary": "Betaald met salaris: geen kleinekassaldo verandert.",
+      "short": "Meer dan de toewijzing beschikbaar heeft. Financiën moet haar eerst aanvullen.",
+      "shortBlocked": "Meer dan de toewijzing beschikbaar heeft, en een saldo mag niet onder nul. Verlaag het bedrag, kies Salaris van de medewerker of vraag een aanvulling.",
+      "title": "Overzicht declaratie"
+    },
+    "tile": {
+      "claims": "Declaraties",
+      "paid": "Deze maand betaald",
+      "paidNote": "Betaalde declaraties: {{count}}",
+      "pending": "In goedkeuring",
+      "summary": "Overzicht declaraties",
+      "toPay": "Goedgekeurd, wacht op betaling"
+    },
+    "title": "Onkostendeclaraties",
+    "toast": {
+      "deleted": "{{reference}} is verwijderd.",
+      "saved": "{{reference}} is opgeslagen als concept.",
+      "submitted": "{{reference}} is ter goedkeuring gestuurd."
+    },
+    "vat": {
+      "exclusive": "Exclusief btw",
+      "inclusive": "Inclusief btw",
+      "none": "Geen btw"
+    },
+    "vatOnReceipt": "Btw op de bon, zoals AI die las: OMR {{vat}}",
+    "vatShort": "Btw {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Ingevoerd als {{amount}} vóór {{rate}}% btw.",
+      "inclusive": "Ingevoerd als {{amount}} inclusief {{rate}}% btw.",
+      "none": "Ingevoerd als {{amount}}. De rekening bevat geen btw."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Bevestigen",
+      "allClaims": "Al mijn declaraties",
+      "claimsCount": "Declaraties: {{count}}",
+      "column": {
+        "amount": "Bedrag",
+        "date": "Datum",
+        "documents": "Documenten",
+        "employee": "Medewerker",
+        "lastClaim": "Laatste declaratie",
+        "open": "Openstaande verzoeken",
+        "purpose": "Doel",
+        "reference": "Referentie",
+        "status": "Toestand",
+        "thisMonth": "Deze maand"
+      },
+      "custodianTitle": "Mijn kleine kas: {{unit}}",
+      "decisionsTitle": "Wacht op mijn beslissing ({{count}})",
+      "enteredFor": "Ingevoerd voor {{name}}",
+      "greeting": "Welkom terug, {{name}}. Uw aanvragen, de beslissingen die op u wachten en het geld dat u beheert.",
+      "hasReceipt": "Bon bijgevoegd",
+      "lowHint": "Het saldo raakt op: vraag een aanvulling aan voordat het op is.",
+      "managerText": "Dien een uitgave vooraf of een declaratie in voor iemand in uw team, binnen de eenheden waarvoor u mag handelen.",
+      "managerTitle": "Selfservice voor managers",
+      "movements": "Laatste mutaties",
+      "newPreExpense": "Aanvraag uitgave vooraf",
+      "newReimbursement": "Onkostendeclaratie",
+      "noMovements": "Nog geen mutaties.",
+      "noRequests": "Nog geen aanvragen. Start er hierboven een.",
+      "openInbox": "Goedkeuringen",
+      "overdue": "Te laat: {{count}}",
+      "paidOn": "{{amount}} uitbetaald op {{date}}",
+      "preExpenseBehalf": "Uitgave vooraf namens een ander",
+      "recentTitle": "Mijn recente aanvragen",
+      "reimbursementBehalf": "Declaratie namens een ander",
+      "requestTopUp": "Aanvulling aanvragen",
+      "shortcut": {
+        "preExpense": "Goedkeuring vooraf van uitgave",
+        "preExpenseText": "Vraag het vooraf. Het goedgekeurde bedrag wordt gereserveerd op de toewijzing van uw eenheid.",
+        "reimbursement": "Onkostendeclaratie",
+        "reimbursementText": "Declareer een uitgave die al betaald is, met de bon bijgevoegd of gescand.",
+        "scan": "Bon scannen",
+        "scanText": "Laat AI de winkel, datum, btw, het bedrag en de categorie van een bon lezen."
+      },
+      "shortcuts": "Een aanvraag starten",
+      "subtitle": "Uw aanvragen, de beslissingen die op u wachten en het geld dat u beheert.",
+      "teamTitle": "Mijn team ({{count}})",
+      "tile": {
+        "approved": "Mijn goedgekeurd / beschikbaar",
+        "approvedNote": "Goedgekeurde uitgaven vooraf om te declareren: {{count}}",
+        "awaiting": "Wacht op goedkeuring",
+        "nothingReturned": "Niets te corrigeren",
+        "paid": "Deze maand betaald",
+        "paidNote": "Betaalde declaraties: {{count}}",
+        "returned": "Aan mij teruggestuurd",
+        "returnedNote": "Actie vereist"
+      },
+      "title": "Mijn dashboard",
+      "toAcknowledge": "Aan u uitbetaald geld wacht op uw bevestiging ({{count}})",
+      "topUpPending": "Aanvulling onderweg:",
+      "voucher": "Bon {{voucher}}",
+      "waitingFor": "Bij {{names}}",
+      "monthTitle": "Mijn declaraties per maand",
+      "monthSubtitle": "Op uitgavedatum, {{from}} tot {{to}}",
+      "categoryTitle": "Mijn uitgaven per categorie",
+      "categorySubtitle": "Mijn declaraties van dit jaar, {{period}}",
+      "claimedThisYear": "Gedeclareerd dit jaar",
+      "noClaims": "Nog geen declaraties."
+    },
+    "chart": {
+      "amount": "Bedrag",
+      "businessUnit": "Bedrijfsonderdeel",
+      "category": "Categorie",
+      "categoryTitle": "Uitgaven per categorie",
+      "claims": "Declaraties",
+      "funded": "Gefinancierd",
+      "month": "Maand",
+      "noMovement": "In deze periode is geen contant geld verplaatst.",
+      "noPaid": "In deze periode zijn geen declaraties betaald.",
+      "otherCategories": "Andere categorieën ({{count}})",
+      "paidInPeriod": "Betaald in de periode",
+      "pettyCash": "Kleine kas",
+      "salary": "Met het salaris",
+      "share": "Aandeel",
+      "spent": "Uitgegeven",
+      "total": "Totaal",
+      "trendSubtitle": "Betaalde declaraties, {{from}} tot {{to}}",
+      "trendTitle": "Uitgaven per maand",
+      "unitSubtitle": "Contant geld bevestigd in de toewijzingen van elke eenheid en daaruit betaald, {{period}}",
+      "unitTitle": "Gefinancierd en uitgegeven per bedrijfsonderdeel"
+    },
+    "finance": {
+      "attentionTitle": "Aandacht nodig ({{count}})",
+      "noAttention": "Niets vraagt aandacht.",
+      "noPositions": "Geen bevestigde toewijzingen voor deze eenheid.",
+      "positionTitle": "Stand van de toewijzingen",
+      "positionTotal": "Toewijzingen: {{count}}",
+      "showAll": "Alles tonen ({{count}})",
+      "showFewer": "Minder tonen",
+      "subtitle": "De kleine kas in alle bedrijfsonderdelen, afdelingen en projecten: wat er is, wat actie vraagt en waar het geld heen ging.",
+      "thresholdsLink": "Drempels",
+      "title": "Financieel dashboard"
+    },
+    "column": {
+      "allocation": "Toewijzing",
+      "available": "Beschikbaar",
+      "band": "Signaalniveau",
+      "financeUser": "Uitbetaald door",
+      "float": "Kasvoorschot",
+      "inUse": "Gebruikt + gereserveerd",
+      "level": "Niveau",
+      "position": "Stand",
+      "reserved": "Gereserveerd",
+      "used": "Gebruikt",
+      "utilization": "Benutting"
+    },
+    "attention": {
+      "exceeded": "Overschreden: {{amount}} meer gebruikt en gereserveerd dan gefinancierd",
+      "near": "Bijna bij de drempel: nog {{percent}}% van het kasvoorschot over",
+      "notAcknowledged": "{{span}} geleden uitbetaald, nog niet bevestigd",
+      "notAcknowledgedToday": "Vandaag uitbetaald, nog niet bevestigd",
+      "overdueWith": "wacht op {{names}}",
+      "paidTo": "uitbetaald aan {{name}}: {{amount}}",
+      "preparedBy": "Opgesteld door {{name}}",
+      "review": "wacht op een controleur · {{reference}}",
+      "toPay": "Goedgekeurde declaraties te betalen: {{count}}",
+      "toPayNote": "{{amount}} · de oudste {{span}} geleden goedgekeurd",
+      "toPayNoteToday": "{{amount}} · vandaag goedgekeurd",
+      "watch": "Opletten: nog {{percent}}% van het kasvoorschot over"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Overschreden",
+      "near": "Bijna bij de drempel",
+      "normal": "Normaal",
+      "pending": "Nog niet gefinancierd",
+      "watch": "Opletten"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Saldo",
+      "bar": "Staven",
+      "followsFilters": "Volgt de periode en filters hierboven.",
+      "line": "Verloop",
+      "lineHint": "Over de periode, voor de vijf grootste rijen.",
+      "metric": "Maatstaf",
+      "name": "Naam",
+      "others": "Overige",
+      "period": "Periode",
+      "pie": "Aandeel",
+      "type": "Grafiektype"
+    },
+    "column": {
+      "allocated": "Toegewezen",
+      "approved": "Goedgekeurd",
+      "available": "Beschikbaar",
+      "businessUnit": "Bedrijfsonderdeel",
+      "category": "Categorie",
+      "charged": "Belast op",
+      "claimed": "Gedeclareerd",
+      "claims": "Declaraties",
+      "date": "Datum",
+      "department": "Afdeling",
+      "departments": "Afdelingen",
+      "employee": "Medewerker",
+      "employeeId": "Personeelsnummer",
+      "employees": "Medewerkers",
+      "head": {
+        "businessUnit": "Hoofd bedrijfsonderdeel",
+        "department": "Afdelingshoofd",
+        "project": "Projectleider"
+      },
+      "lastClaim": "Laatste declaratie",
+      "lastExpense": "Laatste uitgave",
+      "net": "Netto",
+      "paid": "Betaald",
+      "paidOn": "Betaald op",
+      "pending": "Nog niet betaald",
+      "project": "Project",
+      "projectCode": "Projectcode",
+      "recipient": "Medewerker / Ontvanger",
+      "reference": "Referentie",
+      "referenceDate": "Referentie / Datum",
+      "reimbursed": "Vergoed",
+      "share": "% van uitgaven",
+      "status": "Toestand",
+      "statusPaid": "Status / Betaald op",
+      "topVendor": "Belangrijkste winkel",
+      "total": "Totaal",
+      "transactions": "Transacties",
+      "vat": "Btw",
+      "vatin": "Btw-nummer",
+      "vendor": "Leverancier / Winkel",
+      "vendorCategory": "Winkel / categorie",
+      "voucher": "Bonnummer"
+    },
+    "countedNote": "Declaraties tellen vanaf indiening, op uitgavedatum: in goedkeuring, goedgekeurd en wachtend op betaling, of betaald. Concepten en afgewezen of geannuleerde declaraties tellen niet mee.",
+    "empty": "Niets te rapporteren voor deze periode.",
+    "filter": {
+      "allCategories": "Alle categorieën",
+      "allEmployees": "Alle medewerkers",
+      "allStatuses": "Alle statussen",
+      "allVendors": "Alle winkels",
+      "search": "Zoeken",
+      "status": "Toestand",
+      "unit": "Eenheid"
+    },
+    "metric": {
+      "amount": "Bedrag",
+      "available": "Beschikbaar saldo",
+      "count": "Aantal declaraties",
+      "paid": "Betaald",
+      "pending": "Nog niet betaald"
+    },
+    "noMatch": "Niets komt overeen met deze filters.",
+    "notListed": "Niet in de stamgegevens van leveranciers",
+    "openClaims": "Deze declaraties openen",
+    "openingOn": "beginsaldo aan het einde van {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, op uitgavedatum",
+    "periodLedger": "{{from}} – {{to}}, op boekingsdatum",
+    "purpose": {
+      "businessUnit": "Kosten van bedrijfsonderdelen, inclusief hun afdelingen en projecten, naast hun kleine kas.",
+      "category": "Uitgaven per categorie, met de winkel waar het meest is uitgegeven en het aandeel van elke categorie.",
+      "department": "Afdelingskosten: de declaraties belast op elke afdeling, naast de kleine kas ervan.",
+      "employee": "Declaraties per medewerker: gedeclareerd, goedgekeurd, betaald en nog niet betaald.",
+      "ledger": "Financiering, uitgaven en correcties in de periode, met het lopende saldo van elke toewijzing.",
+      "project": "Projectkosten: de declaraties belast op elk project, naast de kleine kas ervan.",
+      "transactions": "Elke declaratie in de periode, met de winkel, waarop ze is belast en waar ze staat.",
+      "vendor": "Waar het geld naartoe gaat: declaraties per winkel, uit de stamgegevens van leveranciers of ingevuld op de declaratie."
+    },
+    "refusal": {
+      "period": "Kies een periode van een dag tot dezelfde of een latere dag."
+    },
+    "search": {
+      "ledger": "Zoek op boeking, referentie, bon, persoon of omschrijving",
+      "summary": "Namen in dit rapport zoeken",
+      "transactions": "Referentie, persoon, winkel of omschrijving zoeken"
+    },
+    "status": {
+      "approved": "Goedgekeurd, niet betaald",
+      "inApproval": "In goedkeuring",
+      "paid": "Betaald"
+    },
+    "summary": "Rapportoverzicht",
+    "tile": {
+      "claimed": "Totaal gedeclareerd",
+      "claimedNote": "In goedkeuring, goedgekeurd en betaald",
+      "claims": "Declaraties",
+      "claimsNote": "Personen: {{count}}",
+      "paid": "Betaald",
+      "paidNote": "{{percent}}% van het totaal",
+      "pending": "Nog niet betaald",
+      "pendingNote": "In goedkeuring of wacht op betaling"
+    },
+    "totalRow": "Totaal",
+    "view": {
+      "chart": "Grafiek",
+      "table": "Tabel"
+    },
+    "viewAs": "Weergeven als"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Bankoverschrijving",
+      "cash": "Contant",
+      "cheque": "Cheque",
+      "salary": "Salaris"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Overgeslagen: dezelfde persoon keurt al een eerdere stap goed",
+        "belowAmount": "Overgeslagen: het bedrag ligt niet boven de drempel",
+        "incomplete": "Kies een bron van de goedkeurder",
+        "noApprover": "Geen actieve goedkeurder gevonden",
+        "noProject": "Overgeslagen: geen project op deze aanvraag",
+        "selfApproval": "Overgeslagen: de aanvrager zou de eigen aanvraag goedkeuren"
+      }
+    }
+  }
+}

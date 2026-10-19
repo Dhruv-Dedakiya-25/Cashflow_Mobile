@@ -10,7 +10,13 @@
     "morning": "Good morning",
     "afternoon": "Good afternoon",
     "evening": "Good evening",
-    "subtitle": "Your petty cash at a glance."
+    "subtitle": "Your petty cash at a glance.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Petty cash across the company",
+    "ofFloats": "of {{amount}} in {{count}} allocations",
+    "ofFloat": "of {{amount}}",
+    "pending": "Not paid yet",
+    "seeAll": "See every allocation"
   },
   "placeholder": {
     "home": "Your figures, waiting claims and recent activity will show here.",
@@ -30,5 +36,98 @@
     "modeLive": "Live",
     "version": "Version",
     "done": "Done"
+  },
+  "demo": {
+    "sample": "Sample"
+  },
+  "claims": {
+    "summary": "{{count}} claims · {{amount}}",
+    "empty": "No claims here.",
+    "search": "Search by text or amount"
+  },
+  "scan": {
+    "takePhoto": "Take a photo of the bill",
+    "takePhotoHint": "The AI reads it and fills in the claim for you to check.",
+    "choosePhoto": "Choose from photos",
+    "reading": "Reading the receipt…",
+    "claimDetails": "Claim details",
+    "sentTitle": "Sent for approval",
+    "sentText": "{{reference}} is now waiting for {{name}}.",
+    "resentTitle": "Sent again",
+    "viewClaim": "View the claim",
+    "cameraDenied": "CashFlow needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
+    "manual": "Type the details instead",
+    "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone."
+  },
+  "profile": {
+    "title": "Profile",
+    "security": "Security",
+    "twoFactorOn": "Two-factor sign-in is on",
+    "twoFactorOff": "Two-factor sign-in is off for your role",
+    "signOut": "Sign out",
+    "appearance": "Automatic follows your phone's light or dark setting.",
+    "theme": "Appearance",
+    "themeAuto": "Automatic",
+    "themeLight": "Light",
+    "themeDark": "Dark"
+  },
+  "inbox": {
+    "toDecide": "To decide",
+    "toAcknowledge": "To acknowledge",
+    "submitted": "Sent {{time}} ago"
+  },
+  "review": {
+    "done": {
+      "approved": "Approved",
+      "returned": "Returned for correction",
+      "rejected": "Rejected"
+    },
+    "sentOn": "{{reference}} goes on to {{names}}.",
+    "final": "{{reference}} is approved. Finance pays it next.",
+    "returnedTo": "{{name}} is asked to correct {{reference}}.",
+    "rejectedFor": "{{name}} will see your reason.",
+    "backToInbox": "Back to Inbox",
+    "available": "{{reference}} has {{amount}} available now."
+  },
+  "ack": {
+    "done": "Acknowledged",
+    "paidOn": "Paid on {{date}}",
+    "doneText": "{{amount}} is now available in {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Whole company",
+    "average": "Average claim",
+    "share": "Share report",
+    "shareDemo": "In the live app this shares the report as PDF or Excel, from the same export as the web, and records it in the Audit Log.",
+    "search": "Search people, merchants or amounts",
+    "spendingBy": "Spending by",
+    "top": "Top: {{name}}"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Business units",
+      "department": "Departments",
+      "project": "Projects",
+      "custodian": "Custodians"
+    },
+    "heldBy": "Held by {{name}}"
+  },
+  "period": {
+    "title": "Period",
+    "all": "All dates",
+    "thisMonth": "This month",
+    "lastMonth": "Last month",
+    "last3": "Last 3 months",
+    "last6": "Last 6 months",
+    "thisYear": "This year",
+    "custom": "Choose dates",
+    "hint": "Tap the first day, then the last day.",
+    "apply": "Apply",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "pickMonth": "Choose month and year",
+    "previousYear": "Previous year",
+    "nextYear": "Next year",
+    "pickYear": "Choose year"
   }
 }

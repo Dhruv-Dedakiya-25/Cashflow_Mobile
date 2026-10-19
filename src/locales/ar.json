@@ -10,7 +10,13 @@
     "morning": "صباح الخير",
     "afternoon": "مساء الخير",
     "evening": "مساء الخير",
-    "subtitle": "نظرة سريعة على مصروفاتك النثرية."
+    "subtitle": "نظرة سريعة على مصروفاتك النثرية.",
+    "hello": "{{greeting}}، {{name}}",
+    "company": "العهد النقدية في الشركة كلها",
+    "ofFloats": "من {{amount}} في {{count}} عُهد",
+    "ofFloat": "من {{amount}}",
+    "pending": "لم تُدفع بعد",
+    "seeAll": "عرض كل المخصصات"
   },
   "placeholder": {
     "home": "ستظهر هنا أرقامك والمطالبات المنتظرة وآخر النشاطات.",
@@ -30,5 +36,98 @@
     "modeLive": "مباشر",
     "version": "الإصدار",
     "done": "تم"
+  },
+  "demo": {
+    "sample": "نموذج"
+  },
+  "claims": {
+    "summary": "{{count}} مطالبات · {{amount}}",
+    "empty": "لا توجد مطالبات هنا.",
+    "search": "ابحث بالنص أو المبلغ"
+  },
+  "scan": {
+    "takePhoto": "التقط صورة للفاتورة",
+    "takePhotoHint": "يقرؤها الذكاء الاصطناعي ويملأ المطالبة لتتحقق منها.",
+    "choosePhoto": "اختر من الصور",
+    "reading": "جارٍ قراءة الإيصال…",
+    "claimDetails": "تفاصيل المطالبة",
+    "sentTitle": "أُرسلت للاعتماد",
+    "sentText": "{{reference}} الآن بانتظار {{name}}.",
+    "resentTitle": "أُرسلت مرة أخرى",
+    "viewClaim": "عرض المطالبة",
+    "cameraDenied": "يحتاج CashFlow إلى الكاميرا لتصوير الإيصالات. اسمح بها من الإعدادات، أو اختر صورة بدلًا من ذلك.",
+    "manual": "أدخل التفاصيل يدويًا",
+    "sampleNote": "قراءة نموذجية: في العرض التجريبي تُقرأ كل الإيصالات كهذا النموذج، وتبقى الصورة على هذا الهاتف."
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "security": "الأمان",
+    "twoFactorOn": "التحقق بخطوتين مفعّل",
+    "twoFactorOff": "التحقق بخطوتين غير مطلوب لدورك",
+    "signOut": "تسجيل الخروج",
+    "appearance": "التلقائي يتبع إعداد الهاتف الفاتح أو الداكن.",
+    "theme": "المظهر",
+    "themeAuto": "تلقائي",
+    "themeLight": "فاتح",
+    "themeDark": "داكن"
+  },
+  "inbox": {
+    "toDecide": "بانتظار قرارك",
+    "toAcknowledge": "بانتظار تأكيد الاستلام",
+    "submitted": "أُرسل قبل {{time}}"
+  },
+  "review": {
+    "done": {
+      "approved": "تمت الموافقة",
+      "returned": "أُعيد للتصحيح",
+      "rejected": "رُفض"
+    },
+    "sentOn": "{{reference}} ينتقل الآن إلى {{names}}.",
+    "final": "تمت الموافقة على {{reference}}. تدفعه المالية بعد ذلك.",
+    "returnedTo": "طُلب من {{name}} تصحيح {{reference}}.",
+    "rejectedFor": "سيرى {{name}} سبب الرفض.",
+    "backToInbox": "العودة إلى صندوق الوارد",
+    "available": "لدى {{reference}} الآن {{amount}} متاحة."
+  },
+  "ack": {
+    "done": "تم تأكيد الاستلام",
+    "paidOn": "دُفع في {{date}}",
+    "doneText": "أصبح {{amount}} متاحًا الآن في {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "الشركة كلها",
+    "average": "متوسط المطالبة",
+    "share": "مشاركة التقرير",
+    "shareDemo": "في التطبيق الفعلي يشارك هذا التقرير بصيغة PDF أو Excel من نفس تصدير الويب، ويُسجَّل في سجل التدقيق.",
+    "search": "ابحث بالأشخاص أو التجار أو المبالغ",
+    "spendingBy": "الإنفاق حسب",
+    "top": "الأعلى: {{name}}"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "وحدات الأعمال",
+      "department": "الأقسام",
+      "project": "المشاريع",
+      "custodian": "أمناء العهدة"
+    },
+    "heldBy": "لدى {{name}}"
+  },
+  "period": {
+    "title": "الفترة",
+    "all": "كل التواريخ",
+    "thisMonth": "هذا الشهر",
+    "lastMonth": "الشهر الماضي",
+    "last3": "آخر 3 أشهر",
+    "last6": "آخر 6 أشهر",
+    "thisYear": "هذا العام",
+    "custom": "اختيار التواريخ",
+    "hint": "اضغط على اليوم الأول ثم على اليوم الأخير.",
+    "apply": "تطبيق",
+    "previousMonth": "الشهر السابق",
+    "nextMonth": "الشهر التالي",
+    "pickMonth": "اختيار الشهر والسنة",
+    "previousYear": "السنة السابقة",
+    "nextYear": "السنة التالية",
+    "pickYear": "اختيار السنة"
   }
 }

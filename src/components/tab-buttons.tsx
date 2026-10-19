@@ -63,7 +63,7 @@ export function TabButton({ icon: IconComponent, label, badge, isFocused, ref, .
   );
 }
 
-/** Submit Bill: the raised blue button in the middle of the bar. */
+/** Submit Bill: a blue pill in the middle of the bar, level with the other tabs. */
 export function ScanButton({ label, isFocused, ref, ...props }: TabTriggerSlotProps & { label: string }) {
   const palette = usePalette();
   return (
@@ -73,25 +73,10 @@ export function ScanButton({ label, isFocused, ref, ...props }: TabTriggerSlotPr
       accessibilityRole="tab"
       accessibilityLabel={label}
       accessibilityState={{ selected: isFocused }}
-      style={({ pressed }) => ({ flex: 1, alignItems: 'center', gap: 3, transform: [{ scale: pressed ? 0.94 : 1 }] })}>
-      <View
-        style={{
-          width: 58,
-          height: 58,
-          marginTop: -22,
-          borderRadius: 29,
-          backgroundColor: palette.primary,
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderWidth: 4,
-          borderColor: palette.card,
-          shadowColor: palette.primary,
-          shadowOpacity: 0.35,
-          shadowRadius: 10,
-          shadowOffset: { width: 0, height: 6 },
-          elevation: 8,
-        }}>
-        <IconScan size={26} strokeWidth={2} color={palette.onPrimary} />
+      style={({ pressed }) => ({ flex: 1, alignItems: 'center', gap: 3, paddingTop: space.sm, opacity: pressed ? 0.7 : 1 })}>
+      {/* The pill reaches 4pt past the other icons above and below, so all the labels stay on one line. */}
+      <View style={{ width: 52, height: 32, marginVertical: -4, borderRadius: 16, backgroundColor: palette.primary, alignItems: 'center', justifyContent: 'center' }}>
+        <IconScan size={22} strokeWidth={2} color={palette.onPrimary} />
       </View>
       <Label label={label} focused={isFocused} />
     </Pressable>

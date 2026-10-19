@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Thêm",
+    "addEntity": "Thêm {{entity}}",
+    "back": "Quay lại",
+    "cancel": "Hủy",
+    "clearAll": "Xóa tất cả",
+    "close": "Đóng",
+    "create": "Tạo",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "export": "Xuất",
+    "retry": "Thử lại",
+    "save": "Lưu",
+    "saveChanges": "Lưu thay đổi",
+    "search": "Tìm kiếm",
+    "view": "Xem",
+    "viewAll": "Xem tất cả"
+  },
+  "status": {
+    "active": "Hoạt động",
+    "all": "Tất cả",
+    "inactive": "Không hoạt động",
+    "no": "Không",
+    "yes": "Có"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Hủy yêu cầu",
+      "saveDraft": "Lưu bản nháp",
+      "submit": "Gửi phê duyệt",
+      "submitForApproval": "Gửi phê duyệt"
+    },
+    "filter": {
+      "allStatuses": "Tất cả trạng thái",
+      "from": "Từ",
+      "to": "Đến"
+    },
+    "history": {
+      "acknowledged": "đã xác nhận nhận tiền",
+      "approved": "đã phê duyệt",
+      "cancelled": "đã hủy",
+      "created": "đã tạo yêu cầu",
+      "disbursed": "đã chi số tiền",
+      "edited": "đã thay đổi",
+      "empty": "(trống)",
+      "paid": "đã thanh toán",
+      "rejected": "đã từ chối",
+      "resubmitted": "đã gửi phê duyệt lại",
+      "returned": "đã trả lại để sửa",
+      "submitted": "đã gửi phê duyệt",
+      "title": "Lịch sử",
+      "reallocated": "đã chuyển phân bổ",
+      "takenOver": "đã nhận bàn giao"
+    },
+    "notFound": "Bản ghi này không tồn tại, hoặc nằm ngoài phạm vi bạn được xem.",
+    "path": {
+      "decidedBy": {
+        "approved": "{{name}} phê duyệt lúc {{time}}",
+        "rejected": "{{name}} từ chối lúc {{time}}",
+        "returned": "{{name}} trả lại lúc {{time}}"
+      },
+      "notSent": "Chưa gửi phê duyệt.",
+      "overdue": "Quá hạn",
+      "state": {
+        "approved": "Đã phê duyệt",
+        "pending": "Đang chờ",
+        "rejected": "Đã từ chối",
+        "returned": "Đã trả lại",
+        "skipped": "Bỏ qua",
+        "waiting": "Chưa tới"
+      },
+      "title": "Tuyến phê duyệt",
+      "waitingSince": "Đang chờ từ {{time}} · cho phép {{hours}} giờ",
+      "willGoTo": "Sẽ chuyển đến"
+    },
+    "reason": "Lý do",
+    "reasonRequired": "Nhập lý do. Lý do được lưu trong lịch sử yêu cầu.",
+    "refusal": {
+      "alreadyPosted": "Mục này đã có trong sổ cái, nên không có gì thay đổi.",
+      "amount": "Nhập số tiền lớn hơn 0, tối đa ba chữ số thập phân.",
+      "amountTooLarge": "Số tiền không được vượt quá {{max}} OMR.",
+      "noApprover": "Một bước của quy trình không có ai để gửi yêu cầu này. Hãy nhờ quản trị viên kiểm tra Thiết lập quy trình.",
+      "noWorkflow": "Không có quy trình đang hoạt động nào áp dụng cho yêu cầu này. Hãy nhờ quản trị viên kiểm tra Thiết lập quy trình.",
+      "nobodyLeft": "Tất cả những người có thể phê duyệt yêu cầu này đều liên quan đến nó, nên không còn ai để phê duyệt. Hãy đổi người được hưởng, hoặc nhờ quản trị viên kiểm tra Thiết lập quy trình.",
+      "notAllowed": "Vai trò của bạn không cho phép việc này.",
+      "notEditable": "Chỉ có thể thay đổi bản nháp hoặc yêu cầu đã bị trả lại.",
+      "notFound": "Bản ghi này không tồn tại, hoặc nằm ngoài phạm vi bạn được xem.",
+      "notNow": "Không thể thực hiện khi yêu cầu đang ở trạng thái hiện tại.",
+      "onlyDrafts": "Chỉ có thể xóa bản nháp. Hãy hủy yêu cầu thay vào đó.",
+      "reasonRequired": "Nhập lý do.",
+      "savedMeanwhile": "Trong lúc đó người khác đã lưu mục này, vì vậy không có gì thay đổi. Hãy tải lại và thử lại.",
+      "signedOut": "Phiên làm việc đã hết. Hãy đăng nhập lại.",
+      "underApproval": "Yêu cầu đang chờ người phê duyệt. Hãy chờ quyết định, hoặc đề nghị trả lại."
+    },
+    "returnedBecause": "Trả lại để sửa:",
+    "status": {
+      "acknowledged": "Đã xác nhận",
+      "active": "Hoạt động",
+      "approved": "Đã phê duyệt",
+      "cancelled": "Đã hủy",
+      "closed": "Đóng",
+      "disbursed": "Chờ xác nhận đã nhận",
+      "draft": "Nháp",
+      "inApproval": "Đang phê duyệt",
+      "paid": "Đã thanh toán",
+      "rejected": "Đã từ chối",
+      "returned": "Đã trả lại",
+      "submitted": "Đã gửi"
+    }
+  },
+  "auth": {
+    "brandTagline": "Quản lý quỹ tiền mặt nhỏ",
+    "company": "Công ty",
+    "demoBadge": "Demo",
+    "demoNotice": "Chế độ demo: đăng nhập được mô phỏng và mọi màn hình hiển thị dữ liệu mẫu cho đến khi có API.",
+    "feature": {
+      "allocations": "Phân bổ theo phòng ban & dự án",
+      "permissions": "Ma trận vai trò và quyền",
+      "selfService": "Tự phục vụ cho nhân viên & quản lý",
+      "thresholds": "Theo dõi ngưỡng",
+      "twoFactor": "Đăng nhập hai lớp",
+      "workflows": "Phê duyệt trước & sau khi chi"
+    },
+    "password": "Mật khẩu",
+    "passwordDemoHint": "Không kiểm tra trong bản demo. Trên hệ thống thực tế, đăng nhập sẽ xác minh mật khẩu và mã xác thực hai yếu tố của bạn.",
+    "persona": {
+      "auditor": "Kiểm toán viên (Chỉ xem)",
+      "employee": "Nhân viên tự phục vụ",
+      "finance": "Trưởng tài chính / Quản trị viên",
+      "manager": "Quản lý phòng ban / dự án"
+    },
+    "personaLabel": "Vai trò mẫu",
+    "pitch": "Phân bổ quỹ tiền mặt nhỏ, phê duyệt chi phí dự kiến, hoàn ứng chi phí thực tế, chuyển phê duyệt trong tổ chức, đọc hóa đơn bằng AI và đối chiếu mọi giao dịch.",
+    "rememberMe": "Duy trì đăng nhập",
+    "signIn": "Đăng nhập",
+    "signInButton": "Đăng nhập",
+    "signInHint": "Chọn một vai trò mẫu để xem các màn hình mà vai trò đó sử dụng.",
+    "twoFactor": {
+      "back": "Quay lại",
+      "demoHint": "Demo: chấp nhận sáu chữ số bất kỳ.",
+      "digit": "Chữ số {{n}} trên 6",
+      "incomplete": "Nhập đủ sáu chữ số.",
+      "panelText": "Mã từ ứng dụng xác thực giúp xác nhận đúng là bạn. Chính sách có thể bắt buộc với mọi người, theo vai trò hoặc với người dùng được chọn.",
+      "panelTitle": "Xác minh hai bước",
+      "subtitle": "Nhập mã 6 chữ số từ ứng dụng xác thực của bạn.",
+      "title": "Nhập mã xác minh",
+      "trustDevice": "Tin cậy thiết bị này trong 30 ngày",
+      "verify": "Xác minh & tiếp tục",
+      "wrongCode": "Mã đó không đúng. Hãy thử lại.",
+      "expired": "Phiên đăng nhập này đã hết hạn. Hãy quay lại và đăng nhập lại.",
+      "useRecovery": "Dùng mã khôi phục thay thế",
+      "useApp": "Dùng ứng dụng xác thực thay thế",
+      "recoveryTitle": "Nhập mã khôi phục",
+      "recoveryHint": "Nhập một trong các mã khôi phục bạn đã lưu. Mỗi mã chỉ dùng được một lần.",
+      "trustDeviceDays": "Tin cậy thiết bị này trong {{n}} ngày",
+      "enrollTitle": "Thiết lập đăng nhập hai lớp",
+      "enrollSubtitle": "Tài khoản của bạn phải dùng ứng dụng xác thực. Hãy thiết lập ngay để hoàn tất đăng nhập."
+    },
+    "twoFactorNote": "Đăng nhập hai lớp có thể tắt, tùy chọn hoặc bắt buộc theo vai trò.",
+    "username": "Email hoặc tên người dùng",
+    "signInHintApi": "Đăng nhập bằng tài khoản CashFlow của bạn.",
+    "error": {
+      "invalid": "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+      "tooMany": "Quá nhiều lần thử. Hãy đợi một phút rồi thử lại.",
+      "noApi": "Không thể kết nối máy chủ. Hãy thử lại sau giây lát."
+    }
+  },
+  "scan": {
+    "aiConfidence": "Độ tin cậy {{confidence}}%",
+    "aiOff": "Trích xuất bằng AI đang tắt trong AI & xử lý tài liệu. Hóa đơn vẫn được kiểm tra và đính kèm; hãy tự nhập thông tin.",
+    "checkThis": "Cần kiểm tra",
+    "col": {
+      "claim": "Trên đề nghị",
+      "field": "Trường",
+      "read": "AI đọc"
+    },
+    "corrected": "Đã sửa",
+    "createClaim": "Tạo hoàn ứng",
+    "extractionTitle": "Trích xuất AI",
+    "fact": {
+      "file": "Tệp",
+      "hash": "SHA-256",
+      "size": "Kích thước",
+      "type": "Loại",
+      "typeChecked": "{{type}}, kiểm tra theo nội dung"
+    },
+    "field": {
+      "category": "Danh mục gợi ý",
+      "expenseDate": "Ngày",
+      "grossAmount": "Tổng cộng",
+      "merchant": "Cửa hàng",
+      "receiptNo": "Số hóa đơn",
+      "vatAmount": "VAT"
+    },
+    "keptApart": "Kết quả AI đọc được giữ nguyên bên cạnh giá trị bạn nhập, để phần sửa luôn hiển thị. Kết quả dưới {{min}}% được tô sáng.",
+    "lowHint": "AI chỉ chắc chắn {{confidence}}%. Hãy đối chiếu với hóa đơn.",
+    "minConfidence": "giá trị dưới {{min}}% được tô sáng",
+    "noPreview": "Trình duyệt này không hiển thị được ảnh HEIC. Tệp đã được kiểm tra và đính kèm.",
+    "noReceipt": "Không có hóa đơn trong tay?",
+    "readBy": "Do {{provider}} đọc",
+    "receiptTitle": "Hóa đơn",
+    "sampleNote": "Đọc mẫu: Trong bản demo, mọi biên lai đều được đọc theo mẫu này vì tệp không bao giờ rời khỏi trình duyệt.",
+    "stage": {
+      "extracted": "Đã trích xuất",
+      "extractedHint": "Các trường AI đọc",
+      "normalizing": "Chuẩn hóa",
+      "normalizingHint": "Làm thẳng, cắt, nén",
+      "pdfReady": "PDF sẵn sàng",
+      "pdfReadyHint": "PDF chuẩn, giữ bản gốc",
+      "skipped": "AI đang tắt",
+      "uploaded": "Đã tải lên",
+      "uploadedHint": "Đã kiểm tra loại, kích thước và mã băm",
+      "verified": "Đã xác minh",
+      "verifiedHint": "Bạn đã kiểm tra"
+    },
+    "stagesTitle": "Các giai đoạn tài liệu",
+    "startAgain": "Quét hóa đơn khác",
+    "subtitle": "Chụp bằng điện thoại hoặc tải hóa đơn lên, rồi xem lại các trường trích xuất trước khi tạo đề nghị.",
+    "tip": {
+      "light": "Đủ sáng, không có bóng che phần tổng.",
+      "private": "Trong bản demo, tệp vẫn nằm trong trình duyệt này.",
+      "whole": "Toàn bộ hóa đơn trong khung, kể cả mép."
+    },
+    "title": "Quét hóa đơn & trích xuất bằng AI",
+    "typeIt": "Nhập thông tin từ hóa đơn.",
+    "uploadHint": "Mở máy ảnh hoặc tải hóa đơn lên",
+    "useSample": "Thử hóa đơn mẫu",
+    "waitingForReceipt": "Thêm hóa đơn để đọc.",
+    "working": {
+      "normalizing": "Đang làm thẳng và làm sạch ảnh…",
+      "pdfReady": "Đang tạo PDF chuẩn…",
+      "uploaded": "Đang kiểm tra tệp…"
+    },
+    "aiPhotoOnly": "Đọc bằng AI chỉ khả dụng cho ảnh định dạng JPG và PNG.",
+    "aiUnclear": "Không thể đọc rõ ràng chi tiết hóa đơn. Vui lòng nhập thủ công.",
+    "aiUnreachable": "Không thể kết nối với mô hình AI. Hãy nhập chi tiết hóa đơn bằng tay.",
+    "aiQuota": "Đã đạt giới hạn tần suất AI. Vui lòng đợi trong giây lát hoặc nhập thông tin biên lai bằng tay.",
+    "aiBusy": "AI của Google hiện đang bận. Vui lòng thử lại sau giây lát hoặc tự nhập thông tin chi tiết."
+  },
+  "approval": {
+    "action": {
+      "review": "Xem xét"
+    },
+    "attachmentTitle": "Tài liệu kèm theo",
+    "availableNow": "Hiện có {{amount}}",
+    "backToInbox": "Quay lại Hộp phê duyệt",
+    "changes": {
+      "after": "Đã sửa sau khi {{name}} trả lại lúc {{time}}:",
+      "title": "Đã sửa sau khi bị trả lại"
+    },
+    "column": {
+      "amount": "Số tiền",
+      "person": "Người",
+      "reference": "Tham chiếu",
+      "step": "Trạng thái / Bước hiện tại",
+      "submitted": "Ngày gửi",
+      "type": "Loại / Đơn vị"
+    },
+    "days": "{{count}} ngày",
+    "decision": {
+      "approve": "Phê duyệt",
+      "comment": "Nhận xét (bắt buộc khi trả lại hoặc từ chối)",
+      "noMoney": "Phê duyệt không chuyển tiền. Chỉ Thanh toán tài chính mới chi trả.",
+      "placeholder": "Người yêu cầu cần biết hoặc sửa điều gì?",
+      "reasonNeeded": "Nêu lý do trả lại hoặc từ chối. Người yêu cầu sẽ thấy lý do này.",
+      "reject": "Từ chối",
+      "return": "Trả lại để sửa",
+      "title": "Quyết định của bạn"
+    },
+    "detailsTitle": {
+      "additionalCash": "Yêu cầu bổ sung tiền mặt",
+      "allocation": "Phân bổ",
+      "preExpense": "Yêu cầu chi trước",
+      "reimbursement": "Yêu cầu hoàn ứng",
+      "reallocation": "Yêu cầu Chuyển Phân bổ"
+    },
+    "dueIn": "Đến hạn sau {{span}}",
+    "empty": {
+      "decided": "Bạn chưa quyết định yêu cầu nào.",
+      "scope": "Chưa có yêu cầu nào được gửi phê duyệt trong phạm vi của bạn.",
+      "waiting": "Không có gì đang chờ bạn quyết định."
+    },
+    "ended": {
+      "approved": "{{name}} đã duyệt lúc {{time}}.",
+      "cancelled": "{{name}} rút lại lúc {{time}}.",
+      "rejected": "{{name}} từ chối lúc {{time}}.",
+      "returned": "{{name}} trả lại để sửa lúc {{time}}."
+    },
+    "entity": "yêu cầu",
+    "filter": {
+      "allTypes": "Tất cả loại yêu cầu",
+      "allUnits": "Tất cả căn"
+    },
+    "flag": {
+      "changed": "Đã sửa sau khi bị trả lại",
+      "duplicate": "Có thể trùng hóa đơn",
+      "onBehalf": "Người khác nhập thay cho người này",
+      "overAvailable": "Vượt số khả dụng của phân bổ",
+      "lowConfidence": "Độ tin cậy đọc hóa đơn bằng AI ở mức thấp"
+    },
+    "hours": "{{count}} giờ",
+    "kind": {
+      "additionalCash": "Bổ sung tiền mặt",
+      "allocation": "Phân bổ",
+      "preExpense": "Chi trước",
+      "reimbursement": "Hoàn ứng chi phí",
+      "reallocation": "Chuyển phân bổ"
+    },
+    "next": "Tiếp",
+    "openFile": "Mở",
+    "openRecord": "Mở toàn bộ hồ sơ",
+    "othersTurn": "Đang chờ {{names}} ở bước {{n}}. Bạn có thể theo dõi tại đây; chỉ họ mới quyết định được.",
+    "outcome": {
+      "cash": "Bước của bạn là bước cuối. Phê duyệt chuyển cho Tài chính để chi; khoản này được tính khi người giữ quỹ xác nhận đã nhận.",
+      "claim": "Bước của bạn là bước cuối. Phê duyệt giữ chỗ số tiền trên phân bổ cho đến khi Tài chính thanh toán.",
+      "next": "Phê duyệt sẽ chuyển sang bước tiếp theo ({{step}}): {{names}}.",
+      "preExpense": "Bước của bạn là bước cuối. Phê duyệt cho phép nhân viên chi, và giữ số tiền cho đến khi được yêu cầu hoàn ứng.",
+      "salary": "Bước của bạn là bước cuối. Phê duyệt chuyển cho Tài chính để trả cùng kỳ lương tới.",
+      "reallocation": "Bước của bạn là bước cuối. Phê duyệt sẽ chuyển tiền cho người giữ mới, người này xác nhận nhận tiền hoặc tiếp nhận. Tài chính không phải chi trả gì."
+    },
+    "overAvailable": "Số này vượt số khả dụng của {{reference}} ({{available}}). Tài chính sẽ cần bổ sung trước khi thanh toán.",
+    "overAvailableBlocked": "Số này vượt số khả dụng của {{reference}} ({{available}}), và số dư không được âm. Bước duyệt cuối cần bổ sung trước.",
+    "overdueBy": "Quá hạn {{span}}",
+    "position": "{{n}} / {{total}}",
+    "previous": "Trước",
+    "refusal": {
+      "changed": "Yêu cầu này đã thay đổi kể từ khi bạn mở. Hãy tải lại và kiểm tra thay đổi trước khi quyết định.",
+      "decided": "Yêu cầu này đã được quyết định.",
+      "notEnoughCash": "{{reference}} chỉ còn OMR {{available}} khả dụng, và số dư không được âm. Hãy trả lại yêu cầu, hoặc nhờ Tài chính bổ sung trước.",
+      "notYourStep": "Bước này không chờ bạn.",
+      "ownRequest": "Bạn không thể quyết định yêu cầu mà bạn là một bên."
+    },
+    "refusalHint": "{{reference}} chỉ còn {{available}} khả dụng, và số dư không được âm. Hãy trả lại, hoặc nhờ Tài chính bổ sung trước.",
+    "search": "Tìm số tham chiếu, người hoặc mục đích",
+    "sentAt": "gửi lúc {{time}}",
+    "subtitle": "Các yêu cầu đang chờ bạn quyết định, mọi thứ trong phạm vi của bạn, và những gì bạn đã quyết định.",
+    "tile": {
+      "decided": "Bạn đã quyết định",
+      "decidedNote": "Đã duyệt, trả lại hoặc từ chối",
+      "overdue": "Quá hạn",
+      "overdueNote": "Quá thời gian Thiết lập quy trình cho phép",
+      "scope": "Đang phê duyệt",
+      "summary": "Tóm tắt phê duyệt",
+      "waiting": "Đang chờ bạn"
+    },
+    "title": "Hộp phê duyệt",
+    "toast": {
+      "approve": "Đã duyệt {{reference}}.",
+      "reject": "Đã từ chối {{reference}}.",
+      "return": "Đã trả lại {{reference}} để sửa."
+    },
+    "view": {
+      "decided": "Tôi đã quyết định",
+      "scope": "Tất cả trong phạm vi của tôi",
+      "waiting": "Đang chờ tôi"
+    },
+    "views": "Các chế độ xem hộp phê duyệt",
+    "where": {
+      "approved": "Ở Tài chính để thanh toán",
+      "disbursed": "Tài chính đã chi",
+      "returned": "Ở người yêu cầu để sửa",
+      "spendable": "Có thể chi ngay, sau đó yêu cầu hoàn ứng"
+    },
+    "yourTurn": "Đang chờ bạn quyết định ở bước {{n}}: {{step}}.",
+    "yoursToWatch": "Bạn là một bên của yêu cầu này nên không thể quyết định. Yêu cầu đang chờ {{names}} ở bước {{n}}.",
+    "openSourceRecord": "Mở phân bổ"
+  },
+  "ack": {
+    "action": "Xác nhận",
+    "amountReceived": "Số tiền đã nhận",
+    "bannerHint": "Số dư chỉ tăng sau khi bạn xác nhận tiền mặt đã đến.",
+    "bannerNone": "Không có gì chờ bạn xác nhận.",
+    "bannerWaiting": "Chờ bạn xác nhận: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Số tiền",
+      "issued": "Đã cấp",
+      "payment": "Hình thức / Số tham chiếu thanh toán",
+      "recipient": "Người nhận",
+      "reference": "Tham chiếu",
+      "scope": "Phạm vi phân bổ",
+      "status": "Trạng thái"
+    },
+    "confirm": "Xác nhận đã nhận số tiền",
+    "dialogTitle": "Xác nhận đã nhận quỹ tiền mặt nhỏ",
+    "entity": "khoản thanh toán",
+    "filter": {
+      "allTypes": "Tất cả loại"
+    },
+    "kind": {
+      "additionalCash": "Bổ sung",
+      "allocation": "Phân bổ",
+      "topUpOf": "Bổ sung cho {{reference}}",
+      "handover": "Bàn giao",
+      "reallocatedFrom": "Chuyển từ {{reference}}"
+    },
+    "openAllocation": "Mở phân bổ",
+    "refusal": {
+      "already": "Đã xác nhận trước đó. Không có gì thay đổi.",
+      "notRecipient": "Chỉ người đã nhận tiền mặt mới có thể xác nhận."
+    },
+    "remarks": "Ghi chú (không bắt buộc)",
+    "remarksPlaceholder": "Ví dụ: đã đếm và nhận đủ.",
+    "search": "Tìm theo số, người nhận hoặc số tham chiếu thanh toán",
+    "state": {
+      "acknowledged": "Đã xác nhận",
+      "waiting": "Chờ xác nhận đã nhận"
+    },
+    "statement": "Khi xác nhận, bạn thừa nhận đã nhận số tiền ở trên. Sau đó số tiền được cộng vào số dư phân bổ, và không thể hoàn tác.",
+    "subtitle": "Xác nhận đã nhận quỹ tiền mặt nhỏ do Tài chính chi, và in phiếu chi.",
+    "title": "Xác nhận nhận phân bổ",
+    "toast": {
+      "done": "Đã xác nhận. {{amount}} hiện có trong {{reference}}."
+    },
+    "waitingFor": "Đang chờ {{name}}",
+    "reallocatedBy": "Do {{name}} chuyển",
+    "takeOverTitle": "Nhận bàn giao phân bổ",
+    "takeOverStatement": "Tôi xác nhận đã nhận tiền và hồ sơ của phân bổ này và hiện đang giữ phân bổ.",
+    "takeOver": "Nhận bàn giao"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Rút lại"
+    },
+    "categoryPlaceholder": "Tìm danh mục hoàn ứng…",
+    "check": {
+      "beneficiary": "Bạn không thể nhập yêu cầu cho nhân viên này. Chỉ chọn được người trong phạm vi của bạn.",
+      "beneficiaryFixed": "Không thể đổi nhân viên sau khi đã gửi yêu cầu.",
+      "category": "Chọn một danh mục chi phí đang hoạt động.",
+      "chooseCategory": "Chọn danh mục chi phí.",
+      "chooseEmployee": "Chọn nhân viên.",
+      "costUnit": "Chọn đơn vị mà nhân viên này thuộc về. Không thể tính vào đơn vị không hoạt động.",
+      "merchant": "Nhập cửa hàng hoặc người nhận.",
+      "purpose": "Mô tả ngắn gọn mục đích công việc.",
+      "vendor": "Nhà cung cấp này không hoạt động. Chọn nhà cung cấp khác hoặc nhập tên cửa hàng."
+    },
+    "costHint": "Chỉ có thể tính chi phí cho các đơn vị mà người này thuộc về.",
+    "employeePlaceholder": "Nhập tên hoặc mã nhân viên…",
+    "ended": {
+      "cancelled": "{{name}} rút lại lúc {{time}}.",
+      "rejected": "{{name}} từ chối lúc {{time}}.",
+      "returned": "{{name}} trả lại để sửa lúc {{time}}."
+    },
+    "enteredBy": "Do {{name}} nhập",
+    "field": {
+      "attachment": "Tài liệu kèm theo",
+      "category": "Danh mục chi phí",
+      "chargedTo": "Tính vào",
+      "costLevel": "Loại phân bổ chi phí",
+      "costUnit": "Tính vào",
+      "created": "Đã tạo",
+      "employee": "Nhân viên",
+      "enteredBy": "Người nhập",
+      "for": "Cho",
+      "merchant": "Người bán / Người nhận tiền",
+      "submitFor": "Gửi cho"
+    },
+    "filter": {
+      "allEmployees": "Tất cả nhân viên"
+    },
+    "merchantHint": "Chọn từ danh mục nhà cung cấp, hoặc nhập tên cửa hàng hay người nhận nếu chưa có.",
+    "merchantPlaceholder": "Tìm nhà cung cấp hoặc nhập tên mới…",
+    "noAttachment": "Không có tệp đính kèm",
+    "noMerchant": "Không nêu",
+    "onBehalfHint": "Chỉ hiển thị người trong phạm vi của bạn. Bạn được ghi nhận là người nhập.",
+    "refusal": {
+      "notRequester": "Chỉ người nhập yêu cầu này, hoặc người được hưởng, mới có thể sửa."
+    },
+    "submitFor": {
+      "onBehalf": "Thay mặt nhân viên khác",
+      "self": "Bản thân"
+    },
+    "toast": {
+      "withdrawn": "Đã rút lại {{reference}}."
+    },
+    "withdrawText": "Yêu cầu sẽ được đóng thay vì sửa và gửi lại. Lý do được lưu trong lịch sử.",
+    "withdrawTitle": "Rút lại {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Tiếp tục sửa",
+      "correct": "Sửa và gửi lại"
+    },
+    "amount": {
+      "asEntered": "như đã nhập",
+      "gross": "Tổng gồm VAT",
+      "net": "Số tiền chưa VAT",
+      "noVat": "VAT (hóa đơn này không có)",
+      "paid": "Tổng đã trả"
+    },
+    "approvedNote": "Đã duyệt. Số tiền được giữ trong khoản cấp; chỉ được trả và ghi sổ khi Tài chính quyết toán.",
+    "approvedSalaryNote": "Đã duyệt. Tài chính trả cùng kỳ lương tới và ghi số tham chiếu bảng lương.",
+    "backToClaim": "Quay lại đề nghị",
+    "backToList": "Quay lại Hoàn ứng chi phí",
+    "basis": {
+      "direct": "Hoàn ứng trực tiếp sau khi chi",
+      "directHint": "Tiền đã chi mà chưa xin phê duyệt trước.",
+      "directShort": "Trực tiếp",
+      "noneOpen": "Nhân viên này không có đề nghị đã duyệt còn số dư.",
+      "preApproved": "Theo khoản chi đã được duyệt trước",
+      "preApprovedHint": "Đề nghị đã duyệt còn số dư: {{count}}"
+    },
+    "chargeTitle": "Tính chi phí và thanh toán",
+    "check": {
+      "basis": "Chọn căn cứ đề nghị.",
+      "choosePreApproval": "Chọn đề nghị đã duyệt mà khoản hoàn ứng này sử dụng.",
+      "expenseDate": "Chọn ngày đã chi tiền.",
+      "fixFields": "Một số trường cần chú ý. Kiểm tra các trường đánh dấu đỏ.",
+      "futureDate": "Ngày chi không được ở tương lai.",
+      "noAllocation": "Đơn vị này không có khoản cấp nào đang hoạt động, nên đề nghị không thể trả từ quỹ tiền mặt nhỏ. Chọn Lương nhân viên, hoặc hỏi Tài chính.",
+      "notEnoughCash": "{{reference}} chỉ còn OMR {{available}} khả dụng, và số dư không được âm. Giảm số tiền, chọn Lương nhân viên, hoặc xin bổ sung.",
+      "overPreApproval": "Số đề nghị vượt quá phần còn lại của phê duyệt trước (OMR {{remaining}}). Giảm xuống, hoặc đề nghị phần chênh lệch trực tiếp.",
+      "preApproval": "Không dùng được phê duyệt trước này: phải là của nhân viên này, đã duyệt và còn số dư.",
+      "preApprovalUnit": "Đề nghị theo phê duyệt trước được tính vào cùng đơn vị với phê duyệt trước.",
+      "receiptRequired": "Đính kèm hóa đơn trước khi gửi đề nghị này. Danh mục này hoặc cài đặt yêu cầu có hóa đơn.",
+      "settlement": "Chọn cách thanh toán đề nghị.",
+      "vat": "Chọn cách áp dụng VAT cho số tiền."
+    },
+    "column": {
+      "amount": "Số tiền",
+      "basisPayment": "Căn cứ / thanh toán",
+      "date": "Ngày",
+      "employee": "Nhân viên",
+      "expenseDate": "Ngày chi",
+      "merchant": "Cửa hàng / danh mục",
+      "reference": "Tham chiếu",
+      "status": "Trạng thái"
+    },
+    "costFromPreApproval": "Tính vào nơi phê duyệt trước đang giữ tiền.",
+    "deleteText": "Bản nháp đề nghị sẽ bị xóa. Không thể hoàn tác.",
+    "deleteTitle": "Xóa {{reference}}?",
+    "descriptionPlaceholder": "Đã mua gì và lý do công việc.",
+    "detailsTitle": "Chi tiết đề nghị hoàn ứng",
+    "duplicate": {
+      "detailText": "Khi gửi, có một đề nghị khác cùng cửa hàng và cùng số hóa đơn, hoặc cùng ngày và số tiền. Hãy kiểm tra đó không phải cùng một hóa đơn:",
+      "formText": "Một đề nghị khác có cùng cửa hàng và cùng số hóa đơn, hoặc cùng ngày và số tiền. Bạn vẫn có thể gửi; người duyệt sẽ thấy điều này:",
+      "title": "Có thể trùng lặp.",
+      "tooltip": "Có thể trùng với {{references}}"
+    },
+    "editTitle": "Sửa {{reference}}",
+    "entity": "hoàn ứng",
+    "field": {
+      "amount": "Số tiền (OMR)",
+      "amountNet": "Số tiền trước VAT (OMR)",
+      "basis": "Căn cứ đề nghị",
+      "description": "Mô tả khoản chi / mục đích công việc",
+      "expenseDate": "Ngày chi",
+      "gross": "Tổng gồm VAT",
+      "paidFrom": "Trả từ",
+      "preApproval": "Số tham chiếu phê duyệt trước",
+      "receipt": "Hóa đơn / biên lai",
+      "receiptNo": "Số biên lai / hóa đơn",
+      "settlement": "Phương thức thanh toán",
+      "vatTreatment": "Cách tính VAT"
+    },
+    "filter": {
+      "allBases": "Tất cả căn cứ đề nghị",
+      "allSettlements": "Tất cả phương thức thanh toán"
+    },
+    "fromScan": "Điền từ Quét hóa đơn. AI đọc với độ tin cậy {{confidence}}%: hãy đối chiếu từng giá trị với hóa đơn trước khi gửi.",
+    "leftOf": "Còn {{left}} trên {{amount}}",
+    "new": "Hoàn ứng mới",
+    "newSubtitle": "Gửi khoản chi thực tế để được hoàn ứng.",
+    "newTitle": "Hoàn ứng chi phí mới",
+    "noAllocationNow": "Hiện đơn vị này không có khoản cấp nào đang hoạt động",
+    "noReceipt": "Chưa đính kèm hóa đơn.",
+    "notEditable": "Đề nghị này đã qua giai đoạn sửa: không thể thay đổi nữa.",
+    "notInLedger": "Chưa ghi sổ: trả cùng lương",
+    "notScanned": "Tải lên không qua AI đọc. Các giá trị được nhập tay.",
+    "openScan": "Quét và để AI điền đề nghị",
+    "orScan": "Bạn có sẵn hóa đơn?",
+    "preApprovalHint": "Chỉ hiển thị các đề nghị đã duyệt còn số dư của nhân viên này.",
+    "preApprovalPlaceholder": "Chọn một đề nghị đã duyệt…",
+    "receiptHint": "Thả hóa đơn vào đây, hoặc chọn tệp",
+    "receiptNeeded": "Danh mục này cần hóa đơn trước khi gửi đề nghị.",
+    "receiptNoPlaceholder": "Số hóa đơn hoặc biên lai",
+    "receiptOptional": "Hóa đơn không bắt buộc với danh mục này.",
+    "receiptReplaced": "Thay cho {{name}}, tải lên ngày {{date}}.",
+    "receiptTitle": "Hóa đơn / biên lai",
+    "required": "Bắt buộc",
+    "resubmitNote": "Gửi lại sẽ tạo phiên bản {{version}}. Người duyệt sẽ thấy những gì bạn đã sửa.",
+    "scanReceipt": "Quét hóa đơn",
+    "search": "Tìm theo số tham chiếu, nhân viên, cửa hàng hoặc số hóa đơn",
+    "section": {
+      "amount": "Số tiền và VAT",
+      "charge": "Tính chi phí và thanh toán",
+      "expense": "Khoản chi",
+      "receipt": "Hóa đơn / biên lai"
+    },
+    "settlement": {
+      "pettyCash": "Quỹ tiền mặt nhỏ",
+      "pettyCashFrom": "Từ {{reference}} · khả dụng {{available}}",
+      "pettyCashHint": "Trả từ khoản cấp quỹ tiền mặt nhỏ của đơn vị.",
+      "salary": "Lương nhân viên",
+      "salaryHint": "Trả cùng kỳ lương tới. Quỹ tiền mặt nhỏ không bị ảnh hưởng."
+    },
+    "subtitle": "Đề nghị cho khoản tiền đã chi, trực tiếp hoặc theo đề nghị trước khi chi đã duyệt.",
+    "summary": {
+      "allocationLeft": "Khả dụng trong",
+      "claiming": "Bạn đang đề nghị",
+      "heldByPreApproval": "Đã được phê duyệt trước giữ trong",
+      "noAllocation": "Đơn vị này không có khoản cấp nào đang hoạt động. Tài chính có thể trả theo cách khác.",
+      "noAllocationBlocked": "Đơn vị này không có khoản cấp nào đang hoạt động, nên không thể trả từ quỹ tiền mặt nhỏ. Chọn Lương nhân viên, hoặc hỏi Tài chính.",
+      "preApprovalLeft": "Còn lại trong",
+      "routeLater": "Người duyệt sẽ hiện ở đây khi đã nhập số tiền và đơn vị.",
+      "salary": "Trả cùng lương: không số dư quỹ tiền mặt nhỏ nào thay đổi.",
+      "short": "Vượt quá số khả dụng của khoản cấp. Tài chính cần bổ sung trước.",
+      "shortBlocked": "Vượt quá số khả dụng của khoản cấp, và số dư không được âm. Giảm số tiền, chọn Lương nhân viên, hoặc xin bổ sung.",
+      "title": "Tóm tắt đề nghị"
+    },
+    "tile": {
+      "claims": "Đề nghị hoàn ứng",
+      "paid": "Đã trả tháng này",
+      "paidNote": "Đề nghị đã trả: {{count}}",
+      "pending": "Đang phê duyệt",
+      "summary": "Tóm tắt hoàn ứng",
+      "toPay": "Đã duyệt, chờ thanh toán"
+    },
+    "title": "Hoàn ứng chi phí",
+    "toast": {
+      "deleted": "Đã xóa {{reference}}.",
+      "saved": "Đã lưu {{reference}} dưới dạng bản nháp.",
+      "submitted": "Đã gửi phê duyệt {{reference}}."
+    },
+    "vat": {
+      "exclusive": "Chưa gồm VAT",
+      "inclusive": "Gồm VAT",
+      "none": "Không có VAT"
+    },
+    "vatOnReceipt": "VAT trên hóa đơn theo AI đọc: OMR {{vat}}",
+    "vatShort": "VAT {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Nhập là {{amount}} trước VAT {{rate}}%.",
+      "inclusive": "Nhập là {{amount}} đã gồm VAT {{rate}}%.",
+      "none": "Nhập là {{amount}}. Hóa đơn không có VAT."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Xác nhận",
+      "allClaims": "Tất cả hoàn ứng của tôi",
+      "claimsCount": "Hoàn ứng: {{count}}",
+      "column": {
+        "amount": "Số tiền",
+        "date": "Ngày",
+        "documents": "Tài liệu",
+        "employee": "Nhân viên",
+        "lastClaim": "Hoàn ứng gần nhất",
+        "open": "Yêu cầu đang mở",
+        "purpose": "Mục đích",
+        "reference": "Tham chiếu",
+        "status": "Trạng thái",
+        "thisMonth": "Tháng này"
+      },
+      "custodianTitle": "Quỹ tiền mặt của tôi: {{unit}}",
+      "decisionsTitle": "Chờ tôi quyết định ({{count}})",
+      "enteredFor": "Nhập thay cho {{name}}",
+      "greeting": "Chào mừng trở lại, {{name}}. Yêu cầu của bạn, các quyết định đang chờ bạn và tiền mặt bạn đang giữ.",
+      "hasReceipt": "Đã đính kèm hóa đơn",
+      "lowHint": "Sắp hết: hãy đề nghị bổ sung trước khi hết.",
+      "managerText": "Gửi đề nghị trước khi chi hoặc hoàn ứng cho thành viên trong nhóm, trong các đơn vị bạn được phép xử lý.",
+      "managerTitle": "Tự phục vụ cho quản lý",
+      "movements": "Biến động gần đây",
+      "newPreExpense": "Yêu cầu chi trước",
+      "newReimbursement": "Hoàn ứng chi phí",
+      "noMovements": "Chưa có biến động.",
+      "noRequests": "Chưa có yêu cầu. Hãy bắt đầu ở trên.",
+      "openInbox": "Hộp phê duyệt",
+      "overdue": "Quá hạn: {{count}}",
+      "paidOn": "{{amount}} đã chi ngày {{date}}",
+      "preExpenseBehalf": "Trước khi chi thay người khác",
+      "recentTitle": "Yêu cầu gần đây của tôi",
+      "reimbursementBehalf": "Hoàn ứng thay người khác",
+      "requestTopUp": "Đề nghị bổ sung",
+      "shortcut": {
+        "preExpense": "Phê duyệt trước khi chi",
+        "preExpenseText": "Xin duyệt trước khi chi. Số tiền được duyệt sẽ được đặt trước từ phân bổ của đơn vị bạn.",
+        "reimbursement": "Hoàn ứng chi phí",
+        "reimbursementText": "Hoàn ứng một khoản đã chi, kèm hóa đơn đính kèm hoặc quét.",
+        "scan": "Quét hóa đơn",
+        "scanText": "Để AI đọc người bán, ngày, VAT, số tiền và danh mục từ hóa đơn."
+      },
+      "shortcuts": "Bắt đầu yêu cầu",
+      "subtitle": "Yêu cầu của bạn, các quyết định đang chờ bạn và tiền mặt bạn đang giữ.",
+      "teamTitle": "Nhóm của tôi ({{count}})",
+      "tile": {
+        "approved": "Đã duyệt / khả dụng của tôi",
+        "approvedNote": "Khoản trước khi chi đã duyệt để hoàn ứng: {{count}}",
+        "awaiting": "Chờ phê duyệt",
+        "nothingReturned": "Không có gì cần sửa",
+        "paid": "Đã trả tháng này",
+        "paidNote": "Đề nghị đã trả: {{count}}",
+        "returned": "Trả lại cho tôi",
+        "returnedNote": "Cần xử lý"
+      },
+      "title": "Bảng điều khiển của tôi",
+      "toAcknowledge": "Tiền mặt đã chi cho bạn đang chờ bạn xác nhận ({{count}})",
+      "topUpPending": "Khoản bổ sung đang xử lý:",
+      "voucher": "Phiếu {{voucher}}",
+      "waitingFor": "Đang ở {{names}}",
+      "monthTitle": "Đề nghị hoàn ứng của tôi theo tháng",
+      "monthSubtitle": "Theo ngày chi, từ {{from}} đến {{to}}",
+      "categoryTitle": "Chi tiêu của tôi theo danh mục",
+      "categorySubtitle": "Đề nghị hoàn ứng của tôi có ngày trong năm nay, {{period}}",
+      "claimedThisYear": "Đã đề nghị năm nay",
+      "noClaims": "Chưa có đề nghị hoàn ứng."
+    },
+    "chart": {
+      "amount": "Số tiền",
+      "businessUnit": "Đơn vị kinh doanh",
+      "category": "Danh mục",
+      "categoryTitle": "Chi tiêu theo danh mục",
+      "claims": "Đề nghị hoàn ứng",
+      "funded": "Đã cấp",
+      "month": "Tháng",
+      "noMovement": "Không có biến động tiền mặt trong kỳ này.",
+      "noPaid": "Không có hoàn ứng nào được chi trong kỳ này.",
+      "otherCategories": "Danh mục khác ({{count}})",
+      "paidInPeriod": "Đã chi trong kỳ",
+      "pettyCash": "Quỹ tiền mặt nhỏ",
+      "salary": "Cùng kỳ lương",
+      "share": "Tỷ trọng",
+      "spent": "Đã chi",
+      "total": "Tổng cộng",
+      "trendSubtitle": "Hoàn ứng đã chi, từ {{from}} đến {{to}}",
+      "trendTitle": "Chi tiêu theo tháng",
+      "unitSubtitle": "Tiền mặt được xác nhận vào phân bổ của từng đơn vị và chi ra từ đó, {{period}}",
+      "unitTitle": "Cấp quỹ và chi tiêu theo đơn vị kinh doanh"
+    },
+    "finance": {
+      "attentionTitle": "Cần chú ý ({{count}})",
+      "noAttention": "Không có gì cần chú ý.",
+      "noPositions": "Đơn vị này chưa có phân bổ đã xác nhận.",
+      "positionTitle": "Tình trạng phân bổ",
+      "positionTotal": "Phân bổ: {{count}}",
+      "showAll": "Xem tất cả ({{count}})",
+      "showFewer": "Thu gọn",
+      "subtitle": "Quỹ tiền mặt nhỏ ở mọi đơn vị kinh doanh, phòng ban và dự án: đang giữ bao nhiêu, việc gì cần xử lý và tiền đã đi đâu.",
+      "thresholdsLink": "Ngưỡng",
+      "title": "Bảng điều khiển tài chính"
+    },
+    "column": {
+      "allocation": "Phân bổ",
+      "available": "Còn trống",
+      "band": "Mức cảnh báo",
+      "financeUser": "Người chi",
+      "float": "Định mức quỹ",
+      "inUse": "Đã dùng + đã đặt",
+      "level": "Cấp",
+      "position": "Tình trạng",
+      "reserved": "Đã đặt",
+      "used": "Đã dùng",
+      "utilization": "Mức sử dụng"
+    },
+    "attention": {
+      "exceeded": "Vượt mức: đã dùng và đã đặt nhiều hơn số được cấp {{amount}}",
+      "near": "Sắp chạm ngưỡng: còn {{percent}}% định mức quỹ",
+      "notAcknowledged": "Đã chi {{span}} trước, chưa xác nhận",
+      "notAcknowledgedToday": "Đã chi hôm nay, chưa xác nhận",
+      "overdueWith": "đang chờ {{names}}",
+      "paidTo": "đã chi cho {{name}}: {{amount}}",
+      "preparedBy": "Người lập: {{name}}",
+      "review": "đang chờ người xem xét · {{reference}}",
+      "toPay": "Hoàn ứng đã duyệt chờ chi: {{count}}",
+      "toPayNote": "{{amount}} · khoản lâu nhất được duyệt {{span}} trước",
+      "toPayNoteToday": "{{amount}} · được duyệt hôm nay",
+      "watch": "Theo dõi: còn {{percent}}% định mức quỹ"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Vượt mức",
+      "near": "Sắp chạm ngưỡng",
+      "normal": "Bình thường",
+      "pending": "Chưa được cấp vốn",
+      "watch": "Theo dõi"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Số dư",
+      "bar": "Cột",
+      "followsFilters": "Theo kỳ và bộ lọc ở trên.",
+      "line": "Xu hướng",
+      "lineHint": "Trong kỳ, cho năm dòng lớn nhất.",
+      "metric": "Chỉ số",
+      "name": "Tên",
+      "others": "Khác",
+      "period": "Kỳ",
+      "pie": "Tỷ trọng",
+      "type": "Loại biểu đồ"
+    },
+    "column": {
+      "allocated": "Đã phân bổ",
+      "approved": "Đã phê duyệt",
+      "available": "Còn trống",
+      "businessUnit": "Đơn vị kinh doanh",
+      "category": "Danh mục",
+      "charged": "Tính vào",
+      "claimed": "Đã hoàn ứng",
+      "claims": "Đề nghị hoàn ứng",
+      "date": "Ngày",
+      "department": "Phòng ban",
+      "departments": "Phòng ban",
+      "employee": "Nhân viên",
+      "employeeId": "Mã nhân viên",
+      "employees": "Nhân viên",
+      "head": {
+        "businessUnit": "Trưởng đơn vị kinh doanh",
+        "department": "Trưởng phòng",
+        "project": "Quản lý dự án"
+      },
+      "lastClaim": "Hoàn ứng gần nhất",
+      "lastExpense": "Lần chi gần nhất",
+      "net": "Chưa thuế",
+      "paid": "Đã thanh toán",
+      "paidOn": "Ngày thanh toán",
+      "pending": "Chưa thanh toán",
+      "project": "Dự án",
+      "projectCode": "Mã dự án",
+      "recipient": "Nhân viên / Người nhận",
+      "reference": "Tham chiếu",
+      "referenceDate": "Số tham chiếu / Ngày",
+      "reimbursed": "Đã hoàn trả",
+      "share": "% chi tiêu",
+      "status": "Trạng thái",
+      "statusPaid": "Trạng thái / Ngày thanh toán",
+      "topVendor": "Cửa hàng hàng đầu",
+      "total": "Tổng cộng",
+      "transactions": "Giao dịch",
+      "vat": "VAT",
+      "vatin": "Mã số VAT",
+      "vendor": "Nhà cung cấp / Cửa hàng",
+      "vendorCategory": "Cửa hàng / danh mục",
+      "voucher": "Số phiếu chi"
+    },
+    "countedNote": "Đề nghị được tính sau khi gửi, theo ngày chi: đang duyệt, đã duyệt chờ thanh toán hoặc đã trả. Bản nháp và đề nghị bị từ chối hoặc đã hủy không được tính.",
+    "empty": "Không có gì để báo cáo trong kỳ này.",
+    "filter": {
+      "allCategories": "Tất cả danh mục",
+      "allEmployees": "Tất cả nhân viên",
+      "allStatuses": "Tất cả trạng thái",
+      "allVendors": "Tất cả cửa hàng",
+      "search": "Tìm kiếm",
+      "status": "Trạng thái",
+      "unit": "Đơn vị"
+    },
+    "metric": {
+      "amount": "Số tiền",
+      "available": "Số dư khả dụng",
+      "count": "Số đề nghị",
+      "paid": "Đã thanh toán",
+      "pending": "Chưa thanh toán"
+    },
+    "noMatch": "Không có kết quả phù hợp với các bộ lọc này.",
+    "notListed": "Không có trong danh mục nhà cung cấp",
+    "openClaims": "Mở các đề nghị này",
+    "openingOn": "số dư đầu kỳ cuối ngày {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, theo ngày chi",
+    "periodLedger": "{{from}} – {{to}}, theo ngày ghi sổ",
+    "purpose": {
+      "businessUnit": "Chi phí đơn vị kinh doanh, gồm cả phòng ban và dự án trực thuộc, bên cạnh quỹ tiền mặt nhỏ.",
+      "category": "Chi tiêu theo danh mục chi phí, kèm cửa hàng chi nhiều nhất và tỷ trọng từng danh mục.",
+      "department": "Chi phí phòng ban: các đề nghị tính vào từng phòng ban, bên cạnh quỹ tiền mặt nhỏ của phòng ban.",
+      "employee": "Đề nghị hoàn ứng theo nhân viên: đã đề nghị, đã duyệt, đã trả và chưa trả.",
+      "ledger": "Cấp quỹ, khoản chi và điều chỉnh trong kỳ, kèm số dư lũy kế của từng khoản phân bổ.",
+      "project": "Chi phí dự án: các đề nghị tính vào từng dự án, bên cạnh quỹ tiền mặt nhỏ của dự án.",
+      "transactions": "Mọi đề nghị trong kỳ, kèm cửa hàng, nơi tính chi phí và trạng thái hiện tại.",
+      "vendor": "Tiền được chi vào đâu: đề nghị hoàn ứng theo cửa hàng, có trong danh mục nhà cung cấp hoặc được nhập trên đề nghị."
+    },
+    "refusal": {
+      "period": "Chọn kỳ từ một ngày đến cùng ngày đó hoặc một ngày sau."
+    },
+    "search": {
+      "ledger": "Tìm bút toán, tham chiếu, phiếu, người hoặc diễn giải",
+      "summary": "Tìm tên trong báo cáo này",
+      "transactions": "Tìm số tham chiếu, người, cửa hàng hoặc mô tả"
+    },
+    "status": {
+      "approved": "Đã duyệt, chưa trả",
+      "inApproval": "Đang phê duyệt",
+      "paid": "Đã thanh toán"
+    },
+    "summary": "Tóm tắt báo cáo",
+    "tile": {
+      "claimed": "Tổng đề nghị",
+      "claimedNote": "Đang duyệt, đã duyệt và đã trả",
+      "claims": "Đề nghị hoàn ứng",
+      "claimsNote": "Số người: {{count}}",
+      "paid": "Đã thanh toán",
+      "paidNote": "{{percent}}% tổng số",
+      "pending": "Chưa thanh toán",
+      "pendingNote": "Đang duyệt hoặc chờ thanh toán"
+    },
+    "totalRow": "Tổng cộng",
+    "view": {
+      "chart": "Biểu đồ",
+      "table": "Bảng"
+    },
+    "viewAs": "Xem dạng"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Chuyển khoản ngân hàng",
+      "cash": "Tiền mặt",
+      "cheque": "Séc",
+      "salary": "Lương"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Bỏ qua: cùng một người đã phê duyệt bước trước đó",
+        "belowAmount": "Bỏ qua: số tiền không vượt ngưỡng",
+        "incomplete": "Chọn nguồn người phê duyệt",
+        "noApprover": "Không tìm thấy người phê duyệt đang hoạt động",
+        "noProject": "Bỏ qua: yêu cầu này không có dự án",
+        "selfApproval": "Bỏ qua: người đề nghị sẽ tự phê duyệt yêu cầu của mình"
+      }
+    }
+  }
+}

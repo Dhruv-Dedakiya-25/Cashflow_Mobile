@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Add",
+    "addEntity": "Add {{entity}}",
+    "back": "Back",
+    "cancel": "Cancel",
+    "clearAll": "Clear all",
+    "close": "Close",
+    "create": "Create",
+    "delete": "Delete",
+    "edit": "Edit",
+    "export": "Export",
+    "retry": "Try again",
+    "save": "Save",
+    "saveChanges": "Save Changes",
+    "search": "Search",
+    "view": "View",
+    "viewAll": "View all"
+  },
+  "status": {
+    "active": "Active",
+    "all": "All",
+    "inactive": "Inactive",
+    "no": "No",
+    "yes": "Yes"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Cancel Request",
+      "saveDraft": "Save Draft",
+      "submit": "Send for approval",
+      "submitForApproval": "Submit for Approval"
+    },
+    "filter": {
+      "allStatuses": "All statuses",
+      "from": "From",
+      "to": "To"
+    },
+    "history": {
+      "acknowledged": "acknowledged receiving it",
+      "approved": "approved it",
+      "cancelled": "cancelled it",
+      "created": "created the request",
+      "disbursed": "paid it out",
+      "edited": "made changes",
+      "empty": "(empty)",
+      "paid": "paid it",
+      "rejected": "rejected it",
+      "resubmitted": "sent it for approval again",
+      "returned": "returned it for correction",
+      "submitted": "sent it for approval",
+      "title": "History",
+      "reallocated": "reallocated it",
+      "takenOver": "took it over"
+    },
+    "notFound": "This record does not exist, or it is outside what you can see.",
+    "path": {
+      "decidedBy": {
+        "approved": "Approved by {{name}} on {{time}}",
+        "rejected": "Rejected by {{name}} on {{time}}",
+        "returned": "Returned by {{name}} on {{time}}"
+      },
+      "notSent": "Not sent for approval yet.",
+      "overdue": "Overdue",
+      "state": {
+        "approved": "Approved",
+        "pending": "Waiting",
+        "rejected": "Rejected",
+        "returned": "Returned",
+        "skipped": "Passed over",
+        "waiting": "Not reached yet"
+      },
+      "title": "Approval Path",
+      "waitingSince": "Waiting since {{time}} · {{hours}} h allowed",
+      "willGoTo": "Will go to"
+    },
+    "reason": "Reason",
+    "reasonRequired": "Enter a reason. It is kept in the request's history.",
+    "refusal": {
+      "alreadyPosted": "This is already in the ledger, so nothing was changed.",
+      "amount": "Enter an amount above zero with no more than three decimals.",
+      "amountTooLarge": "The amount cannot be more than OMR {{max}}.",
+      "noApprover": "A step of the workflow has nobody to send this request to. Ask an administrator to check Workflow Setup.",
+      "noWorkflow": "No active workflow covers this request. Ask an administrator to check Workflow Setup.",
+      "nobodyLeft": "Everyone who could approve this request is part of it, so nobody is left to approve it. Change who it is for, or ask an administrator to check Workflow Setup.",
+      "notAllowed": "Your role does not allow this.",
+      "notEditable": "Only a draft or a returned request can be changed.",
+      "notFound": "This record does not exist, or it is outside what you can see.",
+      "notNow": "This cannot be done while the request is in its current status.",
+      "onlyDrafts": "Only a draft can be deleted. Cancel it instead.",
+      "reasonRequired": "Enter a reason.",
+      "savedMeanwhile": "Someone else saved this in the meantime, so nothing was changed. Reload and try again.",
+      "signedOut": "Your session has ended. Sign in again.",
+      "underApproval": "It is waiting for an approver. Wait for the decision, or ask for it to be returned."
+    },
+    "returnedBecause": "Returned for correction:",
+    "status": {
+      "acknowledged": "Acknowledged",
+      "active": "Active",
+      "approved": "Approved",
+      "cancelled": "Cancelled",
+      "closed": "Closed",
+      "disbursed": "Awaiting Acknowledgement",
+      "draft": "Draft",
+      "inApproval": "In Approval",
+      "paid": "Paid",
+      "rejected": "Rejected",
+      "returned": "Returned",
+      "submitted": "Submitted"
+    }
+  },
+  "auth": {
+    "brandTagline": "Petty Cash Management",
+    "company": "Company",
+    "demoBadge": "Demo",
+    "demoNotice": "Demo mode: sign-in is simulated and every screen shows sample data until the API arrives.",
+    "feature": {
+      "allocations": "Department & project allocations",
+      "permissions": "Role permission matrix",
+      "selfService": "Employee & manager self-service",
+      "thresholds": "Threshold monitoring",
+      "twoFactor": "Two-factor sign-in",
+      "workflows": "Pre- & post-expense approvals"
+    },
+    "password": "Password",
+    "passwordDemoHint": "Not checked in the demo. In the live system, sign-in verifies your password and two-factor code.",
+    "persona": {
+      "auditor": "Auditor (Read Only)",
+      "employee": "Employee Self-Service",
+      "finance": "Finance Head / Administrator",
+      "manager": "Department / Project Manager"
+    },
+    "personaLabel": "Demo persona",
+    "pitch": "Allocate petty cash, approve planned expenses, reimburse actual ones, route approvals through your organization, read receipts with AI and reconcile every transaction.",
+    "rememberMe": "Keep me signed in",
+    "signIn": "Sign in",
+    "signInButton": "Sign in",
+    "signInHint": "Choose a demo persona to see the screens that role uses.",
+    "twoFactor": {
+      "back": "Back",
+      "demoHint": "Demo: any six digits are accepted.",
+      "digit": "Digit {{n}} of 6",
+      "incomplete": "Enter all six digits.",
+      "panelText": "A code from an authenticator app confirms it is really you. Policy can require it for everyone, by role or for selected users.",
+      "panelTitle": "Two-factor verification",
+      "subtitle": "Enter the 6-digit code from your authenticator app.",
+      "title": "Enter verification code",
+      "trustDevice": "Trust this device for 30 days",
+      "verify": "Verify & continue",
+      "wrongCode": "That code is not right. Try again.",
+      "expired": "This sign-in has expired. Go back and sign in again.",
+      "useRecovery": "Use a recovery code instead",
+      "useApp": "Use the authenticator app instead",
+      "recoveryTitle": "Enter a recovery code",
+      "recoveryHint": "Type one of the recovery codes you saved. Each code works once.",
+      "trustDeviceDays": "Trust this device for {{n}} days",
+      "enrollTitle": "Set up two-factor sign-in",
+      "enrollSubtitle": "Your account must use an authenticator app. Set it up now to finish signing in."
+    },
+    "twoFactorNote": "Two-factor sign-in can be off, optional or required by role.",
+    "username": "Email or username",
+    "signInHintApi": "Sign in with your CashFlow account.",
+    "error": {
+      "invalid": "Invalid username or password.",
+      "tooMany": "Too many attempts. Wait a minute and try again.",
+      "noApi": "Cannot reach the server. Try again shortly."
+    }
+  },
+  "scan": {
+    "aiConfidence": "{{confidence}}% confidence",
+    "aiOff": "AI extraction is switched off in AI & Document Processing. The receipt is still checked and attached; type the details in yourself.",
+    "aiPhotoOnly": "AI reading is only available for JPG and PNG photos.",
+    "aiUnclear": "Could not clearly read the receipt details. Please type them in.",
+    "aiUnreachable": "Cannot reach the AI model. Enter receipt details by hand.",
+    "checkThis": "Check this",
+    "col": {
+      "claim": "On the claim",
+      "field": "Field",
+      "read": "AI read"
+    },
+    "corrected": "Corrected",
+    "createClaim": "Create Reimbursement",
+    "extractionTitle": "AI Extraction",
+    "fact": {
+      "file": "File",
+      "hash": "SHA-256",
+      "size": "Size",
+      "type": "Type",
+      "typeChecked": "{{type}}, checked from its content"
+    },
+    "field": {
+      "category": "Suggested Category",
+      "expenseDate": "Date",
+      "grossAmount": "Total",
+      "merchant": "Merchant",
+      "receiptNo": "Receipt No.",
+      "vatAmount": "VAT"
+    },
+    "keptApart": "What AI read is kept as read, beside what you enter, so a correction stays visible. Readings under {{min}}% are highlighted.",
+    "lowHint": "AI is only {{confidence}}% sure. Check this against the receipt.",
+    "minConfidence": "values under {{min}}% are highlighted",
+    "noPreview": "This browser cannot show HEIC images. The file was checked and is attached.",
+    "noReceipt": "No receipt to hand?",
+    "readBy": "Read by {{provider}}",
+    "receiptTitle": "Receipt",
+    "sampleNote": "Sample reading: in the demo every receipt reads as this sample, because the file never leaves the browser.",
+    "stage": {
+      "extracted": "Extracted",
+      "extractedHint": "Fields read by AI",
+      "normalizing": "Normalizing",
+      "normalizingHint": "Straightened, cropped, compressed",
+      "pdfReady": "PDF Ready",
+      "pdfReadyHint": "Standard PDF, original kept",
+      "skipped": "AI is switched off",
+      "uploaded": "Uploaded",
+      "uploadedHint": "Type, size and hash checked",
+      "verified": "Verified",
+      "verifiedHint": "Checked by you"
+    },
+    "stagesTitle": "Document stages",
+    "startAgain": "Scan Another",
+    "subtitle": "Capture from mobile or upload a bill, then review extracted fields before creating a claim.",
+    "tip": {
+      "light": "Good light, no shadows across the total.",
+      "private": "In the demo the file stays in this browser.",
+      "whole": "The whole receipt in the frame, edges included."
+    },
+    "title": "Receipt Scan & AI Extraction",
+    "typeIt": "Type the details from the receipt.",
+    "uploadHint": "Open the camera or upload a receipt",
+    "useSample": "Try the sample receipt",
+    "waitingForReceipt": "Add a receipt to read it.",
+    "working": {
+      "normalizing": "Straightening and cleaning up the image…",
+      "pdfReady": "Making the standard PDF…",
+      "uploaded": "Checking the file…"
+    },
+    "aiQuota": "AI rate limit reached. Please wait a moment or enter receipt details by hand.",
+    "aiBusy": "Google's AI is busy right now. Try again in a moment, or type the details."
+  },
+  "approval": {
+    "action": {
+      "review": "Review"
+    },
+    "attachmentTitle": "Supporting Document",
+    "availableNow": "{{amount}} available now",
+    "backToInbox": "Back to Approval Inbox",
+    "changes": {
+      "after": "Corrected after {{name}} returned it on {{time}}:",
+      "title": "Changed since it was returned"
+    },
+    "column": {
+      "amount": "Amount",
+      "person": "Person",
+      "reference": "Reference",
+      "step": "Status / Current Step",
+      "submitted": "Submitted",
+      "type": "Type / Unit"
+    },
+    "days": "{{count}} d",
+    "decision": {
+      "approve": "Approve",
+      "comment": "Comment (needed to return or reject)",
+      "noMoney": "Approving moves no money. Only Finance Settlement pays.",
+      "placeholder": "What should the requester know, or correct?",
+      "reasonNeeded": "Give a reason to return or reject. The requester will see it.",
+      "reject": "Reject",
+      "return": "Return for Correction",
+      "title": "Your Decision"
+    },
+    "detailsTitle": {
+      "additionalCash": "Additional Cash Request",
+      "allocation": "Allocation",
+      "preExpense": "Pre-Expense Request",
+      "reimbursement": "Claim",
+      "reallocation": "Reallocation Request"
+    },
+    "dueIn": "Due in {{span}}",
+    "empty": {
+      "decided": "You have not decided any requests yet.",
+      "scope": "No requests have been sent for approval in your scope.",
+      "waiting": "Nothing is waiting for your decision."
+    },
+    "ended": {
+      "approved": "Approved by {{name}} on {{time}}.",
+      "cancelled": "Withdrawn by {{name}} on {{time}}.",
+      "rejected": "Rejected by {{name}} on {{time}}.",
+      "returned": "Returned for correction by {{name}} on {{time}}."
+    },
+    "entity": "requests",
+    "filter": {
+      "allTypes": "All request types",
+      "allUnits": "All units"
+    },
+    "flag": {
+      "changed": "Changed since it was returned",
+      "duplicate": "Possible duplicate bill",
+      "lowConfidence": "AI receipt reading has low confidence",
+      "onBehalf": "Entered by someone else for this person",
+      "overAvailable": "More than its allocation has available"
+    },
+    "hours": "{{count}} h",
+    "kind": {
+      "additionalCash": "Additional Cash",
+      "allocation": "Allocation",
+      "preExpense": "Pre-Expense",
+      "reimbursement": "Reimbursement",
+      "reallocation": "Reallocation"
+    },
+    "next": "Next",
+    "openFile": "Open",
+    "openRecord": "Open the full record",
+    "othersTurn": "Waiting for {{names}} at step {{n}}. You can follow it here; only they can decide it.",
+    "outcome": {
+      "cash": "Yours is the last step. Approving passes it to Finance to pay out; it counts once the custodian acknowledges it.",
+      "claim": "Yours is the last step. Approving reserves the amount against the allocation until Finance pays it.",
+      "next": "Approving sends it on to the next step ({{step}}): {{names}}.",
+      "preExpense": "Yours is the last step. Approving lets the employee spend, and holds the amount until it is claimed.",
+      "salary": "Yours is the last step. Approving passes it to Finance to pay with the next salary.",
+      "reallocation": "Yours is the last step. Approving moves the cash to the new custodian, who then acknowledges it or takes it over. Finance pays nothing."
+    },
+    "overAvailable": "This is more than {{reference}} has available ({{available}}). Finance will need to top it up before paying.",
+    "overAvailableBlocked": "This is more than {{reference}} has available ({{available}}), and a balance cannot go below zero. The final approval needs a top-up first.",
+    "overdueBy": "Overdue by {{span}}",
+    "position": "{{n}} of {{total}}",
+    "previous": "Previous",
+    "refusal": {
+      "changed": "This request changed since you opened it. Reload it and check the changes before deciding.",
+      "decided": "This request has already been decided.",
+      "notEnoughCash": "{{reference}} has only OMR {{available}} available, and a balance cannot go below zero. Return the request, or ask Finance for a top-up first.",
+      "notYourStep": "This step is not waiting for you.",
+      "ownRequest": "You cannot decide a request you are part of."
+    },
+    "refusalHint": "{{reference}} has only {{available}} available, and a balance cannot go below zero. Return it, or ask Finance for a top-up first.",
+    "search": "Search reference, person or purpose",
+    "sentAt": "sent {{time}}",
+    "subtitle": "Requests waiting for your decision, everything in your scope, and what you have decided.",
+    "tile": {
+      "decided": "Decided by You",
+      "decidedNote": "Approved, returned or rejected",
+      "overdue": "Overdue",
+      "overdueNote": "Past the time Workflow Setup allows",
+      "scope": "Under Approval",
+      "summary": "Approval summary",
+      "waiting": "Waiting for You"
+    },
+    "title": "Approval Inbox",
+    "toast": {
+      "approve": "{{reference}} was approved.",
+      "reject": "{{reference}} was rejected.",
+      "return": "{{reference}} was returned for correction."
+    },
+    "view": {
+      "decided": "Decided by me",
+      "scope": "All in my scope",
+      "waiting": "Waiting for me"
+    },
+    "views": "Inbox views",
+    "where": {
+      "approved": "With Finance to pay",
+      "disbursed": "Paid out by Finance",
+      "returned": "With the requester to correct",
+      "spendable": "Can now be spent, then claimed"
+    },
+    "yourTurn": "Waiting for your decision at step {{n}}: {{step}}.",
+    "yoursToWatch": "You are part of this request, so you cannot decide it. It is waiting for {{names}} at step {{n}}.",
+    "openSourceRecord": "Open the allocation"
+  },
+  "ack": {
+    "action": "Acknowledge",
+    "amountReceived": "Amount received",
+    "bannerHint": "The balance rises only once you confirm the cash arrived.",
+    "bannerNone": "Nothing is waiting for your acknowledgement.",
+    "bannerWaiting": "Waiting for your acknowledgement: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Amount",
+      "issued": "Issued",
+      "payment": "Payment Method / Reference",
+      "recipient": "Recipient",
+      "reference": "Reference",
+      "scope": "Allocation Scope",
+      "status": "Status"
+    },
+    "confirm": "Acknowledge Amount Received",
+    "dialogTitle": "Acknowledge Petty Cash Receipt",
+    "entity": "payment",
+    "filter": {
+      "allTypes": "All types"
+    },
+    "kind": {
+      "additionalCash": "Top-up",
+      "allocation": "Allocation",
+      "topUpOf": "Top-up of {{reference}}",
+      "handover": "Handover",
+      "reallocatedFrom": "Reallocated from {{reference}}"
+    },
+    "openAllocation": "Open the allocation",
+    "refusal": {
+      "already": "This has already been acknowledged. Nothing was changed.",
+      "notRecipient": "Only the person who received the cash can acknowledge it."
+    },
+    "remarks": "Remarks (optional)",
+    "remarksPlaceholder": "For example: counted and received in full.",
+    "search": "Search reference, recipient or payment reference",
+    "state": {
+      "acknowledged": "Acknowledged",
+      "waiting": "Awaiting Acknowledgement"
+    },
+    "statement": "By confirming, you acknowledge that you received the amount shown above. It is then added to the allocation's balance, and this cannot be undone.",
+    "subtitle": "Confirm receipt of petty cash Finance has paid out, and print the payment vouchers.",
+    "title": "Allocation Acknowledgements",
+    "toast": {
+      "done": "Acknowledged. {{amount}} is now available in {{reference}}."
+    },
+    "waitingFor": "Waiting for {{name}}",
+    "reallocatedBy": "Reallocated by {{name}}",
+    "takeOverTitle": "Take over an allocation",
+    "takeOverStatement": "I confirm I have received this allocation's cash and records, and that I now hold it.",
+    "takeOver": "Take over"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Withdraw"
+    },
+    "categoryPlaceholder": "Search reimbursement category…",
+    "check": {
+      "beneficiary": "You cannot enter a request for this employee. Only people in your scope can be chosen.",
+      "beneficiaryFixed": "The employee cannot be changed once the request has been sent.",
+      "category": "Choose an active expense category.",
+      "chooseCategory": "Choose an expense category.",
+      "chooseEmployee": "Choose the employee.",
+      "costUnit": "Choose a unit this employee belongs to. Inactive units cannot be charged.",
+      "merchant": "Enter the merchant or payee.",
+      "purpose": "Describe the business purpose in a few words.",
+      "vendor": "This vendor is inactive. Choose another, or type the merchant's name."
+    },
+    "costHint": "Only the units this person belongs to can be charged.",
+    "employeePlaceholder": "Type an employee's name or ID…",
+    "ended": {
+      "cancelled": "Withdrawn by {{name}} on {{time}}.",
+      "rejected": "Rejected by {{name}} on {{time}}.",
+      "returned": "Returned for correction by {{name}} on {{time}}."
+    },
+    "enteredBy": "Entered by {{name}}",
+    "field": {
+      "attachment": "Supporting Document",
+      "category": "Expense Category",
+      "chargedTo": "Charged To",
+      "costLevel": "Cost Allocation Type",
+      "costUnit": "Charged To",
+      "created": "Created",
+      "employee": "Employee",
+      "enteredBy": "Entered By",
+      "for": "For",
+      "merchant": "Merchant / Payee",
+      "submitFor": "Submit For"
+    },
+    "filter": {
+      "allEmployees": "All employees"
+    },
+    "merchantHint": "Pick from the Vendor Master, or type the merchant or payee if it is not listed.",
+    "merchantPlaceholder": "Search vendor or type a new name…",
+    "noAttachment": "No attachment",
+    "noMerchant": "Not given",
+    "onBehalfHint": "Only people in your scope are listed. You are recorded as the person who entered it.",
+    "refusal": {
+      "notRequester": "Only the person who entered this request, or the person it is for, can change it."
+    },
+    "submitFor": {
+      "onBehalf": "On behalf of another employee",
+      "self": "Self"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} was withdrawn."
+    },
+    "withdrawText": "The request is closed instead of being corrected and sent again. The reason is kept in its history.",
+    "withdrawTitle": "Withdraw {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Continue Editing",
+      "correct": "Correct and Resubmit"
+    },
+    "amount": {
+      "asEntered": "as entered",
+      "gross": "Total incl. VAT",
+      "net": "Amount excl. VAT",
+      "noVat": "VAT (none on this bill)",
+      "paid": "Total Paid"
+    },
+    "approvedNote": "Approved. The amount is held against the allocation; it is paid, and posted to the ledger, only when Finance settles it.",
+    "approvedSalaryNote": "Approved. Finance pays it with the next salary run and records the payroll reference.",
+    "backToClaim": "Back to the claim",
+    "backToList": "Back to Reimbursements",
+    "basis": {
+      "direct": "Direct Post-Expense Reimbursement",
+      "directHint": "Money already spent, with no approval asked for beforehand.",
+      "directShort": "Direct",
+      "noneOpen": "No approved request with money left for this employee.",
+      "preApproved": "Against Pre-Approved Expense",
+      "preApprovedHint": "Approved requests with money left: {{count}}"
+    },
+    "chargeTitle": "Charging and Payment",
+    "check": {
+      "basis": "Choose a claim basis.",
+      "choosePreApproval": "Choose the approved request this claim uses.",
+      "expenseDate": "Choose the date the money was spent.",
+      "fixFields": "Some fields need attention. Check the ones marked in red.",
+      "futureDate": "The expense date cannot be in the future.",
+      "noAllocation": "This unit has no active allocation, so the claim cannot be paid from petty cash. Choose Employee Salary, or ask Finance.",
+      "notEnoughCash": "{{reference}} has only OMR {{available}} available, and a balance cannot go below zero. Lower the amount, choose Employee Salary, or ask for a top-up.",
+      "overPreApproval": "The claim is more than the pre-approval has left (OMR {{remaining}}). Lower it, or claim the difference directly.",
+      "preApproval": "This pre-approval cannot be used: it must be this employee's, approved, and have money left.",
+      "preApprovalUnit": "A claim against a pre-approval is charged to the same unit as the pre-approval.",
+      "receiptRequired": "Attach the receipt before sending this claim. This category, or the settings, require one.",
+      "settlement": "Choose how the claim is paid.",
+      "vat": "Choose how VAT applies to the amount."
+    },
+    "column": {
+      "amount": "Amount",
+      "basisPayment": "Basis / Payment",
+      "date": "Date",
+      "employee": "Employee",
+      "expenseDate": "Expense Date",
+      "merchant": "Merchant / Category",
+      "reference": "Reference",
+      "status": "Status"
+    },
+    "costFromPreApproval": "Charged where the pre-approval holds its money.",
+    "deleteText": "The draft claim is removed. This cannot be undone.",
+    "deleteTitle": "Delete {{reference}}?",
+    "descriptionPlaceholder": "What was bought, and the business reason for it.",
+    "detailsTitle": "Claim Details",
+    "duplicate": {
+      "detailText": "When it was sent, another claim had the same merchant with the same receipt number, or the same date and amount. Check it is not the same bill:",
+      "formText": "Another claim has the same merchant with the same receipt number, or the same date and amount. You can still submit; the approver will see this:",
+      "title": "Possible duplicate.",
+      "tooltip": "Possible duplicate of {{references}}"
+    },
+    "editTitle": "Correct {{reference}}",
+    "entity": "reimbursements",
+    "field": {
+      "amount": "Amount (OMR)",
+      "amountNet": "Amount before VAT (OMR)",
+      "basis": "Claim Basis",
+      "description": "Expense Description / Business Purpose",
+      "expenseDate": "Expense Date",
+      "gross": "Total incl. VAT",
+      "paidFrom": "Paid From",
+      "preApproval": "Pre-Approval Reference",
+      "receipt": "Receipt / Bill",
+      "receiptNo": "Receipt / Invoice No.",
+      "settlement": "Payment Method",
+      "vatTreatment": "VAT Treatment"
+    },
+    "filter": {
+      "allBases": "All claim bases",
+      "allSettlements": "All payment methods"
+    },
+    "fromScan": "Filled in from Receipt Scan. AI read it with {{confidence}}% confidence: check each value against the receipt before you submit.",
+    "leftOf": "{{left}} left of {{amount}}",
+    "new": "New Reimbursement",
+    "newSubtitle": "Submit an actual expense for reimbursement.",
+    "newTitle": "New Expense Reimbursement",
+    "noAllocationNow": "No active allocation for this unit now",
+    "noReceipt": "No receipt is attached.",
+    "notEditable": "This claim is past correction: it can no longer be changed.",
+    "notInLedger": "Not posted: paid with salary",
+    "notScanned": "Uploaded without AI reading. The values were typed in.",
+    "openScan": "Scan it and let AI fill the claim",
+    "orScan": "Have the receipt to hand?",
+    "preApprovalHint": "Only this employee's approved requests with money left are listed.",
+    "preApprovalPlaceholder": "Choose an approved request…",
+    "receiptHint": "Drop the receipt here, or choose a file",
+    "receiptNeeded": "This category needs the receipt before the claim is sent.",
+    "receiptNoPlaceholder": "Receipt or invoice reference",
+    "receiptOptional": "A receipt is optional for this category.",
+    "receiptReplaced": "Replaces {{name}}, uploaded {{date}}.",
+    "receiptTitle": "Receipt / Bill",
+    "required": "Required",
+    "resubmitNote": "Sending it again makes version {{version}}. The approver sees what you changed.",
+    "scanReceipt": "Scan Receipt",
+    "search": "Search reference, employee, merchant or receipt no.",
+    "section": {
+      "amount": "Amount and VAT",
+      "charge": "Charging and Payment",
+      "expense": "Expense",
+      "receipt": "Receipt / Bill"
+    },
+    "settlement": {
+      "pettyCash": "Petty Cash",
+      "pettyCashFrom": "From {{reference}} · {{available}} available",
+      "pettyCashHint": "Paid from the unit's petty cash allocation.",
+      "salary": "Employee Salary",
+      "salaryHint": "Paid with the next salary. Petty cash is not touched."
+    },
+    "subtitle": "Claims for money already spent, direct or against an approved pre-expense request.",
+    "summary": {
+      "allocationLeft": "Available in",
+      "claiming": "You are claiming",
+      "heldByPreApproval": "Already held by the pre-approval in",
+      "noAllocation": "This unit has no active allocation. Finance may pay it another way.",
+      "noAllocationBlocked": "This unit has no active allocation, so it cannot be paid from petty cash. Choose Employee Salary, or ask Finance.",
+      "preApprovalLeft": "Left on",
+      "routeLater": "Who approves it shows here once the amount and unit are filled in.",
+      "salary": "Paid with salary: no petty cash balance changes.",
+      "short": "More than the allocation has available. Finance will need to top it up first.",
+      "shortBlocked": "More than the allocation has available, and a balance cannot go below zero. Lower the amount, choose Employee Salary, or ask for a top-up.",
+      "title": "Claim summary"
+    },
+    "tile": {
+      "claims": "Claims",
+      "paid": "Paid This Month",
+      "paidNote": "Claims paid: {{count}}",
+      "pending": "Under Approval",
+      "summary": "Reimbursement summary",
+      "toPay": "Approved, Awaiting Payment"
+    },
+    "title": "Expense Reimbursements",
+    "toast": {
+      "deleted": "{{reference}} was deleted.",
+      "saved": "{{reference}} was saved as a draft.",
+      "submitted": "{{reference}} was sent for approval."
+    },
+    "vat": {
+      "exclusive": "Excludes VAT",
+      "inclusive": "Includes VAT",
+      "none": "No VAT"
+    },
+    "vatOnReceipt": "VAT on the receipt, as AI read it: OMR {{vat}}",
+    "vatShort": "VAT {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Entered as {{amount}} before {{rate}}% VAT.",
+      "inclusive": "Entered as {{amount}} including {{rate}}% VAT.",
+      "none": "Entered as {{amount}}. The bill carries no VAT."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Acknowledge",
+      "allClaims": "All my claims",
+      "claimsCount": "Claims: {{count}}",
+      "column": {
+        "amount": "Amount",
+        "date": "Date",
+        "documents": "Documents",
+        "employee": "Employee",
+        "lastClaim": "Last Claim",
+        "open": "Open Requests",
+        "purpose": "Purpose",
+        "reference": "Reference",
+        "status": "Status",
+        "thisMonth": "This Month"
+      },
+      "custodianTitle": "My Petty Cash: {{unit}}",
+      "decisionsTitle": "Waiting for My Decision ({{count}})",
+      "enteredFor": "Entered for {{name}}",
+      "greeting": "Welcome back, {{name}}. Your requests, the decisions waiting for you and the cash you hold.",
+      "hasReceipt": "Receipt attached",
+      "lowHint": "Running low: ask for a top-up before it runs out.",
+      "managerText": "Raise a pre-expense or a reimbursement for someone in your team, within the units you may act for.",
+      "managerTitle": "Manager Self-Service",
+      "movements": "Latest movements",
+      "newPreExpense": "Pre-Expense Request",
+      "newReimbursement": "Reimbursement",
+      "noMovements": "No movements yet.",
+      "noRequests": "No requests yet. Start one above.",
+      "openInbox": "Approval Inbox",
+      "overdue": "Overdue: {{count}}",
+      "paidOn": "{{amount}} paid on {{date}}",
+      "preExpenseBehalf": "Pre-Expense on Behalf",
+      "recentTitle": "My Recent Requests",
+      "reimbursementBehalf": "Reimbursement on Behalf",
+      "requestTopUp": "Request Top-up",
+      "shortcut": {
+        "preExpense": "Pre-Expense Approval",
+        "preExpenseText": "Ask before spending. The approved amount is reserved against your unit's allocation.",
+        "reimbursement": "Expense Reimbursement",
+        "reimbursementText": "Claim an expense already paid, with the receipt attached or scanned.",
+        "scan": "Scan Receipt",
+        "scanText": "Let AI read the merchant, date, VAT, amount and category from a receipt."
+      },
+      "shortcuts": "Start a request",
+      "subtitle": "Your requests, the decisions waiting for you and the cash you hold.",
+      "teamTitle": "My Team ({{count}})",
+      "tile": {
+        "approved": "My Approved / Available",
+        "approvedNote": "Approved pre-expenses to claim: {{count}}",
+        "awaiting": "Awaiting Approval",
+        "nothingReturned": "Nothing to correct",
+        "paid": "Paid This Month",
+        "paidNote": "Claims paid: {{count}}",
+        "returned": "Returned to Me",
+        "returnedNote": "Action needed"
+      },
+      "title": "My Dashboard",
+      "toAcknowledge": "Cash paid to you is waiting for your acknowledgement ({{count}})",
+      "topUpPending": "Top-up on its way:",
+      "voucher": "Voucher {{voucher}}",
+      "waitingFor": "With {{names}}",
+      "monthTitle": "My Claims by Month",
+      "monthSubtitle": "By expense date, {{from}} to {{to}}",
+      "categoryTitle": "My Spending by Category",
+      "categorySubtitle": "My claims dated this year, {{period}}",
+      "claimedThisYear": "Claimed this year",
+      "noClaims": "No claims yet."
+    },
+    "chart": {
+      "amount": "Amount",
+      "businessUnit": "Business Unit",
+      "category": "Category",
+      "categoryTitle": "Spending by Category",
+      "claims": "Claims",
+      "funded": "Funded",
+      "month": "Month",
+      "noMovement": "No cash moved in this period.",
+      "noPaid": "No claims were paid in this period.",
+      "otherCategories": "Other categories ({{count}})",
+      "paidInPeriod": "Paid in the period",
+      "pettyCash": "Petty cash",
+      "salary": "With salary",
+      "share": "Share",
+      "spent": "Spent",
+      "total": "Total",
+      "trendSubtitle": "Paid claims, {{from}} to {{to}}",
+      "trendTitle": "Spending by Month",
+      "unitSubtitle": "Cash acknowledged into each unit's allocations and paid out of them, {{period}}",
+      "unitTitle": "Funded and Spent by Business Unit"
+    },
+    "finance": {
+      "attentionTitle": "Attention Required ({{count}})",
+      "noAttention": "Nothing needs attention.",
+      "noPositions": "No acknowledged allocations for this unit.",
+      "positionTitle": "Allocation Position",
+      "positionTotal": "Allocations: {{count}}",
+      "showAll": "Show all ({{count}})",
+      "showFewer": "Show fewer",
+      "subtitle": "Petty cash across business units, departments and projects: what is held, what needs action and where it went.",
+      "thresholdsLink": "Thresholds",
+      "title": "Finance Dashboard"
+    },
+    "column": {
+      "allocation": "Allocation",
+      "available": "Available",
+      "band": "Band",
+      "financeUser": "Paid Out By",
+      "float": "Float",
+      "inUse": "Used + Reserved",
+      "level": "Level",
+      "position": "Position",
+      "reserved": "Reserved",
+      "used": "Used",
+      "utilization": "Utilization"
+    },
+    "attention": {
+      "exceeded": "Exceeded: {{amount}} more used and reserved than funded",
+      "near": "Near threshold: {{percent}}% of its float left",
+      "notAcknowledged": "Paid {{span}} ago, not acknowledged yet",
+      "notAcknowledgedToday": "Paid today, not acknowledged yet",
+      "overdueWith": "waiting for {{names}}",
+      "paidTo": "paid to {{name}}: {{amount}}",
+      "preparedBy": "Prepared by {{name}}",
+      "review": "waiting for a reviewer · {{reference}}",
+      "toPay": "Approved claims to pay: {{count}}",
+      "toPayNote": "{{amount}} · the oldest approved {{span}} ago",
+      "toPayNoteToday": "{{amount}} · approved today",
+      "watch": "On watch: {{percent}}% of its float left"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Exceeded",
+      "near": "Near Threshold",
+      "normal": "Normal",
+      "pending": "Not funded yet",
+      "watch": "Watch"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Balance",
+      "bar": "Bar",
+      "followsFilters": "Follows the period and filters above.",
+      "line": "Trend",
+      "lineHint": "Over the period, for the five largest rows.",
+      "metric": "Measure",
+      "name": "Name",
+      "others": "Others",
+      "period": "Period",
+      "pie": "Share",
+      "type": "Chart type"
+    },
+    "column": {
+      "allocated": "Allocated",
+      "approved": "Approved",
+      "available": "Available",
+      "businessUnit": "Business Unit",
+      "category": "Category",
+      "charged": "Charged To",
+      "claimed": "Claimed",
+      "claims": "Claims",
+      "date": "Date",
+      "department": "Department",
+      "departments": "Departments",
+      "employee": "Employee",
+      "employeeId": "Employee ID",
+      "employees": "Employees",
+      "head": {
+        "businessUnit": "Business Unit Head",
+        "department": "Department Head",
+        "project": "Project Manager"
+      },
+      "lastClaim": "Last Claim",
+      "lastExpense": "Last Expense",
+      "net": "Net",
+      "paid": "Paid",
+      "paidOn": "Paid On",
+      "pending": "Not Yet Paid",
+      "project": "Project",
+      "projectCode": "Project Code",
+      "recipient": "Employee / Recipient",
+      "reference": "Reference",
+      "referenceDate": "Reference / Date",
+      "reimbursed": "Reimbursed",
+      "share": "% of Spend",
+      "status": "Status",
+      "statusPaid": "Status / Paid On",
+      "topVendor": "Top Merchant",
+      "total": "Total",
+      "transactions": "Transactions",
+      "vat": "VAT",
+      "vatin": "VATIN",
+      "vendor": "Vendor / Merchant",
+      "vendorCategory": "Merchant / Category",
+      "voucher": "Voucher No."
+    },
+    "countedNote": "Claims count once submitted, by expense date: in approval, approved and waiting for payment, or paid. Drafts, rejected and cancelled claims are left out.",
+    "empty": "Nothing to report for this period.",
+    "filter": {
+      "allCategories": "All categories",
+      "allEmployees": "All employees",
+      "allStatuses": "All statuses",
+      "allVendors": "All merchants",
+      "search": "Search",
+      "status": "Status",
+      "unit": "Unit"
+    },
+    "metric": {
+      "amount": "Amount",
+      "available": "Available Balance",
+      "count": "Number of Claims",
+      "paid": "Paid",
+      "pending": "Not Yet Paid"
+    },
+    "noMatch": "Nothing matches these filters.",
+    "notListed": "Not in the Vendor Master",
+    "openClaims": "Open these claims",
+    "openingOn": "opening balance at the end of {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, by expense date",
+    "periodLedger": "{{from}} – {{to}}, by ledger date",
+    "purpose": {
+      "businessUnit": "Business unit cost, including its departments and projects, beside its petty cash.",
+      "category": "Spend by expense category, with the merchant most spent with and each category's share.",
+      "department": "Department cost: the claims charged to each department, beside its petty cash.",
+      "employee": "Claims by employee: claimed, approved, paid and not yet paid.",
+      "ledger": "Funding, expenses and adjustments over the period, with each allocation's running balance.",
+      "project": "Project cost: the claims charged to each project, beside its petty cash.",
+      "transactions": "Every claim in the period, with its merchant, where it is charged and where it stands.",
+      "vendor": "Where the money is spent: claims by merchant, listed in the Vendor Master or typed on the claim."
+    },
+    "refusal": {
+      "period": "Choose a period from one day to the same day or a later one."
+    },
+    "search": {
+      "ledger": "Search entry, reference, voucher, person or narration",
+      "summary": "Search names in this report",
+      "transactions": "Search reference, person, merchant or description"
+    },
+    "status": {
+      "approved": "Approved, Not Paid",
+      "inApproval": "In Approval",
+      "paid": "Paid"
+    },
+    "summary": "Report summary",
+    "tile": {
+      "claimed": "Total Claimed",
+      "claimedNote": "In approval, approved and paid",
+      "claims": "Claims",
+      "claimsNote": "People: {{count}}",
+      "paid": "Paid",
+      "paidNote": "{{percent}}% of the total",
+      "pending": "Not Yet Paid",
+      "pendingNote": "In approval or waiting for payment"
+    },
+    "totalRow": "Total",
+    "view": {
+      "chart": "Chart",
+      "table": "Table"
+    },
+    "viewAs": "View as"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Bank Transfer",
+      "cash": "Cash",
+      "cheque": "Cheque",
+      "salary": "Salary"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Skipped: the same person already approves an earlier step",
+        "belowAmount": "Skipped: the amount is not above the threshold",
+        "incomplete": "Choose an approver source",
+        "noApprover": "No active approver found",
+        "noProject": "Skipped: no project on this request",
+        "selfApproval": "Skipped: the submitter would approve their own request"
+      }
+    }
+  }
+}

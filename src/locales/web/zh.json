@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "添加",
+    "addEntity": "添加{{entity}}",
+    "back": "返回",
+    "cancel": "取消",
+    "clearAll": "全部清除",
+    "close": "关闭",
+    "create": "创建",
+    "delete": "删除",
+    "edit": "编辑",
+    "export": "导出",
+    "retry": "重试",
+    "save": "保存",
+    "saveChanges": "保存更改",
+    "search": "搜索",
+    "view": "查看",
+    "viewAll": "查看全部"
+  },
+  "status": {
+    "active": "启用",
+    "all": "全部",
+    "inactive": "停用",
+    "no": "否",
+    "yes": "是"
+  },
+  "txn": {
+    "action": {
+      "cancel": "取消申请",
+      "saveDraft": "保存草稿",
+      "submit": "提交审批",
+      "submitForApproval": "提交审批"
+    },
+    "filter": {
+      "allStatuses": "全部状态",
+      "from": "自",
+      "to": "至"
+    },
+    "history": {
+      "acknowledged": "确认了签收",
+      "approved": "批准了",
+      "cancelled": "取消了",
+      "created": "创建了申请",
+      "disbursed": "支付了款项",
+      "edited": "进行了修改",
+      "empty": "（空）",
+      "paid": "付了款",
+      "rejected": "驳回了",
+      "resubmitted": "重新提交了审批",
+      "returned": "退回修改",
+      "submitted": "提交了审批",
+      "title": "历史",
+      "reallocated": "重新分配了",
+      "takenOver": "接手了"
+    },
+    "notFound": "该记录不存在，或不在您的查看范围内。",
+    "path": {
+      "decidedBy": {
+        "approved": "{{name}} 于 {{time}} 批准",
+        "rejected": "{{name}} 于 {{time}} 驳回",
+        "returned": "{{name}} 于 {{time}} 退回"
+      },
+      "notSent": "尚未提交审批。",
+      "overdue": "逾期",
+      "state": {
+        "approved": "已批准",
+        "pending": "等待中",
+        "rejected": "已拒绝",
+        "returned": "已退回",
+        "skipped": "已跳过",
+        "waiting": "尚未到达"
+      },
+      "title": "审批路径",
+      "waitingSince": "自 {{time}} 起等待 · 时限 {{hours}} 小时",
+      "willGoTo": "将发送给"
+    },
+    "reason": "原因",
+    "reasonRequired": "请填写原因。原因会保存在申请历史中。",
+    "refusal": {
+      "alreadyPosted": "该记录已在分类账中，因此未做任何更改。",
+      "amount": "请输入大于零的金额，最多三位小数。",
+      "amountTooLarge": "金额不能超过 {{max}} OMR。",
+      "noApprover": "审批流程的某一步没有可接收此申请的人。请管理员检查审批流程设置。",
+      "noWorkflow": "没有生效的审批流程覆盖此申请。请管理员检查审批流程设置。",
+      "nobodyLeft": "所有能审批此申请的人都是申请的相关方，因此无人可审批。请更改申请对象，或请管理员检查审批流程设置。",
+      "notAllowed": "您的角色不允许此操作。",
+      "notEditable": "只能修改草稿或被退回的申请。",
+      "notFound": "该记录不存在，或不在您的查看范围内。",
+      "notNow": "申请在当前状态下无法执行此操作。",
+      "onlyDrafts": "只能删除草稿。请改为取消。",
+      "reasonRequired": "请填写原因。",
+      "savedMeanwhile": "在此期间其他人已保存了此内容，因此未做任何更改。请重新加载后再试。",
+      "signedOut": "您的会话已结束。请重新登录。",
+      "underApproval": "申请正在等待审批人。请等待决定，或要求退回。"
+    },
+    "returnedBecause": "已退回修改：",
+    "status": {
+      "acknowledged": "已确认",
+      "active": "启用",
+      "approved": "已批准",
+      "cancelled": "已取消",
+      "closed": "已关闭",
+      "disbursed": "待签收确认",
+      "draft": "草稿",
+      "inApproval": "审批中",
+      "paid": "已付款",
+      "rejected": "已拒绝",
+      "returned": "已退回",
+      "submitted": "已提交"
+    }
+  },
+  "auth": {
+    "brandTagline": "备用金管理",
+    "company": "公司",
+    "demoBadge": "演示",
+    "demoNotice": "演示模式：登录为模拟，在接入 API 之前所有界面都显示示例数据。",
+    "feature": {
+      "allocations": "部门与项目拨付",
+      "permissions": "角色权限矩阵",
+      "selfService": "员工与经理自助服务",
+      "thresholds": "阈值监控",
+      "twoFactor": "双重验证登录",
+      "workflows": "事前与事后审批"
+    },
+    "password": "密码",
+    "passwordDemoHint": "在演示中不作校验。在实际系统中，登录会验证您的密码和双重认证码。",
+    "persona": {
+      "auditor": "审计员（只读）",
+      "employee": "员工自助服务",
+      "finance": "财务负责人 / 管理员",
+      "manager": "部门 / 项目经理"
+    },
+    "personaLabel": "演示角色",
+    "pitch": "拨付备用金、审批计划费用、报销实际支出、在组织内流转审批、用 AI 识别票据，并核对每一笔交易。",
+    "rememberMe": "保持登录状态",
+    "signIn": "登录",
+    "signInButton": "登录",
+    "signInHint": "选择一个演示角色，查看该角色使用的界面。",
+    "twoFactor": {
+      "back": "返回",
+      "demoHint": "演示：任意六位数字均可通过。",
+      "digit": "第 {{n}} 位（共 6 位）",
+      "incomplete": "请输入全部六位数字。",
+      "panelText": "来自身份验证器应用的验证码可确认确实是您本人。策略可以要求所有人、按角色或指定用户启用。",
+      "panelTitle": "双重验证",
+      "subtitle": "请输入身份验证器应用中的 6 位验证码。",
+      "title": "输入验证码",
+      "trustDevice": "信任此设备 30 天",
+      "verify": "验证并继续",
+      "wrongCode": "验证码不正确。请重试。",
+      "expired": "此次登录已过期。请返回重新登录。",
+      "useRecovery": "改用恢复码",
+      "useApp": "改用身份验证器应用",
+      "recoveryTitle": "输入恢复码",
+      "recoveryHint": "输入您保存的一个恢复码。每个恢复码只能使用一次。",
+      "trustDeviceDays": "信任此设备 {{n}} 天",
+      "enrollTitle": "设置双重身份验证登录",
+      "enrollSubtitle": "您的账户必须使用身份验证器应用。请立即设置以完成登录。"
+    },
+    "twoFactorNote": "双重验证登录可以关闭、设为可选，或按角色强制启用。",
+    "username": "邮箱或用户名",
+    "signInHintApi": "使用您的 CashFlow 账户登录。",
+    "error": {
+      "invalid": "用户名或密码无效。",
+      "tooMany": "尝试次数过多。请等待一分钟后再试。",
+      "noApi": "无法连接服务器。请稍后再试。"
+    }
+  },
+  "scan": {
+    "aiConfidence": "置信度 {{confidence}}%",
+    "aiOff": "AI 与文档处理中已关闭 AI 识别。票据仍会被检查并附上；请自行填写信息。",
+    "checkThis": "请核对",
+    "col": {
+      "claim": "报销单中",
+      "field": "字段",
+      "read": "AI 识别值"
+    },
+    "corrected": "已更正",
+    "createClaim": "创建报销单",
+    "extractionTitle": "AI 提取",
+    "fact": {
+      "file": "文件",
+      "hash": "SHA-256",
+      "size": "大小",
+      "type": "类型",
+      "typeChecked": "{{type}}，已按内容检查"
+    },
+    "field": {
+      "category": "建议类别",
+      "expenseDate": "日期",
+      "grossAmount": "总计",
+      "merchant": "商户",
+      "receiptNo": "票据号",
+      "vatAmount": "增值税"
+    },
+    "keptApart": "AI 识别的内容会原样保留在您录入的值旁边，以便更正一目了然。低于 {{min}}% 的识别结果已突出显示。",
+    "lowHint": "AI 仅有 {{confidence}}% 的把握，请与票据核对。",
+    "minConfidence": "低于 {{min}}% 的值已突出显示",
+    "noPreview": "此浏览器无法显示 HEIC 图片。文件已检查并附上。",
+    "noReceipt": "手边没有票据？",
+    "readBy": "由 {{provider}} 识别",
+    "receiptTitle": "票据",
+    "sampleNote": "示例识别：在演示中，由于文件绝不离开浏览器，所有收据均识别为该示例。",
+    "stage": {
+      "extracted": "已识别",
+      "extractedHint": "AI 识别的字段",
+      "normalizing": "规范化",
+      "normalizingHint": "已校正、裁剪、压缩",
+      "pdfReady": "PDF 就绪",
+      "pdfReadyHint": "标准 PDF，保留原件",
+      "skipped": "AI 已关闭",
+      "uploaded": "已上传",
+      "uploadedHint": "已检查类型、大小和哈希",
+      "verified": "已核验",
+      "verifiedHint": "已由您核对"
+    },
+    "stagesTitle": "文档阶段",
+    "startAgain": "再扫一张",
+    "subtitle": "用手机拍摄或上传票据，然后在创建报销单前核对识别出的字段。",
+    "tip": {
+      "light": "光线充足，合计处无阴影。",
+      "private": "在演示中，文件保留在此浏览器中。",
+      "whole": "整张票据都在取景框内，包括边缘。"
+    },
+    "title": "票据扫描与 AI 识别",
+    "typeIt": "请根据票据填写信息。",
+    "uploadHint": "打开相机或上传票据",
+    "useSample": "试用示例票据",
+    "waitingForReceipt": "添加票据以识别。",
+    "working": {
+      "normalizing": "正在校正并清理图像…",
+      "pdfReady": "正在生成标准 PDF…",
+      "uploaded": "正在检查文件…"
+    },
+    "aiPhotoOnly": "AI 识别仅适用于 JPG 和 PNG 格式的照片。",
+    "aiUnclear": "无法清晰读取收据详细信息。请手动输入。",
+    "aiUnreachable": "无法连接到 AI 模型。请手动输入收据详细信息。",
+    "aiQuota": "已达到 AI 速率限制。请稍等片刻或手动输入收据详细信息。",
+    "aiBusy": "Google AI 目前繁忙。请稍后重试，或手动输入详细信息。"
+  },
+  "approval": {
+    "action": {
+      "review": "审阅"
+    },
+    "attachmentTitle": "支持文件",
+    "availableNow": "当前可用 {{amount}}",
+    "backToInbox": "返回审批收件箱",
+    "changes": {
+      "after": "{{name}} 于 {{time}} 退回后已修改：",
+      "title": "退回后已修改"
+    },
+    "column": {
+      "amount": "金额",
+      "person": "人员",
+      "reference": "参考号",
+      "step": "状态 / 当前步骤",
+      "submitted": "提交时间",
+      "type": "类型 / 单位"
+    },
+    "days": "{{count}} 天",
+    "decision": {
+      "approve": "批准",
+      "comment": "意见（退回或驳回时必填）",
+      "noMoney": "批准不会动用资金。只有财务结算会付款。",
+      "placeholder": "申请人需要了解或修改什么？",
+      "reasonNeeded": "请填写退回或驳回的原因。申请人会看到。",
+      "reject": "驳回",
+      "return": "退回修改",
+      "title": "您的决定"
+    },
+    "detailsTitle": {
+      "additionalCash": "追加备用金申请",
+      "allocation": "拨付",
+      "preExpense": "事前费用申请",
+      "reimbursement": "报销单",
+      "reallocation": "重新分配申请"
+    },
+    "dueIn": "{{span}}后到期",
+    "empty": {
+      "decided": "您尚未决定任何申请。",
+      "scope": "您的范围内尚无提交审批的申请。",
+      "waiting": "没有等待您决定的事项。"
+    },
+    "ended": {
+      "approved": "{{name}} 于 {{time}} 批准。",
+      "cancelled": "{{name}} 于 {{time}} 撤回。",
+      "rejected": "{{name}} 于 {{time}} 驳回。",
+      "returned": "{{name}} 于 {{time}} 退回修改。"
+    },
+    "entity": "申请",
+    "filter": {
+      "allTypes": "所有申请类型",
+      "allUnits": "所有单元"
+    },
+    "flag": {
+      "changed": "退回后已修改",
+      "duplicate": "可能重复的票据",
+      "onBehalf": "由他人代此人录入",
+      "overAvailable": "超过其拨付的可用余额",
+      "lowConfidence": "AI 识别收据的置信度较低"
+    },
+    "hours": "{{count}} 小时",
+    "kind": {
+      "additionalCash": "追加备用金",
+      "allocation": "拨付",
+      "preExpense": "事前费用",
+      "reimbursement": "费用报销",
+      "reallocation": "重新分配"
+    },
+    "next": "下一步",
+    "openFile": "打开",
+    "openRecord": "打开完整记录",
+    "othersTurn": "在第 {{n}} 步等待 {{names}}。您可以在此跟进；只有他们可以决定。",
+    "outcome": {
+      "cash": "您是最后一步。批准后转交财务发放；保管人签收后才计入。",
+      "claim": "您是最后一步。批准后将在拨付中预留该金额，直到财务付款。",
+      "next": "批准后将转到下一步（{{step}}）：{{names}}。",
+      "preExpense": "您是最后一步。批准后员工即可支出，金额将保留至报销。",
+      "salary": "您是最后一步。批准后转交财务随下次工资支付。",
+      "reallocation": "您是最后一步。批准后现金转给新保管人，由其确认接收或接管。财务无需付款。"
+    },
+    "overAvailable": "这超过了 {{reference}} 的可用余额（{{available}}）。财务需要先追加才能付款。",
+    "overAvailableBlocked": "这超过了 {{reference}} 的可用余额（{{available}}），且余额不能低于零。最终批准前需要先追加。",
+    "overdueBy": "已逾期 {{span}}",
+    "position": "第 {{n}} 项，共 {{total}} 项",
+    "previous": "上一项",
+    "refusal": {
+      "changed": "此申请在您打开后已更改。请重新加载并查看更改后再决定。",
+      "decided": "此申请已有决定。",
+      "notEnoughCash": "{{reference}} 仅有 OMR {{available}} 可用，且余额不能低于零。请退回申请，或先请财务追加。",
+      "notYourStep": "此步骤不在等待您。",
+      "ownRequest": "您不能决定自己作为相关方的申请。"
+    },
+    "refusalHint": "{{reference}} 仅有 {{available}} 可用，且余额不能低于零。请退回，或先请财务追加。",
+    "search": "搜索编号、人员或用途",
+    "sentAt": "提交于 {{time}}",
+    "subtitle": "等待您决定的申请、您范围内的全部申请，以及您已决定的申请。",
+    "tile": {
+      "decided": "您已决定",
+      "decidedNote": "已批准、退回或驳回",
+      "overdue": "逾期",
+      "overdueNote": "超过审批流程设置允许的时间",
+      "scope": "审批中",
+      "summary": "审批概览",
+      "waiting": "待您处理"
+    },
+    "title": "审批收件箱",
+    "toast": {
+      "approve": "{{reference}} 已批准。",
+      "reject": "{{reference}} 已驳回。",
+      "return": "{{reference}} 已退回修改。"
+    },
+    "view": {
+      "decided": "我已决定",
+      "scope": "我范围内的全部",
+      "waiting": "待我处理"
+    },
+    "views": "收件箱视图",
+    "where": {
+      "approved": "财务待付款",
+      "disbursed": "财务已发放",
+      "returned": "退回申请人修改中",
+      "spendable": "现在可以支出，之后报销"
+    },
+    "yourTurn": "在第 {{n}} 步等待您决定：{{step}}。",
+    "yoursToWatch": "您是此申请的相关方，因此不能决定。它在第 {{n}} 步等待 {{names}}。",
+    "openSourceRecord": "打开拨付"
+  },
+  "ack": {
+    "action": "确认",
+    "amountReceived": "收款金额",
+    "bannerHint": "只有在您确认现金已到后，余额才会增加。",
+    "bannerNone": "没有待您签收的款项。",
+    "bannerWaiting": "待您签收：{{count}} · {{amount}}。",
+    "column": {
+      "amount": "金额",
+      "issued": "已签发",
+      "payment": "付款方式 / 参考号",
+      "recipient": "收款人",
+      "reference": "参考号",
+      "scope": "拨付范围",
+      "status": "状态"
+    },
+    "confirm": "确认收到款项",
+    "dialogTitle": "备用金签收确认",
+    "entity": "付款",
+    "filter": {
+      "allTypes": "全部类型"
+    },
+    "kind": {
+      "additionalCash": "追加",
+      "allocation": "拨付",
+      "topUpOf": "{{reference}} 的追加",
+      "handover": "交接",
+      "reallocatedFrom": "从 {{reference}} 重新分配"
+    },
+    "openAllocation": "打开拨付",
+    "refusal": {
+      "already": "已签收确认过。未做任何更改。",
+      "notRecipient": "只有收到现金的人才能确认签收。"
+    },
+    "remarks": "备注（可选）",
+    "remarksPlaceholder": "例如：已清点，全额收到。",
+    "search": "搜索编号、收款人或付款参考号",
+    "state": {
+      "acknowledged": "已确认",
+      "waiting": "待签收确认"
+    },
+    "statement": "确认即表示您已收到上方所示金额。随后该金额计入拨付余额，且无法撤销。",
+    "subtitle": "确认已收到财务支付的备用金，并打印付款凭证。",
+    "title": "拨付签收确认",
+    "toast": {
+      "done": "已签收。{{amount}} 现已计入 {{reference}}。"
+    },
+    "waitingFor": "等待 {{name}}",
+    "reallocatedBy": "由 {{name}} 重新分配",
+    "takeOverTitle": "接手拨付",
+    "takeOverStatement": "我确认已收到此拨付的现金和记录，现由我保管。",
+    "takeOver": "接手"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "撤回"
+    },
+    "categoryPlaceholder": "搜索报销类别…",
+    "check": {
+      "beneficiary": "您不能为此员工录入申请。只能选择您权限范围内的人员。",
+      "beneficiaryFixed": "申请提交后不能更改员工。",
+      "category": "请选择启用中的费用类别。",
+      "chooseCategory": "请选择费用类别。",
+      "chooseEmployee": "请选择员工。",
+      "costUnit": "请选择此员工所属的单位。停用的单位不能计入。",
+      "merchant": "请输入商户或收款方。",
+      "purpose": "请简要说明业务用途。",
+      "vendor": "此供应商已停用。请选择其他供应商，或输入商户名称。"
+    },
+    "costHint": "只能计入此人所属的单位。",
+    "employeePlaceholder": "输入员工姓名或工号…",
+    "ended": {
+      "cancelled": "{{name}} 于 {{time}} 撤回。",
+      "rejected": "{{name}} 于 {{time}} 驳回。",
+      "returned": "{{name}} 于 {{time}} 退回修改。"
+    },
+    "enteredBy": "由 {{name}} 录入",
+    "field": {
+      "attachment": "支持文件",
+      "category": "费用类别",
+      "chargedTo": "计入",
+      "costLevel": "成本归集类型",
+      "costUnit": "计入",
+      "created": "创建",
+      "employee": "员工",
+      "enteredBy": "录入人",
+      "for": "用于",
+      "merchant": "商户 / 收款人",
+      "submitFor": "申请对象"
+    },
+    "filter": {
+      "allEmployees": "全部员工"
+    },
+    "merchantHint": "从供应商主数据中选择；如不在列表中，请输入商户或收款方名称。",
+    "merchantPlaceholder": "搜索供应商或输入新名称…",
+    "noAttachment": "无附件",
+    "noMerchant": "未填写",
+    "onBehalfHint": "仅显示您权限范围内的人员。系统会将您记录为录入人。",
+    "refusal": {
+      "notRequester": "只有录入此申请的人或申请对象本人可以修改。"
+    },
+    "submitFor": {
+      "onBehalf": "代其他员工",
+      "self": "本人"
+    },
+    "toast": {
+      "withdrawn": "已撤回 {{reference}}。"
+    },
+    "withdrawText": "申请将被关闭，而不是修改后重新提交。原因会保留在其历史记录中。",
+    "withdrawTitle": "撤回 {{reference}}？"
+  },
+  "reimb": {
+    "action": {
+      "continue": "继续编辑",
+      "correct": "修改并重新提交"
+    },
+    "amount": {
+      "asEntered": "按录入",
+      "gross": "含税合计",
+      "net": "不含税金额",
+      "noVat": "增值税（此票据无）",
+      "paid": "实付合计"
+    },
+    "approvedNote": "已批准。金额已在拨款中预留；只有财务结算时才会付款并记入台账。",
+    "approvedSalaryNote": "已批准。财务将在下次发薪时支付并记录工资单编号。",
+    "backToClaim": "返回报销单",
+    "backToList": "返回费用报销",
+    "basis": {
+      "direct": "事后直接报销",
+      "directHint": "未事先申请批准而已支出的资金。",
+      "directShort": "直接",
+      "noneOpen": "此员工没有有余额的已批准申请。",
+      "preApproved": "基于事前批准的费用",
+      "preApprovedHint": "有余额的已批准申请：{{count}}"
+    },
+    "chargeTitle": "计入与支付",
+    "check": {
+      "basis": "请选择报销依据。",
+      "choosePreApproval": "请选择此报销单使用的已批准申请。",
+      "expenseDate": "请选择资金支出的日期。",
+      "fixFields": "有些字段需要处理。请检查标红的字段。",
+      "futureDate": "费用日期不能是将来日期。",
+      "noAllocation": "此单位没有生效的拨款，因此报销单不能从备用金支付。请选择员工工资，或咨询财务。",
+      "notEnoughCash": "{{reference}} 仅有 OMR {{available}} 可用，且余额不能低于零。请降低金额、选择员工工资，或申请补充。",
+      "overPreApproval": "报销金额超过事前批准余额（OMR {{remaining}}）。请降低金额，或将差额直接报销。",
+      "preApproval": "无法使用此事前批准：必须属于此员工、已批准且有余额。",
+      "preApprovalUnit": "基于事前批准的报销计入与事前批准相同的单位。",
+      "receiptRequired": "提交此报销单前请附上票据。此类别或系统设置要求附票据。",
+      "settlement": "请选择报销单的支付方式。",
+      "vat": "请选择增值税如何适用于金额。"
+    },
+    "column": {
+      "amount": "金额",
+      "basisPayment": "依据 / 支付",
+      "date": "日期",
+      "employee": "员工",
+      "expenseDate": "费用日期",
+      "merchant": "商户 / 类别",
+      "reference": "参考号",
+      "status": "状态"
+    },
+    "costFromPreApproval": "计入事前批准预留资金的单位。",
+    "deleteText": "报销单草稿将被删除，且无法撤销。",
+    "deleteTitle": "删除 {{reference}}？",
+    "descriptionPlaceholder": "购买了什么，以及业务原因。",
+    "detailsTitle": "报销详情",
+    "duplicate": {
+      "detailText": "提交时，另一张报销单的商户和票据号相同，或日期和金额相同。请确认不是同一张票据：",
+      "formText": "另一张报销单的商户和票据号相同，或日期和金额相同。您仍可提交；审批人会看到此提示：",
+      "title": "可能重复。",
+      "tooltip": "可能与 {{references}} 重复"
+    },
+    "editTitle": "修改 {{reference}}",
+    "entity": "费用报销",
+    "field": {
+      "amount": "金额 (OMR)",
+      "amountNet": "税前金额 (OMR)",
+      "basis": "报销依据",
+      "description": "费用说明 / 业务用途",
+      "expenseDate": "费用日期",
+      "gross": "含税合计",
+      "paidFrom": "支付来源",
+      "preApproval": "事前批准编号",
+      "receipt": "票据 / 发票",
+      "receiptNo": "收据 / 发票号",
+      "settlement": "付款方式",
+      "vatTreatment": "增值税处理"
+    },
+    "filter": {
+      "allBases": "全部报销依据",
+      "allSettlements": "全部支付方式"
+    },
+    "fromScan": "已根据票据扫描填写。AI 识别置信度为 {{confidence}}%：提交前请逐项与票据核对。",
+    "leftOf": "{{amount}} 中剩余 {{left}}",
+    "new": "新建报销",
+    "newSubtitle": "提交实际费用以报销。",
+    "newTitle": "新建费用报销",
+    "noAllocationNow": "此单位目前没有生效的拨款",
+    "noReceipt": "未附票据。",
+    "notEditable": "此报销单已过修改阶段，不能再更改。",
+    "notInLedger": "未入账：随工资发放",
+    "notScanned": "上传时未经 AI 识别。数值为手工录入。",
+    "openScan": "扫描后由 AI 填写报销单",
+    "orScan": "手边有票据吗？",
+    "preApprovalHint": "仅列出此员工有余额的已批准申请。",
+    "preApprovalPlaceholder": "选择已批准的申请…",
+    "receiptHint": "将票据拖到此处，或选择文件",
+    "receiptNeeded": "此类别在提交报销前需要票据。",
+    "receiptNoPlaceholder": "票据或发票编号",
+    "receiptOptional": "此类别的票据为可选。",
+    "receiptReplaced": "替换 {{date}} 上传的 {{name}}。",
+    "receiptTitle": "票据 / 发票",
+    "required": "必须",
+    "resubmitNote": "重新提交将生成第 {{version}} 版。审批人可以看到您的修改。",
+    "scanReceipt": "扫描票据",
+    "search": "搜索编号、员工、商户或票据号",
+    "section": {
+      "amount": "金额与增值税",
+      "charge": "计入与支付",
+      "expense": "费用",
+      "receipt": "票据 / 发票"
+    },
+    "settlement": {
+      "pettyCash": "备用金",
+      "pettyCashFrom": "来自 {{reference}} · 可用 {{available}}",
+      "pettyCashHint": "从单位的备用金拨款中支付。",
+      "salary": "员工工资",
+      "salaryHint": "随下次工资发放。备用金不受影响。"
+    },
+    "subtitle": "已支出资金的报销，可直接申请或基于已批准的事前费用申请。",
+    "summary": {
+      "allocationLeft": "可用于",
+      "claiming": "您申请报销",
+      "heldByPreApproval": "已由事前批准预留于",
+      "noAllocation": "此单位没有生效的拨款。财务可能以其他方式支付。",
+      "noAllocationBlocked": "此单位没有生效的拨款，因此不能从备用金支付。请选择员工工资，或咨询财务。",
+      "preApprovalLeft": "剩余于",
+      "routeLater": "填写金额和单位后，此处会显示审批人。",
+      "salary": "随工资发放：备用金余额不变。",
+      "short": "超过拨款可用金额。财务需先补充。",
+      "shortBlocked": "超过拨款可用金额，且余额不能低于零。请降低金额、选择员工工资，或申请补充。",
+      "title": "报销单汇总"
+    },
+    "tile": {
+      "claims": "报销单",
+      "paid": "本月已付",
+      "paidNote": "已付报销单：{{count}}",
+      "pending": "审批中",
+      "summary": "报销汇总",
+      "toPay": "已批准，待付款"
+    },
+    "title": "费用报销",
+    "toast": {
+      "deleted": "已删除 {{reference}}。",
+      "saved": "{{reference}} 已存为草稿。",
+      "submitted": "{{reference}} 已提交审批。"
+    },
+    "vat": {
+      "exclusive": "不含增值税",
+      "inclusive": "含增值税",
+      "none": "无增值税"
+    },
+    "vatOnReceipt": "AI 识别的票据增值税：OMR {{vat}}",
+    "vatShort": "增值税 {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "录入为 {{amount}}，未含 {{rate}}% 增值税。",
+      "inclusive": "录入为 {{amount}}，含 {{rate}}% 增值税。",
+      "none": "录入为 {{amount}}。该票据无增值税。"
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "确认",
+      "allClaims": "我的全部报销",
+      "claimsCount": "报销：{{count}}",
+      "column": {
+        "amount": "金额",
+        "date": "日期",
+        "documents": "文件",
+        "employee": "员工",
+        "lastClaim": "最近报销",
+        "open": "待办请求",
+        "purpose": "目的",
+        "reference": "参考号",
+        "status": "状态",
+        "thisMonth": "本月"
+      },
+      "custodianTitle": "我的备用金：{{unit}}",
+      "decisionsTitle": "等待我决定（{{count}}）",
+      "enteredFor": "为 {{name}} 录入",
+      "greeting": "欢迎回来，{{name}}。您的申请、等待您决定的事项以及您保管的现金。",
+      "hasReceipt": "已附收据",
+      "lowHint": "余额偏低：在用完之前申请追加。",
+      "managerText": "在您有权办理的单位内，为团队成员提交事前费用或报销。",
+      "managerTitle": "经理自助",
+      "movements": "最近变动",
+      "newPreExpense": "事前费用申请",
+      "newReimbursement": "费用报销",
+      "noMovements": "尚无变动。",
+      "noRequests": "尚无申请。请在上方发起。",
+      "openInbox": "审批收件箱",
+      "overdue": "已逾期：{{count}}",
+      "paidOn": "{{amount}}，于 {{date}} 支付",
+      "preExpenseBehalf": "代他人申请事前费用",
+      "recentTitle": "我的最近申请",
+      "reimbursementBehalf": "代他人报销",
+      "requestTopUp": "申请追加",
+      "shortcut": {
+        "preExpense": "事前费用审批",
+        "preExpenseText": "花钱前先申请。批准的金额会从您所在单位的拨付中预留。",
+        "reimbursement": "费用报销",
+        "reimbursementText": "报销已支付的费用，附上或扫描收据。",
+        "scan": "扫描票据",
+        "scanText": "让 AI 从收据中读取商户、日期、增值税、金额和类别。"
+      },
+      "shortcuts": "发起申请",
+      "subtitle": "您的申请、等待您决定的事项以及您保管的现金。",
+      "teamTitle": "我的团队（{{count}}）",
+      "tile": {
+        "approved": "我的已批准 / 可用",
+        "approvedNote": "待报销的已批准事前费用：{{count}}",
+        "awaiting": "等待审批",
+        "nothingReturned": "无需修改",
+        "paid": "本月已付",
+        "paidNote": "已付报销单：{{count}}",
+        "returned": "退回给我",
+        "returnedNote": "需要处理"
+      },
+      "title": "我的仪表板",
+      "toAcknowledge": "付给您的现金正等待您确认收款（{{count}}）",
+      "topUpPending": "追加资金在途：",
+      "voucher": "凭证 {{voucher}}",
+      "waitingFor": "在 {{names}} 处",
+      "monthTitle": "我的每月报销",
+      "monthSubtitle": "按费用日期，{{from}} 至 {{to}}",
+      "categoryTitle": "我的按类别支出",
+      "categorySubtitle": "今年日期的我的报销单，{{period}}",
+      "claimedThisYear": "今年申请",
+      "noClaims": "暂无报销单。"
+    },
+    "chart": {
+      "amount": "金额",
+      "businessUnit": "业务单元",
+      "category": "类别",
+      "categoryTitle": "按类别支出",
+      "claims": "报销单",
+      "funded": "已注资",
+      "month": "月份",
+      "noMovement": "此期间没有现金变动。",
+      "noPaid": "此期间没有支付报销。",
+      "otherCategories": "其他类别（{{count}}）",
+      "paidInPeriod": "期间已付",
+      "pettyCash": "备用金",
+      "salary": "随工资发放",
+      "share": "占比",
+      "spent": "已支出",
+      "total": "总计",
+      "trendSubtitle": "已付报销，{{from}} 至 {{to}}",
+      "trendTitle": "按月支出",
+      "unitSubtitle": "各单位拨付中确认入账并支出的现金，{{period}}",
+      "unitTitle": "各业务单元的注资与支出"
+    },
+    "finance": {
+      "attentionTitle": "需要关注（{{count}}）",
+      "noAttention": "没有需要关注的事项。",
+      "noPositions": "此单位没有已确认的拨付。",
+      "positionTitle": "拨付状况",
+      "positionTotal": "拨付：{{count}}",
+      "showAll": "全部显示（{{count}}）",
+      "showFewer": "收起",
+      "subtitle": "各业务单元、部门和项目的备用金：持有多少、哪些需要处理、钱花到了哪里。",
+      "thresholdsLink": "阈值",
+      "title": "财务看板"
+    },
+    "column": {
+      "allocation": "拨付",
+      "available": "可用",
+      "band": "级别",
+      "financeUser": "付款人",
+      "float": "定额",
+      "inUse": "已使用 + 已预留",
+      "level": "级别",
+      "position": "状况",
+      "reserved": "已预留",
+      "used": "已使用",
+      "utilization": "使用率"
+    },
+    "attention": {
+      "exceeded": "已超支：已使用和已预留比注资多 {{amount}}",
+      "near": "接近阈值：定额剩余 {{percent}}%",
+      "notAcknowledged": "{{span}} 前已付，尚未确认",
+      "notAcknowledgedToday": "今天已付，尚未确认",
+      "overdueWith": "等待 {{names}}",
+      "paidTo": "已付给 {{name}}：{{amount}}",
+      "preparedBy": "由 {{name}} 编制",
+      "review": "等待复核人 · {{reference}}",
+      "toPay": "待付的已批准报销：{{count}}",
+      "toPayNote": "{{amount}} · 最早的于 {{span}} 前批准",
+      "toPayNoteToday": "{{amount}} · 今天批准",
+      "watch": "关注：定额剩余 {{percent}}%"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "已超支",
+      "near": "接近阈值",
+      "normal": "正常",
+      "pending": "尚未注资",
+      "watch": "关注"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "余额",
+      "bar": "柱状",
+      "followsFilters": "遵循上方的期间和筛选条件。",
+      "line": "趋势",
+      "lineHint": "期间内，金额最大的五行。",
+      "metric": "指标",
+      "name": "名称",
+      "others": "其他",
+      "period": "期间",
+      "pie": "占比",
+      "type": "图表类型"
+    },
+    "column": {
+      "allocated": "已分配",
+      "approved": "已批准",
+      "available": "可用",
+      "businessUnit": "业务单元",
+      "category": "类别",
+      "charged": "计入",
+      "claimed": "已报销",
+      "claims": "报销单",
+      "date": "日期",
+      "department": "部门",
+      "departments": "部门",
+      "employee": "员工",
+      "employeeId": "工号",
+      "employees": "员工",
+      "head": {
+        "businessUnit": "业务单元负责人",
+        "department": "部门负责人",
+        "project": "项目经理"
+      },
+      "lastClaim": "最近报销",
+      "lastExpense": "最近费用",
+      "net": "净额",
+      "paid": "已付款",
+      "paidOn": "付款日期",
+      "pending": "尚未付款",
+      "project": "项目",
+      "projectCode": "项目编码",
+      "recipient": "员工 / 收款人",
+      "reference": "参考号",
+      "referenceDate": "单号 / 日期",
+      "reimbursed": "已报销",
+      "share": "支出占比",
+      "status": "状态",
+      "statusPaid": "状态 / 付款日期",
+      "topVendor": "主要商户",
+      "total": "总计",
+      "transactions": "交易笔数",
+      "vat": "增值税",
+      "vatin": "增值税号",
+      "vendor": "供应商 / 商户",
+      "vendorCategory": "商户 / 类别",
+      "voucher": "凭证号"
+    },
+    "countedNote": "报销单提交后按费用日期计入：审批中、已批准待付款或已付款。草稿以及被拒绝和已取消的报销单不计入。",
+    "empty": "此期间没有可报告的内容。",
+    "filter": {
+      "allCategories": "全部类别",
+      "allEmployees": "全部员工",
+      "allStatuses": "全部状态",
+      "allVendors": "全部商户",
+      "search": "搜索",
+      "status": "状态",
+      "unit": "单位"
+    },
+    "metric": {
+      "amount": "金额",
+      "available": "可用余额",
+      "count": "报销单数量",
+      "paid": "已付款",
+      "pending": "尚未付款"
+    },
+    "noMatch": "没有符合这些筛选条件的内容。",
+    "notListed": "不在供应商主数据中",
+    "openClaims": "打开这些报销单",
+    "openingOn": "{{date}} 结束时的期初余额：",
+    "periodClaims": "{{from}} – {{to}}，按费用日期",
+    "periodLedger": "{{from}} – {{to}}，按记账日期",
+    "purpose": {
+      "businessUnit": "业务单元成本（含其部门和项目），及其备用金。",
+      "category": "按费用类别统计的支出，附花费最多的商户和各类别占比。",
+      "department": "部门成本：计入各部门的报销单，及其备用金。",
+      "employee": "按员工统计的报销单：申请、批准、已付和未付金额。",
+      "ledger": "期间内的注资、费用和调整，以及每笔拨付的滚动余额。",
+      "project": "项目成本：计入各项目的报销单，及其备用金。",
+      "transactions": "期间内的每张报销单，含商户、计入对象和当前状态。",
+      "vendor": "钱花在哪里：按商户统计的报销单，商户来自供应商主数据或在报销单上填写。"
+    },
+    "refusal": {
+      "period": "请选择从某一天到同一天或之后某一天的期间。"
+    },
+    "search": {
+      "ledger": "搜索分录、参考号、凭证、人员或摘要",
+      "summary": "在本报表中搜索名称",
+      "transactions": "搜索单号、人员、商户或描述"
+    },
+    "status": {
+      "approved": "已批准，未付款",
+      "inApproval": "审批中",
+      "paid": "已付款"
+    },
+    "summary": "报表摘要",
+    "tile": {
+      "claimed": "申请总额",
+      "claimedNote": "审批中、已批准和已付款",
+      "claims": "报销单",
+      "claimsNote": "人数：{{count}}",
+      "paid": "已付款",
+      "paidNote": "占总额 {{percent}}%",
+      "pending": "尚未付款",
+      "pendingNote": "审批中或待付款"
+    },
+    "totalRow": "总计",
+    "view": {
+      "chart": "图表",
+      "table": "表格"
+    },
+    "viewAs": "显示方式"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "银行转账",
+      "cash": "现金",
+      "cheque": "支票",
+      "salary": "工资"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "已跳过：同一人已在前一步审批",
+        "belowAmount": "已跳过：金额未超过阈值",
+        "incomplete": "请选择审批人来源",
+        "noApprover": "未找到有效的审批人",
+        "noProject": "已跳过：此申请没有项目",
+        "selfApproval": "已跳过：申请人将审批自己的申请"
+      }
+    }
+  }
+}

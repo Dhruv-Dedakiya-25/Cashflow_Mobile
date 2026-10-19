@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "追加",
+    "addEntity": "{{entity}}を追加",
+    "back": "戻る",
+    "cancel": "キャンセル",
+    "clearAll": "すべてクリア",
+    "close": "閉じる",
+    "create": "作成",
+    "delete": "削除",
+    "edit": "編集",
+    "export": "エクスポート",
+    "retry": "再試行",
+    "save": "保存",
+    "saveChanges": "変更を保存",
+    "search": "検索",
+    "view": "表示",
+    "viewAll": "すべて表示"
+  },
+  "status": {
+    "active": "有効",
+    "all": "すべて",
+    "inactive": "無効",
+    "no": "いいえ",
+    "yes": "はい"
+  },
+  "txn": {
+    "action": {
+      "cancel": "申請を取り消す",
+      "saveDraft": "下書きを保存",
+      "submit": "承認に回す",
+      "submitForApproval": "承認へ提出"
+    },
+    "filter": {
+      "allStatuses": "すべてのステータス",
+      "from": "開始",
+      "to": "終了"
+    },
+    "history": {
+      "acknowledged": "が受領を確認しました",
+      "approved": "が承認しました",
+      "cancelled": "が取り消しました",
+      "created": "が申請を作成しました",
+      "disbursed": "が金額を支払いました",
+      "edited": "が変更しました",
+      "empty": "（空）",
+      "paid": "が支払いました",
+      "rejected": "が却下しました",
+      "resubmitted": "が再度承認に回しました",
+      "returned": "が修正のため差し戻しました",
+      "submitted": "が承認に回しました",
+      "title": "履歴",
+      "reallocated": "が再配分しました",
+      "takenOver": "が引き継ぎました"
+    },
+    "notFound": "このレコードは存在しないか、閲覧できる範囲外です。",
+    "path": {
+      "decidedBy": {
+        "approved": "{{name}} が {{time}} に承認",
+        "rejected": "{{name}} が {{time}} に却下",
+        "returned": "{{name}} が {{time}} に差し戻し"
+      },
+      "notSent": "まだ承認に回していません。",
+      "overdue": "延滞",
+      "state": {
+        "approved": "承認済み",
+        "pending": "待機中",
+        "rejected": "却下",
+        "returned": "差し戻し",
+        "skipped": "スキップ",
+        "waiting": "未到達"
+      },
+      "title": "承認経路",
+      "waitingSince": "{{time}} から待機中 · 期限 {{hours}} 時間",
+      "willGoTo": "送付先"
+    },
+    "reason": "理由",
+    "reasonRequired": "理由を入力してください。申請の履歴に残ります。",
+    "refusal": {
+      "alreadyPosted": "既に元帳に記録されているため、何も変更されていません。",
+      "amount": "ゼロより大きく、小数点以下3桁までの金額を入力してください。",
+      "amountTooLarge": "金額は {{max}} OMR を超えられません。",
+      "noApprover": "ワークフローのあるステップに、この申請の送付先がいません。管理者にワークフロー設定の確認を依頼してください。",
+      "noWorkflow": "この申請に適用される有効なワークフローがありません。管理者にワークフロー設定の確認を依頼してください。",
+      "nobodyLeft": "この申請を承認できる人は全員がこの申請の当事者のため、承認できる人がいません。対象者を変更するか、管理者にワークフロー設定の確認を依頼してください。",
+      "notAllowed": "あなたのロールではこの操作はできません。",
+      "notEditable": "変更できるのは下書きか差し戻された申請だけです。",
+      "notFound": "このレコードは存在しないか、閲覧できる範囲外です。",
+      "notNow": "申請の現在のステータスではこの操作はできません。",
+      "onlyDrafts": "削除できるのは下書きだけです。代わりに取り消してください。",
+      "reasonRequired": "理由を入力してください。",
+      "savedMeanwhile": "その間に他のユーザーが保存したため、何も変更されませんでした。再読み込みしてからもう一度お試しください。",
+      "signedOut": "セッションが終了しました。もう一度サインインしてください。",
+      "underApproval": "承認者の判断待ちです。決定を待つか、差し戻しを依頼してください。"
+    },
+    "returnedBecause": "修正のため差し戻されました：",
+    "status": {
+      "acknowledged": "確認済み",
+      "active": "有効",
+      "approved": "承認済み",
+      "cancelled": "キャンセル済み",
+      "closed": "閉鎖",
+      "disbursed": "受領確認待ち",
+      "draft": "下書き",
+      "inApproval": "承認中",
+      "paid": "支払済み",
+      "rejected": "却下",
+      "returned": "差し戻し",
+      "submitted": "提出日"
+    }
+  },
+  "auth": {
+    "brandTagline": "小口現金管理",
+    "company": "会社",
+    "demoBadge": "デモ",
+    "demoNotice": "デモモード: サインインは疑似的なもので、API が導入されるまで各画面にはサンプルデータが表示されます。",
+    "feature": {
+      "allocations": "部署・プロジェクトへの配分",
+      "permissions": "ロール権限マトリクス",
+      "selfService": "従業員・管理者のセルフサービス",
+      "thresholds": "しきい値の監視",
+      "twoFactor": "二要素サインイン",
+      "workflows": "支出前後の承認"
+    },
+    "password": "パスワード",
+    "passwordDemoHint": "デモではチェックされません。本番システムでは、サインイン時にパスワードと2要素認証コードが検証されます。",
+    "persona": {
+      "auditor": "監査担当者（閲覧のみ）",
+      "employee": "従業員セルフサービス",
+      "finance": "財務責任者 / 管理者",
+      "manager": "部署 / プロジェクトマネージャー"
+    },
+    "personaLabel": "デモ用ペルソナ",
+    "pitch": "小口現金を配分し、予定経費を承認し、実費を精算し、組織内で承認を回し、AI で領収書を読み取り、すべての取引を照合します。",
+    "rememberMe": "ログイン状態を保持",
+    "signIn": "ログイン",
+    "signInButton": "ログイン",
+    "signInHint": "デモ用のペルソナを選ぶと、そのロールが使う画面を確認できます。",
+    "twoFactor": {
+      "back": "戻る",
+      "demoHint": "デモ: 任意の 6 桁で通過できます。",
+      "digit": "6 桁中 {{n}} 桁目",
+      "incomplete": "6 桁すべて入力してください。",
+      "panelText": "認証アプリのコードで本人であることを確認します。ポリシーにより、全員、ロール別、または選択したユーザーに必須にできます。",
+      "panelTitle": "二要素認証",
+      "subtitle": "認証アプリに表示される 6 桁のコードを入力してください。",
+      "title": "確認コードを入力",
+      "trustDevice": "このデバイスを 30 日間信頼する",
+      "verify": "確認して続行",
+      "wrongCode": "コードが正しくありません。もう一度お試しください。",
+      "expired": "このサインインは有効期限が切れました。戻ってもう一度サインインしてください。",
+      "useRecovery": "代わりにリカバリーコードを使う",
+      "useApp": "代わりに認証アプリを使う",
+      "recoveryTitle": "リカバリーコードを入力",
+      "recoveryHint": "保存したリカバリーコードのいずれかを入力してください。各コードは 1 回だけ使えます。",
+      "trustDeviceDays": "このデバイスを {{n}} 日間信頼する",
+      "enrollTitle": "2 段階サインインを設定",
+      "enrollSubtitle": "このアカウントでは認証アプリの使用が必須です。サインインを完了するには、今すぐ設定してください。"
+    },
+    "twoFactorNote": "二要素サインインは、オフ、任意、またはロールごとに必須にできます。",
+    "username": "メールアドレスまたはユーザー名",
+    "signInHintApi": "CashFlow アカウントでサインインしてください。",
+    "error": {
+      "invalid": "ユーザー名またはパスワードが正しくありません。",
+      "tooMany": "試行回数が多すぎます。1 分待ってからもう一度お試しください。",
+      "noApi": "サーバーに接続できません。しばらくしてからもう一度お試しください。"
+    }
+  },
+  "scan": {
+    "aiConfidence": "信頼度 {{confidence}}%",
+    "aiOff": "AI 抽出は「AI と文書処理」でオフになっています。領収書の確認と添付は行われるので、内容はご自身で入力してください。",
+    "checkThis": "要確認",
+    "col": {
+      "claim": "精算の値",
+      "field": "項目",
+      "read": "AI 読み取り値"
+    },
+    "corrected": "修正済み",
+    "createClaim": "経費精算を作成",
+    "extractionTitle": "AI 抽出",
+    "fact": {
+      "file": "ファイル",
+      "hash": "SHA-256",
+      "size": "サイズ",
+      "type": "種別",
+      "typeChecked": "{{type}}（内容から確認）"
+    },
+    "field": {
+      "category": "推奨カテゴリ",
+      "expenseDate": "日付",
+      "grossAmount": "合計",
+      "merchant": "店舗",
+      "receiptNo": "領収書番号",
+      "vatAmount": "VAT"
+    },
+    "keptApart": "AI の読み取り値は入力値の横にそのまま残るため、修正内容がわかります。{{min}}% 未満の読み取りは強調表示されます。",
+    "lowHint": "AI の確信度は {{confidence}}% だけです。領収書と照合してください。",
+    "minConfidence": "{{min}}% 未満の値は強調表示",
+    "noPreview": "このブラウザでは HEIC 画像を表示できません。ファイルは確認済みで添付されています。",
+    "noReceipt": "領収書がお手元にありませんか？",
+    "readBy": "{{provider}} が読み取り",
+    "receiptTitle": "領収書",
+    "sampleNote": "サンプルの読み取り: デモではファイルがブラウザ外に出ないため、すべての領収書がこのサンプルとして読み取られます。",
+    "stage": {
+      "extracted": "抽出済み",
+      "extractedHint": "AI が読み取った項目",
+      "normalizing": "正規化",
+      "normalizingHint": "傾き補正・トリミング・圧縮",
+      "pdfReady": "PDF 準備完了",
+      "pdfReadyHint": "標準 PDF、原本を保持",
+      "skipped": "AI はオフです",
+      "uploaded": "アップロード",
+      "uploadedHint": "形式・サイズ・ハッシュを確認済み",
+      "verified": "検証済み",
+      "verifiedHint": "あなたが確認"
+    },
+    "stagesTitle": "文書の段階",
+    "startAgain": "もう一枚スキャン",
+    "subtitle": "スマートフォンで撮影するか請求書をアップロードし、精算を作成する前に抽出項目を確認します。",
+    "tip": {
+      "light": "明るい場所で、合計欄に影がかからないように。",
+      "private": "デモではファイルはこのブラウザ内にとどまります。",
+      "whole": "端まで領収書全体を枠に収めてください。"
+    },
+    "title": "領収書スキャンと AI 抽出",
+    "typeIt": "領収書の内容を入力してください。",
+    "uploadHint": "カメラを開くか領収書をアップロード",
+    "useSample": "サンプル領収書を試す",
+    "waitingForReceipt": "読み取る領収書を追加してください。",
+    "working": {
+      "normalizing": "画像を補正・クリーンアップ中…",
+      "pdfReady": "標準 PDF を作成中…",
+      "uploaded": "ファイルを確認中…"
+    },
+    "aiPhotoOnly": "AI による読み取りは JPG および PNG 写真でのみ利用可能です。",
+    "aiUnclear": "レシートの詳細を明確に読み取れませんでした。手動で入力してください。",
+    "aiUnreachable": "AI モデルにアクセスできません。レシートの詳細を手動で入力してください。",
+    "aiQuota": "AI のレート制限に達しました。しばらく待つか、レシートの詳細を手入力してください。",
+    "aiBusy": "GoogleのAIは現在混雑しています。しばらくしてからもう一度お試しいただくか、詳細を手動で入力してください。"
+  },
+  "approval": {
+    "action": {
+      "review": "確認する"
+    },
+    "attachmentTitle": "添付書類",
+    "availableNow": "現在 {{amount}} 利用可能",
+    "backToInbox": "承認受信箱に戻る",
+    "changes": {
+      "after": "{{name}} が {{time}} に差し戻した後の修正：",
+      "title": "差し戻し後に変更あり"
+    },
+    "column": {
+      "amount": "金額",
+      "person": "人",
+      "reference": "参照番号",
+      "step": "ステータス / 現在のステップ",
+      "submitted": "提出日時",
+      "type": "種別 / 部門"
+    },
+    "days": "{{count}} 日",
+    "decision": {
+      "approve": "承認",
+      "comment": "コメント（差し戻し・却下の場合は必須）",
+      "noMoney": "承認してもお金は動きません。支払うのは財務精算のみです。",
+      "placeholder": "申請者が知っておくべきこと、修正すべきことは？",
+      "reasonNeeded": "差し戻しまたは却下の理由を入力してください。申請者に表示されます。",
+      "reject": "却下",
+      "return": "修正のため差し戻す",
+      "title": "あなたの判断"
+    },
+    "detailsTitle": {
+      "additionalCash": "追加現金の申請",
+      "allocation": "配分",
+      "preExpense": "事前経費申請",
+      "reimbursement": "経費申請",
+      "reallocation": "再配分申請"
+    },
+    "dueIn": "期限まで {{span}}",
+    "empty": {
+      "decided": "まだ判断した申請はありません。",
+      "scope": "あなたの範囲で承認に回された申請はありません。",
+      "waiting": "あなたの判断を待っているものはありません。"
+    },
+    "ended": {
+      "approved": "{{name}} が {{time}} に承認しました。",
+      "cancelled": "{{time}} に {{name}} が取り下げました。",
+      "rejected": "{{time}} に {{name}} が却下しました。",
+      "returned": "{{time}} に {{name}} が差し戻しました。"
+    },
+    "entity": "件の申請",
+    "filter": {
+      "allTypes": "すべての申請種別",
+      "allUnits": "すべての住戸"
+    },
+    "flag": {
+      "changed": "差し戻し後に変更あり",
+      "duplicate": "請求書の重複の可能性",
+      "onBehalf": "本人に代わって別の人が入力",
+      "overAvailable": "配分の利用可能額を超えている",
+      "lowConfidence": "AI によるレシート読み取りの信頼度が低いです"
+    },
+    "hours": "{{count}} 時間",
+    "kind": {
+      "additionalCash": "追加現金",
+      "allocation": "配分",
+      "preExpense": "事前経費",
+      "reimbursement": "経費精算",
+      "reallocation": "再配分"
+    },
+    "next": "次へ",
+    "openFile": "開く",
+    "openRecord": "記録全体を開く",
+    "othersTurn": "ステップ {{n}} で {{names}} を待っています。ここで経過を確認できます。判断できるのは担当者のみです。",
+    "outcome": {
+      "cash": "あなたが最終ステップです。承認すると払出のため財務部に回ります。現金管理者が受領確認した時点で計上されます。",
+      "claim": "あなたが最終ステップです。承認すると、財務部が支払うまで配分にその金額を確保します。",
+      "next": "承認すると次のステップ（{{step}}）に進みます：{{names}}。",
+      "preExpense": "あなたが最終ステップです。承認すると社員は支出でき、精算されるまで金額を確保します。",
+      "salary": "あなたが最終ステップです。承認すると、次回の給与で支払うよう財務部に回ります。",
+      "reallocation": "あなたが最後のステップです。承認すると現金は新しい保管者に移り、その人が受領確認または引き継ぎを行います。財務部門からの支払いはありません。"
+    },
+    "overAvailable": "{{reference}} の利用可能額（{{available}}）を超えています。支払前に財務部の追加入金が必要です。",
+    "overAvailableBlocked": "{{reference}} の利用可能額（{{available}}）を超えており、残高はマイナスにできません。最終承認の前に追加入金が必要です。",
+    "overdueBy": "{{span}} 超過",
+    "position": "{{n}} / {{total}}",
+    "previous": "前へ",
+    "refusal": {
+      "changed": "開いた後にこの申請が変更されました。判断する前に再読み込みして変更を確認してください。",
+      "decided": "この申請はすでに判断済みです。",
+      "notEnoughCash": "{{reference}} の利用可能額は OMR {{available}} のみで、残高はマイナスにできません。申請を差し戻すか、先に財務部へ追加入金を依頼してください。",
+      "notYourStep": "このステップはあなたを待っていません。",
+      "ownRequest": "自分が当事者の申請は判断できません。"
+    },
+    "refusalHint": "{{reference}} の利用可能額は {{available}} のみで、残高はマイナスにできません。差し戻すか、先に財務部へ追加入金を依頼してください。",
+    "search": "番号・人・目的で検索",
+    "sentAt": "{{time}} に提出",
+    "subtitle": "あなたの判断を待つ申請、あなたの範囲のすべて、あなたが判断した申請。",
+    "tile": {
+      "decided": "あなたが判断済み",
+      "decidedNote": "承認・差し戻し・却下",
+      "overdue": "延滞",
+      "overdueNote": "ワークフロー設定の許容時間を超過",
+      "scope": "承認中",
+      "summary": "承認の概要",
+      "waiting": "あなたの対応待ち"
+    },
+    "title": "承認受信箱",
+    "toast": {
+      "approve": "{{reference}} を承認しました。",
+      "reject": "{{reference}} を却下しました。",
+      "return": "{{reference}} を修正のため差し戻しました。"
+    },
+    "view": {
+      "decided": "自分が判断済み",
+      "scope": "自分の範囲のすべて",
+      "waiting": "自分の対応待ち"
+    },
+    "views": "受信箱の表示",
+    "where": {
+      "approved": "財務部の支払待ち",
+      "disbursed": "財務部が払出済み",
+      "returned": "申請者が修正中",
+      "spendable": "支出でき、あとで精算"
+    },
+    "yourTurn": "ステップ {{n}} であなたの判断を待っています：{{step}}。",
+    "yoursToWatch": "あなたはこの申請の当事者のため判断できません。ステップ {{n}} で {{names}} を待っています。",
+    "openSourceRecord": "配分を開く"
+  },
+  "ack": {
+    "action": "確認する",
+    "amountReceived": "入金額",
+    "bannerHint": "現金の到着を確認するまで残高は増えません。",
+    "bannerNone": "あなたの受領確認を待っているものはありません。",
+    "bannerWaiting": "あなたの受領確認待ち：{{count}} · {{amount}}。",
+    "column": {
+      "amount": "金額",
+      "issued": "発行済み",
+      "payment": "支払方法 / 参照",
+      "recipient": "受取人",
+      "reference": "参照番号",
+      "scope": "配分の範囲",
+      "status": "ステータス"
+    },
+    "confirm": "金額の受領を確認",
+    "dialogTitle": "小口現金の受領確認",
+    "entity": "支払",
+    "filter": {
+      "allTypes": "すべての種別"
+    },
+    "kind": {
+      "additionalCash": "追加入金",
+      "allocation": "配分",
+      "topUpOf": "{{reference}} への追加入金",
+      "handover": "引き継ぎ",
+      "reallocatedFrom": "{{reference}} からの再配分"
+    },
+    "openAllocation": "配分を開く",
+    "refusal": {
+      "already": "既に受領確認済みです。何も変更されていません。",
+      "notRecipient": "受領を確認できるのは現金を受け取った本人だけです。"
+    },
+    "remarks": "備考（任意）",
+    "remarksPlaceholder": "例：数えて全額受け取りました。",
+    "search": "参照番号、受取人、支払参照で検索",
+    "state": {
+      "acknowledged": "確認済み",
+      "waiting": "受領確認待ち"
+    },
+    "statement": "確認すると、上記の金額を受け取ったことを認めます。その後、配分の残高に加算され、取り消すことはできません。",
+    "subtitle": "財務が支払った小口現金の受領を確認し、支払伝票を印刷します。",
+    "title": "配分の受領確認",
+    "toast": {
+      "done": "受領を確認しました。{{amount}} が {{reference}} で利用可能になりました。"
+    },
+    "waitingFor": "{{name}} を待機中",
+    "reallocatedBy": "{{name}} が再配分",
+    "takeOverTitle": "配分を引き継ぐ",
+    "takeOverStatement": "この配分の現金と記録を受け取り、現在私が保管していることを確認します。",
+    "takeOver": "引き継ぐ"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "取り下げ"
+    },
+    "categoryPlaceholder": "精算カテゴリを検索…",
+    "check": {
+      "beneficiary": "この社員の申請は入力できません。あなたの範囲内の人だけを選べます。",
+      "beneficiaryFixed": "申請の送信後は社員を変更できません。",
+      "category": "有効な経費カテゴリを選んでください。",
+      "chooseCategory": "経費カテゴリを選んでください。",
+      "chooseEmployee": "社員を選んでください。",
+      "costUnit": "この社員が所属する部門・プロジェクトを選んでください。無効な単位には計上できません。",
+      "merchant": "店舗名または支払先を入力してください。",
+      "purpose": "業務上の目的を簡潔に記入してください。",
+      "vendor": "この取引先は無効です。別の取引先を選ぶか、店舗名を入力してください。"
+    },
+    "costHint": "この人が所属する部門・プロジェクトにのみ計上できます。",
+    "employeePlaceholder": "社員名または社員番号を入力…",
+    "ended": {
+      "cancelled": "{{time}} に {{name}} が取り下げました。",
+      "rejected": "{{time}} に {{name}} が却下しました。",
+      "returned": "{{time}} に {{name}} が差し戻しました。"
+    },
+    "enteredBy": "入力者: {{name}}",
+    "field": {
+      "attachment": "添付書類",
+      "category": "経費カテゴリ",
+      "chargedTo": "計上先",
+      "costLevel": "費用配賦の種類",
+      "costUnit": "計上先",
+      "created": "作成",
+      "employee": "従業員",
+      "enteredBy": "入力者",
+      "for": "対象",
+      "merchant": "店舗 / 支払先",
+      "submitFor": "申請対象"
+    },
+    "filter": {
+      "allEmployees": "全社員"
+    },
+    "merchantHint": "取引先マスターから選ぶか、一覧にない場合は店舗名または支払先を入力してください。",
+    "merchantPlaceholder": "取引先を検索するか新しい名前を入力…",
+    "noAttachment": "添付なし",
+    "noMerchant": "未入力",
+    "onBehalfHint": "あなたの範囲内の人だけが表示されます。入力者としてあなたが記録されます。",
+    "refusal": {
+      "notRequester": "この申請を変更できるのは、入力した人か対象の本人だけです。"
+    },
+    "submitFor": {
+      "onBehalf": "他の社員の代理",
+      "self": "本人"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} を取り下げました。"
+    },
+    "withdrawText": "申請は修正・再送されずにクローズされます。理由は履歴に残ります。",
+    "withdrawTitle": "{{reference}} を取り下げますか？"
+  },
+  "reimb": {
+    "action": {
+      "continue": "編集を続ける",
+      "correct": "修正して再申請"
+    },
+    "amount": {
+      "asEntered": "入力値",
+      "gross": "税込合計",
+      "net": "税抜金額",
+      "noVat": "VAT（この請求書にはなし）",
+      "paid": "支払合計"
+    },
+    "approvedNote": "承認済み。金額は割当で確保されています。財務部が精算処理したときに支払われ、元帳に記帳されます。",
+    "approvedSalaryNote": "承認済み。財務部が次回の給与で支払い、給与参照番号を記録します。",
+    "backToClaim": "精算に戻る",
+    "backToList": "経費精算に戻る",
+    "basis": {
+      "direct": "事後の直接精算",
+      "directHint": "事前承認なしですでに支出した経費。",
+      "directShort": "直接",
+      "noneOpen": "この社員には残額のある承認済み申請がありません。",
+      "preApproved": "事前承認済み経費に基づく",
+      "preApprovedHint": "残額のある承認済み申請: {{count}}"
+    },
+    "chargeTitle": "計上と支払い",
+    "check": {
+      "basis": "精算区分を選んでください。",
+      "choosePreApproval": "この精算が使う承認済み申請を選んでください。",
+      "expenseDate": "お金を使った日付を選んでください。",
+      "fixFields": "確認が必要な項目があります。赤く表示された項目を確認してください。",
+      "futureDate": "経費発生日に未来の日付は指定できません。",
+      "noAllocation": "この単位には有効な割当がないため、精算を小口現金から支払えません。社員の給与を選ぶか、財務部に問い合わせてください。",
+      "notEnoughCash": "{{reference}} の利用可能額は OMR {{available}} のみで、残高はマイナスにできません。金額を減らすか、社員の給与を選ぶか、補充を申請してください。",
+      "overPreApproval": "精算額が事前承認の残額 (OMR {{remaining}}) を超えています。減額するか、差額を直接精算してください。",
+      "preApproval": "この事前承認は使えません。この社員のもので、承認済みかつ残額がある必要があります。",
+      "preApprovalUnit": "事前承認に基づく精算は、事前承認と同じ単位に計上されます。",
+      "receiptRequired": "送信前に領収書を添付してください。このカテゴリまたは設定で必須です。",
+      "settlement": "精算の支払方法を選んでください。",
+      "vat": "金額への VAT の適用方法を選んでください。"
+    },
+    "column": {
+      "amount": "金額",
+      "basisPayment": "区分 / 支払い",
+      "date": "日付",
+      "employee": "従業員",
+      "expenseDate": "経費発生日",
+      "merchant": "店舗 / カテゴリ",
+      "reference": "参照番号",
+      "status": "ステータス"
+    },
+    "costFromPreApproval": "事前承認が金額を確保している先に計上されます。",
+    "deleteText": "精算の下書きは削除されます。元に戻せません。",
+    "deleteTitle": "{{reference}} を削除しますか？",
+    "descriptionPlaceholder": "何を購入したか、その業務上の理由。",
+    "detailsTitle": "精算の詳細",
+    "duplicate": {
+      "detailText": "送信時、同じ店舗・同じ領収書番号、または同じ日付・金額の精算が別にありました。同じ領収書でないか確認してください:",
+      "formText": "同じ店舗・同じ領収書番号、または同じ日付・金額の精算が別にあります。このまま送信できます。承認者にはこの表示が見えます:",
+      "title": "重複の可能性。",
+      "tooltip": "{{references}} と重複の可能性"
+    },
+    "editTitle": "{{reference}} を修正",
+    "entity": "経費精算",
+    "field": {
+      "amount": "金額 (OMR)",
+      "amountNet": "税抜金額 (OMR)",
+      "basis": "精算区分",
+      "description": "経費の内容 / 業務目的",
+      "expenseDate": "経費発生日",
+      "gross": "税込合計",
+      "paidFrom": "支払元",
+      "preApproval": "事前承認の参照番号",
+      "receipt": "領収書 / 請求書",
+      "receiptNo": "レシート / 請求書番号",
+      "settlement": "支払方法",
+      "vatTreatment": "VAT の扱い"
+    },
+    "filter": {
+      "allBases": "すべての精算区分",
+      "allSettlements": "すべての支払方法"
+    },
+    "fromScan": "領収書スキャンから入力しました。AI の読み取り信頼度は {{confidence}}% です。送信前に各値を領収書と照合してください。",
+    "leftOf": "{{amount}} のうち残り {{left}}",
+    "new": "新規経費精算",
+    "newSubtitle": "実際に発生した経費の精算を申請します。",
+    "newTitle": "新しい経費精算",
+    "noAllocationNow": "現在この単位に有効な割当はありません",
+    "noReceipt": "領収書は添付されていません。",
+    "notEditable": "この精算は修正期間を過ぎたため、変更できません。",
+    "notInLedger": "記帳なし: 給与で支払い",
+    "notScanned": "AI 読み取りなしでアップロード。値は手入力です。",
+    "openScan": "スキャンすると AI が精算を入力します",
+    "orScan": "領収書がお手元にありますか？",
+    "preApprovalHint": "この社員の残額のある承認済み申請だけが表示されます。",
+    "preApprovalPlaceholder": "承認済み申請を選択…",
+    "receiptHint": "ここに領収書をドロップするか、ファイルを選択",
+    "receiptNeeded": "このカテゴリは送信前に領収書が必要です。",
+    "receiptNoPlaceholder": "領収書または請求書の番号",
+    "receiptOptional": "このカテゴリでは領収書は任意です。",
+    "receiptReplaced": "{{date}} にアップロードした {{name}} を置き換えます。",
+    "receiptTitle": "領収書 / 請求書",
+    "required": "必須",
+    "resubmitNote": "再送するとバージョン {{version}} になります。承認者は変更点を確認できます。",
+    "scanReceipt": "領収書をスキャン",
+    "search": "参照番号、社員、店舗、領収書番号で検索",
+    "section": {
+      "amount": "金額と VAT",
+      "charge": "計上と支払い",
+      "expense": "経費",
+      "receipt": "領収書 / 請求書"
+    },
+    "settlement": {
+      "pettyCash": "小口現金",
+      "pettyCashFrom": "{{reference}} から · 利用可能 {{available}}",
+      "pettyCashHint": "部門の小口現金割当から支払います。",
+      "salary": "社員の給与",
+      "salaryHint": "次回の給与で支払います。小口現金は変わりません。"
+    },
+    "subtitle": "すでに支出した経費の精算。直接、または承認済みの事前経費申請に基づいて申請します。",
+    "summary": {
+      "allocationLeft": "利用可能額",
+      "claiming": "精算額",
+      "heldByPreApproval": "事前承認で確保済み:",
+      "noAllocation": "この単位には有効な割当がありません。財務部が別の方法で支払う場合があります。",
+      "noAllocationBlocked": "この単位には有効な割当がないため、小口現金からは支払えません。社員の給与を選ぶか、財務部に問い合わせてください。",
+      "preApprovalLeft": "残額",
+      "routeLater": "金額と単位を入力すると、承認者がここに表示されます。",
+      "salary": "給与で支払い: 小口現金の残高は変わりません。",
+      "short": "割当の利用可能額を超えています。先に財務部の補充が必要です。",
+      "shortBlocked": "割当の利用可能額を超えており、残高はマイナスにできません。金額を減らすか、社員の給与を選ぶか、補充を申請してください。",
+      "title": "精算の概要"
+    },
+    "tile": {
+      "claims": "精算",
+      "paid": "今月の支払額",
+      "paidNote": "支払済みの精算: {{count}}",
+      "pending": "承認中",
+      "summary": "経費精算の概要",
+      "toPay": "承認済み・支払待ち"
+    },
+    "title": "経費精算",
+    "toast": {
+      "deleted": "{{reference}} を削除しました。",
+      "saved": "{{reference}} を下書きとして保存しました。",
+      "submitted": "{{reference}} を承認に回しました。"
+    },
+    "vat": {
+      "exclusive": "VAT 別",
+      "inclusive": "VAT 込み",
+      "none": "VAT なし"
+    },
+    "vatOnReceipt": "AI が読み取った領収書の VAT: OMR {{vat}}",
+    "vatShort": "VAT {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "{{amount}}（VAT {{rate}}% 前）で入力。",
+      "inclusive": "{{amount}}（VAT {{rate}}% 込み）で入力。",
+      "none": "{{amount}} で入力。請求書に VAT はありません。"
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "確認する",
+      "allClaims": "自分の精算すべて",
+      "claimsCount": "精算：{{count}}",
+      "column": {
+        "amount": "金額",
+        "date": "日付",
+        "documents": "書類",
+        "employee": "従業員",
+        "lastClaim": "最新の精算",
+        "open": "未対応の依頼",
+        "purpose": "目的",
+        "reference": "参照番号",
+        "status": "ステータス",
+        "thisMonth": "今月"
+      },
+      "custodianTitle": "私の小口現金：{{unit}}",
+      "decisionsTitle": "私の判断待ち（{{count}}）",
+      "enteredFor": "{{name}} さんの代理で入力",
+      "greeting": "おかえりなさい、{{name}} さん。あなたの申請、あなたの判断待ちの案件、あなたが管理する現金。",
+      "hasReceipt": "領収書添付済み",
+      "lowHint": "残りが少なくなっています：なくなる前に追加入金を申請してください。",
+      "managerText": "対応できる単位の範囲で、チームのメンバーに代わって事前経費または精算を申請します。",
+      "managerTitle": "マネージャー・セルフサービス",
+      "movements": "最近の取引",
+      "newPreExpense": "事前経費申請",
+      "newReimbursement": "経費精算",
+      "noMovements": "取引はまだありません。",
+      "noRequests": "申請はまだありません。上から始めてください。",
+      "openInbox": "承認受信箱",
+      "overdue": "期限超過：{{count}}",
+      "paidOn": "{{amount}}、{{date}} に支払",
+      "preExpenseBehalf": "代理で事前経費",
+      "recentTitle": "最近の申請",
+      "reimbursementBehalf": "代理で精算",
+      "requestTopUp": "追加入金を申請",
+      "shortcut": {
+        "preExpense": "事前経費承認",
+        "preExpenseText": "使う前に申請します。承認額は所属単位の配分から予約されます。",
+        "reimbursement": "経費精算",
+        "reimbursementText": "支払済みの経費を、領収書を添付またはスキャンして精算します。",
+        "scan": "領収書をスキャン",
+        "scanText": "AI が領収書から店名、日付、VAT、金額、カテゴリを読み取ります。"
+      },
+      "shortcuts": "申請を始める",
+      "subtitle": "あなたの申請、あなたの判断待ちの案件、あなたが管理する現金。",
+      "teamTitle": "マイチーム（{{count}}）",
+      "tile": {
+        "approved": "承認済み / 利用可能",
+        "approvedNote": "精算できる承認済み事前経費：{{count}}",
+        "awaiting": "承認待ち",
+        "nothingReturned": "修正するものはありません",
+        "paid": "今月の支払額",
+        "paidNote": "支払済みの精算: {{count}}",
+        "returned": "差し戻し",
+        "returnedNote": "対応が必要"
+      },
+      "title": "マイダッシュボード",
+      "toAcknowledge": "あなたへの支払が受領確認を待っています（{{count}}）",
+      "topUpPending": "追加入金の手続き中：",
+      "voucher": "伝票 {{voucher}}",
+      "waitingFor": "{{names}} が対応中",
+      "monthTitle": "月別の私の精算",
+      "monthSubtitle": "支出日ごと、{{from}} から {{to}}",
+      "categoryTitle": "カテゴリ別の私の支出",
+      "categorySubtitle": "今年の日付の私の精算、{{period}}",
+      "claimedThisYear": "今年の申請額",
+      "noClaims": "まだ精算はありません。"
+    },
+    "chart": {
+      "amount": "金額",
+      "businessUnit": "事業部",
+      "category": "カテゴリ",
+      "categoryTitle": "カテゴリ別の支出",
+      "claims": "精算",
+      "funded": "入金済み",
+      "month": "月",
+      "noMovement": "この期間に現金の動きはありません。",
+      "noPaid": "この期間に支払われた精算はありません。",
+      "otherCategories": "その他のカテゴリ（{{count}}）",
+      "paidInPeriod": "期間内の支払額",
+      "pettyCash": "小口現金",
+      "salary": "給与で支払",
+      "share": "割合",
+      "spent": "支出",
+      "total": "合計",
+      "trendSubtitle": "支払済みの精算、{{from}} から {{to}}",
+      "trendTitle": "月別の支出",
+      "unitSubtitle": "各単位の配分に受領確認された現金と、そこから支払われた現金、{{period}}",
+      "unitTitle": "事業部別の入金と支出"
+    },
+    "finance": {
+      "attentionTitle": "要対応（{{count}}）",
+      "noAttention": "対応が必要なものはありません。",
+      "noPositions": "この単位には受領確認済みの配分がありません。",
+      "positionTitle": "配分の状況",
+      "positionTotal": "配分：{{count}}",
+      "showAll": "すべて表示（{{count}}）",
+      "showFewer": "表示を減らす",
+      "subtitle": "事業部、部門、プロジェクト全体の小口現金：手元にある額、対応が必要なこと、お金の行き先。",
+      "thresholdsLink": "しきい値",
+      "title": "財務ダッシュボード"
+    },
+    "column": {
+      "allocation": "配分",
+      "available": "利用可能",
+      "band": "区分",
+      "financeUser": "支払者",
+      "float": "定額",
+      "inUse": "利用実績 + 予約",
+      "level": "レベル",
+      "position": "状況",
+      "reserved": "予約済み",
+      "used": "利用実績",
+      "utilization": "使用率"
+    },
+    "attention": {
+      "exceeded": "超過：利用実績と予約が入金額を {{amount}} 上回っています",
+      "near": "しきい値に接近：定額の残り {{percent}}%",
+      "notAcknowledged": "{{span}} 前に支払済み、受領確認待ち",
+      "notAcknowledgedToday": "本日支払済み、受領確認待ち",
+      "overdueWith": "{{names}} の対応待ち",
+      "paidTo": "{{name}} に支払済み：{{amount}}",
+      "preparedBy": "{{name}} が作成",
+      "review": "確認者待ち · {{reference}}",
+      "toPay": "支払待ちの承認済み精算：{{count}}",
+      "toPayNote": "{{amount}} · 最も古いものは {{span}} 前に承認",
+      "toPayNoteToday": "{{amount}} · 本日承認",
+      "watch": "要注意：定額の残り {{percent}}%"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "超過",
+      "near": "しきい値に接近",
+      "normal": "通常",
+      "pending": "未入金",
+      "watch": "要注意"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "残高",
+      "bar": "棒",
+      "followsFilters": "上の期間とフィルターに従います。",
+      "line": "推移",
+      "lineHint": "期間中の上位5行の推移。",
+      "metric": "指標",
+      "name": "名称",
+      "others": "その他",
+      "period": "期間",
+      "pie": "割合",
+      "type": "グラフの種類"
+    },
+    "column": {
+      "allocated": "割当済み",
+      "approved": "承認済み",
+      "available": "利用可能",
+      "businessUnit": "事業部",
+      "category": "カテゴリ",
+      "charged": "計上先",
+      "claimed": "精算済み",
+      "claims": "精算",
+      "date": "日付",
+      "department": "部署",
+      "departments": "部署",
+      "employee": "従業員",
+      "employeeId": "社員番号",
+      "employees": "従業員",
+      "head": {
+        "businessUnit": "事業部長",
+        "department": "部長",
+        "project": "プロジェクト責任者"
+      },
+      "lastClaim": "最新の精算",
+      "lastExpense": "最終経費日",
+      "net": "税抜",
+      "paid": "支払済み",
+      "paidOn": "支払日",
+      "pending": "未払い",
+      "project": "プロジェクト",
+      "projectCode": "プロジェクトコード",
+      "recipient": "従業員 / 受取人",
+      "reference": "参照番号",
+      "referenceDate": "参照番号 / 日付",
+      "reimbursed": "精算済み",
+      "share": "支出比率",
+      "status": "ステータス",
+      "statusPaid": "状況 / 支払日",
+      "topVendor": "主な店舗",
+      "total": "合計",
+      "transactions": "取引件数",
+      "vat": "VAT",
+      "vatin": "VAT番号",
+      "vendor": "仕入先 / 店舗",
+      "vendorCategory": "店舗 / カテゴリ",
+      "voucher": "伝票番号"
+    },
+    "countedNote": "精算は提出後に経費日付で集計されます：承認中、承認済みで支払待ち、または支払済み。下書き、却下、取り消しの精算は含まれません。",
+    "empty": "この期間に報告する内容はありません。",
+    "filter": {
+      "allCategories": "すべてのカテゴリ",
+      "allEmployees": "全社員",
+      "allStatuses": "すべてのステータス",
+      "allVendors": "すべての店舗",
+      "search": "検索",
+      "status": "ステータス",
+      "unit": "組織単位"
+    },
+    "metric": {
+      "amount": "金額",
+      "available": "利用可能残高",
+      "count": "精算件数",
+      "paid": "支払済み",
+      "pending": "未払い"
+    },
+    "noMatch": "このフィルターに一致するものはありません。",
+    "notListed": "仕入先マスター未登録",
+    "openClaims": "これらの精算を開く",
+    "openingOn": "{{date}} 終了時点の期首残高：",
+    "periodClaims": "{{from}} – {{to}}（経費日付基準）",
+    "periodLedger": "{{from}} – {{to}}（記帳日基準）",
+    "purpose": {
+      "businessUnit": "事業部費用（配下の部署とプロジェクトを含む）と、その小口現金。",
+      "category": "経費カテゴリ別の支出と、最も支出の多い店舗、各カテゴリの割合。",
+      "department": "部署費用：各部署に計上された精算と、その小口現金。",
+      "employee": "従業員別の精算：申請額、承認額、支払済み、未払い。",
+      "ledger": "期間中の配分入金、経費、調整と、配分ごとの残高推移。",
+      "project": "プロジェクト費用：各プロジェクトに計上された精算と、その小口現金。",
+      "transactions": "期間中のすべての精算と、店舗、計上先、現在の状況。",
+      "vendor": "お金の使い道：店舗別の精算。仕入先マスターに登録された店舗、または精算に入力された店舗。"
+    },
+    "refusal": {
+      "period": "1日から同じ日またはそれ以降の日までの期間を選択してください。"
+    },
+    "search": {
+      "ledger": "仕訳、参照番号、伝票、担当者、摘要で検索",
+      "summary": "このレポート内の名前を検索",
+      "transactions": "参照番号、担当者、店舗、説明で検索"
+    },
+    "status": {
+      "approved": "承認済み・未払い",
+      "inApproval": "承認中",
+      "paid": "支払済み"
+    },
+    "summary": "レポートの概要",
+    "tile": {
+      "claimed": "申請総額",
+      "claimedNote": "承認中・承認済み・支払済み",
+      "claims": "精算",
+      "claimsNote": "人数：{{count}}",
+      "paid": "支払済み",
+      "paidNote": "合計の {{percent}}%",
+      "pending": "未払い",
+      "pendingNote": "承認中または支払待ち"
+    },
+    "totalRow": "合計",
+    "view": {
+      "chart": "グラフ",
+      "table": "表"
+    },
+    "viewAs": "表示形式"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "銀行振込",
+      "cash": "現金",
+      "cheque": "小切手",
+      "salary": "給与"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "スキップ：同じ人が前のステップで既に承認しています",
+        "belowAmount": "スキップ：金額がしきい値を超えていません",
+        "incomplete": "承認者の決め方を選択してください",
+        "noApprover": "有効な承認者が見つかりません",
+        "noProject": "スキップ：この申請にはプロジェクトがありません",
+        "selfApproval": "スキップ：申請者が自分の申請を承認することになります"
+      }
+    }
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Tambah",
+    "addEntity": "Tambah {{entity}}",
+    "back": "Kembali",
+    "cancel": "Batal",
+    "clearAll": "Kosongkan semua",
+    "close": "Tutup",
+    "create": "Cipta",
+    "delete": "Padam",
+    "edit": "Sunting",
+    "export": "Eksport",
+    "retry": "Cuba lagi",
+    "save": "Simpan",
+    "saveChanges": "Simpan perubahan",
+    "search": "Cari",
+    "view": "Lihat",
+    "viewAll": "Lihat semua"
+  },
+  "status": {
+    "active": "Aktif",
+    "all": "Semua",
+    "inactive": "Tidak aktif",
+    "no": "Tidak",
+    "yes": "Ya"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Batalkan Permohonan",
+      "saveDraft": "Simpan draf",
+      "submit": "Hantar untuk kelulusan",
+      "submitForApproval": "Kemukakan untuk kelulusan"
+    },
+    "filter": {
+      "allStatuses": "Semua status",
+      "from": "Dari",
+      "to": "Hingga"
+    },
+    "history": {
+      "acknowledged": "mengakui penerimaan",
+      "approved": "meluluskannya",
+      "cancelled": "membatalkannya",
+      "created": "mencipta permohonan",
+      "disbursed": "membayar jumlah",
+      "edited": "membuat perubahan",
+      "empty": "(kosong)",
+      "paid": "membayarnya",
+      "rejected": "menolaknya",
+      "resubmitted": "menghantarnya semula untuk kelulusan",
+      "returned": "mengembalikannya untuk pembetulan",
+      "submitted": "menghantarnya untuk kelulusan",
+      "title": "Sejarah",
+      "reallocated": "memperuntukkannya semula",
+      "takenOver": "mengambil alihnya"
+    },
+    "notFound": "Rekod ini tidak wujud, atau di luar skop yang anda boleh lihat.",
+    "path": {
+      "decidedBy": {
+        "approved": "Diluluskan oleh {{name}} pada {{time}}",
+        "rejected": "Ditolak oleh {{name}} pada {{time}}",
+        "returned": "Dikembalikan oleh {{name}} pada {{time}}"
+      },
+      "notSent": "Belum dihantar untuk kelulusan.",
+      "overdue": "Lewat tempoh",
+      "state": {
+        "approved": "Diluluskan",
+        "pending": "Menunggu",
+        "rejected": "Ditolak",
+        "returned": "Dikembalikan",
+        "skipped": "Dilangkau",
+        "waiting": "Belum dicapai"
+      },
+      "title": "Laluan Kelulusan",
+      "waitingSince": "Menunggu sejak {{time}} · {{hours}} jam dibenarkan",
+      "willGoTo": "Akan pergi kepada"
+    },
+    "reason": "Sebab",
+    "reasonRequired": "Masukkan sebab. Ia disimpan dalam sejarah permohonan.",
+    "refusal": {
+      "alreadyPosted": "Ini sudah ada dalam lejar, jadi tiada apa yang berubah.",
+      "amount": "Masukkan jumlah melebihi sifar dengan tidak lebih daripada tiga tempat perpuluhan.",
+      "amountTooLarge": "Jumlah tidak boleh melebihi OMR {{max}}.",
+      "noApprover": "Satu langkah aliran kerja tiada sesiapa untuk dihantar permohonan ini. Minta pentadbir menyemak Tetapan Aliran Kerja.",
+      "noWorkflow": "Tiada aliran kerja aktif meliputi permohonan ini. Minta pentadbir menyemak Tetapan Aliran Kerja.",
+      "nobodyLeft": "Semua yang boleh meluluskan permohonan ini terlibat di dalamnya, jadi tiada sesiapa tinggal untuk meluluskannya. Tukar untuk siapa permohonan ini, atau minta pentadbir menyemak Tetapan Aliran Kerja.",
+      "notAllowed": "Peranan anda tidak membenarkan ini.",
+      "notEditable": "Hanya draf atau permohonan yang dikembalikan boleh diubah.",
+      "notFound": "Rekod ini tidak wujud, atau di luar skop yang anda boleh lihat.",
+      "notNow": "Ini tidak boleh dilakukan dalam status semasa permohonan.",
+      "onlyDrafts": "Hanya draf boleh dipadam. Batalkan sahaja.",
+      "reasonRequired": "Masukkan sebab.",
+      "savedMeanwhile": "Orang lain telah menyimpan ini sementara itu, jadi tiada apa-apa yang berubah. Muat semula dan cuba lagi.",
+      "signedOut": "Sesi anda telah tamat. Log masuk semula.",
+      "underApproval": "Ia sedang menunggu pelulus. Tunggu keputusan, atau minta ia dikembalikan."
+    },
+    "returnedBecause": "Dikembalikan untuk pembetulan:",
+    "status": {
+      "acknowledged": "Telah disahkan",
+      "active": "Aktif",
+      "approved": "Diluluskan",
+      "cancelled": "Dibatalkan",
+      "closed": "Tutup",
+      "disbursed": "Menunggu Pengakuan Terima",
+      "draft": "Draf",
+      "inApproval": "Dalam Kelulusan",
+      "paid": "Dibayar",
+      "rejected": "Ditolak",
+      "returned": "Dikembalikan",
+      "submitted": "Dikemukakan"
+    }
+  },
+  "auth": {
+    "brandTagline": "Pengurusan Tunai Runcit",
+    "company": "Syarikat",
+    "demoBadge": "Demo",
+    "demoNotice": "Mod demo: log masuk disimulasikan dan setiap skrin memaparkan data contoh sehingga API tersedia.",
+    "feature": {
+      "allocations": "Peruntukan jabatan & projek",
+      "permissions": "Matriks peranan dan kebenaran",
+      "selfService": "Layan diri pekerja & pengurus",
+      "thresholds": "Pemantauan had",
+      "twoFactor": "Log masuk dua faktor",
+      "workflows": "Kelulusan sebelum & selepas perbelanjaan"
+    },
+    "password": "Kata laluan",
+    "passwordDemoHint": "Tidak disemak dalam demo. Pada sistem sebenar, log masuk mengesahkan kata laluan dan kod dua faktor anda.",
+    "persona": {
+      "auditor": "Juruaudit (Baca Sahaja)",
+      "employee": "Layan Diri Pekerja",
+      "finance": "Ketua Kewangan / Pentadbir",
+      "manager": "Pengurus Jabatan / Projek"
+    },
+    "personaLabel": "Persona demo",
+    "pitch": "Peruntukkan tunai runcit, luluskan perbelanjaan yang dirancang, bayar balik perbelanjaan sebenar, salurkan kelulusan melalui organisasi anda, baca resit dengan AI dan sesuaikan setiap transaksi.",
+    "rememberMe": "Kekal log masuk",
+    "signIn": "Log masuk",
+    "signInButton": "Log masuk",
+    "signInHint": "Pilih persona demo untuk melihat skrin yang digunakan oleh peranan itu.",
+    "twoFactor": {
+      "back": "Kembali",
+      "demoHint": "Demo: sebarang enam digit diterima.",
+      "digit": "Digit {{n}} daripada 6",
+      "incomplete": "Masukkan kesemua enam digit.",
+      "panelText": "Kod daripada aplikasi pengesah mengesahkan bahawa ia benar-benar anda. Dasar boleh mewajibkannya untuk semua orang, mengikut peranan atau untuk pengguna terpilih.",
+      "panelTitle": "Pengesahan dua langkah",
+      "subtitle": "Masukkan kod 6 digit daripada aplikasi pengesah anda.",
+      "title": "Masukkan kod pengesahan",
+      "trustDevice": "Percayai peranti ini selama 30 hari",
+      "verify": "Sahkan & teruskan",
+      "wrongCode": "Kod itu tidak betul. Cuba lagi.",
+      "expired": "Log masuk ini telah tamat tempoh. Kembali dan log masuk semula.",
+      "useRecovery": "Gunakan kod pemulihan sebaliknya",
+      "useApp": "Gunakan aplikasi pengesah sebaliknya",
+      "recoveryTitle": "Masukkan kod pemulihan",
+      "recoveryHint": "Taip salah satu kod pemulihan yang anda simpan. Setiap kod hanya berfungsi sekali.",
+      "trustDeviceDays": "Percayai peranti ini selama {{n}} hari",
+      "enrollTitle": "Sediakan log masuk dua faktor",
+      "enrollSubtitle": "Akaun anda mesti menggunakan aplikasi pengesah. Sediakannya sekarang untuk menyelesaikan log masuk."
+    },
+    "twoFactorNote": "Log masuk dua faktor boleh dimatikan, pilihan atau wajib mengikut peranan.",
+    "username": "E-mel atau nama pengguna",
+    "signInHintApi": "Log masuk dengan akaun CashFlow anda.",
+    "error": {
+      "invalid": "Nama pengguna atau kata laluan tidak sah.",
+      "tooMany": "Terlalu banyak percubaan. Tunggu seminit dan cuba lagi.",
+      "noApi": "Tidak dapat mencapai pelayan. Cuba lagi sebentar nanti."
+    }
+  },
+  "scan": {
+    "aiConfidence": "Keyakinan {{confidence}}%",
+    "aiOff": "Pengekstrakan AI dimatikan dalam AI & Pemprosesan Dokumen. Resit tetap disemak dan dilampirkan; taip butirannya sendiri.",
+    "checkThis": "Semak ini",
+    "col": {
+      "claim": "Pada tuntutan",
+      "field": "Medan",
+      "read": "Bacaan AI"
+    },
+    "corrected": "Dibetulkan",
+    "createClaim": "Buat Bayaran Balik",
+    "extractionTitle": "Pengekstrakan AI",
+    "fact": {
+      "file": "Fail",
+      "hash": "SHA-256",
+      "size": "Saiz",
+      "type": "Jenis",
+      "typeChecked": "{{type}}, disemak daripada kandungannya"
+    },
+    "field": {
+      "category": "Kategori Dicadangkan",
+      "expenseDate": "Tarikh",
+      "grossAmount": "Jumlah",
+      "merchant": "Peniaga",
+      "receiptNo": "No. Resit",
+      "vatAmount": "VAT"
+    },
+    "keptApart": "Bacaan AI disimpan seperti asal, di sebelah input anda, supaya pembetulan kekal kelihatan. Bacaan di bawah {{min}}% diserlahkan.",
+    "lowHint": "AI hanya {{confidence}}% pasti. Semak ini dengan resit.",
+    "minConfidence": "nilai di bawah {{min}}% diserlahkan",
+    "noPreview": "Pelayar ini tidak dapat memaparkan imej HEIC. Fail telah disemak dan dilampirkan.",
+    "noReceipt": "Tiada resit di tangan?",
+    "readBy": "Dibaca oleh {{provider}}",
+    "receiptTitle": "Resit",
+    "sampleNote": "Bacaan sampel: dalam demo setiap resit dibaca sebagai sampel ini, kerana fail tidak pernah keluar dari penyemak imbas.",
+    "stage": {
+      "extracted": "Diekstrak",
+      "extractedHint": "Medan dibaca oleh AI",
+      "normalizing": "Penormalan",
+      "normalizingHint": "Diluruskan, dipangkas, dimampatkan",
+      "pdfReady": "PDF Sedia",
+      "pdfReadyHint": "PDF standard, asal disimpan",
+      "skipped": "AI dimatikan",
+      "uploaded": "Dimuat naik",
+      "uploadedHint": "Jenis, saiz dan cincangan disemak",
+      "verified": "Disahkan",
+      "verifiedHint": "Disemak oleh anda"
+    },
+    "stagesTitle": "Peringkat dokumen",
+    "startAgain": "Imbas Lagi",
+    "subtitle": "Ambil gambar dengan telefon atau muat naik bil, kemudian semak medan yang diekstrak sebelum membuat tuntutan.",
+    "tip": {
+      "light": "Cahaya yang baik, tiada bayang pada jumlah.",
+      "private": "Dalam demo fail kekal dalam penyemak imbas ini.",
+      "whole": "Seluruh resit dalam bingkai, termasuk tepinya."
+    },
+    "title": "Imbas Resit & Pengekstrakan AI",
+    "typeIt": "Taip butiran daripada resit.",
+    "uploadHint": "Buka kamera atau muat naik resit",
+    "useSample": "Cuba resit contoh",
+    "waitingForReceipt": "Tambah resit untuk dibaca.",
+    "working": {
+      "normalizing": "Meluruskan dan membersihkan imej…",
+      "pdfReady": "Membuat PDF standard…",
+      "uploaded": "Menyemak fail…"
+    },
+    "aiPhotoOnly": "Bacaan AI hanya tersedia untuk foto format JPG dan PNG.",
+    "aiUnclear": "Tidak dapat membaca butiran resit dengan jelas. Sila taipkan butiran tersebut.",
+    "aiUnreachable": "Tidak dapat menghubungi model AI. Masukkan butiran resit secara manual.",
+    "aiQuota": "Had kadar AI dicapai. Sila tunggu sebentar atau masukkan butiran resit secara manual.",
+    "aiBusy": "AI Google sedang sibuk sekarang. Cuba sebentar lagi, atau masukkan butiran secara manual."
+  },
+  "approval": {
+    "action": {
+      "review": "Semak"
+    },
+    "attachmentTitle": "Dokumen Sokongan",
+    "availableNow": "{{amount}} tersedia sekarang",
+    "backToInbox": "Kembali ke Peti Kelulusan",
+    "changes": {
+      "after": "Dibetulkan selepas {{name}} mengembalikannya pada {{time}}:",
+      "title": "Diubah sejak dikembalikan"
+    },
+    "column": {
+      "amount": "Jumlah",
+      "person": "Orang",
+      "reference": "Rujukan",
+      "step": "Status / Langkah Semasa",
+      "submitted": "Dihantar",
+      "type": "Jenis / Unit"
+    },
+    "days": "{{count}} h",
+    "decision": {
+      "approve": "Luluskan",
+      "comment": "Ulasan (perlu untuk mengembalikan atau menolak)",
+      "noMoney": "Meluluskan tidak menggerakkan wang. Hanya Penyelesaian Kewangan yang membayar.",
+      "placeholder": "Apakah yang perlu diketahui atau dibetulkan oleh pemohon?",
+      "reasonNeeded": "Berikan sebab untuk mengembalikan atau menolak. Pemohon akan melihatnya.",
+      "reject": "Tolak",
+      "return": "Kembalikan untuk Pembetulan",
+      "title": "Keputusan Anda"
+    },
+    "detailsTitle": {
+      "additionalCash": "Permohonan Tunai Tambahan",
+      "allocation": "Peruntukan",
+      "preExpense": "Permohonan Pra-Perbelanjaan",
+      "reimbursement": "Tuntutan",
+      "reallocation": "Permohonan Peruntukan Semula"
+    },
+    "dueIn": "Tamat tempoh dalam {{span}}",
+    "empty": {
+      "decided": "Anda belum memutuskan sebarang permohonan.",
+      "scope": "Tiada permohonan dihantar untuk kelulusan dalam skop anda.",
+      "waiting": "Tiada apa-apa yang menunggu keputusan anda."
+    },
+    "ended": {
+      "approved": "Diluluskan oleh {{name}} pada {{time}}.",
+      "cancelled": "Ditarik balik oleh {{name}} pada {{time}}.",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}.",
+      "returned": "Dikembalikan untuk pembetulan oleh {{name}} pada {{time}}."
+    },
+    "entity": "permohonan",
+    "filter": {
+      "allTypes": "Semua jenis permohonan",
+      "allUnits": "Semua unit"
+    },
+    "flag": {
+      "changed": "Diubah sejak dikembalikan",
+      "duplicate": "Mungkin bil berganda",
+      "onBehalf": "Dimasukkan oleh orang lain bagi pihak orang ini",
+      "overAvailable": "Melebihi baki peruntukannya",
+      "lowConfidence": "Ketepatan bacaan resit oleh AI adalah rendah"
+    },
+    "hours": "{{count}} j",
+    "kind": {
+      "additionalCash": "Tunai Tambahan",
+      "allocation": "Peruntukan",
+      "preExpense": "Pra-Perbelanjaan",
+      "reimbursement": "Bayaran Balik Perbelanjaan",
+      "reallocation": "Peruntukan semula"
+    },
+    "next": "Seterusnya",
+    "openFile": "Buka",
+    "openRecord": "Buka rekod penuh",
+    "othersTurn": "Menunggu {{names}} pada langkah {{n}}. Anda boleh mengikutinya di sini; hanya mereka boleh membuat keputusan.",
+    "outcome": {
+      "cash": "Langkah anda yang terakhir. Meluluskan menyerahkannya kepada Kewangan untuk diagihkan; ia dikira setelah penjaga tunai mengakui terima.",
+      "claim": "Langkah anda yang terakhir. Meluluskan menempah amaun pada peruntukan sehingga Kewangan membayarnya.",
+      "next": "Meluluskan menghantarnya ke langkah seterusnya ({{step}}): {{names}}.",
+      "preExpense": "Langkah anda yang terakhir. Meluluskan membenarkan pekerja berbelanja, dan menahan amaun sehingga dituntut.",
+      "salary": "Langkah anda yang terakhir. Meluluskan menyerahkannya kepada Kewangan untuk dibayar bersama gaji seterusnya.",
+      "reallocation": "Langkah anda yang terakhir. Meluluskan memindahkan tunai kepada pemegang baharu, yang kemudian mengesahkan terima atau mengambil alihnya. Kewangan tidak membayar apa-apa."
+    },
+    "overAvailable": "Ini melebihi baki {{reference}} ({{available}}). Kewangan perlu menambah tunai sebelum membayar.",
+    "overAvailableBlocked": "Ini melebihi baki {{reference}} ({{available}}), dan baki tidak boleh di bawah sifar. Kelulusan akhir memerlukan tambahan tunai dahulu.",
+    "overdueBy": "Lewat {{span}}",
+    "position": "{{n}} daripada {{total}}",
+    "previous": "Sebelumnya",
+    "refusal": {
+      "changed": "Permohonan ini telah berubah sejak anda membukanya. Muat semula dan semak perubahan sebelum membuat keputusan.",
+      "decided": "Permohonan ini telah diputuskan.",
+      "notEnoughCash": "{{reference}} hanya ada OMR {{available}} tersedia, dan baki tidak boleh di bawah sifar. Kembalikan permohonan, atau minta tambahan tunai daripada Kewangan dahulu.",
+      "notYourStep": "Langkah ini tidak menunggu anda.",
+      "ownRequest": "Anda tidak boleh memutuskan permohonan yang melibatkan anda."
+    },
+    "refusalHint": "{{reference}} hanya ada {{available}} tersedia, dan baki tidak boleh di bawah sifar. Kembalikannya, atau minta tambahan tunai daripada Kewangan dahulu.",
+    "search": "Cari rujukan, orang atau tujuan",
+    "sentAt": "dihantar {{time}}",
+    "subtitle": "Permohonan yang menunggu keputusan anda, semua dalam skop anda, dan yang telah anda putuskan.",
+    "tile": {
+      "decided": "Diputuskan oleh Anda",
+      "decidedNote": "Diluluskan, dikembalikan atau ditolak",
+      "overdue": "Lewat tempoh",
+      "overdueNote": "Melebihi masa yang dibenarkan oleh Tetapan Aliran Kerja",
+      "scope": "Dalam Kelulusan",
+      "summary": "Ringkasan kelulusan",
+      "waiting": "Menunggu Anda"
+    },
+    "title": "Peti Kelulusan",
+    "toast": {
+      "approve": "{{reference}} telah diluluskan.",
+      "reject": "{{reference}} telah ditolak.",
+      "return": "{{reference}} telah dikembalikan untuk pembetulan."
+    },
+    "view": {
+      "decided": "Diputuskan oleh saya",
+      "scope": "Semua dalam skop saya",
+      "waiting": "Menunggu saya"
+    },
+    "views": "Paparan peti kelulusan",
+    "where": {
+      "approved": "Pada Kewangan untuk dibayar",
+      "disbursed": "Dibayar oleh Kewangan",
+      "returned": "Pada pemohon untuk dibetulkan",
+      "spendable": "Kini boleh dibelanjakan, kemudian dituntut"
+    },
+    "yourTurn": "Menunggu keputusan anda pada langkah {{n}}: {{step}}.",
+    "yoursToWatch": "Anda ialah pihak dalam permohonan ini, jadi anda tidak boleh memutuskannya. Ia menunggu {{names}} pada langkah {{n}}.",
+    "openSourceRecord": "Buka peruntukan"
+  },
+  "ack": {
+    "action": "Sahkan terima",
+    "amountReceived": "Jumlah diterima",
+    "bannerHint": "Baki hanya naik selepas anda mengesahkan tunai telah sampai.",
+    "bannerNone": "Tiada apa yang menunggu pengakuan anda.",
+    "bannerWaiting": "Menunggu pengakuan anda: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Jumlah",
+      "issued": "Dikeluarkan",
+      "payment": "Kaedah / Rujukan Bayaran",
+      "recipient": "Penerima",
+      "reference": "Rujukan",
+      "scope": "Skop Peruntukan",
+      "status": "Keadaan"
+    },
+    "confirm": "Akui Penerimaan Jumlah",
+    "dialogTitle": "Akui Penerimaan Tunai Runcit",
+    "entity": "bayaran",
+    "filter": {
+      "allTypes": "Semua jenis"
+    },
+    "kind": {
+      "additionalCash": "Tambahan tunai",
+      "allocation": "Peruntukan",
+      "topUpOf": "Tambahan tunai {{reference}}",
+      "handover": "Serahan",
+      "reallocatedFrom": "Diperuntukkan semula daripada {{reference}}"
+    },
+    "openAllocation": "Buka peruntukan",
+    "refusal": {
+      "already": "Ini sudah diakui. Tiada apa yang berubah.",
+      "notRecipient": "Hanya orang yang menerima tunai boleh mengakui penerimaannya."
+    },
+    "remarks": "Catatan (pilihan)",
+    "remarksPlaceholder": "Contohnya: dikira dan diterima sepenuhnya.",
+    "search": "Cari rujukan, penerima atau rujukan bayaran",
+    "state": {
+      "acknowledged": "Telah disahkan",
+      "waiting": "Menunggu Pengakuan Terima"
+    },
+    "statement": "Dengan mengesahkan, anda mengakui telah menerima jumlah di atas. Ia kemudian ditambah ke baki peruntukan, dan ini tidak boleh dibatalkan.",
+    "subtitle": "Sahkan penerimaan tunai runcit yang dibayar oleh Kewangan, dan cetak baucar bayaran.",
+    "title": "Pengakuan Terima Peruntukan",
+    "toast": {
+      "done": "Diakui. {{amount}} kini tersedia dalam {{reference}}."
+    },
+    "waitingFor": "Menunggu {{name}}",
+    "reallocatedBy": "Diperuntukkan semula oleh {{name}}",
+    "takeOverTitle": "Ambil alih peruntukan",
+    "takeOverStatement": "Saya mengesahkan telah menerima tunai dan rekod peruntukan ini, dan kini memegangnya.",
+    "takeOver": "Ambil alih"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Tarik balik"
+    },
+    "categoryPlaceholder": "Cari kategori bayaran balik…",
+    "check": {
+      "beneficiary": "Anda tidak boleh memasukkan permohonan untuk pekerja ini. Hanya orang dalam skop anda boleh dipilih.",
+      "beneficiaryFixed": "Pekerja tidak boleh ditukar selepas permohonan dihantar.",
+      "category": "Pilih kategori perbelanjaan yang aktif.",
+      "chooseCategory": "Pilih kategori perbelanjaan.",
+      "chooseEmployee": "Pilih pekerja.",
+      "costUnit": "Pilih unit yang disertai pekerja ini. Unit tidak aktif tidak boleh dicaj.",
+      "merchant": "Masukkan peniaga atau penerima.",
+      "purpose": "Terangkan tujuan perniagaan dalam beberapa perkataan.",
+      "vendor": "Vendor ini tidak aktif. Pilih yang lain, atau taip nama peniaga."
+    },
+    "costHint": "Hanya unit yang disertai orang ini boleh dicaj.",
+    "employeePlaceholder": "Taip nama atau ID pekerja…",
+    "ended": {
+      "cancelled": "Ditarik balik oleh {{name}} pada {{time}}.",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}.",
+      "returned": "Dikembalikan untuk pembetulan oleh {{name}} pada {{time}}."
+    },
+    "enteredBy": "Dimasukkan oleh {{name}}",
+    "field": {
+      "attachment": "Dokumen Sokongan",
+      "category": "Kategori Perbelanjaan",
+      "chargedTo": "Dicaj kepada",
+      "costLevel": "Jenis Peruntukan Kos",
+      "costUnit": "Dicaj kepada",
+      "created": "Dicipta",
+      "employee": "Pekerja",
+      "enteredBy": "Dimasukkan oleh",
+      "for": "Untuk",
+      "merchant": "Peniaga / Penerima Bayaran",
+      "submitFor": "Hantar untuk"
+    },
+    "filter": {
+      "allEmployees": "Semua pekerja"
+    },
+    "merchantHint": "Pilih daripada Induk Vendor, atau taip nama peniaga atau penerima jika tiada dalam senarai.",
+    "merchantPlaceholder": "Cari vendor atau taip nama baharu…",
+    "noAttachment": "Tiada lampiran",
+    "noMerchant": "Tidak dinyatakan",
+    "onBehalfHint": "Hanya orang dalam skop anda disenaraikan. Anda direkodkan sebagai orang yang memasukkannya.",
+    "refusal": {
+      "notRequester": "Hanya orang yang memasukkan permohonan ini, atau orang yang menjadi penerimanya, boleh mengubahnya."
+    },
+    "submitFor": {
+      "onBehalf": "Bagi pihak pekerja lain",
+      "self": "Diri sendiri"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} telah ditarik balik."
+    },
+    "withdrawText": "Permohonan ditutup dan bukan dibetulkan lalu dihantar semula. Sebabnya kekal dalam sejarahnya.",
+    "withdrawTitle": "Tarik balik {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Teruskan Menyunting",
+      "correct": "Betulkan dan Hantar Semula"
+    },
+    "amount": {
+      "asEntered": "seperti dimasukkan",
+      "gross": "Jumlah termasuk VAT",
+      "net": "Amaun tanpa VAT",
+      "noVat": "VAT (tiada pada bil ini)",
+      "paid": "Jumlah Dibayar"
+    },
+    "approvedNote": "Diluluskan. Amaun disimpan dalam peruntukan; ia dibayar dan dicatat dalam lejar hanya apabila Kewangan menyelesaikannya.",
+    "approvedSalaryNote": "Diluluskan. Kewangan membayarnya pada pusingan gaji seterusnya dan merekodkan rujukan gaji.",
+    "backToClaim": "Kembali ke tuntutan",
+    "backToList": "Kembali ke Bayaran Balik",
+    "basis": {
+      "direct": "Bayaran Balik Terus Selepas Perbelanjaan",
+      "directHint": "Wang yang sudah dibelanjakan, tanpa kelulusan dipohon terlebih dahulu.",
+      "directShort": "Terus",
+      "noneOpen": "Tiada permohonan diluluskan yang masih berbaki untuk pekerja ini.",
+      "preApproved": "Atas Perbelanjaan Pra-Lulus",
+      "preApprovedHint": "Permohonan diluluskan yang masih berbaki: {{count}}"
+    },
+    "chargeTitle": "Caj dan Bayaran",
+    "check": {
+      "basis": "Pilih asas tuntutan.",
+      "choosePreApproval": "Pilih permohonan diluluskan yang digunakan tuntutan ini.",
+      "expenseDate": "Pilih tarikh wang dibelanjakan.",
+      "fixFields": "Beberapa medan perlu diberi perhatian. Semak yang bertanda merah.",
+      "futureDate": "Tarikh perbelanjaan tidak boleh pada masa hadapan.",
+      "noAllocation": "Unit ini tiada peruntukan aktif, jadi tuntutan tidak boleh dibayar daripada tunai runcit. Pilih Gaji Pekerja, atau tanya Kewangan.",
+      "notEnoughCash": "{{reference}} hanya ada OMR {{available}} tersedia, dan baki tidak boleh di bawah sifar. Kurangkan amaun, pilih Gaji Pekerja, atau minta tambahan.",
+      "overPreApproval": "Tuntutan melebihi baki pra-kelulusan (OMR {{remaining}}). Kurangkan, atau tuntut perbezaannya secara terus.",
+      "preApproval": "Pra-kelulusan ini tidak boleh digunakan: ia mesti milik pekerja ini, diluluskan dan masih berbaki.",
+      "preApprovalUnit": "Tuntutan atas pra-kelulusan dicaj kepada unit yang sama dengan pra-kelulusan.",
+      "receiptRequired": "Lampirkan resit sebelum menghantar tuntutan ini. Kategori ini, atau tetapan, memerlukannya.",
+      "settlement": "Pilih cara tuntutan dibayar.",
+      "vat": "Pilih bagaimana VAT dikenakan pada amaun."
+    },
+    "column": {
+      "amount": "Jumlah",
+      "basisPayment": "Asas / Bayaran",
+      "date": "Tarikh",
+      "employee": "Pekerja",
+      "expenseDate": "Tarikh Perbelanjaan",
+      "merchant": "Peniaga / Kategori",
+      "reference": "Rujukan",
+      "status": "Keadaan"
+    },
+    "costFromPreApproval": "Dicaj di tempat pra-kelulusan menyimpan amaunnya.",
+    "deleteText": "Draf tuntutan akan dibuang. Tindakan ini tidak boleh dibatalkan.",
+    "deleteTitle": "Padam {{reference}}?",
+    "descriptionPlaceholder": "Apa yang dibeli, dan sebab perniagaannya.",
+    "detailsTitle": "Butiran Tuntutan",
+    "duplicate": {
+      "detailText": "Semasa dihantar, terdapat tuntutan lain dengan peniaga dan nombor resit yang sama, atau tarikh dan amaun yang sama. Pastikan ia bukan bil yang sama:",
+      "formText": "Tuntutan lain mempunyai peniaga yang sama dengan nombor resit yang sama, atau tarikh dan amaun yang sama. Anda masih boleh menghantar; pelulus akan melihat ini:",
+      "title": "Kemungkinan pendua.",
+      "tooltip": "Kemungkinan pendua {{references}}"
+    },
+    "editTitle": "Betulkan {{reference}}",
+    "entity": "bayaran balik",
+    "field": {
+      "amount": "Amaun (OMR)",
+      "amountNet": "Amaun sebelum VAT (OMR)",
+      "basis": "Asas Tuntutan",
+      "description": "Keterangan Perbelanjaan / Tujuan Perniagaan",
+      "expenseDate": "Tarikh Perbelanjaan",
+      "gross": "Jumlah termasuk VAT",
+      "paidFrom": "Dibayar Daripada",
+      "preApproval": "Rujukan Pra-Kelulusan",
+      "receipt": "Resit / Bil",
+      "receiptNo": "No. Resit / Invois",
+      "settlement": "Kaedah bayaran",
+      "vatTreatment": "Layanan VAT"
+    },
+    "filter": {
+      "allBases": "Semua asas tuntutan",
+      "allSettlements": "Semua kaedah bayaran"
+    },
+    "fromScan": "Diisi daripada Imbas Resit. AI membacanya dengan keyakinan {{confidence}}%: semak setiap nilai dengan resit sebelum menghantar.",
+    "leftOf": "Baki {{left}} daripada {{amount}}",
+    "new": "Bayaran Balik Baharu",
+    "newSubtitle": "Hantar perbelanjaan sebenar untuk dibayar balik.",
+    "newTitle": "Bayaran Balik Perbelanjaan Baharu",
+    "noAllocationNow": "Tiada peruntukan aktif untuk unit ini sekarang",
+    "noReceipt": "Tiada resit dilampirkan.",
+    "notEditable": "Tuntutan ini sudah melepasi tahap pembetulan: ia tidak boleh diubah lagi.",
+    "notInLedger": "Tidak dicatat: dibayar bersama gaji",
+    "notScanned": "Dimuat naik tanpa bacaan AI. Nilai ditaip sendiri.",
+    "openScan": "Imbas dan biar AI mengisi tuntutan",
+    "orScan": "Ada resit di tangan?",
+    "preApprovalHint": "Hanya permohonan diluluskan pekerja ini yang masih berbaki disenaraikan.",
+    "preApprovalPlaceholder": "Pilih permohonan yang diluluskan…",
+    "receiptHint": "Lepaskan resit di sini, atau pilih fail",
+    "receiptNeeded": "Kategori ini memerlukan resit sebelum tuntutan dihantar.",
+    "receiptNoPlaceholder": "Rujukan resit atau invois",
+    "receiptOptional": "Resit adalah pilihan bagi kategori ini.",
+    "receiptReplaced": "Menggantikan {{name}}, dimuat naik pada {{date}}.",
+    "receiptTitle": "Resit / Bil",
+    "required": "Wajib",
+    "resubmitNote": "Menghantar semula menjadikan versi {{version}}. Pelulus melihat apa yang anda ubah.",
+    "scanReceipt": "Imbas Resit",
+    "search": "Cari rujukan, pekerja, peniaga atau no. resit",
+    "section": {
+      "amount": "Amaun dan VAT",
+      "charge": "Caj dan Bayaran",
+      "expense": "Perbelanjaan",
+      "receipt": "Resit / Bil"
+    },
+    "settlement": {
+      "pettyCash": "Tunai Runcit",
+      "pettyCashFrom": "Daripada {{reference}} · {{available}} tersedia",
+      "pettyCashHint": "Dibayar daripada peruntukan tunai runcit unit.",
+      "salary": "Gaji Pekerja",
+      "salaryHint": "Dibayar bersama gaji seterusnya. Tunai runcit tidak terjejas."
+    },
+    "subtitle": "Tuntutan bagi wang yang telah dibelanjakan, secara terus atau atas permohonan pra-perbelanjaan yang diluluskan.",
+    "summary": {
+      "allocationLeft": "Tersedia dalam",
+      "claiming": "Anda menuntut",
+      "heldByPreApproval": "Sudah disimpan oleh pra-kelulusan dalam",
+      "noAllocation": "Unit ini tiada peruntukan aktif. Kewangan mungkin membayarnya dengan cara lain.",
+      "noAllocationBlocked": "Unit ini tiada peruntukan aktif, jadi ia tidak boleh dibayar daripada tunai runcit. Pilih Gaji Pekerja, atau tanya Kewangan.",
+      "preApprovalLeft": "Baki dalam",
+      "routeLater": "Pelulus dipaparkan di sini setelah amaun dan unit diisi.",
+      "salary": "Dibayar bersama gaji: tiada baki tunai runcit berubah.",
+      "short": "Melebihi yang tersedia dalam peruntukan. Kewangan perlu menambahnya dahulu.",
+      "shortBlocked": "Melebihi yang tersedia dalam peruntukan, dan baki tidak boleh di bawah sifar. Kurangkan amaun, pilih Gaji Pekerja, atau minta tambahan.",
+      "title": "Ringkasan tuntutan"
+    },
+    "tile": {
+      "claims": "Tuntutan",
+      "paid": "Dibayar Bulan Ini",
+      "paidNote": "Tuntutan dibayar: {{count}}",
+      "pending": "Dalam Kelulusan",
+      "summary": "Ringkasan bayaran balik",
+      "toPay": "Diluluskan, Menunggu Bayaran"
+    },
+    "title": "Bayaran Balik Perbelanjaan",
+    "toast": {
+      "deleted": "{{reference}} telah dipadam.",
+      "saved": "{{reference}} disimpan sebagai draf.",
+      "submitted": "{{reference}} telah dihantar untuk kelulusan."
+    },
+    "vat": {
+      "exclusive": "Tidak termasuk VAT",
+      "inclusive": "Termasuk VAT",
+      "none": "Tiada VAT"
+    },
+    "vatOnReceipt": "VAT pada resit, seperti dibaca AI: OMR {{vat}}",
+    "vatShort": "VAT {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Dimasukkan sebagai {{amount}} sebelum VAT {{rate}}%.",
+      "inclusive": "Dimasukkan sebagai {{amount}} termasuk VAT {{rate}}%.",
+      "none": "Dimasukkan sebagai {{amount}}. Bil tiada VAT."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Sahkan terima",
+      "allClaims": "Semua tuntutan saya",
+      "claimsCount": "Tuntutan: {{count}}",
+      "column": {
+        "amount": "Jumlah",
+        "date": "Tarikh",
+        "documents": "Dokumen",
+        "employee": "Pekerja",
+        "lastClaim": "Tuntutan Terakhir",
+        "open": "Permohonan terbuka",
+        "purpose": "Tujuan",
+        "reference": "Rujukan",
+        "status": "Keadaan",
+        "thisMonth": "Bulan Ini"
+      },
+      "custodianTitle": "Tunai Runcit Saya: {{unit}}",
+      "decisionsTitle": "Menunggu Keputusan Saya ({{count}})",
+      "enteredFor": "Dimasukkan untuk {{name}}",
+      "greeting": "Selamat kembali, {{name}}. Permohonan anda, keputusan yang menunggu anda dan tunai yang anda pegang.",
+      "hasReceipt": "Resit dilampirkan",
+      "lowHint": "Semakin berkurang: mohon tambahan tunai sebelum habis.",
+      "managerText": "Hantar pra-perbelanjaan atau tuntutan bagi ahli pasukan anda, dalam unit yang anda dibenarkan bertindak.",
+      "managerTitle": "Layan Diri Pengurus",
+      "movements": "Pergerakan terkini",
+      "newPreExpense": "Permohonan Pra-Perbelanjaan",
+      "newReimbursement": "Bayaran Balik Perbelanjaan",
+      "noMovements": "Belum ada pergerakan.",
+      "noRequests": "Belum ada permohonan. Mulakan satu di atas.",
+      "openInbox": "Peti Kelulusan",
+      "overdue": "Lewat: {{count}}",
+      "paidOn": "{{amount}} dibayar pada {{date}}",
+      "preExpenseBehalf": "Pra-Perbelanjaan bagi Pihak Lain",
+      "recentTitle": "Permohonan Terkini Saya",
+      "reimbursementBehalf": "Tuntutan bagi Pihak Lain",
+      "requestTopUp": "Mohon Tambahan Tunai",
+      "shortcut": {
+        "preExpense": "Kelulusan Pra-Perbelanjaan",
+        "preExpenseText": "Minta kelulusan sebelum berbelanja. Amaun yang diluluskan ditempah daripada peruntukan unit anda.",
+        "reimbursement": "Bayaran Balik Perbelanjaan",
+        "reimbursementText": "Tuntut perbelanjaan yang sudah dibayar, dengan resit dilampirkan atau diimbas.",
+        "scan": "Imbas Resit",
+        "scanText": "Biar AI membaca peniaga, tarikh, VAT, amaun dan kategori daripada resit."
+      },
+      "shortcuts": "Mulakan permohonan",
+      "subtitle": "Permohonan anda, keputusan yang menunggu anda dan tunai yang anda pegang.",
+      "teamTitle": "Pasukan Saya ({{count}})",
+      "tile": {
+        "approved": "Diluluskan / Tersedia Saya",
+        "approvedNote": "Pra-perbelanjaan diluluskan untuk dituntut: {{count}}",
+        "awaiting": "Menunggu kelulusan",
+        "nothingReturned": "Tiada apa untuk dibetulkan",
+        "paid": "Dibayar Bulan Ini",
+        "paidNote": "Tuntutan dibayar: {{count}}",
+        "returned": "Dikembalikan kepada Saya",
+        "returnedNote": "Perlu tindakan"
+      },
+      "title": "Papan Pemuka Saya",
+      "toAcknowledge": "Tunai yang dibayar kepada anda menunggu pengesahan anda ({{count}})",
+      "topUpPending": "Tambahan tunai dalam proses:",
+      "voucher": "Baucar {{voucher}}",
+      "waitingFor": "Pada {{names}}",
+      "monthTitle": "Tuntutan Saya Mengikut Bulan",
+      "monthSubtitle": "Mengikut tarikh perbelanjaan, {{from}} hingga {{to}}",
+      "categoryTitle": "Perbelanjaan Saya Mengikut Kategori",
+      "categorySubtitle": "Tuntutan saya bertarikh tahun ini, {{period}}",
+      "claimedThisYear": "Dituntut tahun ini",
+      "noClaims": "Belum ada tuntutan."
+    },
+    "chart": {
+      "amount": "Jumlah",
+      "businessUnit": "Unit Perniagaan",
+      "category": "Kategori",
+      "categoryTitle": "Perbelanjaan Mengikut Kategori",
+      "claims": "Tuntutan",
+      "funded": "Dibiayai",
+      "month": "Bulan",
+      "noMovement": "Tiada pergerakan tunai dalam tempoh ini.",
+      "noPaid": "Tiada tuntutan dibayar dalam tempoh ini.",
+      "otherCategories": "Kategori lain ({{count}})",
+      "paidInPeriod": "Dibayar dalam tempoh",
+      "pettyCash": "Tunai runcit",
+      "salary": "Bersama gaji",
+      "share": "Bahagian",
+      "spent": "Dibelanjakan",
+      "total": "Jumlah",
+      "trendSubtitle": "Tuntutan dibayar, {{from}} hingga {{to}}",
+      "trendTitle": "Perbelanjaan Mengikut Bulan",
+      "unitSubtitle": "Tunai yang disahkan masuk ke peruntukan setiap unit dan dibayar daripadanya, {{period}}",
+      "unitTitle": "Dibiayai dan Dibelanjakan Mengikut Unit Perniagaan"
+    },
+    "finance": {
+      "attentionTitle": "Perlu Perhatian ({{count}})",
+      "noAttention": "Tiada apa yang perlu diberi perhatian.",
+      "noPositions": "Tiada peruntukan yang disahkan untuk unit ini.",
+      "positionTitle": "Kedudukan Peruntukan",
+      "positionTotal": "Peruntukan: {{count}}",
+      "showAll": "Tunjuk semua ({{count}})",
+      "showFewer": "Tunjuk kurang",
+      "subtitle": "Tunai runcit di semua unit perniagaan, jabatan dan projek: apa yang dipegang, apa yang perlu diambil tindakan dan ke mana wang pergi.",
+      "thresholdsLink": "Ambang",
+      "title": "Papan pemuka kewangan"
+    },
+    "column": {
+      "allocation": "Peruntukan",
+      "available": "Tersedia",
+      "band": "Tahap",
+      "financeUser": "Dibayar oleh",
+      "float": "Had tunai",
+      "inUse": "Digunakan + ditempah",
+      "level": "Peringkat",
+      "position": "Kedudukan",
+      "reserved": "Ditempah",
+      "used": "Digunakan",
+      "utilization": "Penggunaan"
+    },
+    "attention": {
+      "exceeded": "Melebihi had: digunakan dan ditempah {{amount}} lebih daripada dibiayai",
+      "near": "Hampir ambang: tinggal {{percent}}% daripada had tunai",
+      "notAcknowledged": "Dibayar {{span}} lalu, belum disahkan",
+      "notAcknowledgedToday": "Dibayar hari ini, belum disahkan",
+      "overdueWith": "menunggu {{names}}",
+      "paidTo": "dibayar kepada {{name}}: {{amount}}",
+      "preparedBy": "Disediakan oleh {{name}}",
+      "review": "menunggu penyemak · {{reference}}",
+      "toPay": "Tuntutan diluluskan untuk dibayar: {{count}}",
+      "toPayNote": "{{amount}} · yang tertua diluluskan {{span}} lalu",
+      "toPayNoteToday": "{{amount}} · diluluskan hari ini",
+      "watch": "Dipantau: tinggal {{percent}}% daripada had tunai"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Melebihi had",
+      "near": "Hampir ambang",
+      "normal": "Normal",
+      "pending": "Belum dibiayai",
+      "watch": "Dipantau"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Baki",
+      "bar": "Bar",
+      "followsFilters": "Mengikut tempoh dan penapis di atas.",
+      "line": "Trend",
+      "lineHint": "Sepanjang tempoh, untuk lima baris terbesar.",
+      "metric": "Ukuran",
+      "name": "Nama",
+      "others": "Lain-lain",
+      "period": "Tempoh",
+      "pie": "Bahagian",
+      "type": "Jenis carta"
+    },
+    "column": {
+      "allocated": "Diperuntukkan",
+      "approved": "Diluluskan",
+      "available": "Tersedia",
+      "businessUnit": "Unit Perniagaan",
+      "category": "Kategori",
+      "charged": "Dicaj kepada",
+      "claimed": "Dituntut",
+      "claims": "Tuntutan",
+      "date": "Tarikh",
+      "department": "Jabatan",
+      "departments": "Jabatan",
+      "employee": "Pekerja",
+      "employeeId": "ID Pekerja",
+      "employees": "Pekerja",
+      "head": {
+        "businessUnit": "Ketua Unit Perniagaan",
+        "department": "Ketua Jabatan",
+        "project": "Pengurus Projek"
+      },
+      "lastClaim": "Tuntutan Terakhir",
+      "lastExpense": "Perbelanjaan Terakhir",
+      "net": "Bersih",
+      "paid": "Dibayar",
+      "paidOn": "Dibayar Pada",
+      "pending": "Belum Dibayar",
+      "project": "Projek",
+      "projectCode": "Kod Projek",
+      "recipient": "Pekerja / Penerima",
+      "reference": "Rujukan",
+      "referenceDate": "Rujukan / Tarikh",
+      "reimbursed": "Dibayar Balik",
+      "share": "% Perbelanjaan",
+      "status": "Keadaan",
+      "statusPaid": "Status / Dibayar Pada",
+      "topVendor": "Peniaga Utama",
+      "total": "Jumlah",
+      "transactions": "Transaksi",
+      "vat": "VAT",
+      "vatin": "No. CBNT",
+      "vendor": "Vendor / Peniaga",
+      "vendorCategory": "Peniaga / Kategori",
+      "voucher": "No. Baucar"
+    },
+    "countedNote": "Tuntutan dikira selepas dihantar, mengikut tarikh perbelanjaan: dalam kelulusan, diluluskan dan menunggu bayaran, atau dibayar. Draf serta tuntutan yang ditolak dan dibatalkan tidak dikira.",
+    "empty": "Tiada apa untuk dilaporkan bagi tempoh ini.",
+    "filter": {
+      "allCategories": "Semua kategori",
+      "allEmployees": "Semua pekerja",
+      "allStatuses": "Semua status",
+      "allVendors": "Semua peniaga",
+      "search": "Cari",
+      "status": "Keadaan",
+      "unit": "Unit"
+    },
+    "metric": {
+      "amount": "Jumlah",
+      "available": "Baki Tersedia",
+      "count": "Bilangan Tuntutan",
+      "paid": "Dibayar",
+      "pending": "Belum Dibayar"
+    },
+    "noMatch": "Tiada yang sepadan dengan penapis ini.",
+    "notListed": "Tiada dalam Induk Vendor",
+    "openClaims": "Buka tuntutan ini",
+    "openingOn": "baki awal pada akhir {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, mengikut tarikh perbelanjaan",
+    "periodLedger": "{{from}} – {{to}}, mengikut tarikh lejar",
+    "purpose": {
+      "businessUnit": "Kos unit perniagaan, termasuk jabatan dan projeknya, di sebelah tunai runcitnya.",
+      "category": "Perbelanjaan mengikut kategori, dengan peniaga perbelanjaan tertinggi dan bahagian setiap kategori.",
+      "department": "Kos jabatan: tuntutan yang dicaj kepada setiap jabatan, di sebelah tunai runcitnya.",
+      "employee": "Tuntutan mengikut pekerja: dituntut, diluluskan, dibayar dan belum dibayar.",
+      "ledger": "Pembiayaan, perbelanjaan dan pelarasan dalam tempoh, dengan baki berjalan setiap peruntukan.",
+      "project": "Kos projek: tuntutan yang dicaj kepada setiap projek, di sebelah tunai runcitnya.",
+      "transactions": "Setiap tuntutan dalam tempoh, dengan peniaga, caj dan statusnya.",
+      "vendor": "Ke mana wang dibelanjakan: tuntutan mengikut peniaga, yang tersenarai dalam Induk Vendor atau ditaip pada tuntutan."
+    },
+    "refusal": {
+      "period": "Pilih tempoh dari satu hari hingga hari yang sama atau hari kemudian."
+    },
+    "search": {
+      "ledger": "Cari catatan, rujukan, baucar, orang atau keterangan",
+      "summary": "Cari nama dalam laporan ini",
+      "transactions": "Cari rujukan, orang, peniaga atau keterangan"
+    },
+    "status": {
+      "approved": "Diluluskan, Belum Dibayar",
+      "inApproval": "Dalam Kelulusan",
+      "paid": "Dibayar"
+    },
+    "summary": "Ringkasan laporan",
+    "tile": {
+      "claimed": "Jumlah Dituntut",
+      "claimedNote": "Dalam kelulusan, diluluskan dan dibayar",
+      "claims": "Tuntutan",
+      "claimsNote": "Orang: {{count}}",
+      "paid": "Dibayar",
+      "paidNote": "{{percent}}% daripada jumlah",
+      "pending": "Belum Dibayar",
+      "pendingNote": "Dalam kelulusan atau menunggu bayaran"
+    },
+    "totalRow": "Jumlah",
+    "view": {
+      "chart": "Carta",
+      "table": "Jadual"
+    },
+    "viewAs": "Papar sebagai"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Pindahan bank",
+      "cash": "Tunai",
+      "cheque": "Cek",
+      "salary": "Gaji"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Dilangkau: orang yang sama sudah meluluskan langkah terdahulu",
+        "belowAmount": "Dilangkau: amaun tidak melebihi ambang",
+        "incomplete": "Pilih sumber pelulus",
+        "noApprover": "Tiada pelulus aktif ditemui",
+        "noProject": "Dilangkau: permohonan ini tiada projek",
+        "selfApproval": "Dilangkau: pemohon akan meluluskan permohonannya sendiri"
+      }
+    }
+  }
+}

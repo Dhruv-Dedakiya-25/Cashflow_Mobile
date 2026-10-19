@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Dodaj",
+    "addEntity": "Dodaj {{entity}}",
+    "back": "Wstecz",
+    "cancel": "Anuluj",
+    "clearAll": "Wyczyść wszystko",
+    "close": "Zamknij",
+    "create": "Utwórz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "export": "Eksportuj",
+    "retry": "Spróbuj ponownie",
+    "save": "Zapisz",
+    "saveChanges": "Zapisz zmiany",
+    "search": "Szukaj",
+    "view": "Podgląd",
+    "viewAll": "Zobacz wszystko"
+  },
+  "status": {
+    "active": "Aktywny",
+    "all": "Wszystkie",
+    "inactive": "Nieaktywny",
+    "no": "Nie",
+    "yes": "Tak"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Anuluj wniosek",
+      "saveDraft": "Zapisz wersję roboczą",
+      "submit": "Wyślij do zatwierdzenia",
+      "submitForApproval": "Prześlij do zatwierdzenia"
+    },
+    "filter": {
+      "allStatuses": "Wszystkie statusy",
+      "from": "Od",
+      "to": "Do"
+    },
+    "history": {
+      "acknowledged": "— potwierdzenie odbioru",
+      "approved": "— zatwierdzenie",
+      "cancelled": "— anulowanie",
+      "created": "— utworzenie wniosku",
+      "disbursed": "— wypłata kwoty",
+      "edited": "— wprowadzenie zmian",
+      "empty": "(puste)",
+      "paid": "— zapłata",
+      "rejected": "— odrzucenie",
+      "resubmitted": "— ponowne wysłanie do zatwierdzenia",
+      "returned": "— zwrot do poprawy",
+      "submitted": "— wysłanie do zatwierdzenia",
+      "title": "Historia",
+      "reallocated": "— przekazanie",
+      "takenOver": "— przejęcie"
+    },
+    "notFound": "Ten rekord nie istnieje lub jest poza Twoim zakresem widoczności.",
+    "path": {
+      "decidedBy": {
+        "approved": "Zatwierdzone: {{name}}, {{time}}",
+        "rejected": "Odrzucone: {{name}}, {{time}}",
+        "returned": "Zwrócone: {{name}}, {{time}}"
+      },
+      "notSent": "Jeszcze nie wysłano do zatwierdzenia.",
+      "overdue": "Przeterminowana",
+      "state": {
+        "approved": "Zatwierdzony",
+        "pending": "Oczekuje",
+        "rejected": "Odrzucony",
+        "returned": "Zwrócony",
+        "skipped": "Pominięto",
+        "waiting": "Jeszcze nieosiągnięty"
+      },
+      "title": "Ścieżka zatwierdzania",
+      "waitingSince": "Czeka od {{time}} · dozwolone {{hours}} godz.",
+      "willGoTo": "Trafi do"
+    },
+    "reason": "Powód",
+    "reasonRequired": "Podaj powód. Zostanie zapisany w historii wniosku.",
+    "refusal": {
+      "alreadyPosted": "To jest już w księdze, więc nic nie zmieniono.",
+      "amount": "Wpisz kwotę większą od zera, z najwyżej trzema miejscami po przecinku.",
+      "amountTooLarge": "Kwota nie może przekroczyć {{max}} OMR.",
+      "noApprover": "Na jednym z kroków obiegu nie ma do kogo wysłać tego wniosku. Poproś administratora o sprawdzenie konfiguracji obiegu.",
+      "noWorkflow": "Żaden aktywny obieg nie obejmuje tego wniosku. Poproś administratora o sprawdzenie konfiguracji obiegu.",
+      "nobodyLeft": "Wszyscy, którzy mogliby zatwierdzić ten wniosek, sami w nim uczestniczą, więc nie ma komu go zatwierdzić. Zmień, dla kogo jest, lub poproś administratora o sprawdzenie konfiguracji obiegu.",
+      "notAllowed": "Twoja rola na to nie pozwala.",
+      "notEditable": "Zmienić można tylko szkic lub zwrócony wniosek.",
+      "notFound": "Ten rekord nie istnieje lub jest poza Twoim zakresem widoczności.",
+      "notNow": "Nie jest to możliwe w obecnym statusie wniosku.",
+      "onlyDrafts": "Usunąć można tylko szkic. Zamiast tego anuluj wniosek.",
+      "reasonRequired": "Podaj powód.",
+      "savedMeanwhile": "W międzyczasie ktoś inny to zapisał, więc nic nie zostało zmienione. Odśwież i spróbuj ponownie.",
+      "signedOut": "Sesja wygasła. Zaloguj się ponownie.",
+      "underApproval": "Czeka na zatwierdzającego. Poczekaj na decyzję lub poproś o zwrot."
+    },
+    "returnedBecause": "Zwrócono do poprawy:",
+    "status": {
+      "acknowledged": "Potwierdzone",
+      "active": "Aktywny",
+      "approved": "Zatwierdzony",
+      "cancelled": "Anulowany",
+      "closed": "Zamknięte",
+      "disbursed": "Czeka na potwierdzenie odbioru",
+      "draft": "Wersja robocza",
+      "inApproval": "W zatwierdzaniu",
+      "paid": "Zapłacona",
+      "rejected": "Odrzucony",
+      "returned": "Zwrócony",
+      "submitted": "Przesłano"
+    }
+  },
+  "auth": {
+    "brandTagline": "Zarządzanie kasą podręczną",
+    "company": "Firma",
+    "demoBadge": "Demo",
+    "demoNotice": "Tryb demo: logowanie jest symulowane, a każdy ekran pokazuje przykładowe dane, dopóki nie pojawi się API.",
+    "feature": {
+      "allocations": "Przydziały dla działów i projektów",
+      "permissions": "Macierz ról i uprawnień",
+      "selfService": "Samoobsługa pracowników i kierowników",
+      "thresholds": "Monitorowanie progów",
+      "twoFactor": "Logowanie dwuskładnikowe",
+      "workflows": "Akceptacje przed i po wydatku"
+    },
+    "password": "Hasło",
+    "passwordDemoHint": "Nie sprawdzane w wersji demo. W systemie produkcyjnym logowanie weryfikuje hasło i kod uwierzytelniania dwuskładnikowego.",
+    "persona": {
+      "auditor": "Audytor (tylko odczyt)",
+      "employee": "Samoobsługa pracownika",
+      "finance": "Dyrektor finansowy / Administrator",
+      "manager": "Kierownik działu / projektu"
+    },
+    "personaLabel": "Persona demonstracyjna",
+    "pitch": "Przydzielaj kasę podręczną, akceptuj planowane wydatki, zwracaj faktyczne, kieruj akceptacje w organizacji, odczytuj paragony za pomocą AI i uzgadniaj każdą transakcję.",
+    "rememberMe": "Nie wylogowuj mnie",
+    "signIn": "Zaloguj się",
+    "signInButton": "Zaloguj się",
+    "signInHint": "Wybierz personę demonstracyjną, aby zobaczyć ekrany tej roli.",
+    "twoFactor": {
+      "back": "Wstecz",
+      "demoHint": "Demo: akceptowane są dowolne sześć cyfr.",
+      "digit": "Cyfra {{n}} z 6",
+      "incomplete": "Wpisz wszystkie sześć cyfr.",
+      "panelText": "Kod z aplikacji uwierzytelniającej potwierdza, że to naprawdę Ty. Zasady mogą go wymagać od wszystkich, według roli lub od wybranych użytkowników.",
+      "panelTitle": "Weryfikacja dwuetapowa",
+      "subtitle": "Wpisz 6-cyfrowy kod z aplikacji uwierzytelniającej.",
+      "title": "Wpisz kod weryfikacyjny",
+      "trustDevice": "Ufaj temu urządzeniu przez 30 dni",
+      "verify": "Zweryfikuj i kontynuuj",
+      "wrongCode": "Ten kod jest nieprawidłowy. Spróbuj ponownie.",
+      "expired": "To logowanie wygasło. Wróć i zaloguj się ponownie.",
+      "useRecovery": "Użyj zamiast tego kodu odzyskiwania",
+      "useApp": "Użyj zamiast tego aplikacji uwierzytelniającej",
+      "recoveryTitle": "Wpisz kod odzyskiwania",
+      "recoveryHint": "Wpisz jeden z zapisanych kodów odzyskiwania. Każdy kod działa tylko raz.",
+      "trustDeviceDays": "Ufaj temu urządzeniu przez {{n}} dni",
+      "enrollTitle": "Skonfiguruj logowanie dwuskładnikowe",
+      "enrollSubtitle": "Twoje konto musi używać aplikacji uwierzytelniającej. Skonfiguruj ją teraz, aby dokończyć logowanie."
+    },
+    "twoFactorNote": "Logowanie dwuskładnikowe może być wyłączone, opcjonalne lub wymagane dla roli.",
+    "username": "E-mail lub nazwa użytkownika",
+    "signInHintApi": "Zaloguj się na swoje konto CashFlow.",
+    "error": {
+      "invalid": "Nieprawidłowa nazwa użytkownika lub hasło.",
+      "tooMany": "Zbyt wiele prób. Odczekaj minutę i spróbuj ponownie.",
+      "noApi": "Nie można połączyć się z serwerem. Spróbuj ponownie za chwilę."
+    }
+  },
+  "scan": {
+    "aiConfidence": "Pewność {{confidence}}%",
+    "aiOff": "Ekstrakcja AI jest wyłączona w ustawieniach AI i przetwarzania dokumentów. Paragon nadal jest sprawdzany i dołączany; wpisz dane samodzielnie.",
+    "checkThis": "Sprawdź",
+    "col": {
+      "claim": "W rozliczeniu",
+      "field": "Pole",
+      "read": "Odczyt AI"
+    },
+    "corrected": "Poprawione",
+    "createClaim": "Utwórz zwrot",
+    "extractionTitle": "Ekstrakcja AI",
+    "fact": {
+      "file": "Plik",
+      "hash": "SHA-256",
+      "size": "Rozmiar",
+      "type": "Typ",
+      "typeChecked": "{{type}}, sprawdzony po zawartości"
+    },
+    "field": {
+      "category": "Sugerowana kategoria",
+      "expenseDate": "Data",
+      "grossAmount": "Razem",
+      "merchant": "Sklep",
+      "receiptNo": "Nr paragonu",
+      "vatAmount": "VAT"
+    },
+    "keptApart": "Odczyt AI zostaje bez zmian obok tego, co wpiszesz, aby poprawka była widoczna. Odczyty poniżej {{min}}% są wyróżnione.",
+    "lowHint": "AI jest pewna tylko w {{confidence}}%. Sprawdź to na paragonie.",
+    "minConfidence": "wartości poniżej {{min}}% są wyróżnione",
+    "noPreview": "Ta przeglądarka nie wyświetla obrazów HEIC. Plik został sprawdzony i dołączony.",
+    "noReceipt": "Nie masz paragonu pod ręką?",
+    "readBy": "Odczytane przez {{provider}}",
+    "receiptTitle": "Paragon",
+    "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon jest odczytywany jako ten wzorzec, ponieważ plik nigdy nie opuszcza przeglądarki.",
+    "stage": {
+      "extracted": "Odczytano",
+      "extractedHint": "Pola odczytane przez AI",
+      "normalizing": "Normalizacja",
+      "normalizingHint": "Wyprostowany, przycięty, skompresowany",
+      "pdfReady": "PDF gotowy",
+      "pdfReadyHint": "Standardowy PDF, oryginał zachowany",
+      "skipped": "AI jest wyłączona",
+      "uploaded": "Przesłano",
+      "uploadedHint": "Sprawdzono typ, rozmiar i skrót",
+      "verified": "Zweryfikowany",
+      "verifiedHint": "Sprawdzone przez Ciebie"
+    },
+    "stagesTitle": "Etapy dokumentu",
+    "startAgain": "Skanuj kolejny",
+    "subtitle": "Zrób zdjęcie telefonem lub prześlij rachunek, a potem sprawdź odczytane pola przed utworzeniem rozliczenia.",
+    "tip": {
+      "light": "Dobre światło, bez cienia na sumie.",
+      "private": "W wersji demo plik pozostaje w tej przeglądarce.",
+      "whole": "Cały paragon w kadrze, razem z krawędziami."
+    },
+    "title": "Skanowanie paragonów i ekstrakcja AI",
+    "typeIt": "Wpisz dane z paragonu.",
+    "uploadHint": "Otwórz aparat lub prześlij paragon",
+    "useSample": "Wypróbuj przykładowy paragon",
+    "waitingForReceipt": "Dodaj paragon, aby go odczytać.",
+    "working": {
+      "normalizing": "Prostowanie i czyszczenie obrazu…",
+      "pdfReady": "Tworzenie standardowego PDF…",
+      "uploaded": "Sprawdzanie pliku…"
+    },
+    "aiPhotoOnly": "Odczyt przez SI jest dostępny tylko dla zdjęć w formatach JPG i PNG.",
+    "aiUnclear": "Nie udało się wyraźnie odczytać danych z paragonu. Wprowadź je ręcznie.",
+    "aiUnreachable": "Nie można połączyć się z modelem SI. Wprowadź dane paragonu ręcznie.",
+    "aiQuota": "Osiągnięto limit zapytań AI. Odczekaj chwilę lub wprowadź dane rachunku ręcznie.",
+    "aiBusy": "Sztuczna inteligencja Google jest obecnie zajęta. Spróbuj ponownie za chwilę lub wpisz dane ręcznie."
+  },
+  "approval": {
+    "action": {
+      "review": "Rozpatrz"
+    },
+    "attachmentTitle": "Dokument potwierdzający",
+    "availableNow": "Teraz dostępne {{amount}}",
+    "backToInbox": "Powrót do skrzynki zatwierdzeń",
+    "changes": {
+      "after": "Poprawiony po zwrocie przez {{name}} w dniu {{time}}:",
+      "title": "Zmieniony od zwrotu"
+    },
+    "column": {
+      "amount": "Kwota",
+      "person": "Osoba",
+      "reference": "Referencja",
+      "step": "Status / Bieżący krok",
+      "submitted": "Wysłano",
+      "type": "Rodzaj / Jednostka"
+    },
+    "days": "{{count}} dn.",
+    "decision": {
+      "approve": "Zatwierdź",
+      "comment": "Komentarz (wymagany przy zwrocie lub odrzuceniu)",
+      "noMoney": "Zatwierdzenie nie przesuwa pieniędzy. Płaci tylko Rozliczenie finansowe.",
+      "placeholder": "Co wnioskodawca powinien wiedzieć lub poprawić?",
+      "reasonNeeded": "Podaj powód zwrotu lub odrzucenia. Wnioskodawca go zobaczy.",
+      "reject": "Odrzuć",
+      "return": "Zwróć do poprawy",
+      "title": "Twoja decyzja"
+    },
+    "detailsTitle": {
+      "additionalCash": "Wniosek o dodatkową gotówkę",
+      "allocation": "Przydział",
+      "preExpense": "Wniosek o wydatek wstępny",
+      "reimbursement": "Rozliczenie",
+      "reallocation": "Wniosek o przekazanie"
+    },
+    "dueIn": "Termin za {{span}}",
+    "empty": {
+      "decided": "Nie zdecydowałeś jeszcze o żadnym wniosku.",
+      "scope": "W Twoim zakresie nie wysłano żadnych wniosków do zatwierdzenia.",
+      "waiting": "Nic nie czeka na Twoją decyzję."
+    },
+    "ended": {
+      "approved": "Zatwierdził: {{name}}, {{time}}.",
+      "cancelled": "Wycofany przez {{name}} {{time}}.",
+      "rejected": "Odrzucony przez {{name}} {{time}}.",
+      "returned": "Zwrócony do poprawy przez {{name}} {{time}}."
+    },
+    "entity": "wniosków",
+    "filter": {
+      "allTypes": "Wszystkie rodzaje wniosków",
+      "allUnits": "Wszystkie lokale"
+    },
+    "flag": {
+      "changed": "Zmieniony od zwrotu",
+      "duplicate": "Możliwy zduplikowany rachunek",
+      "onBehalf": "Wprowadzony przez kogoś innego w imieniu tej osoby",
+      "overAvailable": "Więcej, niż ma dostępne jego przydział",
+      "lowConfidence": "Odczyt paragonu przez SI ma niski poziom pewności"
+    },
+    "hours": "{{count}} godz.",
+    "kind": {
+      "additionalCash": "Dodatkowa gotówka",
+      "allocation": "Przydział",
+      "preExpense": "Wydatek wstępny",
+      "reimbursement": "Zwrot wydatków",
+      "reallocation": "Przekazanie"
+    },
+    "next": "Dalej",
+    "openFile": "Otwórz",
+    "openRecord": "Otwórz pełny rekord",
+    "othersTurn": "Czeka na {{names}} w kroku {{n}}. Możesz to śledzić tutaj; decydować mogą tylko oni.",
+    "outcome": {
+      "cash": "Twój krok jest ostatni. Zatwierdzenie przekazuje go do działu finansów do wypłaty; liczy się, gdy opiekun kasy potwierdzi odbiór.",
+      "claim": "Twój krok jest ostatni. Zatwierdzenie rezerwuje kwotę w przydziale, aż dział finansów ją zapłaci.",
+      "next": "Zatwierdzenie przekazuje go do następnego kroku ({{step}}): {{names}}.",
+      "preExpense": "Twój krok jest ostatni. Zatwierdzenie pozwala pracownikowi wydawać i blokuje kwotę do czasu rozliczenia.",
+      "salary": "Twój krok jest ostatni. Zatwierdzenie przekazuje go do działu finansów do wypłaty z następnym wynagrodzeniem.",
+      "reallocation": "Twój etap jest ostatni. Zatwierdzenie przekazuje gotówkę nowemu dysponentowi, który potwierdza jej odbiór lub ją przejmuje. Dział finansów niczego nie wypłaca."
+    },
+    "overAvailable": "To więcej, niż ma dostępne {{reference}} ({{available}}). Przed zapłatą dział finansów będzie musiał go doładować.",
+    "overAvailableBlocked": "To więcej, niż ma dostępne {{reference}} ({{available}}), a saldo nie może spaść poniżej zera. Ostateczne zatwierdzenie wymaga najpierw doładowania.",
+    "overdueBy": "Po terminie o {{span}}",
+    "position": "{{n}} z {{total}}",
+    "previous": "Poprzedni",
+    "refusal": {
+      "changed": "Ten wniosek zmienił się od czasu otwarcia. Odśwież go i sprawdź zmiany przed decyzją.",
+      "decided": "O tym wniosku już zdecydowano.",
+      "notEnoughCash": "W {{reference}} dostępne jest tylko OMR {{available}}, a saldo nie może spaść poniżej zera. Zwróć wniosek lub najpierw poproś dział finansów o doładowanie.",
+      "notYourStep": "Ten krok nie czeka na Ciebie.",
+      "ownRequest": "Nie możesz decydować o wniosku, którego jesteś stroną."
+    },
+    "refusalHint": "W {{reference}} dostępne jest tylko {{available}}, a saldo nie może spaść poniżej zera. Zwróć go lub najpierw poproś dział finansów o doładowanie.",
+    "search": "Szukaj numeru, osoby lub celu",
+    "sentAt": "wysłano {{time}}",
+    "subtitle": "Wnioski czekające na Twoją decyzję, wszystko w Twoim zakresie i to, o czym zdecydowałeś.",
+    "tile": {
+      "decided": "Zdecydowane przez Ciebie",
+      "decidedNote": "Zatwierdzone, zwrócone lub odrzucone",
+      "overdue": "Przeterminowana",
+      "overdueNote": "Dłużej, niż pozwala konfiguracja obiegu",
+      "scope": "W akceptacji",
+      "summary": "Podsumowanie zatwierdzeń",
+      "waiting": "Czekają na Ciebie"
+    },
+    "title": "Skrzynka zatwierdzeń",
+    "toast": {
+      "approve": "Zatwierdzono {{reference}}.",
+      "reject": "Odrzucono {{reference}}.",
+      "return": "Zwrócono {{reference}} do poprawy."
+    },
+    "view": {
+      "decided": "Zdecydowane przeze mnie",
+      "scope": "Wszystko w moim zakresie",
+      "waiting": "Czekają na mnie"
+    },
+    "views": "Widoki skrzynki",
+    "where": {
+      "approved": "W dziale finansów do zapłaty",
+      "disbursed": "Wypłacono przez dział finansów",
+      "returned": "U wnioskodawcy do poprawy",
+      "spendable": "Można już wydawać, a potem rozliczyć"
+    },
+    "yourTurn": "Czeka na Twoją decyzję w kroku {{n}}: {{step}}.",
+    "yoursToWatch": "Jesteś stroną tego wniosku, więc nie możesz o nim decydować. Czeka na {{names}} w kroku {{n}}.",
+    "openSourceRecord": "Otwórz przydział"
+  },
+  "ack": {
+    "action": "Potwierdź",
+    "amountReceived": "Otrzymana kwota",
+    "bannerHint": "Saldo rośnie dopiero, gdy potwierdzisz, że gotówka dotarła.",
+    "bannerNone": "Nic nie czeka na Twoje potwierdzenie.",
+    "bannerWaiting": "Czeka na Twoje potwierdzenie: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Kwota",
+      "issued": "Wystawiono",
+      "payment": "Forma płatności / Numer",
+      "recipient": "Odbiorca",
+      "reference": "Referencja",
+      "scope": "Zakres przydziału",
+      "status": "Status"
+    },
+    "confirm": "Potwierdź odbiór kwoty",
+    "dialogTitle": "Potwierdzenie odbioru gotówki z kasy podręcznej",
+    "entity": "płatność",
+    "filter": {
+      "allTypes": "Wszystkie typy"
+    },
+    "kind": {
+      "additionalCash": "Doładowanie",
+      "allocation": "Przydział",
+      "topUpOf": "Doładowanie {{reference}}",
+      "handover": "Przejęcie",
+      "reallocatedFrom": "Przekazano z {{reference}}"
+    },
+    "openAllocation": "Otwórz przydział",
+    "refusal": {
+      "already": "Odbiór został już potwierdzony. Nic nie zmieniono.",
+      "notRecipient": "Tylko osoba, która odebrała gotówkę, może potwierdzić odbiór."
+    },
+    "remarks": "Uwagi (opcjonalnie)",
+    "remarksPlaceholder": "Na przykład: przeliczono i odebrano w całości.",
+    "search": "Szukaj numeru, odbiorcy lub numeru płatności",
+    "state": {
+      "acknowledged": "Potwierdzone",
+      "waiting": "Czeka na potwierdzenie odbioru"
+    },
+    "statement": "Potwierdzając, oświadczasz, że otrzymałeś(-aś) kwotę pokazaną powyżej. Zostanie ona dodana do salda przydziału i nie można tego cofnąć.",
+    "subtitle": "Potwierdź odbiór gotówki z kasy podręcznej wypłaconej przez dział finansów i wydrukuj dowody wypłaty.",
+    "title": "Potwierdzenia odbioru przydziałów",
+    "toast": {
+      "done": "Odbiór potwierdzony. {{amount}} jest teraz dostępne w {{reference}}."
+    },
+    "waitingFor": "Czeka na: {{name}}",
+    "reallocatedBy": "Przekazał(a): {{name}}",
+    "takeOverTitle": "Przejmij przydział",
+    "takeOverStatement": "Potwierdzam, że otrzymałem gotówkę i dokumenty tego przydziału i że jest on teraz pod moją opieką.",
+    "takeOver": "Przejmij"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Wycofaj"
+    },
+    "categoryPlaceholder": "Szukaj kategorii zwrotu…",
+    "check": {
+      "beneficiary": "Nie możesz wprowadzić wniosku dla tego pracownika. Można wybrać tylko osoby z Twojego zakresu.",
+      "beneficiaryFixed": "Po wysłaniu wniosku nie można zmienić pracownika.",
+      "category": "Wybierz aktywną kategorię wydatku.",
+      "chooseCategory": "Wybierz kategorię wydatku.",
+      "chooseEmployee": "Wybierz pracownika.",
+      "costUnit": "Wybierz jednostkę, do której należy ten pracownik. Nieaktywnych jednostek nie można obciążyć.",
+      "merchant": "Podaj sprzedawcę lub odbiorcę.",
+      "purpose": "Opisz krótko cel służbowy.",
+      "vendor": "Ten dostawca jest nieaktywny. Wybierz innego lub wpisz nazwę sprzedawcy."
+    },
+    "costHint": "Obciążyć można tylko jednostki, do których należy ta osoba.",
+    "employeePlaceholder": "Wpisz imię i nazwisko lub ID pracownika…",
+    "ended": {
+      "cancelled": "Wycofany przez {{name}} {{time}}.",
+      "rejected": "Odrzucony przez {{name}} {{time}}.",
+      "returned": "Zwrócony do poprawy przez {{name}} {{time}}."
+    },
+    "enteredBy": "Wprowadził(a): {{name}}",
+    "field": {
+      "attachment": "Dokument potwierdzający",
+      "category": "Kategoria wydatku",
+      "chargedTo": "Obciąża",
+      "costLevel": "Typ przypisania kosztów",
+      "costUnit": "Obciąża",
+      "created": "Utworzono",
+      "employee": "Pracownik",
+      "enteredBy": "Wprowadził(a)",
+      "for": "Dla",
+      "merchant": "Sprzedawca / Odbiorca",
+      "submitFor": "Składane dla"
+    },
+    "filter": {
+      "allEmployees": "Wszyscy pracownicy"
+    },
+    "merchantHint": "Wybierz z kartoteki dostawców albo wpisz sprzedawcę lub odbiorcę, jeśli go nie ma na liście.",
+    "merchantPlaceholder": "Szukaj dostawcy lub wpisz nową nazwę…",
+    "noAttachment": "Brak załącznika",
+    "noMerchant": "Nie podano",
+    "onBehalfHint": "Wyświetlane są tylko osoby z Twojego zakresu. Zostajesz zapisany(-a) jako osoba wprowadzająca.",
+    "refusal": {
+      "notRequester": "Wniosek może zmienić tylko osoba, która go wprowadziła, lub osoba, której dotyczy."
+    },
+    "submitFor": {
+      "onBehalf": "W imieniu innego pracownika",
+      "self": "Dla siebie"
+    },
+    "toast": {
+      "withdrawn": "Wycofano {{reference}}."
+    },
+    "withdrawText": "Wniosek zostanie zamknięty zamiast poprawiony i wysłany ponownie. Powód zostaje w jego historii.",
+    "withdrawTitle": "Wycofać {{reference}}?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Kontynuuj edycję",
+      "correct": "Popraw i złóż ponownie"
+    },
+    "amount": {
+      "asEntered": "jak wprowadzono",
+      "gross": "Razem z VAT",
+      "net": "Kwota bez VAT",
+      "noVat": "VAT (brak na tym rachunku)",
+      "paid": "Razem wypłacono"
+    },
+    "approvedNote": "Zaakceptowano. Kwota jest zarezerwowana w przydziale; zostanie wypłacona i zaksięgowana dopiero po rozliczeniu przez dział finansów.",
+    "approvedSalaryNote": "Zaakceptowano. Dział finansów wypłaci ją z następną listą płac i zapisze numer płacowy.",
+    "backToClaim": "Wróć do rozliczenia",
+    "backToList": "Wróć do zwrotów kosztów",
+    "basis": {
+      "direct": "Bezpośredni zwrot po wydatku",
+      "directHint": "Pieniądze już wydane, bez wcześniejszej akceptacji.",
+      "directShort": "Bezpośrednio",
+      "noneOpen": "Brak zaakceptowanego wniosku z saldem dla tego pracownika.",
+      "preApproved": "Do wstępnie zaakceptowanego wydatku",
+      "preApprovedHint": "Zaakceptowane wnioski z saldem: {{count}}"
+    },
+    "chargeTitle": "Obciążenie i płatność",
+    "check": {
+      "basis": "Wybierz podstawę rozliczenia.",
+      "choosePreApproval": "Wybierz zaakceptowany wniosek, z którego korzysta to rozliczenie.",
+      "expenseDate": "Wybierz datę wydania pieniędzy.",
+      "fixFields": "Niektóre pola wymagają uwagi. Sprawdź zaznaczone na czerwono.",
+      "futureDate": "Data wydatku nie może być w przyszłości.",
+      "noAllocation": "Ta jednostka nie ma aktywnego przydziału, więc rozliczenia nie można wypłacić z kasy podręcznej. Wybierz Wynagrodzenie pracownika lub zapytaj dział finansów.",
+      "notEnoughCash": "W {{reference}} dostępne jest tylko OMR {{available}}, a saldo nie może spaść poniżej zera. Zmniejsz kwotę, wybierz Wynagrodzenie pracownika lub poproś o uzupełnienie.",
+      "overPreApproval": "Rozliczenie przekracza saldo wstępnej akceptacji (OMR {{remaining}}). Zmniejsz je albo rozlicz różnicę bezpośrednio.",
+      "preApproval": "Nie można użyć tej wstępnej akceptacji: musi należeć do tego pracownika, być zaakceptowana i mieć saldo.",
+      "preApprovalUnit": "Rozliczenie do wstępnej akceptacji obciąża tę samą jednostkę co wstępna akceptacja.",
+      "receiptRequired": "Dołącz paragon przed wysłaniem tego rozliczenia. Wymaga tego kategoria lub ustawienia.",
+      "settlement": "Wybierz sposób wypłaty rozliczenia.",
+      "vat": "Wybierz, jak VAT ma zastosowanie do kwoty."
+    },
+    "column": {
+      "amount": "Kwota",
+      "basisPayment": "Podstawa / płatność",
+      "date": "Data",
+      "employee": "Pracownik",
+      "expenseDate": "Data wydatku",
+      "merchant": "Sprzedawca / kategoria",
+      "reference": "Referencja",
+      "status": "Status"
+    },
+    "costFromPreApproval": "Obciąża tam, gdzie wstępna akceptacja rezerwuje swoją kwotę.",
+    "deleteText": "Szkic rozliczenia zostanie usunięty. Tej operacji nie można cofnąć.",
+    "deleteTitle": "Usunąć {{reference}}?",
+    "descriptionPlaceholder": "Co kupiono i jaki był powód służbowy.",
+    "detailsTitle": "Szczegóły rozliczenia",
+    "duplicate": {
+      "detailText": "W chwili wysłania istniało inne rozliczenie z tym samym sprzedawcą i numerem paragonu albo z tą samą datą i kwotą. Sprawdź, czy to nie ten sam rachunek:",
+      "formText": "Inne rozliczenie ma tego samego sprzedawcę z tym samym numerem paragonu albo tę samą datę i kwotę. Nadal możesz wysłać; akceptujący to zobaczy:",
+      "title": "Możliwy duplikat.",
+      "tooltip": "Możliwy duplikat {{references}}"
+    },
+    "editTitle": "Popraw {{reference}}",
+    "entity": "zwroty kosztów",
+    "field": {
+      "amount": "Kwota (OMR)",
+      "amountNet": "Kwota przed VAT (OMR)",
+      "basis": "Podstawa rozliczenia",
+      "description": "Opis wydatku / cel służbowy",
+      "expenseDate": "Data wydatku",
+      "gross": "Razem z VAT",
+      "paidFrom": "Wypłacane z",
+      "preApproval": "Numer wstępnej akceptacji",
+      "receipt": "Paragon / rachunek",
+      "receiptNo": "Nr paragonu / faktury",
+      "settlement": "Metoda płatności",
+      "vatTreatment": "Traktowanie VAT"
+    },
+    "filter": {
+      "allBases": "Wszystkie podstawy rozliczenia",
+      "allSettlements": "Wszystkie metody płatności"
+    },
+    "fromScan": "Wypełnione ze skanu paragonu. AI odczytała go z pewnością {{confidence}}%: przed wysłaniem porównaj każdą wartość z paragonem.",
+    "leftOf": "Pozostało {{left}} z {{amount}}",
+    "new": "Nowy zwrot kosztów",
+    "newSubtitle": "Złóż faktyczny wydatek do zwrotu.",
+    "newTitle": "Nowy zwrot wydatku",
+    "noAllocationNow": "Ta jednostka nie ma teraz aktywnego przydziału",
+    "noReceipt": "Nie dołączono paragonu.",
+    "notEditable": "Tego rozliczenia nie można już poprawić ani zmienić.",
+    "notInLedger": "Niezaksięgowane: wypłacone z pensją",
+    "notScanned": "Przesłano bez odczytu AI. Wartości wpisano ręcznie.",
+    "openScan": "Zeskanuj go, a AI wypełni rozliczenie",
+    "orScan": "Masz paragon pod ręką?",
+    "preApprovalHint": "Wyświetlane są tylko zaakceptowane wnioski tego pracownika z saldem.",
+    "preApprovalPlaceholder": "Wybierz zaakceptowany wniosek…",
+    "receiptHint": "Upuść tu paragon lub wybierz plik",
+    "receiptNeeded": "Ta kategoria wymaga paragonu przed wysłaniem rozliczenia.",
+    "receiptNoPlaceholder": "Numer paragonu lub faktury",
+    "receiptOptional": "W tej kategorii paragon jest opcjonalny.",
+    "receiptReplaced": "Zastępuje {{name}}, przesłany {{date}}.",
+    "receiptTitle": "Paragon / rachunek",
+    "required": "Wymagane",
+    "resubmitNote": "Ponowne wysłanie tworzy wersję {{version}}. Akceptujący zobaczy, co zmieniono.",
+    "scanReceipt": "Skanuj paragon",
+    "search": "Szukaj po numerze, pracowniku, sprzedawcy lub nr paragonu",
+    "section": {
+      "amount": "Kwota i VAT",
+      "charge": "Obciążenie i płatność",
+      "expense": "Wydatek",
+      "receipt": "Paragon / rachunek"
+    },
+    "settlement": {
+      "pettyCash": "Kasa podręczna",
+      "pettyCashFrom": "Z {{reference}} · dostępne {{available}}",
+      "pettyCashHint": "Wypłacane z przydziału kasy podręcznej jednostki.",
+      "salary": "Wynagrodzenie pracownika",
+      "salaryHint": "Wypłacane z następną pensją. Kasa podręczna pozostaje nietknięta."
+    },
+    "subtitle": "Rozliczenia już wydanych pieniędzy, bezpośrednie lub do zaakceptowanego wniosku przed wydatkiem.",
+    "summary": {
+      "allocationLeft": "Dostępne w",
+      "claiming": "Rozliczasz",
+      "heldByPreApproval": "Już zarezerwowane przez wstępną akceptację w",
+      "noAllocation": "Ta jednostka nie ma aktywnego przydziału. Dział finansów może wypłacić inaczej.",
+      "noAllocationBlocked": "Ta jednostka nie ma aktywnego przydziału, więc nie można wypłacić z kasy podręcznej. Wybierz Wynagrodzenie pracownika lub zapytaj dział finansów.",
+      "preApprovalLeft": "Pozostało w",
+      "routeLater": "Akceptujący pojawi się tu po wpisaniu kwoty i jednostki.",
+      "salary": "Wypłacane z pensją: żadne saldo kasy podręcznej się nie zmienia.",
+      "short": "Więcej, niż jest dostępne w przydziale. Dział finansów musi go najpierw uzupełnić.",
+      "shortBlocked": "Więcej, niż jest dostępne w przydziale, a saldo nie może spaść poniżej zera. Zmniejsz kwotę, wybierz Wynagrodzenie pracownika lub poproś o uzupełnienie.",
+      "title": "Podsumowanie rozliczenia"
+    },
+    "tile": {
+      "claims": "Rozliczenia",
+      "paid": "Wypłacono w tym miesiącu",
+      "paidNote": "Wypłacone rozliczenia: {{count}}",
+      "pending": "W akceptacji",
+      "summary": "Podsumowanie zwrotów",
+      "toPay": "Zaakceptowane, czeka na płatność"
+    },
+    "title": "Zwroty wydatków",
+    "toast": {
+      "deleted": "Usunięto {{reference}}.",
+      "saved": "{{reference}} zapisano jako szkic.",
+      "submitted": "{{reference}} wysłano do zatwierdzenia."
+    },
+    "vat": {
+      "exclusive": "Bez VAT (netto)",
+      "inclusive": "Z VAT",
+      "none": "Brak VAT"
+    },
+    "vatOnReceipt": "VAT na paragonie według odczytu AI: OMR {{vat}}",
+    "vatShort": "VAT {{rate}}%",
+    "vatTreatmentNote": {
+      "exclusive": "Wprowadzono {{amount}} przed VAT {{rate}}%.",
+      "inclusive": "Wprowadzono {{amount}} z VAT {{rate}}%.",
+      "none": "Wprowadzono {{amount}}. Rachunek nie zawiera VAT."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Potwierdź",
+      "allClaims": "Wszystkie moje zwroty",
+      "claimsCount": "Zwroty: {{count}}",
+      "column": {
+        "amount": "Kwota",
+        "date": "Data",
+        "documents": "Dokumenty",
+        "employee": "Pracownik",
+        "lastClaim": "Ostatni zwrot",
+        "open": "Otwarte zgłoszenia",
+        "purpose": "Cel",
+        "reference": "Referencja",
+        "status": "Status",
+        "thisMonth": "Ten miesiąc"
+      },
+      "custodianTitle": "Moja kasa podręczna: {{unit}}",
+      "decisionsTitle": "Czeka na moją decyzję ({{count}})",
+      "enteredFor": "Wprowadzono dla: {{name}}",
+      "greeting": "Witaj ponownie, {{name}}. Twoje wnioski, decyzje, które na Ciebie czekają, i gotówka, którą przechowujesz.",
+      "hasReceipt": "Paragon dołączony",
+      "lowHint": "Środki się kończą: poproś o doładowanie, zanim się wyczerpią.",
+      "managerText": "Złóż wydatek wstępny lub zwrot dla osoby z Twojego zespołu, w jednostkach, w których możesz działać.",
+      "managerTitle": "Samoobsługa kierownika",
+      "movements": "Ostatnie operacje",
+      "newPreExpense": "Wniosek o wydatek wstępny",
+      "newReimbursement": "Zwrot wydatków",
+      "noMovements": "Brak operacji.",
+      "noRequests": "Brak wniosków. Rozpocznij pierwszy powyżej.",
+      "openInbox": "Skrzynka zatwierdzeń",
+      "overdue": "Po terminie: {{count}}",
+      "paidOn": "{{amount}} wypłacono {{date}}",
+      "preExpenseBehalf": "Wydatek wstępny w czyimś imieniu",
+      "recentTitle": "Moje ostatnie wnioski",
+      "reimbursementBehalf": "Zwrot w czyimś imieniu",
+      "requestTopUp": "Poproś o doładowanie",
+      "shortcut": {
+        "preExpense": "Zgoda przed wydatkiem",
+        "preExpenseText": "Zapytaj przed wydatkiem. Zatwierdzona kwota jest rezerwowana w przydziale Twojej jednostki.",
+        "reimbursement": "Zwrot wydatków",
+        "reimbursementText": "Rozlicz już opłacony wydatek z dołączonym lub zeskanowanym paragonem.",
+        "scan": "Skanuj paragon",
+        "scanText": "Pozwól AI odczytać z paragonu sprzedawcę, datę, VAT, kwotę i kategorię."
+      },
+      "shortcuts": "Rozpocznij wniosek",
+      "subtitle": "Twoje wnioski, decyzje, które na Ciebie czekają, i gotówka, którą przechowujesz.",
+      "teamTitle": "Mój zespół ({{count}})",
+      "tile": {
+        "approved": "Moje zatwierdzone / dostępne",
+        "approvedNote": "Zatwierdzone wydatki wstępne do rozliczenia: {{count}}",
+        "awaiting": "Oczekuje na zatwierdzenie",
+        "nothingReturned": "Nic do poprawienia",
+        "paid": "Wypłacono w tym miesiącu",
+        "paidNote": "Wypłacone rozliczenia: {{count}}",
+        "returned": "Zwrócone do mnie",
+        "returnedNote": "Wymaga działania"
+      },
+      "title": "Mój pulpit",
+      "toAcknowledge": "Wypłacona Ci gotówka czeka na Twoje potwierdzenie ({{count}})",
+      "topUpPending": "Doładowanie w drodze:",
+      "voucher": "Dowód {{voucher}}",
+      "waitingFor": "U: {{names}}",
+      "monthTitle": "Moje rozliczenia według miesięcy",
+      "monthSubtitle": "Według daty wydatku, od {{from}} do {{to}}",
+      "categoryTitle": "Moje wydatki według kategorii",
+      "categorySubtitle": "Moje rozliczenia z datą w tym roku, {{period}}",
+      "claimedThisYear": "Zgłoszone w tym roku",
+      "noClaims": "Brak rozliczeń."
+    },
+    "chart": {
+      "amount": "Kwota",
+      "businessUnit": "Jednostka biznesowa",
+      "category": "Kategoria",
+      "categoryTitle": "Wydatki według kategorii",
+      "claims": "Rozliczenia",
+      "funded": "Zasilono",
+      "month": "Miesiąc",
+      "noMovement": "W tym okresie gotówka się nie przemieszczała.",
+      "noPaid": "W tym okresie nie wypłacono żadnych zwrotów.",
+      "otherCategories": "Inne kategorie ({{count}})",
+      "paidInPeriod": "Wypłacono w okresie",
+      "pettyCash": "Kasa podręczna",
+      "salary": "Z wynagrodzeniem",
+      "share": "Udział",
+      "spent": "Wydano",
+      "total": "Razem",
+      "trendSubtitle": "Wypłacone zwroty, od {{from}} do {{to}}",
+      "trendTitle": "Wydatki według miesięcy",
+      "unitSubtitle": "Gotówka potwierdzona w przydziałach każdej jednostki i z nich wypłacona, {{period}}",
+      "unitTitle": "Zasilono i wydano według jednostek biznesowych"
+    },
+    "finance": {
+      "attentionTitle": "Wymaga uwagi ({{count}})",
+      "noAttention": "Nic nie wymaga uwagi.",
+      "noPositions": "Brak potwierdzonych przydziałów dla tej jednostki.",
+      "positionTitle": "Stan przydziałów",
+      "positionTotal": "Przydziały: {{count}}",
+      "showAll": "Pokaż wszystko ({{count}})",
+      "showFewer": "Pokaż mniej",
+      "subtitle": "Kasa podręczna we wszystkich jednostkach biznesowych, działach i projektach: co jest, co wymaga działania i dokąd poszły pieniądze.",
+      "thresholdsLink": "Progi",
+      "title": "Panel finansowy"
+    },
+    "column": {
+      "allocation": "Przydział",
+      "available": "Dostępny",
+      "band": "Poziom",
+      "financeUser": "Wypłacił(a)",
+      "float": "Pogotowie kasowe",
+      "inUse": "Wykorzystane + zarezerwowane",
+      "level": "Poziom",
+      "position": "Stan",
+      "reserved": "Zarezerwowany",
+      "used": "Wykorzystano",
+      "utilization": "Wykorzystanie"
+    },
+    "attention": {
+      "exceeded": "Przekroczono: wykorzystano i zarezerwowano o {{amount}} więcej niż zasilono",
+      "near": "Blisko progu: zostało {{percent}}% pogotowia kasowego",
+      "notAcknowledged": "Wypłacono {{span}} temu, jeszcze niepotwierdzone",
+      "notAcknowledgedToday": "Wypłacono dziś, jeszcze niepotwierdzone",
+      "overdueWith": "czeka na: {{names}}",
+      "paidTo": "wypłacono: {{name}}, {{amount}}",
+      "preparedBy": "Przygotował(a): {{name}}",
+      "review": "czeka na weryfikującego · {{reference}}",
+      "toPay": "Zatwierdzone zwroty do wypłaty: {{count}}",
+      "toPayNote": "{{amount}} · najstarszy zatwierdzony {{span}} temu",
+      "toPayNoteToday": "{{amount}} · zatwierdzone dziś",
+      "watch": "Do obserwacji: zostało {{percent}}% pogotowia kasowego"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Przekroczono",
+      "near": "Blisko progu",
+      "normal": "Normalny",
+      "pending": "Jeszcze niezasilony",
+      "watch": "Do obserwacji"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Saldo",
+      "bar": "Słupki",
+      "followsFilters": "Zgodnie z okresem i filtrami powyżej.",
+      "line": "Trend",
+      "lineHint": "W okresie, dla pięciu największych wierszy.",
+      "metric": "Miara",
+      "name": "Nazwa",
+      "others": "Inne",
+      "period": "Okres",
+      "pie": "Udział",
+      "type": "Typ wykresu"
+    },
+    "column": {
+      "allocated": "Przydzielony",
+      "approved": "Zatwierdzony",
+      "available": "Dostępny",
+      "businessUnit": "Jednostka biznesowa",
+      "category": "Kategoria",
+      "charged": "Obciąża",
+      "claimed": "Rozliczono",
+      "claims": "Rozliczenia",
+      "date": "Data",
+      "department": "Dział",
+      "departments": "Działy",
+      "employee": "Pracownik",
+      "employeeId": "Nr pracownika",
+      "employees": "Pracownicy",
+      "head": {
+        "businessUnit": "Szef jednostki biznesowej",
+        "department": "Kierownik działu",
+        "project": "Kierownik projektu"
+      },
+      "lastClaim": "Ostatni zwrot",
+      "lastExpense": "Ostatni wydatek",
+      "net": "Netto",
+      "paid": "Zapłacone",
+      "paidOn": "Zapłacono",
+      "pending": "Jeszcze niezapłacone",
+      "project": "Projekt",
+      "projectCode": "Kod projektu",
+      "recipient": "Pracownik / Odbiorca",
+      "reference": "Referencja",
+      "referenceDate": "Numer / Data",
+      "reimbursed": "Zwrócone",
+      "share": "% wydatków",
+      "status": "Status",
+      "statusPaid": "Status / Zapłacono",
+      "topVendor": "Główny sklep",
+      "total": "Razem",
+      "transactions": "Transakcje",
+      "vat": "VAT",
+      "vatin": "Nr VAT",
+      "vendor": "Dostawca / Sklep",
+      "vendorCategory": "Sprzedawca / kategoria",
+      "voucher": "Nr dowodu"
+    },
+    "countedNote": "Rozliczenia liczą się od złożenia, według daty wydatku: w zatwierdzaniu, zatwierdzone i czekające na zapłatę albo zapłacone. Wersje robocze oraz odrzucone i anulowane rozliczenia są pomijane.",
+    "empty": "Brak danych do raportu w tym okresie.",
+    "filter": {
+      "allCategories": "Wszystkie kategorie",
+      "allEmployees": "Wszyscy pracownicy",
+      "allStatuses": "Wszystkie statusy",
+      "allVendors": "Wszystkie sklepy",
+      "search": "Szukaj",
+      "status": "Status",
+      "unit": "Jednostka"
+    },
+    "metric": {
+      "amount": "Kwota",
+      "available": "Dostępne saldo",
+      "count": "Liczba rozliczeń",
+      "paid": "Zapłacone",
+      "pending": "Jeszcze niezapłacone"
+    },
+    "noMatch": "Nic nie pasuje do tych filtrów.",
+    "notListed": "Brak w kartotece dostawców",
+    "openClaims": "Otwórz te rozliczenia",
+    "openingOn": "saldo początkowe na koniec {{date}}:",
+    "periodClaims": "{{from}} – {{to}}, według daty wydatku",
+    "periodLedger": "{{from}} – {{to}}, według daty księgowania",
+    "purpose": {
+      "businessUnit": "Koszty jednostek biznesowych, wraz z ich działami i projektami, obok ich kasy podręcznej.",
+      "category": "Wydatki według kategorii, ze sklepem o największych wydatkach i udziałem każdej kategorii.",
+      "department": "Koszty działów: rozliczenia obciążające każdy dział, obok jego kasy podręcznej.",
+      "employee": "Rozliczenia według pracownika: zgłoszone, zatwierdzone, zapłacone i jeszcze niezapłacone.",
+      "ledger": "Zasilenia, wydatki i korekty w okresie, z bieżącym saldem każdego przydziału.",
+      "project": "Koszty projektów: rozliczenia obciążające każdy projekt, obok jego kasy podręcznej.",
+      "transactions": "Każde rozliczenie w okresie, ze sklepem, obciążeniem i aktualnym stanem.",
+      "vendor": "Na co idą pieniądze: rozliczenia według sklepu, z kartoteki dostawców lub wpisanego w rozliczeniu."
+    },
+    "refusal": {
+      "period": "Wybierz okres od jednego dnia do tego samego lub późniejszego dnia."
+    },
+    "search": {
+      "ledger": "Szukaj zapisu, numeru, dowodu, osoby lub opisu",
+      "summary": "Szukaj nazw w tym raporcie",
+      "transactions": "Szukaj numeru, osoby, sklepu lub opisu"
+    },
+    "status": {
+      "approved": "Zatwierdzone, niezapłacone",
+      "inApproval": "W zatwierdzaniu",
+      "paid": "Zapłacone"
+    },
+    "summary": "Podsumowanie raportu",
+    "tile": {
+      "claimed": "Łącznie zgłoszone",
+      "claimedNote": "W zatwierdzaniu, zatwierdzone i zapłacone",
+      "claims": "Rozliczenia",
+      "claimsNote": "Osoby: {{count}}",
+      "paid": "Zapłacone",
+      "paidNote": "{{percent}}% całości",
+      "pending": "Jeszcze niezapłacone",
+      "pendingNote": "W zatwierdzaniu lub czekają na zapłatę"
+    },
+    "totalRow": "Razem",
+    "view": {
+      "chart": "Wykres",
+      "table": "Tabela"
+    },
+    "viewAs": "Pokaż jako"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Przelew bankowy",
+      "cash": "Gotówka",
+      "cheque": "Czek",
+      "salary": "Wynagrodzenie"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Pominięto: ta sama osoba zatwierdza już wcześniejszy krok",
+        "belowAmount": "Pominięto: kwota nie przekracza progu",
+        "incomplete": "Wybierz źródło zatwierdzającego",
+        "noApprover": "Nie znaleziono aktywnego zatwierdzającego",
+        "noProject": "Pominięto: wniosek nie ma projektu",
+        "selfApproval": "Pominięto: wnioskodawca zatwierdziłby własny wniosek"
+      }
+    }
+  }
+}

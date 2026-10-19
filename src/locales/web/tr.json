@@ -1,0 +1,922 @@
+{
+  "action": {
+    "add": "Ekle",
+    "addEntity": "{{entity}} ekle",
+    "back": "Geri",
+    "cancel": "İptal",
+    "clearAll": "Tümünü temizle",
+    "close": "Kapat",
+    "create": "Oluştur",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "export": "Dışa aktar",
+    "retry": "Tekrar dene",
+    "save": "Kaydet",
+    "saveChanges": "Değişiklikleri kaydet",
+    "search": "Ara",
+    "view": "Görüntüle",
+    "viewAll": "Tümünü gör"
+  },
+  "status": {
+    "active": "Aktif",
+    "all": "Tümü",
+    "inactive": "Pasif",
+    "no": "Hayır",
+    "yes": "Evet"
+  },
+  "txn": {
+    "action": {
+      "cancel": "Talebi iptal et",
+      "saveDraft": "Taslağı kaydet",
+      "submit": "Onaya gönder",
+      "submitForApproval": "Onaya gönder"
+    },
+    "filter": {
+      "allStatuses": "Tüm durumlar",
+      "from": "Başlangıç",
+      "to": "Bitiş"
+    },
+    "history": {
+      "acknowledged": "teslim aldığını onayladı",
+      "approved": "onayladı",
+      "cancelled": "iptal etti",
+      "created": "talebi oluşturdu",
+      "disbursed": "tutarı ödedi",
+      "edited": "değişiklik yaptı",
+      "empty": "(boş)",
+      "paid": "ödedi",
+      "rejected": "reddetti",
+      "resubmitted": "yeniden onaya gönderdi",
+      "returned": "düzeltme için iade etti",
+      "submitted": "onaya gönderdi",
+      "title": "Geçmiş",
+      "reallocated": "devretti",
+      "takenOver": "devraldı"
+    },
+    "notFound": "Bu kayıt yok ya da görebileceğiniz kapsamın dışında.",
+    "path": {
+      "decidedBy": {
+        "approved": "{{name}} tarafından {{time}} tarihinde onaylandı",
+        "rejected": "{{name}} tarafından {{time}} tarihinde reddedildi",
+        "returned": "{{name}} tarafından {{time}} tarihinde iade edildi"
+      },
+      "notSent": "Henüz onaya gönderilmedi.",
+      "overdue": "Vadesi geçmiş",
+      "state": {
+        "approved": "Onaylandı",
+        "pending": "Bekliyor",
+        "rejected": "Reddedildi",
+        "returned": "İade edildi",
+        "skipped": "Atlandı",
+        "waiting": "Henüz ulaşılmadı"
+      },
+      "title": "Onay yolu",
+      "waitingSince": "{{time}} tarihinden beri bekliyor · {{hours}} sa süre",
+      "willGoTo": "Gideceği kişi"
+    },
+    "reason": "Neden",
+    "reasonRequired": "Bir neden girin. Talebin geçmişinde saklanır.",
+    "refusal": {
+      "alreadyPosted": "Bu zaten defterde kayıtlı, bu yüzden hiçbir şey değişmedi.",
+      "amount": "Sıfırdan büyük, en fazla üç ondalıklı bir tutar girin.",
+      "amountTooLarge": "Tutar {{max}} OMR'yi aşamaz.",
+      "noApprover": "İş akışının bir adımında bu talebin gönderileceği kimse yok. Bir yöneticiden iş akışı ayarlarını kontrol etmesini isteyin.",
+      "noWorkflow": "Bu talebi kapsayan etkin bir iş akışı yok. Bir yöneticiden iş akışı ayarlarını kontrol etmesini isteyin.",
+      "nobodyLeft": "Bu talebi onaylayabilecek herkes talebin tarafı, bu yüzden onaylayacak kimse kalmadı. Talebin kimin için olduğunu değiştirin ya da bir yöneticiden iş akışı ayarlarını kontrol etmesini isteyin.",
+      "notAllowed": "Rolünüz buna izin vermiyor.",
+      "notEditable": "Yalnızca taslak ya da iade edilen talep değiştirilebilir.",
+      "notFound": "Bu kayıt yok ya da görebileceğiniz kapsamın dışında.",
+      "notNow": "Talebin mevcut durumunda bu yapılamaz.",
+      "onlyDrafts": "Yalnızca taslak silinebilir. Bunun yerine iptal edin.",
+      "reasonRequired": "Bir neden girin.",
+      "savedMeanwhile": "Bu arada başka biri bunu kaydetti, bu yüzden hiçbir şey değişmedi. Yeniden yükleyip tekrar deneyin.",
+      "signedOut": "Oturumunuz sona erdi. Yeniden giriş yapın.",
+      "underApproval": "Bir onaylayıcıyı bekliyor. Kararı bekleyin ya da iade edilmesini isteyin."
+    },
+    "returnedBecause": "Düzeltme için iade edildi:",
+    "status": {
+      "acknowledged": "Onaylandı",
+      "active": "Aktif",
+      "approved": "Onaylandı",
+      "cancelled": "İptal Edildi",
+      "closed": "Kapalı",
+      "disbursed": "Teslim onayı bekliyor",
+      "draft": "Taslak",
+      "inApproval": "Onayda",
+      "paid": "Ödendi",
+      "rejected": "Reddedildi",
+      "returned": "İade edildi",
+      "submitted": "Gönderildi"
+    }
+  },
+  "auth": {
+    "brandTagline": "Küçük Kasa Yönetimi",
+    "company": "Şirket",
+    "demoBadge": "Demo",
+    "demoNotice": "Demo modu: giriş simüle edilir ve API gelene kadar her ekran örnek veri gösterir.",
+    "feature": {
+      "allocations": "Departman ve proje tahsisleri",
+      "permissions": "Rol ve yetki matrisi",
+      "selfService": "Çalışan ve yönetici self servisi",
+      "thresholds": "Eşik izleme",
+      "twoFactor": "İki adımlı giriş",
+      "workflows": "Harcama öncesi ve sonrası onaylar"
+    },
+    "password": "Parola",
+    "passwordDemoHint": "Demoda kontrol edilmez. Canlı sistemde oturum açma işlemi şifrenizi ve iki adımlı doğrulama kodunuzu doğrular.",
+    "persona": {
+      "auditor": "Denetçi (Salt Okunur)",
+      "employee": "Çalışan Self Servisi",
+      "finance": "Finans Müdürü / Yönetici",
+      "manager": "Departman / Proje Yöneticisi"
+    },
+    "personaLabel": "Demo personası",
+    "pitch": "Küçük kasa tahsis edin, planlanan harcamaları onaylayın, gerçekleşenleri iade edin, onayları kuruluşunuz içinde yönlendirin, fişleri yapay zekâyla okuyun ve her işlemin mutabakatını yapın.",
+    "rememberMe": "Oturumum açık kalsın",
+    "signIn": "Giriş yap",
+    "signInButton": "Giriş yap",
+    "signInHint": "O rolün kullandığı ekranları görmek için bir demo personası seçin.",
+    "twoFactor": {
+      "back": "Geri",
+      "demoHint": "Demo: herhangi altı rakam kabul edilir.",
+      "digit": "6 haneden {{n}}. hane",
+      "incomplete": "Altı hanenin tamamını girin.",
+      "panelText": "Bir kimlik doğrulama uygulamasından gelen kod, gerçekten siz olduğunuzu doğrular. Politika bunu herkes için, role göre veya seçili kullanıcılar için zorunlu kılabilir.",
+      "panelTitle": "İki adımlı doğrulama",
+      "subtitle": "Kimlik doğrulama uygulamanızdaki 6 haneli kodu girin.",
+      "title": "Doğrulama kodunu girin",
+      "trustDevice": "Bu cihaza 30 gün güven",
+      "verify": "Doğrula ve devam et",
+      "wrongCode": "Bu kod doğru değil. Yeniden deneyin.",
+      "expired": "Bu girişin süresi doldu. Geri dönüp yeniden giriş yapın.",
+      "useRecovery": "Bunun yerine kurtarma kodu kullan",
+      "useApp": "Bunun yerine kimlik doğrulama uygulamasını kullan",
+      "recoveryTitle": "Kurtarma kodu girin",
+      "recoveryHint": "Kaydettiğiniz kurtarma kodlarından birini yazın. Her kod yalnızca bir kez çalışır.",
+      "trustDeviceDays": "Bu cihaza {{n}} gün güven",
+      "enrollTitle": "İki adımlı girişi kur",
+      "enrollSubtitle": "Hesabınızın bir kimlik doğrulama uygulaması kullanması gerekiyor. Girişi tamamlamak için şimdi kurun."
+    },
+    "twoFactorNote": "İki adımlı giriş kapalı, isteğe bağlı veya role göre zorunlu olabilir.",
+    "username": "E-posta veya kullanıcı adı",
+    "signInHintApi": "CashFlow hesabınızla giriş yapın.",
+    "error": {
+      "invalid": "Kullanıcı adı veya parola geçersiz.",
+      "tooMany": "Çok fazla deneme. Bir dakika bekleyip yeniden deneyin.",
+      "noApi": "Sunucuya ulaşılamıyor. Birazdan yeniden deneyin."
+    }
+  },
+  "scan": {
+    "aiConfidence": "%{{confidence}} güven",
+    "aiOff": "Yapay zekâ ile çıkarma, Yapay Zekâ ve Belge İşleme'de kapalı. Fiş yine kontrol edilip eklenir; bilgileri kendiniz yazın.",
+    "checkThis": "Kontrol et",
+    "col": {
+      "claim": "Talepte",
+      "field": "Alan",
+      "read": "Yapay zekâ okuması"
+    },
+    "corrected": "Düzeltildi",
+    "createClaim": "Masraf iadesi oluştur",
+    "extractionTitle": "Yapay zekâ ile ayıklama",
+    "fact": {
+      "file": "Dosya",
+      "hash": "SHA-256",
+      "size": "Boyut",
+      "type": "Tür",
+      "typeChecked": "{{type}}, içeriğinden kontrol edildi"
+    },
+    "field": {
+      "category": "Önerilen kategori",
+      "expenseDate": "Tarih",
+      "grossAmount": "Toplam",
+      "merchant": "İşletme",
+      "receiptNo": "Fiş no",
+      "vatAmount": "KDV"
+    },
+    "keptApart": "Yapay zekânın okuduğu, girdiğiniz değerin yanında olduğu gibi saklanır; böylece düzeltme görünür kalır. %{{min}} altındaki okumalar vurgulanır.",
+    "lowHint": "Yapay zekâ yalnızca %{{confidence}} emin. Bunu fişle karşılaştırın.",
+    "minConfidence": "%{{min}} altındaki değerler vurgulanır",
+    "noPreview": "Bu tarayıcı HEIC görselleri gösteremiyor. Dosya kontrol edildi ve eklendi.",
+    "noReceipt": "Elinizde fiş yok mu?",
+    "readBy": "Okuyan: {{provider}}",
+    "receiptTitle": "Fiş",
+    "sampleNote": "Örnek okuma: Demoda dosya asla tarayıcıdan çıkmadığı için her fiş bu örnek olarak okunur.",
+    "stage": {
+      "extracted": "Çıkarıldı",
+      "extractedHint": "Yapay zekânın okuduğu alanlar",
+      "normalizing": "Normalleştirme",
+      "normalizingHint": "Düzeltildi, kırpıldı, sıkıştırıldı",
+      "pdfReady": "PDF hazır",
+      "pdfReadyHint": "Standart PDF, asıl dosya saklandı",
+      "skipped": "Yapay zekâ kapalı",
+      "uploaded": "Yüklendi",
+      "uploadedHint": "Tür, boyut ve özet değeri kontrol edildi",
+      "verified": "Doğrulandı",
+      "verifiedHint": "Sizin kontrolünüzde"
+    },
+    "stagesTitle": "Belge aşamaları",
+    "startAgain": "Başka birini tara",
+    "subtitle": "Telefonla çekin veya fatura yükleyin, ardından talep oluşturmadan önce çıkarılan alanları gözden geçirin.",
+    "tip": {
+      "light": "İyi ışık, toplamın üzerinde gölge olmasın.",
+      "private": "Demoda dosya bu tarayıcıda kalır.",
+      "whole": "Fişin tamamı kenarlarıyla birlikte kadrajda."
+    },
+    "title": "Fiş Tarama ve Yapay Zekâ ile Çıkarma",
+    "typeIt": "Fişteki bilgileri yazın.",
+    "uploadHint": "Kamerayı açın veya fiş yükleyin",
+    "useSample": "Örnek fişi deneyin",
+    "waitingForReceipt": "Okumak için bir fiş ekleyin.",
+    "working": {
+      "normalizing": "Görüntü düzeltiliyor ve temizleniyor…",
+      "pdfReady": "Standart PDF oluşturuluyor…",
+      "uploaded": "Dosya kontrol ediliyor…"
+    },
+    "aiPhotoOnly": "Yapay zeka okuması yalnızca JPG ve PNG fotoğrafları için geçerlidir.",
+    "aiUnclear": "Makbuz ayrıntıları net olarak okunamadı. Lütfen bunları yazın.",
+    "aiUnreachable": "Yapay zeka modeline ulaşılamıyor. Makbuz ayrıntılarını elle girin.",
+    "aiQuota": "Yapay zeka istek sınırına ulaşıldı. Lütfen biraz bekleyin veya fiş ayrıntılarını elle girin.",
+    "aiBusy": "Google yapay zekası şu anda meşgul. Lütfen birazdan tekrar deneyin veya ayrıntıları el ile girin."
+  },
+  "approval": {
+    "action": {
+      "review": "İncele"
+    },
+    "attachmentTitle": "Destekleyici belge",
+    "availableNow": "Şu an {{amount}} kullanılabilir",
+    "backToInbox": "Onay Kutusu'na dön",
+    "changes": {
+      "after": "{{name}} tarafından {{time}} tarihinde iade edildikten sonra düzeltildi:",
+      "title": "İade edildikten sonra değişti"
+    },
+    "column": {
+      "amount": "Tutar",
+      "person": "Kişi",
+      "reference": "Referans",
+      "step": "Durum / Mevcut Adım",
+      "submitted": "Gönderildi",
+      "type": "Tür / Birim"
+    },
+    "days": "{{count}} g",
+    "decision": {
+      "approve": "Onayla",
+      "comment": "Yorum (iade veya ret için gerekli)",
+      "noMoney": "Onaylamak para hareket ettirmez. Yalnızca Finansal Ödeme öder.",
+      "placeholder": "Talep sahibi neyi bilmeli veya düzeltmeli?",
+      "reasonNeeded": "İade veya ret için bir neden yazın. Talep sahibi bunu görecek.",
+      "reject": "Reddet",
+      "return": "Düzeltme İçin İade Et",
+      "title": "Kararınız"
+    },
+    "detailsTitle": {
+      "additionalCash": "Ek Nakit Talebi",
+      "allocation": "Tahsis",
+      "preExpense": "Ön Harcama Talebi",
+      "reimbursement": "Masraf talebi",
+      "reallocation": "Devir Talebi"
+    },
+    "dueIn": "{{span}} içinde",
+    "empty": {
+      "decided": "Henüz hiçbir talep için karar vermediniz.",
+      "scope": "Kapsamınızda onaya gönderilmiş talep yok.",
+      "waiting": "Kararınızı bekleyen bir şey yok."
+    },
+    "ended": {
+      "approved": "{{name}} tarafından {{time}} tarihinde onaylandı.",
+      "cancelled": "{{name}} tarafından {{time}} tarihinde geri çekildi.",
+      "rejected": "{{name}} tarafından {{time}} tarihinde reddedildi.",
+      "returned": "{{name}} tarafından {{time}} tarihinde düzeltmeye gönderildi."
+    },
+    "entity": "talep",
+    "filter": {
+      "allTypes": "Tüm talep türleri",
+      "allUnits": "Tüm birimler"
+    },
+    "flag": {
+      "changed": "İade edildikten sonra değişti",
+      "duplicate": "Olası mükerrer fatura",
+      "onBehalf": "Bu kişi adına başka biri tarafından girildi",
+      "overAvailable": "Tahsisinin kullanılabilir tutarından fazla",
+      "lowConfidence": "Yapay zeka makbuz okumasının güven oranı düşük"
+    },
+    "hours": "{{count}} sa",
+    "kind": {
+      "additionalCash": "Ek Nakit",
+      "allocation": "Tahsis",
+      "preExpense": "Ön Harcama",
+      "reimbursement": "Masraf İadesi",
+      "reallocation": "Devir"
+    },
+    "next": "İleri",
+    "openFile": "Aç",
+    "openRecord": "Kaydın tamamını aç",
+    "othersTurn": "{{n}}. adımda {{names}} bekleniyor. Buradan izleyebilirsiniz; yalnızca onlar karar verebilir.",
+    "outcome": {
+      "cash": "Son adım sizin. Onaylamak, nakit verilmek üzere Finans'a iletir; kasa sorumlusu teslim aldığını onayladığında hesaba girer.",
+      "claim": "Son adım sizin. Onaylamak, Finans ödeyene kadar tutarı tahsiste ayırır.",
+      "next": "Onaylamak talebi sonraki adıma ({{step}}) gönderir: {{names}}.",
+      "preExpense": "Son adım sizin. Onaylamak çalışanın harcamasına izin verir ve tutarı talep edilene kadar ayırır.",
+      "salary": "Son adım sizin. Onaylamak, bir sonraki maaşla ödenmek üzere Finans'a iletir.",
+      "reallocation": "Sizin adımınız son adım. Onay, nakdi yeni zimmet sahibine geçirir; o da teslim aldığını onaylar ya da devralır. Finans hiçbir ödeme yapmaz."
+    },
+    "overAvailable": "Bu, {{reference}} içindeki kullanılabilir tutardan ({{available}}) fazla. Finans'ın ödemeden önce ek ödenek vermesi gerekecek.",
+    "overAvailableBlocked": "Bu, {{reference}} içindeki kullanılabilir tutardan ({{available}}) fazla ve bakiye sıfırın altına inemez. Son onay için önce ek ödenek gerekir.",
+    "overdueBy": "{{span}} gecikti",
+    "position": "{{n}} / {{total}}",
+    "previous": "Önceki",
+    "refusal": {
+      "changed": "Bu talep, açtığınızdan beri değişti. Karar vermeden önce yeniden yükleyip değişiklikleri kontrol edin.",
+      "decided": "Bu talep için zaten karar verildi.",
+      "notEnoughCash": "{{reference}} içinde yalnızca OMR {{available}} var ve bakiye sıfırın altına inemez. Talebi iade edin veya önce Finans'tan ek ödenek isteyin.",
+      "notYourStep": "Bu adım sizi beklemiyor.",
+      "ownRequest": "Tarafı olduğunuz bir talep için karar veremezsiniz."
+    },
+    "refusalHint": "{{reference}} içinde yalnızca {{available}} var ve bakiye sıfırın altına inemez. İade edin veya önce Finans'tan ek ödenek isteyin.",
+    "search": "Referans, kişi veya amaç ara",
+    "sentAt": "gönderildi {{time}}",
+    "subtitle": "Kararınızı bekleyen talepler, kapsamınızdaki her şey ve karar verdikleriniz.",
+    "tile": {
+      "decided": "Karar Verdikleriniz",
+      "decidedNote": "Onaylanan, iade edilen veya reddedilen",
+      "overdue": "Vadesi geçmiş",
+      "overdueNote": "İş akışı ayarlarının izin verdiği süreyi aştı",
+      "scope": "Onayda",
+      "summary": "Onay özeti",
+      "waiting": "Sizi Bekleyen"
+    },
+    "title": "Onay Kutusu",
+    "toast": {
+      "approve": "{{reference}} onaylandı.",
+      "reject": "{{reference}} reddedildi.",
+      "return": "{{reference}} düzeltme için iade edildi."
+    },
+    "view": {
+      "decided": "Karar verdiklerim",
+      "scope": "Kapsamımdaki tümü",
+      "waiting": "Beni bekleyenler"
+    },
+    "views": "Kutu görünümleri",
+    "where": {
+      "approved": "Ödeme için Finans'ta",
+      "disbursed": "Finans tarafından ödendi",
+      "returned": "Düzeltme için talep sahibinde",
+      "spendable": "Artık harcanabilir, sonra talep edilir"
+    },
+    "yourTurn": "{{n}}. adımda kararınızı bekliyor: {{step}}.",
+    "yoursToWatch": "Bu talebin tarafı olduğunuz için karar veremezsiniz. {{n}}. adımda {{names}} bekleniyor.",
+    "openSourceRecord": "Tahsisi aç"
+  },
+  "ack": {
+    "action": "Onayla",
+    "amountReceived": "Tahsil edilen tutar",
+    "bannerHint": "Bakiye ancak nakdin geldiğini onayladığınızda artar.",
+    "bannerNone": "Teslim onayınızı bekleyen bir şey yok.",
+    "bannerWaiting": "Teslim onayınızı bekleyen: {{count}} · {{amount}}.",
+    "column": {
+      "amount": "Tutar",
+      "issued": "Düzenlendi",
+      "payment": "Ödeme yöntemi / Referans",
+      "recipient": "Alıcı",
+      "reference": "Referans",
+      "scope": "Tahsis kapsamı",
+      "status": "Durum"
+    },
+    "confirm": "Tutarın teslim alındığını onayla",
+    "dialogTitle": "Küçük kasa teslim onayı",
+    "entity": "ödeme",
+    "filter": {
+      "allTypes": "Tüm türler"
+    },
+    "kind": {
+      "additionalCash": "Ek ödenek",
+      "allocation": "Tahsis",
+      "topUpOf": "{{reference}} için ek ödenek",
+      "handover": "Teslim",
+      "reallocatedFrom": "{{reference}} tahsisinden devredildi"
+    },
+    "openAllocation": "Tahsisi aç",
+    "refusal": {
+      "already": "Bu zaten onaylanmış. Hiçbir şey değişmedi.",
+      "notRecipient": "Teslimi yalnızca nakdi alan kişi onaylayabilir."
+    },
+    "remarks": "Notlar (isteğe bağlı)",
+    "remarksPlaceholder": "Örneğin: sayıldı ve tamamı alındı.",
+    "search": "Referans, alıcı veya ödeme referansı arayın",
+    "state": {
+      "acknowledged": "Onaylandı",
+      "waiting": "Teslim onayı bekliyor"
+    },
+    "statement": "Onaylayarak yukarıda gösterilen tutarı aldığınızı kabul edersiniz. Ardından tahsisin bakiyesine eklenir ve bu geri alınamaz.",
+    "subtitle": "Finansın ödediği küçük kasa nakdini teslim aldığınızı onaylayın ve ödeme fişlerini yazdırın.",
+    "title": "Tahsis Teslim Onayları",
+    "toast": {
+      "done": "Teslim onaylandı. {{amount}} artık {{reference}} içinde kullanılabilir."
+    },
+    "waitingFor": "{{name}} bekleniyor",
+    "reallocatedBy": "{{name}} devretti",
+    "takeOverTitle": "Tahsisi devral",
+    "takeOverStatement": "Bu tahsisin nakdini ve kayıtlarını teslim aldığımı ve artık bende olduğunu onaylarım.",
+    "takeOver": "Devral"
+  },
+  "claim": {
+    "action": {
+      "withdraw": "Geri çek"
+    },
+    "categoryPlaceholder": "Masraf kategorisi ara…",
+    "check": {
+      "beneficiary": "Bu çalışan için talep giremezsiniz. Yalnızca kapsamınızdaki kişiler seçilebilir.",
+      "beneficiaryFixed": "Talep gönderildikten sonra çalışan değiştirilemez.",
+      "category": "Etkin bir masraf kategorisi seçin.",
+      "chooseCategory": "Masraf kategorisi seçin.",
+      "chooseEmployee": "Çalışanı seçin.",
+      "costUnit": "Bu çalışanın bağlı olduğu bir birim seçin. Pasif birimlere gider yazılamaz.",
+      "merchant": "Satıcıyı veya alacaklıyı girin.",
+      "purpose": "İş amacını birkaç kelimeyle açıklayın.",
+      "vendor": "Bu tedarikçi pasif. Başka birini seçin veya satıcının adını yazın."
+    },
+    "costHint": "Yalnızca bu kişinin bağlı olduğu birimlere gider yazılabilir.",
+    "employeePlaceholder": "Çalışan adı veya sicil no yazın…",
+    "ended": {
+      "cancelled": "{{name}} tarafından {{time}} tarihinde geri çekildi.",
+      "rejected": "{{name}} tarafından {{time}} tarihinde reddedildi.",
+      "returned": "{{name}} tarafından {{time}} tarihinde düzeltmeye gönderildi."
+    },
+    "enteredBy": "Giren: {{name}}",
+    "field": {
+      "attachment": "Destekleyici belge",
+      "category": "Masraf kategorisi",
+      "chargedTo": "Gider yazılan",
+      "costLevel": "Maliyet dağıtım türü",
+      "costUnit": "Gider yazılan",
+      "created": "Oluşturuldu",
+      "employee": "Çalışan",
+      "enteredBy": "Giren",
+      "for": "İçin",
+      "merchant": "Satıcı / Alacaklı",
+      "submitFor": "Kimin için"
+    },
+    "filter": {
+      "allEmployees": "Tüm çalışanlar"
+    },
+    "merchantHint": "Tedarikçi kaydından seçin ya da listede yoksa satıcı veya alacaklı adını yazın.",
+    "merchantPlaceholder": "Tedarikçi arayın veya yeni bir ad yazın…",
+    "noAttachment": "Ek yok",
+    "noMerchant": "Belirtilmedi",
+    "onBehalfHint": "Yalnızca kapsamınızdaki kişiler listelenir. Kaydı giren olarak siz kaydedilirsiniz.",
+    "refusal": {
+      "notRequester": "Bu talebi yalnızca giren kişi veya talebin sahibi değiştirebilir."
+    },
+    "submitFor": {
+      "onBehalf": "Başka bir çalışan adına",
+      "self": "Kendim"
+    },
+    "toast": {
+      "withdrawn": "{{reference}} geri çekildi."
+    },
+    "withdrawText": "Talep düzeltilip yeniden gönderilmek yerine kapatılır. Neden geçmişinde kalır.",
+    "withdrawTitle": "{{reference}} geri çekilsin mi?"
+  },
+  "reimb": {
+    "action": {
+      "continue": "Düzenlemeye devam et",
+      "correct": "Düzelt ve yeniden gönder"
+    },
+    "amount": {
+      "asEntered": "girildiği gibi",
+      "gross": "KDV dahil toplam",
+      "net": "KDV hariç tutar",
+      "noVat": "KDV (bu faturada yok)",
+      "paid": "Ödenen toplam"
+    },
+    "approvedNote": "Onaylandı. Tutar tahsiste ayrıldı; yalnızca Finans kapattığında ödenir ve deftere işlenir.",
+    "approvedSalaryNote": "Onaylandı. Finans bir sonraki maaş ödemesinde öder ve bordro referansını kaydeder.",
+    "backToClaim": "Talebe dön",
+    "backToList": "Masraf iadelerine dön",
+    "basis": {
+      "direct": "Harcama sonrası doğrudan iade",
+      "directHint": "Önceden onay istenmeden harcanmış para.",
+      "directShort": "Doğrudan",
+      "noneOpen": "Bu çalışanın bakiyesi olan onaylı talebi yok.",
+      "preApproved": "Ön onaylı harcamaya bağlı",
+      "preApprovedHint": "Bakiyesi olan onaylı talepler: {{count}}"
+    },
+    "chargeTitle": "Gider yazma ve ödeme",
+    "check": {
+      "basis": "Bir talep dayanağı seçin.",
+      "choosePreApproval": "Bu talebin kullandığı onaylı talebi seçin.",
+      "expenseDate": "Paranın harcandığı tarihi seçin.",
+      "fixFields": "Bazı alanlar ilgi bekliyor. Kırmızıyla işaretlenenleri kontrol edin.",
+      "futureDate": "Harcama tarihi gelecekte olamaz.",
+      "noAllocation": "Bu birimin etkin tahsisi yok, bu yüzden talep küçük kasadan ödenemez. Çalışan maaşını seçin veya Finansa danışın.",
+      "notEnoughCash": "{{reference}} içinde yalnızca OMR {{available}} var ve bakiye sıfırın altına inemez. Tutarı düşürün, Çalışan maaşını seçin veya takviye isteyin.",
+      "overPreApproval": "Talep, ön onayın kalanından (OMR {{remaining}}) fazla. Düşürün ya da farkı doğrudan talep edin.",
+      "preApproval": "Bu ön onay kullanılamaz: bu çalışana ait, onaylı ve bakiyesi olmalı.",
+      "preApprovalUnit": "Ön onaya bağlı talep, ön onayla aynı birime gider yazılır.",
+      "receiptRequired": "Bu talebi göndermeden önce fişi ekleyin. Bu kategori veya ayarlar bunu gerektiriyor.",
+      "settlement": "Talebin nasıl ödeneceğini seçin.",
+      "vat": "KDV'nin tutara nasıl uygulandığını seçin."
+    },
+    "column": {
+      "amount": "Tutar",
+      "basisPayment": "Dayanak / ödeme",
+      "date": "Tarih",
+      "employee": "Çalışan",
+      "expenseDate": "Harcama tarihi",
+      "merchant": "Satıcı / kategori",
+      "reference": "Referans",
+      "status": "Durum"
+    },
+    "costFromPreApproval": "Ön onayın tutarını ayırdığı yere gider yazılır.",
+    "deleteText": "Talep taslağı kaldırılır. Bu işlem geri alınamaz.",
+    "deleteTitle": "{{reference}} silinsin mi?",
+    "descriptionPlaceholder": "Ne satın alındı ve iş gerekçesi.",
+    "detailsTitle": "Talep ayrıntıları",
+    "duplicate": {
+      "detailText": "Gönderildiğinde başka bir talepte aynı satıcı ve aynı fiş numarası ya da aynı tarih ve tutar vardı. Aynı fatura olmadığını kontrol edin:",
+      "formText": "Başka bir talepte aynı satıcı ve aynı fiş numarası ya da aynı tarih ve tutar var. Yine de gönderebilirsiniz; onaylayan bunu görür:",
+      "title": "Olası mükerrer.",
+      "tooltip": "{{references}} ile olası mükerrer"
+    },
+    "editTitle": "{{reference}} düzelt",
+    "entity": "masraf iadeleri",
+    "field": {
+      "amount": "Tutar (OMR)",
+      "amountNet": "KDV öncesi tutar (OMR)",
+      "basis": "Talep dayanağı",
+      "description": "Harcama açıklaması / iş amacı",
+      "expenseDate": "Harcama tarihi",
+      "gross": "KDV dahil toplam",
+      "paidFrom": "Ödeme kaynağı",
+      "preApproval": "Ön onay referansı",
+      "receipt": "Fiş / fatura",
+      "receiptNo": "Fiş / Fatura No.",
+      "settlement": "Ödeme yöntemi",
+      "vatTreatment": "KDV uygulaması"
+    },
+    "filter": {
+      "allBases": "Tüm talep dayanakları",
+      "allSettlements": "Tüm ödeme yöntemleri"
+    },
+    "fromScan": "Fiş taramasından dolduruldu. Yapay zekâ %{{confidence}} güvenle okudu: göndermeden önce her değeri fişle karşılaştırın.",
+    "leftOf": "{{amount}} içinden {{left}} kaldı",
+    "new": "Yeni Masraf İadesi",
+    "newSubtitle": "İade için gerçek bir harcama gönderin.",
+    "newTitle": "Yeni masraf iadesi",
+    "noAllocationNow": "Şu anda bu birimin etkin tahsisi yok",
+    "noReceipt": "Ekli fiş yok.",
+    "notEditable": "Bu talep düzeltme aşamasını geçti: artık değiştirilemez.",
+    "notInLedger": "İşlenmedi: maaşla ödendi",
+    "notScanned": "Yapay zekâ okuması olmadan yüklendi. Değerler elle yazıldı.",
+    "openScan": "Tarayın, yapay zekâ talebi doldursun",
+    "orScan": "Fiş elinizde mi?",
+    "preApprovalHint": "Yalnızca bu çalışanın bakiyesi olan onaylı talepleri listelenir.",
+    "preApprovalPlaceholder": "Onaylı bir talep seçin…",
+    "receiptHint": "Fişi buraya bırakın veya bir dosya seçin",
+    "receiptNeeded": "Bu kategori, talep gönderilmeden önce fiş ister.",
+    "receiptNoPlaceholder": "Fiş veya fatura numarası",
+    "receiptOptional": "Bu kategoride fiş isteğe bağlı.",
+    "receiptReplaced": "{{date}} tarihinde yüklenen {{name}} yerine geçer.",
+    "receiptTitle": "Fiş / fatura",
+    "required": "Zorunlu",
+    "resubmitNote": "Yeniden göndermek {{version}}. sürümü oluşturur. Onaylayan neleri değiştirdiğinizi görür.",
+    "scanReceipt": "Fiş tara",
+    "search": "Referans, çalışan, satıcı veya fiş no ara",
+    "section": {
+      "amount": "Tutar ve KDV",
+      "charge": "Gider yazma ve ödeme",
+      "expense": "Harcama",
+      "receipt": "Fiş / fatura"
+    },
+    "settlement": {
+      "pettyCash": "Küçük Kasa",
+      "pettyCashFrom": "{{reference}} üzerinden · {{available}} kullanılabilir",
+      "pettyCashHint": "Birimin küçük kasa tahsisinden ödenir.",
+      "salary": "Çalışan maaşı",
+      "salaryHint": "Sonraki maaşla ödenir. Küçük kasaya dokunulmaz."
+    },
+    "subtitle": "Harcanmış paralar için talepler; doğrudan veya onaylı bir harcama öncesi talebe bağlı.",
+    "summary": {
+      "allocationLeft": "Kullanılabilir:",
+      "claiming": "Talep ettiğiniz",
+      "heldByPreApproval": "Ön onay tarafından zaten ayrıldı:",
+      "noAllocation": "Bu birimin etkin tahsisi yok. Finans başka bir yolla ödeyebilir.",
+      "noAllocationBlocked": "Bu birimin etkin tahsisi yok, bu yüzden küçük kasadan ödenemez. Çalışan maaşını seçin veya Finansa danışın.",
+      "preApprovalLeft": "Kalan:",
+      "routeLater": "Tutar ve birim girildiğinde onaylayan burada görünür.",
+      "salary": "Maaşla ödenir: hiçbir küçük kasa bakiyesi değişmez.",
+      "short": "Tahsisin kullanılabilir tutarından fazla. Finansın önce takviye yapması gerekir.",
+      "shortBlocked": "Tahsisin kullanılabilir tutarından fazla ve bakiye sıfırın altına inemez. Tutarı düşürün, Çalışan maaşını seçin veya takviye isteyin.",
+      "title": "Talep özeti"
+    },
+    "tile": {
+      "claims": "Talepler",
+      "paid": "Bu ay ödenen",
+      "paidNote": "Ödenen talepler: {{count}}",
+      "pending": "Onayda",
+      "summary": "Masraf iadesi özeti",
+      "toPay": "Onaylandı, ödeme bekliyor"
+    },
+    "title": "Masraf İadeleri",
+    "toast": {
+      "deleted": "{{reference}} silindi.",
+      "saved": "{{reference}} taslak olarak kaydedildi.",
+      "submitted": "{{reference}} onaya gönderildi."
+    },
+    "vat": {
+      "exclusive": "KDV hariç",
+      "inclusive": "KDV dahil",
+      "none": "KDV yok"
+    },
+    "vatOnReceipt": "Yapay zekânın okuduğu fişteki KDV: OMR {{vat}}",
+    "vatShort": "KDV %{{rate}}",
+    "vatTreatmentNote": {
+      "exclusive": "{{amount}} olarak girildi, %{{rate}} KDV öncesi.",
+      "inclusive": "{{amount}} olarak girildi, %{{rate}} KDV dahil.",
+      "none": "{{amount}} olarak girildi. Faturada KDV yok."
+    }
+  },
+  "dash": {
+    "my": {
+      "acknowledge": "Onayla",
+      "allClaims": "Tüm masraf taleplerim",
+      "claimsCount": "Talepler: {{count}}",
+      "column": {
+        "amount": "Tutar",
+        "date": "Tarih",
+        "documents": "Belgeler",
+        "employee": "Çalışan",
+        "lastClaim": "Son Talep",
+        "open": "Açık talepler",
+        "purpose": "Amaç",
+        "reference": "Referans",
+        "status": "Durum",
+        "thisMonth": "Bu Ay"
+      },
+      "custodianTitle": "Küçük Kasam: {{unit}}",
+      "decisionsTitle": "Kararımı Bekleyen ({{count}})",
+      "enteredFor": "{{name}} için girildi",
+      "greeting": "Tekrar hoş geldiniz, {{name}}. Talepleriniz, sizi bekleyen kararlar ve sizdeki nakit.",
+      "hasReceipt": "Fiş eklendi",
+      "lowHint": "Azalıyor: bitmeden ek ödenek isteyin.",
+      "managerText": "Ekibinizden biri için, işlem yapabildiğiniz birimlerde, harcama öncesi veya masraf iadesi talebi oluşturun.",
+      "managerTitle": "Yönetici Self Servis",
+      "movements": "Son hareketler",
+      "newPreExpense": "Ön Harcama Talebi",
+      "newReimbursement": "Masraf İadesi",
+      "noMovements": "Henüz hareket yok.",
+      "noRequests": "Henüz talep yok. Yukarıdan bir tane başlatın.",
+      "openInbox": "Onay Kutusu",
+      "overdue": "Gecikmiş: {{count}}",
+      "paidOn": "{{amount}}, {{date}} tarihinde ödendi",
+      "preExpenseBehalf": "Başkası Adına Harcama Öncesi",
+      "recentTitle": "Son Taleplerim",
+      "reimbursementBehalf": "Başkası Adına Masraf İadesi",
+      "requestTopUp": "Ek Ödenek İste",
+      "shortcut": {
+        "preExpense": "Harcama Öncesi Onay",
+        "preExpenseText": "Harcamadan önce sorun. Onaylanan tutar biriminizin tahsisinden ayrılır.",
+        "reimbursement": "Masraf İadesi",
+        "reimbursementText": "Zaten ödediğiniz bir masrafı, fişi ekleyerek veya tarayarak talep edin.",
+        "scan": "Fiş tara",
+        "scanText": "Yapay zekâ fişten satıcı, tarih, KDV, tutar ve kategoriyi okusun."
+      },
+      "shortcuts": "Talep başlat",
+      "subtitle": "Talepleriniz, sizi bekleyen kararlar ve sizdeki nakit.",
+      "teamTitle": "Ekibim ({{count}})",
+      "tile": {
+        "approved": "Onaylanan / Kullanılabilir",
+        "approvedNote": "Talep edilecek onaylı harcama öncesi: {{count}}",
+        "awaiting": "Onay bekliyor",
+        "nothingReturned": "Düzeltilecek bir şey yok",
+        "paid": "Bu ay ödenen",
+        "paidNote": "Ödenen talepler: {{count}}",
+        "returned": "Bana İade Edilen",
+        "returnedNote": "İşlem gerekli"
+      },
+      "title": "Panom",
+      "toAcknowledge": "Size ödenen nakit onayınızı bekliyor ({{count}})",
+      "topUpPending": "Ek ödenek yolda:",
+      "voucher": "Fiş {{voucher}}",
+      "waitingFor": "{{names}} üzerinde",
+      "monthTitle": "Aylara Göre Taleplerim",
+      "monthSubtitle": "Harcama tarihine göre, {{from}} – {{to}}",
+      "categoryTitle": "Kategoriye Göre Harcamalarım",
+      "categorySubtitle": "Bu yıl tarihli taleplerim, {{period}}",
+      "claimedThisYear": "Bu yıl talep edilen",
+      "noClaims": "Henüz talep yok."
+    },
+    "chart": {
+      "amount": "Tutar",
+      "businessUnit": "İş Birimi",
+      "category": "Kategori",
+      "categoryTitle": "Kategoriye Göre Harcama",
+      "claims": "Talepler",
+      "funded": "Fonlanan",
+      "month": "Ay",
+      "noMovement": "Bu dönemde nakit hareketi olmadı.",
+      "noPaid": "Bu dönemde ödenen talep yok.",
+      "otherCategories": "Diğer kategoriler ({{count}})",
+      "paidInPeriod": "Dönemde ödenen",
+      "pettyCash": "Küçük kasa",
+      "salary": "Maaşla",
+      "share": "Pay",
+      "spent": "Harcanan",
+      "total": "Toplam",
+      "trendSubtitle": "Ödenen talepler, {{from}} – {{to}}",
+      "trendTitle": "Aylara Göre Harcama",
+      "unitSubtitle": "Her birimin tahsislerine onaylanan ve onlardan ödenen nakit, {{period}}",
+      "unitTitle": "İş Birimine Göre Fonlanan ve Harcanan"
+    },
+    "finance": {
+      "attentionTitle": "Dikkat Gerekiyor ({{count}})",
+      "noAttention": "Dikkat gerektiren bir şey yok.",
+      "noPositions": "Bu birim için onaylanmış tahsis yok.",
+      "positionTitle": "Tahsis Durumu",
+      "positionTotal": "Tahsisler: {{count}}",
+      "showAll": "Tümünü göster ({{count}})",
+      "showFewer": "Daha az göster",
+      "subtitle": "Tüm iş birimleri, departmanlar ve projelerde küçük kasa: elde ne var, ne işlem bekliyor ve para nereye gitti.",
+      "thresholdsLink": "Eşikler",
+      "title": "Finans panosu"
+    },
+    "column": {
+      "allocation": "Tahsis",
+      "available": "Uygun",
+      "band": "Seviye",
+      "financeUser": "Ödeyen",
+      "float": "Sabit avans",
+      "inUse": "Kullanılan + rezerve",
+      "level": "Seviye",
+      "position": "Durum",
+      "reserved": "Rezerve",
+      "used": "Kullanılan",
+      "utilization": "Kullanım"
+    },
+    "attention": {
+      "exceeded": "Aşıldı: kullanılan ve rezerve, fonlamadan {{amount}} fazla",
+      "near": "Eşiğe yakın: sabit avansın %{{percent}}'i kaldı",
+      "notAcknowledged": "{{span}} önce ödendi, henüz onaylanmadı",
+      "notAcknowledgedToday": "Bugün ödendi, henüz onaylanmadı",
+      "overdueWith": "{{names}} bekleniyor",
+      "paidTo": "{{name}} kişisine ödendi: {{amount}}",
+      "preparedBy": "Hazırlayan: {{name}}",
+      "review": "inceleyen bekleniyor · {{reference}}",
+      "toPay": "Ödenecek onaylı talepler: {{count}}",
+      "toPayNote": "{{amount}} · en eskisi {{span}} önce onaylandı",
+      "toPayNoteToday": "{{amount}} · bugün onaylandı",
+      "watch": "İzlemede: sabit avansın %{{percent}}'i kaldı"
+    }
+  },
+  "allocation": {
+    "band": {
+      "exceeded": "Aşıldı",
+      "near": "Eşiğe yakın",
+      "normal": "Normal",
+      "pending": "Henüz fonlanmadı",
+      "watch": "İzlemede"
+    }
+  },
+  "report": {
+    "chart": {
+      "balance": "Bakiye",
+      "bar": "Çubuk",
+      "followsFilters": "Yukarıdaki dönem ve filtrelere göre.",
+      "line": "Eğilim",
+      "lineHint": "Dönem boyunca, en büyük beş satır için.",
+      "metric": "Ölçü",
+      "name": "Ad",
+      "others": "Diğer",
+      "period": "Dönem",
+      "pie": "Pay",
+      "type": "Grafik türü"
+    },
+    "column": {
+      "allocated": "Tahsis edilmiş",
+      "approved": "Onaylandı",
+      "available": "Uygun",
+      "businessUnit": "İş Birimi",
+      "category": "Kategori",
+      "charged": "Gider yazılan",
+      "claimed": "Talep edildi",
+      "claims": "Talepler",
+      "date": "Tarih",
+      "department": "Departman",
+      "departments": "Departmanlar",
+      "employee": "Çalışan",
+      "employeeId": "Sicil No",
+      "employees": "Çalışanlar",
+      "head": {
+        "businessUnit": "İş Birimi Yöneticisi",
+        "department": "Departman Yöneticisi",
+        "project": "Proje Yöneticisi"
+      },
+      "lastClaim": "Son Talep",
+      "lastExpense": "Son Harcama",
+      "net": "Net",
+      "paid": "Ödendi",
+      "paidOn": "Ödeme Tarihi",
+      "pending": "Henüz Ödenmedi",
+      "project": "Proje",
+      "projectCode": "Proje Kodu",
+      "recipient": "Çalışan / Alıcı",
+      "reference": "Referans",
+      "referenceDate": "Referans / Tarih",
+      "reimbursed": "Geri Ödenen",
+      "share": "Harcama Payı",
+      "status": "Durum",
+      "statusPaid": "Durum / Ödeme Tarihi",
+      "topVendor": "En Çok Harcanan İşletme",
+      "total": "Toplam",
+      "transactions": "İşlemler",
+      "vat": "KDV",
+      "vatin": "VKN",
+      "vendor": "Tedarikçi / İşletme",
+      "vendorCategory": "Satıcı / kategori",
+      "voucher": "Fiş no."
+    },
+    "countedNote": "Talepler gönderildikten sonra, harcama tarihine göre sayılır: onayda, onaylanmış ve ödeme bekleyen ya da ödenmiş. Taslaklar ile reddedilen ve iptal edilen talepler dahil edilmez.",
+    "empty": "Bu dönem için raporlanacak bir şey yok.",
+    "filter": {
+      "allCategories": "Tüm kategoriler",
+      "allEmployees": "Tüm çalışanlar",
+      "allStatuses": "Tüm durumlar",
+      "allVendors": "Tüm işletmeler",
+      "search": "Ara",
+      "status": "Durum",
+      "unit": "Birim"
+    },
+    "metric": {
+      "amount": "Tutar",
+      "available": "Kullanılabilir Bakiye",
+      "count": "Talep Sayısı",
+      "paid": "Ödendi",
+      "pending": "Henüz Ödenmedi"
+    },
+    "noMatch": "Bu filtrelere uyan bir şey yok.",
+    "notListed": "Tedarikçi kartlarında yok",
+    "openClaims": "Bu talepleri aç",
+    "openingOn": "{{date}} sonundaki açılış bakiyesi:",
+    "periodClaims": "{{from}} – {{to}}, harcama tarihine göre",
+    "periodLedger": "{{from}} – {{to}}, kayıt tarihine göre",
+    "purpose": {
+      "businessUnit": "Departman ve projeleri dahil iş birimi maliyeti, küçük kasasının yanında.",
+      "category": "Harcama kategorisine göre harcama; en çok harcama yapılan işletme ve her kategorinin payıyla.",
+      "department": "Departman maliyeti: her departmana yazılan talepler, departmanın küçük kasasının yanında.",
+      "employee": "Çalışana göre talepler: talep edilen, onaylanan, ödenen ve henüz ödenmeyen.",
+      "ledger": "Dönem boyunca fonlama, harcamalar ve düzeltmeler; her tahsisin yürüyen bakiyesiyle.",
+      "project": "Proje maliyeti: her projeye yazılan talepler, projenin küçük kasasının yanında.",
+      "transactions": "Dönemdeki her talep; işletmesi, nereye yazıldığı ve ne durumda olduğuyla.",
+      "vendor": "Para nereye harcanıyor: işletmeye göre talepler, tedarikçi kartlarında kayıtlı ya da talebe yazılmış."
+    },
+    "refusal": {
+      "period": "Bir günden aynı güne veya daha sonraki bir güne kadar bir dönem seçin."
+    },
+    "search": {
+      "ledger": "Kayıt, referans, fiş, kişi veya açıklama ara",
+      "summary": "Bu raporda ad ara",
+      "transactions": "Referans, kişi, işletme veya açıklama ara"
+    },
+    "status": {
+      "approved": "Onaylandı, Ödenmedi",
+      "inApproval": "Onayda",
+      "paid": "Ödendi"
+    },
+    "summary": "Rapor özeti",
+    "tile": {
+      "claimed": "Toplam Talep",
+      "claimedNote": "Onayda, onaylanmış ve ödenmiş",
+      "claims": "Talepler",
+      "claimsNote": "Kişi: {{count}}",
+      "paid": "Ödendi",
+      "paidNote": "Toplamın %{{percent}} kadarı",
+      "pending": "Henüz Ödenmedi",
+      "pendingNote": "Onayda veya ödeme bekliyor"
+    },
+    "totalRow": "Toplam",
+    "view": {
+      "chart": "Grafik",
+      "table": "Tablo"
+    },
+    "viewAs": "Görünüm"
+  },
+  "payment": {
+    "method": {
+      "bankTransfer": "Banka havalesi",
+      "cash": "Nakit",
+      "cheque": "Çek",
+      "salary": "Maaş"
+    }
+  },
+  "workflow": {
+    "example": {
+      "why": {
+        "alreadyApproved": "Atlandı: aynı kişi önceki bir adımı zaten onaylıyor",
+        "belowAmount": "Atlandı: tutar eşiğin üzerinde değil",
+        "incomplete": "Bir onaylayıcı kaynağı seçin",
+        "noApprover": "Etkin onaylayıcı bulunamadı",
+        "noProject": "Atlandı: bu talepte proje yok",
+        "selfApproval": "Atlandı: talep sahibi kendi talebini onaylamış olurdu"
+      }
+    }
+  }
+}

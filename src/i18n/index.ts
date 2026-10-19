@@ -15,10 +15,10 @@ const deviceLanguage = () => {
 };
 
 i18n.use(initReactI18next).init({
-  resources: Object.fromEntries(appLanguages.map((l) => [l.code, { mobile: l.strings }])),
+  resources: Object.fromEntries(appLanguages.map((l) => [l.code, { mobile: l.strings, web: l.web }])),
   lng: deviceLanguage(),
   fallbackLng: 'en',
-  ns: ['mobile'],
+  ns: ['mobile', 'web'],
   defaultNS: 'mobile',
   interpolation: { escapeValue: false },
   // The strings are bundled, so they are ready on the first render.
