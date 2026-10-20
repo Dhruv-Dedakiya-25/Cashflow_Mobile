@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Odbiór potwierdzono {{date}}",
+    "approvedNote": "Już zatwierdzony. Zmiana jednostki, opiekuna lub kwoty odeśle go do zatwierdzenia; progów i celu — nie.",
+    "availableMarker": "Zostało {{percent}}%",
+    "backToAcknowledgements": "Powrót do potwierdzeń",
+    "backToList": "Powrót do przydziałów",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Przekroczono",
       "near": "Blisko progu",
       "normal": "Normalny",
       "pending": "Jeszcze niezasilony",
       "watch": "Do obserwacji"
+    },
+    "bandLine": {
+      "exceeded": "Przekroczono: wykorzystane i zarezerwowane przewyższają zasilenie. Potrzebny jest wniosek o dodatkową gotówkę.",
+      "near": "Blisko progu: zostało {{near}}% lub mniej pogotowia kasowego. Może być potrzebny wniosek o dodatkową gotówkę.",
+      "normal": "Normalny: dostępne jest ponad {{watch}}% pogotowia kasowego.",
+      "pending": "Jeszcze niezasilony.",
+      "watch": "Do obserwacji: zostało {{watch}}% lub mniej pogotowia kasowego."
+    },
+    "cancelText": "Przydział kończy się tutaj i nie można go wysłać ponownie. Powód zostaje w jego historii.",
+    "cancelTitle": "Anulować {{reference}}?",
+    "check": {
+      "amount": "Wpisz kwotę większą od zera.",
+      "chooseCustodian": "Wybierz opiekuna.",
+      "chooseScope": "Wybierz jednostkę.",
+      "custodianInactive": "Opiekun jest nieaktywny.",
+      "custodianOutside": "Opiekun musi należeć do wybranej jednostki.",
+      "fixedAfterDisbursement": "Gotówkę już wypłacono, więc jednostki, opiekuna i kwoty nie można już zmienić.",
+      "locked": "Ten przydział jest zablokowany: potwierdzono jego odbiór lub został zakończony.",
+      "purpose": "Podaj, na co jest gotówka, w co najmniej 5 znakach.",
+      "scopeInactive": "Ta jednostka jest nieaktywna i nie może otrzymać przydziału.",
+      "scopeTaken": "{{reference}} jest już otwarty dla tej jednostki. Zamiast tego poproś o więcej gotówki przez wnioski o dodatkową gotówkę.",
+      "thresholdRange": "Progi to całkowite wartości procentowe od 1 do 99.",
+      "watchAboveNear": "Znacznik obserwacji musi być powyżej znacznika progu.",
+      "notDisburser": "Nie masz uprawnień do wypłat, więc nie możesz wydawać przydziałów.",
+      "notRecipient": "{{name}} nie jest uprawnionym odbiorcą i nie może przechowywać kasy podręcznej."
+    },
+    "chooseLevelFirst": "Najpierw wybierz poziom",
+    "column": {
+      "allocated": "Przydzielony",
+      "allocation": "Przydział",
+      "available": "Dostępny",
+      "custodian": "Opiekun kasy",
+      "heldBy": "W posiadaniu",
+      "reserved": "Zarezerwowany",
+      "scope": "Poziom / Jednostka",
+      "status": "Status",
+      "used": "Wykorzystano"
+    },
+    "custodianHint": "Pracownik, który odbiera, przechowuje gotówkę i potwierdza jej odbiór. Proponowany jest kierownik jednostki.",
+    "custodianPlaceholder": "Wybierz, kto przechowuje gotówkę",
+    "deleteText": "Szkic zostanie usunięty. Nigdy nie wysłano go do zatwierdzenia.",
+    "deleteTitle": "Usunąć szkic {{reference}}?",
+    "detailsTitle": "Szczegóły",
+    "disbursedNote": "Już wypłacony. Teraz można zmienić tylko progi i cel.",
+    "editTitle": "Edytuj przydział {{reference}}",
+    "ended": {
+      "cancelled": "Anulowane: {{name}}, {{time}}:",
+      "rejected": "Odrzucone: {{name}}, {{time}}:",
+      "returned": "Zwrócone: {{name}}, {{time}}:"
+    },
+    "entity": "przydział",
+    "field": {
+      "acknowledged": "Potwierdzone",
+      "amount": "Kwota",
+      "createdBy": "Utworzono",
+      "custodian": "Opiekun kasy",
+      "ledgerEntry": "Zapis w księdze",
+      "level": "Poziom przydziału",
+      "nearAt": "Blisko progu przy % pozostałym",
+      "paidOn": "Wypłacono",
+      "payment": "Płatność",
+      "purpose": "Cel / Opis",
+      "remarks": "Uwagi odbiorcy",
+      "scope": "Jednostka",
+      "thresholds": "Progi",
+      "voucherNo": "Nr dowodu",
+      "watchAt": "Obserwacja przy % pozostałym"
+    },
+    "figure": {
+      "available": "Dostępny",
+      "funded": "Zasilono",
+      "reserved": "Zarezerwowany",
+      "used": "Wykorzystano"
+    },
+    "filter": {
+      "allBalances": "Wszystkie salda",
+      "allLevels": "Wszystkie poziomy"
+    },
+    "level": {
+      "businessUnit": "Jednostka biznesowa",
+      "custodian": "Opiekun kasy",
+      "department": "Dział",
+      "project": "Projekt"
+    },
+    "locked": "Zablokowany",
+    "lockedHint": "Zablokowany od potwierdzenia odbioru przez opiekuna. Korekty wprowadza się nowymi zapisami w księdze, nigdy przez edycję.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Data",
+      "description": "Opis",
+      "entry": "Zapis",
+      "in": "Wpływ",
+      "kind": {
+        "adjustment": "Korekta",
+        "expense": "Opłacony wniosek o zwrot",
+        "funding": "Zasilenie przydziału",
+        "topUp": "Doładowanie",
+        "reallocation": "Przekazanie"
+      },
+      "out": "Wypływ"
+    },
+    "movementsTitle": "Ruchy",
+    "neverFunded": "Niezasilony",
+    "new": "Nowy przydział",
+    "newTitle": "Nowy przydział kasy podręcznej",
+    "noMovements": "Brak ruchów. Pierwszy wiersz jest księgowany, gdy opiekun potwierdzi odbiór gotówki.",
+    "noScopeOptions": "Na tym poziomie nie ma nic do wyboru",
+    "notFunded": "Jeszcze niezasilony",
+    "notFundedBeforePayment": "Jeszcze niezasilony. Saldo zacznie się, gdy dział finansów wypłaci środki, a {{name}} potwierdzi odbiór.",
+    "notFundedYet": "Wypłacony i czeka na potwierdzenie od {{name}}. Dopiero wtedy zaczyna się saldo.",
+    "openLedger": "Otwórz w księdze",
+    "purposePlaceholder": "Na co jest gotówka, tak jak ma widnieć na dowodzie",
+    "reservationKind": {
+      "preExpense": "Zatwierdzony wniosek przed wydatkiem",
+      "reimbursement": "Zatwierdzony zwrot, jeszcze nieopłacony",
+      "reallocation": "Przekazanie w drodze"
+    },
+    "reservedFor": "Zarezerwowano na",
+    "saveAndResubmit": "Zapisz i wyślij do zatwierdzenia",
+    "scopeLabel": {
+      "businessUnit": "Jednostka biznesowa",
+      "custodian": "Opiekun / Pracownik",
+      "department": "Dział",
+      "project": "Projekt"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Szukaj jednostki biznesowej…",
+      "custodian": "Wpisz nazwisko pracownika…",
+      "department": "Szukaj działu…",
+      "project": "Szukaj projektu…"
+    },
+    "search": "Szukaj numeru, jednostki, opiekuna lub celu",
+    "subtitle": "Gotówka wydana działowi, jednostce biznesowej, projektowi lub opiekunowi oraz to, co każdy ma teraz. Dodatkową gotówkę na istniejący przydział zamawia się przez wnioski o dodatkową gotówkę.",
+    "thresholdsValue": "Obserwacja {{watch}}% · Próg {{near}}%",
+    "tile": {
+      "active": "Aktywne przydziały",
+      "activeNote": "Zasilono {{amount}}",
+      "attention": "Wymaga uwagi",
+      "attentionNote": "Blisko progu lub przekroczone: {{count}}",
+      "available": "Dostępne teraz",
+      "availableNote": "po rezerwacji {{amount}}",
+      "awaiting": "Czeka na potwierdzenie odbioru",
+      "summary": "Podsumowanie przydziałów"
+    },
+    "title": "Przydziały kasy podręcznej",
+    "toast": {
+      "cancelled": "{{reference}} anulowano.",
+      "deleted": "Szkic {{reference}} usunięto.",
+      "saved": "{{reference}} zapisano.",
+      "submitted": "{{reference}} wysłano do zatwierdzenia."
+    },
+    "topUpOnItsWay": "Kolejne {{amount}} są w drodze ({{references}}) i czekają na potwierdzenie odbioru.",
+    "noRecipients": "W tej jednostce nie ma uprawnionych odbiorców. Dodaj kogoś w Wypłacający i odbiorcy."
+  },
+  "file": {
+    "aiNotRead": "Nie zeskanowano",
+    "aiRead": "Odczytane przez AI, pewność {{confidence}}%",
+    "camera": "Zrób zdjęcie",
+    "check": {
+      "empty": "Plik jest pusty.",
+      "notWhatItSays": "Zawartość pliku nie pasuje do jego nazwy, więc nie został dołączony. Zapisz go ponownie w prawdziwym formacie i spróbuj jeszcze raz.",
+      "tooLarge": "Plik jest większy niż {{size}}. Wybierz mniejszy plik.",
+      "wrongType": "Ten typ pliku nie jest akceptowany. Użyj jednego z: {{types}}.",
+      "notYours": "Ten plik nie został przesłany przez Ciebie lub należy do innego wniosku. Prześlij go ponownie."
+    },
+    "checking": "Sprawdzanie pliku…",
+    "detail": {
+      "ai": "Odczyt AI",
+      "hash": "SHA-256",
+      "preview": "Podgląd",
+      "size": "Rozmiar",
+      "uploaded": "Przesłano"
+    },
+    "drawnSample": "Przykładowy obraz pobrany z wniosku. W systemie produkcyjnym zapisane pliki otwierają się tutaj.",
+    "remove": "Usuń",
+    "replace": "Zastąp",
+    "rules": "{{types}} · do {{size}}",
+    "view": "Podgląd",
+    "uploading": "Przesyłanie…",
+    "sampleNoFile": "Obraz przykładowy: żaden plik nie został zapisany",
+    "heicPreviewUnsupported": "Ta przeglądarka nie obsługuje podglądu obrazów HEIC. Pobierz plik, aby go wyświetlić."
+  },
+  "preExpense": {
+    "attachmentHint": "Opcjonalnie: oferta lub kosztorys. Rachunek dołącza się później, do rozliczenia.",
+    "backToList": "Wróć do wniosków przed wydatkiem",
+    "check": {
+      "datePassed": "Przewidywana data minęła. Zmień ją albo rozlicz wydatek bezpośrednio jako zwrot.",
+      "expectedDate": "Wybierz przewidywaną datę wydatku."
+    },
+    "claimAgainst": "Rozlicz na podstawie tego wniosku",
+    "claimedSoFar": "Rozliczono {{amount}}",
+    "claimsAfterApproval": "Rozliczenia można składać po akceptacji.",
+    "claimsTitle": "Rozliczenia do tego wniosku",
+    "column": {
+      "amount": "Kwota",
+      "category": "Kategoria / sprzedawca",
+      "employee": "Pracownik",
+      "expected": "Przewidywana",
+      "reference": "Referencja",
+      "status": "Status",
+      "unit": "Jednostka / projekt"
+    },
+    "deleteText": "Szkic zostanie usunięty. Tej operacji nie można cofnąć.",
+    "deleteTitle": "Usunąć {{reference}}?",
+    "detailsTitle": "Szczegóły wniosku",
+    "editTitle": "Edytuj {{reference}}",
+    "entity": "wnioski przed wydatkiem",
+    "expectedDateHint": "Kiedy pieniądze zostaną wydane. Wydatek już poniesiony rozlicza się bezpośrednio.",
+    "field": {
+      "allocation": "Przydział",
+      "amount": "Wnioskowana kwota (OMR)",
+      "attachment": "Dokument pomocniczy (opcjonalnie)",
+      "expectedDate": "Przewidywana data wydatku",
+      "purpose": "Cel / uzasadnienie"
+    },
+    "figure": {
+      "approved": "Wnioskowano",
+      "claimed": "Rozliczono",
+      "remaining": "Pozostało do rozliczenia"
+    },
+    "formIntro": "Poproś o akceptację szacowanego wydatku przed jego poniesieniem. To zgoda na wydatek, a nie płatność.",
+    "heldAgainst": "Zaakceptowana kwota jest zarezerwowana w {{reference}} do czasu wypłaty rozliczeń do tego wniosku.",
+    "leftToClaim": "Pozostało {{amount}}",
+    "new": "Nowy wniosek",
+    "newTitle": "Nowy wniosek przed wydatkiem",
+    "noAllocation": "Ta jednostka nie ma aktywnego przydziału. Rozliczenie do niej zostanie wypłacone z pensją.",
+    "noAllocationShort": "Brak aktywnego",
+    "noClaimsYet": "Brak rozliczeń. Zaakceptowana kwota pozostaje dostępna do czasu rozliczenia.",
+    "noVatHint": "Jedna kwota ryczałtowa. VAT jest liczony w rozliczeniu.",
+    "notHeld": "Ta jednostka nie ma aktywnego przydziału, więc nic nie jest rezerwowane w kasie podręcznej.",
+    "notReserved": "Niezarezerwowane",
+    "overAvailable": "Więcej, niż jest dostępne w {{reference}} ({{available}}). Dział finansów może musieć je uzupełnić.",
+    "purposePlaceholder": "Na co są pieniądze i dlaczego są potrzebne.",
+    "reservedAgainst": "Po akceptacji rezerwowane z {{reference}} · dostępne {{available}}",
+    "search": "Szukaj po numerze, pracowniku, celu lub sprzedawcy",
+    "submit": "Wyślij zgłoszenie",
+    "subtitle": "Akceptacja przed poniesieniem wydatku. Zaakceptowana kwota jest zarezerwowana do czasu rozliczenia.",
+    "tile": {
+      "open": "Zaakceptowane, jeszcze nierozliczone",
+      "openNote": "Otwarte wnioski: {{count}}",
+      "pending": "W akceptacji",
+      "requests": "Wnioski",
+      "returned": "Zwrócone do Ciebie",
+      "returnedNote": "Popraw i wyślij ponownie albo wycofaj",
+      "summary": "Podsumowanie wniosków przed wydatkiem"
+    },
+    "title": "Wnioski o wstępną akceptację wydatków",
+    "toast": {
+      "deleted": "Usunięto {{reference}}.",
+      "saved": "{{reference}} zapisano jako szkic.",
+      "submitted": "{{reference}} wysłano do zatwierdzenia."
     }
   },
   "report": {

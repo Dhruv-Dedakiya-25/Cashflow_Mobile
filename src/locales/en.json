@@ -16,7 +16,8 @@
     "ofFloats": "of {{amount}} in {{count}} allocations",
     "ofFloat": "of {{amount}}",
     "pending": "Not paid yet",
-    "seeAll": "See every allocation"
+    "seeAll": "See every allocation",
+    "team": "Petty cash in your units"
   },
   "placeholder": {
     "home": "Your figures, waiting claims and recent activity will show here.",
@@ -57,7 +58,8 @@
     "viewClaim": "View the claim",
     "cameraDenied": "CashFlow needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
     "manual": "Type the details instead",
-    "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone."
+    "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
+    "choosePdf": "Choose a PDF"
   },
   "profile": {
     "title": "Profile",
@@ -129,5 +131,55 @@
     "previousYear": "Previous year",
     "nextYear": "Next year",
     "pickYear": "Choose year"
+  },
+  "live": {
+    "retry": "Try again",
+    "sampleScreen": "Sample data: this screen connects to your company's records in the next update.",
+    "signIn": {
+      "missing": "Enter your username and password.",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password"
+    },
+    "notice": {
+      "expired": "Your session has ended. Sign in again.",
+      "passwordChanged": "Password changed. Sign in with your new password."
+    },
+    "enroll": {
+      "app": "Authenticator app",
+      "open": "Add CashFlow to the app",
+      "openHint": "On this phone, this opens your authenticator app with CashFlow ready to add. Install the app first if you have not.",
+      "noApp": "No authenticator app opened. Install one, or type the key below into it.",
+      "key": "Or type this key into the app",
+      "code": "Then enter the 6-digit code the app shows",
+      "confirm": "Confirm and sign in",
+      "codesTitle": "Save your recovery codes",
+      "codesHint": "Each code signs you in once if you lose your phone. Keep them somewhere safe: they are not shown again.",
+      "saved": "I have saved them"
+    },
+    "password": {
+      "title": "Choose a new password",
+      "hint": "An administrator set your password. Choose your own to continue.",
+      "current": "Current password",
+      "new": "New password",
+      "repeat": "Repeat the new password",
+      "mismatch": "The two new passwords are not the same.",
+      "missing": "Fill in all three fields.",
+      "save": "Save and sign in again"
+    },
+    "twoFactorOff": "Two-factor sign-in is not set up",
+    "claim": {
+      "noEmployee": "This account is not linked to an employee, so it cannot claim expenses.",
+      "reading": "AI is reading the receipt…",
+      "checkEach": "Check each value against the receipt. Values under {{min}}% sure are highlighted.",
+      "chooseCategory": "Choose a category.",
+      "chooseUnit": "Choose where the claim is charged.",
+      "noPreApproval": "None",
+      "tooLarge": "The file is larger than {{mb}} MB. Choose a smaller one."
+    },
+    "refused": "The server could not accept this. Check the details and try again.",
+    "review": {
+      "noReceipt": "No receipt attached.",
+      "sent": "Sent for approval"
+    }
   }
 }

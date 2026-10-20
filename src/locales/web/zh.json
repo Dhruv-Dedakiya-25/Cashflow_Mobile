@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "{{date}} 已签收",
+    "approvedNote": "已批准。更改单位、保管人或金额将重新审批；更改阈值和用途则不会。",
+    "availableMarker": "剩余 {{percent}}%",
+    "backToAcknowledgements": "返回签收确认",
+    "backToList": "返回拨付",
+    "balanceTitle": "余额",
     "band": {
       "exceeded": "已超支",
       "near": "接近阈值",
       "normal": "正常",
       "pending": "尚未注资",
       "watch": "关注"
+    },
+    "bandLine": {
+      "exceeded": "已超支：已使用和已预留超过注资。需要申请追加现金。",
+      "near": "接近阈值：定额剩余 {{near}}% 或更少。可能需要申请追加现金。",
+      "normal": "正常：定额可用超过 {{watch}}%。",
+      "pending": "尚未注资。",
+      "watch": "关注：定额剩余 {{watch}}% 或更少。"
+    },
+    "cancelText": "该拨付到此结束，无法再次提交。原因会保存在历史中。",
+    "cancelTitle": "取消 {{reference}}？",
+    "check": {
+      "amount": "请输入大于零的金额。",
+      "chooseCustodian": "请选择保管人。",
+      "chooseScope": "请选择单位。",
+      "custodianInactive": "保管人已停用。",
+      "custodianOutside": "保管人必须属于所选单位。",
+      "fixedAfterDisbursement": "现金已支付，单位、保管人和金额不能再更改。",
+      "locked": "该拨付已锁定：已签收确认，或已结束。",
+      "purpose": "请说明现金用途，至少 5 个字符。",
+      "scopeInactive": "该单位已停用，不能接收拨付。",
+      "scopeTaken": "{{reference}} 已为该单位开立。请改为通过追加备用金申请更多现金。",
+      "thresholdRange": "阈值为 1 到 99 的整数百分比。",
+      "watchAboveNear": "关注线必须高于阈值线。",
+      "notDisburser": "您未被允许发放，因此不能发起拨付。",
+      "notRecipient": "{{name}} 不是已启用的收款人，不能保管备用金。"
+    },
+    "chooseLevelFirst": "请先选择层级",
+    "column": {
+      "allocated": "已分配",
+      "allocation": "拨付",
+      "available": "可用",
+      "custodian": "保管人",
+      "heldBy": "持有人",
+      "reserved": "已预留",
+      "scope": "层级 / 单位",
+      "status": "状态",
+      "used": "已使用"
+    },
+    "custodianHint": "接收、保管现金并确认签收的员工。默认建议单位负责人。",
+    "custodianPlaceholder": "选择现金保管人",
+    "deleteText": "草稿将被删除。它从未提交审批。",
+    "deleteTitle": "删除草稿 {{reference}}？",
+    "detailsTitle": "详情",
+    "disbursedNote": "已付款。现在只能更改阈值和用途。",
+    "editTitle": "编辑拨付 {{reference}}",
+    "ended": {
+      "cancelled": "{{name}} 于 {{time}} 取消：",
+      "rejected": "{{name}} 于 {{time}} 驳回：",
+      "returned": "{{name}} 于 {{time}} 退回："
+    },
+    "entity": "拨付",
+    "field": {
+      "acknowledged": "已确认",
+      "amount": "金额",
+      "createdBy": "创建",
+      "custodian": "保管人",
+      "ledgerEntry": "分类账分录",
+      "level": "拨付层级",
+      "nearAt": "剩余 % 时接近阈值",
+      "paidOn": "已付",
+      "payment": "付款",
+      "purpose": "用途 / 摘要",
+      "remarks": "收款人备注",
+      "scope": "单位",
+      "thresholds": "阈值",
+      "voucherNo": "凭证号",
+      "watchAt": "剩余 % 时关注"
+    },
+    "figure": {
+      "available": "可用",
+      "funded": "已注资",
+      "reserved": "已预留",
+      "used": "已使用"
+    },
+    "filter": {
+      "allBalances": "全部余额",
+      "allLevels": "全部层级"
+    },
+    "level": {
+      "businessUnit": "业务单元",
+      "custodian": "保管人",
+      "department": "部门",
+      "project": "项目"
+    },
+    "locked": "已锁定",
+    "lockedHint": "自保管人签收确认后已锁定。更正通过新的分类账分录进行，绝不直接修改。",
+    "movement": {
+      "balance": "余额",
+      "date": "日期",
+      "description": "描述",
+      "entry": "分录",
+      "in": "收入",
+      "kind": {
+        "adjustment": "调整",
+        "expense": "已支付报销",
+        "funding": "拨付注资",
+        "topUp": "追加",
+        "reallocation": "重新分配"
+      },
+      "out": "支出"
+    },
+    "movementsTitle": "变动明细",
+    "neverFunded": "未注资",
+    "new": "新建拨付",
+    "newTitle": "新建备用金拨付",
+    "noMovements": "暂无变动。保管人签收现金后将记录第一行。",
+    "noScopeOptions": "该层级下没有可选项",
+    "notFunded": "尚未注资",
+    "notFundedBeforePayment": "尚未注资。财务付款且 {{name}} 签收确认后，余额才开始计算。",
+    "notFundedYet": "已付款，等待 {{name}} 签收确认。余额从那时才开始计算。",
+    "openLedger": "在台账中打开",
+    "purposePlaceholder": "现金用途，即凭证上应写的内容",
+    "reservationKind": {
+      "preExpense": "已批准的事前费用申请",
+      "reimbursement": "已批准、尚未支付的报销",
+      "reallocation": "转移中的重新分配"
+    },
+    "reservedFor": "预留用于",
+    "saveAndResubmit": "保存并提交审批",
+    "scopeLabel": {
+      "businessUnit": "业务单元",
+      "custodian": "保管人 / 员工",
+      "department": "部门",
+      "project": "项目"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "搜索业务单元…",
+      "custodian": "输入员工姓名…",
+      "department": "搜索部门…",
+      "project": "搜索项目…"
+    },
+    "search": "搜索编号、单位、保管人或用途",
+    "subtitle": "拨付给部门、业务单元、项目或保管人的现金，以及各自当前持有的金额。现有拨付需要更多现金，请通过追加备用金申请。",
+    "thresholdsValue": "关注 {{watch}}% · 阈值 {{near}}%",
+    "tile": {
+      "active": "生效中的拨付",
+      "activeNote": "已注资 {{amount}}",
+      "attention": "需要关注",
+      "attentionNote": "接近阈值或已超支：{{count}}",
+      "available": "当前可用",
+      "availableNote": "已预留 {{amount}}",
+      "awaiting": "待签收确认",
+      "summary": "拨付概览"
+    },
+    "title": "备用金拨付",
+    "toast": {
+      "cancelled": "{{reference}} 已取消。",
+      "deleted": "草稿 {{reference}} 已删除。",
+      "saved": "{{reference}} 已保存。",
+      "submitted": "{{reference}} 已提交审批。"
+    },
+    "topUpOnItsWay": "另有 {{amount}} 正在途中（{{references}}），等待签收确认。",
+    "noRecipients": "该单位没有已启用的收款人。请在“发放人与收款人”中添加。"
+  },
+  "file": {
+    "aiNotRead": "未扫描",
+    "aiRead": "AI 已识别，置信度 {{confidence}}%",
+    "camera": "拍照",
+    "check": {
+      "empty": "此文件为空。",
+      "notWhatItSays": "文件内容与文件名不符，因此未添加附件。请以真实格式重新保存后再试。",
+      "tooLarge": "此文件超过 {{size}}。请选择较小的文件。",
+      "wrongType": "不接受此文件类型。请使用以下之一：{{types}}。",
+      "notYours": "此文件不是由您上传的，或属于其他申请。请重新上传。"
+    },
+    "checking": "正在检查文件…",
+    "detail": {
+      "ai": "AI 识别",
+      "hash": "SHA-256",
+      "preview": "预览",
+      "size": "大小",
+      "uploaded": "已上传"
+    },
+    "drawnSample": "根据申请绘制的示例图片。在实际系统中，存储的文件在此打开。",
+    "remove": "移除",
+    "replace": "替换",
+    "rules": "{{types}} · 最大 {{size}}",
+    "view": "查看",
+    "uploading": "正在上传…",
+    "sampleNoFile": "示例图片：未存储任何文件",
+    "heicPreviewUnsupported": "此浏览器无法预览 HEIC 图像。请下载文件以查看。"
+  },
+  "preExpense": {
+    "attachmentHint": "可选：报价单或估算。票据稍后随报销一起附上。",
+    "backToList": "返回事前费用申请",
+    "check": {
+      "datePassed": "预计日期已过。请修改日期，或直接作为费用报销申请。",
+      "expectedDate": "请选择预计费用日期。"
+    },
+    "claimAgainst": "基于此申请报销",
+    "claimedSoFar": "已报销 {{amount}}",
+    "claimsAfterApproval": "批准后可基于此申请报销。",
+    "claimsTitle": "基于此申请的报销",
+    "column": {
+      "amount": "金额",
+      "category": "类别 / 商户",
+      "employee": "员工",
+      "expected": "预计",
+      "reference": "参考号",
+      "status": "状态",
+      "unit": "单位 / 项目"
+    },
+    "deleteText": "草稿将被删除，且无法撤销。",
+    "deleteTitle": "删除 {{reference}}？",
+    "detailsTitle": "申请详情",
+    "editTitle": "编辑 {{reference}}",
+    "entity": "事前费用申请",
+    "expectedDateHint": "资金的使用日期。已经发生的费用直接报销。",
+    "field": {
+      "allocation": "拨付",
+      "amount": "申请金额 (OMR)",
+      "attachment": "证明文件（可选）",
+      "expectedDate": "预计费用日期",
+      "purpose": "用途 / 理由"
+    },
+    "figure": {
+      "approved": "申请金额",
+      "claimed": "已报销",
+      "remaining": "可报销余额"
+    },
+    "formIntro": "在支出前申请批准预计费用。这是支出许可，不是付款。",
+    "heldAgainst": "批准的金额从 {{reference}} 预留，直到基于此申请的报销付款为止。",
+    "leftToClaim": "剩余 {{amount}}",
+    "new": "新建申请",
+    "newTitle": "新建事前费用申请",
+    "noAllocation": "此单位没有生效的拨款。基于此申请的报销将随工资发放。",
+    "noAllocationShort": "无生效拨款",
+    "noClaimsYet": "暂无报销。批准的金额在报销前一直可用。",
+    "noVatHint": "一个总金额。增值税在报销时计算。",
+    "notHeld": "此单位没有生效的拨款，因此不从备用金中预留。",
+    "notReserved": "未预留",
+    "overAvailable": "超过 {{reference}} 的可用金额（{{available}}）。财务可能需要补充。",
+    "purposePlaceholder": "资金用途以及为何需要。",
+    "reservedAgainst": "批准后从 {{reference}} 预留 · 可用 {{available}}",
+    "search": "搜索编号、员工、用途或商户",
+    "submit": "提交请求",
+    "subtitle": "在发生费用之前审批。批准的金额会预留，直到报销为止。",
+    "tile": {
+      "open": "已批准，尚未报销",
+      "openNote": "未结申请：{{count}}",
+      "pending": "审批中",
+      "requests": "申请",
+      "returned": "退回给您",
+      "returnedNote": "修改后重新提交，或撤回",
+      "summary": "事前费用汇总"
+    },
+    "title": "事前费用审批申请",
+    "toast": {
+      "deleted": "已删除 {{reference}}。",
+      "saved": "{{reference}} 已存为草稿。",
+      "submitted": "{{reference}} 已提交审批。"
     }
   },
   "report": {

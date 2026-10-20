@@ -45,7 +45,7 @@ export default function ReportsScreen() {
   };
 
   return (
-    <Screen title={t('tabs.reports')}>
+    <Screen title={t('tabs.reports')} sample>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space.sm, flexWrap: 'wrap' }}>
         <Pill label={persona === 'finance' ? t('reports.scopeCompany') : managerScope.map((id) => nameOf(unit(id), code)).join(' · ')} bg={palette.primarySoft} fg={palette.primary} />
         <PeriodButton value={period} onChange={(p) => setReportFilter({ period: p })} presets={reportPresets} />

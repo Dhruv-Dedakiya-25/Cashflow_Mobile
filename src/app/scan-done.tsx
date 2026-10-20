@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { useClaim } from '@/api/live';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { Button } from '@/components/ui';
 import { useLanguage } from '@/i18n';
@@ -17,7 +19,11 @@ export default function ScanDoneScreen() {
   const palette = usePalette();
   const insets = useSafeAreaInsets();
   const { language, isRTL } = useLanguage();
-  const claim = useMockState().claims.find((c) => c.id === id);
+  const { user } = useAppSession();
+  const sample = useMockState().claims.find((c) => c.id === id);
+  // Live: the claim the server just returned, kept by the send.
+  const live = useClaim(id);
+  const claim = user ? live.data : sample;
   const waitingFor = claim?.currentStep !== undefined ? claim.route[claim.currentStep].approverIds.map((p) => nameOf(person(p), language.code)).join(', ') : '';
 
   return (

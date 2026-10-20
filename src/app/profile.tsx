@@ -5,13 +5,16 @@ import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 
+import { useMyTwoFactor } from '@/api/live';
+import { logout } from '@/auth/session';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { Page } from '@/components/page';
 import { Avatar, Button, Card, Pill, Segmented } from '@/components/ui';
 import { authMode } from '@/config';
 import { setThemeChoice, useThemeChoice, type ThemeChoice } from '@/hooks/use-color-scheme';
 import { useLanguage } from '@/i18n';
-import { nameOf, person, unit } from '@/lib/format';
+import { accountOf, nameOf, person, role, unit } from '@/lib/format';
 import { signOut, useSession } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -40,23 +43,40 @@ export default function ProfileScreen() {
   const palette = usePalette();
   const { language } = useLanguage();
   const { personId, persona } = useSession();
-  const me = person(personId)!;
-  const twoFactor = persona !== 'employee';
+  const { user } = useAppSession();
+  const twoFactorQuery = useMyTwoFactor();
   const theme = useThemeChoice();
+  const code = language.code;
+
+  // Live: the account, its employee record and role; demo: the sample person.
+  const sample = person(personId);
+  const account = user ? accountOf(user, code) : undefined;
+  const me = account ?? { name: nameOf(sample, code), nameEn: sample?.nameEn ?? '', id: personId, employee: sample };
+  const details = (account
+    ? [nameOf(unit(account.employee?.departmentId ?? ''), code), user?.employeeCode]
+    : [sample?.designation, nameOf(unit(sample?.departmentId ?? ''), code)]
+  ).filter(Boolean).join(' · ');
+  const badge = user ? nameOf(role(user.roleId), code) : t(`web:auth.persona.${persona}`);
+  // Live: whether this person has set 2FA up; demo: the sample policy, on for managers and Finance.
+  const twoFactor = user ? (twoFactorQuery.data ? !!twoFactorQuery.data.enrolledAtUtc : undefined) : persona !== 'employee';
 
   return (
     <Page title={t('profile.title')}>
       <Card style={{ alignItems: 'center', paddingVertical: space.xl }}>
         <Avatar name={me.nameEn} id={me.id} size={76} />
         <AppText variant="title" weight="bold" align="center">
-          {nameOf(me, language.code)}
+          {me.name}
         </AppText>
-        <AppText tone="secondary" align="center">
-          {me.designation} · {nameOf(unit(me.departmentId), language.code)}
-        </AppText>
-        <View style={{ alignSelf: 'center' }}>
-          <Pill label={t(`web:auth.persona.${persona}`)} bg={palette.primarySoft} fg={palette.primary} />
-        </View>
+        {details ? (
+          <AppText tone="secondary" align="center">
+            {details}
+          </AppText>
+        ) : null}
+        {badge ? (
+          <View style={{ alignSelf: 'center' }}>
+            <Pill label={badge} bg={palette.primarySoft} fg={palette.primary} />
+          </View>
+        ) : null}
       </Card>
 
       <Card padded={false} style={{ gap: 0, overflow: 'hidden' }}>
@@ -81,16 +101,18 @@ export default function ProfileScreen() {
             {t('profile.appearance')}
           </AppText>
         </View>
-        <Row
-          icon={twoFactor ? IconShieldCheck : IconShieldOff}
-          tone={twoFactor ? palette.success : palette.textMuted}
-          label={t(twoFactor ? 'profile.twoFactorOn' : 'profile.twoFactorOff')}
-        />
+        {twoFactor !== undefined ? (
+          <Row
+            icon={twoFactor ? IconShieldCheck : IconShieldOff}
+            tone={twoFactor ? palette.success : palette.textMuted}
+            label={t(twoFactor ? 'profile.twoFactorOn' : user ? 'live.twoFactorOff' : 'profile.twoFactorOff')}
+          />
+        ) : null}
         <Row icon={IconInfoCircle} tone={palette.teal} label={t('settings.mode')} value={authMode === 'api' ? t('settings.modeLive') : t('settings.modeDemo')} />
         <Row icon={IconInfoCircle} tone={palette.teal} label={t('settings.version')} value={Constants.expoConfig?.version ?? '1.0.0'} />
       </Card>
 
-      <Button label={t('profile.signOut')} tone="danger" icon={IconLogout} onPress={signOut} />
+      <Button label={t('profile.signOut')} tone="danger" icon={IconLogout} onPress={user ? logout : signOut} />
     </Page>
   );
 }

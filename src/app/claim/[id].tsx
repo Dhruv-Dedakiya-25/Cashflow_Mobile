@@ -1,16 +1,19 @@
 import { IconAlertCircle, IconFileText, IconSparkles } from '@tabler/icons-react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
+import { useClaim } from '@/api/live';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath } from '@/components/approval-path';
 import { CategoryIcon } from '@/components/claim-row';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
+import { ReceiptPhoto } from '@/components/receipt-photo';
 import { Button, Card, DetailRow, SectionHeader, StatusPill } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { category, dateTime, longDate, nameOf, omr, person, unit, vendor } from '@/lib/format';
+import { category, dateTime, longDate, nameOf, omr, person, providerName, unit, vendor } from '@/lib/format';
 import { useMockState } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -20,13 +23,15 @@ export default function ClaimScreen() {
   const palette = usePalette();
   const { language } = useLanguage();
   const { claims } = useMockState();
-  const claim = claims.find((c) => c.id === id);
+  const { user } = useAppSession();
+  const live = useClaim(id);
+  const claim = user ? live.data : claims.find((c) => c.id === id);
   const code = language.code;
 
   if (!claim) {
     return (
       <Page title={t('tabs.claims')}>
-        <AppText tone="muted">{t('web:txn.notFound')}</AppText>
+        {user && live.isLoading ? <ActivityIndicator color={palette.primary} /> : <AppText tone="muted">{live.error?.message ?? t('web:txn.notFound')}</AppText>}
       </Page>
     );
   }
@@ -75,7 +80,7 @@ export default function ClaimScreen() {
         <Card>
           <SectionHeader title={t('web:reimb.field.receipt')} />
           <View style={{ paddingVertical: space.sm }}>
-            <ReceiptPaper merchant={merchant} receiptNo={claim.receiptNo} date={claim.expenseDate} item={claim.description.length > 22 ? `${claim.description.slice(0, 21)}…` : claim.description} net={claim.net} vat={claim.vat} gross={claim.gross} />
+            {user ? <ReceiptPhoto receipt={claim.receipt} /> : <ReceiptPaper merchant={merchant} receiptNo={claim.receiptNo} date={claim.expenseDate} item={claim.description.length > 22 ? `${claim.description.slice(0, 21)}…` : claim.description} net={claim.net} vat={claim.vat} gross={claim.gross} />}
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
             <IconFileText size={18} color={palette.textMuted} />
@@ -87,7 +92,7 @@ export default function ClaimScreen() {
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
               <IconSparkles size={18} color={palette.primary} />
               <AppText variant="small" tone="primary">
-                {t('web:scan.readBy', { provider: claim.extraction.provider })} · {t('web:scan.aiConfidence', { confidence: claim.extraction.confidence })}
+                {t('web:scan.readBy', { provider: providerName(claim.extraction.provider) })} · {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
               </AppText>
             </View>
           ) : null}

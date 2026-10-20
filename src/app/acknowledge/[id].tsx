@@ -2,14 +2,15 @@ import { IconCircleCheck, IconCoins } from '@tabler/icons-react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
+import { acknowledge as acknowledgeLive, ackTitle, toAckView, useAcknowledgements, type AckView } from '@/api/live';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { Page } from '@/components/page';
 import { Button, Card, DetailRow, Field } from '@/components/ui';
 import { useLanguage } from '@/i18n';
 import { longDate, nameOf, omr, unit } from '@/lib/format';
-import type { Acknowledgement } from '@/mock/data';
 import { acknowledge, useMockState } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -20,18 +21,40 @@ export default function AcknowledgeScreen() {
   const { language } = useLanguage();
   const code = language.code;
   const { acks } = useMockState();
+  const { user } = useAppSession();
+  const live = useAcknowledgements(!!user);
+  const liveItem = user ? live.data?.find((a) => a.id === id) : undefined;
   const [remarks, setRemarks] = useState('');
-  // Kept after confirming, when the store no longer lists it.
-  const [confirmed, setConfirmed] = useState<Acknowledgement | null>(null);
-  const ack = confirmed ?? acks.find((a) => a.id === id);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  // Kept after confirming, when the list no longer shows it as open.
+  const [confirmed, setConfirmed] = useState<AckView | null>(null);
+  const ack: AckView | undefined = confirmed ?? (user ? (liveItem && !liveItem.acknowledgement ? toAckView(liveItem) : undefined) : acks.find((a) => a.id === id));
 
   if (!ack) {
     return (
       <Page title={t('web:ack.dialogTitle')}>
-        <AppText tone="muted">{t('web:ack.refusal.already')}</AppText>
+        {user && live.isLoading ? <ActivityIndicator color={palette.primary} /> : <AppText tone="muted">{t('web:ack.refusal.already')}</AppText>}
       </Page>
     );
   }
+
+  const confirm = async () => {
+    if (!liveItem) {
+      acknowledge(ack.id);
+      return setConfirmed(ack);
+    }
+    setSending(true);
+    setError(null);
+    try {
+      await acknowledgeLive(liveItem, remarks.trim());
+      setConfirmed(ack);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setSending(false);
+    }
+  };
 
   if (confirmed) {
     return (
@@ -54,7 +77,12 @@ export default function AcknowledgeScreen() {
   return (
     <Page
       title={t('web:ack.dialogTitle')}
-      footer={<Button label={t('web:ack.confirm')} onPress={() => { acknowledge(ack.id); setConfirmed(ack); }} />}>
+      footer={
+        <View style={{ gap: space.sm }}>
+          {error ? <AppText tone="danger">{error}</AppText> : null}
+          <Button label={t('web:ack.confirm')} loading={sending} onPress={confirm} />
+        </View>
+      }>
       <Card style={{ alignItems: 'center', paddingVertical: space.xl }}>
         <View style={{ width: 56, height: 56, borderRadius: radius.lg, backgroundColor: palette.warningSoft, alignItems: 'center', justifyContent: 'center' }}>
           <IconCoins size={30} color={palette.warning} />
@@ -66,7 +94,7 @@ export default function AcknowledgeScreen() {
           {omr(ack.amount, code)}
         </AppText>
         <AppText tone="secondary" align="center">
-          {t('web:ack.kind.topUpOf', { reference: ack.allocationReference })}
+          {ackTitle(t, ack)}
         </AppText>
       </Card>
 
@@ -74,8 +102,8 @@ export default function AcknowledgeScreen() {
         <DetailRow first label={t('web:ack.column.reference')} value={ack.reference} />
         <DetailRow label={t('web:ack.column.scope')} value={nameOf(unit(ack.unitId), code)} />
         <DetailRow label={t('web:ack.column.issued')} value={longDate(ack.paidOn, code)} />
-        <DetailRow label={t('web:ack.column.payment')} value={`${t(`web:payment.method.${ack.method}`)}${ack.paymentReference ? ` · ${ack.paymentReference}` : ''}`} />
-        <DetailRow label={t('web:dash.my.voucher', { voucher: '' }).trim()} value={ack.voucherNo} />
+        {ack.method ? <DetailRow label={t('web:ack.column.payment')} value={`${t(`web:payment.method.${ack.method}`)}${ack.paymentReference ? ` · ${ack.paymentReference}` : ''}`} /> : null}
+        {ack.voucherNo ? <DetailRow label={t('web:dash.my.voucher', { voucher: '' }).trim()} value={ack.voucherNo} /> : null}
       </Card>
 
       <Field label={t('web:ack.remarks')} placeholder={t('web:ack.remarksPlaceholder')} value={remarks} onChangeText={setRemarks} multiline />

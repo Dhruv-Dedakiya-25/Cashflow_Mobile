@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Diterima {{date}}",
+    "approvedNote": "Sudah disetujui. Mengubah unit, pemegang kas, atau jumlah akan mengembalikannya untuk persetujuan; ambang dan tujuan tidak.",
+    "availableMarker": "Tersisa {{percent}}%",
+    "backToAcknowledgements": "Kembali ke Tanda Terima",
+    "backToList": "Kembali ke Alokasi",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Terlampaui",
       "near": "Mendekati batas",
       "normal": "Normal",
       "pending": "Belum didanai",
       "watch": "Dipantau"
+    },
+    "bandLine": {
+      "exceeded": "Terlampaui: yang terpakai dan dipesan melebihi pendanaan. Diperlukan Permintaan Kas Tambahan.",
+      "near": "Mendekati batas: tersisa {{near}}% atau kurang dari plafon kas. Mungkin perlu Permintaan Kas Tambahan.",
+      "normal": "Normal: lebih dari {{watch}}% plafon kas tersedia.",
+      "pending": "Belum didanai.",
+      "watch": "Dipantau: tersisa {{watch}}% atau kurang dari plafon kas."
+    },
+    "cancelText": "Alokasi berhenti di sini dan tidak dapat dikirim lagi. Alasannya disimpan dalam riwayatnya.",
+    "cancelTitle": "Batalkan {{reference}}?",
+    "check": {
+      "amount": "Masukkan jumlah di atas nol.",
+      "chooseCustodian": "Pilih pemegang kas.",
+      "chooseScope": "Pilih unit.",
+      "custodianInactive": "Pemegang kas tidak aktif.",
+      "custodianOutside": "Pemegang kas harus termasuk dalam unit yang dipilih.",
+      "fixedAfterDisbursement": "Uang tunai sudah dibayarkan, jadi unit, pemegang kas, dan jumlah tidak dapat diubah lagi.",
+      "locked": "Alokasi ini terkunci: penerimaannya telah dikonfirmasi, atau sudah berakhir.",
+      "purpose": "Sebutkan untuk apa uang tunai ini, minimal 5 karakter.",
+      "scopeInactive": "Unit ini tidak aktif, jadi tidak dapat menerima alokasi.",
+      "scopeTaken": "{{reference}} sudah terbuka untuk unit ini. Ajukan tambahan uang melalui Permintaan Kas Tambahan.",
+      "thresholdRange": "Ambang adalah persentase bulat dari 1 sampai 99.",
+      "watchAboveNear": "Tanda pantau harus di atas tanda batas.",
+      "notDisburser": "Anda tidak diaktifkan untuk pencairan, jadi tidak dapat menerbitkan alokasi.",
+      "notRecipient": "{{name}} bukan penerima aktif dan tidak dapat memegang kas kecil."
+    },
+    "chooseLevelFirst": "Pilih tingkat terlebih dahulu",
+    "column": {
+      "allocated": "Dialokasikan",
+      "allocation": "Alokasi",
+      "available": "Tersedia",
+      "custodian": "Pemegang Kas",
+      "heldBy": "Dipegang oleh",
+      "reserved": "Dipesan",
+      "scope": "Tingkat / Unit",
+      "status": "Keadaan",
+      "used": "Terpakai"
+    },
+    "custodianHint": "Karyawan yang menerima, memegang, dan mengonfirmasi penerimaan uang tunai. Kepala unit disarankan.",
+    "custodianPlaceholder": "Pilih siapa yang memegang uang tunai",
+    "deleteText": "Draf dihapus. Draf ini tidak pernah dikirim untuk persetujuan.",
+    "deleteTitle": "Hapus draf {{reference}}?",
+    "detailsTitle": "Detail",
+    "disbursedNote": "Sudah dibayarkan. Sekarang hanya ambang dan tujuan yang dapat diubah.",
+    "editTitle": "Ubah Alokasi {{reference}}",
+    "ended": {
+      "cancelled": "Dibatalkan oleh {{name}} pada {{time}}:",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}:",
+      "returned": "Dikembalikan oleh {{name}} pada {{time}}:"
+    },
+    "entity": "alokasi",
+    "field": {
+      "acknowledged": "Telah dikonfirmasi",
+      "amount": "Jumlah",
+      "createdBy": "Dibuat",
+      "custodian": "Pemegang Kas",
+      "ledgerEntry": "Entri Buku Besar",
+      "level": "Tingkat Alokasi",
+      "nearAt": "Mendekati batas saat sisa %",
+      "paidOn": "Dibayar",
+      "payment": "Pembayaran",
+      "purpose": "Tujuan / Keterangan",
+      "remarks": "Catatan Penerima",
+      "scope": "Unit",
+      "thresholds": "Ambang",
+      "voucherNo": "No. Voucher",
+      "watchAt": "Pantau saat sisa %"
+    },
+    "figure": {
+      "available": "Tersedia",
+      "funded": "Didanai",
+      "reserved": "Dipesan",
+      "used": "Terpakai"
+    },
+    "filter": {
+      "allBalances": "Semua saldo",
+      "allLevels": "Semua tingkat"
+    },
+    "level": {
+      "businessUnit": "Unit Bisnis",
+      "custodian": "Pemegang Kas",
+      "department": "Departemen",
+      "project": "Proyek"
+    },
+    "locked": "Terkunci",
+    "lockedHint": "Terkunci sejak pemegang kas mengonfirmasi penerimaan. Koreksi dilakukan sebagai entri buku besar baru, tidak pernah dengan mengedit.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Tanggal",
+      "description": "Deskripsi",
+      "entry": "Entri",
+      "in": "Masuk",
+      "kind": {
+        "adjustment": "Penyesuaian",
+        "expense": "Klaim yang dibayar",
+        "funding": "Pendanaan alokasi",
+        "topUp": "Tambahan dana",
+        "reallocation": "Pengalihan"
+      },
+      "out": "Keluar"
+    },
+    "movementsTitle": "Mutasi",
+    "neverFunded": "Tidak didanai",
+    "new": "Alokasi Baru",
+    "newTitle": "Alokasi Kas Kecil Baru",
+    "noMovements": "Belum ada mutasi. Baris pertama dicatat saat pemegang kas mengonfirmasi penerimaan uang tunai.",
+    "noScopeOptions": "Tidak ada yang dapat dipilih di tingkat ini",
+    "notFunded": "Belum didanai",
+    "notFundedBeforePayment": "Belum didanai. Saldo dimulai saat Keuangan membayarkannya dan {{name}} mengonfirmasi penerimaan.",
+    "notFundedYet": "Sudah dibayarkan dan menunggu {{name}} mengonfirmasi penerimaan. Saldo baru dimulai saat itu.",
+    "openLedger": "Buka di Buku Besar",
+    "purposePlaceholder": "Untuk apa uang tunai ini, seperti yang harus tertulis di voucher",
+    "reservationKind": {
+      "preExpense": "Permintaan pra-pengeluaran yang disetujui",
+      "reimbursement": "Klaim disetujui, belum dibayar",
+      "reallocation": "Pengalihan dalam proses"
+    },
+    "reservedFor": "Dicadangkan untuk",
+    "saveAndResubmit": "Simpan dan Kirim untuk Persetujuan",
+    "scopeLabel": {
+      "businessUnit": "Unit Bisnis",
+      "custodian": "Pemegang Kas / Karyawan",
+      "department": "Departemen",
+      "project": "Proyek"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Cari unit bisnis…",
+      "custodian": "Ketik nama karyawan…",
+      "department": "Cari departemen…",
+      "project": "Cari proyek…"
+    },
+    "search": "Cari referensi, unit, pemegang kas, atau tujuan",
+    "subtitle": "Uang tunai yang diberikan kepada departemen, unit bisnis, proyek, atau pemegang kas, dan yang dimiliki masing-masing sekarang. Tambahan uang untuk alokasi yang ada diajukan melalui Permintaan Kas Tambahan.",
+    "thresholdsValue": "Pantau {{watch}}% · Batas {{near}}%",
+    "tile": {
+      "active": "Alokasi aktif",
+      "activeNote": "{{amount}} didanai",
+      "attention": "Perlu Perhatian",
+      "attentionNote": "Mendekati batas atau terlampaui: {{count}}",
+      "available": "Tersedia sekarang",
+      "availableNote": "setelah {{amount}} dicadangkan",
+      "awaiting": "Menunggu tanda terima",
+      "summary": "Ringkasan alokasi"
+    },
+    "title": "Alokasi Kas Kecil",
+    "toast": {
+      "cancelled": "{{reference}} telah dibatalkan.",
+      "deleted": "Draf {{reference}} telah dihapus.",
+      "saved": "{{reference}} telah disimpan.",
+      "submitted": "{{reference}} telah dikirim untuk persetujuan."
+    },
+    "topUpOnItsWay": "{{amount}} lagi sedang dalam perjalanan ({{references}}) dan menunggu tanda terima.",
+    "noRecipients": "Tidak ada penerima aktif di unit ini. Tambahkan di Pencair & Penerima."
+  },
+  "file": {
+    "aiNotRead": "Belum dipindai",
+    "aiRead": "Dibaca AI, keyakinan {{confidence}}%",
+    "camera": "Ambil foto",
+    "check": {
+      "empty": "File ini kosong.",
+      "notWhatItSays": "Isi file tidak sesuai dengan namanya, jadi tidak dilampirkan. Simpan lagi dalam format aslinya dan coba lagi.",
+      "tooLarge": "File ini lebih besar dari {{size}}. Pilih file yang lebih kecil.",
+      "wrongType": "Jenis file ini tidak diterima. Gunakan salah satu: {{types}}.",
+      "notYours": "File ini tidak diunggah oleh Anda atau merupakan bagian dari permintaan lain. Silakan unggah kembali."
+    },
+    "checking": "Memeriksa file…",
+    "detail": {
+      "ai": "Pembacaan AI",
+      "hash": "SHA-256",
+      "preview": "Pratinjau",
+      "size": "Ukuran",
+      "uploaded": "Diunggah"
+    },
+    "drawnSample": "Gambar contoh yang diambil dari klaim. Pada sistem nyata, file yang disimpan terbuka di sini.",
+    "remove": "Hapus",
+    "replace": "Ganti",
+    "rules": "{{types}} · maks. {{size}}",
+    "view": "Lihat",
+    "uploading": "Mengunggah…",
+    "sampleNoFile": "Gambar sampel: tidak ada file yang disimpan",
+    "heicPreviewUnsupported": "Browser ini tidak dapat mempratinjau gambar HEIC. Unduh file untuk melihatnya."
+  },
+  "preExpense": {
+    "attachmentHint": "Opsional: penawaran harga atau perkiraan. Tagihan dilampirkan nanti, bersama klaim.",
+    "backToList": "Kembali ke Permintaan Pra-Pengeluaran",
+    "check": {
+      "datePassed": "Tanggal perkiraan sudah lewat. Ubah, atau klaim pengeluaran langsung sebagai penggantian.",
+      "expectedDate": "Pilih perkiraan tanggal pengeluaran."
+    },
+    "claimAgainst": "Klaim atas Permintaan Ini",
+    "claimedSoFar": "{{amount}} diklaim",
+    "claimsAfterApproval": "Klaim dapat diajukan setelah permintaan disetujui.",
+    "claimsTitle": "Klaim atas Permintaan Ini",
+    "column": {
+      "amount": "Jumlah",
+      "category": "Kategori / Pedagang",
+      "employee": "Karyawan",
+      "expected": "Perkiraan",
+      "reference": "Referensi",
+      "status": "Keadaan",
+      "unit": "Unit / Proyek"
+    },
+    "deleteText": "Draf dihapus. Tindakan ini tidak dapat dibatalkan.",
+    "deleteTitle": "Hapus {{reference}}?",
+    "detailsTitle": "Detail Permintaan",
+    "editTitle": "Ubah {{reference}}",
+    "entity": "permintaan pra-pengeluaran",
+    "expectedDateHint": "Kapan uang akan dibelanjakan. Pengeluaran yang sudah terjadi diklaim langsung.",
+    "field": {
+      "allocation": "Alokasi",
+      "amount": "Jumlah yang Diminta (OMR)",
+      "attachment": "Dokumen Pendukung (opsional)",
+      "expectedDate": "Perkiraan Tanggal Pengeluaran",
+      "purpose": "Tujuan / Justifikasi"
+    },
+    "figure": {
+      "approved": "Diminta",
+      "claimed": "Diklaim",
+      "remaining": "Sisa untuk Diklaim"
+    },
+    "formIntro": "Minta persetujuan untuk perkiraan pengeluaran sebelum membelanjakan. Ini izin untuk membelanjakan, bukan pembayaran.",
+    "heldAgainst": "Jumlah yang disetujui ditahan di {{reference}} sampai klaim atasnya dibayar.",
+    "leftToClaim": "sisa {{amount}}",
+    "new": "Permintaan Baru",
+    "newTitle": "Permintaan Pra-Pengeluaran Baru",
+    "noAllocation": "Unit ini tidak memiliki alokasi aktif. Klaim atasnya akan dibayar bersama gaji.",
+    "noAllocationShort": "Tidak ada yang aktif",
+    "noClaimsYet": "Belum ada klaim. Jumlah yang disetujui tetap tersedia sampai diklaim.",
+    "noVatHint": "Satu jumlah gabungan. PPN dihitung pada klaim.",
+    "notHeld": "Unit ini tidak memiliki alokasi aktif, jadi tidak ada yang ditahan di kas kecil.",
+    "notReserved": "Tidak ditahan",
+    "overAvailable": "Melebihi yang tersedia di {{reference}} ({{available}}). Keuangan mungkin perlu menambahnya.",
+    "purposePlaceholder": "Untuk apa uang ini, dan mengapa diperlukan.",
+    "reservedAgainst": "Ditahan di {{reference}} setelah disetujui · tersedia {{available}}",
+    "search": "Cari referensi, karyawan, tujuan, atau pedagang",
+    "submit": "Kirim permintaan",
+    "subtitle": "Persetujuan sebelum pengeluaran terjadi. Jumlah yang disetujui ditahan sampai diklaim.",
+    "tile": {
+      "open": "Disetujui, Belum Diklaim",
+      "openNote": "Permintaan terbuka: {{count}}",
+      "pending": "Dalam Persetujuan",
+      "requests": "Permintaan",
+      "returned": "Dikembalikan kepada Anda",
+      "returnedNote": "Perbaiki dan kirim ulang, atau tarik",
+      "summary": "Ringkasan pra-pengeluaran"
+    },
+    "title": "Permintaan Persetujuan Pra-Pengeluaran",
+    "toast": {
+      "deleted": "{{reference}} telah dihapus.",
+      "saved": "{{reference}} disimpan sebagai draf.",
+      "submitted": "{{reference}} telah dikirim untuk persetujuan."
     }
   },
   "report": {

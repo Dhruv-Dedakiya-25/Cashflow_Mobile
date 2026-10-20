@@ -3,6 +3,8 @@ import { TabList, Tabs, TabSlot, TabTrigger } from 'expo-router/ui';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { holds, useAcknowledgements, useInbox, useMyDashboard } from '@/api/live';
+import { useAppSession } from '@/auth/use-app-session';
 import { ScanButton, TabButton } from '@/components/tab-buttons';
 import { useLanguage } from '@/i18n';
 import { acksFor, inboxFor, useMockState, useSession } from '@/mock/store';
@@ -15,20 +17,45 @@ export default function TabLayout() {
   const { isRTL } = useLanguage();
   const state = useMockState();
   const { persona, personId } = useSession();
-  // Employees decide nothing and see no reports, as their role's permissions say.
-  const approves = persona !== 'employee';
-  const waiting = inboxFor(state, personId).length + acksFor(state, personId).length;
+  const { user } = useAppSession();
+  const myDashboard = useMyDashboard();
+  // The tabs follow the person's rights, as the web menu does: Inbox for those who approve, or who
+  // hold a float or have cash to acknowledge (being listed as a recipient alone is not enough);
+  // Reports for those whose role may see them. The demo's employee decides nothing and sees no reports.
+  const holdsCash = !!myDashboard.data && (myDashboard.data.custodian.length > 0 || myDashboard.data.toAcknowledge.length > 0);
+  const showInbox = user ? holds(user, 'ApprovalInbox') || holdsCash : persona !== 'employee';
+  const showReports = user ? holds(user, 'Reports') : persona !== 'employee';
+  // The Inbox's count: requests the person can decide now, and cash paid to them not yet confirmed.
+  const inbox = useInbox(showInbox);
+  const acks = useAcknowledgements(showInbox);
+  const waiting = user
+    ? (inbox.data?.filter((i) => i.canDecide).length ?? 0) + (acks.data?.filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).length ?? 0)
+    : inboxFor(state, personId).length + acksFor(state, personId).length;
 
-  const claimsTab = (
-    <TabTrigger name="claims" href="/claims" asChild>
+  const tabs = [
+    <TabTrigger key="home" name="home" href="/" asChild>
+      <TabButton icon={IconHome} label={t('tabs.home')} />
+    </TabTrigger>,
+    <TabTrigger key="claims" name="claims" href="/claims" asChild>
       <TabButton icon={IconReceipt} label={t('tabs.claims')} />
-    </TabTrigger>
-  );
-  const scanTab = (
-    <TabTrigger name="scan" href="/scan" asChild>
+    </TabTrigger>,
+    showInbox ? (
+      <TabTrigger key="inbox" name="inbox" href="/inbox" asChild>
+        <TabButton icon={IconInbox} label={t('tabs.inbox')} badge={waiting} />
+      </TabTrigger>
+    ) : null,
+    showReports ? (
+      <TabTrigger key="reports" name="reports" href="/reports" asChild>
+        <TabButton icon={IconChartBar} label={t('tabs.reports')} />
+      </TabTrigger>
+    ) : null,
+  ].filter(Boolean);
+  // Submit Bill sits in the middle: second of three, third of four or five.
+  tabs.splice(Math.floor((tabs.length + 1) / 2), 0, (
+    <TabTrigger key="scan" name="scan" href="/scan" asChild>
       <ScanButton label={t('tabs.scan')} />
     </TabTrigger>
-  );
+  ));
 
   return (
     <Tabs style={{ flex: 1 }}>
@@ -49,22 +76,7 @@ export default function TabLayout() {
           shadowOffset: { width: 0, height: -4 },
           elevation: 12,
         }}>
-        <TabTrigger name="home" href="/" asChild>
-          <TabButton icon={IconHome} label={t('tabs.home')} />
-        </TabTrigger>
-        {/* Submit Bill stays in the middle: second of three for employees, third of five for approvers. */}
-        {approves ? claimsTab : scanTab}
-        {approves ? scanTab : claimsTab}
-        {approves ? (
-          <TabTrigger name="inbox" href="/inbox" asChild>
-            <TabButton icon={IconInbox} label={t('tabs.inbox')} badge={waiting} />
-          </TabTrigger>
-        ) : null}
-        {approves ? (
-          <TabTrigger name="reports" href="/reports" asChild>
-            <TabButton icon={IconChartBar} label={t('tabs.reports')} />
-          </TabTrigger>
-        ) : null}
+        {tabs}
       </TabList>
     </Tabs>
   );

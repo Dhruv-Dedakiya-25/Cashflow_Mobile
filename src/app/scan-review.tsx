@@ -7,9 +7,11 @@ import { ActivityIndicator, View } from 'react-native';
 
 import type { ExtractedField, SettlementMethod } from '@/api/types';
 import { AppText } from '@/components/app-text';
+import { LiveClaimForm } from '@/components/live-claim-form';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
 import { Button, Card, Chips, Field, SectionHeader, Segmented } from '@/components/ui';
+import { authMode } from '@/config';
 import { useLanguage } from '@/i18n';
 import { longDate, nameOf, vendor } from '@/lib/format';
 import { computeVat } from '@/mock/data';
@@ -32,6 +34,11 @@ const unitsFor = (personId: string) =>
   personId === P.hamed || personId === P.ahmed ? ['dep-it', 'prj-001'] : personId === P.fatma ? ['dep-fin'] : ['prj-002', 'prj-003'];
 
 export default function ScanReviewScreen() {
+  return authMode === 'api' ? <LiveClaimForm /> : <DemoScanReview />;
+}
+
+/** Demo mode: every receipt reads as the sample, and the claim goes into the in-memory store. */
+function DemoScanReview() {
   const params = useLocalSearchParams<{ uri?: string; sample?: string; manual?: string; claimId?: string }>();
   const { t } = useTranslation();
   const palette = usePalette();
@@ -150,7 +157,7 @@ export default function ScanReviewScreen() {
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
                 <IconSparkles size={20} color={palette.primary} />
                 <AppText weight="semibold" tone="primary" style={{ flex: 1 }}>
-                  {t('web:scan.extractionTitle')} · {t('web:scan.aiConfidence', { confidence: reading.extraction.confidence })}
+                  {t('web:scan.extractionTitle')} · {t('web:scan.aiConfidence', { confidence: Math.round(reading.extraction.confidence) })}
                 </AppText>
               </View>
               <AppText variant="small" tone="secondary">

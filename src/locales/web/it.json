@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Ricezione confermata il {{date}}",
+    "approvedNote": "Già approvata. Cambiare unità, custode o importo la rimanda in approvazione; soglie e scopo no.",
+    "availableMarker": "Resta il {{percent}}%",
+    "backToAcknowledgements": "Torna alle conferme di ricezione",
+    "backToList": "Torna alle assegnazioni",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Superato",
       "near": "Vicino alla soglia",
       "normal": "Normale",
       "pending": "Non ancora finanziata",
       "watch": "Da monitorare"
+    },
+    "bandLine": {
+      "exceeded": "Superato: l'utilizzato e il riservato superano il finanziamento. Serve una richiesta di contante aggiuntivo.",
+      "near": "Vicino alla soglia: resta il {{near}}% o meno del fondo cassa. Può servire una richiesta di contante aggiuntivo.",
+      "normal": "Normale: è disponibile più del {{watch}}% del fondo cassa.",
+      "pending": "Non ancora finanziata.",
+      "watch": "Da monitorare: resta il {{watch}}% o meno del fondo cassa."
+    },
+    "cancelText": "L'assegnazione si ferma qui e non può essere inviata di nuovo. Il motivo resta nella sua cronologia.",
+    "cancelTitle": "Annullare {{reference}}?",
+    "check": {
+      "amount": "Inserisci un importo maggiore di zero.",
+      "chooseCustodian": "Scegli il custode.",
+      "chooseScope": "Scegli l'unità.",
+      "custodianInactive": "Il custode è inattivo.",
+      "custodianOutside": "Il custode deve appartenere all'unità scelta.",
+      "fixedAfterDisbursement": "Il contante è stato erogato, quindi unità, custode e importo non possono più cambiare.",
+      "locked": "Questa assegnazione è bloccata: la ricezione è stata confermata o è conclusa.",
+      "purpose": "Indica a cosa serve il contante, in almeno 5 caratteri.",
+      "scopeInactive": "Questa unità è inattiva e non può ricevere un'assegnazione.",
+      "scopeTaken": "{{reference}} è già aperta per questa unità. Richiedi invece altro contante con le richieste di contante aggiuntivo.",
+      "thresholdRange": "Le soglie sono percentuali intere da 1 a 99.",
+      "watchAboveNear": "Il limite di monitoraggio deve essere sopra il limite di soglia.",
+      "notDisburser": "Non sei abilitato all'erogazione, quindi non puoi emettere assegnazioni.",
+      "notRecipient": "{{name}} non è un destinatario abilitato e non può custodire la piccola cassa."
+    },
+    "chooseLevelFirst": "Scegli prima il livello",
+    "column": {
+      "allocated": "Assegnato",
+      "allocation": "Assegnazione",
+      "available": "Disponibile",
+      "custodian": "Custode",
+      "heldBy": "Detenuto da",
+      "reserved": "Riservato",
+      "scope": "Livello / Unità",
+      "status": "Stato",
+      "used": "Utilizzato"
+    },
+    "custodianHint": "Il dipendente che riceve, custodisce e conferma la ricezione del contante. Viene proposto il responsabile dell'unità.",
+    "custodianPlaceholder": "Scegli chi custodisce il contante",
+    "deleteText": "La bozza viene eliminata. Non è mai stata inviata in approvazione.",
+    "deleteTitle": "Eliminare la bozza {{reference}}?",
+    "detailsTitle": "Dettagli",
+    "disbursedNote": "Già erogata. Ora si possono cambiare solo soglie e scopo.",
+    "editTitle": "Modifica assegnazione {{reference}}",
+    "ended": {
+      "cancelled": "Annullata da {{name}} il {{time}}:",
+      "rejected": "Respinta da {{name}} il {{time}}:",
+      "returned": "Restituita da {{name}} il {{time}}:"
+    },
+    "entity": "assegnazione",
+    "field": {
+      "acknowledged": "Presa visione",
+      "amount": "Importo",
+      "createdBy": "Creata",
+      "custodian": "Custode",
+      "ledgerEntry": "Registrazione nel libro mastro",
+      "level": "Livello di assegnazione",
+      "nearAt": "Vicino alla soglia a % residua",
+      "paidOn": "Pagata",
+      "payment": "Pagamento",
+      "purpose": "Scopo / Causale",
+      "remarks": "Note del destinatario",
+      "scope": "Unità",
+      "thresholds": "Soglie",
+      "voucherNo": "N. buono",
+      "watchAt": "Monitoraggio a % residua"
+    },
+    "figure": {
+      "available": "Disponibile",
+      "funded": "Finanziato",
+      "reserved": "Riservato",
+      "used": "Utilizzato"
+    },
+    "filter": {
+      "allBalances": "Tutti i saldi",
+      "allLevels": "Tutti i livelli"
+    },
+    "level": {
+      "businessUnit": "Unità di business",
+      "custodian": "Custode",
+      "department": "Reparto",
+      "project": "Progetto"
+    },
+    "locked": "Bloccato",
+    "lockedHint": "Bloccata da quando il custode ha confermato la ricezione. Le correzioni si fanno con nuove registrazioni, mai modificando.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Data",
+      "description": "Descrizione",
+      "entry": "Registrazione",
+      "in": "Entrata",
+      "kind": {
+        "adjustment": "Rettifica",
+        "expense": "Rimborso pagato",
+        "funding": "Finanziamento dell'assegnazione",
+        "topUp": "Integrazione",
+        "reallocation": "Riassegnazione"
+      },
+      "out": "Uscita"
+    },
+    "movementsTitle": "Movimenti",
+    "neverFunded": "Non finanziata",
+    "new": "Nuova assegnazione",
+    "newTitle": "Nuova assegnazione di piccola cassa",
+    "noMovements": "Ancora nessun movimento. La prima riga viene registrata quando il custode conferma la ricezione del contante.",
+    "noScopeOptions": "Niente da scegliere a questo livello",
+    "notFunded": "Non ancora finanziata",
+    "notFundedBeforePayment": "Non ancora finanziata. Il saldo parte quando la Finanza la eroga e {{name}} ne conferma la ricezione.",
+    "notFundedYet": "Erogata e in attesa della conferma di {{name}}. Il saldo parte solo allora.",
+    "openLedger": "Apri nel libro",
+    "purposePlaceholder": "A cosa serve il contante, come deve comparire sul buono",
+    "reservationKind": {
+      "preExpense": "Richiesta di spesa preventiva approvata",
+      "reimbursement": "Rimborso approvato, non ancora pagato",
+      "reallocation": "Riassegnazione in corso"
+    },
+    "reservedFor": "Riservato per",
+    "saveAndResubmit": "Salva e invia in approvazione",
+    "scopeLabel": {
+      "businessUnit": "Unità di business",
+      "custodian": "Custode / Dipendente",
+      "department": "Reparto",
+      "project": "Progetto"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Cerca unità di business…",
+      "custodian": "Digita il nome di un dipendente…",
+      "department": "Cerca reparto…",
+      "project": "Cerca progetto…"
+    },
+    "search": "Cerca riferimento, unità, custode o scopo",
+    "subtitle": "Contante affidato a un reparto, unità di business, progetto o custode, e ciò che ciascuno detiene ora. Altro contante per un'assegnazione esistente passa dalle richieste di contante aggiuntivo.",
+    "thresholdsValue": "Monitoraggio {{watch}}% · Soglia {{near}}%",
+    "tile": {
+      "active": "Assegnazioni attive",
+      "activeNote": "{{amount}} finanziati",
+      "attention": "Richiede attenzione",
+      "attentionNote": "Vicine alla soglia o superate: {{count}}",
+      "available": "Disponibile ora",
+      "availableNote": "dopo {{amount}} riservati",
+      "awaiting": "In attesa di conferma di ricezione",
+      "summary": "Riepilogo assegnazioni"
+    },
+    "title": "Assegnazioni di piccola cassa",
+    "toast": {
+      "cancelled": "{{reference}} è stata annullata.",
+      "deleted": "La bozza {{reference}} è stata eliminata.",
+      "saved": "{{reference}} è stata salvata.",
+      "submitted": "{{reference}} è stata inviata in approvazione."
+    },
+    "topUpOnItsWay": "Altri {{amount}} sono in arrivo ({{references}}) e attendono conferma di ricezione.",
+    "noRecipients": "Nessun destinatario abilitato in questa unità. Aggiungine uno in Erogatori e destinatari."
+  },
+  "file": {
+    "aiNotRead": "Non scansionato",
+    "aiRead": "Letto dall'IA, affidabilità {{confidence}}%",
+    "camera": "Scatta una foto",
+    "check": {
+      "empty": "Il file è vuoto.",
+      "notWhatItSays": "Il contenuto del file non corrisponde al nome, quindi non è stato allegato. Salvalo di nuovo nel suo formato reale e riprova.",
+      "tooLarge": "Il file supera {{size}}. Scegli un file più piccolo.",
+      "wrongType": "Questo tipo di file non è accettato. Usa uno di: {{types}}.",
+      "notYours": "Questo file non è stato caricato da te o appartiene a un'altra richiesta. Caricalo di nuovo."
+    },
+    "checking": "Verifica del file…",
+    "detail": {
+      "ai": "Lettura IA",
+      "hash": "SHA-256",
+      "preview": "Anteprima",
+      "size": "Dimensione",
+      "uploaded": "Caricato"
+    },
+    "drawnSample": "Immagine di esempio tratta dalla richiesta. Nel sistema reale i file memorizzati si aprono qui.",
+    "remove": "Rimuovi",
+    "replace": "Sostituisci",
+    "rules": "{{types}} · fino a {{size}}",
+    "view": "Visualizza",
+    "uploading": "Caricamento in corso…",
+    "sampleNoFile": "Immagine di esempio: nessun file memorizzato",
+    "heicPreviewUnsupported": "Questo browser non può visualizzare l'anteprima delle immagini HEIC. Scarica il file per visualizzarlo."
+  },
+  "preExpense": {
+    "attachmentHint": "Facoltativo: un preventivo o una stima. La fattura si allega dopo, con il rimborso.",
+    "backToList": "Torna alle richieste di spesa preventiva",
+    "check": {
+      "datePassed": "La data prevista è passata. Modificala o chiedi la spesa direttamente a rimborso.",
+      "expectedDate": "Scegli la data prevista della spesa."
+    },
+    "claimAgainst": "Richiedi rimborso su questa",
+    "claimedSoFar": "{{amount}} richiesti",
+    "claimsAfterApproval": "I rimborsi si potranno chiedere dopo l'approvazione.",
+    "claimsTitle": "Rimborsi su questa richiesta",
+    "column": {
+      "amount": "Importo",
+      "category": "Categoria / esercente",
+      "employee": "Dipendente",
+      "expected": "Prevista",
+      "reference": "Riferimento",
+      "status": "Stato",
+      "unit": "Unità / progetto"
+    },
+    "deleteText": "La bozza viene rimossa. L'operazione non è reversibile.",
+    "deleteTitle": "Eliminare {{reference}}?",
+    "detailsTitle": "Dettagli della richiesta",
+    "editTitle": "Modifica {{reference}}",
+    "entity": "richieste di spesa preventiva",
+    "expectedDateHint": "Quando verrà speso il denaro. Una spesa già sostenuta si chiede direttamente a rimborso.",
+    "field": {
+      "allocation": "Assegnazione",
+      "amount": "Importo richiesto (OMR)",
+      "attachment": "Documento di supporto (facoltativo)",
+      "expectedDate": "Data prevista della spesa",
+      "purpose": "Scopo / motivazione"
+    },
+    "figure": {
+      "approved": "Richiesto",
+      "claimed": "Richiesto",
+      "remaining": "Ancora da richiedere"
+    },
+    "formIntro": "Chiedi l'approvazione di una spesa stimata prima di spendere. È un'autorizzazione a spendere, non un pagamento.",
+    "heldAgainst": "L'importo approvato resta riservato su {{reference}} finché i rimborsi collegati non sono pagati.",
+    "leftToClaim": "{{amount}} rimanenti",
+    "new": "Nuova richiesta",
+    "newTitle": "Nuova richiesta di spesa preventiva",
+    "noAllocation": "Questa unità non ha un'assegnazione attiva. Un rimborso su di essa verrebbe pagato con lo stipendio.",
+    "noAllocationShort": "Nessuna attiva",
+    "noClaimsYet": "Nessun rimborso ancora. L'importo approvato resta disponibile finché non viene richiesto.",
+    "noVatHint": "Un unico importo forfettario. L'IVA si calcola sul rimborso.",
+    "notHeld": "Questa unità non ha un'assegnazione attiva, quindi nulla è riservato sulla piccola cassa.",
+    "notReserved": "Non riservato",
+    "overAvailable": "Più di quanto disponibile su {{reference}} ({{available}}). La Finanza potrebbe doverlo reintegrare.",
+    "purposePlaceholder": "A cosa serve il denaro e perché è necessario.",
+    "reservedAgainst": "Riservato su {{reference}} una volta approvato · disponibile {{available}}",
+    "search": "Cerca riferimento, dipendente, scopo o esercente",
+    "submit": "Invia la richiesta",
+    "subtitle": "Approvazione prima di sostenere una spesa. L'importo approvato resta riservato finché non viene rimborsato.",
+    "tile": {
+      "open": "Approvato, non ancora richiesto",
+      "openNote": "Richieste aperte: {{count}}",
+      "pending": "In approvazione",
+      "requests": "Richieste",
+      "returned": "Restituite a te",
+      "returnedNote": "Correggi e reinvia, oppure ritira",
+      "summary": "Riepilogo spese preventive"
+    },
+    "title": "Richieste di approvazione preventiva di spesa",
+    "toast": {
+      "deleted": "{{reference}} è stata eliminata.",
+      "saved": "{{reference}} è stata salvata come bozza.",
+      "submitted": "{{reference}} è stata inviata in approvazione."
     }
   },
   "report": {

@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "{{date}} に受領確認",
+    "approvedNote": "承認済みです。単位、管理者、金額を変更すると再承認になります。しきい値と目的は再承認不要です。",
+    "availableMarker": "残り {{percent}}%",
+    "backToAcknowledgements": "受領確認に戻る",
+    "backToList": "配分に戻る",
+    "balanceTitle": "残高",
     "band": {
       "exceeded": "超過",
       "near": "しきい値に接近",
       "normal": "通常",
       "pending": "未入金",
       "watch": "要注意"
+    },
+    "bandLine": {
+      "exceeded": "超過：利用実績と予約が入金額を上回っています。追加現金の申請が必要です。",
+      "near": "しきい値に接近：定額の残りが {{near}}% 以下です。追加現金の申請が必要かもしれません。",
+      "normal": "通常：定額の {{watch}}% を超えて利用可能です。",
+      "pending": "未入金です。",
+      "watch": "要注意：定額の残りが {{watch}}% 以下です。"
+    },
+    "cancelText": "配分はここで終了し、再度回すことはできません。理由は履歴に残ります。",
+    "cancelTitle": "{{reference}} を取り消しますか？",
+    "check": {
+      "amount": "0 より大きい金額を入力してください。",
+      "chooseCustodian": "現金管理者を選択してください。",
+      "chooseScope": "単位を選択してください。",
+      "custodianInactive": "現金管理者が無効です。",
+      "custodianOutside": "現金管理者は選択した単位に所属している必要があります。",
+      "fixedAfterDisbursement": "現金は支払済みのため、単位、管理者、金額は変更できません。",
+      "locked": "この配分はロックされています：受領確認済み、または終了しています。",
+      "purpose": "現金の用途を5文字以上で入力してください。",
+      "scopeInactive": "この単位は無効のため、配分を受けられません。",
+      "scopeTaken": "{{reference}} がこの単位で既に有効です。代わりに追加現金の申請で現金を依頼してください。",
+      "thresholdRange": "しきい値は 1 から 99 の整数パーセントです。",
+      "watchAboveNear": "要注意の目安はしきい値の目安より高くしてください。",
+      "notDisburser": "払出が許可されていないため、配分を発行できません。",
+      "notRecipient": "{{name}} は有効な受取人ではないため、小口現金を保管できません。"
+    },
+    "chooseLevelFirst": "先にレベルを選択してください",
+    "column": {
+      "allocated": "割当済み",
+      "allocation": "配分",
+      "available": "利用可能",
+      "custodian": "現金管理者",
+      "heldBy": "保有者",
+      "reserved": "予約済み",
+      "scope": "レベル / 単位",
+      "status": "ステータス",
+      "used": "利用実績"
+    },
+    "custodianHint": "現金を受け取り、保管し、受領を確認する従業員です。単位の責任者が候補になります。",
+    "custodianPlaceholder": "現金の保管者を選択",
+    "deleteText": "下書きは削除されます。承認には回されていません。",
+    "deleteTitle": "下書き {{reference}} を削除しますか？",
+    "detailsTitle": "詳細",
+    "disbursedNote": "支払済みです。変更できるのはしきい値と目的だけです。",
+    "editTitle": "配分 {{reference}} を編集",
+    "ended": {
+      "cancelled": "{{name}} が {{time}} に取り消し：",
+      "rejected": "{{name}} が {{time}} に却下：",
+      "returned": "{{name}} が {{time}} に差し戻し："
+    },
+    "entity": "配分",
+    "field": {
+      "acknowledged": "確認済み",
+      "amount": "金額",
+      "createdBy": "作成",
+      "custodian": "現金管理者",
+      "ledgerEntry": "元帳記帳",
+      "level": "配分レベル",
+      "nearAt": "残り % でしきい値に接近",
+      "paidOn": "支払済み",
+      "payment": "支払",
+      "purpose": "目的 / 摘要",
+      "remarks": "受取人の備考",
+      "scope": "単位",
+      "thresholds": "しきい値",
+      "voucherNo": "伝票番号",
+      "watchAt": "残り % で要注意"
+    },
+    "figure": {
+      "available": "利用可能",
+      "funded": "入金済み",
+      "reserved": "予約済み",
+      "used": "利用実績"
+    },
+    "filter": {
+      "allBalances": "すべての残高",
+      "allLevels": "すべてのレベル"
+    },
+    "level": {
+      "businessUnit": "事業部",
+      "custodian": "現金管理者",
+      "department": "部署",
+      "project": "プロジェクト"
+    },
+    "locked": "ロック済み",
+    "lockedHint": "管理者の受領確認以降ロックされています。訂正は新しい元帳記帳で行い、編集はしません。",
+    "movement": {
+      "balance": "残高",
+      "date": "日付",
+      "description": "説明",
+      "entry": "記帳",
+      "in": "入金",
+      "kind": {
+        "adjustment": "調整",
+        "expense": "支払済みの精算",
+        "funding": "配分の入金",
+        "topUp": "追加入金",
+        "reallocation": "再配分"
+      },
+      "out": "出金"
+    },
+    "movementsTitle": "入出金",
+    "neverFunded": "入金なし",
+    "new": "新規配分",
+    "newTitle": "小口現金の新規配分",
+    "noMovements": "入出金はまだありません。管理者が現金の受領を確認すると最初の行が記帳されます。",
+    "noScopeOptions": "このレベルで選択できるものはありません",
+    "notFunded": "未入金",
+    "notFundedBeforePayment": "未入金です。財務が支払い、{{name}} が受領を確認すると残高が始まります。",
+    "notFundedYet": "支払済みで、{{name}} の受領確認待ちです。残高はその時点から始まります。",
+    "openLedger": "出納帳で開く",
+    "purposePlaceholder": "伝票に記載する現金の用途",
+    "reservationKind": {
+      "preExpense": "承認済みの事前経費申請",
+      "reimbursement": "承認済み・未払いの精算",
+      "reallocation": "移動中の再配分"
+    },
+    "reservedFor": "留保先",
+    "saveAndResubmit": "保存して承認に回す",
+    "scopeLabel": {
+      "businessUnit": "事業部",
+      "custodian": "現金管理者 / 従業員",
+      "department": "部署",
+      "project": "プロジェクト"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "事業部を検索…",
+      "custodian": "従業員名を入力…",
+      "department": "部門を検索…",
+      "project": "プロジェクトを検索…"
+    },
+    "search": "参照番号、単位、管理者、目的で検索",
+    "subtitle": "部門、事業部、プロジェクト、または管理者に渡した現金と、各々が現在保有している額です。既存の配分に現金を追加する場合は、追加現金の申請から依頼します。",
+    "thresholdsValue": "要注意 {{watch}}% · しきい値 {{near}}%",
+    "tile": {
+      "active": "有効な配分",
+      "activeNote": "{{amount}} 入金済み",
+      "attention": "要対応",
+      "attentionNote": "しきい値に接近または超過：{{count}}",
+      "available": "現在の利用可能額",
+      "availableNote": "{{amount}} 留保後",
+      "awaiting": "受領確認待ち",
+      "summary": "配分の概要"
+    },
+    "title": "小口現金の配分",
+    "toast": {
+      "cancelled": "{{reference}} を取り消しました。",
+      "deleted": "下書き {{reference}} を削除しました。",
+      "saved": "{{reference}} を保存しました。",
+      "submitted": "{{reference}} を承認に回しました。"
+    },
+    "topUpOnItsWay": "さらに {{amount}} が手配中（{{references}}）で、受領確認を待っています。",
+    "noRecipients": "この単位に有効な受取人がいません。「払出者と受取人」で追加してください。"
+  },
+  "file": {
+    "aiNotRead": "未スキャン",
+    "aiRead": "AI が読み取り、信頼度 {{confidence}}%",
+    "camera": "写真を撮る",
+    "check": {
+      "empty": "このファイルは空です。",
+      "notWhatItSays": "ファイルの内容が名前と一致しないため、添付されませんでした。本来の形式で保存し直してから再度お試しください。",
+      "tooLarge": "このファイルは {{size}} を超えています。小さいファイルを選んでください。",
+      "wrongType": "このファイル形式は受け付けていません。次のいずれかを使ってください: {{types}}。",
+      "notYours": "このファイルはあなたがアップロードしたものではないか、別の申請に属しています。もう一度アップロードしてください。"
+    },
+    "checking": "ファイルを確認中…",
+    "detail": {
+      "ai": "AI 読み取り",
+      "hash": "SHA-256",
+      "preview": "プレビュー",
+      "size": "サイズ",
+      "uploaded": "アップロード"
+    },
+    "drawnSample": "申請から取得したサンプル画像。本番システムでは、保存されたファイルがここに開きます。",
+    "remove": "削除",
+    "replace": "差し替え",
+    "rules": "{{types}} · 最大 {{size}}",
+    "view": "表示",
+    "uploading": "アップロード中…",
+    "sampleNoFile": "サンプル画像：ファイルは保存されていません",
+    "heicPreviewUnsupported": "このブラウザでは HEIC 画像をプレビューできません。ファイルを表示するにはダウンロードしてください。"
+  },
+  "preExpense": {
+    "attachmentHint": "任意: 見積書など。領収書は後で精算と一緒に添付します。",
+    "backToList": "事前経費申請に戻る",
+    "check": {
+      "datePassed": "予定日を過ぎています。日付を変更するか、経費精算として直接申請してください。",
+      "expectedDate": "経費発生予定日を選んでください。"
+    },
+    "claimAgainst": "この申請で精算",
+    "claimedSoFar": "{{amount}} 精算済み",
+    "claimsAfterApproval": "承認後に精算を申請できます。",
+    "claimsTitle": "この申請に対する精算",
+    "column": {
+      "amount": "金額",
+      "category": "カテゴリ / 店舗",
+      "employee": "従業員",
+      "expected": "予定日",
+      "reference": "参照番号",
+      "status": "ステータス",
+      "unit": "部門 / プロジェクト"
+    },
+    "deleteText": "下書きは削除されます。元に戻せません。",
+    "deleteTitle": "{{reference}} を削除しますか？",
+    "detailsTitle": "申請の詳細",
+    "editTitle": "{{reference}} を編集",
+    "entity": "事前経費申請",
+    "expectedDateHint": "お金を使う予定日。すでに発生した経費は直接精算します。",
+    "field": {
+      "allocation": "配分",
+      "amount": "申請金額 (OMR)",
+      "attachment": "補足書類（任意）",
+      "expectedDate": "経費発生予定日",
+      "purpose": "目的 / 理由"
+    },
+    "figure": {
+      "approved": "申請額",
+      "claimed": "精算済み",
+      "remaining": "精算可能残額"
+    },
+    "formIntro": "支出前に見積り経費の承認を求めます。これは支出の許可であり、支払いではありません。",
+    "heldAgainst": "承認額は、この申請に対する精算が支払われるまで {{reference}} から確保されます。",
+    "leftToClaim": "残り {{amount}}",
+    "new": "新規申請",
+    "newTitle": "新しい事前経費申請",
+    "noAllocation": "この単位には有効な割当がありません。精算は給与で支払われます。",
+    "noAllocationShort": "有効な割当なし",
+    "noClaimsYet": "まだ精算はありません。承認額は精算されるまで利用できます。",
+    "noVatHint": "一括の金額です。VAT は精算時に計算されます。",
+    "notHeld": "この単位には有効な割当がないため、小口現金からは何も確保されません。",
+    "notReserved": "確保なし",
+    "overAvailable": "{{reference}} の利用可能額 ({{available}}) を超えています。財務部の補充が必要になる場合があります。",
+    "purposePlaceholder": "何のためのお金で、なぜ必要か。",
+    "reservedAgainst": "承認後 {{reference}} から確保 · 利用可能 {{available}}",
+    "search": "参照番号、社員、目的、店舗で検索",
+    "submit": "依頼を送信",
+    "subtitle": "経費が発生する前の承認です。承認額は精算されるまで確保されます。",
+    "tile": {
+      "open": "承認済み・未精算",
+      "openNote": "未完了の申請: {{count}}",
+      "pending": "承認中",
+      "requests": "申請",
+      "returned": "差し戻し",
+      "returnedNote": "修正して再送するか、取り下げてください",
+      "summary": "事前経費の概要"
+    },
+    "title": "事前経費承認申請",
+    "toast": {
+      "deleted": "{{reference}} を削除しました。",
+      "saved": "{{reference}} を下書きとして保存しました。",
+      "submitted": "{{reference}} を承認に回しました。"
     }
   },
   "report": {

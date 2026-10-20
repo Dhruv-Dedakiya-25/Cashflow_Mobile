@@ -237,23 +237,22 @@ export function myDashboard(s: MockState, personId: string): MyDashboard {
   };
 }
 
-/** Finance's view of petty cash across the company. */
-export function financeSummary(s: MockState) {
-  const floats = round3(s.positions.reduce((t, p) => t + p.float, 0));
-  const available = round3(s.positions.reduce((t, p) => t + p.available, 0));
-  const toPay = s.claims.filter((c) => c.status === 'approved');
+/** Petty cash across the company, from its allocations: Home's company card and the allocation list. */
+export function companySummary(positions: AllocationPosition[], toPayCount: number, toPayAmount: number) {
+  const floats = round3(positions.reduce((t, p) => t + p.float, 0));
+  const available = round3(positions.reduce((t, p) => t + p.available, 0));
   return {
+    positions,
     floats,
     available,
     availablePercent: floats ? Math.round((available / floats) * 1000) / 10 : null,
-    toPayCount: toPay.length,
-    toPayAmount: round3(toPay.reduce((t, c) => t + c.gross, 0)),
-    attention: s.positions.filter((p) => p.band === 'near' || p.band === 'watch' || p.band === 'exceeded'),
-    awaitingAckAmount: round3(s.acks.reduce((t, a) => t + a.amount, 0)),
+    toPayCount,
+    toPayAmount,
+    attention: positions.filter((p) => p.band === 'near' || p.band === 'watch' || p.band === 'exceeded'),
     /** The allocations' totals by what they are held for: business units, departments, projects, custodians. */
     groups: (['businessUnit', 'department', 'project', 'custodian'] as const)
       .map((level) => {
-        const held = s.positions.filter((p) => p.level === level);
+        const held = positions.filter((p) => p.level === level);
         return {
           level,
           count: held.length,
@@ -263,6 +262,12 @@ export function financeSummary(s: MockState) {
       })
       .filter((g) => g.count > 0),
   };
+}
+
+/** Finance's view of the sample: its allocations and the approved claims waiting to be paid. */
+export function financeSummary(s: MockState) {
+  const toPay = s.claims.filter((c) => c.status === 'approved');
+  return companySummary(s.positions, toPay.length, round3(toPay.reduce((t, c) => t + c.gross, 0)));
 }
 
 /** The sample's answer for any receipt: the web demo reads every receipt as this one. */

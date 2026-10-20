@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Ontvangst bevestigd op {{date}}",
+    "approvedNote": "Al goedgekeurd. Het wijzigen van eenheid, beheerder of bedrag stuurt hem terug ter goedkeuring; drempels en doel niet.",
+    "availableMarker": "Nog {{percent}}%",
+    "backToAcknowledgements": "Terug naar ontvangstbevestigingen",
+    "backToList": "Terug naar toewijzingen",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Overschreden",
       "near": "Bijna bij de drempel",
       "normal": "Normaal",
       "pending": "Nog niet gefinancierd",
       "watch": "Opletten"
+    },
+    "bandLine": {
+      "exceeded": "Overschreden: gebruikt en gereserveerd zijn meer dan de financiering. Een aanvraag voor extra contant geld is nodig.",
+      "near": "Bijna bij de drempel: nog {{near}}% of minder van het kasvoorschot over. Een aanvraag voor extra contant geld kan nodig zijn.",
+      "normal": "Normaal: meer dan {{watch}}% van het kasvoorschot is beschikbaar.",
+      "pending": "Nog niet gefinancierd.",
+      "watch": "Opletten: nog {{watch}}% of minder van het kasvoorschot over."
+    },
+    "cancelText": "De toewijzing stopt hier en kan niet opnieuw worden verstuurd. De reden wordt bewaard in de geschiedenis.",
+    "cancelTitle": "{{reference}} annuleren?",
+    "check": {
+      "amount": "Voer een bedrag boven nul in.",
+      "chooseCustodian": "Kies de kasbeheerder.",
+      "chooseScope": "Kies de eenheid.",
+      "custodianInactive": "De kasbeheerder is inactief.",
+      "custodianOutside": "De kasbeheerder moet tot de gekozen eenheid behoren.",
+      "fixedAfterDisbursement": "Het geld is uitbetaald, dus eenheid, beheerder en bedrag kunnen niet meer wijzigen.",
+      "locked": "Deze toewijzing is vergrendeld: de ontvangst is bevestigd of hij is beëindigd.",
+      "purpose": "Geef aan waarvoor het geld is, in minstens 5 tekens.",
+      "scopeInactive": "Deze eenheid is inactief en kan geen toewijzing ontvangen.",
+      "scopeTaken": "{{reference}} staat al open voor deze eenheid. Vraag in plaats daarvan meer geld aan via aanvragen extra contant geld.",
+      "thresholdRange": "Drempels zijn hele percentages van 1 tot 99.",
+      "watchAboveNear": "De opletmarkering moet boven de drempelmarkering liggen.",
+      "notDisburser": "U bent niet ingeschakeld voor uitkering en kunt dus geen toewijzingen uitgeven.",
+      "notRecipient": "{{name}} is geen ingeschakelde ontvanger en kan geen kleine kas beheren."
+    },
+    "chooseLevelFirst": "Kies eerst het niveau",
+    "column": {
+      "allocated": "Toegewezen",
+      "allocation": "Toewijzing",
+      "available": "Beschikbaar",
+      "custodian": "Kasbeheerder",
+      "heldBy": "Beheerd door",
+      "reserved": "Gereserveerd",
+      "scope": "Niveau / Eenheid",
+      "status": "Toestand",
+      "used": "Gebruikt"
+    },
+    "custodianHint": "De medewerker die het geld ontvangt, beheert en de ontvangst bevestigt. Het hoofd van de eenheid wordt voorgesteld.",
+    "custodianPlaceholder": "Kies wie het geld beheert",
+    "deleteText": "Het concept wordt verwijderd. Het is nooit ter goedkeuring gestuurd.",
+    "deleteTitle": "Concept {{reference}} verwijderen?",
+    "detailsTitle": "Details",
+    "disbursedNote": "Al uitbetaald. Alleen de drempels en het doel kunnen nog wijzigen.",
+    "editTitle": "Toewijzing {{reference}} bewerken",
+    "ended": {
+      "cancelled": "Geannuleerd door {{name}} op {{time}}:",
+      "rejected": "Afgewezen door {{name}} op {{time}}:",
+      "returned": "Teruggestuurd door {{name}} op {{time}}:"
+    },
+    "entity": "toewijzing",
+    "field": {
+      "acknowledged": "Bevestigd",
+      "amount": "Bedrag",
+      "createdBy": "Aangemaakt",
+      "custodian": "Kasbeheerder",
+      "ledgerEntry": "Grootboekboeking",
+      "level": "Toewijzingsniveau",
+      "nearAt": "Bijna bij de drempel bij % over",
+      "paidOn": "Betaald",
+      "payment": "Betaling",
+      "purpose": "Doel / Omschrijving",
+      "remarks": "Opmerkingen van de ontvanger",
+      "scope": "Eenheid",
+      "thresholds": "Drempels",
+      "voucherNo": "Bonnummer",
+      "watchAt": "Opletten bij % over"
+    },
+    "figure": {
+      "available": "Beschikbaar",
+      "funded": "Gefinancierd",
+      "reserved": "Gereserveerd",
+      "used": "Gebruikt"
+    },
+    "filter": {
+      "allBalances": "Alle saldi",
+      "allLevels": "Alle niveaus"
+    },
+    "level": {
+      "businessUnit": "Bedrijfsonderdeel",
+      "custodian": "Kasbeheerder",
+      "department": "Afdeling",
+      "project": "Project"
+    },
+    "locked": "Vergrendeld",
+    "lockedHint": "Vergrendeld sinds de kasbeheerder de ontvangst bevestigde. Correcties gaan via nieuwe grootboekboekingen, nooit door bewerken.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Datum",
+      "description": "Omschrijving",
+      "entry": "Boeking",
+      "in": "In",
+      "kind": {
+        "adjustment": "Correctie",
+        "expense": "Betaalde declaratie",
+        "funding": "Financiering toewijzing",
+        "topUp": "Aanvulling",
+        "reallocation": "Overdracht"
+      },
+      "out": "Uit"
+    },
+    "movementsTitle": "Mutaties",
+    "neverFunded": "Niet gefinancierd",
+    "new": "Nieuwe toewijzing",
+    "newTitle": "Nieuwe kleine-kastoewijzing",
+    "noMovements": "Nog geen mutaties. De eerste regel wordt geboekt wanneer de kasbeheerder de ontvangst van het geld bevestigt.",
+    "noScopeOptions": "Op dit niveau valt niets te kiezen",
+    "notFunded": "Nog niet gefinancierd",
+    "notFundedBeforePayment": "Nog niet gefinancierd. Het saldo begint wanneer Financiën uitbetaalt en {{name}} de ontvangst bevestigt.",
+    "notFundedYet": "Uitbetaald en wacht op de ontvangstbevestiging van {{name}}. Pas dan begint het saldo.",
+    "openLedger": "Openen in kasboek",
+    "purposePlaceholder": "Waarvoor het geld is, zoals het op de bon moet staan",
+    "reservationKind": {
+      "preExpense": "Goedgekeurde aanvraag vooraf",
+      "reimbursement": "Goedgekeurde declaratie, nog niet betaald",
+      "reallocation": "Overdracht onderweg"
+    },
+    "reservedFor": "Gereserveerd voor",
+    "saveAndResubmit": "Opslaan en ter goedkeuring sturen",
+    "scopeLabel": {
+      "businessUnit": "Bedrijfsonderdeel",
+      "custodian": "Kasbeheerder / Medewerker",
+      "department": "Afdeling",
+      "project": "Project"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Zoek bedrijfsonderdeel…",
+      "custodian": "Typ de naam van een medewerker…",
+      "department": "Zoek afdeling…",
+      "project": "Zoek project…"
+    },
+    "search": "Zoek referentie, eenheid, beheerder of doel",
+    "subtitle": "Contant geld uitgegeven aan een afdeling, bedrijfsonderdeel, project of beheerder, en wat elk nu in handen heeft. Meer geld voor een bestaande toewijzing loopt via aanvragen extra contant geld.",
+    "thresholdsValue": "Opletten {{watch}}% · Drempel {{near}}%",
+    "tile": {
+      "active": "Actieve toewijzingen",
+      "activeNote": "{{amount}} gefinancierd",
+      "attention": "Aandacht nodig",
+      "attentionNote": "Bijna bij de drempel of overschreden: {{count}}",
+      "available": "Nu beschikbaar",
+      "availableNote": "na {{amount}} gereserveerd",
+      "awaiting": "Wacht op ontvangstbevestiging",
+      "summary": "Overzicht toewijzingen"
+    },
+    "title": "Kleine-kastoewijzingen",
+    "toast": {
+      "cancelled": "{{reference}} is geannuleerd.",
+      "deleted": "Concept {{reference}} is verwijderd.",
+      "saved": "{{reference}} is opgeslagen.",
+      "submitted": "{{reference}} is ter goedkeuring gestuurd."
+    },
+    "topUpOnItsWay": "Nog {{amount}} is onderweg ({{references}}) en wacht op ontvangstbevestiging.",
+    "noRecipients": "Geen ingeschakelde ontvangers in deze eenheid. Voeg er een toe bij Uitkeerders & ontvangers."
+  },
+  "file": {
+    "aiNotRead": "Niet gescand",
+    "aiRead": "Gelezen door AI, {{confidence}}% zekerheid",
+    "camera": "Foto maken",
+    "check": {
+      "empty": "Dit bestand is leeg.",
+      "notWhatItSays": "De inhoud van het bestand past niet bij de naam, dus het is niet bijgevoegd. Sla het opnieuw op in het echte formaat en probeer het nog eens.",
+      "tooLarge": "Dit bestand is groter dan {{size}}. Kies een kleiner bestand.",
+      "wrongType": "Dit bestandstype wordt niet geaccepteerd. Gebruik een van: {{types}}.",
+      "notYours": "Dit bestand is niet door u geüpload of hoort bij een andere aanvraag. Upload het opnieuw."
+    },
+    "checking": "Bestand wordt gecontroleerd…",
+    "detail": {
+      "ai": "AI-uitlezing",
+      "hash": "SHA-256",
+      "preview": "Voorbeeld",
+      "size": "Grootte",
+      "uploaded": "Geüpload"
+    },
+    "drawnSample": "Voorbeeldafbeelding uit de declaratie. In het echte systeem worden opgeslagen bestanden hier geopend.",
+    "remove": "Verwijderen",
+    "replace": "Vervangen",
+    "rules": "{{types}} · tot {{size}}",
+    "view": "Bekijken",
+    "uploading": "Uploaden…",
+    "sampleNoFile": "Voorbeeldafbeelding: er is geen bestand opgeslagen",
+    "heicPreviewUnsupported": "Deze browser kan geen voorvertoning van HEIC-afbeeldingen tonen. Download het bestand om het te bekijken."
+  },
+  "preExpense": {
+    "attachmentHint": "Optioneel: een offerte of schatting. De rekening wordt later bij de declaratie gevoegd.",
+    "backToList": "Terug naar aanvragen vooraf",
+    "check": {
+      "datePassed": "De verwachte datum is verstreken. Wijzig die, of declareer de uitgave direct.",
+      "expectedDate": "Kies de verwachte uitgavedatum."
+    },
+    "claimAgainst": "Hierop declareren",
+    "claimedSoFar": "{{amount}} gedeclareerd",
+    "claimsAfterApproval": "Na goedkeuring kunnen er declaraties op worden ingediend.",
+    "claimsTitle": "Declaraties op deze aanvraag",
+    "column": {
+      "amount": "Bedrag",
+      "category": "Categorie / winkel",
+      "employee": "Medewerker",
+      "expected": "Verwacht",
+      "reference": "Referentie",
+      "status": "Toestand",
+      "unit": "Eenheid / project"
+    },
+    "deleteText": "Het concept wordt verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "deleteTitle": "{{reference}} verwijderen?",
+    "detailsTitle": "Aanvraaggegevens",
+    "editTitle": "{{reference}} bewerken",
+    "entity": "aanvragen vooraf voor uitgaven",
+    "expectedDateHint": "Wanneer het geld wordt uitgegeven. Een uitgave die al gedaan is, wordt direct gedeclareerd.",
+    "field": {
+      "allocation": "Toewijzing",
+      "amount": "Gevraagd bedrag (OMR)",
+      "attachment": "Ondersteunend document (optioneel)",
+      "expectedDate": "Verwachte uitgavedatum",
+      "purpose": "Doel / onderbouwing"
+    },
+    "figure": {
+      "approved": "Aangevraagd",
+      "claimed": "Gedeclareerd",
+      "remaining": "Nog te declareren"
+    },
+    "formIntro": "Vraag goedkeuring voor een geschatte uitgave voordat u uitgeeft. Dit is toestemming om uit te geven, geen betaling.",
+    "heldAgainst": "Het goedgekeurde bedrag blijft gereserveerd op {{reference}} tot de declaraties erop zijn betaald.",
+    "leftToClaim": "{{amount}} over",
+    "new": "Nieuwe aanvraag",
+    "newTitle": "Nieuwe aanvraag vooraf voor uitgave",
+    "noAllocation": "Deze eenheid heeft geen actieve toewijzing. Een declaratie hierop wordt met het salaris betaald.",
+    "noAllocationShort": "Geen actieve",
+    "noClaimsYet": "Nog geen declaraties. Het goedgekeurde bedrag blijft beschikbaar tot het wordt gedeclareerd.",
+    "noVatHint": "Eén totaalbedrag. De btw wordt in de declaratie berekend.",
+    "notHeld": "Deze eenheid heeft geen actieve toewijzing, dus er wordt niets in de kleine kas gereserveerd.",
+    "notReserved": "Niet gereserveerd",
+    "overAvailable": "Meer dan {{reference}} beschikbaar heeft ({{available}}). Financiën moet het mogelijk aanvullen.",
+    "purposePlaceholder": "Waarvoor het geld is en waarom het nodig is.",
+    "reservedAgainst": "Gereserveerd op {{reference}} na goedkeuring · beschikbaar {{available}}",
+    "search": "Zoek op referentie, medewerker, doel of winkel",
+    "submit": "Verzoek versturen",
+    "subtitle": "Goedkeuring voordat een uitgave wordt gedaan. Een goedgekeurd bedrag blijft gereserveerd tot het wordt gedeclareerd.",
+    "tile": {
+      "open": "Goedgekeurd, nog niet gedeclareerd",
+      "openNote": "Open aanvragen: {{count}}",
+      "pending": "In goedkeuring",
+      "requests": "Aanvragen",
+      "returned": "Naar u teruggestuurd",
+      "returnedNote": "Corrigeer en verstuur opnieuw, of trek in",
+      "summary": "Overzicht aanvragen vooraf"
+    },
+    "title": "Aanvragen voor voorafgaande goedkeuring van uitgaven",
+    "toast": {
+      "deleted": "{{reference}} is verwijderd.",
+      "saved": "{{reference}} is opgeslagen als concept.",
+      "submitted": "{{reference}} is ter goedkeuring gestuurd."
     }
   },
   "report": {

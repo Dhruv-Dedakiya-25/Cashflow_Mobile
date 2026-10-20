@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Diakui terima {{date}}",
+    "approvedNote": "Sudah diluluskan. Menukar unit, penjaga atau jumlah menghantarnya semula untuk kelulusan; ambang dan tujuan tidak.",
+    "availableMarker": "Tinggal {{percent}}%",
+    "backToAcknowledgements": "Kembali ke Pengakuan Terima",
+    "backToList": "Kembali ke Peruntukan",
+    "balanceTitle": "Baki",
     "band": {
       "exceeded": "Melebihi had",
       "near": "Hampir ambang",
       "normal": "Normal",
       "pending": "Belum dibiayai",
       "watch": "Dipantau"
+    },
+    "bandLine": {
+      "exceeded": "Melebihi had: yang digunakan dan ditempah melebihi pembiayaan. Permohonan Tunai Tambahan diperlukan.",
+      "near": "Hampir ambang: tinggal {{near}}% atau kurang daripada had tunai. Permohonan Tunai Tambahan mungkin diperlukan.",
+      "normal": "Normal: lebih daripada {{watch}}% had tunai tersedia.",
+      "pending": "Belum dibiayai.",
+      "watch": "Dipantau: tinggal {{watch}}% atau kurang daripada had tunai."
+    },
+    "cancelText": "Peruntukan berhenti di sini dan tidak boleh dihantar semula. Sebabnya disimpan dalam sejarahnya.",
+    "cancelTitle": "Batalkan {{reference}}?",
+    "check": {
+      "amount": "Masukkan amaun melebihi sifar.",
+      "chooseCustodian": "Pilih penjaga tunai.",
+      "chooseScope": "Pilih unit.",
+      "custodianInactive": "Penjaga tunai tidak aktif.",
+      "custodianOutside": "Penjaga tunai mesti dalam unit yang dipilih.",
+      "fixedAfterDisbursement": "Tunai telah dibayar, jadi unit, penjaga dan jumlah tidak boleh diubah lagi.",
+      "locked": "Peruntukan ini dikunci: penerimaannya telah diakui, atau ia telah tamat.",
+      "purpose": "Nyatakan untuk apa tunai ini, sekurang-kurangnya 5 aksara.",
+      "scopeInactive": "Unit ini tidak aktif, jadi tidak boleh menerima peruntukan.",
+      "scopeTaken": "{{reference}} sudah dibuka untuk unit ini. Mohon tunai tambahan melalui Permohonan Tunai Tambahan sebaliknya.",
+      "thresholdRange": "Ambang ialah peratusan bulat dari 1 hingga 99.",
+      "watchAboveNear": "Tanda pantau mesti di atas tanda ambang.",
+      "notDisburser": "Anda tidak didayakan untuk pengagihan, jadi anda tidak boleh mengeluarkan peruntukan.",
+      "notRecipient": "{{name}} bukan penerima yang didayakan dan tidak boleh memegang tunai runcit."
+    },
+    "chooseLevelFirst": "Pilih peringkat dahulu",
+    "column": {
+      "allocated": "Diperuntukkan",
+      "allocation": "Peruntukan",
+      "available": "Tersedia",
+      "custodian": "Penjaga Tunai",
+      "heldBy": "Dipegang oleh",
+      "reserved": "Ditempah",
+      "scope": "Peringkat / Unit",
+      "status": "Keadaan",
+      "used": "Digunakan"
+    },
+    "custodianHint": "Pekerja yang menerima, memegang dan mengakui penerimaan tunai. Ketua unit dicadangkan.",
+    "custodianPlaceholder": "Pilih siapa yang memegang tunai",
+    "deleteText": "Draf dibuang. Ia tidak pernah dihantar untuk kelulusan.",
+    "deleteTitle": "Padam draf {{reference}}?",
+    "detailsTitle": "Butiran",
+    "disbursedNote": "Sudah dibayar. Kini hanya ambang dan tujuan boleh diubah.",
+    "editTitle": "Edit Peruntukan {{reference}}",
+    "ended": {
+      "cancelled": "Dibatalkan oleh {{name}} pada {{time}}:",
+      "rejected": "Ditolak oleh {{name}} pada {{time}}:",
+      "returned": "Dikembalikan oleh {{name}} pada {{time}}:"
+    },
+    "entity": "peruntukan",
+    "field": {
+      "acknowledged": "Telah disahkan",
+      "amount": "Jumlah",
+      "createdBy": "Dicipta",
+      "custodian": "Penjaga Tunai",
+      "ledgerEntry": "Catatan Lejar",
+      "level": "Peringkat Peruntukan",
+      "nearAt": "Hampir ambang apabila baki %",
+      "paidOn": "Dibayar",
+      "payment": "Bayaran",
+      "purpose": "Tujuan / Keterangan",
+      "remarks": "Catatan Penerima",
+      "scope": "Unit",
+      "thresholds": "Ambang",
+      "voucherNo": "No. Baucar",
+      "watchAt": "Pantau apabila baki %"
+    },
+    "figure": {
+      "available": "Tersedia",
+      "funded": "Dibiayai",
+      "reserved": "Ditempah",
+      "used": "Digunakan"
+    },
+    "filter": {
+      "allBalances": "Semua baki",
+      "allLevels": "Semua peringkat"
+    },
+    "level": {
+      "businessUnit": "Unit Perniagaan",
+      "custodian": "Penjaga Tunai",
+      "department": "Jabatan",
+      "project": "Projek"
+    },
+    "locked": "Dikunci",
+    "lockedHint": "Dikunci sejak penjaga mengakui penerimaan. Pembetulan dibuat sebagai catatan lejar baharu, tidak sekali-kali dengan menyunting.",
+    "movement": {
+      "balance": "Baki",
+      "date": "Tarikh",
+      "description": "Penerangan",
+      "entry": "Catatan",
+      "in": "Masuk",
+      "kind": {
+        "adjustment": "Pelarasan",
+        "expense": "Tuntutan dibayar",
+        "funding": "Pembiayaan peruntukan",
+        "topUp": "Tambahan tunai",
+        "reallocation": "Peruntukan semula"
+      },
+      "out": "Keluar"
+    },
+    "movementsTitle": "Pergerakan",
+    "neverFunded": "Tidak dibiayai",
+    "new": "Peruntukan Baharu",
+    "newTitle": "Peruntukan Tunai Runcit Baharu",
+    "noMovements": "Belum ada pergerakan. Baris pertama dicatat apabila penjaga mengakui penerimaan tunai.",
+    "noScopeOptions": "Tiada apa untuk dipilih pada peringkat ini",
+    "notFunded": "Belum dibiayai",
+    "notFundedBeforePayment": "Belum dibiayai. Baki bermula apabila Kewangan membayarnya dan {{name}} mengakui penerimaan.",
+    "notFundedYet": "Sudah dibayar dan menunggu {{name}} mengakui penerimaan. Baki hanya bermula pada masa itu.",
+    "openLedger": "Buka dalam Lejar",
+    "purposePlaceholder": "Untuk apa tunai ini, seperti yang patut tertulis pada baucar",
+    "reservationKind": {
+      "preExpense": "Permohonan pra-perbelanjaan yang diluluskan",
+      "reimbursement": "Tuntutan diluluskan, belum dibayar",
+      "reallocation": "Peruntukan semula dalam proses"
+    },
+    "reservedFor": "Dirizab untuk",
+    "saveAndResubmit": "Simpan dan Hantar untuk Kelulusan",
+    "scopeLabel": {
+      "businessUnit": "Unit Perniagaan",
+      "custodian": "Penjaga / Pekerja",
+      "department": "Jabatan",
+      "project": "Projek"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Cari unit perniagaan…",
+      "custodian": "Taip nama pekerja…",
+      "department": "Cari jabatan…",
+      "project": "Cari projek…"
+    },
+    "search": "Cari rujukan, unit, penjaga atau tujuan",
+    "subtitle": "Tunai yang diberikan kepada jabatan, unit perniagaan, projek atau penjaga, dan apa yang dipegang setiap satu sekarang. Tunai tambahan untuk peruntukan sedia ada dimohon melalui Permohonan Tunai Tambahan.",
+    "thresholdsValue": "Pantau {{watch}}% · Ambang {{near}}%",
+    "tile": {
+      "active": "Peruntukan aktif",
+      "activeNote": "{{amount}} dibiayai",
+      "attention": "Perlu Perhatian",
+      "attentionNote": "Hampir ambang atau melebihi had: {{count}}",
+      "available": "Tersedia sekarang",
+      "availableNote": "selepas {{amount}} dirizab",
+      "awaiting": "Menunggu pengakuan terima",
+      "summary": "Ringkasan peruntukan"
+    },
+    "title": "Peruntukan Tunai Runcit",
+    "toast": {
+      "cancelled": "{{reference}} telah dibatalkan.",
+      "deleted": "Draf {{reference}} telah dipadam.",
+      "saved": "{{reference}} telah disimpan.",
+      "submitted": "{{reference}} telah dihantar untuk kelulusan."
+    },
+    "topUpOnItsWay": "{{amount}} lagi dalam perjalanan ({{references}}) dan menunggu pengakuan terima.",
+    "noRecipients": "Tiada penerima yang didayakan dalam unit ini. Tambah satu di Pengagih & Penerima."
+  },
+  "file": {
+    "aiNotRead": "Tidak diimbas",
+    "aiRead": "Dibaca AI, keyakinan {{confidence}}%",
+    "camera": "Ambil foto",
+    "check": {
+      "empty": "Fail ini kosong.",
+      "notWhatItSays": "Kandungan fail tidak sepadan dengan namanya, jadi ia tidak dilampirkan. Simpan semula dalam format sebenar dan cuba lagi.",
+      "tooLarge": "Fail ini melebihi {{size}}. Pilih fail yang lebih kecil.",
+      "wrongType": "Jenis fail ini tidak diterima. Gunakan salah satu: {{types}}.",
+      "notYours": "Fail ini tidak dimuat naik oleh anda atau milik permohonan lain. Sila muat naik semula."
+    },
+    "checking": "Menyemak fail…",
+    "detail": {
+      "ai": "Bacaan AI",
+      "hash": "SHA-256",
+      "preview": "Pratonton",
+      "size": "Saiz",
+      "uploaded": "Dimuat naik"
+    },
+    "drawnSample": "Gambar sampel daripada tuntutan. Pada sistem sebenar, fail yang disimpan dibuka di sini.",
+    "remove": "Buang",
+    "replace": "Ganti",
+    "rules": "{{types}} · hingga {{size}}",
+    "view": "Lihat",
+    "uploading": "Memuat naik…",
+    "sampleNoFile": "Gambar sampel: tiada fail disimpan",
+    "heicPreviewUnsupported": "Pelayar ini tidak dapat melihat pratonton imej HEIC. Muat turun fail untuk melihatnya."
+  },
+  "preExpense": {
+    "attachmentHint": "Pilihan: sebut harga atau anggaran. Bil dilampirkan kemudian, bersama tuntutan.",
+    "backToList": "Kembali ke Permohonan Pra-Perbelanjaan",
+    "check": {
+      "datePassed": "Tarikh jangkaan telah berlalu. Ubahnya, atau tuntut perbelanjaan terus sebagai bayaran balik.",
+      "expectedDate": "Pilih tarikh jangkaan perbelanjaan."
+    },
+    "claimAgainst": "Tuntut atas Permohonan Ini",
+    "claimedSoFar": "{{amount}} dituntut",
+    "claimsAfterApproval": "Tuntutan boleh dibuat selepas permohonan diluluskan.",
+    "claimsTitle": "Tuntutan atas Permohonan Ini",
+    "column": {
+      "amount": "Jumlah",
+      "category": "Kategori / Peniaga",
+      "employee": "Pekerja",
+      "expected": "Jangkaan",
+      "reference": "Rujukan",
+      "status": "Keadaan",
+      "unit": "Unit / Projek"
+    },
+    "deleteText": "Draf akan dibuang. Tindakan ini tidak boleh dibatalkan.",
+    "deleteTitle": "Padam {{reference}}?",
+    "detailsTitle": "Butiran Permohonan",
+    "editTitle": "Sunting {{reference}}",
+    "entity": "permohonan pra-perbelanjaan",
+    "expectedDateHint": "Bila wang akan dibelanjakan. Perbelanjaan yang sudah berlaku dituntut terus.",
+    "field": {
+      "allocation": "Peruntukan",
+      "amount": "Amaun Dipohon (OMR)",
+      "attachment": "Dokumen Sokongan (pilihan)",
+      "expectedDate": "Tarikh Jangkaan Perbelanjaan",
+      "purpose": "Tujuan / Justifikasi"
+    },
+    "figure": {
+      "approved": "Dimohon",
+      "claimed": "Dituntut",
+      "remaining": "Baki untuk Dituntut"
+    },
+    "formIntro": "Mohon kelulusan bagi anggaran perbelanjaan sebelum berbelanja. Ini kebenaran untuk berbelanja, bukan bayaran.",
+    "heldAgainst": "Amaun yang diluluskan disimpan daripada {{reference}} sehingga tuntutan atasnya dibayar.",
+    "leftToClaim": "Baki {{amount}}",
+    "new": "Permohonan Baharu",
+    "newTitle": "Permohonan Pra-Perbelanjaan Baharu",
+    "noAllocation": "Unit ini tiada peruntukan aktif. Tuntutan atasnya akan dibayar bersama gaji.",
+    "noAllocationShort": "Tiada yang aktif",
+    "noClaimsYet": "Belum ada tuntutan. Amaun yang diluluskan kekal tersedia sehingga dituntut.",
+    "noVatHint": "Satu amaun sekali gus. VAT dikira pada tuntutan.",
+    "notHeld": "Unit ini tiada peruntukan aktif, jadi tiada apa-apa disimpan daripada tunai runcit.",
+    "notReserved": "Tidak disimpan",
+    "overAvailable": "Melebihi yang tersedia dalam {{reference}} ({{available}}). Kewangan mungkin perlu menambahnya.",
+    "purposePlaceholder": "Untuk apa wang ini, dan mengapa ia diperlukan.",
+    "reservedAgainst": "Disimpan daripada {{reference}} setelah diluluskan · tersedia {{available}}",
+    "search": "Cari rujukan, pekerja, tujuan atau peniaga",
+    "submit": "Hantar permohonan",
+    "subtitle": "Kelulusan sebelum perbelanjaan dibuat. Amaun yang diluluskan disimpan sehingga dituntut.",
+    "tile": {
+      "open": "Diluluskan, Belum Dituntut",
+      "openNote": "Permohonan terbuka: {{count}}",
+      "pending": "Dalam Kelulusan",
+      "requests": "Permohonan",
+      "returned": "Dikembalikan kepada Anda",
+      "returnedNote": "Betulkan dan hantar semula, atau tarik balik",
+      "summary": "Ringkasan pra-perbelanjaan"
+    },
+    "title": "Permohonan Kelulusan Pra-Perbelanjaan",
+    "toast": {
+      "deleted": "{{reference}} telah dipadam.",
+      "saved": "{{reference}} disimpan sebagai draf.",
+      "submitted": "{{reference}} telah dihantar untuk kelulusan."
     }
   },
   "report": {

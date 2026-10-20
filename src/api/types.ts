@@ -122,6 +122,8 @@ export interface ReimbursementView {
   extraction?: ReceiptExtraction;
   allocationReference?: string;
   payment?: PaymentRecord;
+  /** The version the server last saved, sent back with a change so two edits cannot overwrite each other. */
+  stamp?: string;
 }
 
 /** An acknowledged allocation against its float: used + reserved + available = float. */
@@ -170,6 +172,8 @@ export interface ApprovalItem {
   purpose: string;
   currentStep?: { index: number; step: RouteStep };
   canDecide: boolean;
+  /** The last decision the signed-in person made on it, if any. */
+  myDecision?: { action: 'approved' | 'returned' | 'rejected'; atUtc: string };
   flags: ApprovalFlag[];
 }
 
@@ -219,4 +223,214 @@ export interface NamedRecord {
   id: string;
   nameEn: string;
   nameAr: string;
+}
+
+// ---- Sign-in -------------------------------------------------------------------------
+
+export type AuthenticatorApp = 'google' | 'microsoft';
+
+/** The signed-in user, as /api/Auth/me and every sign-in step return it. */
+export interface AuthUser {
+  id: string;
+  username: string;
+  displayName?: string;
+  email?: string;
+  isActive: boolean;
+  roles: string[];
+  roleId?: string;
+  employeeId?: string;
+  employeeCode?: string;
+  companyId?: string;
+  dataScope?: string;
+  /** An administrator chose the password: nothing else works until it is changed. */
+  mustChangePassword?: boolean;
+  /** The role's rights in the Permission Matrix: module → actions, such as Reports → ["view"]. */
+  grants: Record<string, string[]>;
+  /** "disburser", "recipient": the person's entries on Disbursers & Recipients. */
+  cashRoles: string[];
+}
+
+/** A started session, the same as the web receives. */
+export interface LoginSession {
+  accessToken: string;
+  accessTokenExpiration: string;
+  refreshTokenExpiration: string;
+  isPersistent: boolean;
+  user: AuthUser;
+  /** Only when 2FA was set up during this sign-in: shown once, never kept. */
+  recoveryCodes?: string[];
+}
+
+/** What /api/AppAuth returns for a session: the web's session plus the tokens the app keeps. */
+export interface AppSession {
+  session: LoginSession;
+  refreshToken: string;
+  trustedDeviceToken?: string;
+}
+
+/** What a correct password earns when 2FA applies: a five-minute challenge for the code step. */
+export interface TwoFactorChallenge {
+  /** `code` to enter a code; `enroll` to set an authenticator up first. */
+  kind: 'code' | 'enroll';
+  challengeToken: string;
+  expiresAtUtc: string;
+  recoveryCodesAllowed: boolean;
+  trustedDeviceAllowed: boolean;
+  trustedDeviceDays: number;
+  authenticators: AuthenticatorApp[];
+}
+
+export interface TwoFactorSetup {
+  secret: string;
+  otpauthUri: string;
+  account: string;
+  periodSeconds: number;
+}
+
+/** The signed-in person's own 2FA, from /api/TwoFactor/getMyTwoFactor. */
+export interface MyTwoFactor {
+  enrolledAtUtc?: string;
+  required: boolean;
+  recoveryCodesLeft: number;
+}
+
+// ---- Lists and settings ----------------------------------------------------------------
+
+/** One record in a /api/Lookup/getOptions list: an employee, unit, category or vendor. */
+export interface LookupOption {
+  value: string;
+  label: string;
+  labelAr?: string;
+  /** The employee ID, such as EMP-0029. */
+  code?: string;
+  /** The record it belongs to: an employee's department, a department's business unit. */
+  parent?: string;
+  disabled?: boolean;
+}
+
+export interface LanguageSetting {
+  code: string;
+  isEnabled: boolean;
+}
+
+/** The Finance Dashboard, trimmed to Home's company card. */
+export interface FinanceDashboard {
+  floats: number;
+  floatCount: number;
+  available: number;
+  availablePercent: number | null;
+  toPay: number;
+  toPayCount: number;
+  positions: AllocationPosition[];
+}
+
+// ---- Claims ----------------------------------------------------------------------------
+
+/** The fields a person enters for a claim; the server works out net, VAT and gross. */
+export interface ClaimInput {
+  beneficiaryId: string;
+  basis: 'direct' | 'preApproved';
+  preExpenseId?: string;
+  expenseDate: string;
+  categoryId: string;
+  vendorId?: string;
+  payeeName?: string;
+  receiptNo?: string;
+  description: string;
+  enteredAmount: number;
+  vatTreatment: VatTreatment;
+  costLevel: CostLevel;
+  costId: string;
+  settlement: SettlementMethod;
+  receipt?: AttachmentInfo;
+}
+
+type UnitsByLevel = Record<CostLevel, string[]>;
+
+/** What /api/Reimbursement/getClaimOptions allows the person, and the rules a claim must meet. */
+export interface ClaimOptions {
+  beneficiaryIds: string[];
+  /** Where the person may charge a claim. */
+  costUnits: UnitsByLevel;
+  /** Of those, the units with petty cash to pay from. */
+  fundedUnits: UnitsByLevel;
+  preApprovals: { id: string; reference: string; remaining: number; amount: number; purpose: string; costLevel: CostLevel; costId: string }[];
+  requireReceipt: boolean;
+  receiptCategoryIds: string[];
+  vatRate: number;
+  requireActiveAllocation: boolean;
+  preventNegativeBalance: boolean;
+  /** For each funded unit, the allocation a petty-cash claim there draws on. */
+  allocations: { costLevel: CostLevel; unitId: string; allocationId: string; reference: string; available: number }[];
+}
+
+/** A stored upload, as /api/Document/uploadDocument returns it. */
+export interface DocumentView {
+  id: string;
+  fileName: string;
+  contentType: string;
+  sizeBytes: number;
+  sha256: string;
+  uploadedAtUtc: string;
+  uploadedById: string;
+}
+
+/** The upload rules and AI reading settings, from /api/Document/getDocumentOptions. */
+export interface DocumentOptions {
+  allowedFileTypes: string[];
+  maxUploadMb: number;
+  extractionEnabled: boolean;
+  minConfidence: number;
+  timeoutSeconds: number;
+  maxRetries: number;
+}
+
+// ---- Approvals and acknowledgements -----------------------------------------------------
+
+/** A field corrected after the last return: what the approver saw, and what it is now. */
+export interface FieldChange {
+  /** The web's key for the field's label, such as "pages:reimb.field.description". */
+  field: string;
+  from?: string;
+  to: string;
+  /** A key prefix when the values are codes to translate. */
+  codes?: string;
+}
+
+/** Any request's route and history, whatever its kind. */
+export interface RequestRecord {
+  id: string;
+  reference: string;
+  route: RouteStep[];
+  currentStep?: number;
+  history: HistoryEntry[];
+}
+
+/** Everything the review screen shows: the request, what changed since it was returned, and the cash it draws on. */
+export interface ApprovalReview {
+  item: ApprovalItem;
+  request: { kind: 'reimbursement'; record: ReimbursementView } | { kind: Exclude<RequestKind, 'reimbursement'>; record: RequestRecord };
+  changes: FieldChange[];
+  lastReturn?: HistoryEntry;
+  allocation?: { id: string; reference: string; available: number };
+}
+
+/** Cash paid out to a custodian, or handed over to them, as /api/Acknowledgement lists it. */
+export interface AcknowledgementItem {
+  kind: 'allocation' | 'additionalCash' | 'handover';
+  id: string;
+  reference: string;
+  allocationId: string;
+  allocationReference: string;
+  level: AllocationLevel;
+  scopeId: string;
+  recipientId: string;
+  amount: number;
+  status: RequestStatus;
+  issuedOn: string;
+  payment?: PaymentRecord;
+  reallocatedFrom?: { reference: string; byId: string };
+  /** Present once the recipient has confirmed receiving it. */
+  acknowledgement?: { atUtc: string; remarks?: string };
+  purpose: string;
 }

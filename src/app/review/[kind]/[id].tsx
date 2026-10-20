@@ -1,17 +1,20 @@
-import { IconArrowBackUp, IconCheck, IconCircleCheck, IconCircleX, IconInfoCircle, IconSparkles, IconUserShare, IconX } from '@tabler/icons-react-native';
+import { IconArrowBackUp, IconCheck, IconCircleCheck, IconCircleX, IconFileText, IconInfoCircle, IconPencil, IconSparkles, IconUserShare, IconX } from '@tabler/icons-react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
+import { decide as decideLive, useReview } from '@/api/live';
 import type { RequestKind, RouteStep } from '@/api/types';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath } from '@/components/approval-path';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
+import { ReceiptPhoto } from '@/components/receipt-photo';
 import { Avatar, Button, Card, DetailRow, Field, Pill, SectionHeader } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { category, longDate, nameOf, omr, person, unit, vendor } from '@/lib/format';
+import { category, dateTime, longDate, nameOf, omr, person, providerName, unit, vendor } from '@/lib/format';
 import { decide, useMockState, useSession, type DecisionAction } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -27,35 +30,41 @@ export default function ReviewScreen() {
   const [error, setError] = useState<string | null>(null);
   // What happened, worked out when deciding: afterwards the request has already moved on.
   const [done, setDone] = useState<{ action: DecisionAction; text: string } | null>(null);
+  const [sending, setSending] = useState(false);
+  const { user } = useAppSession();
+  // Live: the review the API gives the approver; demo: the request in the sample store.
+  const reviewQuery = useReview(kind, user ? id : '');
+  const review = user ? reviewQuery.data : undefined;
 
-  const claim = kind === 'reimbursement' ? state.claims.find((c) => c.id === id) : undefined;
-  const other = kind !== 'reimbursement' ? state.others.find((o) => o.id === id) : undefined;
-  const request = claim ?? other;
+  const claim = user ? (review?.request.kind === 'reimbursement' ? review.request.record : undefined) : kind === 'reimbursement' ? state.claims.find((c) => c.id === id) : undefined;
+  const other = user ? undefined : kind !== 'reimbursement' ? state.others.find((o) => o.id === id) : undefined;
+  const request = user ? review?.request.record : (claim ?? other);
   if (!request) {
     return (
       <Page title={t('tabs.inbox')}>
-        <AppText tone="muted">{t('web:txn.notFound')}</AppText>
+        {user && reviewQuery.isLoading ? <ActivityIndicator color={palette.primary} /> : <AppText tone="muted">{reviewQuery.error?.message ?? t('web:txn.notFound')}</AppText>}
       </Page>
     );
   }
 
-  const personIdOf = claim ? claim.beneficiaryId : other!.personId;
-  const who = person(personIdOf)!;
-  const amountValue = claim ? claim.gross : other!.amount;
-  const purpose = claim ? claim.description : other!.purpose;
-  const unitId = claim ? claim.costId : other!.unitId;
+  const item = review?.item;
+  const personIdOf = item ? item.personId : claim ? claim.beneficiaryId : other!.personId;
+  const who = person(personIdOf);
+  const amountValue = item ? item.amount : claim ? claim.gross : other!.amount;
+  const purpose = item ? item.purpose : claim ? claim.description : other!.purpose;
+  const unitId = item ? item.unitId : claim ? claim.costId : other!.unitId;
   const step: RouteStep | undefined = request.currentStep !== undefined ? request.route[request.currentStep] : undefined;
-  const canDecide = request.status === 'inApproval' && !!step?.approverIds.includes(personId);
+  const canDecide = item ? item.canDecide : (claim ?? other)!.status === 'inApproval' && !!step?.approverIds.includes(personId);
   const nextStep = request.currentStep !== undefined ? request.route.slice(request.currentStep + 1).find((s) => s.state === 'waiting') : undefined;
   const nextNames = nextStep?.approverIds.map((p) => nameOf(person(p), code)).join(', ');
-  const position = claim?.settlement === 'pettyCash' ? state.positions.find((p) => p.scopeId === claim.costId) : undefined;
+  const position = review ? review.allocation : claim?.settlement === 'pettyCash' ? state.positions.find((p) => p.scopeId === claim.costId) : undefined;
   const merchant = claim ? (claim.vendorId ? nameOf(vendor(claim.vendorId), code) : claim.payeeName ?? '') : '';
 
   const outcome = nextStep
     ? t('web:approval.outcome.next', { step: request.currentStep! + 2, names: nextNames })
     : t(kind === 'reimbursement' ? (claim?.settlement === 'salary' ? 'web:approval.outcome.salary' : 'web:approval.outcome.claim') : kind === 'preExpense' ? 'web:approval.outcome.preExpense' : 'web:approval.outcome.cash');
 
-  const submit = (action: DecisionAction) => {
+  const submit = async (action: DecisionAction) => {
     if (action !== 'approve' && !comment.trim()) return setError(t('web:approval.decision.reasonNeeded'));
     const text =
       action === 'approve'
@@ -65,6 +74,20 @@ export default function ReviewScreen() {
         : action === 'return'
           ? t('review.returnedTo', { name: nameOf(who, code), reference: request.reference })
           : t('review.rejectedFor', { name: nameOf(who, code) });
+    if (item) {
+      setSending(true);
+      setError(null);
+      try {
+        await decideLive(item, action, comment.trim() || undefined);
+        setDone({ action, text });
+      } catch (e) {
+        // Decided by someone else first, or changed since it was opened: the server says which.
+        setError((e as Error).message);
+      } finally {
+        setSending(false);
+      }
+      return;
+    }
     decide(kind, id, action, comment.trim() || undefined);
     setDone({ action, text });
   };
@@ -100,13 +123,13 @@ export default function ReviewScreen() {
       footer={
         canDecide ? (
           <View style={{ gap: space.sm }}>
-            <Button label={t('web:approval.decision.approve')} tone="success" icon={IconCheck} onPress={() => submit('approve')} />
+            <Button label={t('web:approval.decision.approve')} tone="success" icon={IconCheck} loading={sending} onPress={() => submit('approve')} />
             <View style={{ flexDirection: 'row', gap: space.sm }}>
               <View style={{ flex: 1 }}>
-                <Button label={t('web:approval.decision.return')} tone="secondary" icon={IconArrowBackUp} onPress={() => submit('return')} compact />
+                <Button label={t('web:approval.decision.return')} tone="secondary" icon={IconArrowBackUp} disabled={sending} onPress={() => submit('return')} compact />
               </View>
               <View style={{ flex: 1 }}>
-                <Button label={t('web:approval.decision.reject')} tone="danger" icon={IconX} onPress={() => submit('reject')} compact />
+                <Button label={t('web:approval.decision.reject')} tone="danger" icon={IconX} disabled={sending} onPress={() => submit('reject')} compact />
               </View>
             </View>
           </View>
@@ -114,11 +137,11 @@ export default function ReviewScreen() {
       }>
       <Card style={{ gap: space.md }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
-          <Avatar name={who.nameEn} id={who.id} size={48} />
+          <Avatar name={who?.nameEn ?? '?'} id={personIdOf} size={48} />
           <View style={{ flex: 1 }}>
             <AppText weight="semibold">{nameOf(who, code)}</AppText>
             <AppText variant="small" tone="secondary">
-              {who.designation} · {nameOf(unit(who.departmentId), code)}
+              {[who?.designation, nameOf(unit(who?.departmentId ?? ''), code)].filter(Boolean).join(' · ')}
             </AppText>
           </View>
         </View>
@@ -141,6 +164,37 @@ export default function ReviewScreen() {
         </View>
       ) : null}
 
+      {review?.changes.length ? (
+        <Card style={{ gap: space.sm, borderColor: palette.warning }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
+            <IconPencil size={18} color={palette.warning} />
+            <AppText weight="semibold" style={{ flex: 1 }}>
+              {t('web:approval.changes.title')}
+            </AppText>
+          </View>
+          {review.lastReturn ? (
+            <AppText variant="small" tone="secondary">
+              {t('web:approval.changes.after', { name: nameOf(person(review.lastReturn.actorId), code), time: dateTime(review.lastReturn.atUtc, code) })}
+            </AppText>
+          ) : null}
+          {review.changes.map((c) => (
+            <View key={c.field} style={{ gap: 2, paddingTop: space.xs }}>
+              <AppText variant="caption" weight="semibold" tone="muted">
+                {t(`web:${c.field.replace(/^[a-z]+:/, '')}`)}
+              </AppText>
+              {c.from !== undefined ? (
+                <AppText variant="small" tone="muted" style={{ textDecorationLine: 'line-through' }}>
+                  {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}.${c.from}`) : c.from || '—'}
+                </AppText>
+              ) : null}
+              <AppText variant="small" weight="medium">
+                {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}.${c.to}`) : c.to || '—'}
+              </AppText>
+            </View>
+          ))}
+        </Card>
+      ) : null}
+
       {position ? (
         <View style={{ flexDirection: 'row', gap: space.sm, backgroundColor: palette.tealSoft, borderRadius: radius.lg, padding: space.md }}>
           <IconInfoCircle size={20} color={palette.teal} />
@@ -153,14 +207,32 @@ export default function ReviewScreen() {
       {claim ? (
         <Card style={{ gap: 0 }}>
           <SectionHeader title={t('web:approval.attachmentTitle')} />
-          <View style={{ paddingVertical: space.lg }}>
-            <ReceiptPaper merchant={merchant} receiptNo={claim.receiptNo} date={claim.expenseDate} item={claim.description.length > 22 ? `${claim.description.slice(0, 21)}…` : claim.description} net={claim.net} vat={claim.vat} gross={claim.gross} compact />
+          <View style={{ paddingVertical: space.lg, gap: space.sm }}>
+            {user ? (
+              claim.receipt ? (
+                <>
+                  <ReceiptPhoto receipt={claim.receipt} />
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
+                    <IconFileText size={18} color={palette.textMuted} />
+                    <AppText variant="small" tone="secondary" style={{ flex: 1 }} numberOfLines={1}>
+                      {claim.receipt.fileName}
+                    </AppText>
+                  </View>
+                </>
+              ) : (
+                <AppText variant="small" tone="muted">
+                  {t('live.review.noReceipt')}
+                </AppText>
+              )
+            ) : (
+              <ReceiptPaper merchant={merchant} receiptNo={claim.receiptNo} date={claim.expenseDate} item={claim.description.length > 22 ? `${claim.description.slice(0, 21)}…` : claim.description} net={claim.net} vat={claim.vat} gross={claim.gross} compact />
+            )}
           </View>
           {claim.extraction ? (
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, paddingBottom: space.sm }}>
               <IconSparkles size={18} color={palette.primary} />
               <AppText variant="small" tone="primary">
-                {t('web:scan.readBy', { provider: claim.extraction.provider })} · {t('web:scan.aiConfidence', { confidence: claim.extraction.confidence })}
+                {t('web:scan.readBy', { provider: providerName(claim.extraction.provider) })} · {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
               </AppText>
             </View>
           ) : null}
@@ -171,6 +243,11 @@ export default function ReviewScreen() {
           <DetailRow label={t('web:reimb.field.settlement')} value={t(`web:reimb.settlement.${claim.settlement}`)} />
           {claim.preExpenseReference ? <DetailRow label={t('web:reimb.field.preApproval')} value={claim.preExpenseReference} /> : null}
           <DetailRow label={claim.vat ? `VAT ${claim.vatRate}%` : t('web:reimb.amount.noVat')} value={omr(claim.vat, code)} />
+        </Card>
+      ) : item ? (
+        <Card style={{ gap: 0 }}>
+          <DetailRow first label={t('web:claim.field.chargedTo')} value={nameOf(unit(item.unitId), code)} />
+          {item.submittedAtUtc ? <DetailRow label={t('live.review.sent')} value={dateTime(item.submittedAtUtc, code)} /> : null}
         </Card>
       ) : other ? (
         <Card style={{ gap: 0 }}>

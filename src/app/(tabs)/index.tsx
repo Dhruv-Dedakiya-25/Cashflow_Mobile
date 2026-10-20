@@ -2,16 +2,19 @@ import { IconAlertTriangle, IconChevronLeft, IconChevronRight, IconClock, IconCo
 import { router } from 'expo-router';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Pressable, View } from 'react-native';
+import { ActivityIndicator, Pressable, View } from 'react-native';
 
+import { useClaims, useMyDashboard } from '@/api/live';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ClaimRow } from '@/components/claim-row';
 import { MonthBars } from '@/components/month-bars';
 import { Screen } from '@/components/screen';
-import { Avatar, Card, Pill, ProgressBar, SectionHeader, bandColor } from '@/components/ui';
+import { Avatar, Button, Card, Pill, ProgressBar, SectionHeader, bandColor } from '@/components/ui';
+import { useCompany } from '@/hooks/use-company';
 import { useLanguage } from '@/i18n';
-import { amount, nameOf, omr, person, unit } from '@/lib/format';
-import { financeSummary, myDashboard, useMockState, useSession } from '@/mock/store';
+import { accountOf, amount, nameOf, omr, percent, person, unit } from '@/lib/format';
+import { myDashboard, useMockState, useSession } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
 function greetingKey(hour: number) {
@@ -64,24 +67,50 @@ export default function HomeScreen() {
   const { language, isRTL } = useLanguage();
   const Chevron = isRTL ? IconChevronLeft : IconChevronRight;
   const state = useMockState();
-  const { personId, persona } = useSession();
-  const me = person(personId)!;
-  const dash = useMemo(() => myDashboard(state, personId), [state, personId]);
-  const finance = useMemo(() => (persona === 'finance' ? financeSummary(state) : undefined), [state, persona]);
+  const { personId } = useSession();
+  const { user } = useAppSession();
+  // Live: the person's own dashboard from the API; demo: the same figures worked out from the sample.
+  const myQuery = useMyDashboard();
+  // The dashboard's recent requests carry no category; the claims list does, for the icon.
+  const claimsQuery = useClaims();
+  const { summary: finance, query: financeQuery } = useCompany();
+  const sampleDash = useMemo(() => myDashboard(state, personId), [state, personId]);
+  const dash = user ? myQuery.data : sampleDash;
+  const sampleMe = person(personId);
+  const me = user ? accountOf(user, language.code) : { name: nameOf(sampleMe, language.code), nameEn: sampleMe?.nameEn ?? '', id: personId };
   const now = new Date();
   const today = new Intl.DateTimeFormat(`${language.code}-u-nu-latn`, { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
-  const firstName = nameOf(me, language.code).split(' ')[0];
+  const firstName = me.name.split(' ')[0];
+
+  const header = {
+    eyebrow: today,
+    title: t('home.hello', { greeting: t(greetingKey(now.getHours())), name: firstName }),
+    subtitle: t('home.subtitle'),
+    action: (
+      <Pressable onPress={() => router.push('/profile')} accessibilityRole="button" accessibilityLabel={t('profile.title')} hitSlop={8}>
+        <Avatar name={me.nameEn} id={me.id} size={46} />
+      </Pressable>
+    ),
+    ...(user ? { onRefresh: () => Promise.all([myQuery.refetch(), financeQuery.refetch()]), refreshing: myQuery.isRefetching } : {}),
+  };
+
+  if (!dash) {
+    return (
+      <Screen {...header}>
+        {myQuery.error ? (
+          <Card style={{ gap: space.md }}>
+            <AppText tone="secondary">{myQuery.error.message}</AppText>
+            <Button label={t('live.retry')} tone="secondary" onPress={() => myQuery.refetch()} />
+          </Card>
+        ) : (
+          <ActivityIndicator color={palette.primary} style={{ paddingVertical: space.xxxl }} />
+        )}
+      </Screen>
+    );
+  }
 
   return (
-    <Screen
-      eyebrow={today}
-      title={t('home.hello', { greeting: t(greetingKey(now.getHours())), name: firstName })}
-      subtitle={t('home.subtitle')}
-      action={
-        <Pressable onPress={() => router.push('/profile')} accessibilityRole="button" accessibilityLabel={t('profile.title')} hitSlop={8}>
-          <Avatar name={me.nameEn} id={me.id} size={46} />
-        </Pressable>
-      }>
+    <Screen {...header}>
       {/* Paid this month */}
       <View style={{ backgroundColor: palette.summary, borderRadius: radius.xl, padding: space.xl, gap: space.sm, overflow: 'hidden' }}>
         <View style={{ position: 'absolute', end: -30, top: -30, width: 140, height: 140, borderRadius: 70, backgroundColor: palette.summaryAccent }} />
@@ -129,14 +158,14 @@ export default function HomeScreen() {
       {finance ? (
         <Card onPress={() => router.push('/petty-cash')}>
           <AppText variant="small" weight="semibold" tone="secondary">
-            {t('home.company')}
+            {t(user?.dataScope === 'ownTeam' ? 'home.team' : 'home.company')}
           </AppText>
           <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: space.sm, flexWrap: 'wrap' }}>
             <AppText variant="heading" weight="bold" style={{ fontVariant: ['tabular-nums'] }}>
               {omr(finance.available, language.code)}
             </AppText>
             <AppText variant="small" tone="muted">
-              {t('home.ofFloats', { amount: amount(finance.floats, language.code), count: state.positions.length })}
+              {t('home.ofFloats', { amount: amount(finance.floats, language.code), count: finance.positions.length })}
             </AppText>
           </View>
           <ProgressBar percent={finance.availablePercent ?? 0} color={palette.success} />
@@ -178,7 +207,7 @@ export default function HomeScreen() {
                     {p.reference} · {nameOf(unit(p.scopeId), language.code)}
                   </AppText>
                   <AppText variant="small" weight="semibold" style={{ color: bandColor(palette, p.band) }}>
-                    {p.percentLeft}%
+                    {p.percentLeft === null ? '—' : percent(p.percentLeft, language.code)}
                   </AppText>
                 </View>
               ))}
@@ -246,8 +275,9 @@ export default function HomeScreen() {
                 date={r.date}
                 value={r.amount}
                 status={r.status}
-                categoryId={state.claims.find((c) => c.id === r.id)?.categoryId}
-                onPress={() => router.push({ pathname: '/claim/[id]', params: { id: r.id } })}
+                categoryId={(user ? claimsQuery.data : state.claims)?.find((c) => c.id === r.id)?.categoryId}
+                // Pre-expense requests are not on the phone yet, so only a claim opens.
+                onPress={r.kind === 'reimbursement' || !user ? () => router.push({ pathname: '/claim/[id]', params: { id: r.id } }) : undefined}
               />
             ))
           ) : (

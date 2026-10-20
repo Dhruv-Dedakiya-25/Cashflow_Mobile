@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Réception confirmée le {{date}}",
+    "approvedNote": "Déjà approuvée. Changer l'unité, le dépositaire ou le montant la renvoie en approbation ; les seuils et l'objet, non.",
+    "availableMarker": "Reste {{percent}} %",
+    "backToAcknowledgements": "Retour aux accusés de réception",
+    "backToList": "Retour aux allocations",
+    "balanceTitle": "Solde",
     "band": {
       "exceeded": "Dépassé",
       "near": "Proche du seuil",
       "normal": "Normal",
       "pending": "Pas encore alimentée",
       "watch": "Sous surveillance"
+    },
+    "bandLine": {
+      "exceeded": "Dépassé : l'utilisé et le réservé dépassent l'alimentation. Une demande de complément est nécessaire.",
+      "near": "Proche du seuil : il reste {{near}} % ou moins du fonds de caisse. Une demande de complément peut être nécessaire.",
+      "normal": "Normal : plus de {{watch}} % du fonds de caisse est disponible.",
+      "pending": "Pas encore alimentée.",
+      "watch": "Sous surveillance : il reste {{watch}} % ou moins du fonds de caisse."
+    },
+    "cancelText": "L'allocation s'arrête ici et ne peut plus être renvoyée. Le motif est conservé dans son historique.",
+    "cancelTitle": "Annuler {{reference}} ?",
+    "check": {
+      "amount": "Saisissez un montant supérieur à zéro.",
+      "chooseCustodian": "Choisissez le dépositaire.",
+      "chooseScope": "Choisissez l'unité.",
+      "custodianInactive": "Le dépositaire est inactif.",
+      "custodianOutside": "Le dépositaire doit appartenir à l'unité choisie.",
+      "fixedAfterDisbursement": "Les fonds ont été versés : l'unité, le dépositaire et le montant ne peuvent plus changer.",
+      "locked": "Cette allocation est verrouillée : sa réception a été confirmée ou elle est terminée.",
+      "purpose": "Indiquez à quoi servent les fonds, en 5 caractères au moins.",
+      "scopeInactive": "Cette unité est inactive et ne peut pas recevoir d'allocation.",
+      "scopeTaken": "{{reference}} est déjà ouverte pour cette unité. Demandez plutôt des fonds via les demandes de fonds supplémentaires.",
+      "thresholdRange": "Les seuils sont des pourcentages entiers de 1 à 99.",
+      "watchAboveNear": "Le repère de surveillance doit être au-dessus du repère de seuil.",
+      "notDisburser": "Vous n'êtes pas autorisé à verser : vous ne pouvez pas émettre d'allocations.",
+      "notRecipient": "{{name}} n'est pas un bénéficiaire autorisé et ne peut pas détenir de petite caisse."
+    },
+    "chooseLevelFirst": "Choisissez d'abord le niveau",
+    "column": {
+      "allocated": "Attribué",
+      "allocation": "Allocation",
+      "available": "Disponible",
+      "custodian": "Dépositaire",
+      "heldBy": "Détenu par",
+      "reserved": "Réservé",
+      "scope": "Niveau / Unité",
+      "status": "Statut",
+      "used": "Utilisé"
+    },
+    "custodianHint": "L'employé qui reçoit, détient et accuse réception des fonds. Le responsable de l'unité est proposé.",
+    "custodianPlaceholder": "Choisissez qui détient les fonds",
+    "deleteText": "Le brouillon est supprimé. Il n'a jamais été envoyé pour approbation.",
+    "deleteTitle": "Supprimer le brouillon {{reference}} ?",
+    "detailsTitle": "Détails",
+    "disbursedNote": "Déjà versée. Seuls les seuils et l'objet peuvent encore changer.",
+    "editTitle": "Modifier l'allocation {{reference}}",
+    "ended": {
+      "cancelled": "Annulée par {{name}} le {{time}} :",
+      "rejected": "Rejetée par {{name}} le {{time}} :",
+      "returned": "Retournée par {{name}} le {{time}} :"
+    },
+    "entity": "allocation",
+    "field": {
+      "acknowledged": "Accusé de réception",
+      "amount": "Montant",
+      "createdBy": "Créée",
+      "custodian": "Dépositaire",
+      "ledgerEntry": "Écriture au grand livre",
+      "level": "Niveau d'allocation",
+      "nearAt": "Proche du seuil à % restant",
+      "paidOn": "Payée",
+      "payment": "Paiement",
+      "purpose": "Objet / Libellé",
+      "remarks": "Remarques du bénéficiaire",
+      "scope": "Unité",
+      "thresholds": "Seuils",
+      "voucherNo": "N° de pièce",
+      "watchAt": "Surveillance à % restant"
+    },
+    "figure": {
+      "available": "Disponible",
+      "funded": "Alimenté",
+      "reserved": "Réservé",
+      "used": "Utilisé"
+    },
+    "filter": {
+      "allBalances": "Tous les soldes",
+      "allLevels": "Tous les niveaux"
+    },
+    "level": {
+      "businessUnit": "Unité opérationnelle",
+      "custodian": "Dépositaire",
+      "department": "Service",
+      "project": "Projet"
+    },
+    "locked": "Verrouillé",
+    "lockedHint": "Verrouillée depuis l'accusé de réception du dépositaire. Les corrections passent par de nouvelles écritures, jamais par une modification.",
+    "movement": {
+      "balance": "Solde",
+      "date": "Date",
+      "description": "Description",
+      "entry": "Écriture",
+      "in": "Entrée",
+      "kind": {
+        "adjustment": "Ajustement",
+        "expense": "Note de frais payée",
+        "funding": "Alimentation de l'allocation",
+        "topUp": "Complément",
+        "reallocation": "Réaffectation"
+      },
+      "out": "Sortie"
+    },
+    "movementsTitle": "Mouvements",
+    "neverFunded": "Non alimentée",
+    "new": "Nouvelle allocation",
+    "newTitle": "Nouvelle allocation de petite caisse",
+    "noMovements": "Aucun mouvement pour l'instant. La première ligne est passée quand le dépositaire accuse réception des fonds.",
+    "noScopeOptions": "Rien à choisir à ce niveau",
+    "notFunded": "Pas encore alimentée",
+    "notFundedBeforePayment": "Pas encore alimentée. Le solde commence quand la Finance la verse et que {{name}} en accuse réception.",
+    "notFundedYet": "Versée et en attente de l'accusé de réception de {{name}}. Le solde ne commence qu'à ce moment-là.",
+    "openLedger": "Ouvrir dans le grand livre",
+    "purposePlaceholder": "À quoi servent les fonds, tel que cela doit figurer sur la pièce",
+    "reservationKind": {
+      "preExpense": "Demande de dépense préalable approuvée",
+      "reimbursement": "Note de frais approuvée, pas encore payée",
+      "reallocation": "Réaffectation en cours"
+    },
+    "reservedFor": "Réservé pour",
+    "saveAndResubmit": "Enregistrer et envoyer pour approbation",
+    "scopeLabel": {
+      "businessUnit": "Unité opérationnelle",
+      "custodian": "Dépositaire / Employé",
+      "department": "Service",
+      "project": "Projet"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Rechercher une unité…",
+      "custodian": "Saisissez le nom d'un employé…",
+      "department": "Rechercher un département…",
+      "project": "Rechercher un projet…"
+    },
+    "search": "Rechercher une référence, une unité, un dépositaire ou un objet",
+    "subtitle": "Fonds remis à un département, une unité, un projet ou un dépositaire, et ce que chacun détient aujourd'hui. Les fonds supplémentaires pour une allocation existante passent par les demandes de fonds supplémentaires.",
+    "thresholdsValue": "Surveillance {{watch}} % · Seuil {{near}} %",
+    "tile": {
+      "active": "Allocations actives",
+      "activeNote": "{{amount}} alimentés",
+      "attention": "À surveiller",
+      "attentionNote": "Proches du seuil ou dépassées : {{count}}",
+      "available": "Disponible maintenant",
+      "availableNote": "après {{amount}} réservés",
+      "awaiting": "En attente d'accusé de réception",
+      "summary": "Synthèse des allocations"
+    },
+    "title": "Allocations de petite caisse",
+    "toast": {
+      "cancelled": "{{reference}} a été annulée.",
+      "deleted": "Le brouillon {{reference}} a été supprimé.",
+      "saved": "{{reference}} a été enregistrée.",
+      "submitted": "{{reference}} a été envoyée pour approbation."
+    },
+    "topUpOnItsWay": "{{amount}} supplémentaires sont en route ({{references}}) et attendent l'accusé de réception.",
+    "noRecipients": "Aucun bénéficiaire autorisé dans cette unité. Ajoutez-en un dans Verseurs et bénéficiaires."
+  },
+  "file": {
+    "aiNotRead": "Non numérisé",
+    "aiRead": "Lu par l'IA, confiance de {{confidence}} %",
+    "camera": "Prendre une photo",
+    "check": {
+      "empty": "Ce fichier est vide.",
+      "notWhatItSays": "Le contenu du fichier ne correspond pas à son nom, il n'a donc pas été joint. Enregistrez-le dans son vrai format et réessayez.",
+      "tooLarge": "Ce fichier dépasse {{size}}. Choisissez un fichier plus petit.",
+      "wrongType": "Ce type de fichier n'est pas accepté. Utilisez l'un de : {{types}}.",
+      "notYours": "Ce fichier n'a pas été téléversé par vous ou appartient à une autre demande. Veuillez le téléverser à nouveau."
+    },
+    "checking": "Vérification du fichier…",
+    "detail": {
+      "ai": "Lecture IA",
+      "hash": "SHA-256",
+      "preview": "Aperçu",
+      "size": "Taille",
+      "uploaded": "Téléversé"
+    },
+    "drawnSample": "Image d'exemple tirée de la demande. Dans le système réel, les fichiers stockés s'ouvrent ici.",
+    "remove": "Supprimer",
+    "replace": "Remplacer",
+    "rules": "{{types}} · jusqu'à {{size}}",
+    "view": "Consulter",
+    "uploading": "Téléversement en cours…",
+    "sampleNoFile": "Image d'exemple : aucun fichier n'a été stocké",
+    "heicPreviewUnsupported": "Ce navigateur ne peut pas prévisualiser les images HEIC. Téléchargez le fichier pour le visualiser."
+  },
+  "preExpense": {
+    "attachmentHint": "Facultatif : un devis ou une estimation. La facture est jointe plus tard, avec le remboursement.",
+    "backToList": "Retour aux demandes préalables de dépense",
+    "check": {
+      "datePassed": "La date prévue est passée. Modifiez-la ou réclamez la dépense directement en remboursement.",
+      "expectedDate": "Choisissez la date prévue de la dépense."
+    },
+    "claimAgainst": "Demander un remboursement sur celle-ci",
+    "claimedSoFar": "{{amount}} réclamé",
+    "claimsAfterApproval": "Des remboursements pourront être demandés une fois la demande approuvée.",
+    "claimsTitle": "Remboursements sur cette demande",
+    "column": {
+      "amount": "Montant",
+      "category": "Catégorie / commerçant",
+      "employee": "Employé",
+      "expected": "Prévue",
+      "reference": "Référence",
+      "status": "Statut",
+      "unit": "Unité / projet"
+    },
+    "deleteText": "Le brouillon est supprimé. Cette action est irréversible.",
+    "deleteTitle": "Supprimer {{reference}} ?",
+    "detailsTitle": "Détails de la demande",
+    "editTitle": "Modifier {{reference}}",
+    "entity": "demandes préalables de dépense",
+    "expectedDateHint": "Date à laquelle l'argent sera dépensé. Une dépense déjà faite se réclame directement.",
+    "field": {
+      "allocation": "Allocation",
+      "amount": "Montant demandé (OMR)",
+      "attachment": "Justificatif (facultatif)",
+      "expectedDate": "Date prévue de la dépense",
+      "purpose": "Objet / justification"
+    },
+    "figure": {
+      "approved": "Demandé",
+      "claimed": "Réclamé",
+      "remaining": "Reste à réclamer"
+    },
+    "formIntro": "Demandez l'approbation d'une dépense estimée avant de dépenser. C'est une autorisation de dépenser, pas un paiement.",
+    "heldAgainst": "Le montant approuvé reste réservé sur {{reference}} jusqu'au paiement des remboursements correspondants.",
+    "leftToClaim": "{{amount}} restant",
+    "new": "Nouvelle demande",
+    "newTitle": "Nouvelle demande préalable de dépense",
+    "noAllocation": "Cette unité n'a pas de dotation active. Un remboursement sur celle-ci serait payé avec le salaire.",
+    "noAllocationShort": "Aucune active",
+    "noClaimsYet": "Aucun remboursement pour l'instant. Le montant approuvé reste disponible jusqu'à ce qu'il soit réclamé.",
+    "noVatHint": "Un montant forfaitaire unique. La TVA est calculée sur le remboursement.",
+    "notHeld": "Cette unité n'a pas de dotation active, rien n'est donc réservé sur la petite caisse.",
+    "notReserved": "Non réservé",
+    "overAvailable": "Plus que ce dont dispose {{reference}} ({{available}}). La Finance devra peut-être le réapprovisionner.",
+    "purposePlaceholder": "À quoi sert l'argent et pourquoi il est nécessaire.",
+    "reservedAgainst": "Réservé sur {{reference}} une fois approuvé · disponible {{available}}",
+    "search": "Rechercher une référence, un employé, un objet ou un commerçant",
+    "submit": "Envoyer la demande",
+    "subtitle": "Approbation avant d'engager une dépense. Le montant approuvé reste réservé jusqu'à son remboursement.",
+    "tile": {
+      "open": "Approuvé, pas encore réclamé",
+      "openNote": "Demandes ouvertes : {{count}}",
+      "pending": "En approbation",
+      "requests": "Demandes",
+      "returned": "Renvoyées à vous",
+      "returnedNote": "Corrigez et renvoyez, ou retirez",
+      "summary": "Synthèse des demandes préalables"
+    },
+    "title": "Demandes d'approbation préalable de dépense",
+    "toast": {
+      "deleted": "{{reference}} a été supprimée.",
+      "saved": "{{reference}} a été enregistrée en brouillon.",
+      "submitted": "{{reference}} a été envoyée pour approbation."
     }
   },
   "report": {

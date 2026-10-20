@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Recebimento confirmado em {{date}}",
+    "approvedNote": "Já aprovada. Mudar a unidade, o custodiante ou o valor a devolve para aprovação; limites e finalidade não.",
+    "availableMarker": "Resta {{percent}}%",
+    "backToAcknowledgements": "Voltar às confirmações",
+    "backToList": "Voltar às alocações",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Excedido",
       "near": "Perto do limite",
       "normal": "Normal",
       "pending": "Ainda sem fundos",
       "watch": "Em observação"
+    },
+    "bandLine": {
+      "exceeded": "Excedido: o utilizado e o reservado superam o aporte. É preciso uma solicitação de dinheiro adicional.",
+      "near": "Perto do limite: resta {{near}}% ou menos do fundo fixo. Pode ser preciso uma solicitação de dinheiro adicional.",
+      "normal": "Normal: mais de {{watch}}% do fundo fixo está disponível.",
+      "pending": "Ainda sem fundos.",
+      "watch": "Em observação: resta {{watch}}% ou menos do fundo fixo."
+    },
+    "cancelText": "A alocação para aqui e não pode ser enviada de novo. O motivo fica no histórico.",
+    "cancelTitle": "Cancelar {{reference}}?",
+    "check": {
+      "amount": "Informe um valor maior que zero.",
+      "chooseCustodian": "Escolha o custodiante.",
+      "chooseScope": "Escolha a unidade.",
+      "custodianInactive": "O custodiante está inativo.",
+      "custodianOutside": "O custodiante deve pertencer à unidade escolhida.",
+      "fixedAfterDisbursement": "O dinheiro já foi pago, então unidade, custodiante e valor não podem mais mudar.",
+      "locked": "Esta alocação está bloqueada: o recebimento foi confirmado ou ela foi encerrada.",
+      "purpose": "Diga para que é o dinheiro, com pelo menos 5 caracteres.",
+      "scopeInactive": "Esta unidade está inativa e não pode receber alocação.",
+      "scopeTaken": "{{reference}} já está aberta para esta unidade. Peça mais dinheiro pelas solicitações de dinheiro adicional.",
+      "thresholdRange": "Os limites são porcentagens inteiras de 1 a 99.",
+      "watchAboveNear": "A marca de observação deve ficar acima da marca de limite.",
+      "notDisburser": "Você não está habilitado para desembolso, portanto não pode emitir alocações.",
+      "notRecipient": "{{name}} não é um recebedor habilitado e não pode guardar caixa pequeno."
+    },
+    "chooseLevelFirst": "Escolha o nível primeiro",
+    "column": {
+      "allocated": "Atribuído",
+      "allocation": "Alocação",
+      "available": "Disponível",
+      "custodian": "Custodiante",
+      "heldBy": "Detido por",
+      "reserved": "Reservado",
+      "scope": "Nível / Unidade",
+      "status": "Estado",
+      "used": "Utilizado"
+    },
+    "custodianHint": "O funcionário que recebe, guarda e confirma o recebimento do dinheiro. O responsável pela unidade é sugerido.",
+    "custodianPlaceholder": "Escolha quem guarda o dinheiro",
+    "deleteText": "O rascunho é removido. Ele nunca foi enviado para aprovação.",
+    "deleteTitle": "Excluir o rascunho {{reference}}?",
+    "detailsTitle": "Detalhes",
+    "disbursedNote": "Já paga. Agora só os limites e a finalidade podem mudar.",
+    "editTitle": "Editar alocação {{reference}}",
+    "ended": {
+      "cancelled": "Cancelada por {{name}} em {{time}}:",
+      "rejected": "Rejeitada por {{name}} em {{time}}:",
+      "returned": "Devolvida por {{name}} em {{time}}:"
+    },
+    "entity": "alocação",
+    "field": {
+      "acknowledged": "Confirmado",
+      "amount": "Valor",
+      "createdBy": "Criada",
+      "custodian": "Custodiante",
+      "ledgerEntry": "Lançamento no razão",
+      "level": "Nível da alocação",
+      "nearAt": "Perto do limite com % restante",
+      "paidOn": "Paga",
+      "payment": "Pagamento",
+      "purpose": "Finalidade / Histórico",
+      "remarks": "Observações do recebedor",
+      "scope": "Unidade",
+      "thresholds": "Limites",
+      "voucherNo": "N.º do comprovante",
+      "watchAt": "Observação com % restante"
+    },
+    "figure": {
+      "available": "Disponível",
+      "funded": "Aportado",
+      "reserved": "Reservado",
+      "used": "Utilizado"
+    },
+    "filter": {
+      "allBalances": "Todos os saldos",
+      "allLevels": "Todos os níveis"
+    },
+    "level": {
+      "businessUnit": "Unidade de negócio",
+      "custodian": "Custodiante",
+      "department": "Departamento",
+      "project": "Projeto"
+    },
+    "locked": "Bloqueado",
+    "lockedHint": "Bloqueada desde que o custodiante confirmou o recebimento. Correções são feitas com novos lançamentos, nunca editando.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Data",
+      "description": "Descrição",
+      "entry": "Lançamento",
+      "in": "Entrada",
+      "kind": {
+        "adjustment": "Ajuste",
+        "expense": "Reembolso pago",
+        "funding": "Aporte da alocação",
+        "topUp": "Reforço",
+        "reallocation": "Realocação"
+      },
+      "out": "Saída"
+    },
+    "movementsTitle": "Movimentações",
+    "neverFunded": "Sem fundos",
+    "new": "Nova alocação",
+    "newTitle": "Nova alocação de caixa pequeno",
+    "noMovements": "Ainda não há movimentações. A primeira linha é lançada quando o custodiante confirma o recebimento do dinheiro.",
+    "noScopeOptions": "Nada para escolher neste nível",
+    "notFunded": "Ainda sem fundos",
+    "notFundedBeforePayment": "Ainda sem fundos. O saldo começa quando o Financeiro paga e {{name}} confirma o recebimento.",
+    "notFundedYet": "Paga e aguardando a confirmação de {{name}}. O saldo começa só então.",
+    "openLedger": "Abrir no livro-caixa",
+    "purposePlaceholder": "Para que é o dinheiro, como deve constar no comprovante",
+    "reservationKind": {
+      "preExpense": "Solicitação de pré-despesa aprovada",
+      "reimbursement": "Reembolso aprovado, ainda não pago",
+      "reallocation": "Realocação a caminho"
+    },
+    "reservedFor": "Reservado para",
+    "saveAndResubmit": "Salvar e enviar para aprovação",
+    "scopeLabel": {
+      "businessUnit": "Unidade de negócio",
+      "custodian": "Custodiante / Funcionário",
+      "department": "Departamento",
+      "project": "Projeto"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Buscar unidade de negócio…",
+      "custodian": "Digite o nome de um funcionário…",
+      "department": "Buscar departamento…",
+      "project": "Buscar projeto…"
+    },
+    "search": "Buscar referência, unidade, custodiante ou finalidade",
+    "subtitle": "Dinheiro entregue a um departamento, unidade de negócio, projeto ou custodiante, e o que cada um tem agora. Mais dinheiro para uma alocação existente passa pelas solicitações de dinheiro adicional.",
+    "thresholdsValue": "Observação {{watch}}% · Limite {{near}}%",
+    "tile": {
+      "active": "Alocações ativas",
+      "activeNote": "{{amount}} aportados",
+      "attention": "Requer atenção",
+      "attentionNote": "Perto do limite ou excedidas: {{count}}",
+      "available": "Disponível agora",
+      "availableNote": "após {{amount}} reservados",
+      "awaiting": "Aguardando confirmação de recebimento",
+      "summary": "Resumo das alocações"
+    },
+    "title": "Alocações de caixa pequeno",
+    "toast": {
+      "cancelled": "{{reference}} foi cancelada.",
+      "deleted": "O rascunho {{reference}} foi excluído.",
+      "saved": "{{reference}} foi salva.",
+      "submitted": "{{reference}} foi enviada para aprovação."
+    },
+    "topUpOnItsWay": "Mais {{amount}} estão a caminho ({{references}}) aguardando confirmação.",
+    "noRecipients": "Nenhum recebedor habilitado nesta unidade. Adicione um em Desembolsadores e recebedores."
+  },
+  "file": {
+    "aiNotRead": "Não digitalizado",
+    "aiRead": "Lido pela IA, confiança de {{confidence}}%",
+    "camera": "Tirar foto",
+    "check": {
+      "empty": "Este arquivo está vazio.",
+      "notWhatItSays": "O conteúdo do arquivo não corresponde ao nome, por isso não foi anexado. Salve-o novamente no formato real e tente de novo.",
+      "tooLarge": "Este arquivo é maior que {{size}}. Escolha um arquivo menor.",
+      "wrongType": "Este tipo de arquivo não é aceito. Use um de: {{types}}.",
+      "notYours": "Este ficheiro não foi carregado por si ou pertence a outro pedido. Carregue-o novamente."
+    },
+    "checking": "Verificando o arquivo…",
+    "detail": {
+      "ai": "Leitura por IA",
+      "hash": "SHA-256",
+      "preview": "Pré-visualização",
+      "size": "Tamanho",
+      "uploaded": "Enviado"
+    },
+    "drawnSample": "Imagem de amostra extraída do reembolso. No sistema real, arquivos salvos abrem aqui.",
+    "remove": "Remover",
+    "replace": "Substituir",
+    "rules": "{{types}} · até {{size}}",
+    "view": "Ver",
+    "uploading": "A carregar…",
+    "sampleNoFile": "Imagem de exemplo: nenhum ficheiro foi guardado",
+    "heicPreviewUnsupported": "Este navegador não consegue pré-visualizar imagens HEIC. Transfira o ficheiro para visualizá-lo."
+  },
+  "preExpense": {
+    "attachmentHint": "Opcional: um orçamento ou estimativa. A conta é anexada depois, com o reembolso.",
+    "backToList": "Voltar às solicitações de pré-despesa",
+    "check": {
+      "datePassed": "A data prevista já passou. Altere-a ou peça o reembolso da despesa diretamente.",
+      "expectedDate": "Escolha a data prevista da despesa."
+    },
+    "claimAgainst": "Solicitar reembolso com esta",
+    "claimedSoFar": "{{amount}} solicitado",
+    "claimsAfterApproval": "Reembolsos podem ser pedidos depois da aprovação.",
+    "claimsTitle": "Reembolsos desta solicitação",
+    "column": {
+      "amount": "Valor",
+      "category": "Categoria / comerciante",
+      "employee": "Funcionário",
+      "expected": "Prevista",
+      "reference": "Referência",
+      "status": "Estado",
+      "unit": "Unidade / projeto"
+    },
+    "deleteText": "O rascunho será removido. Não é possível desfazer.",
+    "deleteTitle": "Excluir {{reference}}?",
+    "detailsTitle": "Detalhes da solicitação",
+    "editTitle": "Editar {{reference}}",
+    "entity": "solicitações de pré-despesa",
+    "expectedDateHint": "Quando o dinheiro será gasto. Uma despesa já feita é reembolsada diretamente.",
+    "field": {
+      "allocation": "Alocação",
+      "amount": "Valor solicitado (OMR)",
+      "attachment": "Documento de apoio (opcional)",
+      "expectedDate": "Data prevista da despesa",
+      "purpose": "Finalidade / justificativa"
+    },
+    "figure": {
+      "approved": "Solicitado",
+      "claimed": "Solicitado",
+      "remaining": "Restante a solicitar"
+    },
+    "formIntro": "Peça aprovação para uma despesa estimada antes de gastar. É uma permissão para gastar, não um pagamento.",
+    "heldAgainst": "O valor aprovado fica reservado em {{reference}} até que os reembolsos desta solicitação sejam pagos.",
+    "leftToClaim": "{{amount}} restante",
+    "new": "Nova solicitação",
+    "newTitle": "Nova solicitação de pré-despesa",
+    "noAllocation": "Esta unidade não tem alocação ativa. Um reembolso nela seria pago com o salário.",
+    "noAllocationShort": "Nenhuma ativa",
+    "noClaimsYet": "Ainda não há reembolsos. O valor aprovado continua disponível até ser solicitado.",
+    "noVatHint": "Um único valor global. O IVA é calculado no reembolso.",
+    "notHeld": "Esta unidade não tem alocação ativa, então nada fica reservado no caixa pequeno.",
+    "notReserved": "Não reservado",
+    "overAvailable": "Mais do que {{reference}} tem disponível ({{available}}). O Financeiro pode precisar reforçá-lo.",
+    "purposePlaceholder": "Para que é o dinheiro e por que é necessário.",
+    "reservedAgainst": "Reservado em {{reference}} após aprovação · disponível {{available}}",
+    "search": "Pesquisar referência, funcionário, finalidade ou comerciante",
+    "submit": "Enviar pedido",
+    "subtitle": "Aprovação antes de a despesa ocorrer. O valor aprovado fica reservado até ser reembolsado.",
+    "tile": {
+      "open": "Aprovado, ainda não reembolsado",
+      "openNote": "Solicitações abertas: {{count}}",
+      "pending": "Em aprovação",
+      "requests": "Solicitações",
+      "returned": "Devolvidas a você",
+      "returnedNote": "Corrija e reenvie, ou retire",
+      "summary": "Resumo de pré-despesas"
+    },
+    "title": "Solicitações de aprovação prévia de despesa",
+    "toast": {
+      "deleted": "{{reference}} foi excluída.",
+      "saved": "{{reference}} foi salva como rascunho.",
+      "submitted": "{{reference}} foi enviada para aprovação."
     }
   },
   "report": {

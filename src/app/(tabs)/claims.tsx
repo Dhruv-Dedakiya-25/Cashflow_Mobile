@@ -2,14 +2,16 @@ import { IconReceiptOff } from '@tabler/icons-react-native';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
+import { useClaims } from '@/api/live';
 import type { RequestStatus } from '@/api/types';
+import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ClaimRow } from '@/components/claim-row';
 import { PeriodButton, SearchField } from '@/components/filters';
 import { Screen } from '@/components/screen';
-import { Card, Chips } from '@/components/ui';
+import { Button, Card, Chips } from '@/components/ui';
 import { useLanguage } from '@/i18n';
 import { inRange, matchesSearch, periodRange, type Period } from '@/lib/filters';
 import { category, nameOf, omr, vendor } from '@/lib/format';
@@ -30,23 +32,27 @@ export default function ClaimsScreen() {
   const { language } = useLanguage();
   const state = useMockState();
   const { personId } = useSession();
+  const { user } = useAppSession();
+  const live = useClaims();
   const [filter, setFilter] = useState<Filter>('all');
   const [search, setSearch] = useState('');
   const [period, setPeriod] = useState<Period>({ preset: 'all' });
   // Search and period narrow the list first; the status chips then count and pick within it.
   const mine = useMemo(() => {
     const range = periodRange(period);
-    return claimsFor(state, personId).filter((c) => {
+    // Live: the person's own claims and those they entered for someone else, out of all they may see.
+    const all = user ? (live.data ?? []).filter((c) => c.beneficiaryId === user.employeeId || c.createdById === user.employeeId).sort((a, b) => b.createdAtUtc.localeCompare(a.createdAtUtc)) : claimsFor(state, personId);
+    return all.filter((c) => {
       const cat = category(c.categoryId);
       const shop = vendor(c.vendorId);
       return inRange(c.expenseDate, range) && matchesSearch(search, [c.description, c.reference, c.receiptNo, c.payeeName, shop?.nameEn, shop?.nameAr, cat?.nameEn, cat?.nameAr], c.gross);
     });
-  }, [state, personId, period, search]);
+  }, [state, personId, period, search, user, live.data]);
   const shown = mine.filter((c) => matches[filter](c.status));
   const count = (f: Filter) => mine.filter((c) => matches[f](c.status)).length;
 
   return (
-    <Screen title={t('tabs.claims')}>
+    <Screen title={t('tabs.claims')} {...(user ? { onRefresh: () => live.refetch(), refreshing: live.isRefetching } : {})}>
       <SearchField value={search} onChangeText={setSearch} placeholder={t('claims.search')} />
       <Chips<Filter>
         value={filter}
@@ -64,7 +70,16 @@ export default function ClaimsScreen() {
         </AppText>
         <PeriodButton value={period} onChange={setPeriod} presets={['all', 'thisMonth', 'lastMonth', 'last3', 'last6', 'thisYear']} />
       </View>
-      {shown.length ? (
+      {user && !live.data ? (
+        live.error ? (
+          <Card style={{ gap: space.md }}>
+            <AppText tone="secondary">{live.error.message}</AppText>
+            <Button label={t('live.retry')} tone="secondary" onPress={() => live.refetch()} />
+          </Card>
+        ) : (
+          <ActivityIndicator color={palette.primary} style={{ paddingVertical: space.xxxl }} />
+        )
+      ) : shown.length ? (
         <Card padded={false} style={{ gap: 0, overflow: 'hidden' }}>
           {shown.map((c, i) => (
             <ClaimRow

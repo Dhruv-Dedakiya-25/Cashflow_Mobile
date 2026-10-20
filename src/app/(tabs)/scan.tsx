@@ -1,4 +1,5 @@
-import { IconBulb, IconCamera, IconFileInvoice, IconFocusCentered, IconKeyboard, IconPhoto } from '@tabler/icons-react-native';
+import { IconBulb, IconCamera, IconFileInvoice, IconFileTypePdf, IconFocusCentered, IconKeyboard, IconPhoto } from '@tabler/icons-react-native';
+import * as DocumentPicker from 'expo-document-picker';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
 import { useState } from 'react';
@@ -8,6 +9,7 @@ import { Pressable, View } from 'react-native';
 import { AppText } from '@/components/app-text';
 import { Screen } from '@/components/screen';
 import { Card } from '@/components/ui';
+import { authMode } from '@/config';
 import { radius, space, usePalette } from '@/theme/tokens';
 
 function Option({ icon: IconComponent, label, onPress }: { icon: typeof IconPhoto; label: string; onPress: () => void }) {
@@ -29,18 +31,27 @@ export default function ScanScreen() {
   const palette = usePalette();
   const [denied, setDenied] = useState(false);
 
-  const open = (uri?: string) => router.push({ pathname: '/scan-review', params: uri ? { uri } : { sample: '1' } });
+  const open = (photo?: ImagePicker.ImagePickerAsset) =>
+    router.push({ pathname: '/scan-review', params: photo ? { uri: photo.uri, width: String(photo.width) } : { sample: '1' } });
 
   const takePhoto = async () => {
     const permission = await ImagePicker.requestCameraPermissionsAsync();
     if (!permission.granted) return setDenied(true);
-    const result = await ImagePicker.launchCameraAsync({ quality: 0.7, mediaTypes: ['images'] });
-    if (!result.canceled) open(result.assets[0].uri);
+    const result = await ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] });
+    if (!result.canceled) open(result.assets[0]);
   };
 
   const choosePhoto = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.7, mediaTypes: ['images'] });
-    if (!result.canceled) open(result.assets[0].uri);
+    const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] });
+    if (!result.canceled) open(result.assets[0]);
+  };
+
+  // A PDF bill is stored as it is; AI reads photos only, so its details are typed in.
+  const choosePdf = async () => {
+    const result = await DocumentPicker.getDocumentAsync({ type: 'application/pdf', copyToCacheDirectory: true });
+    if (result.canceled) return;
+    const pdf = result.assets[0];
+    router.push({ pathname: '/scan-review', params: { pdf: pdf.uri, name: pdf.name, size: String(pdf.size ?? 0) } });
   };
 
   return (
@@ -67,7 +78,11 @@ export default function ScanScreen() {
 
       <View style={{ flexDirection: 'row', gap: space.md }}>
         <Option icon={IconPhoto} label={t('scan.choosePhoto')} onPress={choosePhoto} />
-        <Option icon={IconFileInvoice} label={t('web:scan.useSample')} onPress={() => open()} />
+        {authMode === 'api' ? (
+          <Option icon={IconFileTypePdf} label={t('scan.choosePdf')} onPress={choosePdf} />
+        ) : (
+          <Option icon={IconFileInvoice} label={t('web:scan.useSample')} onPress={() => open()} />
+        )}
       </View>
 
       <Card style={{ gap: space.md }}>

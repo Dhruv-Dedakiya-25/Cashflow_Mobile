@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Recibo acusado el {{date}}",
+    "approvedNote": "Ya aprobada. Cambiar la unidad, el custodio o el importe la devuelve a aprobación; los umbrales y la finalidad no.",
+    "availableMarker": "Queda el {{percent}} %",
+    "backToAcknowledgements": "Volver a acuses",
+    "backToList": "Volver a asignaciones",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Excedido",
       "near": "Cerca del umbral",
       "normal": "Normal",
       "pending": "Aún sin fondos",
       "watch": "En vigilancia"
+    },
+    "bandLine": {
+      "exceeded": "Excedido: lo utilizado y lo reservado superan la aportación. Hace falta una solicitud de efectivo adicional.",
+      "near": "Cerca del umbral: queda el {{near}} % o menos del fondo fijo. Puede hacer falta una solicitud de efectivo adicional.",
+      "normal": "Normal: más del {{watch}} % del fondo fijo está disponible.",
+      "pending": "Aún sin fondos.",
+      "watch": "En vigilancia: queda el {{watch}} % o menos del fondo fijo."
+    },
+    "cancelText": "La asignación termina aquí y no se puede volver a enviar. El motivo se guarda en su historial.",
+    "cancelTitle": "¿Cancelar {{reference}}?",
+    "check": {
+      "amount": "Introduzca un importe mayor que cero.",
+      "chooseCustodian": "Elija el custodio.",
+      "chooseScope": "Elija la unidad.",
+      "custodianInactive": "El custodio está inactivo.",
+      "custodianOutside": "El custodio debe pertenecer a la unidad elegida.",
+      "fixedAfterDisbursement": "El efectivo ya se pagó, así que la unidad, el custodio y el importe ya no pueden cambiar.",
+      "locked": "Esta asignación está bloqueada: se acusó su recibo o ha terminado.",
+      "purpose": "Indique para qué es el efectivo, con al menos 5 caracteres.",
+      "scopeInactive": "Esta unidad está inactiva y no puede recibir una asignación.",
+      "scopeTaken": "{{reference}} ya está abierta para esta unidad. Pida más efectivo mediante solicitudes de efectivo adicional.",
+      "thresholdRange": "Los umbrales son porcentajes enteros de 1 a 99.",
+      "watchAboveNear": "La marca de vigilancia debe estar por encima de la marca de umbral.",
+      "notDisburser": "No está habilitado para desembolsar, así que no puede emitir asignaciones.",
+      "notRecipient": "{{name}} no es un receptor habilitado y no puede custodiar caja chica."
+    },
+    "chooseLevelFirst": "Elija primero el nivel",
+    "column": {
+      "allocated": "Asignado",
+      "allocation": "Asignación",
+      "available": "Disponible",
+      "custodian": "Custodio",
+      "heldBy": "En poder de",
+      "reserved": "Reservado",
+      "scope": "Nivel / Unidad",
+      "status": "Estado",
+      "used": "Utilizado"
+    },
+    "custodianHint": "El empleado que recibe, guarda y acusa recibo del efectivo. Se sugiere al responsable de la unidad.",
+    "custodianPlaceholder": "Elija quién custodia el efectivo",
+    "deleteText": "El borrador se elimina. Nunca se envió a aprobación.",
+    "deleteTitle": "¿Eliminar el borrador {{reference}}?",
+    "detailsTitle": "Detalles",
+    "disbursedNote": "Ya pagada. Ahora solo pueden cambiar los umbrales y la finalidad.",
+    "editTitle": "Editar asignación {{reference}}",
+    "ended": {
+      "cancelled": "Cancelada por {{name}} el {{time}}:",
+      "rejected": "Rechazada por {{name}} el {{time}}:",
+      "returned": "Devuelta por {{name}} el {{time}}:"
+    },
+    "entity": "asignación",
+    "field": {
+      "acknowledged": "Confirmado",
+      "amount": "Importe",
+      "createdBy": "Creada",
+      "custodian": "Custodio",
+      "ledgerEntry": "Asiento del libro mayor",
+      "level": "Nivel de asignación",
+      "nearAt": "Cerca del umbral con % restante",
+      "paidOn": "Pagada",
+      "payment": "Pago",
+      "purpose": "Finalidad / Concepto",
+      "remarks": "Observaciones del receptor",
+      "scope": "Unidad",
+      "thresholds": "Umbrales",
+      "voucherNo": "N.º de comprobante",
+      "watchAt": "Vigilancia con % restante"
+    },
+    "figure": {
+      "available": "Disponible",
+      "funded": "Aportado",
+      "reserved": "Reservado",
+      "used": "Utilizado"
+    },
+    "filter": {
+      "allBalances": "Todos los saldos",
+      "allLevels": "Todos los niveles"
+    },
+    "level": {
+      "businessUnit": "Unidad de negocio",
+      "custodian": "Custodio",
+      "department": "Departamento",
+      "project": "Proyecto"
+    },
+    "locked": "Bloqueado",
+    "lockedHint": "Bloqueada desde que el custodio acusó recibo. Las correcciones se hacen con nuevos asientos, nunca editando.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Fecha",
+      "description": "Descripción",
+      "entry": "Asiento",
+      "in": "Entrada",
+      "kind": {
+        "adjustment": "Ajuste",
+        "expense": "Reembolso pagado",
+        "funding": "Aporte de la asignación",
+        "topUp": "Reposición",
+        "reallocation": "Reasignación"
+      },
+      "out": "Salida"
+    },
+    "movementsTitle": "Movimientos",
+    "neverFunded": "Sin fondos",
+    "new": "Nueva asignación",
+    "newTitle": "Nueva asignación de caja chica",
+    "noMovements": "Aún no hay movimientos. La primera línea se registra cuando el custodio acusa recibo del efectivo.",
+    "noScopeOptions": "No hay nada que elegir en este nivel",
+    "notFunded": "Aún sin fondos",
+    "notFundedBeforePayment": "Aún sin fondos. El saldo empieza cuando Finanzas la paga y {{name}} acusa recibo.",
+    "notFundedYet": "Pagada y a la espera del acuse de {{name}}. El saldo empieza solo entonces.",
+    "openLedger": "Abrir en el libro",
+    "purposePlaceholder": "Para qué es el efectivo, tal como debe figurar en el comprobante",
+    "reservationKind": {
+      "preExpense": "Solicitud de gasto previo aprobada",
+      "reimbursement": "Reembolso aprobado, aún no pagado",
+      "reallocation": "Reasignación en camino"
+    },
+    "reservedFor": "Reservado para",
+    "saveAndResubmit": "Guardar y enviar a aprobación",
+    "scopeLabel": {
+      "businessUnit": "Unidad de negocio",
+      "custodian": "Custodio / Empleado",
+      "department": "Departamento",
+      "project": "Proyecto"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Buscar unidad de negocio…",
+      "custodian": "Escriba el nombre de un empleado…",
+      "department": "Buscar departamento…",
+      "project": "Buscar proyecto…"
+    },
+    "search": "Buscar referencia, unidad, custodio o finalidad",
+    "subtitle": "Efectivo entregado a un departamento, unidad de negocio, proyecto o custodio, y lo que cada uno tiene ahora. Más efectivo para una asignación existente se pide mediante solicitudes de efectivo adicional.",
+    "thresholdsValue": "Vigilancia {{watch}} % · Umbral {{near}} %",
+    "tile": {
+      "active": "Asignaciones activas",
+      "activeNote": "{{amount}} aportados",
+      "attention": "Requiere atención",
+      "attentionNote": "Cerca del umbral o excedidas: {{count}}",
+      "available": "Disponible ahora",
+      "availableNote": "tras {{amount}} reservados",
+      "awaiting": "Pendiente de acuse",
+      "summary": "Resumen de asignaciones"
+    },
+    "title": "Asignaciones de caja chica",
+    "toast": {
+      "cancelled": "{{reference}} se canceló.",
+      "deleted": "Se eliminó el borrador {{reference}}.",
+      "saved": "{{reference}} se guardó.",
+      "submitted": "{{reference}} se envió a aprobación."
+    },
+    "topUpOnItsWay": "Hay {{amount}} más en camino ({{references}}) a la espera de acuse.",
+    "noRecipients": "No hay receptores habilitados en esta unidad. Añada uno en Desembolsadores y receptores."
+  },
+  "file": {
+    "aiNotRead": "No escaneado",
+    "aiRead": "Leído por IA, {{confidence}} % de confianza",
+    "camera": "Tomar una foto",
+    "check": {
+      "empty": "Este archivo está vacío.",
+      "notWhatItSays": "El contenido del archivo no coincide con su nombre, por lo que no se adjuntó. Guárdelo de nuevo en su formato real e inténtelo otra vez.",
+      "tooLarge": "Este archivo supera {{size}}. Elija un archivo más pequeño.",
+      "wrongType": "Este tipo de archivo no se acepta. Use uno de: {{types}}.",
+      "notYours": "Este archivo no fue subido por usted o pertenece a otra solicitud. Súbalo de nuevo."
+    },
+    "checking": "Comprobando el archivo…",
+    "detail": {
+      "ai": "Lectura de IA",
+      "hash": "SHA-256",
+      "preview": "Vista previa",
+      "size": "Tamaño",
+      "uploaded": "Subido"
+    },
+    "drawnSample": "Imagen de muestra extraída de la solicitud. En el sistema real, los archivos guardados se abren aquí.",
+    "remove": "Eliminar",
+    "replace": "Reemplazar",
+    "rules": "{{types}} · hasta {{size}}",
+    "view": "Ver",
+    "uploading": "Subiendo…",
+    "sampleNoFile": "Imagen de muestra: no se almacenó ningún archivo",
+    "heicPreviewUnsupported": "Este navegador no puede obtener una vista previa de imágenes HEIC. Descargue el archivo para verlo."
+  },
+  "preExpense": {
+    "attachmentHint": "Opcional: un presupuesto o estimación. La factura se adjunta después, con la reclamación.",
+    "backToList": "Volver a solicitudes de gasto previo",
+    "check": {
+      "datePassed": "La fecha prevista ya pasó. Cámbiela o reclame el gasto directamente como reembolso.",
+      "expectedDate": "Elija la fecha prevista del gasto."
+    },
+    "claimAgainst": "Reclamar sobre esta",
+    "claimedSoFar": "{{amount}} reclamado",
+    "claimsAfterApproval": "Se podrán presentar reclamaciones una vez aprobada.",
+    "claimsTitle": "Reclamaciones sobre esta solicitud",
+    "column": {
+      "amount": "Importe",
+      "category": "Categoría / comercio",
+      "employee": "Empleado",
+      "expected": "Prevista",
+      "reference": "Referencia",
+      "status": "Estado",
+      "unit": "Unidad / proyecto"
+    },
+    "deleteText": "Se elimina el borrador. No se puede deshacer.",
+    "deleteTitle": "¿Eliminar {{reference}}?",
+    "detailsTitle": "Detalles de la solicitud",
+    "editTitle": "Editar {{reference}}",
+    "entity": "solicitudes de gasto previo",
+    "expectedDateHint": "Cuándo se gastará el dinero. Un gasto ya realizado se reclama directamente.",
+    "field": {
+      "allocation": "Asignación",
+      "amount": "Importe solicitado (OMR)",
+      "attachment": "Documento de respaldo (opcional)",
+      "expectedDate": "Fecha prevista del gasto",
+      "purpose": "Propósito / justificación"
+    },
+    "figure": {
+      "approved": "Solicitado",
+      "claimed": "Reclamado",
+      "remaining": "Pendiente de reclamar"
+    },
+    "formIntro": "Solicite la aprobación de un gasto estimado antes de gastar. Es un permiso para gastar, no un pago.",
+    "heldAgainst": "El importe aprobado queda reservado en {{reference}} hasta que se paguen las reclamaciones sobre él.",
+    "leftToClaim": "{{amount}} restante",
+    "new": "Nueva solicitud",
+    "newTitle": "Nueva solicitud de gasto previo",
+    "noAllocation": "Esta unidad no tiene asignación activa. Una reclamación sobre ella se pagaría con el salario.",
+    "noAllocationShort": "Ninguna activa",
+    "noClaimsYet": "Aún no hay reclamaciones. El importe aprobado sigue disponible hasta que se reclame.",
+    "noVatHint": "Un único importe global. El IVA se calcula en la reclamación.",
+    "notHeld": "Esta unidad no tiene asignación activa, así que no se reserva nada en la caja chica.",
+    "notReserved": "No reservado",
+    "overAvailable": "Más de lo que tiene disponible {{reference}} ({{available}}). Puede que Finanzas deba reponerlo.",
+    "purposePlaceholder": "Para qué es el dinero y por qué se necesita.",
+    "reservedAgainst": "Reservado en {{reference}} una vez aprobado · disponible {{available}}",
+    "search": "Buscar referencia, empleado, propósito o comercio",
+    "submit": "Enviar solicitud",
+    "subtitle": "Aprobación antes de incurrir en un gasto. El importe aprobado queda reservado hasta que se reclame.",
+    "tile": {
+      "open": "Aprobado, aún sin reclamar",
+      "openNote": "Solicitudes abiertas: {{count}}",
+      "pending": "En aprobación",
+      "requests": "Solicitudes",
+      "returned": "Devueltas a usted",
+      "returnedNote": "Corrija y envíe de nuevo, o retire",
+      "summary": "Resumen de gastos previos"
+    },
+    "title": "Solicitudes de aprobación previa de gastos",
+    "toast": {
+      "deleted": "{{reference}} se eliminó.",
+      "saved": "{{reference}} se guardó como borrador.",
+      "submitted": "{{reference}} se envió a aprobación."
     }
   },
   "report": {

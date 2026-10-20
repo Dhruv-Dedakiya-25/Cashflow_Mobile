@@ -8,7 +8,7 @@ import type { RequestStatus } from '@/api/types';
 import { AppText } from '@/components/app-text';
 import { StatusPill } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { amount, shortDate } from '@/lib/format';
+import { amount, category, shortDate } from '@/lib/format';
 import { radius, space, usePalette } from '@/theme/tokens';
 
 const categoryIcons: Record<string, Icon> = {
@@ -25,9 +25,25 @@ const categoryIcons: Record<string, Icon> = {
   'cat-011': IconPhone,
 };
 
+// A live category has a GUID, so its icon is picked from its English name.
+const iconsByName: [RegExp, Icon][] = [
+  [/travel|taxi|transport/i, IconCar],
+  [/fuel|petrol/i, IconGasStation],
+  [/meal|refresh|food/i, IconCoffee],
+  [/office|supplies|stationery/i, IconPencil],
+  [/courier|delivery|postage/i, IconTruckDelivery],
+  [/parking|toll/i, IconParking],
+  [/accommodation|hotel|lodging/i, IconBed],
+  [/meeting|client|entertain/i, IconUsers],
+  [/repair|maintenance/i, IconTool],
+  [/print|photocop/i, IconPrinter],
+  [/phone|mobile|telecom/i, IconPhone],
+];
+
 export function CategoryIcon({ categoryId, size = 42 }: { categoryId?: string; size?: number }) {
   const palette = usePalette();
-  const IconComponent = (categoryId && categoryIcons[categoryId]) || IconDots;
+  const name = categoryId ? category(categoryId)?.nameEn : undefined;
+  const IconComponent = (categoryId && categoryIcons[categoryId]) || (name && iconsByName.find(([re]) => re.test(name))?.[1]) || IconDots;
   return (
     <View style={{ width: size, height: size, borderRadius: radius.lg, backgroundColor: palette.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
       <IconComponent size={size * 0.5} color={palette.primary} strokeWidth={1.8} />

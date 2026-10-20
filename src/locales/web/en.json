@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Acknowledged {{date}}",
+    "approvedNote": "Already approved. Changing the unit, custodian or amount sends it back for approval; thresholds and purpose do not.",
+    "availableMarker": "{{percent}}% left",
+    "backToAcknowledgements": "Back to Acknowledgements",
+    "backToList": "Back to Allocations",
+    "balanceTitle": "Balance",
     "band": {
       "exceeded": "Exceeded",
       "near": "Near Threshold",
       "normal": "Normal",
       "pending": "Not funded yet",
       "watch": "Watch"
+    },
+    "bandLine": {
+      "exceeded": "Exceeded: used and reserved are more than its funding. An Additional Cash Request is needed.",
+      "near": "Near its threshold: {{near}}% or less of its float is left. An Additional Cash Request may be needed.",
+      "normal": "Normal: more than {{watch}}% of its float is available.",
+      "pending": "Not funded yet.",
+      "watch": "On watch: {{watch}}% or less of its float is left."
+    },
+    "cancelText": "The allocation stops here and cannot be sent again. The reason is kept in its history.",
+    "cancelTitle": "Cancel {{reference}}?",
+    "check": {
+      "amount": "Enter an amount above zero.",
+      "chooseCustodian": "Choose the custodian.",
+      "chooseScope": "Choose the unit.",
+      "custodianInactive": "The custodian is inactive.",
+      "custodianOutside": "The custodian must belong to the chosen unit.",
+      "fixedAfterDisbursement": "The cash has been paid out, so the unit, custodian and amount can no longer change.",
+      "locked": "This allocation is locked: it has been acknowledged, or it has ended.",
+      "purpose": "Say what the cash is for, in at least 5 characters.",
+      "scopeInactive": "This unit is inactive, so it cannot receive an allocation.",
+      "scopeTaken": "{{reference}} is already open for this unit. Ask for more cash through Additional Cash Requests instead.",
+      "thresholdRange": "Thresholds are whole percentages from 1 to 99.",
+      "watchAboveNear": "The watch mark must be above the near-threshold mark.",
+      "notDisburser": "You are not enabled for disbursement, so you cannot issue allocations.",
+      "notRecipient": "{{name}} is not an enabled recipient and cannot hold petty cash."
+    },
+    "chooseLevelFirst": "Choose the level first",
+    "column": {
+      "allocated": "Allocated",
+      "allocation": "Allocation",
+      "available": "Available",
+      "custodian": "Custodian",
+      "heldBy": "Held By",
+      "reserved": "Reserved",
+      "scope": "Level / Unit",
+      "status": "Status",
+      "used": "Used"
+    },
+    "custodianHint": "The employee who receives, holds and acknowledges the cash. The unit's head is suggested.",
+    "custodianPlaceholder": "Choose who holds the cash",
+    "deleteText": "The draft is removed. It was never sent for approval.",
+    "deleteTitle": "Delete draft {{reference}}?",
+    "detailsTitle": "Details",
+    "disbursedNote": "Already paid out. Only the thresholds and purpose can change now.",
+    "editTitle": "Edit Allocation {{reference}}",
+    "ended": {
+      "cancelled": "Cancelled by {{name}} on {{time}}:",
+      "rejected": "Rejected by {{name}} on {{time}}:",
+      "returned": "Returned by {{name}} on {{time}}:"
+    },
+    "entity": "allocation",
+    "field": {
+      "acknowledged": "Acknowledged",
+      "amount": "Amount",
+      "createdBy": "Created",
+      "custodian": "Custodian",
+      "ledgerEntry": "Ledger Entry",
+      "level": "Allocation Level",
+      "nearAt": "Near Threshold at % Left",
+      "paidOn": "Paid",
+      "payment": "Payment",
+      "purpose": "Purpose / Narration",
+      "remarks": "Recipient's Remarks",
+      "scope": "Unit",
+      "thresholds": "Thresholds",
+      "voucherNo": "Voucher No.",
+      "watchAt": "Watch at % Left"
+    },
+    "figure": {
+      "available": "Available",
+      "funded": "Funded",
+      "reserved": "Reserved",
+      "used": "Used"
+    },
+    "filter": {
+      "allBalances": "All balances",
+      "allLevels": "All levels"
+    },
+    "level": {
+      "businessUnit": "Business Unit",
+      "custodian": "Custodian",
+      "department": "Department",
+      "project": "Project"
+    },
+    "locked": "Locked",
+    "lockedHint": "Locked since the custodian acknowledged it. Corrections are made as new ledger entries, never by editing.",
+    "movement": {
+      "balance": "Balance",
+      "date": "Date",
+      "description": "Description",
+      "entry": "Entry",
+      "in": "In",
+      "kind": {
+        "adjustment": "Adjustment",
+        "expense": "Paid claim",
+        "funding": "Allocation funding",
+        "topUp": "Top-up",
+        "reallocation": "Reallocation"
+      },
+      "out": "Out"
+    },
+    "movementsTitle": "Movements",
+    "neverFunded": "Not funded",
+    "new": "New Allocation",
+    "newTitle": "New Petty Cash Allocation",
+    "noMovements": "No movements yet. The first line posts when the custodian acknowledges the cash.",
+    "noScopeOptions": "Nothing you can choose at this level",
+    "notFunded": "Not funded yet",
+    "notFundedBeforePayment": "Not funded yet. The balance starts when Finance pays it out and {{name}} acknowledges receiving it.",
+    "notFundedYet": "Paid out and waiting for {{name}} to acknowledge it. The balance starts only then.",
+    "openLedger": "Open in Ledger",
+    "purposePlaceholder": "What the cash is for, as it should read on the voucher",
+    "reservationKind": {
+      "preExpense": "Approved pre-expense request",
+      "reimbursement": "Approved claim, not yet paid",
+      "reallocation": "Reallocation on its way"
+    },
+    "reservedFor": "Reserved for",
+    "saveAndResubmit": "Save and Send for Approval",
+    "scopeLabel": {
+      "businessUnit": "Business Unit",
+      "custodian": "Custodian / Employee",
+      "department": "Department",
+      "project": "Project"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Search business unit…",
+      "custodian": "Type an employee's name…",
+      "department": "Search department…",
+      "project": "Search project…"
+    },
+    "search": "Search reference, unit, custodian or purpose",
+    "subtitle": "Cash issued to a department, business unit, project or custodian, and what each holds now. More cash for an existing allocation goes through Additional Cash Requests.",
+    "thresholdsValue": "Watch {{watch}}% · Near {{near}}%",
+    "tile": {
+      "active": "Active allocations",
+      "activeNote": "{{amount}} funded",
+      "attention": "Needs Attention",
+      "attentionNote": "Near threshold or exceeded: {{count}}",
+      "available": "Available now",
+      "availableNote": "after {{amount}} reserved",
+      "awaiting": "Awaiting acknowledgement",
+      "summary": "Allocation summary"
+    },
+    "title": "Petty Cash Allocations",
+    "toast": {
+      "cancelled": "{{reference}} was cancelled.",
+      "deleted": "Draft {{reference}} was deleted.",
+      "saved": "{{reference}} was saved.",
+      "submitted": "{{reference}} was sent for approval."
+    },
+    "topUpOnItsWay": "{{amount}} more is on its way ({{references}}) and waits for acknowledgement.",
+    "noRecipients": "No enabled recipients in this unit. Add one on Disbursers & Recipients."
+  },
+  "file": {
+    "aiNotRead": "Not scanned",
+    "aiRead": "Read by AI, {{confidence}}% confidence",
+    "camera": "Take a photo",
+    "check": {
+      "empty": "This file is empty.",
+      "notWhatItSays": "The file's content does not match its name, so it was not attached. Save it again in its real format and try again.",
+      "notYours": "This file was not uploaded by you or belongs to another request. Upload it again.",
+      "tooLarge": "This file is larger than {{size}}. Choose a smaller file.",
+      "wrongType": "This file type is not accepted. Use one of: {{types}}."
+    },
+    "checking": "Checking the file…",
+    "detail": {
+      "ai": "AI reading",
+      "hash": "SHA-256",
+      "preview": "Preview",
+      "size": "Size",
+      "uploaded": "Uploaded"
+    },
+    "drawnSample": "Sample picture drawn from the claim. In the live system, stored files open here.",
+    "remove": "Remove",
+    "replace": "Replace",
+    "rules": "{{types}} · up to {{size}}",
+    "view": "View",
+    "uploading": "Uploading…",
+    "sampleNoFile": "Sample picture: no file was stored",
+    "heicPreviewUnsupported": "This browser cannot preview HEIC images. Download the file to view it."
+  },
+  "preExpense": {
+    "attachmentHint": "Optional: a quotation or estimate. The bill is attached later, with the claim.",
+    "backToList": "Back to Pre-Expense Requests",
+    "check": {
+      "datePassed": "The expected date has passed. Change it, or claim the expense directly as a reimbursement.",
+      "expectedDate": "Choose the expected expense date."
+    },
+    "claimAgainst": "Claim Against This",
+    "claimedSoFar": "{{amount}} claimed",
+    "claimsAfterApproval": "Claims can be made against it once it is approved.",
+    "claimsTitle": "Claims Against This Request",
+    "column": {
+      "amount": "Amount",
+      "category": "Category / Merchant",
+      "employee": "Employee",
+      "expected": "Expected",
+      "reference": "Reference",
+      "status": "Status",
+      "unit": "Unit / Project"
+    },
+    "deleteText": "The draft is removed. This cannot be undone.",
+    "deleteTitle": "Delete {{reference}}?",
+    "detailsTitle": "Request Details",
+    "editTitle": "Edit {{reference}}",
+    "entity": "pre-expense requests",
+    "expectedDateHint": "When the money will be spent. A past expense is claimed directly instead.",
+    "field": {
+      "allocation": "Allocation",
+      "amount": "Requested Amount (OMR)",
+      "attachment": "Supporting Document (optional)",
+      "expectedDate": "Expected Expense Date",
+      "purpose": "Purpose / Justification"
+    },
+    "figure": {
+      "approved": "Requested",
+      "claimed": "Claimed",
+      "remaining": "Left to Claim"
+    },
+    "formIntro": "Request approval for an estimated expense before spending. This is permission to spend, not a payment.",
+    "heldAgainst": "The approved amount is held against {{reference}} until the claims against it are paid.",
+    "leftToClaim": "{{amount}} left",
+    "new": "New Request",
+    "newTitle": "New Pre-Expense Request",
+    "noAllocation": "This unit has no active allocation. A claim against it would be paid with salary.",
+    "noAllocationShort": "None active",
+    "noClaimsYet": "No claims yet. The approved amount stays available until it is claimed.",
+    "noVatHint": "One lump-sum amount. VAT is worked out on the claim.",
+    "notHeld": "This unit has no active allocation, so nothing is held against petty cash.",
+    "notReserved": "Not held",
+    "overAvailable": "More than {{reference}} has available ({{available}}). Finance may need to top it up.",
+    "purposePlaceholder": "What the money is for, and why it is needed.",
+    "reservedAgainst": "Held against {{reference}} once approved · available {{available}}",
+    "search": "Search reference, employee, purpose or merchant",
+    "submit": "Submit Request",
+    "subtitle": "Approval before an expense is incurred. An approved amount is held until it is claimed.",
+    "tile": {
+      "open": "Approved, Not Yet Claimed",
+      "openNote": "Open requests: {{count}}",
+      "pending": "Under Approval",
+      "requests": "Requests",
+      "returned": "Returned to You",
+      "returnedNote": "Correct and send again, or withdraw",
+      "summary": "Pre-expense summary"
+    },
+    "title": "Pre-Expense Approval Requests",
+    "toast": {
+      "deleted": "{{reference}} was deleted.",
+      "saved": "{{reference}} was saved as a draft.",
+      "submitted": "{{reference}} was sent for approval."
     }
   },
   "report": {

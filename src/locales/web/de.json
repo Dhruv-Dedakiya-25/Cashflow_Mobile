@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "Empfang bestätigt am {{date}}",
+    "approvedNote": "Bereits genehmigt. Eine Änderung von Einheit, Verwahrer oder Betrag schickt sie zurück in die Genehmigung; Schwellen und Zweck nicht.",
+    "availableMarker": "Noch {{percent}} %",
+    "backToAcknowledgements": "Zurück zu den Empfangsbestätigungen",
+    "backToList": "Zurück zu den Zuweisungen",
+    "balanceTitle": "Saldo",
     "band": {
       "exceeded": "Überschritten",
       "near": "Nahe der Schwelle",
       "normal": "Normal",
       "pending": "Noch nicht finanziert",
       "watch": "Beobachten"
+    },
+    "bandLine": {
+      "exceeded": "Überschritten: Genutztes und Reserviertes übersteigen die Finanzierung. Ein Antrag auf zusätzliches Bargeld ist nötig.",
+      "near": "Nahe der Schwelle: {{near}}% oder weniger des Sollbestands sind übrig. Ein Antrag auf zusätzliches Bargeld kann nötig sein.",
+      "normal": "Normal: mehr als {{watch}}% des Sollbestands sind verfügbar.",
+      "pending": "Noch nicht finanziert.",
+      "watch": "Unter Beobachtung: {{watch}}% oder weniger des Sollbestands sind übrig."
+    },
+    "cancelText": "Die Zuweisung endet hier und kann nicht erneut gesendet werden. Der Grund wird in ihrem Verlauf gespeichert.",
+    "cancelTitle": "{{reference}} stornieren?",
+    "check": {
+      "amount": "Geben Sie einen Betrag über null ein.",
+      "chooseCustodian": "Wählen Sie den Verwahrer.",
+      "chooseScope": "Wählen Sie die Einheit.",
+      "custodianInactive": "Der Verwahrer ist inaktiv.",
+      "custodianOutside": "Der Verwahrer muss zur gewählten Einheit gehören.",
+      "fixedAfterDisbursement": "Das Bargeld wurde ausgezahlt, daher können Einheit, Verwahrer und Betrag nicht mehr geändert werden.",
+      "locked": "Diese Zuweisung ist gesperrt: Ihr Empfang wurde bestätigt oder sie ist beendet.",
+      "purpose": "Geben Sie an, wofür das Bargeld ist, mit mindestens 5 Zeichen.",
+      "scopeInactive": "Diese Einheit ist inaktiv und kann keine Zuweisung erhalten.",
+      "scopeTaken": "{{reference}} ist für diese Einheit bereits offen. Beantragen Sie stattdessen mehr Bargeld über Anträge auf zusätzliches Bargeld.",
+      "thresholdRange": "Schwellen sind ganze Prozentwerte von 1 bis 99.",
+      "watchAboveNear": "Die Beobachtungsmarke muss über der Schwellenmarke liegen.",
+      "notDisburser": "Sie sind nicht für Auszahlungen freigegeben und können daher keine Zuweisungen ausgeben.",
+      "notRecipient": "{{name}} ist kein freigegebener Empfänger und darf keine Handkasse verwahren."
+    },
+    "chooseLevelFirst": "Wählen Sie zuerst die Ebene",
+    "column": {
+      "allocated": "Zugewiesen",
+      "allocation": "Zuweisung",
+      "available": "Verfügbar",
+      "custodian": "Verwahrer",
+      "heldBy": "Verwahrt von",
+      "reserved": "Reserviert",
+      "scope": "Ebene / Einheit",
+      "status": "Status",
+      "used": "Genutzt"
+    },
+    "custodianHint": "Der Mitarbeiter, der das Bargeld erhält, verwahrt und den Empfang bestätigt. Die Leitung der Einheit wird vorgeschlagen.",
+    "custodianPlaceholder": "Wählen Sie, wer das Bargeld verwahrt",
+    "deleteText": "Der Entwurf wird entfernt. Er wurde nie zur Genehmigung gesendet.",
+    "deleteTitle": "Entwurf {{reference}} löschen?",
+    "detailsTitle": "Details",
+    "disbursedNote": "Bereits ausgezahlt. Jetzt können nur noch Schwellen und Zweck geändert werden.",
+    "editTitle": "Zuweisung {{reference}} bearbeiten",
+    "ended": {
+      "cancelled": "Storniert von {{name}} am {{time}}:",
+      "rejected": "Abgelehnt von {{name}} am {{time}}:",
+      "returned": "Zurückgegeben von {{name}} am {{time}}:"
+    },
+    "entity": "Zuweisung",
+    "field": {
+      "acknowledged": "Bestätigt",
+      "amount": "Betrag",
+      "createdBy": "Erstellt",
+      "custodian": "Verwahrer",
+      "ledgerEntry": "Hauptbucheintrag",
+      "level": "Zuweisungsebene",
+      "nearAt": "Nahe der Schwelle ab % Rest",
+      "paidOn": "Bezahlt",
+      "payment": "Zahlung",
+      "purpose": "Zweck / Buchungstext",
+      "remarks": "Anmerkungen des Empfängers",
+      "scope": "Einheit",
+      "thresholds": "Schwellen",
+      "voucherNo": "Beleg-Nr.",
+      "watchAt": "Beobachten ab % Rest"
+    },
+    "figure": {
+      "available": "Verfügbar",
+      "funded": "Finanziert",
+      "reserved": "Reserviert",
+      "used": "Genutzt"
+    },
+    "filter": {
+      "allBalances": "Alle Salden",
+      "allLevels": "Alle Ebenen"
+    },
+    "level": {
+      "businessUnit": "Geschäftsbereich",
+      "custodian": "Verwahrer",
+      "department": "Abteilung",
+      "project": "Projekt"
+    },
+    "locked": "Gesperrt",
+    "lockedHint": "Gesperrt, seit der Verwahrer den Empfang bestätigt hat. Korrekturen erfolgen als neue Hauptbucheinträge, nie durch Bearbeiten.",
+    "movement": {
+      "balance": "Saldo",
+      "date": "Datum",
+      "description": "Beschreibung",
+      "entry": "Eintrag",
+      "in": "Eingang",
+      "kind": {
+        "adjustment": "Korrektur",
+        "expense": "Bezahlte Erstattung",
+        "funding": "Zuweisungsfinanzierung",
+        "topUp": "Aufstockung",
+        "reallocation": "Umverteilung"
+      },
+      "out": "Ausgang"
+    },
+    "movementsTitle": "Bewegungen",
+    "neverFunded": "Nicht finanziert",
+    "new": "Neue Zuweisung",
+    "newTitle": "Neue Handkassen-Zuweisung",
+    "noMovements": "Noch keine Bewegungen. Die erste Zeile wird gebucht, wenn der Verwahrer den Empfang des Bargelds bestätigt.",
+    "noScopeOptions": "Auf dieser Ebene gibt es nichts zur Auswahl",
+    "notFunded": "Noch nicht finanziert",
+    "notFundedBeforePayment": "Noch nicht finanziert. Der Saldo beginnt, wenn die Finanzabteilung auszahlt und {{name}} den Empfang bestätigt.",
+    "notFundedYet": "Ausgezahlt und wartet auf die Empfangsbestätigung von {{name}}. Erst dann beginnt der Saldo.",
+    "openLedger": "Im Kassenbuch öffnen",
+    "purposePlaceholder": "Wofür das Bargeld ist, wie es auf dem Beleg stehen soll",
+    "reservationKind": {
+      "preExpense": "Genehmigter Vorab-Ausgabenantrag",
+      "reimbursement": "Genehmigte Erstattung, noch nicht bezahlt",
+      "reallocation": "Umverteilung unterwegs"
+    },
+    "reservedFor": "Reserviert für",
+    "saveAndResubmit": "Speichern und zur Genehmigung senden",
+    "scopeLabel": {
+      "businessUnit": "Geschäftsbereich",
+      "custodian": "Verwahrer / Mitarbeiter",
+      "department": "Abteilung",
+      "project": "Projekt"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "Geschäftseinheit suchen…",
+      "custodian": "Namen eines Mitarbeiters eingeben…",
+      "department": "Abteilung suchen…",
+      "project": "Projekt suchen…"
+    },
+    "search": "Referenz, Einheit, Verwahrer oder Zweck suchen",
+    "subtitle": "Bargeld, das einer Abteilung, Geschäftseinheit, einem Projekt oder Verwahrer ausgegeben wurde, und was jeder jetzt hält. Mehr Bargeld für eine bestehende Zuweisung läuft über Anträge auf zusätzliches Bargeld.",
+    "thresholdsValue": "Beobachten {{watch}}% · Schwelle {{near}}%",
+    "tile": {
+      "active": "Aktive Zuweisungen",
+      "activeNote": "{{amount}} finanziert",
+      "attention": "Handlungsbedarf",
+      "attentionNote": "Nahe der Schwelle oder überschritten: {{count}}",
+      "available": "Jetzt verfügbar",
+      "availableNote": "nach {{amount}} reserviert",
+      "awaiting": "Wartet auf Empfangsbestätigung",
+      "summary": "Übersicht der Zuweisungen"
+    },
+    "title": "Handkassen-Zuweisungen",
+    "toast": {
+      "cancelled": "{{reference}} wurde storniert.",
+      "deleted": "Entwurf {{reference}} wurde gelöscht.",
+      "saved": "{{reference}} wurde gespeichert.",
+      "submitted": "{{reference}} wurde zur Genehmigung gesendet."
+    },
+    "topUpOnItsWay": "Weitere {{amount}} sind unterwegs ({{references}}) und warten auf Empfangsbestätigung.",
+    "noRecipients": "Keine freigegebenen Empfänger in dieser Einheit. Fügen Sie unter Auszahler & Empfänger einen hinzu."
+  },
+  "file": {
+    "aiNotRead": "Nicht gescannt",
+    "aiRead": "Von KI gelesen, {{confidence}} % Konfidenz",
+    "camera": "Foto aufnehmen",
+    "check": {
+      "empty": "Diese Datei ist leer.",
+      "notWhatItSays": "Der Inhalt der Datei passt nicht zu ihrem Namen, daher wurde sie nicht angehängt. Speichern Sie sie im echten Format und versuchen Sie es erneut.",
+      "tooLarge": "Diese Datei ist größer als {{size}}. Wählen Sie eine kleinere Datei.",
+      "wrongType": "Dieser Dateityp wird nicht angenommen. Verwenden Sie einen von: {{types}}.",
+      "notYours": "Diese Datei wurde nicht von Ihnen hochgeladen oder gehört zu einem anderen Antrag. Bitte laden Sie sie erneut hoch."
+    },
+    "checking": "Datei wird geprüft…",
+    "detail": {
+      "ai": "KI-Auslesung",
+      "hash": "SHA-256",
+      "preview": "Vorschau",
+      "size": "Größe",
+      "uploaded": "Hochgeladen"
+    },
+    "drawnSample": "Beispielbild aus dem Antrag. Im echten System werden gespeicherte Dateien hier geöffnet.",
+    "remove": "Entfernen",
+    "replace": "Ersetzen",
+    "rules": "{{types}} · bis {{size}}",
+    "view": "Ansehen",
+    "uploading": "Wird hochgeladen…",
+    "sampleNoFile": "Beispielbild: Es wurde keine Datei gespeichert",
+    "heicPreviewUnsupported": "Dieser Browser kann keine Vorschau von HEIC-Bildern anzeigen. Laden Sie die Datei herunter, um sie anzusehen."
+  },
+  "preExpense": {
+    "attachmentHint": "Optional: ein Angebot oder eine Schätzung. Der Beleg wird später mit der Abrechnung angehängt.",
+    "backToList": "Zurück zu den Vorab-Ausgabenanträgen",
+    "check": {
+      "datePassed": "Das erwartete Datum ist vorbei. Ändern Sie es oder rechnen Sie die Ausgabe direkt als Erstattung ab.",
+      "expectedDate": "Wählen Sie das erwartete Ausgabedatum."
+    },
+    "claimAgainst": "Hierzu abrechnen",
+    "claimedSoFar": "{{amount}} abgerechnet",
+    "claimsAfterApproval": "Nach der Genehmigung können Abrechnungen dazu eingereicht werden.",
+    "claimsTitle": "Abrechnungen zu diesem Antrag",
+    "column": {
+      "amount": "Betrag",
+      "category": "Kategorie / Händler",
+      "employee": "Mitarbeiter",
+      "expected": "Erwartet",
+      "reference": "Referenz",
+      "status": "Status",
+      "unit": "Einheit / Projekt"
+    },
+    "deleteText": "Der Entwurf wird entfernt. Dies kann nicht rückgängig gemacht werden.",
+    "deleteTitle": "{{reference}} löschen?",
+    "detailsTitle": "Antragsdetails",
+    "editTitle": "{{reference}} bearbeiten",
+    "entity": "Vorab-Ausgabenanträge",
+    "expectedDateHint": "Wann das Geld ausgegeben wird. Eine bereits entstandene Ausgabe wird direkt abgerechnet.",
+    "field": {
+      "allocation": "Zuweisung",
+      "amount": "Beantragter Betrag (OMR)",
+      "attachment": "Beleg (optional)",
+      "expectedDate": "Erwartetes Ausgabedatum",
+      "purpose": "Zweck / Begründung"
+    },
+    "figure": {
+      "approved": "Beantragt",
+      "claimed": "Abgerechnet",
+      "remaining": "Noch abrechenbar"
+    },
+    "formIntro": "Beantragen Sie die Genehmigung einer geschätzten Ausgabe vor dem Ausgeben. Dies ist eine Ausgabeerlaubnis, keine Zahlung.",
+    "heldAgainst": "Der genehmigte Betrag bleibt auf {{reference}} reserviert, bis die zugehörigen Abrechnungen bezahlt sind.",
+    "leftToClaim": "{{amount}} übrig",
+    "new": "Neuer Antrag",
+    "newTitle": "Neuer Vorab-Ausgabenantrag",
+    "noAllocation": "Diese Einheit hat keine aktive Zuweisung. Eine Abrechnung dazu würde mit dem Gehalt gezahlt.",
+    "noAllocationShort": "Keine aktiv",
+    "noClaimsYet": "Noch keine Abrechnungen. Der genehmigte Betrag bleibt verfügbar, bis er abgerechnet wird.",
+    "noVatHint": "Ein Pauschalbetrag. Die Mehrwertsteuer wird in der Abrechnung ermittelt.",
+    "notHeld": "Diese Einheit hat keine aktive Zuweisung, daher ist in der Handkasse nichts reserviert.",
+    "notReserved": "Nicht reserviert",
+    "overAvailable": "Mehr, als {{reference}} verfügbar hat ({{available}}). Die Finanzabteilung muss eventuell aufstocken.",
+    "purposePlaceholder": "Wofür das Geld ist und warum es benötigt wird.",
+    "reservedAgainst": "Nach Genehmigung auf {{reference}} reserviert · verfügbar {{available}}",
+    "search": "Referenz, Mitarbeiter, Zweck oder Händler suchen",
+    "submit": "Anfrage absenden",
+    "subtitle": "Genehmigung, bevor eine Ausgabe entsteht. Ein genehmigter Betrag bleibt reserviert, bis er abgerechnet wird.",
+    "tile": {
+      "open": "Genehmigt, noch nicht abgerechnet",
+      "openNote": "Offene Anträge: {{count}}",
+      "pending": "In Genehmigung",
+      "requests": "Anträge",
+      "returned": "An Sie zurückgegeben",
+      "returnedNote": "Korrigieren und erneut senden oder zurückziehen",
+      "summary": "Übersicht Vorab-Ausgaben"
+    },
+    "title": "Anträge auf Vorabgenehmigung von Ausgaben",
+    "toast": {
+      "deleted": "{{reference}} wurde gelöscht.",
+      "saved": "{{reference}} wurde als Entwurf gespeichert.",
+      "submitted": "{{reference}} wurde zur Genehmigung gesendet."
     }
   },
   "report": {

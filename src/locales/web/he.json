@@ -768,12 +768,269 @@
     }
   },
   "allocation": {
+    "acknowledgedOn": "קבלה אושרה {{date}}",
+    "approvedNote": "כבר אושר. שינוי היחידה, האחראי או הסכום מחזיר אותו לאישור; שינוי הספים והמטרה לא.",
+    "availableMarker": "נותרו {{percent}}%",
+    "backToAcknowledgements": "חזרה לאישורי הקבלה",
+    "backToList": "חזרה להקצאות",
+    "balanceTitle": "יתרה",
     "band": {
       "exceeded": "חריגה",
       "near": "קרוב לסף",
       "normal": "רגיל",
       "pending": "טרם מומן",
       "watch": "מעקב"
+    },
+    "bandLine": {
+      "exceeded": "חריגה: הנוצל והשמור עולים על המימון. נדרשת בקשה למזומן נוסף.",
+      "near": "קרוב לסף: נותרו {{near}}% או פחות מסכום הקופה. ייתכן שנדרשת בקשה למזומן נוסף.",
+      "normal": "רגיל: יותר מ-{{watch}}% מסכום הקופה זמין.",
+      "pending": "טרם מומן.",
+      "watch": "במעקב: נותרו {{watch}}% או פחות מסכום הקופה."
+    },
+    "cancelText": "ההקצאה נעצרת כאן ולא ניתן לשלוח אותה שוב. הסיבה נשמרת בהיסטוריה שלה.",
+    "cancelTitle": "לבטל את {{reference}}?",
+    "check": {
+      "amount": "הזינו סכום גדול מאפס.",
+      "chooseCustodian": "בחרו את אחראי הקופה.",
+      "chooseScope": "בחרו את היחידה.",
+      "custodianInactive": "אחראי הקופה אינו פעיל.",
+      "custodianOutside": "אחראי הקופה חייב להשתייך ליחידה שנבחרה.",
+      "fixedAfterDisbursement": "המזומן כבר שולם, ולכן לא ניתן עוד לשנות את היחידה, האחראי או הסכום.",
+      "locked": "הקצאה זו נעולה: קבלתה אושרה, או שהיא הסתיימה.",
+      "purpose": "ציינו למה מיועד המזומן, ב-5 תווים לפחות.",
+      "scopeInactive": "יחידה זו אינה פעילה, ולכן אינה יכולה לקבל הקצאה.",
+      "scopeTaken": "{{reference}} כבר פתוחה עבור יחידה זו. בקשו מזומן נוסף דרך בקשות למזומן נוסף במקום זאת.",
+      "thresholdRange": "הספים הם אחוזים שלמים מ-1 עד 99.",
+      "watchAboveNear": "סף המעקב חייב להיות מעל סף הקרבה.",
+      "notDisburser": "אינכם מורשים להוצאת מזומן, ולכן אינכם יכולים להנפיק הקצאות.",
+      "notRecipient": "{{name}} אינו מקבל מורשה ואינו יכול להחזיק בקופה קטנה."
+    },
+    "chooseLevelFirst": "בחרו קודם את הרמה",
+    "column": {
+      "allocated": "מוקצה",
+      "allocation": "הקצאה",
+      "available": "זמין",
+      "custodian": "אחראי קופה",
+      "heldBy": "מוחזק בידי",
+      "reserved": "שמור",
+      "scope": "רמה / יחידה",
+      "status": "סטטוס",
+      "used": "נוצל"
+    },
+    "custodianHint": "העובד שמקבל, מחזיק ומאשר את קבלת המזומן. מוצע ראש היחידה.",
+    "custodianPlaceholder": "בחרו מי יחזיק במזומן",
+    "deleteText": "הטיוטה נמחקת. היא מעולם לא נשלחה לאישור.",
+    "deleteTitle": "למחוק את הטיוטה {{reference}}?",
+    "detailsTitle": "פרטים",
+    "disbursedNote": "כבר שולם. כעת ניתן לשנות רק את הספים והמטרה.",
+    "editTitle": "עריכת ההקצאה {{reference}}",
+    "ended": {
+      "cancelled": "בוטל על ידי {{name}} ב-{{time}}:",
+      "rejected": "נדחה על ידי {{name}} ב-{{time}}:",
+      "returned": "הוחזר על ידי {{name}} ב-{{time}}:"
+    },
+    "entity": "הקצאה",
+    "field": {
+      "acknowledged": "אושר",
+      "amount": "סכום",
+      "createdBy": "נוצר",
+      "custodian": "אחראי קופה",
+      "ledgerEntry": "רישום בספר החשבונות",
+      "level": "רמת ההקצאה",
+      "nearAt": "קרוב לסף ב-% שנותרו",
+      "paidOn": "שולם",
+      "payment": "תשלום",
+      "purpose": "מטרה / תיאור",
+      "remarks": "הערות המקבל",
+      "scope": "יחידה",
+      "thresholds": "ספים",
+      "voucherNo": "מס׳ שובר",
+      "watchAt": "מעקב ב-% שנותרו"
+    },
+    "figure": {
+      "available": "זמין",
+      "funded": "ממומן",
+      "reserved": "שמור",
+      "used": "נוצל"
+    },
+    "filter": {
+      "allBalances": "כל היתרות",
+      "allLevels": "כל הרמות"
+    },
+    "level": {
+      "businessUnit": "יחידה עסקית",
+      "custodian": "אחראי קופה",
+      "department": "מחלקה",
+      "project": "פרויקט"
+    },
+    "locked": "נעול",
+    "lockedHint": "נעולה מאז שאחראי הקופה אישר את קבלתה. תיקונים נרשמים כרישומים חדשים בספר החשבונות, לעולם לא בעריכה.",
+    "movement": {
+      "balance": "יתרה",
+      "date": "תאריך",
+      "description": "תיאור",
+      "entry": "רישום",
+      "in": "נכנס",
+      "kind": {
+        "adjustment": "תיקון",
+        "expense": "תביעה ששולמה",
+        "funding": "מימון הקצאה",
+        "topUp": "תוספת",
+        "reallocation": "העברה"
+      },
+      "out": "יוצא"
+    },
+    "movementsTitle": "תנועות",
+    "neverFunded": "לא מומן",
+    "new": "הקצאה חדשה",
+    "newTitle": "הקצאת קופה קטנה חדשה",
+    "noMovements": "אין עדיין תנועות. הרישום הראשון נעשה כשאחראי הקופה מאשר את קבלת המזומן.",
+    "noScopeOptions": "אין מה לבחור ברמה זו",
+    "notFunded": "טרם מומן",
+    "notFundedBeforePayment": "טרם מומן. היתרה מתחילה כשהכספים משלמים אותו ו-{{name}} מאשר/ת את קבלתו.",
+    "notFundedYet": "שולם וממתין לאישור הקבלה של {{name}}. היתרה מתחילה רק אז.",
+    "openLedger": "פתיחה בספר",
+    "purposePlaceholder": "למה מיועד המזומן, כפי שיופיע בשובר",
+    "reservationKind": {
+      "preExpense": "בקשת הוצאה מראש שאושרה",
+      "reimbursement": "תביעה שאושרה וטרם שולמה",
+      "reallocation": "העברה בדרך"
+    },
+    "reservedFor": "שמור עבור",
+    "saveAndResubmit": "שמירה ושליחה לאישור",
+    "scopeLabel": {
+      "businessUnit": "יחידה עסקית",
+      "custodian": "אחראי קופה / עובד",
+      "department": "מחלקה",
+      "project": "פרויקט"
+    },
+    "scopePlaceholder": {
+      "businessUnit": "חיפוש יחידה עסקית…",
+      "custodian": "הקלידו שם עובד…",
+      "department": "חיפוש מחלקה…",
+      "project": "חיפוש פרויקט…"
+    },
+    "search": "חיפוש לפי אסמכתה, יחידה, אחראי או מטרה",
+    "subtitle": "מזומן שהונפק למחלקה, יחידה עסקית, פרויקט או אחראי קופה, ומה שיש בידי כל אחד כעת. מזומן נוסף להקצאה קיימת מבוקש דרך בקשות למזומן נוסף.",
+    "thresholdsValue": "מעקב {{watch}}% · קרבה {{near}}%",
+    "tile": {
+      "active": "הקצאות פעילות",
+      "activeNote": "מומן {{amount}}",
+      "attention": "דורש תשומת לב",
+      "attentionNote": "קרוב לסף או בחריגה: {{count}}",
+      "available": "זמין כעת",
+      "availableNote": "אחרי שמירת {{amount}}",
+      "awaiting": "ממתין לאישור קבלה",
+      "summary": "סיכום ההקצאות"
+    },
+    "title": "הקצאות קופה קטנה",
+    "toast": {
+      "cancelled": "{{reference}} בוטלה.",
+      "deleted": "הטיוטה {{reference}} נמחקה.",
+      "saved": "{{reference}} נשמרה.",
+      "submitted": "{{reference}} נשלחה לאישור."
+    },
+    "topUpOnItsWay": "עוד {{amount}} בדרך ({{references}}) וממתינים לאישור קבלה.",
+    "noRecipients": "אין מקבלים מורשים ביחידה זו. הוסיפו אחד במסך מוציאים ומקבלים."
+  },
+  "file": {
+    "aiNotRead": "לא נסרק",
+    "aiRead": "נקרא על ידי AI, ביטחון {{confidence}}%",
+    "camera": "צילום תמונה",
+    "check": {
+      "empty": "הקובץ ריק.",
+      "notWhatItSays": "תוכן הקובץ אינו תואם לשמו, ולכן לא צורף. שמרו אותו שוב בפורמט האמיתי ונסו שוב.",
+      "tooLarge": "הקובץ גדול מ-{{size}}. בחרו קובץ קטן יותר.",
+      "wrongType": "סוג קובץ זה אינו מתקבל. השתמשו באחד מאלה: {{types}}.",
+      "notYours": "קובץ זה לא הועלה על ידך או שהוא שייך לבקשה אחרת. נא להעלות אותו שוב."
+    },
+    "checking": "בודק את הקובץ…",
+    "detail": {
+      "ai": "קריאת AI",
+      "hash": "SHA-256",
+      "preview": "תצוגה מקדימה",
+      "size": "גודל",
+      "uploaded": "הועלה"
+    },
+    "drawnSample": "תמונת דוגמה שנוצרה מהתביעה. במערכת האמיתית, קבצים שמורים נפתחים כאן.",
+    "remove": "הסרה",
+    "replace": "החלפה",
+    "rules": "{{types}} · עד {{size}}",
+    "view": "הצג",
+    "uploading": "מעלה…",
+    "sampleNoFile": "תמונה לדוגמה: לא נשמר קובץ",
+    "heicPreviewUnsupported": "דפדפן זה אינו יכול להציג תצוגה מקדימה של תמונות HEIC. הורד את הקובץ כדי לצפות בו."
+  },
+  "preExpense": {
+    "attachmentHint": "רשות: הצעת מחיר או הערכה. החשבונית מצורפת מאוחר יותר, עם התביעה.",
+    "backToList": "חזרה לבקשות לאישור הוצאה מראש",
+    "check": {
+      "datePassed": "התאריך הצפוי עבר. שנו אותו, או תבעו את ההוצאה ישירות כהחזר.",
+      "expectedDate": "בחרו את תאריך ההוצאה הצפוי."
+    },
+    "claimAgainst": "הגשת תביעה על בקשה זו",
+    "claimedSoFar": "נתבעו {{amount}}",
+    "claimsAfterApproval": "ניתן להגיש תביעות עליה לאחר שתאושר.",
+    "claimsTitle": "תביעות על בקשה זו",
+    "column": {
+      "amount": "סכום",
+      "category": "קטגוריה / בית עסק",
+      "employee": "עובד",
+      "expected": "צפוי",
+      "reference": "אסמכתא",
+      "status": "סטטוס",
+      "unit": "יחידה / פרויקט"
+    },
+    "deleteText": "הטיוטה תוסר. לא ניתן לבטל פעולה זו.",
+    "deleteTitle": "למחוק את {{reference}}?",
+    "detailsTitle": "פרטי הבקשה",
+    "editTitle": "עריכת {{reference}}",
+    "entity": "בקשות לאישור הוצאה מראש",
+    "expectedDateHint": "מתי הכסף יוצא. הוצאה שכבר בוצעה נתבעת ישירות.",
+    "field": {
+      "allocation": "הקצאה",
+      "amount": "סכום מבוקש (OMR)",
+      "attachment": "מסמך תומך (רשות)",
+      "expectedDate": "תאריך הוצאה צפוי",
+      "purpose": "מטרה / הצדקה"
+    },
+    "figure": {
+      "approved": "התבקש",
+      "claimed": "נתבע",
+      "remaining": "נותר לתביעה"
+    },
+    "formIntro": "בקשו אישור להוצאה משוערת לפני ההוצאה. זהו היתר להוציא, לא תשלום.",
+    "heldAgainst": "הסכום המאושר שמור מ-{{reference}} עד שהתביעות עליו ישולמו.",
+    "leftToClaim": "נותרו {{amount}}",
+    "new": "בקשה חדשה",
+    "newTitle": "בקשה חדשה לאישור הוצאה מראש",
+    "noAllocation": "ליחידה זו אין הקצאה פעילה. תביעה עליה תשולם עם המשכורת.",
+    "noAllocationShort": "אין פעילה",
+    "noClaimsYet": "אין עדיין תביעות. הסכום המאושר נשאר זמין עד שהוא נתבע.",
+    "noVatHint": "סכום כולל אחד. המע״מ מחושב בתביעה.",
+    "notHeld": "ליחידה זו אין הקצאה פעילה, ולכן דבר אינו שמור מהקופה הקטנה.",
+    "notReserved": "לא שמור",
+    "overAvailable": "יותר ממה שזמין ב-{{reference}} ({{available}}). ייתכן שהכספים יצטרכו להשלים.",
+    "purposePlaceholder": "למה הכסף מיועד ומדוע הוא נחוץ.",
+    "reservedAgainst": "יישמר מ-{{reference}} לאחר אישור · זמין {{available}}",
+    "search": "חיפוש לפי אסמכתה, עובד, מטרה או בית עסק",
+    "submit": "שליחת הקריאה",
+    "subtitle": "אישור לפני שההוצאה מתבצעת. סכום מאושר נשמר עד שהוא נתבע.",
+    "tile": {
+      "open": "מאושר, טרם נתבע",
+      "openNote": "בקשות פתוחות: {{count}}",
+      "pending": "באישור",
+      "requests": "בקשות",
+      "returned": "הוחזרו אליכם",
+      "returnedNote": "תקנו ושלחו שוב, או משכו",
+      "summary": "סיכום הוצאות מראש"
+    },
+    "title": "בקשות לאישור הוצאה מראש",
+    "toast": {
+      "deleted": "{{reference}} נמחקה.",
+      "saved": "{{reference}} נשמרה כטיוטה.",
+      "submitted": "{{reference}} נשלחה לאישור."
     }
   },
   "report": {

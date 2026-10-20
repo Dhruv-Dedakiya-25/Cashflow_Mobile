@@ -43,7 +43,8 @@
           "cameraPermission": "CashFlow uses the camera to photograph your receipts.",
           "photosPermission": "CashFlow opens your photos so you can attach a receipt."
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,

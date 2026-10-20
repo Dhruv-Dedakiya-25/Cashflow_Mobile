@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
 import type { AllocationLevel, AllocationPosition } from '@/api/types';
 import { AppText } from '@/components/app-text';
@@ -8,7 +8,7 @@ import { Page } from '@/components/page';
 import { Card, Chips, Pill, ProgressBar, SectionHeader, bandColor } from '@/components/ui';
 import { useLanguage } from '@/i18n';
 import { amount, nameOf, omr, person, unit } from '@/lib/format';
-import { financeSummary, useMockState } from '@/mock/store';
+import { useCompany } from '@/hooks/use-company';
 import { space, usePalette } from '@/theme/tokens';
 
 function PositionRow({ p, first }: { p: AllocationPosition; first: boolean }) {
@@ -48,9 +48,18 @@ function PositionRow({ p, first }: { p: AllocationPosition; first: boolean }) {
 export default function PettyCashScreen() {
   const { t } = useTranslation();
   const { language } = useLanguage();
-  const state = useMockState();
-  const { groups } = useMemo(() => financeSummary(state), [state]);
+  const palette = usePalette();
+  const { summary, query } = useCompany();
   const [level, setLevel] = useState<AllocationLevel | 'all'>('all');
+
+  if (!summary) {
+    return (
+      <Page title={t('web:dash.finance.positionTitle')}>
+        {query.error ? <AppText tone="danger">{query.error.message}</AppText> : <ActivityIndicator color={palette.primary} />}
+      </Page>
+    );
+  }
+  const { groups, positions } = summary;
 
   return (
     <Page title={t('web:dash.finance.positionTitle')}>
@@ -58,7 +67,7 @@ export default function PettyCashScreen() {
         value={level}
         onChange={setLevel}
         options={[
-          { value: 'all', label: t('web:status.all'), count: state.positions.length },
+          { value: 'all', label: t('web:status.all'), count: positions.length },
           ...groups.map((g) => ({ value: g.level, label: t(`pettyCash.level.${g.level}`), count: g.count })),
         ]}
       />
@@ -78,7 +87,7 @@ export default function PettyCashScreen() {
               </AppText>
             </View>
             <Card padded={false} style={{ gap: 0, overflow: 'hidden' }}>
-              {state.positions
+              {positions
                 .filter((p) => p.level === g.level)
                 .map((p, i) => (
                   <PositionRow key={p.id} p={p} first={i === 0} />

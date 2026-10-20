@@ -1,7 +1,7 @@
 // The small building blocks every screen uses: cards, buttons, status pills, avatars,
 // segmented filters, section headers, inputs and progress bars.
 import type { Icon } from '@tabler/icons-react-native';
-import type { ReactNode } from 'react';
+import { useRef, type ReactNode, type Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, ScrollView, TextInput, View, type TextInputProps, type ViewStyle } from 'react-native';
 
@@ -53,7 +53,8 @@ export function Button({
       onPress={onPress}
       disabled={disabled || loading}
       accessibilityRole="button"
-      accessibilityState={{ disabled: disabled || loading }}
+      accessibilityLabel={label}
+      accessibilityState={{ disabled: disabled || loading, busy: loading }}
       style={({ pressed }) => ({
         minHeight: compact ? 40 : 50,
         paddingHorizontal: compact ? space.md : space.xl,
@@ -186,8 +187,8 @@ export function SectionHeader({ title, action, onAction }: { title: string; acti
 }
 
 export function Field({
-  label, hint, error, warn, right, ...input
-}: TextInputProps & { label: string; hint?: string; error?: string; warn?: boolean; right?: ReactNode }) {
+  label, hint, error, warn, right, ref, ...input
+}: TextInputProps & { label: string; hint?: string; error?: string; warn?: boolean; right?: ReactNode; ref?: Ref<TextInput> }) {
   const palette = usePalette();
   const { isRTL } = useLanguage();
   const borderColor = error ? palette.danger : warn ? palette.warning : palette.border;
@@ -198,7 +199,10 @@ export function Field({
       </AppText>
       <View style={{ flexDirection: 'row', alignItems: 'center', borderWidth: 1.5, borderColor, borderRadius: radius.md, backgroundColor: warn ? palette.warningSoft : palette.card, paddingHorizontal: space.md }}>
         <TextInput
+          ref={ref}
           placeholderTextColor={palette.textMuted}
+          // The visible label, read out by VoiceOver and TalkBack.
+          accessibilityLabel={label}
           {...input}
           style={{ flex: 1, minHeight: 46, color: palette.text, fontFamily: fonts.regular, fontSize: type.body.fontSize, textAlign: isRTL ? 'right' : 'left', writingDirection: isRTL ? 'rtl' : 'ltr' }}
         />
@@ -246,13 +250,21 @@ export function SampleBadge() {
 /** A scrolling row of choices, for lists too long to share one line: categories, units, filters. */
 export function Chips<T extends string>({ options, value, onChange }: { options: { value: T; label: string; count?: number }[]; value: T; onChange: (v: T) => void }) {
   const palette = usePalette();
+  const scroller = useRef<ScrollView>(null);
+  // A choice already made, such as a claim's category, is brought into view once, not hidden off the edge.
+  const shown = useRef(false);
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: space.sm, paddingVertical: 2 }}>
+    <ScrollView ref={scroller} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: space.sm, paddingVertical: 2 }}>
       {options.map((o) => {
         const on = o.value === value;
         return (
           <Pressable
             key={o.value}
+            onLayout={(e) => {
+              if (!on || shown.current) return;
+              shown.current = true;
+              scroller.current?.scrollTo({ x: Math.max(0, e.nativeEvent.layout.x - space.xl), animated: false });
+            }}
             onPress={() => onChange(o.value)}
             accessibilityRole="radio"
             accessibilityState={{ selected: on }}
