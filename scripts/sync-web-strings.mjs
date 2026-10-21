@@ -25,6 +25,7 @@ const folders = {
 const sections = [
   ['common', 'action'],
   ['common', 'status'],
+  ['common', 'export'],
   ['pages', 'txn'],
   ['pages', 'auth'],
   ['pages', 'scan'],

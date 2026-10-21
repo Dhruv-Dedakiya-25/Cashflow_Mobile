@@ -16,8 +16,10 @@ function Label({ label, focused }: { label: string; focused?: boolean }) {
       tone={focused ? 'primary' : 'muted'}
       align="center"
       numberOfLines={1}
+      maxFontSizeMultiplier={1.2}
+      // The longest labels (French "Boîte de réception") need 71% to fit a 375pt-wide phone.
       adjustsFontSizeToFit
-      minimumFontScale={0.75}>
+      minimumFontScale={0.7}>
       {label}
     </AppText>
   );
@@ -31,7 +33,7 @@ export function TabButton({ icon: IconComponent, label, badge, isFocused, ref, .
       {...props}
       ref={ref as never}
       accessibilityRole="tab"
-      accessibilityLabel={label}
+      accessibilityLabel={badge ? `${label}, ${badge}` : label}
       accessibilityState={{ selected: isFocused }}
       style={({ pressed }) => ({ flex: 1, alignItems: 'center', gap: 3, paddingTop: space.sm, opacity: pressed ? 0.6 : 1 })}>
       <View>
@@ -52,7 +54,7 @@ export function TabButton({ icon: IconComponent, label, badge, isFocused, ref, .
               borderWidth: 2,
               borderColor: palette.card,
             }}>
-            <AppText variant="caption" weight="bold" tone="onPrimary" align="center" style={{ fontSize: 9.5, lineHeight: 11 }}>
+            <AppText variant="caption" weight="bold" tone="onPrimary" align="center" maxFontSizeMultiplier={1} style={{ fontSize: 9.5, lineHeight: 11 }}>
               {badge > 99 ? '99+' : badge}
             </AppText>
           </View>

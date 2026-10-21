@@ -24,6 +24,13 @@
     "no": "Hayır",
     "yes": "Evet"
   },
+  "export": {
+    "excel": "Excel'e aktar",
+    "failed": "Dosya oluşturulamadı. Lütfen tekrar deneyin.",
+    "footer": "{{name}} tarafından {{time}} tarihinde dışa aktarıldı",
+    "pdf": "PDF'e aktar",
+    "tooMany": "Bu dışa aktarma 10.000'den fazla satır içeriyor. Filtreleri daraltın ve tekrar dışa aktarın."
+  },
   "txn": {
     "action": {
       "cancel": "Talebi iptal et",

@@ -24,6 +24,13 @@
     "no": "No",
     "yes": "Yes"
   },
+  "export": {
+    "excel": "Export Excel",
+    "failed": "The file could not be made. Please try again.",
+    "footer": "Exported by {{name}} on {{time}}",
+    "pdf": "Export PDF",
+    "tooMany": "This export has more than 10,000 rows. Narrow the filters and export again."
+  },
   "txn": {
     "action": {
       "cancel": "Cancel Request",

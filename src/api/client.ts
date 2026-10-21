@@ -3,6 +3,9 @@
  * the access token on every request, one refresh when it has expired, and an ApiError that
  * carries the server's own reason.
  */
+import { File } from 'expo-file-system';
+import { Platform } from 'react-native';
+
 import { getAccessToken, refreshSession, signOutHere } from '@/auth/session';
 import { apiBaseUrl } from '@/config';
 import i18n from '@/i18n';
@@ -79,6 +82,8 @@ async function send(method: string, path: string, body: unknown, timeoutMs: numb
     if (res.status === 502 || res.status === 503 || res.status === 504) throw noApi();
     return res;
   } catch (e) {
+    // The person sees "cannot reach"; the dev server's log keeps the real cause.
+    if (__DEV__ && !(e instanceof ApiError)) console.warn(`${method} ${path} failed:`, e);
     throw e instanceof ApiError ? e : noApi();
   } finally {
     clearTimeout(timer);
@@ -114,18 +119,21 @@ export const apiGet = <T>(path: string, timeoutMs?: number) => request<T>('GET',
 export const apiPost = <T>(path: string, body?: unknown, timeoutMs?: number) => request<T>('POST', path, body, timeoutMs);
 export const apiPut = <T>(path: string, body?: unknown) => request<T>('PUT', path, body);
 
-/** A file on the phone, as React Native's fetch sends one in a multipart form. */
+/** A file on the phone (or a blob: URI in the browser) to upload. */
 export interface PhoneFile {
   uri: string;
   name: string;
   type: string;
 }
 
-/** Posts one file as multipart/form-data under the field name the API expects. */
-export function apiUpload<T>(path: string, file: PhoneFile, field = 'file'): Promise<T> {
+/**
+ * Posts one file as multipart/form-data under the field name the API expects. Expo's fetch takes
+ * a file from expo-file-system, not React Native's { uri } parts; it sends it under its own name.
+ */
+export async function apiUpload<T>(path: string, file: PhoneFile, field = 'file'): Promise<T> {
   const form = new FormData();
-  // React Native's FormData takes { uri, name, type } and streams the file from the phone.
-  form.append(field, file as unknown as Blob);
+  if (Platform.OS === 'web') form.append(field, await (await fetch(file.uri)).blob(), file.name);
+  else form.append(field, new File(file.uri) as unknown as Blob);
   return request<T>('POST', path, form, UPLOAD_TIMEOUT_MS);
 }
 

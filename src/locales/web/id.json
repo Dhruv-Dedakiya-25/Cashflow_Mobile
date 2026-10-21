@@ -24,6 +24,13 @@
     "no": "Tidak",
     "yes": "Ya"
   },
+  "export": {
+    "excel": "Ekspor Excel",
+    "failed": "File tidak dapat dibuat. Silakan coba lagi.",
+    "footer": "Diekspor oleh {{name}} pada {{time}}",
+    "pdf": "Ekspor PDF",
+    "tooMany": "Ekspor ini memiliki lebih dari 10.000 baris. Persempit filter dan ekspor lagi."
+  },
   "txn": {
     "action": {
       "cancel": "Batalkan Permintaan",

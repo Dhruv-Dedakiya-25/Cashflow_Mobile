@@ -24,6 +24,13 @@
     "no": "Nee",
     "yes": "Ja"
   },
+  "export": {
+    "excel": "Exporteren naar Excel",
+    "failed": "Het bestand kon niet worden gemaakt. Probeer het opnieuw.",
+    "footer": "Geëxporteerd door {{name}} op {{time}}",
+    "pdf": "Exporteren naar PDF",
+    "tooMany": "Deze export heeft meer dan 10.000 rijen. Verfijn de filters en exporteer opnieuw."
+  },
   "txn": {
     "action": {
       "cancel": "Aanvraag annuleren",

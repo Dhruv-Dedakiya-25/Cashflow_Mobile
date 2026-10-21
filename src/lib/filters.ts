@@ -35,6 +35,9 @@ export function periodRange(period: Period): DateRange | undefined {
 
 export const inRange = (date: string, range: DateRange | undefined) => !range || (date >= range.from && date <= range.to);
 
+/** A report always covers dates: "All dates" is not offered there, so it falls back to the last six months. */
+export const reportRange = (period: Period): DateRange => periodRange(period) ?? { from: monthStart(5), to: omanToday() };
+
 /** True when every word typed is found in the texts, or begins the amount: 12.6 finds 12.600 and 12.650, not 412.650. */
 export function matchesSearch(query: string, texts: (string | undefined)[], value?: number) {
   const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean).map((w) => (/^[\d.,]+$/.test(w) ? w.replace(/,/g, '') : w));

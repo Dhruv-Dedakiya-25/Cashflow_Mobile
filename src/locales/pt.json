@@ -10,25 +10,169 @@
     "morning": "Bom dia",
     "afternoon": "Boa tarde",
     "evening": "Boa noite",
-    "subtitle": "Seu caixa pequeno num relance."
-  },
-  "placeholder": {
-    "home": "Aqui aparecerão seus números, reembolsos pendentes e atividades recentes.",
-    "claims": "Cada reembolso com status, fluxo de aprovação e comprovante.",
-    "scan": "Fotografe a nota. A IA a lê e você confere os dados.",
-    "inbox": "Solicitações aguardando sua decisão ou confirmação de recebimento.",
-    "reports": "Gastos por categoria, departamento e mês.",
-    "next": "Em design"
+    "subtitle": "Seu caixa pequeno num relance.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Caixa pequeno de toda a empresa",
+    "ofFloats": "de {{amount}} · Alocações: {{count}}",
+    "ofFloat": "de {{amount}}",
+    "pending": "Ainda não pago",
+    "seeAll": "Ver todas as alocações",
+    "team": "Caixa pequeno das suas unidades"
   },
   "settings": {
-    "title": "Configurações",
-    "open": "Abrir configurações",
     "language": "Idioma",
-    "about": "Sobre",
     "mode": "Modo",
     "modeDemo": "Demonstração, com dados de exemplo",
     "modeLive": "Ao vivo",
-    "version": "Versão",
-    "done": "Concluído"
+    "version": "Versão"
+  },
+  "demo": {
+    "sample": "Exemplo"
+  },
+  "claims": {
+    "summary": "Reembolsos: {{count}} · {{amount}}",
+    "empty": "Nenhum reembolso aqui.",
+    "search": "Pesquisar por texto ou valor"
+  },
+  "scan": {
+    "takePhoto": "Fotografar a nota",
+    "ai": "IA",
+    "choosePhoto": "Escolher das fotos",
+    "claimDetails": "Detalhes do reembolso",
+    "sentTitle": "Enviado para aprovação",
+    "sentText": "{{reference}} agora aguarda {{name}}.",
+    "resentTitle": "Enviado novamente",
+    "viewClaim": "Ver o reembolso",
+    "cameraDenied": "O CashFlow precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
+    "manual": "Digitar os dados",
+    "sampleNote": "Leitura de exemplo: na demonstração todo recibo é lido como este exemplo, e a foto fica neste telefone.",
+    "choosePdf": "Escolher um PDF"
+  },
+  "profile": {
+    "title": "Perfil",
+    "twoFactorOn": "O login em duas etapas está ativado",
+    "twoFactorOff": "O login em duas etapas está desativado para a sua função",
+    "signOut": "Sair",
+    "appearance": "Automático segue a configuração clara ou escura do telefone.",
+    "theme": "Aparência",
+    "themeAuto": "Automático",
+    "themeLight": "Claro",
+    "themeDark": "Escuro"
+  },
+  "inbox": {
+    "toDecide": "Para aprovação",
+    "toAcknowledge": "Para confirmação",
+    "submitted": "Enviado há {{time}}"
+  },
+  "review": {
+    "done": {
+      "approved": "Aprovado",
+      "returned": "Devolvido para correção",
+      "rejected": "Rejeitado"
+    },
+    "sentOn": "{{reference}} segue para {{names}}.",
+    "final": "{{reference}} está aprovado. O financeiro paga em seguida.",
+    "returnedTo": "{{name}} deve corrigir {{reference}}.",
+    "rejectedFor": "{{name}} verá o seu motivo.",
+    "backToInbox": "Voltar à caixa de entrada",
+    "available": "{{reference}} tem agora {{amount}} disponíveis."
+  },
+  "ack": {
+    "done": "Confirmado",
+    "paidOn": "Pago em {{date}}",
+    "doneText": "{{amount}} já está disponível em {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Toda a empresa",
+    "average": "Reembolso médio",
+    "share": "Compartilhar relatório",
+    "shareDemo": "No app real, o relatório é compartilhado em PDF ou Excel, a partir da mesma exportação da web, e registrado no registro de auditoria.",
+    "search": "Pesquisar pessoas, comerciantes ou valores",
+    "spendingBy": "Gastos por",
+    "top": "Maior: {{name}}",
+    "scopeTeam": "Suas unidades"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Unidades de negócio",
+      "department": "Departamentos",
+      "project": "Projetos",
+      "custodian": "Custodiantes"
+    },
+    "heldBy": "Com {{name}}"
+  },
+  "period": {
+    "title": "Período",
+    "all": "Todas as datas",
+    "thisMonth": "Este mês",
+    "lastMonth": "Mês passado",
+    "last3": "Últimos 3 meses",
+    "last6": "Últimos 6 meses",
+    "thisYear": "Este ano",
+    "custom": "Escolher datas",
+    "hint": "Toque no primeiro dia e depois no último.",
+    "apply": "Aplicar",
+    "previousMonth": "Mês anterior",
+    "nextMonth": "Próximo mês",
+    "pickMonth": "Escolher mês e ano",
+    "previousYear": "Ano anterior",
+    "nextYear": "Próximo ano",
+    "pickYear": "Escolher ano"
+  },
+  "live": {
+    "retry": "Tentar novamente",
+    "signIn": {
+      "missing": "Digite seu usuário e senha.",
+      "showPassword": "Mostrar senha",
+      "hidePassword": "Ocultar senha"
+    },
+    "notice": {
+      "expired": "Sua sessão terminou. Entre novamente.",
+      "passwordChanged": "Senha alterada. Entre com a nova senha."
+    },
+    "enroll": {
+      "app": "App autenticador",
+      "open": "Adicionar o CashFlow ao app",
+      "openHint": "Neste telefone, isto abre seu app autenticador com o CashFlow pronto para adicionar. Instale o app primeiro, se ainda não tiver.",
+      "noApp": "Nenhum app autenticador abriu. Instale um ou digite nele a chave abaixo.",
+      "key": "Ou digite esta chave no app",
+      "code": "Depois digite o código de 6 dígitos que o app mostra",
+      "confirm": "Confirmar e entrar",
+      "codesTitle": "Guarde seus códigos de recuperação",
+      "codesHint": "Cada código permite entrar uma vez se você perder o telefone. Guarde-os em local seguro: eles não serão mostrados novamente.",
+      "saved": "Já os guardei"
+    },
+    "password": {
+      "title": "Escolha uma nova senha",
+      "hint": "Um administrador definiu sua senha. Escolha a sua para continuar.",
+      "current": "Senha atual",
+      "new": "Nova senha",
+      "repeat": "Repita a nova senha",
+      "mismatch": "As duas novas senhas não são iguais.",
+      "missing": "Preencha os três campos.",
+      "save": "Salvar e entrar novamente"
+    },
+    "twoFactorOff": "O login em duas etapas não está configurado",
+    "claim": {
+      "noEmployee": "Esta conta não está ligada a um funcionário, por isso não pode pedir reembolsos.",
+      "reading": "A IA está lendo o recibo…",
+      "checkEach": "Confira cada valor com o recibo. Valores com menos de {{min}}% de certeza ficam destacados.",
+      "chooseCategory": "Escolha uma categoria.",
+      "chooseUnit": "Escolha onde o reembolso é lançado.",
+      "noPreApproval": "Nenhuma",
+      "tooLarge": "O arquivo tem mais de {{mb}} MB. Escolha um menor."
+    },
+    "refused": "O servidor não pôde aceitar isto. Confira os dados e tente novamente.",
+    "review": {
+      "noReceipt": "Nenhum recibo anexado.",
+      "sent": "Enviado para aprovação"
+    },
+    "report": {
+      "pdf": "Compartilhar como PDF",
+      "excel": "Compartilhar como Excel",
+      "noShare": "O compartilhamento não está disponível neste dispositivo.",
+      "more": "Mostrar mais ({{shown}} de {{total}})"
+    },
+    "offline": "Não foi possível conectar ao servidor. O que você vê foi carregado antes e pode estar desatualizado."
   }
 }

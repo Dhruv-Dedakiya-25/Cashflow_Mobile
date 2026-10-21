@@ -10,25 +10,169 @@
     "morning": "Selamat pagi",
     "afternoon": "Selamat tengah hari",
     "evening": "Selamat petang",
-    "subtitle": "Wang runcit anda sepintas lalu."
-  },
-  "placeholder": {
-    "home": "Angka anda, tuntutan yang menunggu dan aktiviti terkini akan dipaparkan di sini.",
-    "claims": "Setiap tuntutan dengan status, aliran kelulusan dan resitnya.",
-    "scan": "Ambil gambar bil. AI membacanya dan anda menyemak butirannya.",
-    "inbox": "Permintaan yang menunggu keputusan atau pengesahan penerimaan anda.",
-    "reports": "Perbelanjaan mengikut kategori, jabatan dan bulan.",
-    "next": "Sedang direka"
+    "subtitle": "Wang runcit anda sepintas lalu.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Tunai runcit seluruh syarikat",
+    "ofFloats": "daripada {{amount}} · Peruntukan: {{count}}",
+    "ofFloat": "daripada {{amount}}",
+    "pending": "Belum dibayar",
+    "seeAll": "Lihat semua peruntukan",
+    "team": "Tunai runcit dalam unit anda"
   },
   "settings": {
-    "title": "Tetapan",
-    "open": "Buka tetapan",
     "language": "Bahasa",
-    "about": "Perihal",
     "mode": "Mod",
     "modeDemo": "Demo, dengan data contoh",
     "modeLive": "Langsung",
-    "version": "Versi",
-    "done": "Selesai"
+    "version": "Versi"
+  },
+  "demo": {
+    "sample": "Contoh"
+  },
+  "claims": {
+    "summary": "Tuntutan: {{count}} · {{amount}}",
+    "empty": "Tiada tuntutan di sini.",
+    "search": "Cari mengikut teks atau amaun"
+  },
+  "scan": {
+    "takePhoto": "Ambil gambar bil",
+    "ai": "AI",
+    "choosePhoto": "Pilih daripada foto",
+    "claimDetails": "Butiran tuntutan",
+    "sentTitle": "Dihantar untuk kelulusan",
+    "sentText": "{{reference}} kini menunggu {{name}}.",
+    "resentTitle": "Dihantar semula",
+    "viewClaim": "Lihat tuntutan",
+    "cameraDenied": "CashFlow memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
+    "manual": "Taip butiran sendiri",
+    "sampleNote": "Bacaan contoh: dalam demo setiap resit dibaca seperti contoh ini, dan foto kekal di telefon ini.",
+    "choosePdf": "Pilih PDF"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "Log masuk dua langkah dihidupkan",
+    "twoFactorOff": "Log masuk dua langkah dimatikan untuk peranan anda",
+    "signOut": "Log keluar",
+    "appearance": "Automatik mengikut tetapan cerah atau gelap telefon anda.",
+    "theme": "Penampilan",
+    "themeAuto": "Automatik",
+    "themeLight": "Cerah",
+    "themeDark": "Gelap"
+  },
+  "inbox": {
+    "toDecide": "Untuk kelulusan",
+    "toAcknowledge": "Untuk pengesahan",
+    "submitted": "Dihantar {{time}} lalu"
+  },
+  "review": {
+    "done": {
+      "approved": "Diluluskan",
+      "returned": "Dikembalikan untuk pembetulan",
+      "rejected": "Ditolak"
+    },
+    "sentOn": "{{reference}} diteruskan kepada {{names}}.",
+    "final": "{{reference}} diluluskan. Seterusnya kewangan akan membayarnya.",
+    "returnedTo": "{{name}} diminta membetulkan {{reference}}.",
+    "rejectedFor": "{{name}} akan melihat sebab anda.",
+    "backToInbox": "Kembali ke Peti Masuk",
+    "available": "{{reference}} kini mempunyai {{amount}} yang tersedia."
+  },
+  "ack": {
+    "done": "Disahkan",
+    "paidOn": "Dibayar pada {{date}}",
+    "doneText": "{{amount}} kini tersedia dalam {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Seluruh syarikat",
+    "average": "Purata tuntutan",
+    "share": "Kongsi laporan",
+    "shareDemo": "Dalam aplikasi sebenar, laporan dikongsi sebagai PDF atau Excel daripada eksport yang sama seperti di web, dan direkodkan dalam Log Audit.",
+    "search": "Cari orang, peniaga atau amaun",
+    "spendingBy": "Perbelanjaan mengikut",
+    "top": "Tertinggi: {{name}}",
+    "scopeTeam": "Unit anda"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Unit perniagaan",
+      "department": "Jabatan",
+      "project": "Projek",
+      "custodian": "Penjaga tunai"
+    },
+    "heldBy": "Dipegang oleh {{name}}"
+  },
+  "period": {
+    "title": "Tempoh",
+    "all": "Semua tarikh",
+    "thisMonth": "Bulan ini",
+    "lastMonth": "Bulan lepas",
+    "last3": "3 bulan terakhir",
+    "last6": "6 bulan terakhir",
+    "thisYear": "Tahun ini",
+    "custom": "Pilih tarikh",
+    "hint": "Ketik hari pertama, kemudian hari terakhir.",
+    "apply": "Guna",
+    "previousMonth": "Bulan sebelumnya",
+    "nextMonth": "Bulan berikutnya",
+    "pickMonth": "Pilih bulan dan tahun",
+    "previousYear": "Tahun sebelumnya",
+    "nextYear": "Tahun berikutnya",
+    "pickYear": "Pilih tahun"
+  },
+  "live": {
+    "retry": "Cuba lagi",
+    "signIn": {
+      "missing": "Masukkan nama pengguna dan kata laluan.",
+      "showPassword": "Tunjukkan kata laluan",
+      "hidePassword": "Sembunyikan kata laluan"
+    },
+    "notice": {
+      "expired": "Sesi anda telah tamat. Log masuk semula.",
+      "passwordChanged": "Kata laluan ditukar. Log masuk dengan kata laluan baharu."
+    },
+    "enroll": {
+      "app": "Aplikasi pengesah",
+      "open": "Tambah CashFlow ke aplikasi",
+      "openHint": "Pada telefon ini, ini membuka aplikasi pengesah anda dengan CashFlow sedia untuk ditambah. Pasang aplikasi dahulu jika belum.",
+      "noApp": "Tiada aplikasi pengesah dibuka. Pasang satu, atau taip kunci di bawah ke dalamnya.",
+      "key": "Atau taip kunci ini ke dalam aplikasi",
+      "code": "Kemudian masukkan kod 6 digit yang dipaparkan aplikasi",
+      "confirm": "Sahkan dan log masuk",
+      "codesTitle": "Simpan kod pemulihan anda",
+      "codesHint": "Setiap kod membolehkan anda log masuk sekali jika telefon hilang. Simpan di tempat selamat: kod tidak akan dipaparkan lagi.",
+      "saved": "Saya sudah menyimpannya"
+    },
+    "password": {
+      "title": "Pilih kata laluan baharu",
+      "hint": "Pentadbir menetapkan kata laluan anda. Pilih kata laluan sendiri untuk meneruskan.",
+      "current": "Kata laluan semasa",
+      "new": "Kata laluan baharu",
+      "repeat": "Ulang kata laluan baharu",
+      "mismatch": "Kedua-dua kata laluan baharu tidak sama.",
+      "missing": "Isi ketiga-tiga medan.",
+      "save": "Simpan dan log masuk semula"
+    },
+    "twoFactorOff": "Log masuk dua langkah belum ditetapkan",
+    "claim": {
+      "noEmployee": "Akaun ini tidak dipautkan kepada pekerja, jadi tidak boleh menuntut perbelanjaan.",
+      "reading": "AI sedang membaca resit…",
+      "checkEach": "Semak setiap nilai dengan resit. Nilai dengan keyakinan di bawah {{min}}% diserlahkan.",
+      "chooseCategory": "Pilih kategori.",
+      "chooseUnit": "Pilih ke mana tuntutan dicaj.",
+      "noPreApproval": "Tiada",
+      "tooLarge": "Fail melebihi {{mb}} MB. Pilih fail yang lebih kecil."
+    },
+    "refused": "Pelayan tidak dapat menerima ini. Semak butiran dan cuba lagi.",
+    "review": {
+      "noReceipt": "Tiada resit dilampirkan.",
+      "sent": "Dihantar untuk kelulusan"
+    },
+    "report": {
+      "pdf": "Kongsi sebagai PDF",
+      "excel": "Kongsi sebagai Excel",
+      "noShare": "Perkongsian tidak tersedia pada peranti ini.",
+      "more": "Tunjukkan lagi ({{shown}} daripada {{total}})"
+    },
+    "offline": "Tidak dapat menghubungi pelayan. Apa yang anda lihat dimuatkan lebih awal dan mungkin tidak terkini."
   }
 }

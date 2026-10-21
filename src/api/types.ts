@@ -434,3 +434,76 @@ export interface AcknowledgementItem {
   acknowledgement?: { atUtc: string; remarks?: string };
   purpose: string;
 }
+
+// ---- Reports ---------------------------------------------------------------------------
+
+/** One figure per period: a day or a month, in the order of the buckets' keys. */
+export interface ReportTrend {
+  amount: number[];
+  count: number[];
+  paid: number[];
+  pending: number[];
+}
+
+/** The money on a set of claims: claimed = paid + pending. */
+export interface ClaimFigures {
+  claims: number;
+  claimed: number;
+  paid: number;
+  pending: number;
+}
+
+/** One row of a summary report, whichever it is: the fields a report does not have are absent. */
+export interface ReportRow extends ClaimFigures {
+  key: string;
+  people: number;
+  categoryId?: string;
+  unitId?: string;
+  employeeId?: string;
+  vendorId?: string;
+  payeeName?: string;
+  /** Category: share of everything claimed, in percent. */
+  share?: number;
+  /** Department and project: acknowledged in the period, and available now. */
+  allocated?: number;
+  available?: number;
+  /** Employee: approved so far, paid or not. */
+  approved?: number;
+}
+
+export interface GroupReport {
+  buckets: { unit: 'day' | 'month'; keys: string[] };
+  rows: ReportRow[];
+  totals: ClaimFigures & { people: number; allocated?: number | null; available?: number | null };
+  trend: ReportTrend;
+}
+
+/** One claim in the Transactions report. */
+export interface TransactionRow {
+  id: string;
+  reference: string;
+  expenseDate: string;
+  beneficiaryId: string;
+  vendorId?: string;
+  payeeName?: string;
+  categoryId: string;
+  costLevel: CostLevel;
+  costId: string;
+  reportStatus: 'inApproval' | 'approved' | 'paid';
+  settlement: SettlementMethod;
+  paidOn?: string;
+  voucherNo?: string;
+  net: number;
+  vat: number;
+  gross: number;
+}
+
+export interface TransactionReport {
+  buckets: { unit: 'day' | 'month'; keys: string[] };
+  rows: TransactionRow[];
+  totals: ClaimFigures & { net: number; vat: number };
+  trend: ReportTrend;
+  page?: number;
+  pageSize?: number;
+  totalRows?: number;
+}

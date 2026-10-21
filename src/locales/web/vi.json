@@ -24,6 +24,13 @@
     "no": "Không",
     "yes": "Có"
   },
+  "export": {
+    "excel": "Xuất Excel",
+    "failed": "Không thể tạo tệp. Vui lòng thử lại.",
+    "footer": "Xuất bởi {{name}} lúc {{time}}",
+    "pdf": "Xuất PDF",
+    "tooMany": "Bản xuất này có hơn 10.000 hàng. Hãy thu hẹp bộ lọc và xuất lại."
+  },
   "txn": {
     "action": {
       "cancel": "Hủy yêu cầu",

@@ -10,25 +10,169 @@
     "morning": "早上好",
     "afternoon": "下午好",
     "evening": "晚上好",
-    "subtitle": "一眼掌握您的备用金。"
-  },
-  "placeholder": {
-    "home": "您的数据、待处理的报销和最近动态将显示在这里。",
-    "claims": "每笔报销的状态、审批流程和票据。",
-    "scan": "拍下票据，AI 识别内容，您核对信息。",
-    "inbox": "等待您审批或确认接收的请求。",
-    "reports": "按类别、部门和月份统计支出。",
-    "next": "设计中"
+    "subtitle": "一眼掌握您的备用金。",
+    "hello": "{{greeting}}，{{name}}",
+    "company": "全公司备用金",
+    "ofFloats": "共 {{amount}} · 拨付 {{count}} 笔",
+    "ofFloat": "共 {{amount}}",
+    "pending": "尚未支付",
+    "seeAll": "查看全部拨付",
+    "team": "您所在单位的备用金"
   },
   "settings": {
-    "title": "设置",
-    "open": "打开设置",
     "language": "语言",
-    "about": "关于",
     "mode": "模式",
     "modeDemo": "演示（示例数据）",
     "modeLive": "正式",
-    "version": "版本",
-    "done": "完成"
+    "version": "版本"
+  },
+  "demo": {
+    "sample": "示例"
+  },
+  "claims": {
+    "summary": "报销单 {{count}} 张 · {{amount}}",
+    "empty": "这里没有报销单。",
+    "search": "按文字或金额搜索"
+  },
+  "scan": {
+    "takePhoto": "拍摄票据",
+    "ai": "AI",
+    "choosePhoto": "从相册选择",
+    "claimDetails": "报销详情",
+    "sentTitle": "已提交审批",
+    "sentText": "{{reference}} 正在等待 {{name}} 审批。",
+    "resentTitle": "已重新提交",
+    "viewClaim": "查看报销单",
+    "cameraDenied": "CashFlow 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
+    "manual": "手动填写",
+    "sampleNote": "示例识别：演示版中每张票据都按此示例识别，照片只保存在本机。",
+    "choosePdf": "选择 PDF"
+  },
+  "profile": {
+    "title": "个人资料",
+    "twoFactorOn": "双重验证登录已开启",
+    "twoFactorOff": "您的角色未开启双重验证登录",
+    "signOut": "退出登录",
+    "appearance": "“自动”会跟随手机的浅色或深色设置。",
+    "theme": "外观",
+    "themeAuto": "自动",
+    "themeLight": "浅色",
+    "themeDark": "深色"
+  },
+  "inbox": {
+    "toDecide": "待审批",
+    "toAcknowledge": "待确认收款",
+    "submitted": "{{time}}前提交"
+  },
+  "review": {
+    "done": {
+      "approved": "已批准",
+      "returned": "已退回修改",
+      "rejected": "已驳回"
+    },
+    "sentOn": "{{reference}} 转交 {{names}}。",
+    "final": "{{reference}} 已批准，接下来由财务付款。",
+    "returnedTo": "已请 {{name}} 修改 {{reference}}。",
+    "rejectedFor": "{{name}} 将看到您的理由。",
+    "backToInbox": "返回待办",
+    "available": "{{reference}} 现有可用金额 {{amount}}。"
+  },
+  "ack": {
+    "done": "已确认收款",
+    "paidOn": "支付于 {{date}}",
+    "doneText": "{{amount}} 现已在 {{reference}} 中可用。"
+  },
+  "reports": {
+    "scopeCompany": "全公司",
+    "average": "平均报销",
+    "share": "分享报表",
+    "shareDemo": "在正式版中，报表会以与网页相同的导出生成 PDF 或 Excel 分享，并记入审计日志。",
+    "search": "搜索人员、商户或金额",
+    "spendingBy": "支出分布",
+    "top": "最多：{{name}}",
+    "scopeTeam": "您所在单位"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "业务单元",
+      "department": "部门",
+      "project": "项目",
+      "custodian": "保管人"
+    },
+    "heldBy": "保管人：{{name}}"
+  },
+  "period": {
+    "title": "期间",
+    "all": "全部日期",
+    "thisMonth": "本月",
+    "lastMonth": "上月",
+    "last3": "最近 3 个月",
+    "last6": "最近 6 个月",
+    "thisYear": "今年",
+    "custom": "选择日期",
+    "hint": "先点第一天，再点最后一天。",
+    "apply": "应用",
+    "previousMonth": "上个月",
+    "nextMonth": "下个月",
+    "pickMonth": "选择年月",
+    "previousYear": "上一年",
+    "nextYear": "下一年",
+    "pickYear": "选择年份"
+  },
+  "live": {
+    "retry": "重试",
+    "signIn": {
+      "missing": "请输入用户名和密码。",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码"
+    },
+    "notice": {
+      "expired": "会话已结束，请重新登录。",
+      "passwordChanged": "密码已更改，请用新密码登录。"
+    },
+    "enroll": {
+      "app": "验证器应用",
+      "open": "将 CashFlow 添加到应用",
+      "openHint": "在本机上，这会打开您的验证器应用，并准备好添加 CashFlow。如未安装，请先安装应用。",
+      "noApp": "未能打开验证器应用。请安装一个，或在其中输入下方的密钥。",
+      "key": "或在应用中输入此密钥",
+      "code": "然后输入应用显示的 6 位验证码",
+      "confirm": "确认并登录",
+      "codesTitle": "保存您的恢复码",
+      "codesHint": "手机丢失时，每个恢复码可登录一次。请妥善保管：它们不会再次显示。",
+      "saved": "我已保存"
+    },
+    "password": {
+      "title": "设置新密码",
+      "hint": "您的密码由管理员设置。请设置自己的密码以继续。",
+      "current": "当前密码",
+      "new": "新密码",
+      "repeat": "再次输入新密码",
+      "mismatch": "两次输入的新密码不一致。",
+      "missing": "请填写全部三个字段。",
+      "save": "保存并重新登录"
+    },
+    "twoFactorOff": "尚未设置双重验证登录",
+    "claim": {
+      "noEmployee": "此账号未关联员工，因此无法报销费用。",
+      "reading": "AI 正在识别票据…",
+      "checkEach": "请对照票据核对每个值。置信度低于 {{min}}% 的值已标出。",
+      "chooseCategory": "请选择类别。",
+      "chooseUnit": "请选择报销的计入单位。",
+      "noPreApproval": "无",
+      "tooLarge": "文件大于 {{mb}} MB，请选择较小的文件。"
+    },
+    "refused": "服务器无法接受此操作。请检查内容后重试。",
+    "review": {
+      "noReceipt": "未附票据。",
+      "sent": "已提交审批"
+    },
+    "report": {
+      "pdf": "以 PDF 分享",
+      "excel": "以 Excel 分享",
+      "noShare": "此设备不支持分享。",
+      "more": "显示更多（{{shown}} / {{total}}）"
+    },
+    "offline": "无法连接服务器。当前显示的是之前加载的内容，可能不是最新的。"
   }
 }

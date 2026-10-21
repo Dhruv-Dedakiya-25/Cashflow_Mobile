@@ -1,10 +1,11 @@
 // The small building blocks every screen uses: cards, buttons, status pills, avatars,
 // segmented filters, section headers, inputs and progress bars.
-import type { Icon } from '@tabler/icons-react-native';
+import { IconWifiOff, type Icon } from '@tabler/icons-react-native';
 import { useRef, type ReactNode, type Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, ScrollView, TextInput, View, type TextInputProps, type ViewStyle } from 'react-native';
 
+import { useOffline } from '@/api/live';
 import type { RequestStatus, ThresholdBand } from '@/api/types';
 import { AppText } from '@/components/app-text';
 import { useLanguage } from '@/i18n';
@@ -141,6 +142,7 @@ export function Segmented<T extends string>({ options, value, onChange }: { opti
             style={{
               flex: 1,
               paddingVertical: 8,
+              paddingHorizontal: 6,
               borderRadius: radius.md,
               backgroundColor: on ? palette.card : 'transparent',
               flexDirection: 'row',
@@ -152,7 +154,8 @@ export function Segmented<T extends string>({ options, value, onChange }: { opti
               shadowRadius: 4,
               shadowOffset: { width: 0, height: 1 },
             }}>
-            <AppText variant="small" weight={on ? 'semibold' : 'medium'} tone={on ? 'default' : 'secondary'} align="center" numberOfLines={1}>
+            {/* A long label ("For Acknowledgement" with its count) shrinks a little first, and the count stays in view. */}
+            <AppText variant="small" weight={on ? 'semibold' : 'medium'} tone={on ? 'default' : 'secondary'} align="center" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8} style={{ flexShrink: 1 }}>
               {o.label}
             </AppText>
             {o.count ? (
@@ -203,6 +206,7 @@ export function Field({
           placeholderTextColor={palette.textMuted}
           // The visible label, read out by VoiceOver and TalkBack.
           accessibilityLabel={label}
+          maxFontSizeMultiplier={1.6}
           {...input}
           style={{ flex: 1, minHeight: 46, color: palette.text, fontFamily: fonts.regular, fontSize: type.body.fontSize, textAlign: isRTL ? 'right' : 'left', writingDirection: isRTL ? 'rtl' : 'ltr' }}
         />
@@ -236,6 +240,21 @@ export function DetailRow({ label, value, first }: { label: string; value: React
         {label}
       </AppText>
       <View style={{ flex: 1.4, alignItems: 'flex-end' }}>{typeof value === 'string' ? <AppText variant="small" weight="medium" align={isRTL ? 'left' : 'right'}>{value}</AppText> : value}</View>
+    </View>
+  );
+}
+
+/** While the server is out of reach: what the screen shows was loaded earlier and may be out of date. */
+export function OfflineNote() {
+  const palette = usePalette();
+  const { t } = useTranslation();
+  if (!useOffline()) return null;
+  return (
+    <View accessibilityLiveRegion="polite" style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: palette.warningSoft, borderRadius: radius.lg, padding: space.md }}>
+      <IconWifiOff size={18} color={palette.warning} />
+      <AppText variant="small" style={{ flex: 1 }}>
+        {t('live.offline')}
+      </AppText>
     </View>
   );
 }

@@ -24,6 +24,13 @@
     "no": "Não",
     "yes": "Sim"
   },
+  "export": {
+    "excel": "Exportar para Excel",
+    "failed": "Não foi possível gerar o arquivo. Tente novamente.",
+    "footer": "Exportado por {{name}} em {{time}}",
+    "pdf": "Exportar para PDF",
+    "tooMany": "Esta exportação tem mais de 10.000 linhas. Restrinja os filtros e exporte novamente."
+  },
   "txn": {
     "action": {
       "cancel": "Cancelar solicitação",

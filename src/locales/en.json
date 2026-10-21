@@ -14,56 +14,44 @@
     "hello": "{{greeting}}, {{name}}",
     "company": "Petty cash across the company",
     "ofFloats": "of {{amount}} in {{count}} allocations",
+    "ofFloats_one": "of {{amount}} in {{count}} allocation",
     "ofFloat": "of {{amount}}",
     "pending": "Not paid yet",
     "seeAll": "See every allocation",
     "team": "Petty cash in your units"
   },
-  "placeholder": {
-    "home": "Your figures, waiting claims and recent activity will show here.",
-    "claims": "Every claim with its status, approval timeline and receipt.",
-    "scan": "Take a photo of a bill. The AI reads it and you check the details.",
-    "inbox": "Requests waiting for your decision or acknowledgement.",
-    "reports": "Spending by category, department and month.",
-    "next": "Being designed"
-  },
   "settings": {
-    "title": "Settings",
-    "open": "Open settings",
     "language": "Language",
-    "about": "About",
     "mode": "Mode",
     "modeDemo": "Demo, with sample data",
     "modeLive": "Live",
-    "version": "Version",
-    "done": "Done"
+    "version": "Version"
   },
   "demo": {
     "sample": "Sample"
   },
   "claims": {
     "summary": "{{count}} claims · {{amount}}",
+    "summary_one": "{{count}} claim · {{amount}}",
     "empty": "No claims here.",
     "search": "Search by text or amount"
   },
   "scan": {
     "takePhoto": "Take a photo of the bill",
-    "takePhotoHint": "The AI reads it and fills in the claim for you to check.",
+    "ai": "AI",
     "choosePhoto": "Choose from photos",
-    "reading": "Reading the receipt…",
     "claimDetails": "Claim details",
     "sentTitle": "Sent for approval",
     "sentText": "{{reference}} is now waiting for {{name}}.",
     "resentTitle": "Sent again",
     "viewClaim": "View the claim",
     "cameraDenied": "CashFlow needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
-    "manual": "Type the details instead",
+    "manual": "Enter details by hand",
     "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
     "choosePdf": "Choose a PDF"
   },
   "profile": {
     "title": "Profile",
-    "security": "Security",
     "twoFactorOn": "Two-factor sign-in is on",
     "twoFactorOff": "Two-factor sign-in is off for your role",
     "signOut": "Sign out",
@@ -74,8 +62,8 @@
     "themeDark": "Dark"
   },
   "inbox": {
-    "toDecide": "To decide",
-    "toAcknowledge": "To acknowledge",
+    "toDecide": "For Approval",
+    "toAcknowledge": "For Acknowledgement",
     "submitted": "Sent {{time}} ago"
   },
   "review": {
@@ -103,7 +91,8 @@
     "shareDemo": "In the live app this shares the report as PDF or Excel, from the same export as the web, and records it in the Audit Log.",
     "search": "Search people, merchants or amounts",
     "spendingBy": "Spending by",
-    "top": "Top: {{name}}"
+    "top": "Top: {{name}}",
+    "scopeTeam": "Your units"
   },
   "pettyCash": {
     "level": {
@@ -134,7 +123,6 @@
   },
   "live": {
     "retry": "Try again",
-    "sampleScreen": "Sample data: this screen connects to your company's records in the next update.",
     "signIn": {
       "missing": "Enter your username and password.",
       "showPassword": "Show password",
@@ -180,6 +168,13 @@
     "review": {
       "noReceipt": "No receipt attached.",
       "sent": "Sent for approval"
-    }
+    },
+    "report": {
+      "pdf": "Share as PDF",
+      "excel": "Share as Excel",
+      "noShare": "Sharing is not available on this device.",
+      "more": "Show more ({{shown}} of {{total}})"
+    },
+    "offline": "Cannot reach the server. What you see was loaded earlier and may be out of date."
   }
 }

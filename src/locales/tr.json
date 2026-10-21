@@ -10,25 +10,169 @@
     "morning": "Günaydın",
     "afternoon": "İyi günler",
     "evening": "İyi akşamlar",
-    "subtitle": "Küçük kasanız bir bakışta."
-  },
-  "placeholder": {
-    "home": "Rakamlarınız, bekleyen talepler ve son hareketler burada görünecek.",
-    "claims": "Her talep durumu, onay akışı ve fişiyle birlikte.",
-    "scan": "Fişin fotoğrafını çekin. Yapay zekâ okur, siz bilgileri kontrol edersiniz.",
-    "inbox": "Kararınızı veya teslim onayınızı bekleyen istekler.",
-    "reports": "Kategori, departman ve aya göre harcamalar.",
-    "next": "Tasarlanıyor"
+    "subtitle": "Küçük kasanız bir bakışta.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Şirket genelinde küçük kasa",
+    "ofFloats": "{{amount}} içinden · Tahsis: {{count}}",
+    "ofFloat": "{{amount}} içinden",
+    "pending": "Henüz ödenmedi",
+    "seeAll": "Tüm tahsisleri gör",
+    "team": "Birimlerinizdeki küçük kasa"
   },
   "settings": {
-    "title": "Ayarlar",
-    "open": "Ayarları aç",
     "language": "Dil",
-    "about": "Hakkında",
     "mode": "Mod",
     "modeDemo": "Demo, örnek verilerle",
     "modeLive": "Canlı",
-    "version": "Sürüm",
-    "done": "Bitti"
+    "version": "Sürüm"
+  },
+  "demo": {
+    "sample": "Örnek"
+  },
+  "claims": {
+    "summary": "Talep: {{count}} · {{amount}}",
+    "empty": "Burada talep yok.",
+    "search": "Metin veya tutara göre ara"
+  },
+  "scan": {
+    "takePhoto": "Fişin fotoğrafını çekin",
+    "ai": "YZ",
+    "choosePhoto": "Fotoğraflardan seç",
+    "claimDetails": "Talep ayrıntıları",
+    "sentTitle": "Onaya gönderildi",
+    "sentText": "{{reference}} şimdi {{name}} onayını bekliyor.",
+    "resentTitle": "Yeniden gönderildi",
+    "viewClaim": "Talebi görüntüle",
+    "cameraDenied": "CashFlow'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
+    "manual": "Bilgileri elle girin",
+    "sampleNote": "Örnek okuma: demoda her fiş bu örnek gibi okunur ve fotoğraf bu telefonda kalır.",
+    "choosePdf": "PDF seç"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "İki adımlı giriş açık",
+    "twoFactorOff": "Rolünüz için iki adımlı giriş kapalı",
+    "signOut": "Çıkış yap",
+    "appearance": "Otomatik, telefonunuzun açık veya koyu ayarını izler.",
+    "theme": "Görünüm",
+    "themeAuto": "Otomatik",
+    "themeLight": "Açık",
+    "themeDark": "Koyu"
+  },
+  "inbox": {
+    "toDecide": "Onay bekleyen",
+    "toAcknowledge": "Teslim onayı bekleyen",
+    "submitted": "{{time}} önce gönderildi"
+  },
+  "review": {
+    "done": {
+      "approved": "Onaylandı",
+      "returned": "Düzeltme için iade edildi",
+      "rejected": "Reddedildi"
+    },
+    "sentOn": "{{reference}} şimdi şu kişilere gidiyor: {{names}}.",
+    "final": "{{reference}} onaylandı. Sırada finansın ödemesi var.",
+    "returnedTo": "{{name}} kişisinden {{reference}} talebini düzeltmesi istendi.",
+    "rejectedFor": "{{name}} gerekçenizi görecek.",
+    "backToInbox": "Gelen Kutusuna dön",
+    "available": "{{reference}} içinde şimdi {{amount}} kullanılabilir."
+  },
+  "ack": {
+    "done": "Onaylandı",
+    "paidOn": "Ödeme tarihi: {{date}}",
+    "doneText": "{{amount}} artık {{reference}} içinde kullanılabilir."
+  },
+  "reports": {
+    "scopeCompany": "Tüm şirket",
+    "average": "Ortalama talep",
+    "share": "Raporu paylaş",
+    "shareDemo": "Canlı uygulamada rapor, web ile aynı dışa aktarımdan PDF veya Excel olarak paylaşılır ve denetim günlüğüne kaydedilir.",
+    "search": "Kişi, işletme veya tutar ara",
+    "spendingBy": "Harcama dağılımı",
+    "top": "En çok: {{name}}",
+    "scopeTeam": "Birimleriniz"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "İş birimleri",
+      "department": "Departmanlar",
+      "project": "Projeler",
+      "custodian": "Kasa sorumluları"
+    },
+    "heldBy": "Sorumlu: {{name}}"
+  },
+  "period": {
+    "title": "Dönem",
+    "all": "Tüm tarihler",
+    "thisMonth": "Bu ay",
+    "lastMonth": "Geçen ay",
+    "last3": "Son 3 ay",
+    "last6": "Son 6 ay",
+    "thisYear": "Bu yıl",
+    "custom": "Tarih seç",
+    "hint": "Önce ilk güne, sonra son güne dokunun.",
+    "apply": "Uygula",
+    "previousMonth": "Önceki ay",
+    "nextMonth": "Sonraki ay",
+    "pickMonth": "Ay ve yıl seç",
+    "previousYear": "Önceki yıl",
+    "nextYear": "Sonraki yıl",
+    "pickYear": "Yıl seç"
+  },
+  "live": {
+    "retry": "Tekrar dene",
+    "signIn": {
+      "missing": "Kullanıcı adınızı ve parolanızı girin.",
+      "showPassword": "Parolayı göster",
+      "hidePassword": "Parolayı gizle"
+    },
+    "notice": {
+      "expired": "Oturumunuz sona erdi. Yeniden giriş yapın.",
+      "passwordChanged": "Parola değiştirildi. Yeni parolanızla giriş yapın."
+    },
+    "enroll": {
+      "app": "Doğrulama uygulaması",
+      "open": "CashFlow'u uygulamaya ekle",
+      "openHint": "Bu telefonda, doğrulama uygulamanızı CashFlow eklenmeye hazır şekilde açar. Henüz yoksa önce uygulamayı yükleyin.",
+      "noApp": "Hiçbir doğrulama uygulaması açılmadı. Bir tane yükleyin veya aşağıdaki anahtarı uygulamaya yazın.",
+      "key": "Ya da bu anahtarı uygulamaya yazın",
+      "code": "Ardından uygulamanın gösterdiği 6 haneli kodu girin",
+      "confirm": "Onayla ve giriş yap",
+      "codesTitle": "Kurtarma kodlarınızı saklayın",
+      "codesHint": "Telefonunuzu kaybederseniz her kod bir kez giriş yapmanızı sağlar. Güvenli bir yerde saklayın: tekrar gösterilmezler.",
+      "saved": "Kaydettim"
+    },
+    "password": {
+      "title": "Yeni bir parola seçin",
+      "hint": "Parolanızı bir yönetici belirledi. Devam etmek için kendi parolanızı seçin.",
+      "current": "Mevcut parola",
+      "new": "Yeni parola",
+      "repeat": "Yeni parolayı tekrarlayın",
+      "mismatch": "İki yeni parola aynı değil.",
+      "missing": "Üç alanı da doldurun.",
+      "save": "Kaydet ve yeniden giriş yap"
+    },
+    "twoFactorOff": "İki adımlı giriş ayarlanmadı",
+    "claim": {
+      "noEmployee": "Bu hesap bir çalışana bağlı değil, bu yüzden masraf talep edemez.",
+      "reading": "Yapay zekâ fişi okuyor…",
+      "checkEach": "Her değeri fişle karşılaştırın. %{{min}} altında emin olunan değerler vurgulanır.",
+      "chooseCategory": "Bir kategori seçin.",
+      "chooseUnit": "Talebin nereye yansıtılacağını seçin.",
+      "noPreApproval": "Yok",
+      "tooLarge": "Dosya {{mb}} MB'tan büyük. Daha küçük bir dosya seçin."
+    },
+    "refused": "Sunucu bunu kabul edemedi. Bilgileri kontrol edip tekrar deneyin.",
+    "review": {
+      "noReceipt": "Fiş eklenmemiş.",
+      "sent": "Onaya gönderildi"
+    },
+    "report": {
+      "pdf": "PDF olarak paylaş",
+      "excel": "Excel olarak paylaş",
+      "noShare": "Bu cihazda paylaşım kullanılamıyor.",
+      "more": "Daha fazla göster ({{shown}} / {{total}})"
+    },
+    "offline": "Sunucuya ulaşılamıyor. Gördükleriniz daha önce yüklendi ve güncel olmayabilir."
   }
 }

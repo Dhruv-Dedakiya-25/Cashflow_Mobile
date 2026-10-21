@@ -24,6 +24,13 @@
     "no": "否",
     "yes": "是"
   },
+  "export": {
+    "excel": "导出 Excel",
+    "failed": "无法生成文件，请重试。",
+    "footer": "由 {{name}} 于 {{time}} 导出",
+    "pdf": "导出 PDF",
+    "tooMany": "此导出超过 10,000 行。请缩小筛选范围后重试。"
+  },
   "txn": {
     "action": {
       "cancel": "取消申请",

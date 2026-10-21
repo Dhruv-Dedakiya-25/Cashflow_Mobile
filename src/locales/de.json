@@ -10,25 +10,169 @@
     "morning": "Guten Morgen",
     "afternoon": "Guten Tag",
     "evening": "Guten Abend",
-    "subtitle": "Ihre Handkasse auf einen Blick."
-  },
-  "placeholder": {
-    "home": "Hier erscheinen Ihre Zahlen, offene Anträge und die letzten Aktivitäten.",
-    "claims": "Jeder Antrag mit Status, Genehmigungsverlauf und Beleg.",
-    "scan": "Fotografieren Sie einen Beleg. Die KI liest ihn, und Sie prüfen die Angaben.",
-    "inbox": "Anfragen, die auf Ihre Entscheidung oder Bestätigung warten.",
-    "reports": "Ausgaben nach Kategorie, Abteilung und Monat.",
-    "next": "Wird gestaltet"
+    "subtitle": "Ihre Handkasse auf einen Blick.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Handkasse im ganzen Unternehmen",
+    "ofFloats": "von {{amount}} · Zuweisungen: {{count}}",
+    "ofFloat": "von {{amount}}",
+    "pending": "Noch nicht bezahlt",
+    "seeAll": "Alle Zuweisungen ansehen",
+    "team": "Handkasse in Ihren Einheiten"
   },
   "settings": {
-    "title": "Einstellungen",
-    "open": "Einstellungen öffnen",
     "language": "Sprache",
-    "about": "Über die App",
     "mode": "Modus",
     "modeDemo": "Demo, mit Beispieldaten",
     "modeLive": "Live",
-    "version": "Version",
-    "done": "Fertig"
+    "version": "Version"
+  },
+  "demo": {
+    "sample": "Beispiel"
+  },
+  "claims": {
+    "summary": "Anträge: {{count}} · {{amount}}",
+    "empty": "Hier gibt es keine Anträge.",
+    "search": "Nach Text oder Betrag suchen"
+  },
+  "scan": {
+    "takePhoto": "Beleg fotografieren",
+    "ai": "KI",
+    "choosePhoto": "Aus Fotos auswählen",
+    "claimDetails": "Antragsdetails",
+    "sentTitle": "Zur Genehmigung gesendet",
+    "sentText": "{{reference}} wartet jetzt auf {{name}}.",
+    "resentTitle": "Erneut gesendet",
+    "viewClaim": "Antrag ansehen",
+    "cameraDenied": "CashFlow braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
+    "manual": "Angaben von Hand eingeben",
+    "sampleNote": "Beispiel-Auslesung: In der Demo wird jeder Beleg als dieses Beispiel gelesen, und das Foto bleibt auf diesem Telefon.",
+    "choosePdf": "PDF auswählen"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "Zwei-Faktor-Anmeldung ist aktiv",
+    "twoFactorOff": "Zwei-Faktor-Anmeldung ist für Ihre Rolle aus",
+    "signOut": "Abmelden",
+    "appearance": "Automatisch folgt der hellen oder dunklen Einstellung Ihres Telefons.",
+    "theme": "Darstellung",
+    "themeAuto": "Automatisch",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel"
+  },
+  "inbox": {
+    "toDecide": "Zur Genehmigung",
+    "toAcknowledge": "Zur Bestätigung",
+    "submitted": "Vor {{time}} gesendet"
+  },
+  "review": {
+    "done": {
+      "approved": "Genehmigt",
+      "returned": "Zur Korrektur zurückgegeben",
+      "rejected": "Abgelehnt"
+    },
+    "sentOn": "{{reference}} geht weiter an {{names}}.",
+    "final": "{{reference}} ist genehmigt. Als Nächstes zahlt die Finanzabteilung.",
+    "returnedTo": "{{name}} wird gebeten, {{reference}} zu korrigieren.",
+    "rejectedFor": "{{name}} sieht Ihre Begründung.",
+    "backToInbox": "Zurück zum Posteingang",
+    "available": "{{reference}} hat jetzt {{amount}} verfügbar."
+  },
+  "ack": {
+    "done": "Bestätigt",
+    "paidOn": "Gezahlt am {{date}}",
+    "doneText": "{{amount}} ist jetzt in {{reference}} verfügbar."
+  },
+  "reports": {
+    "scopeCompany": "Ganzes Unternehmen",
+    "average": "Durchschnittlicher Antrag",
+    "share": "Bericht teilen",
+    "shareDemo": "In der Live-App wird der Bericht als PDF oder Excel geteilt, aus demselben Export wie im Web, und im Audit-Protokoll erfasst.",
+    "search": "Person, Händler oder Betrag",
+    "spendingBy": "Ausgaben nach",
+    "top": "Top: {{name}}",
+    "scopeTeam": "Ihre Einheiten"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Geschäftseinheiten",
+      "department": "Abteilungen",
+      "project": "Projekte",
+      "custodian": "Verwahrer"
+    },
+    "heldBy": "Verwahrt von {{name}}"
+  },
+  "period": {
+    "title": "Zeitraum",
+    "all": "Alle Daten",
+    "thisMonth": "Dieser Monat",
+    "lastMonth": "Letzter Monat",
+    "last3": "Letzte 3 Monate",
+    "last6": "Letzte 6 Monate",
+    "thisYear": "Dieses Jahr",
+    "custom": "Daten wählen",
+    "hint": "Tippen Sie auf den ersten Tag, dann auf den letzten.",
+    "apply": "Übernehmen",
+    "previousMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
+    "pickMonth": "Monat und Jahr wählen",
+    "previousYear": "Vorheriges Jahr",
+    "nextYear": "Nächstes Jahr",
+    "pickYear": "Jahr wählen"
+  },
+  "live": {
+    "retry": "Erneut versuchen",
+    "signIn": {
+      "missing": "Geben Sie Benutzername und Passwort ein.",
+      "showPassword": "Passwort anzeigen",
+      "hidePassword": "Passwort verbergen"
+    },
+    "notice": {
+      "expired": "Ihre Sitzung ist abgelaufen. Melden Sie sich erneut an.",
+      "passwordChanged": "Passwort geändert. Melden Sie sich mit dem neuen Passwort an."
+    },
+    "enroll": {
+      "app": "Authenticator-App",
+      "open": "CashFlow zur App hinzufügen",
+      "openHint": "Auf diesem Telefon öffnet das Ihre Authenticator-App, bereit zum Hinzufügen von CashFlow. Installieren Sie die App zuerst, falls noch nicht geschehen.",
+      "noApp": "Keine Authenticator-App geöffnet. Installieren Sie eine oder tippen Sie den Schlüssel unten ein.",
+      "key": "Oder tippen Sie diesen Schlüssel in die App",
+      "code": "Geben Sie dann den 6-stelligen Code aus der App ein",
+      "confirm": "Bestätigen und anmelden",
+      "codesTitle": "Speichern Sie Ihre Wiederherstellungscodes",
+      "codesHint": "Jeder Code meldet Sie einmal an, falls Sie Ihr Telefon verlieren. Bewahren Sie sie sicher auf: Sie werden nicht erneut angezeigt.",
+      "saved": "Ich habe sie gespeichert"
+    },
+    "password": {
+      "title": "Neues Passwort wählen",
+      "hint": "Ein Administrator hat Ihr Passwort festgelegt. Wählen Sie ein eigenes, um fortzufahren.",
+      "current": "Aktuelles Passwort",
+      "new": "Neues Passwort",
+      "repeat": "Neues Passwort wiederholen",
+      "mismatch": "Die beiden neuen Passwörter stimmen nicht überein.",
+      "missing": "Füllen Sie alle drei Felder aus.",
+      "save": "Speichern und neu anmelden"
+    },
+    "twoFactorOff": "Zwei-Faktor-Anmeldung ist nicht eingerichtet",
+    "claim": {
+      "noEmployee": "Dieses Konto ist mit keinem Mitarbeiter verknüpft und kann daher keine Ausgaben abrechnen.",
+      "reading": "Die KI liest den Beleg…",
+      "checkEach": "Prüfen Sie jeden Wert anhand des Belegs. Werte unter {{min}} % Sicherheit sind markiert.",
+      "chooseCategory": "Wählen Sie eine Kategorie.",
+      "chooseUnit": "Wählen Sie, wohin der Antrag gebucht wird.",
+      "noPreApproval": "Keine",
+      "tooLarge": "Die Datei ist größer als {{mb}} MB. Wählen Sie eine kleinere."
+    },
+    "refused": "Der Server konnte das nicht annehmen. Prüfen Sie die Angaben und versuchen Sie es erneut.",
+    "review": {
+      "noReceipt": "Kein Beleg angehängt.",
+      "sent": "Zur Genehmigung gesendet"
+    },
+    "report": {
+      "pdf": "Als PDF teilen",
+      "excel": "Als Excel teilen",
+      "noShare": "Teilen ist auf diesem Gerät nicht verfügbar.",
+      "more": "Mehr anzeigen ({{shown}} von {{total}})"
+    },
+    "offline": "Der Server ist nicht erreichbar. Was Sie sehen, wurde früher geladen und ist möglicherweise nicht aktuell."
   }
 }

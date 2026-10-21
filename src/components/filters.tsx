@@ -27,6 +27,7 @@ export function SearchField({ value, onChangeText, placeholder }: { value: strin
         accessibilityLabel={placeholder}
         returnKeyType="search"
         autoCorrect={false}
+        maxFontSizeMultiplier={1.6}
         style={{ flex: 1, minHeight: 44, color: palette.text, fontFamily: fonts.regular, fontSize: type.body.fontSize, textAlign: isRTL ? 'right' : 'left', writingDirection: isRTL ? 'rtl' : 'ltr' }}
       />
       {value ? (

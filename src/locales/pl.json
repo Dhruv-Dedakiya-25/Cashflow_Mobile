@@ -10,25 +10,169 @@
     "morning": "Dzień dobry",
     "afternoon": "Dzień dobry",
     "evening": "Dobry wieczór",
-    "subtitle": "Twoja kasa podręczna w skrócie."
-  },
-  "placeholder": {
-    "home": "Tutaj pojawią się Twoje dane, oczekujące wnioski i ostatnia aktywność.",
-    "claims": "Każdy wniosek ze statusem, ścieżką akceptacji i paragonem.",
-    "scan": "Zrób zdjęcie rachunku. AI go odczyta, a Ty sprawdzisz dane.",
-    "inbox": "Prośby czekające na Twoją decyzję lub potwierdzenie odbioru.",
-    "reports": "Wydatki według kategorii, działu i miesiąca.",
-    "next": "W projektowaniu"
+    "subtitle": "Twoja kasa podręczna w skrócie.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Kasa podręczna w całej firmie",
+    "ofFloats": "z {{amount}} · Przydziały: {{count}}",
+    "ofFloat": "z {{amount}}",
+    "pending": "Jeszcze niezapłacone",
+    "seeAll": "Zobacz wszystkie przydziały",
+    "team": "Kasa podręczna w Twoich jednostkach"
   },
   "settings": {
-    "title": "Ustawienia",
-    "open": "Otwórz ustawienia",
     "language": "Język",
-    "about": "O aplikacji",
     "mode": "Tryb",
     "modeDemo": "Demo, z przykładowymi danymi",
     "modeLive": "Na żywo",
-    "version": "Wersja",
-    "done": "Gotowe"
+    "version": "Wersja"
+  },
+  "demo": {
+    "sample": "Przykład"
+  },
+  "claims": {
+    "summary": "Wnioski: {{count}} · {{amount}}",
+    "empty": "Brak wniosków.",
+    "search": "Szukaj po tekście lub kwocie"
+  },
+  "scan": {
+    "takePhoto": "Zrób zdjęcie paragonu",
+    "ai": "AI",
+    "choosePhoto": "Wybierz ze zdjęć",
+    "claimDetails": "Szczegóły wniosku",
+    "sentTitle": "Wysłano do zatwierdzenia",
+    "sentText": "{{reference}} czeka teraz na: {{name}}.",
+    "resentTitle": "Wysłano ponownie",
+    "viewClaim": "Zobacz wniosek",
+    "cameraDenied": "CashFlow potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
+    "manual": "Wpisz dane ręcznie",
+    "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon odczytuje się jak ten przykład, a zdjęcie zostaje na telefonie.",
+    "choosePdf": "Wybierz PDF"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "Logowanie dwuetapowe jest włączone",
+    "twoFactorOff": "Logowanie dwuetapowe jest wyłączone dla Twojej roli",
+    "signOut": "Wyloguj się",
+    "appearance": "Automatyczny wygląd podąża za jasnym lub ciemnym ustawieniem telefonu.",
+    "theme": "Wygląd",
+    "themeAuto": "Automatyczny",
+    "themeLight": "Jasny",
+    "themeDark": "Ciemny"
+  },
+  "inbox": {
+    "toDecide": "Do zatwierdzenia",
+    "toAcknowledge": "Do potwierdzenia",
+    "submitted": "Wysłano {{time}} temu"
+  },
+  "review": {
+    "done": {
+      "approved": "Zatwierdzono",
+      "returned": "Zwrócono do poprawy",
+      "rejected": "Odrzucono"
+    },
+    "sentOn": "{{reference}} trafia dalej do: {{names}}.",
+    "final": "{{reference}} zatwierdzono. Teraz wypłaci go dział finansów.",
+    "returnedTo": "{{name}}: prośba o poprawienie {{reference}}.",
+    "rejectedFor": "{{name}} zobaczy Twoje uzasadnienie.",
+    "backToInbox": "Wróć do skrzynki",
+    "available": "{{reference}} ma teraz dostępne {{amount}}."
+  },
+  "ack": {
+    "done": "Potwierdzono",
+    "paidOn": "Wypłacono {{date}}",
+    "doneText": "{{amount}} jest teraz dostępne w {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Cała firma",
+    "average": "Średni wniosek",
+    "share": "Udostępnij raport",
+    "shareDemo": "W aplikacji produkcyjnej raport jest udostępniany jako PDF lub Excel, z tego samego eksportu co w wersji web, i zapisywany w dzienniku audytu.",
+    "search": "Szukaj osób, sklepów lub kwot",
+    "spendingBy": "Wydatki wg",
+    "top": "Najwięcej: {{name}}",
+    "scopeTeam": "Twoje jednostki"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Jednostki biznesowe",
+      "department": "Działy",
+      "project": "Projekty",
+      "custodian": "Opiekunowie kasy"
+    },
+    "heldBy": "U: {{name}}"
+  },
+  "period": {
+    "title": "Okres",
+    "all": "Wszystkie daty",
+    "thisMonth": "Ten miesiąc",
+    "lastMonth": "Poprzedni miesiąc",
+    "last3": "Ostatnie 3 miesiące",
+    "last6": "Ostatnie 6 miesięcy",
+    "thisYear": "Ten rok",
+    "custom": "Wybierz daty",
+    "hint": "Dotknij pierwszego dnia, a potem ostatniego.",
+    "apply": "Zastosuj",
+    "previousMonth": "Poprzedni miesiąc",
+    "nextMonth": "Następny miesiąc",
+    "pickMonth": "Wybierz miesiąc i rok",
+    "previousYear": "Poprzedni rok",
+    "nextYear": "Następny rok",
+    "pickYear": "Wybierz rok"
+  },
+  "live": {
+    "retry": "Spróbuj ponownie",
+    "signIn": {
+      "missing": "Wpisz nazwę użytkownika i hasło.",
+      "showPassword": "Pokaż hasło",
+      "hidePassword": "Ukryj hasło"
+    },
+    "notice": {
+      "expired": "Sesja wygasła. Zaloguj się ponownie.",
+      "passwordChanged": "Hasło zmienione. Zaloguj się nowym hasłem."
+    },
+    "enroll": {
+      "app": "Aplikacja uwierzytelniająca",
+      "open": "Dodaj CashFlow do aplikacji",
+      "openHint": "Na tym telefonie otworzy to aplikację uwierzytelniającą z CashFlow gotowym do dodania. Najpierw zainstaluj aplikację, jeśli jej nie masz.",
+      "noApp": "Nie otworzyła się żadna aplikacja uwierzytelniająca. Zainstaluj ją lub wpisz w niej klucz poniżej.",
+      "key": "Albo wpisz ten klucz w aplikacji",
+      "code": "Następnie wpisz 6-cyfrowy kod z aplikacji",
+      "confirm": "Potwierdź i zaloguj się",
+      "codesTitle": "Zapisz kody odzyskiwania",
+      "codesHint": "Każdy kod pozwala zalogować się raz, jeśli zgubisz telefon. Przechowuj je bezpiecznie: nie zostaną pokazane ponownie.",
+      "saved": "Zapisałem/zapisałam je"
+    },
+    "password": {
+      "title": "Wybierz nowe hasło",
+      "hint": "Hasło ustawił administrator. Aby kontynuować, wybierz własne.",
+      "current": "Obecne hasło",
+      "new": "Nowe hasło",
+      "repeat": "Powtórz nowe hasło",
+      "mismatch": "Nowe hasła nie są takie same.",
+      "missing": "Wypełnij wszystkie trzy pola.",
+      "save": "Zapisz i zaloguj się ponownie"
+    },
+    "twoFactorOff": "Logowanie dwuetapowe nie jest skonfigurowane",
+    "claim": {
+      "noEmployee": "To konto nie jest powiązane z pracownikiem, więc nie może rozliczać wydatków.",
+      "reading": "AI odczytuje paragon…",
+      "checkEach": "Porównaj każdą wartość z paragonem. Wartości o pewności poniżej {{min}}% są wyróżnione.",
+      "chooseCategory": "Wybierz kategorię.",
+      "chooseUnit": "Wybierz, gdzie zaksięgować wniosek.",
+      "noPreApproval": "Brak",
+      "tooLarge": "Plik jest większy niż {{mb}} MB. Wybierz mniejszy."
+    },
+    "refused": "Serwer nie mógł tego przyjąć. Sprawdź dane i spróbuj ponownie.",
+    "review": {
+      "noReceipt": "Brak załączonego paragonu.",
+      "sent": "Wysłano do zatwierdzenia"
+    },
+    "report": {
+      "pdf": "Udostępnij jako PDF",
+      "excel": "Udostępnij jako Excel",
+      "noShare": "Udostępnianie nie jest dostępne na tym urządzeniu.",
+      "more": "Pokaż więcej ({{shown}} z {{total}})"
+    },
+    "offline": "Brak połączenia z serwerem. Widoczne dane wczytano wcześniej i mogą być nieaktualne."
   }
 }

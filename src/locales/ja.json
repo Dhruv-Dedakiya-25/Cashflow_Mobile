@@ -10,25 +10,169 @@
     "morning": "おはようございます",
     "afternoon": "こんにちは",
     "evening": "こんばんは",
-    "subtitle": "小口現金をひと目で確認。"
-  },
-  "placeholder": {
-    "home": "あなたの数値、処理待ちの申請、最近の動きがここに表示されます。",
-    "claims": "各申請のステータス、承認の流れ、領収書を確認できます。",
-    "scan": "領収書を撮影すると、AI が読み取り、あなたが内容を確認します。",
-    "inbox": "あなたの判断や受領確認を待っている依頼です。",
-    "reports": "カテゴリ、部門、月ごとの支出。",
-    "next": "デザイン中"
+    "subtitle": "小口現金をひと目で確認。",
+    "hello": "{{greeting}}、{{name}}さん",
+    "company": "全社の小口現金",
+    "ofFloats": "{{amount}} 中 · 配分 {{count}} 件",
+    "ofFloat": "{{amount}} 中",
+    "pending": "未払い",
+    "seeAll": "すべての配分を見る",
+    "team": "担当部門の小口現金"
   },
   "settings": {
-    "title": "設定",
-    "open": "設定を開く",
     "language": "言語",
-    "about": "このアプリについて",
     "mode": "モード",
     "modeDemo": "デモ（サンプルデータ）",
     "modeLive": "本番",
-    "version": "バージョン",
-    "done": "完了"
+    "version": "バージョン"
+  },
+  "demo": {
+    "sample": "サンプル"
+  },
+  "claims": {
+    "summary": "申請 {{count}} 件 · {{amount}}",
+    "empty": "申請はありません。",
+    "search": "テキストまたは金額で検索"
+  },
+  "scan": {
+    "takePhoto": "領収書を撮影",
+    "ai": "AI",
+    "choosePhoto": "写真から選択",
+    "claimDetails": "申請の詳細",
+    "sentTitle": "承認に回しました",
+    "sentText": "{{reference}} は {{name}} さんの承認待ちです。",
+    "resentTitle": "再提出しました",
+    "viewClaim": "申請を見る",
+    "cameraDenied": "領収書の撮影には CashFlow にカメラへのアクセスが必要です。設定で許可するか、写真を選んでください。",
+    "manual": "手入力する",
+    "sampleNote": "サンプル読み取り：デモではどの領収書もこのサンプルとして読み取られ、写真はこの端末に残ります。",
+    "choosePdf": "PDF を選択"
+  },
+  "profile": {
+    "title": "プロフィール",
+    "twoFactorOn": "2段階認証はオンです",
+    "twoFactorOff": "あなたのロールでは2段階認証はオフです",
+    "signOut": "サインアウト",
+    "appearance": "「自動」は端末のライト／ダーク設定に合わせます。",
+    "theme": "外観",
+    "themeAuto": "自動",
+    "themeLight": "ライト",
+    "themeDark": "ダーク"
+  },
+  "inbox": {
+    "toDecide": "承認待ち",
+    "toAcknowledge": "受領確認待ち",
+    "submitted": "{{time}}前に送信"
+  },
+  "review": {
+    "done": {
+      "approved": "承認しました",
+      "returned": "修正のため差し戻しました",
+      "rejected": "却下しました"
+    },
+    "sentOn": "{{reference}} は次に {{names}} へ回ります。",
+    "final": "{{reference}} は承認されました。次は経理が支払います。",
+    "returnedTo": "{{name}} さんに {{reference}} の修正を依頼しました。",
+    "rejectedFor": "{{name}} さんに理由が表示されます。",
+    "backToInbox": "受信トレイに戻る",
+    "available": "{{reference}} の利用可能額は {{amount}} です。"
+  },
+  "ack": {
+    "done": "受領を確認しました",
+    "paidOn": "{{date}} に支払い",
+    "doneText": "{{amount}} が {{reference}} で利用可能になりました。"
+  },
+  "reports": {
+    "scopeCompany": "全社",
+    "average": "申請の平均",
+    "share": "レポートを共有",
+    "shareDemo": "本番アプリでは、Web と同じエクスポートからレポートを PDF または Excel で共有し、監査ログに記録します。",
+    "search": "人、店舗、金額で検索",
+    "spendingBy": "支出の内訳",
+    "top": "最多：{{name}}",
+    "scopeTeam": "担当部門"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "事業部",
+      "department": "部署",
+      "project": "プロジェクト",
+      "custodian": "現金管理者"
+    },
+    "heldBy": "管理者：{{name}}"
+  },
+  "period": {
+    "title": "期間",
+    "all": "すべての日付",
+    "thisMonth": "今月",
+    "lastMonth": "先月",
+    "last3": "過去3か月",
+    "last6": "過去6か月",
+    "thisYear": "今年",
+    "custom": "日付を選択",
+    "hint": "最初の日をタップしてから、最後の日をタップします。",
+    "apply": "適用",
+    "previousMonth": "前の月",
+    "nextMonth": "次の月",
+    "pickMonth": "年月を選択",
+    "previousYear": "前の年",
+    "nextYear": "次の年",
+    "pickYear": "年を選択"
+  },
+  "live": {
+    "retry": "再試行",
+    "signIn": {
+      "missing": "ユーザー名とパスワードを入力してください。",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを隠す"
+    },
+    "notice": {
+      "expired": "セッションが終了しました。もう一度サインインしてください。",
+      "passwordChanged": "パスワードを変更しました。新しいパスワードでサインインしてください。"
+    },
+    "enroll": {
+      "app": "認証アプリ",
+      "open": "CashFlow をアプリに追加",
+      "openHint": "この端末で認証アプリが開き、CashFlow を追加できる状態になります。アプリが未インストールの場合は先にインストールしてください。",
+      "noApp": "認証アプリが開きませんでした。アプリをインストールするか、下のキーを入力してください。",
+      "key": "または、このキーをアプリに入力",
+      "code": "次に、アプリに表示される6桁のコードを入力",
+      "confirm": "確認してサインイン",
+      "codesTitle": "リカバリーコードを保存してください",
+      "codesHint": "端末を紛失したとき、各コードで1回サインインできます。安全な場所に保管してください。再表示はされません。",
+      "saved": "保存しました"
+    },
+    "password": {
+      "title": "新しいパスワードを設定",
+      "hint": "パスワードは管理者が設定しました。続けるにはご自身のパスワードを設定してください。",
+      "current": "現在のパスワード",
+      "new": "新しいパスワード",
+      "repeat": "新しいパスワード（確認）",
+      "mismatch": "新しいパスワードが一致しません。",
+      "missing": "3つの欄をすべて入力してください。",
+      "save": "保存して再度サインイン"
+    },
+    "twoFactorOff": "2段階認証が設定されていません",
+    "claim": {
+      "noEmployee": "このアカウントは従業員に紐づいていないため、経費を申請できません。",
+      "reading": "AI が領収書を読み取っています…",
+      "checkEach": "各値を領収書と照合してください。確信度が {{min}}% 未満の値は強調表示されます。",
+      "chooseCategory": "カテゴリを選んでください。",
+      "chooseUnit": "申請の計上先を選んでください。",
+      "noPreApproval": "なし",
+      "tooLarge": "ファイルが {{mb}} MB を超えています。小さいファイルを選んでください。"
+    },
+    "refused": "サーバーが受け付けられませんでした。内容を確認して、もう一度お試しください。",
+    "review": {
+      "noReceipt": "領収書は添付されていません。",
+      "sent": "承認に回しました"
+    },
+    "report": {
+      "pdf": "PDF で共有",
+      "excel": "Excel で共有",
+      "noShare": "この端末では共有できません。",
+      "more": "さらに表示（{{total}} 件中 {{shown}} 件）"
+    },
+    "offline": "サーバーに接続できません。表示中の内容は以前に読み込んだもので、最新でない可能性があります。"
   }
 }

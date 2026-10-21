@@ -10,25 +10,169 @@
     "morning": "Chào buổi sáng",
     "afternoon": "Chào buổi chiều",
     "evening": "Chào buổi tối",
-    "subtitle": "Quỹ tiền mặt nhỏ của bạn trong nháy mắt."
-  },
-  "placeholder": {
-    "home": "Số liệu của bạn, yêu cầu đang chờ và hoạt động gần đây sẽ hiển thị tại đây.",
-    "claims": "Mỗi yêu cầu kèm trạng thái, quy trình duyệt và biên lai.",
-    "scan": "Chụp ảnh hóa đơn. AI đọc và bạn kiểm tra thông tin.",
-    "inbox": "Các yêu cầu đang chờ bạn quyết định hoặc xác nhận đã nhận.",
-    "reports": "Chi tiêu theo danh mục, phòng ban và tháng.",
-    "next": "Đang thiết kế"
+    "subtitle": "Quỹ tiền mặt nhỏ của bạn trong nháy mắt.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Quỹ tiền mặt nhỏ toàn công ty",
+    "ofFloats": "trên {{amount}} · Phân bổ: {{count}}",
+    "ofFloat": "trên {{amount}}",
+    "pending": "Chưa thanh toán",
+    "seeAll": "Xem tất cả phân bổ",
+    "team": "Quỹ tiền mặt nhỏ của đơn vị bạn"
   },
   "settings": {
-    "title": "Cài đặt",
-    "open": "Mở cài đặt",
     "language": "Ngôn ngữ",
-    "about": "Giới thiệu",
     "mode": "Chế độ",
     "modeDemo": "Demo, với dữ liệu mẫu",
     "modeLive": "Trực tiếp",
-    "version": "Phiên bản",
-    "done": "Xong"
+    "version": "Phiên bản"
+  },
+  "demo": {
+    "sample": "Mẫu"
+  },
+  "claims": {
+    "summary": "Yêu cầu: {{count}} · {{amount}}",
+    "empty": "Không có yêu cầu nào.",
+    "search": "Tìm theo chữ hoặc số tiền"
+  },
+  "scan": {
+    "takePhoto": "Chụp ảnh hóa đơn",
+    "ai": "AI",
+    "choosePhoto": "Chọn từ ảnh",
+    "claimDetails": "Chi tiết yêu cầu",
+    "sentTitle": "Đã gửi phê duyệt",
+    "sentText": "{{reference}} đang chờ {{name}}.",
+    "resentTitle": "Đã gửi lại",
+    "viewClaim": "Xem yêu cầu",
+    "cameraDenied": "CashFlow cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
+    "manual": "Nhập thông tin thủ công",
+    "sampleNote": "Đọc mẫu: trong bản demo, mọi hóa đơn đều được đọc như mẫu này, và ảnh chỉ lưu trên điện thoại này.",
+    "choosePdf": "Chọn PDF"
+  },
+  "profile": {
+    "title": "Hồ sơ",
+    "twoFactorOn": "Đăng nhập hai bước đang bật",
+    "twoFactorOff": "Đăng nhập hai bước đang tắt với vai trò của bạn",
+    "signOut": "Đăng xuất",
+    "appearance": "Tự động theo cài đặt sáng hoặc tối của điện thoại.",
+    "theme": "Giao diện",
+    "themeAuto": "Tự động",
+    "themeLight": "Sáng",
+    "themeDark": "Tối"
+  },
+  "inbox": {
+    "toDecide": "Cần phê duyệt",
+    "toAcknowledge": "Cần xác nhận",
+    "submitted": "Đã gửi {{time}} trước"
+  },
+  "review": {
+    "done": {
+      "approved": "Đã duyệt",
+      "returned": "Đã trả lại để sửa",
+      "rejected": "Đã từ chối"
+    },
+    "sentOn": "{{reference}} được chuyển tiếp đến {{names}}.",
+    "final": "{{reference}} đã được duyệt. Tiếp theo phòng tài chính sẽ thanh toán.",
+    "returnedTo": "{{name}} được yêu cầu sửa {{reference}}.",
+    "rejectedFor": "{{name}} sẽ thấy lý do của bạn.",
+    "backToInbox": "Quay lại Hộp thư",
+    "available": "{{reference}} hiện có {{amount}} khả dụng."
+  },
+  "ack": {
+    "done": "Đã xác nhận",
+    "paidOn": "Đã chi ngày {{date}}",
+    "doneText": "{{amount}} hiện đã khả dụng trong {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Toàn công ty",
+    "average": "Yêu cầu trung bình",
+    "share": "Chia sẻ báo cáo",
+    "shareDemo": "Trong ứng dụng thật, báo cáo được chia sẻ dạng PDF hoặc Excel từ cùng bản xuất như trên web, và được ghi vào nhật ký kiểm toán.",
+    "search": "Tìm người, cửa hàng hoặc số tiền",
+    "spendingBy": "Chi tiêu theo",
+    "top": "Cao nhất: {{name}}",
+    "scopeTeam": "Đơn vị của bạn"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Đơn vị kinh doanh",
+      "department": "Phòng ban",
+      "project": "Dự án",
+      "custodian": "Người giữ quỹ"
+    },
+    "heldBy": "Do {{name}} giữ"
+  },
+  "period": {
+    "title": "Khoảng thời gian",
+    "all": "Tất cả các ngày",
+    "thisMonth": "Tháng này",
+    "lastMonth": "Tháng trước",
+    "last3": "3 tháng gần nhất",
+    "last6": "6 tháng gần nhất",
+    "thisYear": "Năm nay",
+    "custom": "Chọn ngày",
+    "hint": "Chạm vào ngày đầu, rồi ngày cuối.",
+    "apply": "Áp dụng",
+    "previousMonth": "Tháng trước",
+    "nextMonth": "Tháng sau",
+    "pickMonth": "Chọn tháng và năm",
+    "previousYear": "Năm trước",
+    "nextYear": "Năm sau",
+    "pickYear": "Chọn năm"
+  },
+  "live": {
+    "retry": "Thử lại",
+    "signIn": {
+      "missing": "Nhập tên đăng nhập và mật khẩu.",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu"
+    },
+    "notice": {
+      "expired": "Phiên đăng nhập đã kết thúc. Hãy đăng nhập lại.",
+      "passwordChanged": "Đã đổi mật khẩu. Hãy đăng nhập bằng mật khẩu mới."
+    },
+    "enroll": {
+      "app": "Ứng dụng xác thực",
+      "open": "Thêm CashFlow vào ứng dụng",
+      "openHint": "Trên điện thoại này, thao tác này mở ứng dụng xác thực với CashFlow sẵn sàng để thêm. Hãy cài ứng dụng trước nếu bạn chưa có.",
+      "noApp": "Không có ứng dụng xác thực nào mở ra. Hãy cài một ứng dụng, hoặc nhập khóa bên dưới vào đó.",
+      "key": "Hoặc nhập khóa này vào ứng dụng",
+      "code": "Sau đó nhập mã 6 chữ số mà ứng dụng hiển thị",
+      "confirm": "Xác nhận và đăng nhập",
+      "codesTitle": "Lưu mã khôi phục",
+      "codesHint": "Nếu mất điện thoại, mỗi mã cho phép đăng nhập một lần. Hãy cất ở nơi an toàn: chúng sẽ không hiện lại.",
+      "saved": "Tôi đã lưu"
+    },
+    "password": {
+      "title": "Chọn mật khẩu mới",
+      "hint": "Quản trị viên đã đặt mật khẩu cho bạn. Hãy chọn mật khẩu của riêng bạn để tiếp tục.",
+      "current": "Mật khẩu hiện tại",
+      "new": "Mật khẩu mới",
+      "repeat": "Nhập lại mật khẩu mới",
+      "mismatch": "Hai mật khẩu mới không giống nhau.",
+      "missing": "Điền đủ cả ba ô.",
+      "save": "Lưu và đăng nhập lại"
+    },
+    "twoFactorOff": "Chưa thiết lập đăng nhập hai bước",
+    "claim": {
+      "noEmployee": "Tài khoản này chưa liên kết với nhân viên nên không thể đề nghị hoàn ứng chi phí.",
+      "reading": "AI đang đọc hóa đơn…",
+      "checkEach": "Đối chiếu từng giá trị với hóa đơn. Các giá trị có độ chắc chắn dưới {{min}}% được tô sáng.",
+      "chooseCategory": "Chọn một danh mục.",
+      "chooseUnit": "Chọn nơi ghi nhận yêu cầu.",
+      "noPreApproval": "Không có",
+      "tooLarge": "Tệp lớn hơn {{mb}} MB. Hãy chọn tệp nhỏ hơn."
+    },
+    "refused": "Máy chủ không thể chấp nhận. Hãy kiểm tra thông tin và thử lại.",
+    "review": {
+      "noReceipt": "Không có hóa đơn đính kèm.",
+      "sent": "Đã gửi phê duyệt"
+    },
+    "report": {
+      "pdf": "Chia sẻ dạng PDF",
+      "excel": "Chia sẻ dạng Excel",
+      "noShare": "Thiết bị này không hỗ trợ chia sẻ.",
+      "more": "Xem thêm ({{shown}} / {{total}})"
+    },
+    "offline": "Không kết nối được máy chủ. Nội dung bạn thấy được tải trước đó và có thể chưa cập nhật."
   }
 }

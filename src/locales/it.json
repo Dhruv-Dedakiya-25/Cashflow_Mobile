@@ -10,25 +10,169 @@
     "morning": "Buongiorno",
     "afternoon": "Buon pomeriggio",
     "evening": "Buonasera",
-    "subtitle": "La tua piccola cassa in breve."
-  },
-  "placeholder": {
-    "home": "Qui vedrai i tuoi dati, i rimborsi in attesa e le attività recenti.",
-    "claims": "Ogni rimborso con stato, percorso di approvazione e ricevuta.",
-    "scan": "Fotografa lo scontrino. L'IA lo legge e tu controlli i dati.",
-    "inbox": "Richieste in attesa della tua decisione o conferma.",
-    "reports": "Spese per categoria, reparto e mese.",
-    "next": "In progettazione"
+    "subtitle": "La tua piccola cassa in breve.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Piccola cassa in tutta l'azienda",
+    "ofFloats": "su {{amount}} · Assegnazioni: {{count}}",
+    "ofFloat": "su {{amount}}",
+    "pending": "Non ancora pagato",
+    "seeAll": "Vedi tutte le assegnazioni",
+    "team": "Piccola cassa nelle tue unità"
   },
   "settings": {
-    "title": "Impostazioni",
-    "open": "Apri impostazioni",
     "language": "Lingua",
-    "about": "Informazioni",
     "mode": "Modalità",
     "modeDemo": "Demo, con dati di esempio",
     "modeLive": "Reale",
-    "version": "Versione",
-    "done": "Fine"
+    "version": "Versione"
+  },
+  "demo": {
+    "sample": "Esempio"
+  },
+  "claims": {
+    "summary": "Rimborsi: {{count}} · {{amount}}",
+    "empty": "Nessun rimborso qui.",
+    "search": "Cerca per testo o importo"
+  },
+  "scan": {
+    "takePhoto": "Fotografa lo scontrino",
+    "ai": "IA",
+    "choosePhoto": "Scegli dalle foto",
+    "claimDetails": "Dettagli del rimborso",
+    "sentTitle": "Inviato per approvazione",
+    "sentText": "{{reference}} ora attende {{name}}.",
+    "resentTitle": "Inviato di nuovo",
+    "viewClaim": "Vedi il rimborso",
+    "cameraDenied": "CashFlow ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
+    "manual": "Inserisci i dati a mano",
+    "sampleNote": "Lettura di esempio: nella demo ogni scontrino viene letto come questo esempio, e la foto resta su questo telefono.",
+    "choosePdf": "Scegli un PDF"
+  },
+  "profile": {
+    "title": "Profilo",
+    "twoFactorOn": "L'accesso a due fattori è attivo",
+    "twoFactorOff": "L'accesso a due fattori è disattivato per il tuo ruolo",
+    "signOut": "Esci",
+    "appearance": "Automatico segue l'impostazione chiara o scura del telefono.",
+    "theme": "Aspetto",
+    "themeAuto": "Automatico",
+    "themeLight": "Chiaro",
+    "themeDark": "Scuro"
+  },
+  "inbox": {
+    "toDecide": "Per approvazione",
+    "toAcknowledge": "Per conferma",
+    "submitted": "Inviato {{time}} fa"
+  },
+  "review": {
+    "done": {
+      "approved": "Approvato",
+      "returned": "Restituito per correzione",
+      "rejected": "Respinto"
+    },
+    "sentOn": "{{reference}} passa a {{names}}.",
+    "final": "{{reference}} è approvato. Ora lo paga l'amministrazione.",
+    "returnedTo": "A {{name}} viene chiesto di correggere {{reference}}.",
+    "rejectedFor": "{{name}} vedrà la tua motivazione.",
+    "backToInbox": "Torna a In arrivo",
+    "available": "{{reference}} ha ora {{amount}} disponibili."
+  },
+  "ack": {
+    "done": "Confermato",
+    "paidOn": "Pagato il {{date}}",
+    "doneText": "{{amount}} è ora disponibile in {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Tutta l'azienda",
+    "average": "Rimborso medio",
+    "share": "Condividi il report",
+    "shareDemo": "Nell'app reale il report viene condiviso in PDF o Excel, dalla stessa esportazione del web, e registrato nel registro di audit.",
+    "search": "Cerca persone, esercenti o importi",
+    "spendingBy": "Spesa per",
+    "top": "In testa: {{name}}",
+    "scopeTeam": "Le tue unità"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Unità di business",
+      "department": "Reparti",
+      "project": "Progetti",
+      "custodian": "Custodi"
+    },
+    "heldBy": "Custodita da {{name}}"
+  },
+  "period": {
+    "title": "Periodo",
+    "all": "Tutte le date",
+    "thisMonth": "Questo mese",
+    "lastMonth": "Mese scorso",
+    "last3": "Ultimi 3 mesi",
+    "last6": "Ultimi 6 mesi",
+    "thisYear": "Quest'anno",
+    "custom": "Scegli le date",
+    "hint": "Tocca il primo giorno, poi l'ultimo.",
+    "apply": "Applica",
+    "previousMonth": "Mese precedente",
+    "nextMonth": "Mese successivo",
+    "pickMonth": "Scegli mese e anno",
+    "previousYear": "Anno precedente",
+    "nextYear": "Anno successivo",
+    "pickYear": "Scegli l'anno"
+  },
+  "live": {
+    "retry": "Riprova",
+    "signIn": {
+      "missing": "Inserisci nome utente e password.",
+      "showPassword": "Mostra password",
+      "hidePassword": "Nascondi password"
+    },
+    "notice": {
+      "expired": "La sessione è terminata. Accedi di nuovo.",
+      "passwordChanged": "Password cambiata. Accedi con la nuova password."
+    },
+    "enroll": {
+      "app": "App di autenticazione",
+      "open": "Aggiungi CashFlow all'app",
+      "openHint": "Su questo telefono apre la tua app di autenticazione con CashFlow pronto da aggiungere. Installa prima l'app, se non l'hai fatto.",
+      "noApp": "Nessuna app di autenticazione si è aperta. Installane una o inserisci la chiave qui sotto.",
+      "key": "Oppure inserisci questa chiave nell'app",
+      "code": "Poi inserisci il codice a 6 cifre mostrato dall'app",
+      "confirm": "Conferma e accedi",
+      "codesTitle": "Salva i codici di recupero",
+      "codesHint": "Ogni codice ti fa accedere una volta se perdi il telefono. Conservali al sicuro: non verranno mostrati di nuovo.",
+      "saved": "Li ho salvati"
+    },
+    "password": {
+      "title": "Scegli una nuova password",
+      "hint": "Un amministratore ha impostato la tua password. Scegline una tua per continuare.",
+      "current": "Password attuale",
+      "new": "Nuova password",
+      "repeat": "Ripeti la nuova password",
+      "mismatch": "Le due nuove password non coincidono.",
+      "missing": "Compila tutti e tre i campi.",
+      "save": "Salva e accedi di nuovo"
+    },
+    "twoFactorOff": "L'accesso a due fattori non è configurato",
+    "claim": {
+      "noEmployee": "Questo account non è collegato a un dipendente, quindi non può chiedere rimborsi.",
+      "reading": "L'IA sta leggendo lo scontrino…",
+      "checkEach": "Confronta ogni valore con lo scontrino. I valori con meno del {{min}}% di certezza sono evidenziati.",
+      "chooseCategory": "Scegli una categoria.",
+      "chooseUnit": "Scegli dove addebitare il rimborso.",
+      "noPreApproval": "Nessuna",
+      "tooLarge": "Il file supera {{mb}} MB. Scegline uno più piccolo."
+    },
+    "refused": "Il server non ha potuto accettarlo. Controlla i dati e riprova.",
+    "review": {
+      "noReceipt": "Nessuno scontrino allegato.",
+      "sent": "Inviato per approvazione"
+    },
+    "report": {
+      "pdf": "Condividi come PDF",
+      "excel": "Condividi come Excel",
+      "noShare": "La condivisione non è disponibile su questo dispositivo.",
+      "more": "Mostra altri ({{shown}} di {{total}})"
+    },
+    "offline": "Impossibile raggiungere il server. Ciò che vedi è stato caricato prima e potrebbe non essere aggiornato."
   }
 }

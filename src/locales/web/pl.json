@@ -24,6 +24,13 @@
     "no": "Nie",
     "yes": "Tak"
   },
+  "export": {
+    "excel": "Eksportuj do Excela",
+    "failed": "Nie udało się utworzyć pliku. Spróbuj ponownie.",
+    "footer": "Wyeksportowane przez: {{name}}, {{time}}",
+    "pdf": "Eksportuj do PDF",
+    "tooMany": "Ten eksport ma ponad 10 000 wierszy. Zawęź filtry i wyeksportuj ponownie."
+  },
   "txn": {
     "action": {
       "cancel": "Anuluj wniosek",

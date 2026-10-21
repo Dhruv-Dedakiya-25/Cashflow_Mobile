@@ -24,6 +24,13 @@
     "no": "No",
     "yes": "Sì"
   },
+  "export": {
+    "excel": "Esporta Excel",
+    "failed": "Impossibile creare il file. Riprova.",
+    "footer": "Esportato da {{name}} il {{time}}",
+    "pdf": "Esporta PDF",
+    "tooMany": "Questa esportazione ha più di 10.000 righe. Riduci i filtri ed esporta di nuovo."
+  },
   "txn": {
     "action": {
       "cancel": "Annulla richiesta",

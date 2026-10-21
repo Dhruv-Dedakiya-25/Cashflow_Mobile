@@ -10,25 +10,169 @@
     "morning": "Selamat pagi",
     "afternoon": "Selamat siang",
     "evening": "Selamat malam",
-    "subtitle": "Kas kecil Anda dalam sekilas."
-  },
-  "placeholder": {
-    "home": "Angka Anda, klaim yang menunggu, dan aktivitas terbaru akan tampil di sini.",
-    "claims": "Setiap klaim dengan status, alur persetujuan, dan struknya.",
-    "scan": "Foto nota Anda. AI membacanya dan Anda memeriksa detailnya.",
-    "inbox": "Permintaan yang menunggu keputusan atau konfirmasi Anda.",
-    "reports": "Pengeluaran per kategori, departemen, dan bulan.",
-    "next": "Sedang dirancang"
+    "subtitle": "Kas kecil Anda dalam sekilas.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Kas kecil di seluruh perusahaan",
+    "ofFloats": "dari {{amount}} · Alokasi: {{count}}",
+    "ofFloat": "dari {{amount}}",
+    "pending": "Belum dibayar",
+    "seeAll": "Lihat semua alokasi",
+    "team": "Kas kecil di unit Anda"
   },
   "settings": {
-    "title": "Pengaturan",
-    "open": "Buka pengaturan",
     "language": "Bahasa",
-    "about": "Tentang",
     "mode": "Mode",
     "modeDemo": "Demo, dengan data contoh",
     "modeLive": "Langsung",
-    "version": "Versi",
-    "done": "Selesai"
+    "version": "Versi"
+  },
+  "demo": {
+    "sample": "Contoh"
+  },
+  "claims": {
+    "summary": "Klaim: {{count}} · {{amount}}",
+    "empty": "Tidak ada klaim di sini.",
+    "search": "Cari dengan teks atau jumlah"
+  },
+  "scan": {
+    "takePhoto": "Foto nota",
+    "ai": "AI",
+    "choosePhoto": "Pilih dari foto",
+    "claimDetails": "Detail klaim",
+    "sentTitle": "Dikirim untuk persetujuan",
+    "sentText": "{{reference}} kini menunggu {{name}}.",
+    "resentTitle": "Dikirim ulang",
+    "viewClaim": "Lihat klaim",
+    "cameraDenied": "CashFlow memerlukan kamera untuk memotret nota. Izinkan di Pengaturan, atau pilih foto saja.",
+    "manual": "Ketik detail secara manual",
+    "sampleNote": "Pembacaan contoh: di demo setiap nota terbaca seperti contoh ini, dan fotonya tetap di ponsel ini.",
+    "choosePdf": "Pilih PDF"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "Masuk dua langkah aktif",
+    "twoFactorOff": "Masuk dua langkah nonaktif untuk peran Anda",
+    "signOut": "Keluar",
+    "appearance": "Otomatis mengikuti pengaturan terang atau gelap ponsel Anda.",
+    "theme": "Tampilan",
+    "themeAuto": "Otomatis",
+    "themeLight": "Terang",
+    "themeDark": "Gelap"
+  },
+  "inbox": {
+    "toDecide": "Untuk persetujuan",
+    "toAcknowledge": "Untuk konfirmasi",
+    "submitted": "Dikirim {{time}} lalu"
+  },
+  "review": {
+    "done": {
+      "approved": "Disetujui",
+      "returned": "Dikembalikan untuk diperbaiki",
+      "rejected": "Ditolak"
+    },
+    "sentOn": "{{reference}} diteruskan ke {{names}}.",
+    "final": "{{reference}} disetujui. Berikutnya bagian keuangan membayarnya.",
+    "returnedTo": "{{name}} diminta memperbaiki {{reference}}.",
+    "rejectedFor": "{{name}} akan melihat alasan Anda.",
+    "backToInbox": "Kembali ke Kotak Masuk",
+    "available": "{{reference}} kini memiliki {{amount}} yang tersedia."
+  },
+  "ack": {
+    "done": "Dikonfirmasi",
+    "paidOn": "Dibayar pada {{date}}",
+    "doneText": "{{amount}} kini tersedia di {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Seluruh perusahaan",
+    "average": "Rata-rata klaim",
+    "share": "Bagikan laporan",
+    "shareDemo": "Di aplikasi sebenarnya, laporan dibagikan sebagai PDF atau Excel dari ekspor yang sama dengan web, dan dicatat di Log Audit.",
+    "search": "Cari orang, merchant, atau jumlah",
+    "spendingBy": "Pengeluaran menurut",
+    "top": "Teratas: {{name}}",
+    "scopeTeam": "Unit Anda"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Unit bisnis",
+      "department": "Departemen",
+      "project": "Proyek",
+      "custodian": "Pemegang kas"
+    },
+    "heldBy": "Dipegang oleh {{name}}"
+  },
+  "period": {
+    "title": "Periode",
+    "all": "Semua tanggal",
+    "thisMonth": "Bulan ini",
+    "lastMonth": "Bulan lalu",
+    "last3": "3 bulan terakhir",
+    "last6": "6 bulan terakhir",
+    "thisYear": "Tahun ini",
+    "custom": "Pilih tanggal",
+    "hint": "Ketuk hari pertama, lalu hari terakhir.",
+    "apply": "Terapkan",
+    "previousMonth": "Bulan sebelumnya",
+    "nextMonth": "Bulan berikutnya",
+    "pickMonth": "Pilih bulan dan tahun",
+    "previousYear": "Tahun sebelumnya",
+    "nextYear": "Tahun berikutnya",
+    "pickYear": "Pilih tahun"
+  },
+  "live": {
+    "retry": "Coba lagi",
+    "signIn": {
+      "missing": "Masukkan nama pengguna dan kata sandi.",
+      "showPassword": "Tampilkan kata sandi",
+      "hidePassword": "Sembunyikan kata sandi"
+    },
+    "notice": {
+      "expired": "Sesi Anda telah berakhir. Masuk lagi.",
+      "passwordChanged": "Kata sandi diubah. Masuk dengan kata sandi baru Anda."
+    },
+    "enroll": {
+      "app": "Aplikasi autentikator",
+      "open": "Tambahkan CashFlow ke aplikasi",
+      "openHint": "Di ponsel ini, ini membuka aplikasi autentikator Anda dengan CashFlow siap ditambahkan. Pasang aplikasinya dulu jika belum.",
+      "noApp": "Tidak ada aplikasi autentikator yang terbuka. Pasang satu, atau ketik kunci di bawah ke dalamnya.",
+      "key": "Atau ketik kunci ini ke aplikasi",
+      "code": "Lalu masukkan kode 6 digit yang ditampilkan aplikasi",
+      "confirm": "Konfirmasi dan masuk",
+      "codesTitle": "Simpan kode pemulihan Anda",
+      "codesHint": "Setiap kode memungkinkan Anda masuk sekali jika ponsel hilang. Simpan di tempat aman: kode tidak ditampilkan lagi.",
+      "saved": "Sudah saya simpan"
+    },
+    "password": {
+      "title": "Pilih kata sandi baru",
+      "hint": "Administrator menetapkan kata sandi Anda. Pilih kata sandi sendiri untuk melanjutkan.",
+      "current": "Kata sandi saat ini",
+      "new": "Kata sandi baru",
+      "repeat": "Ulangi kata sandi baru",
+      "mismatch": "Kedua kata sandi baru tidak sama.",
+      "missing": "Isi ketiga kolom.",
+      "save": "Simpan dan masuk lagi"
+    },
+    "twoFactorOff": "Masuk dua langkah belum diatur",
+    "claim": {
+      "noEmployee": "Akun ini tidak terhubung ke karyawan, jadi tidak dapat mengklaim biaya.",
+      "reading": "AI sedang membaca nota…",
+      "checkEach": "Periksa setiap nilai dengan nota. Nilai dengan keyakinan di bawah {{min}}% disorot.",
+      "chooseCategory": "Pilih kategori.",
+      "chooseUnit": "Pilih ke mana klaim dibebankan.",
+      "noPreApproval": "Tidak ada",
+      "tooLarge": "Berkas lebih dari {{mb}} MB. Pilih yang lebih kecil."
+    },
+    "refused": "Server tidak dapat menerima ini. Periksa detailnya dan coba lagi.",
+    "review": {
+      "noReceipt": "Tidak ada nota terlampir.",
+      "sent": "Dikirim untuk persetujuan"
+    },
+    "report": {
+      "pdf": "Bagikan sebagai PDF",
+      "excel": "Bagikan sebagai Excel",
+      "noShare": "Berbagi tidak tersedia di perangkat ini.",
+      "more": "Tampilkan lagi ({{shown}} dari {{total}})"
+    },
+    "offline": "Tidak dapat menghubungi server. Yang Anda lihat dimuat sebelumnya dan mungkin belum terbaru."
   }
 }

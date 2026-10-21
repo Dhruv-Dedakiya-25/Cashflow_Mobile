@@ -24,12 +24,16 @@ export type AppTextProps = TextProps & {
   align?: TextStyle['textAlign'];
 };
 
-/** Every piece of text in the app: the type scale, Inter, the theme's colours and the language's direction. */
+/**
+ * Every piece of text in the app: the type scale, Inter, the theme's colours and the language's direction.
+ * Text grows with the phone's text size up to 1.6 times, beyond which cards and rows stop fitting.
+ */
 export function AppText({ variant = 'body', weight = 'regular', tone = 'default', align, style, ...rest }: AppTextProps) {
   const palette = usePalette();
   const { isRTL } = useLanguage();
   return (
     <Text
+      maxFontSizeMultiplier={1.6}
       style={[
         type[variant],
         {

@@ -6,8 +6,9 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, View } from 'rea
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppText } from '@/components/app-text';
+import { OfflineNote } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { space, usePalette } from '@/theme/tokens';
+import { contentColumn, space, usePalette } from '@/theme/tokens';
 
 type PageProps = {
   title: string;
@@ -28,7 +29,7 @@ export function Page({ title, right, children, footer }: PageProps) {
 
   return (
     <KeyboardAvoidingView style={{ flex: 1, backgroundColor: palette.bg, direction: isRTL ? 'rtl' : 'ltr' }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <View style={{ paddingTop: insets.top + space.sm, paddingHorizontal: space.md, paddingBottom: space.sm, flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: palette.bg }}>
+      <View style={{ ...contentColumn, paddingTop: insets.top + space.sm, paddingHorizontal: space.md, paddingBottom: space.sm, flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: palette.bg }}>
         <Pressable
           onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
           accessibilityRole="button"
@@ -42,12 +43,13 @@ export function Page({ title, right, children, footer }: PageProps) {
         </AppText>
         {right}
       </View>
-      <ScrollView contentContainerStyle={{ paddingHorizontal: space.xl, paddingTop: space.sm, paddingBottom: footer ? space.xl : insets.bottom + space.xxxl, gap: space.lg }} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={{ ...contentColumn, paddingHorizontal: space.xl, paddingTop: space.sm, paddingBottom: footer ? space.xl : insets.bottom + space.xxxl, gap: space.lg }} keyboardShouldPersistTaps="handled">
+        <OfflineNote />
         {children}
       </ScrollView>
       {footer ? (
-        <View style={{ paddingHorizontal: space.xl, paddingTop: space.md, paddingBottom: Math.max(insets.bottom, space.lg), borderTopWidth: 1, borderTopColor: palette.border, backgroundColor: palette.card, gap: space.sm }}>
-          {footer}
+        <View style={{ paddingHorizontal: space.xl, paddingTop: space.md, paddingBottom: Math.max(insets.bottom, space.lg), borderTopWidth: 1, borderTopColor: palette.border, backgroundColor: palette.card }}>
+          <View style={{ ...contentColumn, gap: space.sm }}>{footer}</View>
         </View>
       ) : null}
     </KeyboardAvoidingView>

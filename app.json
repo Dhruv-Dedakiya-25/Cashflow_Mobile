@@ -7,12 +7,9 @@
     "icon": "./assets/images/icon.png",
     "scheme": "cashflow",
     "userInterfaceStyle": "automatic",
-    "ios": {
-      "icon": "./assets/expo.icon"
-    },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#2563EB",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -28,9 +25,13 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#0F172A",
+          "backgroundColor": "#F5F7FB",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 88,
+          "dark": {
+            "backgroundColor": "#0B1220",
+            "image": "./assets/images/splash-icon.png"
+          }
         }
       ],
       "expo-localization",
@@ -44,7 +45,8 @@
           "photosPermission": "CashFlow opens your photos so you can attach a receipt."
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true,

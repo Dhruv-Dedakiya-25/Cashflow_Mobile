@@ -10,25 +10,169 @@
     "morning": "Bonjour",
     "afternoon": "Bon après-midi",
     "evening": "Bonsoir",
-    "subtitle": "Votre petite caisse en un coup d'œil."
-  },
-  "placeholder": {
-    "home": "Vos chiffres, les demandes en attente et l'activité récente s'afficheront ici.",
-    "claims": "Chaque demande avec son statut, son circuit d'approbation et son reçu.",
-    "scan": "Prenez une facture en photo. L'IA la lit et vous vérifiez les détails.",
-    "inbox": "Les demandes qui attendent votre décision ou votre accusé de réception.",
-    "reports": "Dépenses par catégorie, service et mois.",
-    "next": "En conception"
+    "subtitle": "Votre petite caisse en un coup d'œil.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Petite caisse de toute l'entreprise",
+    "ofFloats": "sur {{amount}} · Allocations : {{count}}",
+    "ofFloat": "sur {{amount}}",
+    "pending": "Pas encore payé",
+    "seeAll": "Voir toutes les allocations",
+    "team": "Petite caisse de vos unités"
   },
   "settings": {
-    "title": "Réglages",
-    "open": "Ouvrir les réglages",
     "language": "Langue",
-    "about": "À propos",
     "mode": "Mode",
     "modeDemo": "Démo, avec des données d'exemple",
     "modeLive": "En direct",
-    "version": "Version",
-    "done": "Terminé"
+    "version": "Version"
+  },
+  "demo": {
+    "sample": "Exemple"
+  },
+  "claims": {
+    "summary": "Demandes : {{count}} · {{amount}}",
+    "empty": "Aucune demande ici.",
+    "search": "Rechercher par texte ou montant"
+  },
+  "scan": {
+    "takePhoto": "Photographier le reçu",
+    "ai": "IA",
+    "choosePhoto": "Choisir dans les photos",
+    "claimDetails": "Détails de la demande",
+    "sentTitle": "Envoyée pour approbation",
+    "sentText": "{{reference}} attend maintenant {{name}}.",
+    "resentTitle": "Renvoyée",
+    "viewClaim": "Voir la demande",
+    "cameraDenied": "CashFlow a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
+    "manual": "Saisir les détails à la main",
+    "sampleNote": "Lecture d'exemple : dans la démo, chaque reçu se lit comme cet exemple, et la photo reste sur ce téléphone.",
+    "choosePdf": "Choisir un PDF"
+  },
+  "profile": {
+    "title": "Profil",
+    "twoFactorOn": "La connexion à deux facteurs est activée",
+    "twoFactorOff": "La connexion à deux facteurs est désactivée pour votre rôle",
+    "signOut": "Se déconnecter",
+    "appearance": "Automatique suit le réglage clair ou sombre de votre téléphone.",
+    "theme": "Apparence",
+    "themeAuto": "Automatique",
+    "themeLight": "Clair",
+    "themeDark": "Sombre"
+  },
+  "inbox": {
+    "toDecide": "Pour approbation",
+    "toAcknowledge": "Pour confirmation",
+    "submitted": "Envoyée il y a {{time}}"
+  },
+  "review": {
+    "done": {
+      "approved": "Approuvée",
+      "returned": "Retournée pour correction",
+      "rejected": "Rejetée"
+    },
+    "sentOn": "{{reference}} passe à {{names}}.",
+    "final": "{{reference}} est approuvée. La finance la paie ensuite.",
+    "returnedTo": "{{name}} est invité à corriger {{reference}}.",
+    "rejectedFor": "{{name}} verra votre motif.",
+    "backToInbox": "Retour à la boîte de réception",
+    "available": "{{reference}} dispose maintenant de {{amount}}."
+  },
+  "ack": {
+    "done": "Confirmée",
+    "paidOn": "Payée le {{date}}",
+    "doneText": "{{amount}} est maintenant disponible dans {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Toute l'entreprise",
+    "average": "Demande moyenne",
+    "share": "Partager le rapport",
+    "shareDemo": "Dans l'application réelle, le rapport est partagé en PDF ou Excel, depuis le même export que le web, et enregistré dans le journal d'audit.",
+    "search": "Rechercher des personnes, commerçants ou montants",
+    "spendingBy": "Dépenses par",
+    "top": "En tête : {{name}}",
+    "scopeTeam": "Vos unités"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Unités d'affaires",
+      "department": "Services",
+      "project": "Projets",
+      "custodian": "Dépositaires"
+    },
+    "heldBy": "Détenue par {{name}}"
+  },
+  "period": {
+    "title": "Période",
+    "all": "Toutes les dates",
+    "thisMonth": "Ce mois-ci",
+    "lastMonth": "Le mois dernier",
+    "last3": "Les 3 derniers mois",
+    "last6": "Les 6 derniers mois",
+    "thisYear": "Cette année",
+    "custom": "Choisir les dates",
+    "hint": "Touchez le premier jour, puis le dernier.",
+    "apply": "Appliquer",
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "pickMonth": "Choisir le mois et l'année",
+    "previousYear": "Année précédente",
+    "nextYear": "Année suivante",
+    "pickYear": "Choisir l'année"
+  },
+  "live": {
+    "retry": "Réessayer",
+    "signIn": {
+      "missing": "Saisissez votre nom d'utilisateur et votre mot de passe.",
+      "showPassword": "Afficher le mot de passe",
+      "hidePassword": "Masquer le mot de passe"
+    },
+    "notice": {
+      "expired": "Votre session a pris fin. Reconnectez-vous.",
+      "passwordChanged": "Mot de passe modifié. Connectez-vous avec le nouveau mot de passe."
+    },
+    "enroll": {
+      "app": "Application d'authentification",
+      "open": "Ajouter CashFlow à l'application",
+      "openHint": "Sur ce téléphone, cela ouvre votre application d'authentification avec CashFlow prêt à être ajouté. Installez d'abord l'application si ce n'est pas fait.",
+      "noApp": "Aucune application d'authentification ne s'est ouverte. Installez-en une, ou saisissez-y la clé ci-dessous.",
+      "key": "Ou saisissez cette clé dans l'application",
+      "code": "Puis saisissez le code à 6 chiffres affiché par l'application",
+      "confirm": "Confirmer et se connecter",
+      "codesTitle": "Enregistrez vos codes de récupération",
+      "codesHint": "Chaque code vous connecte une fois si vous perdez votre téléphone. Gardez-les en lieu sûr : ils ne seront plus affichés.",
+      "saved": "Je les ai enregistrés"
+    },
+    "password": {
+      "title": "Choisir un nouveau mot de passe",
+      "hint": "Un administrateur a défini votre mot de passe. Choisissez le vôtre pour continuer.",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "repeat": "Répéter le nouveau mot de passe",
+      "mismatch": "Les deux nouveaux mots de passe ne sont pas identiques.",
+      "missing": "Remplissez les trois champs.",
+      "save": "Enregistrer et se reconnecter"
+    },
+    "twoFactorOff": "La connexion à deux facteurs n'est pas configurée",
+    "claim": {
+      "noEmployee": "Ce compte n'est lié à aucun employé, il ne peut donc pas demander de remboursement.",
+      "reading": "L'IA lit le reçu…",
+      "checkEach": "Vérifiez chaque valeur avec le reçu. Les valeurs sûres à moins de {{min}} % sont surlignées.",
+      "chooseCategory": "Choisissez une catégorie.",
+      "chooseUnit": "Choisissez où imputer la demande.",
+      "noPreApproval": "Aucune",
+      "tooLarge": "Le fichier dépasse {{mb}} Mo. Choisissez-en un plus petit."
+    },
+    "refused": "Le serveur n'a pas pu accepter cela. Vérifiez les détails et réessayez.",
+    "review": {
+      "noReceipt": "Aucun reçu joint.",
+      "sent": "Envoyée pour approbation"
+    },
+    "report": {
+      "pdf": "Partager en PDF",
+      "excel": "Partager en Excel",
+      "noShare": "Le partage n'est pas disponible sur cet appareil.",
+      "more": "Afficher plus ({{shown}} sur {{total}})"
+    },
+    "offline": "Impossible de joindre le serveur. Ce que vous voyez a été chargé plus tôt et n'est peut-être pas à jour."
   }
 }

@@ -1,20 +1,52 @@
 /** The live screens' data from the CashFlow API, cached so a screen opens at once and refreshes behind. */
-import { QueryClient, useQuery } from '@tanstack/react-query';
+import { focusManager, keepPreviousData, QueryClient, useInfiniteQuery, useQuery } from '@tanstack/react-query';
+import { useSyncExternalStore } from 'react';
+import { AppState, Platform } from 'react-native';
 
 import { updateUser } from '@/auth/session';
 import { authMode } from '@/config';
 import { setLiveLookups } from '@/lib/format';
 import { monthStart, omanToday } from '@/mock/clock';
 
-import { apiDataUri, apiGet, apiPost, apiPut, apiUpload, type PhoneFile } from './client';
+import { ApiError, apiDataUri, apiGet, apiPost, apiPut, apiUpload, type PhoneFile } from './client';
 import type {
-  AcknowledgementItem, ApprovalItem, ApprovalReview, AttachmentInfo, AuthUser, ClaimInput, ClaimOptions, DocumentOptions, DocumentView, FinanceDashboard, LanguageSetting, LookupOption,
+  AcknowledgementItem, ApprovalItem, ApprovalReview, AttachmentInfo, AuthUser, GroupReport, TransactionReport, ClaimInput, ClaimOptions, DocumentOptions, DocumentView, FinanceDashboard, LanguageSetting, LookupOption,
   MyDashboard, MyTwoFactor, PaymentMethod, ReceiptExtraction, ReimbursementView, RequestKind,
 } from './types';
 
 export const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 1, staleTime: 30_000 } },
 });
+
+// Coming back to the app counts as focus, as a browser tab does, so stale lists refresh then.
+if (Platform.OS !== 'web') {
+  focusManager.setEventListener((setFocused) => {
+    const subscription = AppState.addEventListener('change', (state) => setFocused(state === 'active'));
+    return () => subscription.remove();
+  });
+}
+
+// Out of reach: the last request could not reach the server, until one gets through again.
+let offline = false;
+const offlineListeners = new Set<() => void>();
+queryClient.getQueryCache().subscribe((event) => {
+  if (event.type !== 'updated') return;
+  const { action } = event;
+  const next = action.type === 'error' ? action.error instanceof ApiError && action.error.status === 0 : action.type === 'success' ? false : offline;
+  if (next === offline) return;
+  offline = next;
+  offlineListeners.forEach((l) => l());
+});
+
+/** True while the server cannot be reached, so screens can say that what they show may be out of date. */
+export const useOffline = () =>
+  useSyncExternalStore(
+    (listener) => {
+      offlineListeners.add(listener);
+      return () => offlineListeners.delete(listener);
+    },
+    () => offline,
+  );
 
 const live = authMode === 'api';
 
@@ -206,6 +238,43 @@ export const ackTitle = (t: (key: string, options?: Record<string, unknown>) => 
     : a.kind === 'handover'
       ? t('web:ack.kind.reallocatedFrom', { reference: a.reallocatedFrom?.reference ?? a.allocationReference })
       : `${t('web:ack.kind.allocation')} · ${a.allocationReference}`;
+
+// ---- Reports ---------------------------------------------------------------------------
+
+export type SummaryView = 'category' | 'department' | 'project' | 'employee' | 'vendor';
+type Range = { from: string; to: string };
+
+const reportPath = (view: string, range: Range, search: string, extra = '') =>
+  `/Report/${view}?from=${range.from}&to=${range.to}${search.trim() ? `&search=${encodeURIComponent(search.trim())}` : ''}${extra}`;
+
+/** A summary report for the period and search; the last answer stays on screen while a new one loads. */
+export const useReport = (view: SummaryView, range: Range, search: string, enabled = true) =>
+  useQuery({
+    queryKey: ['report', view, range.from, range.to, search.trim()],
+    queryFn: () => apiGet<GroupReport>(reportPath(view, range, search)),
+    enabled: live && enabled,
+    placeholderData: keepPreviousData,
+  });
+
+/** Every claim in the period, fifty at a time, as the API pages them. */
+export const useTransactions = (range: Range, search: string, enabled = true) =>
+  useInfiniteQuery({
+    queryKey: ['report', 'transactions', range.from, range.to, search.trim()],
+    queryFn: ({ pageParam }) => apiGet<TransactionReport>(reportPath('transactions', range, search, `&page=${pageParam}`)),
+    initialPageParam: 1,
+    getNextPageParam: (last, pages) => {
+      const loaded = pages.reduce((n, p) => n + p.rows.length, 0);
+      return last.totalRows && loaded < last.totalRows ? pages.length + 1 : undefined;
+    },
+    enabled: live && enabled,
+  });
+
+/**
+ * The whole report for a file: an export returns every row, unpaged, and the API records it in the
+ * Audit Log as the web's exports are, with the note saying what was exported.
+ */
+export const exportReport = <T,>(view: SummaryView | 'transactions', range: Range, search: string, format: 'pdf' | 'excel', note: string) =>
+  apiGet<T>(reportPath(view, range, search, `&export=${format}&exportNote=${encodeURIComponent(note)}`));
 
 /** Whether the role holds a right in the Permission Matrix, as the web menu decides. */
 export const holds = (user: AuthUser, module: string, action = 'view') => !!user.grants?.[module]?.includes(action);

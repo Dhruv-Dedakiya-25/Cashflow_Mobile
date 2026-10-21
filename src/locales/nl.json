@@ -10,25 +10,169 @@
     "morning": "Goedemorgen",
     "afternoon": "Goedemiddag",
     "evening": "Goedenavond",
-    "subtitle": "Je kleine kas in één oogopslag."
-  },
-  "placeholder": {
-    "home": "Hier zie je je cijfers, openstaande declaraties en recente activiteit.",
-    "claims": "Elke declaratie met status, goedkeuringsroute en bon.",
-    "scan": "Maak een foto van een bon. De AI leest hem en jij controleert de gegevens.",
-    "inbox": "Verzoeken die wachten op jouw beslissing of bevestiging.",
-    "reports": "Uitgaven per categorie, afdeling en maand.",
-    "next": "Wordt ontworpen"
+    "subtitle": "Je kleine kas in één oogopslag.",
+    "hello": "{{greeting}}, {{name}}",
+    "company": "Kleine kas in het hele bedrijf",
+    "ofFloats": "van {{amount}} · Toewijzingen: {{count}}",
+    "ofFloat": "van {{amount}}",
+    "pending": "Nog niet betaald",
+    "seeAll": "Alle toewijzingen bekijken",
+    "team": "Kleine kas in uw eenheden"
   },
   "settings": {
-    "title": "Instellingen",
-    "open": "Instellingen openen",
     "language": "Taal",
-    "about": "Over de app",
     "mode": "Modus",
     "modeDemo": "Demo, met voorbeeldgegevens",
     "modeLive": "Live",
-    "version": "Versie",
-    "done": "Klaar"
+    "version": "Versie"
+  },
+  "demo": {
+    "sample": "Voorbeeld"
+  },
+  "claims": {
+    "summary": "Declaraties: {{count}} · {{amount}}",
+    "empty": "Hier staan geen declaraties.",
+    "search": "Zoeken op tekst of bedrag"
+  },
+  "scan": {
+    "takePhoto": "Maak een foto van de bon",
+    "ai": "AI",
+    "choosePhoto": "Kiezen uit foto's",
+    "claimDetails": "Gegevens van de declaratie",
+    "sentTitle": "Ter goedkeuring verstuurd",
+    "sentText": "{{reference}} wacht nu op {{name}}.",
+    "resentTitle": "Opnieuw verstuurd",
+    "viewClaim": "Declaratie bekijken",
+    "cameraDenied": "CashFlow heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
+    "manual": "Gegevens zelf invoeren",
+    "sampleNote": "Voorbeeldlezing: in de demo leest elke bon als dit voorbeeld, en de foto blijft op deze telefoon.",
+    "choosePdf": "Kies een pdf"
+  },
+  "profile": {
+    "title": "Profiel",
+    "twoFactorOn": "Inloggen in twee stappen staat aan",
+    "twoFactorOff": "Inloggen in twee stappen staat uit voor uw rol",
+    "signOut": "Uitloggen",
+    "appearance": "Automatisch volgt de lichte of donkere instelling van uw telefoon.",
+    "theme": "Weergave",
+    "themeAuto": "Automatisch",
+    "themeLight": "Licht",
+    "themeDark": "Donker"
+  },
+  "inbox": {
+    "toDecide": "Ter goedkeuring",
+    "toAcknowledge": "Ter bevestiging",
+    "submitted": "{{time}} geleden verstuurd"
+  },
+  "review": {
+    "done": {
+      "approved": "Goedgekeurd",
+      "returned": "Teruggestuurd ter correctie",
+      "rejected": "Afgewezen"
+    },
+    "sentOn": "{{reference}} gaat door naar {{names}}.",
+    "final": "{{reference}} is goedgekeurd. Financiën betaalt hem nu uit.",
+    "returnedTo": "{{name}} wordt gevraagd {{reference}} te corrigeren.",
+    "rejectedFor": "{{name}} ziet uw reden.",
+    "backToInbox": "Terug naar Inbox",
+    "available": "{{reference}} heeft nu {{amount}} beschikbaar."
+  },
+  "ack": {
+    "done": "Bevestigd",
+    "paidOn": "Betaald op {{date}}",
+    "doneText": "{{amount}} is nu beschikbaar in {{reference}}."
+  },
+  "reports": {
+    "scopeCompany": "Hele bedrijf",
+    "average": "Gemiddelde declaratie",
+    "share": "Rapport delen",
+    "shareDemo": "In de live-app wordt het rapport gedeeld als pdf of Excel, uit dezelfde export als op het web, en vastgelegd in het auditlogboek.",
+    "search": "Zoek personen, winkels of bedragen",
+    "spendingBy": "Uitgaven per",
+    "top": "Hoogste: {{name}}",
+    "scopeTeam": "Uw eenheden"
+  },
+  "pettyCash": {
+    "level": {
+      "businessUnit": "Bedrijfseenheden",
+      "department": "Afdelingen",
+      "project": "Projecten",
+      "custodian": "Kasbeheerders"
+    },
+    "heldBy": "Beheerd door {{name}}"
+  },
+  "period": {
+    "title": "Periode",
+    "all": "Alle datums",
+    "thisMonth": "Deze maand",
+    "lastMonth": "Vorige maand",
+    "last3": "Laatste 3 maanden",
+    "last6": "Laatste 6 maanden",
+    "thisYear": "Dit jaar",
+    "custom": "Datums kiezen",
+    "hint": "Tik op de eerste dag en daarna op de laatste.",
+    "apply": "Toepassen",
+    "previousMonth": "Vorige maand",
+    "nextMonth": "Volgende maand",
+    "pickMonth": "Maand en jaar kiezen",
+    "previousYear": "Vorig jaar",
+    "nextYear": "Volgend jaar",
+    "pickYear": "Jaar kiezen"
+  },
+  "live": {
+    "retry": "Opnieuw proberen",
+    "signIn": {
+      "missing": "Vul uw gebruikersnaam en wachtwoord in.",
+      "showPassword": "Wachtwoord tonen",
+      "hidePassword": "Wachtwoord verbergen"
+    },
+    "notice": {
+      "expired": "Uw sessie is beëindigd. Log opnieuw in.",
+      "passwordChanged": "Wachtwoord gewijzigd. Log in met uw nieuwe wachtwoord."
+    },
+    "enroll": {
+      "app": "Authenticator-app",
+      "open": "CashFlow aan de app toevoegen",
+      "openHint": "Op deze telefoon opent dit uw authenticator-app met CashFlow klaar om toe te voegen. Installeer de app eerst als u dat nog niet hebt gedaan.",
+      "noApp": "Er is geen authenticator-app geopend. Installeer er een, of typ de sleutel hieronder in de app.",
+      "key": "Of typ deze sleutel in de app",
+      "code": "Vul dan de 6-cijferige code uit de app in",
+      "confirm": "Bevestigen en inloggen",
+      "codesTitle": "Bewaar uw herstelcodes",
+      "codesHint": "Met elke code logt u één keer in als u uw telefoon kwijtraakt. Bewaar ze op een veilige plek: ze worden niet opnieuw getoond.",
+      "saved": "Ik heb ze bewaard"
+    },
+    "password": {
+      "title": "Kies een nieuw wachtwoord",
+      "hint": "Een beheerder heeft uw wachtwoord ingesteld. Kies uw eigen wachtwoord om verder te gaan.",
+      "current": "Huidig wachtwoord",
+      "new": "Nieuw wachtwoord",
+      "repeat": "Herhaal het nieuwe wachtwoord",
+      "mismatch": "De twee nieuwe wachtwoorden zijn niet gelijk.",
+      "missing": "Vul alle drie de velden in.",
+      "save": "Opslaan en opnieuw inloggen"
+    },
+    "twoFactorOff": "Inloggen in twee stappen is niet ingesteld",
+    "claim": {
+      "noEmployee": "Dit account is niet aan een medewerker gekoppeld en kan dus geen kosten declareren.",
+      "reading": "De AI leest de bon…",
+      "checkEach": "Controleer elke waarde met de bon. Waarden met minder dan {{min}}% zekerheid zijn gemarkeerd.",
+      "chooseCategory": "Kies een categorie.",
+      "chooseUnit": "Kies waar de declaratie wordt geboekt.",
+      "noPreApproval": "Geen",
+      "tooLarge": "Het bestand is groter dan {{mb}} MB. Kies een kleiner bestand."
+    },
+    "refused": "De server kon dit niet accepteren. Controleer de gegevens en probeer het opnieuw.",
+    "review": {
+      "noReceipt": "Geen bon bijgevoegd.",
+      "sent": "Ter goedkeuring verstuurd"
+    },
+    "report": {
+      "pdf": "Delen als pdf",
+      "excel": "Delen als Excel",
+      "noShare": "Delen is op dit apparaat niet beschikbaar.",
+      "more": "Meer tonen ({{shown}} van {{total}})"
+    },
+    "offline": "De server is niet bereikbaar. Wat u ziet is eerder geladen en is mogelijk niet actueel."
   }
 }

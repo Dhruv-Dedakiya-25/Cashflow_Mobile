@@ -1,13 +1,11 @@
-import { IconFlask } from '@tabler/icons-react-native';
 import type { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import { RefreshControl, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppText } from '@/components/app-text';
-import { authMode } from '@/config';
+import { OfflineNote } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { radius, space, usePalette } from '@/theme/tokens';
+import { contentColumn, space, usePalette } from '@/theme/tokens';
 
 type ScreenProps = {
   title: string;
@@ -19,14 +17,11 @@ type ScreenProps = {
   /** Pull down to reload, with the spinner shown while `refreshing`. */
   onRefresh?: () => void;
   refreshing?: boolean;
-  /** A tab that still shows sample data. In live mode it says so, so sample and real figures are never confused. */
-  sample?: boolean;
   children?: ReactNode;
 };
 
 /** A tab's page: safe-area aware, scrolls, title row at the top. */
-export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing = false, sample, children }: ScreenProps) {
-  const { t } = useTranslation();
+export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing = false, children }: ScreenProps) {
   const palette = usePalette();
   const insets = useSafeAreaInsets();
   const { isRTL } = useLanguage();
@@ -35,6 +30,7 @@ export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing
       <ScrollView
         refreshControl={onRefresh ? <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={palette.primary} /> : undefined}
         contentContainerStyle={{
+          ...contentColumn,
           paddingTop: insets.top + space.lg,
           paddingHorizontal: space.xl,
           paddingBottom: space.xxxl,
@@ -54,14 +50,7 @@ export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing
           </View>
           {action}
         </View>
-        {sample && authMode === 'api' ? (
-          <View style={{ flexDirection: 'row', gap: space.sm, backgroundColor: palette.warningSoft, borderRadius: radius.lg, padding: space.md }}>
-            <IconFlask size={18} color={palette.warning} />
-            <AppText variant="small" style={{ flex: 1 }}>
-              {t('live.sampleScreen')}
-            </AppText>
-          </View>
-        ) : null}
+        <OfflineNote />
         {children}
       </ScrollView>
     </View>
