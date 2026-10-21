@@ -93,6 +93,9 @@ export const type = {
 
 export const space = { xs: 4, sm: 8, md: 12, lg: 16, xl: 20, xxl: 28, xxxl: 40 } as const;
 
+/** The content column: on a tablet or a wide window it stops at 640pt and centres, so cards and lines stay readable. */
+export const contentColumn = { width: '100%', maxWidth: 640, alignSelf: 'center' } as const;
+
 export const radius = { sm: 8, md: 10, lg: 14, xl: 18, pill: 999 } as const;
 
 export function usePalette(): Palette {

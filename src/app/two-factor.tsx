@@ -12,7 +12,7 @@ import { getChallenge, SignInError, verifyTwoFactor } from '@/auth/session';
 import { authMode } from '@/config';
 import { personas, type Persona } from '@/mock/master';
 import { signIn } from '@/mock/store';
-import { fonts, radius, space, usePalette } from '@/theme/tokens';
+import { contentColumn, fonts, radius, space, usePalette } from '@/theme/tokens';
 
 export default function TwoFactorScreen() {
   const { t } = useTranslation();
@@ -58,7 +58,7 @@ export default function TwoFactorScreen() {
 
   return (
     <KeyboardAvoidingView style={{ flex: 1, backgroundColor: palette.bg, direction: isRTL ? 'rtl' : 'ltr' }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <ScrollView contentContainerStyle={{ paddingTop: insets.top + space.lg, paddingHorizontal: space.xl, paddingBottom: insets.bottom + space.xxl, gap: space.xl }} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={{ ...contentColumn, paddingTop: insets.top + space.lg, paddingHorizontal: space.xl, paddingBottom: insets.bottom + space.xxl, gap: space.xl }} keyboardShouldPersistTaps="handled">
         <Pressable onPress={() => router.back()} accessibilityRole="button" style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, alignSelf: 'flex-start', paddingVertical: space.sm }}>
           <Back size={20} color={palette.text} />
           <AppText weight="medium">{t('web:auth.twoFactor.back')}</AppText>

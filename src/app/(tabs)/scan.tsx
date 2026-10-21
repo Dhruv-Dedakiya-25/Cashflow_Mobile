@@ -1,4 +1,4 @@
-import { IconBulb, IconCamera, IconFileInvoice, IconFileTypePdf, IconFocusCentered, IconKeyboard, IconPhoto } from '@tabler/icons-react-native';
+import { IconBulb, IconCamera, IconFileInvoice, IconFileTypePdf, IconFocusCentered, IconKeyboard, IconPhoto, IconSparkles } from '@tabler/icons-react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
@@ -6,23 +6,48 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 
+import { useDocumentOptions } from '@/api/live';
 import { AppText } from '@/components/app-text';
 import { Screen } from '@/components/screen';
 import { Card } from '@/components/ui';
 import { authMode } from '@/config';
-import { radius, space, usePalette } from '@/theme/tokens';
+import { radius, space, type, usePalette } from '@/theme/tokens';
 
-function Option({ icon: IconComponent, label, onPress }: { icon: typeof IconPhoto; label: string; onPress: () => void }) {
+/** One way to start a claim. The photo, what most people do, is the blue tile. */
+function Tile({ icon: IconComponent, label, onPress, primary, badge }: { icon: typeof IconPhoto; label: string; onPress: () => void; primary?: boolean; badge?: string }) {
   const palette = usePalette();
   return (
-    <Card onPress={onPress} style={{ flex: 1, alignItems: 'center', gap: space.sm, paddingVertical: space.lg }}>
-      <View style={{ width: 44, height: 44, borderRadius: radius.lg, backgroundColor: palette.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
-        <IconComponent size={22} color={palette.primary} strokeWidth={1.9} />
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      style={({ pressed }) => ({
+        flex: 1,
+        minHeight: 132,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: space.md,
+        padding: space.lg,
+        borderRadius: radius.xl,
+        borderWidth: 1,
+        borderColor: primary ? palette.primary : palette.border,
+        backgroundColor: primary ? (pressed ? palette.primaryPressed : palette.primary) : pressed ? palette.surface : palette.card,
+      })}>
+      {badge ? (
+        <View style={{ position: 'absolute', top: space.sm, end: space.sm, flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: space.sm, paddingVertical: 2, borderRadius: radius.pill, backgroundColor: primary ? 'rgba(255,255,255,0.22)' : palette.primarySoft }}>
+          <IconSparkles size={12} color={primary ? palette.onPrimary : palette.primary} strokeWidth={2} />
+          <AppText variant="caption" weight="bold" tone={primary ? 'onPrimary' : 'primary'} maxFontSizeMultiplier={1.2}>
+            {badge}
+          </AppText>
+        </View>
+      ) : null}
+      <View style={{ width: 48, height: 48, borderRadius: radius.lg, backgroundColor: primary ? 'rgba(255,255,255,0.18)' : palette.primarySoft, alignItems: 'center', justifyContent: 'center' }}>
+        <IconComponent size={24} color={primary ? palette.onPrimary : palette.primary} strokeWidth={1.9} />
       </View>
-      <AppText variant="small" weight="semibold" align="center">
+      {/* Room for two lines, so the icons line up whether a label wraps or not. */}
+      <AppText variant="small" weight="semibold" align="center" tone={primary ? 'onPrimary' : 'default'} style={{ minHeight: type.small.lineHeight * 2 }}>
         {label}
       </AppText>
-    </Card>
+    </Pressable>
   );
 }
 
@@ -30,6 +55,10 @@ export default function ScanScreen() {
   const { t } = useTranslation();
   const palette = usePalette();
   const [denied, setDenied] = useState(false);
+  // The AI badge only while AI & Document Processing reads receipts; the demo always reads its sample.
+  // Its word is the short form in every language (AI, KI, IA, ИИ…), so it never reaches the camera icon.
+  const documents = useDocumentOptions();
+  const aiReads = authMode === 'api' ? !!documents.data?.extractionEnabled : true;
 
   const open = (photo?: ImagePicker.ImagePickerAsset) =>
     router.push({ pathname: '/scan-review', params: photo ? { uri: photo.uri, width: String(photo.width) } : { sample: '1' } });
@@ -56,34 +85,22 @@ export default function ScanScreen() {
 
   return (
     <Screen title={t('tabs.scan')} subtitle={t('web:scan.subtitle')}>
-      <Pressable onPress={takePhoto} accessibilityRole="button" style={({ pressed }) => ({ borderRadius: radius.xl, overflow: 'hidden', transform: [{ scale: pressed ? 0.99 : 1 }] })}>
-        <View style={{ backgroundColor: palette.primary, padding: space.xl, gap: space.lg, minHeight: 210, justifyContent: 'space-between' }}>
-          <View style={{ position: 'absolute', end: -40, bottom: -40, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(255,255,255,0.10)' }} />
-          <View style={{ position: 'absolute', end: 40, top: -30, width: 90, height: 90, borderRadius: 45, backgroundColor: 'rgba(255,255,255,0.08)' }} />
-          <View style={{ width: 60, height: 60, borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.18)', alignItems: 'center', justifyContent: 'center' }}>
-            <IconCamera size={32} color={palette.onPrimary} strokeWidth={1.8} />
-          </View>
-          <View style={{ gap: 4 }}>
-            <AppText variant="title" weight="bold" tone="onPrimary">
-              {t('scan.takePhoto')}
-            </AppText>
-            <AppText tone="onPrimary" style={{ opacity: 0.85 }}>
-              {t('scan.takePhotoHint')}
-            </AppText>
-          </View>
+      <View style={{ gap: space.md }}>
+        <View style={{ flexDirection: 'row', gap: space.md }}>
+          <Tile icon={IconCamera} label={t('scan.takePhoto')} onPress={takePhoto} primary badge={aiReads ? t('scan.ai') : undefined} />
+          <Tile icon={IconKeyboard} label={t('scan.manual')} onPress={() => router.push({ pathname: '/scan-review', params: { manual: '1' } })} />
         </View>
-      </Pressable>
+        <View style={{ flexDirection: 'row', gap: space.md }}>
+          <Tile icon={IconPhoto} label={t('scan.choosePhoto')} onPress={choosePhoto} />
+          {authMode === 'api' ? (
+            <Tile icon={IconFileTypePdf} label={t('scan.choosePdf')} onPress={choosePdf} />
+          ) : (
+            <Tile icon={IconFileInvoice} label={t('web:scan.useSample')} onPress={() => open()} />
+          )}
+        </View>
+      </View>
 
       {denied ? <AppText tone="danger">{t('scan.cameraDenied')}</AppText> : null}
-
-      <View style={{ flexDirection: 'row', gap: space.md }}>
-        <Option icon={IconPhoto} label={t('scan.choosePhoto')} onPress={choosePhoto} />
-        {authMode === 'api' ? (
-          <Option icon={IconFileTypePdf} label={t('scan.choosePdf')} onPress={choosePdf} />
-        ) : (
-          <Option icon={IconFileInvoice} label={t('web:scan.useSample')} onPress={() => open()} />
-        )}
-      </View>
 
       <Card style={{ gap: space.md }}>
         {[
@@ -99,12 +116,6 @@ export default function ScanScreen() {
         ))}
       </Card>
 
-      <Pressable onPress={() => router.push({ pathname: '/scan-review', params: { manual: '1' } })} accessibilityRole="button" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: space.sm, paddingVertical: space.md }}>
-        <IconKeyboard size={18} color={palette.primary} />
-        <AppText weight="semibold" tone="primary">
-          {t('web:scan.noReceipt')} {t('scan.manual')}
-        </AppText>
-      </Pressable>
     </Screen>
   );
 }
