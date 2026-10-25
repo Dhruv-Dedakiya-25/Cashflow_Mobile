@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react';
 
 import type {
-  AllocationPosition, ApprovalItem, CostLevel, MyDashboard, MyRequest, ReceiptExtraction, ReimbursementView,
+  AllocationPosition, ApprovalItem, ClaimFinanceInput, CostLevel, MyDashboard, MyRequest, ReceiptExtraction, ReimbursementView,
   RequestStatus, SettlementMethod, VatTreatment,
 } from '@/api/types';
 
@@ -137,10 +137,12 @@ function applyDecision<T extends Decidable>(request: T, personId: string, action
   return { ...request, route, status, currentStep, history };
 }
 
-export function decide(kind: ApprovalItem['kind'], id: string, action: DecisionAction, comment?: string) {
+/** A decision on the waiting step; Finance's approval of a claim also saves what it settled. */
+export function decide(kind: ApprovalItem['kind'], id: string, action: DecisionAction, comment?: string, finance?: ClaimFinanceInput) {
   const personId = state.session?.personId;
   if (!personId) return;
-  if (kind === 'reimbursement') update({ claims: state.claims.map((c) => (c.id === id ? applyDecision(c, personId, action, comment) : c)) });
+  const settle = (c: ReimbursementView) => (finance ? { ...c, ...finance, ...computeVat(finance.enteredAmount, finance.vatTreatment) } : c);
+  if (kind === 'reimbursement') update({ claims: state.claims.map((c) => (c.id === id ? applyDecision(settle(c), personId, action, comment) : c)) });
   else update({ others: state.others.map((o) => (o.id === id ? applyDecision(o, personId, action, comment) : o)) });
 }
 

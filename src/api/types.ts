@@ -29,6 +29,8 @@ export interface RouteStep {
   approvalMode: 'any' | 'all';
   slaHours: number;
   approverIds: string[];
+  /** Where its approvers come from, such as "role"; the API sends it, the sample routes leave it out. */
+  approverSource?: string;
   state: StepState;
   skipReason?: SkipReason;
   approvedByIds: string[];
@@ -246,8 +248,6 @@ export interface AuthUser {
   mustChangePassword?: boolean;
   /** The role's rights in the Permission Matrix: module → actions, such as Reports → ["view"]. */
   grants: Record<string, string[]>;
-  /** "disburser", "recipient": the person's entries on Disbursers & Recipients. */
-  cashRoles: string[];
 }
 
 /** A started session, the same as the web receives. */
@@ -346,6 +346,15 @@ export interface ClaimInput {
 }
 
 type UnitsByLevel = Record<CostLevel, string[]>;
+
+/** What Finance settles on a claim at its approval step, sent with its approval. */
+export interface ClaimFinanceInput {
+  enteredAmount: number;
+  vatTreatment: VatTreatment;
+  costLevel: CostLevel;
+  costId: string;
+  settlement: SettlementMethod;
+}
 
 /** What /api/Reimbursement/getClaimOptions allows the person, and the rules a claim must meet. */
 export interface ClaimOptions {

@@ -1,6 +1,8 @@
-import { IconAdjustments, IconAlertTriangle, IconCheck, IconFileTypePdf, IconSparkles, IconUpload, IconUserCheck } from '@tabler/icons-react-native';
+import { IconAdjustments, IconAlertTriangle, IconCamera, IconCheck, IconFileTypePdf, IconPhoto, IconSparkles, IconUpload, IconUserCheck } from '@tabler/icons-react-native';
+import * as DocumentPicker from 'expo-document-picker';
 import { Image } from 'expo-image';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
+import * as ImagePicker from 'expo-image-picker';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,14 +10,14 @@ import { ActivityIndicator, View } from 'react-native';
 
 import { ApiError, type PhoneFile } from '@/api/client';
 import { asReceipt, readReceipt, submitClaim, uploadReceipt, useClaim, useClaimOptions, useDocumentOptions } from '@/api/live';
-import type { AttachmentInfo, ClaimInput, ClaimOptions, CostLevel, DocumentOptions, ExtractedField, ReceiptExtraction, ReimbursementView, SettlementMethod } from '@/api/types';
+import type { AttachmentInfo, ClaimInput, ClaimOptions, DocumentOptions, ExtractedField, ReceiptExtraction, ReimbursementView } from '@/api/types';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { Page } from '@/components/page';
 import { isPhoto, ReceiptPhoto } from '@/components/receipt-photo';
-import { Button, Card, Chips, Field, SectionHeader, Segmented } from '@/components/ui';
+import { Button, Card, Chips, Field, SectionHeader } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { amount, categoryChoices, longDate, nameOf, payeeOf, providerName, unit, vendor } from '@/lib/format';
+import { amount, categoryChoices, longDate, nameOf, payeeOf, providerName, vendor } from '@/lib/format';
 import { omanToday } from '@/mock/clock';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -23,6 +25,8 @@ import { radius, space, usePalette } from '@/theme/tokens';
 const MAX_WIDTH = 1600;
 
 type Params = { uri?: string; width?: string; pdf?: string; name?: string; size?: string; claimId?: string };
+/** A receipt picked on the phone: a photo (with its width) or a PDF (with its name and size). */
+type Source = { uri?: string; width?: string | number; pdf?: string; name?: string; size?: string | number };
 type Stage = 'preparing' | 'uploading' | 'reading' | 'review';
 type AiNote = { key: string } | { message: string };
 
@@ -33,6 +37,18 @@ const stages = [
   { key: 'verified', icon: IconUserCheck },
 ] as const;
 const stageIndex: Record<Stage, number> = { preparing: 0, uploading: 1, reading: 2, review: 3 };
+
+/** The receipt made ready to upload: a photo as a JPEG at most MAX_WIDTH wide (an iPhone's HEIC included), a PDF as it is. */
+async function prepare(source: Source, maxUploadMb: number, tooLarge: string): Promise<PhoneFile> {
+  if (source.uri) {
+    const context = ImageManipulator.manipulate(source.uri);
+    if (Number(source.width) > MAX_WIDTH) context.resize({ width: MAX_WIDTH });
+    const photo = await (await context.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.75 });
+    return { uri: photo.uri, name: `receipt-${Date.now()}.jpg`, type: 'image/jpeg' };
+  }
+  if (Number(source.size) > maxUploadMb * 1024 * 1024) throw new Error(tooLarge);
+  return { uri: source.pdf!, name: source.name || 'receipt.pdf', type: 'application/pdf' };
+}
 
 /**
  * Live mode's Submit Bill and Correct and Resubmit: the receipt is made ready, uploaded and read
@@ -68,20 +84,11 @@ export function LiveClaimForm() {
   return <ClaimForm params={params} options={options.data} documents={documents.data} editing={editing} beneficiaryId={beneficiaryId} />;
 }
 
-/** Where a claim may be charged, petty-cash units first, as "level:id" keys. */
-function costChoices(options: ClaimOptions) {
-  const levels: CostLevel[] = ['department', 'businessUnit', 'project'];
-  const funded = levels.flatMap((level) => options.fundedUnits[level].map((id) => `${level}:${id}`));
-  const others = levels.flatMap((level) => options.costUnits[level].map((id) => `${level}:${id}`)).filter((k) => !funded.includes(k));
-  return [...funded, ...others];
-}
-
 function ClaimForm({ params, options, documents, editing, beneficiaryId }: { params: Params; options: ClaimOptions; documents: DocumentOptions; editing?: ReimbursementView; beneficiaryId: string }) {
   const { t } = useTranslation();
   const palette = usePalette();
   const { language } = useLanguage();
   const code = language.code;
-  const choices = costChoices(options);
   const hasFile = !!(params.uri || params.pdf);
 
   const [stage, setStage] = useState<Stage>(hasFile ? 'preparing' : 'review');
@@ -94,16 +101,15 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
   const [date, setDate] = useState(editing?.expenseDate ?? omanToday());
   const [receiptNo, setReceiptNo] = useState(editing?.receiptNo ?? '');
   const [total, setTotal] = useState(editing ? editing.enteredAmount.toFixed(3) : '');
-  const [vat, setVat] = useState(editing ? editing.vat.toFixed(3) : '');
   const [categoryId, setCategoryId] = useState(editing?.categoryId ?? '');
   const [description, setDescription] = useState(editing?.description ?? '');
-  const [cost, setCost] = useState(editing ? `${editing.costLevel}:${editing.costId}` : choices[0] ?? '');
-  const [settlement, setSettlement] = useState<SettlementMethod>(editing?.settlement ?? 'pettyCash');
   const [preApprovalId, setPreApprovalId] = useState(editing?.preExpenseId ?? '');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [corrected, setCorrected] = useState<Set<ExtractedField>>(new Set());
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState<string>();
+  const [attaching, setAttaching] = useState(false);
+  const [cameraDenied, setCameraDenied] = useState(false);
 
   // The receipt's journey: a photo made a JPEG at most MAX_WIDTH wide (an iPhone's HEIC included),
   // uploaded, then read by AI when it is switched on. A PDF is stored as it is; AI reads photos only.
@@ -112,16 +118,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
     let active = true;
     (async () => {
       try {
-        let file: PhoneFile;
-        if (params.uri) {
-          const context = ImageManipulator.manipulate(params.uri);
-          if (Number(params.width) > MAX_WIDTH) context.resize({ width: MAX_WIDTH });
-          const photo = await (await context.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.75 });
-          file = { uri: photo.uri, name: `receipt-${Date.now()}.jpg`, type: 'image/jpeg' };
-        } else {
-          if (Number(params.size) > documents.maxUploadMb * 1024 * 1024) throw new Error(t('live.claim.tooLarge', { mb: documents.maxUploadMb }));
-          file = { uri: params.pdf!, name: params.name || 'receipt.pdf', type: 'application/pdf' };
-        }
+        const file = await prepare(params, documents.maxUploadMb, t('live.claim.tooLarge', { mb: documents.maxUploadMb }));
         if (!active) return;
         setStage('uploading');
         const stored = await uploadReceipt(file);
@@ -143,7 +140,6 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
           if (f.expenseDate?.value) setDate(f.expenseDate.value.slice(0, 10));
           if (f.receiptNo?.value) setReceiptNo(f.receiptNo.value);
           if (f.grossAmount?.value && Number(f.grossAmount.value) > 0) setTotal(Number(f.grossAmount.value).toFixed(3));
-          if (f.vatAmount?.value && Number(f.vatAmount.value) >= 0) setVat(Number(f.vatAmount.value).toFixed(3));
           if (read.categoryId) setCategoryId(read.categoryId);
           if (!Object.keys(f).length) setAiNote({ key: 'web:scan.aiUnclear' });
         } catch (e) {
@@ -164,14 +160,43 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Manual entry and corrections attach the bill here. It is stored as it is: AI does not read over what was typed.
+  const attach = async (pick: () => Promise<Source | undefined>) => {
+    setFileError(undefined);
+    try {
+      const source = await pick();
+      if (!source) return;
+      setAttaching(true);
+      setReceipt(asReceipt(await uploadReceipt(await prepare(source, documents.maxUploadMb, t('live.claim.tooLarge', { mb: documents.maxUploadMb })))));
+      setErrors((e) => ({ ...e, receipt: '' }));
+    } catch (e) {
+      setFileError((e as Error).message);
+    } finally {
+      setAttaching(false);
+    }
+  };
+  const photoOf = (r: ImagePicker.ImagePickerResult): Source | undefined => (r.canceled ? undefined : { uri: r.assets[0].uri, width: r.assets[0].width });
+  const takePhoto = () =>
+    attach(async () => {
+      if (!(await ImagePicker.requestCameraPermissionsAsync()).granted) {
+        setCameraDenied(true);
+        return undefined;
+      }
+      return photoOf(await ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] }));
+    });
+  const choosePhoto = () => attach(async () => photoOf(await ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] })));
+  const choosePdf = () =>
+    attach(async () => {
+      const r = await DocumentPicker.getDocumentAsync({ type: 'application/pdf', copyToCacheDirectory: true });
+      return r.canceled ? undefined : { pdf: r.assets[0].uri, name: r.assets[0].name, size: r.assets[0].size ?? 0 };
+    });
+
   const low = (field: ExtractedField) => {
     const c = extraction?.fields[field]?.confidence;
     return c !== undefined && c < documents.minConfidence && !corrected.has(field);
   };
   const touch = (field: ExtractedField) => setCorrected((s) => new Set(s).add(field));
 
-  const [costLevel, costId] = cost.split(':') as [CostLevel, string];
-  const allocation = options.allocations.find((a) => a.costLevel === costLevel && a.unitId === costId);
   const preApproval = options.preApprovals.find((p) => p.id === preApprovalId);
   const receiptNeeded = options.requireReceipt || options.receiptCategoryIds.includes(categoryId);
 
@@ -184,11 +209,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
     if (!(value > 0) || !/^\d+(\.\d{1,3})?$/.test(total.trim())) next.total = t('web:txn.refusal.amount');
     if (!categoryId) next.category = t('live.claim.chooseCategory');
     if (!description.trim()) next.description = t('web:claim.check.purpose');
-    if (!cost) next.cost = t('live.claim.chooseUnit');
     if (receiptNeeded && !receipt) next.receipt = t('web:reimb.check.receiptRequired');
-    if (settlement === 'pettyCash' && options.requireActiveAllocation && !allocation) next.settlement = t('web:reimb.check.noAllocation');
-    else if (settlement === 'pettyCash' && options.preventNegativeBalance && allocation && value > allocation.available)
-      next.settlement = t('web:reimb.check.notEnoughCash', { reference: allocation.reference, available: amount(allocation.available, code) });
     if (preApproval && value > preApproval.remaining) next.total = t('web:reimb.check.overPreApproval', { remaining: amount(preApproval.remaining, code) });
     setErrors(next);
     if (Object.keys(next).length) return setSendError(t('web:reimb.check.fixFields'));
@@ -203,10 +224,11 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
       receiptNo: receiptNo.trim() || undefined,
       description: description.trim(),
       enteredAmount: value,
-      vatTreatment: Number(vat) > 0 ? 'inclusive' : 'none',
-      costLevel,
-      costId,
-      settlement,
+      // Finance sets these at its step; the server starts every claim on them whatever is sent.
+      vatTreatment: 'inclusive',
+      costLevel: preApproval?.costLevel ?? 'department',
+      costId: preApproval?.costId ?? options.costUnits.department[0],
+      settlement: 'pettyCash',
       receipt,
     };
     setSending(true);
@@ -257,9 +279,9 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
 
       {params.uri ? (
         <Image source={{ uri: params.uri }} style={{ width: '100%', aspectRatio: 3 / 4, borderRadius: radius.lg, backgroundColor: palette.surfaceStrong }} contentFit="contain" />
-      ) : editing && isPhoto(receipt) ? (
+      ) : isPhoto(receipt) ? (
         <ReceiptPhoto receipt={receipt!} />
-      ) : params.pdf || (editing && receipt) ? (
+      ) : params.pdf || receipt ? (
         <Card style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
           <IconFileTypePdf size={28} color={palette.danger} />
           <AppText weight="medium" style={{ flex: 1 }} numberOfLines={1}>
@@ -268,7 +290,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
         </Card>
       ) : null}
 
-      {fileError ? <AppText tone="danger">{fileError}</AppText> : null}
+      {fileError && hasFile ? <AppText tone="danger">{fileError}</AppText> : null}
 
       {working ? (
         <Card style={{ alignItems: 'center', paddingVertical: space.xl }}>
@@ -322,21 +344,15 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
                 <Field label={t('web:scan.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
               </View>
             </View>
-            <View style={{ flexDirection: 'row', gap: space.md }}>
-              <View style={{ flex: 1 }}>
-                <Field label={`${t('web:scan.field.grossAmount')} · OMR`} value={total} onChangeText={(v) => { setTotal(v); touch('grossAmount'); }} keyboardType="decimal-pad" error={errors.total} warn={low('grossAmount')} />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Field
-                  label={t('web:scan.field.vatAmount')}
-                  value={vat}
-                  onChangeText={(v) => { setVat(v); touch('vatAmount'); }}
-                  keyboardType="decimal-pad"
-                  warn={low('vatAmount')}
-                  hint={low('vatAmount') ? t('web:scan.lowHint', { confidence: Math.round(extraction?.fields.vatAmount?.confidence ?? 0) }) : undefined}
-                />
-              </View>
-            </View>
+            <Field
+              label={`${t('web:reimb.field.billTotal')} · OMR`}
+              value={total}
+              onChangeText={(v) => { setTotal(v); touch('grossAmount'); }}
+              keyboardType="decimal-pad"
+              error={errors.total}
+              warn={low('grossAmount')}
+              hint={t('web:reimb.financeDecides')}
+            />
             <View style={{ gap: 6 }}>
               <AppText variant="small" weight="medium" tone="secondary">
                 {t('web:claim.field.category')}
@@ -344,6 +360,26 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
               <Chips value={categoryId} onChange={setCategoryId} options={categoryChoices().map((c) => ({ value: c.id, label: nameOf(c, code) }))} />
               {errors.category ? <AppText variant="caption" tone="danger">{errors.category}</AppText> : null}
             </View>
+            {!hasFile ? (
+              <View style={{ gap: 6 }}>
+                <AppText variant="small" weight="medium" tone="secondary">
+                  {t('web:reimb.field.receipt')}
+                  {receiptNeeded ? ` · ${t('web:reimb.required')}` : ''}
+                </AppText>
+                {receipt ? (
+                  <AppText variant="small" numberOfLines={1}>
+                    {receipt.fileName}
+                  </AppText>
+                ) : null}
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.sm }}>
+                  <Button compact tone="secondary" icon={IconCamera} label={t('scan.takePhoto')} onPress={takePhoto} loading={attaching} />
+                  <Button compact tone="secondary" icon={IconPhoto} label={t('scan.choosePhoto')} onPress={choosePhoto} disabled={attaching} />
+                  <Button compact tone="secondary" icon={IconFileTypePdf} label={t('scan.choosePdf')} onPress={choosePdf} disabled={attaching} />
+                </View>
+                {cameraDenied ? <AppText variant="caption" tone="danger">{t('scan.cameraDenied')}</AppText> : null}
+                {fileError ? <AppText variant="caption" tone="danger">{fileError}</AppText> : null}
+              </View>
+            ) : null}
             {errors.receipt ? <AppText variant="small" tone="danger">{errors.receipt}</AppText> : null}
           </Card>
 
@@ -358,44 +394,11 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
                 </AppText>
                 <Chips
                   value={preApprovalId}
-                  onChange={(id) => {
-                    setPreApprovalId(id);
-                    // A claim against a pre-approval is charged where its money is held.
-                    const p = options.preApprovals.find((x) => x.id === id);
-                    if (p) setCost(`${p.costLevel}:${p.costId}`);
-                  }}
+                  onChange={setPreApprovalId}
                   options={[{ value: '', label: t('live.claim.noPreApproval') }, ...options.preApprovals.map((p) => ({ value: p.id, label: `${p.reference} · ${amount(p.remaining, code)}` }))]}
                 />
               </View>
             ) : null}
-
-            <View style={{ gap: 6 }}>
-              <AppText variant="small" weight="medium" tone="secondary">
-                {t('web:claim.field.chargedTo')}
-              </AppText>
-              <Chips value={cost} onChange={setCost} options={choices.map((key) => ({ value: key, label: nameOf(unit(key.split(':')[1]), code) }))} />
-              {errors.cost ? <AppText variant="caption" tone="danger">{errors.cost}</AppText> : null}
-            </View>
-
-            <View style={{ gap: 6 }}>
-              <AppText variant="small" weight="medium" tone="secondary">
-                {t('web:reimb.field.settlement')}
-              </AppText>
-              <Segmented<SettlementMethod>
-                value={settlement}
-                onChange={setSettlement}
-                options={[
-                  { value: 'pettyCash', label: t('web:reimb.settlement.pettyCash') },
-                  { value: 'salary', label: t('web:reimb.settlement.salary') },
-                ]}
-              />
-              <AppText variant="caption" tone={errors.settlement ? 'danger' : 'muted'}>
-                {errors.settlement ??
-                  (settlement === 'pettyCash' && allocation
-                    ? t('web:reimb.settlement.pettyCashFrom', { reference: allocation.reference, available: amount(allocation.available, code) })
-                    : t(settlement === 'pettyCash' ? 'web:reimb.settlement.pettyCashHint' : 'web:reimb.settlement.salaryHint'))}
-              </AppText>
-            </View>
           </Card>
         </>
       )}

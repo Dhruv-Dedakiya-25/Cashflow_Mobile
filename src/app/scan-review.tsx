@@ -5,17 +5,17 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, View } from 'react-native';
 
-import type { ExtractedField, SettlementMethod } from '@/api/types';
+import type { ExtractedField } from '@/api/types';
 import { AppText } from '@/components/app-text';
 import { LiveClaimForm } from '@/components/live-claim-form';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
-import { Button, Card, Chips, Field, SectionHeader, Segmented } from '@/components/ui';
+import { Button, Card, Chips, Field, SectionHeader } from '@/components/ui';
 import { authMode } from '@/config';
 import { useLanguage } from '@/i18n';
 import { longDate, nameOf, vendor } from '@/lib/format';
 import { computeVat } from '@/mock/data';
-import { categories, P, units } from '@/mock/master';
+import { categories, units, unitsFor } from '@/mock/master';
 import { resubmitClaim, sampleReading, submitClaim, useMockState, useSession, type ClaimInput } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -28,10 +28,6 @@ const stages = [
   { key: 'extracted', icon: IconSparkles },
   { key: 'verified', icon: IconUserCheck },
 ] as const;
-
-/** The units a person may charge, as their department and projects allow. */
-const unitsFor = (personId: string) =>
-  personId === P.hamed || personId === P.ahmed ? ['dep-it', 'prj-001'] : personId === P.fatma ? ['dep-fin'] : ['prj-002', 'prj-003'];
 
 export default function ScanReviewScreen() {
   return authMode === 'api' ? <LiveClaimForm /> : <DemoScanReview />;
@@ -55,11 +51,9 @@ function DemoScanReview() {
   const [date, setDate] = useState(editing?.expenseDate ?? reading?.input.expenseDate ?? new Date().toISOString().slice(0, 10));
   const [receiptNo, setReceiptNo] = useState(editing?.receiptNo ?? reading?.input.receiptNo ?? '');
   const [total, setTotal] = useState(editing ? editing.gross.toFixed(3) : reading ? reading.input.enteredAmount.toFixed(3) : '');
-  const [vat, setVat] = useState(editing ? editing.vat.toFixed(3) : (reading?.extraction.fields.vatAmount?.value ?? ''));
   const [categoryId, setCategoryId] = useState(editing?.categoryId ?? reading?.input.categoryId ?? 'cat-012');
   const [description, setDescription] = useState(editing?.description ?? '');
-  const [costId, setCostId] = useState(editing?.costId ?? myUnits[0]);
-  const [settlement, setSettlement] = useState<SettlementMethod>(editing?.settlement ?? 'pettyCash');
+  const costId = editing?.costId ?? myUnits[0];
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [corrected, setCorrected] = useState<Set<ExtractedField>>(new Set());
 
@@ -92,10 +86,11 @@ function DemoScanReview() {
       receiptNo: receiptNo.trim() || undefined,
       description: description.trim(),
       enteredAmount: amount,
-      vatTreatment: Number(vat) > 0 ? 'inclusive' : 'none',
+      // Finance sets these at its step.
+      vatTreatment: editing?.vatTreatment ?? 'inclusive',
       costLevel: units.find((u) => u.id === costId)!.level,
       costId,
-      settlement,
+      settlement: editing?.settlement ?? 'pettyCash',
       receiptFile: editing?.receipt?.fileName ?? (params.uri ? 'receipt-photo.jpg' : reading ? 'al-maha-846517.jpg' : undefined),
       extraction: reading?.extraction,
     };
@@ -179,21 +174,15 @@ function DemoScanReview() {
                 <Field label={t('web:scan.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
               </View>
             </View>
-            <View style={{ flexDirection: 'row', gap: space.md }}>
-              <View style={{ flex: 1 }}>
-                <Field label={`${t('web:scan.field.grossAmount')} · OMR`} value={total} onChangeText={(v) => { setTotal(v); touch('grossAmount'); const n = Number(v); if (n > 0) setVat(computeVat(n, 'inclusive').vat.toFixed(3)); }} keyboardType="decimal-pad" error={errors.total} warn={low('grossAmount')} />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Field
-                  label={t('web:scan.field.vatAmount')}
-                  value={vat}
-                  onChangeText={(v) => { setVat(v); touch('vatAmount'); }}
-                  keyboardType="decimal-pad"
-                  warn={low('vatAmount')}
-                  hint={low('vatAmount') ? t('web:scan.lowHint', { confidence: reading?.extraction.fields.vatAmount?.confidence }) : undefined}
-                />
-              </View>
-            </View>
+            <Field
+              label={`${t('web:reimb.field.billTotal')} · OMR`}
+              value={total}
+              onChangeText={(v) => { setTotal(v); touch('grossAmount'); }}
+              keyboardType="decimal-pad"
+              error={errors.total}
+              warn={low('grossAmount')}
+              hint={t('web:reimb.financeDecides')}
+            />
             <View style={{ gap: 6 }}>
               <AppText variant="small" weight="medium" tone="secondary">
                 {t('web:scan.field.category')}
@@ -205,28 +194,6 @@ function DemoScanReview() {
           <Card style={{ gap: space.lg }}>
             <SectionHeader title={t('scan.claimDetails')} />
             <Field label={t('web:reimb.field.description')} value={description} onChangeText={setDescription} placeholder={t('web:reimb.descriptionPlaceholder')} multiline error={errors.description} />
-            <View style={{ gap: 6 }}>
-              <AppText variant="small" weight="medium" tone="secondary">
-                {t('web:claim.field.chargedTo')}
-              </AppText>
-              <Chips value={costId} onChange={setCostId} options={myUnits.map((id) => ({ value: id, label: nameOf(units.find((u) => u.id === id), code) }))} />
-            </View>
-            <View style={{ gap: 6 }}>
-              <AppText variant="small" weight="medium" tone="secondary">
-                {t('web:reimb.field.settlement')}
-              </AppText>
-              <Segmented<SettlementMethod>
-                value={settlement}
-                onChange={setSettlement}
-                options={[
-                  { value: 'pettyCash', label: t('web:reimb.settlement.pettyCash') },
-                  { value: 'salary', label: t('web:reimb.settlement.salary') },
-                ]}
-              />
-              <AppText variant="caption" tone="muted">
-                {t(settlement === 'pettyCash' ? 'web:reimb.settlement.pettyCashHint' : 'web:reimb.settlement.salaryHint')}
-              </AppText>
-            </View>
           </Card>
         </>
       )}

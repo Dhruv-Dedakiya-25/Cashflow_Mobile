@@ -20,14 +20,16 @@ export default function TabLayout() {
   const { user } = useAppSession();
   const myDashboard = useMyDashboard();
   // The tabs follow the person's rights, as the web menu does: Inbox for those who approve, or who
-  // hold a float or have cash to acknowledge (being listed as a recipient alone is not enough);
-  // Reports for those whose role may see them. The demo's employee decides nothing and sees no reports.
+  // hold a float or have cash to acknowledge (being listed as a recipient alone is not enough) and
+  // whose role acknowledges: an employee's cash counts when paid, with nothing to confirm (manager's
+  // review). Reports for those whose role may see them. The demo's employee decides nothing and sees no reports.
+  const acknowledges = user ? holds(user, 'Acknowledgements', 'acknowledge') : persona !== 'employee';
   const holdsCash = !!myDashboard.data && (myDashboard.data.custodian.length > 0 || myDashboard.data.toAcknowledge.length > 0);
-  const showInbox = user ? holds(user, 'ApprovalInbox') || holdsCash : persona !== 'employee';
+  const showInbox = user ? holds(user, 'ApprovalInbox') || (holdsCash && acknowledges) : persona !== 'employee';
   const showReports = user ? holds(user, 'Reports') : persona !== 'employee';
   // The Inbox's count: requests the person can decide now, and cash paid to them not yet confirmed.
   const inbox = useInbox(showInbox);
-  const acks = useAcknowledgements(showInbox);
+  const acks = useAcknowledgements(showInbox && acknowledges);
   const waiting = user
     ? (inbox.data?.filter((i) => i.canDecide).length ?? 0) + (acks.data?.filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).length ?? 0)
     : inboxFor(state, personId).length + acksFor(state, personId).length;

@@ -15,14 +15,14 @@ const YEAR = new Date().getFullYear();
 export const ref = (prefix: string, seq: number) => `${prefix}-${YEAR}-${String(seq).padStart(4, '0')}`;
 
 /** Net and VAT from the amount entered, worked in whole baisa. */
-export function computeVat(entered: number, treatment: VatTreatment) {
+export function computeVat(entered: number, treatment: VatTreatment, rate = VAT_RATE) {
   const baisa = Math.round(entered * 1000);
   if (treatment === 'none') return { net: entered, vat: 0, gross: entered };
   if (treatment === 'exclusive') {
-    const vat = Math.round((baisa * VAT_RATE) / 100);
+    const vat = Math.round((baisa * rate) / 100);
     return { net: entered, vat: vat / 1000, gross: (baisa + vat) / 1000 };
   }
-  const net = Math.round((baisa * 100) / (100 + VAT_RATE));
+  const net = Math.round((baisa * 100) / (100 + rate));
   return { net: net / 1000, vat: (baisa - net) / 1000, gross: entered };
 }
 

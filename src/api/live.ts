@@ -10,7 +10,7 @@ import { monthStart, omanToday } from '@/mock/clock';
 
 import { ApiError, apiDataUri, apiGet, apiPost, apiPut, apiUpload, type PhoneFile } from './client';
 import type {
-  AcknowledgementItem, ApprovalItem, ApprovalReview, AttachmentInfo, AuthUser, GroupReport, TransactionReport, ClaimInput, ClaimOptions, DocumentOptions, DocumentView, FinanceDashboard, LanguageSetting, LookupOption,
+  AcknowledgementItem, ApprovalItem, ApprovalReview, AttachmentInfo, AuthUser, GroupReport, TransactionReport, ClaimFinanceInput, ClaimInput, ClaimOptions, DocumentOptions, DocumentView, FinanceDashboard, LanguageSetting, LookupOption,
   MyDashboard, MyTwoFactor, PaymentMethod, ReceiptExtraction, ReimbursementView, RequestKind,
 } from './types';
 
@@ -183,8 +183,9 @@ export type Decision = 'approve' | 'return' | 'reject';
  * Decides the waiting step. The version the person saw goes with it, so a request changed or decided
  * by someone else in the meantime is refused, with the server's reason, instead of decided blind.
  */
-export async function decide(item: ApprovalItem, decision: Decision, comment?: string) {
-  const result = await apiPost<ApprovalItem>(`/Approval/decide/${item.kind}/${item.id}`, { version: item.version, decision, comment }).catch((e) => {
+/** A decision on the waiting step; Finance's approval of a claim also carries what it settled. */
+export async function decide(item: ApprovalItem, decision: Decision, comment?: string, claim?: ClaimFinanceInput) {
+  const result = await apiPost<ApprovalItem>(`/Approval/decide/${item.kind}/${item.id}`, { version: item.version, decision, comment, claim }).catch((e) => {
     // Refused because it moved on: the Inbox is out of date, so it reloads behind the message.
     void queryClient.invalidateQueries({ queryKey: ['inbox'] });
     throw e;

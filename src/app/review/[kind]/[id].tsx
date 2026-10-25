@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, View } from 'react-native';
 
-import { decide as decideLive, useReview } from '@/api/live';
+import { decide as decideLive, holds, useReview } from '@/api/live';
 import type { RequestKind, RouteStep } from '@/api/types';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath } from '@/components/approval-path';
+import { FinancePanel, financeDraftOf, financeInputOf, type FinanceDraft } from '@/components/finance-panel';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
 import { ReceiptPhoto } from '@/components/receipt-photo';
@@ -25,12 +26,15 @@ export default function ReviewScreen() {
   const { language } = useLanguage();
   const code = language.code;
   const state = useMockState();
-  const { personId } = useSession();
+  const { personId, persona } = useSession();
   const [comment, setComment] = useState('');
   const [error, setError] = useState<string | null>(null);
   // What happened, worked out when deciding: afterwards the request has already moved on.
   const [done, setDone] = useState<{ action: DecisionAction; text: string } | null>(null);
   const [sending, setSending] = useState(false);
+  // Finance's choices once it changes one; until then the claim's own values.
+  const [finance, setFinance] = useState<FinanceDraft | null>(null);
+  const [financeError, setFinanceError] = useState<string>();
   const { user } = useAppSession();
   // Live: the review the API gives the approver; demo: the request in the sample store.
   const reviewQuery = useReview(kind, user ? id : '');
@@ -59,13 +63,19 @@ export default function ReviewScreen() {
   const nextNames = nextStep?.approverIds.map((p) => nameOf(person(p), code)).join(', ');
   const position = review ? review.allocation : claim?.settlement === 'pettyCash' ? state.positions.find((p) => p.scopeId === claim.costId) : undefined;
   const merchant = claim ? (claim.vendorId ? nameOf(vendor(claim.vendorId), code) : claim.payeeName ?? '') : '';
+  // Finance's step: a role step whose role pays claims, as the server decides; in the demo, the Finance persona's.
+  const financeStep = canDecide && !!claim && (item ? item.currentStep?.step.approverSource === 'role' && !!user && holds(user, 'FinanceSettlement', 'pay') : persona === 'finance');
+  const draft = financeStep ? (finance ?? financeDraftOf(claim!)) : undefined;
+  const settlement = draft?.settlement ?? claim?.settlement;
 
   const outcome = nextStep
-    ? t('web:approval.outcome.next', { step: request.currentStep! + 2, names: nextNames })
-    : t(kind === 'reimbursement' ? (claim?.settlement === 'salary' ? 'web:approval.outcome.salary' : 'web:approval.outcome.claim') : kind === 'preExpense' ? 'web:approval.outcome.preExpense' : 'web:approval.outcome.cash');
+    ? t('web:approval.outcome.next', { step: request.route.indexOf(nextStep) + 1, names: nextNames })
+    : t(kind === 'reimbursement' ? (settlement === 'salary' ? 'web:approval.outcome.salary' : 'web:approval.outcome.claim') : kind === 'preExpense' ? 'web:approval.outcome.preExpense' : 'web:approval.outcome.cash');
 
   const submit = async (action: DecisionAction) => {
     if (action !== 'approve' && !comment.trim()) return setError(t('web:approval.decision.reasonNeeded'));
+    const settled = action === 'approve' && draft ? financeInputOf(draft) : undefined;
+    if (action === 'approve' && draft && !settled) return setFinanceError(t('web:txn.refusal.amount'));
     const text =
       action === 'approve'
         ? nextStep
@@ -78,7 +88,7 @@ export default function ReviewScreen() {
       setSending(true);
       setError(null);
       try {
-        await decideLive(item, action, comment.trim() || undefined);
+        await decideLive(item, action, comment.trim() || undefined, settled);
         setDone({ action, text });
       } catch (e) {
         // Decided by someone else first, or changed since it was opened: the server says which.
@@ -88,7 +98,7 @@ export default function ReviewScreen() {
       }
       return;
     }
-    decide(kind, id, action, comment.trim() || undefined);
+    decide(kind, id, action, comment.trim() || undefined, settled);
     setDone({ action, text });
   };
 
@@ -184,11 +194,11 @@ export default function ReviewScreen() {
               </AppText>
               {c.from !== undefined ? (
                 <AppText variant="small" tone="muted" style={{ textDecorationLine: 'line-through' }}>
-                  {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}.${c.from}`) : c.from || '—'}
+                  {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}${c.from}`) : c.from || '—'}
                 </AppText>
               ) : null}
               <AppText variant="small" weight="medium">
-                {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}.${c.to}`) : c.to || '—'}
+                {c.codes ? t(`web:${c.codes.replace(/^[a-z]+:/, '')}${c.to}`) : c.to || '—'}
               </AppText>
             </View>
           ))}
@@ -261,6 +271,15 @@ export default function ReviewScreen() {
         <SectionHeader title={t('web:txn.path.title')} />
         <ApprovalPath route={request.route} />
       </Card>
+
+      {draft ? (
+        <FinancePanel
+          claim={claim!}
+          value={draft}
+          onChange={(v) => { setFinance(v); setFinanceError(undefined); }}
+          error={financeError}
+        />
+      ) : null}
 
       {canDecide ? (
         <Card style={{ gap: space.md }}>

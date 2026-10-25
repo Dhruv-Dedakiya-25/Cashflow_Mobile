@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 
-import { ackTitle, toAckView, useAcknowledgements, useInbox, type AckView } from '@/api/live';
+import { ackTitle, holds, toAckView, useAcknowledgements, useInbox, type AckView } from '@/api/live';
 import type { ApprovalFlag, ApprovalItem } from '@/api/types';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
@@ -90,8 +90,10 @@ export default function InboxScreen() {
   const { personId } = useSession();
   const { user } = useAppSession();
   const inbox = useInbox();
-  const ackQuery = useAcknowledgements();
-  const [tab, setTab] = useState<Tab>(params.tab === 'acknowledge' ? 'acknowledge' : 'decide');
+  // A role that does not acknowledge (an employee) has no For Acknowledgement tab: its cash counts when paid.
+  const acknowledges = !user || holds(user, 'Acknowledgements', 'acknowledge');
+  const ackQuery = useAcknowledgements(acknowledges);
+  const [tab, setTab] = useState<Tab>(acknowledges && params.tab === 'acknowledge' ? 'acknowledge' : 'decide');
   // Live: of everything the person has been part of, what waits for their decision now, overdue first,
   // and the cash paid to them that they have not confirmed yet.
   const items = useMemo(
@@ -106,18 +108,20 @@ export default function InboxScreen() {
     [user, ackQuery.data, state, personId],
   );
   const failed = user ? (inbox.error ?? ackQuery.error) : null;
-  const loading = user && (!inbox.data || !ackQuery.data);
+  const loading = user && (!inbox.data || (acknowledges && !ackQuery.data));
 
   return (
     <Screen title={t('tabs.inbox')} {...(user ? { onRefresh: () => Promise.all([inbox.refetch(), ackQuery.refetch()]), refreshing: inbox.isRefetching || ackQuery.isRefetching } : {})}>
-      <Segmented<Tab>
-        value={tab}
-        onChange={setTab}
-        options={[
-          { value: 'decide', label: t('inbox.toDecide'), count: items.length },
-          { value: 'acknowledge', label: t('inbox.toAcknowledge'), count: acks.length },
-        ]}
-      />
+      {acknowledges ? (
+        <Segmented<Tab>
+          value={tab}
+          onChange={setTab}
+          options={[
+            { value: 'decide', label: t('inbox.toDecide'), count: items.length },
+            { value: 'acknowledge', label: t('inbox.toAcknowledge'), count: acks.length },
+          ]}
+        />
+      ) : null}
 
       {loading ? (
         failed ? (

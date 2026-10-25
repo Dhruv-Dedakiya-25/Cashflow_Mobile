@@ -49,6 +49,10 @@ export const units: (NamedRecord & { level: CostLevel })[] = [
   { id: 'prj-003', level: 'project', nameEn: 'CCTV Upgrade', nameAr: 'ترقية كاميرات المراقبة' },
 ];
 
+/** The units a person's claim may be charged to, as their department and projects allow; the first is where it starts. */
+export const unitsFor = (personId: string) =>
+  personId === P.hamed || personId === P.ahmed ? ['dep-it', 'prj-001'] : personId === P.fatma ? ['dep-fin'] : ['prj-002', 'prj-003'];
+
 export const vendors: NamedRecord[] = [
   { id: 'ven-001', nameEn: 'Al Maha Petroleum', nameAr: 'المها للبترول' },
   { id: 'sup-002', nameEn: 'Muscat Office Supplies', nameAr: 'مسقط للوازم المكتبية' },
