@@ -7,6 +7,12 @@
     "icon": "./assets/images/icon.png",
     "scheme": "cashflow",
     "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "om.co.sactech.cashflow",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#2563EB",

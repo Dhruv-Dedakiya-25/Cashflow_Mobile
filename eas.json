@@ -1,0 +1,17 @@
+{
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_AUTH_MODE": "api",
+        "EXPO_PUBLIC_API_URL": "https://cashflow-sactech.runasp.net/api"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
