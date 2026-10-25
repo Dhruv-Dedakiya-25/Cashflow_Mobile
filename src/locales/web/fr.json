@@ -3,6 +3,7 @@
     "add": "Ajouter",
     "addEntity": "Ajouter {{entity}}",
     "back": "Retour",
+    "backTo": "Retour à {{page}}",
     "cancel": "Annuler",
     "clearAll": "Tout effacer",
     "close": "Fermer",
@@ -37,6 +38,11 @@
       "saveDraft": "Enregistrer le brouillon",
       "submit": "Envoyer pour approbation",
       "submitForApproval": "Soumettre pour approbation"
+    },
+    "view": {
+      "label": "Vues de la liste",
+      "all": "Toutes",
+      "pending": "En attente"
     },
     "filter": {
       "allStatuses": "Tous les statuts",
@@ -171,6 +177,13 @@
       "invalid": "Nom d'utilisateur ou mot de passe incorrect.",
       "tooMany": "Trop de tentatives. Patientez une minute, puis réessayez.",
       "noApi": "Impossible de joindre le serveur. Réessayez dans un instant."
+    },
+    "idle": {
+      "title": "Êtes-vous toujours là ?",
+      "body": "Pour votre sécurité, vous serez déconnecté dans {{seconds}} secondes.",
+      "stay": "Rester connecté",
+      "signOut": "Se déconnecter maintenant",
+      "signedOut": "Vous avez été déconnecté après {{minutes}} minutes d'inactivité."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Pièce justificative",
     "availableNow": "{{amount}} disponibles maintenant",
-    "backToInbox": "Retour à la boîte d'approbation",
+    "backToInbox": "Retour à la boîte de réception",
     "changes": {
       "after": "Corrigée après le retour par {{name}} le {{time}} :",
       "title": "Modifiée depuis son retour"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Approuver",
       "comment": "Commentaire (requis pour retourner ou rejeter)",
-      "noMoney": "Approuver ne déplace aucun argent. Seul le Règlement financier paie.",
+      "noMoney": "Approuver ne déplace aucun argent. Seul le Règlement des paiements paie.",
       "placeholder": "Que doit savoir ou corriger le demandeur ?",
       "reasonNeeded": "Indiquez un motif pour retourner ou rejeter. Le demandeur le verra.",
       "reject": "Refuser",
@@ -336,22 +349,24 @@
       "decided": "Cette demande a déjà été décidée.",
       "notEnoughCash": "{{reference}} n'a que OMR {{available}} disponible, et un solde ne peut pas passer sous zéro. Retournez la demande, ou demandez d'abord un complément à la Finance.",
       "notYourStep": "Cette étape ne vous attend pas.",
-      "ownRequest": "Vous ne pouvez pas décider une demande à laquelle vous êtes partie."
+      "ownRequest": "Vous ne pouvez pas décider une demande à laquelle vous êtes partie.",
+      "notFinanceStep": "Seule l'étape Finance peut modifier le montant, la TVA, l'unité et le mode de paiement."
     },
     "refusalHint": "{{reference}} n'a que {{available}} disponible, et un solde ne peut pas passer sous zéro. Retournez-la, ou demandez d'abord un complément à la Finance.",
     "search": "Rechercher une référence, une personne ou un objet",
     "sentAt": "soumise {{time}}",
-    "subtitle": "Les demandes qui attendent votre décision, tout ce qui relève de votre périmètre et ce que vous avez décidé.",
+    "subtitle": "Ce qui vous attend : des demandes à décider et des espèces à confirmer.",
+    "archive": {
+      "title": "Archives de la boîte de réception",
+      "subtitle": "Tout ce qui ne vous attend plus : les demandes de votre périmètre, vos décisions et les espèces versées."
+    },
     "tile": {
       "decided": "Décidées par vous",
       "decidedNote": "Approuvées, retournées ou rejetées",
-      "overdue": "En retard",
-      "overdueNote": "Au-delà du délai prévu par la configuration des circuits",
       "scope": "En approbation",
-      "summary": "Synthèse des approbations",
-      "waiting": "En attente de vous"
+      "summary": "Synthèse des approbations"
     },
-    "title": "Boîte d'approbation",
+    "title": "Boîte de réception",
     "toast": {
       "approve": "{{reference}} a été approuvée.",
       "reject": "{{reference}} a été rejetée.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Décidées par moi",
       "scope": "Tout mon périmètre",
-      "waiting": "En attente de moi"
+      "waiting": "En attente de moi",
+      "cash": "Espèces à confirmer",
+      "cashArchive": "Espèces versées"
     },
     "views": "Vues de la boîte d'approbation",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "En attente de votre décision à l'étape {{n}} : {{step}}.",
     "yoursToWatch": "Vous êtes partie à cette demande, vous ne pouvez donc pas la décider. Elle attend {{names}} à l'étape {{n}}.",
-    "openSourceRecord": "Ouvrir l'allocation"
+    "openSourceRecord": "Ouvrir l'allocation",
+    "finance": {
+      "title": "Fixé par la Finance",
+      "hint": "Le demandeur a indiqué le total de la facture. Vérifiez-le, puis fixez la TVA, l'unité imputée et le mode de paiement ; ils sont enregistrés avec votre approbation."
+    }
   },
   "ack": {
     "action": "Accuser réception",
@@ -437,7 +458,7 @@
       "chooseCategory": "Choisissez une catégorie de dépense.",
       "chooseEmployee": "Choisissez l'employé.",
       "costUnit": "Choisissez une unité dont fait partie cet employé. Les unités inactives ne peuvent pas être imputées.",
-      "merchant": "Indiquez le commerçant ou le bénéficiaire.",
+      "merchant": "Indiquez le commerçant ou le fournisseur.",
       "purpose": "Décrivez l'objet professionnel en quelques mots.",
       "vendor": "Ce fournisseur est inactif. Choisissez-en un autre ou saisissez le nom du commerçant."
     },
@@ -459,13 +480,13 @@
       "employee": "Employé",
       "enteredBy": "Saisi par",
       "for": "Pour",
-      "merchant": "Commerçant / Bénéficiaire",
+      "merchant": "Commerçant / Fournisseur",
       "submitFor": "Soumettre pour"
     },
     "filter": {
       "allEmployees": "Tous les employés"
     },
-    "merchantHint": "Choisissez dans le référentiel fournisseurs, ou saisissez le commerçant ou bénéficiaire s'il n'y figure pas.",
+    "merchantHint": "Choisissez dans le référentiel fournisseurs, ou saisissez le commerçant ou fournisseur s'il n'y figure pas.",
     "merchantPlaceholder": "Recherchez un fournisseur ou saisissez un nouveau nom…",
     "noAttachment": "Aucune pièce jointe",
     "noMerchant": "Non indiqué",
@@ -558,13 +579,13 @@
       "receipt": "Reçu / facture",
       "receiptNo": "N° de reçu / facture",
       "settlement": "Mode de paiement",
-      "vatTreatment": "Traitement de la TVA"
+      "vatTreatment": "Traitement de la TVA",
+      "billTotal": "Total de la facture"
     },
     "filter": {
       "allBases": "Toutes les bases de demande",
       "allSettlements": "Tous les modes de paiement"
     },
-    "fromScan": "Rempli à partir de la numérisation du reçu. L'IA l'a lu avec {{confidence}} % de confiance : vérifiez chaque valeur sur le reçu avant d'envoyer.",
     "leftOf": "{{left}} restant sur {{amount}}",
     "new": "Nouveau remboursement",
     "newSubtitle": "Soumettez une dépense réelle pour remboursement.",
@@ -574,8 +595,6 @@
     "notEditable": "Cette demande ne peut plus être corrigée ni modifiée.",
     "notInLedger": "Non comptabilisé : payé avec le salaire",
     "notScanned": "Téléversé sans lecture IA. Les valeurs ont été saisies.",
-    "openScan": "Numérisez-le et laissez l'IA remplir la demande",
-    "orScan": "Vous avez le reçu sous la main ?",
     "preApprovalHint": "Seules les demandes approuvées de cet employé avec un solde sont listées.",
     "preApprovalPlaceholder": "Choisissez une demande approuvée…",
     "receiptHint": "Déposez le reçu ici ou choisissez un fichier",
@@ -592,7 +611,8 @@
       "amount": "Montant et TVA",
       "charge": "Imputation et paiement",
       "expense": "Dépense",
-      "receipt": "Reçu / facture"
+      "receipt": "Reçu / facture",
+      "bill": "Montant"
     },
     "settlement": {
       "pettyCash": "Petite caisse",
@@ -609,7 +629,7 @@
       "noAllocation": "Cette unité n'a pas de dotation active. La Finance pourra payer autrement.",
       "noAllocationBlocked": "Cette unité n'a pas de dotation active, le paiement ne peut donc pas se faire par la petite caisse. Choisissez Salaire de l'employé ou consultez la Finance.",
       "preApprovalLeft": "Reste sur",
-      "routeLater": "L'approbateur s'affiche ici une fois le montant et l'unité renseignés.",
+      "routeLater": "L'approbateur s'affiche ici une fois le montant renseigné.",
       "salary": "Payé avec le salaire : aucun solde de petite caisse ne change.",
       "short": "Plus que le disponible de la dotation. La Finance devra d'abord la réapprovisionner.",
       "shortBlocked": "Plus que le disponible de la dotation, et un solde ne peut pas passer sous zéro. Réduisez le montant, choisissez Salaire de l'employé ou demandez un réapprovisionnement.",
@@ -640,7 +660,16 @@
       "exclusive": "Saisi à {{amount}} avant TVA de {{rate}} %.",
       "inclusive": "Saisi à {{amount}} TVA de {{rate}} % incluse.",
       "none": "Saisi à {{amount}}. La facture ne comporte pas de TVA."
-    }
+    },
+    "entry": {
+      "title": "Comment voulez-vous saisir cette demande ?",
+      "manual": "Saisie manuelle",
+      "manualHint": "Saisissez les détails vous-même et joignez le reçu.",
+      "scanHint": "Téléversez ou photographiez le reçu. L'IA lit le commerçant, la date, les montants et la catégorie, que vous vérifiez.",
+      "reading": "L'IA lit le reçu…",
+      "read": "L'IA a lu le reçu avec {{confidence}} % de confiance et a rempli la demande. Vérifiez chaque valeur avant d'envoyer."
+    },
+    "financeDecides": "La Finance fixe la TVA, l'unité imputée et le mode de paiement lors de son approbation."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Remboursement de frais",
       "noMovements": "Aucun mouvement pour l'instant.",
       "noRequests": "Aucune demande pour l'instant. Commencez-en une ci-dessus.",
-      "openInbox": "Boîte d'approbation",
+      "openInbox": "Boîte de réception",
       "overdue": "En retard : {{count}}",
       "paidOn": "{{amount}} versé le {{date}}",
       "preExpenseBehalf": "Dépense préalable pour autrui",
@@ -700,7 +729,7 @@
         "returned": "Retournées à moi",
         "returnedNote": "Action requise"
       },
-      "title": "Mon tableau de bord",
+      "title": "Tableau de bord",
       "toAcknowledge": "Des espèces versées attendent votre confirmation de réception ({{count}})",
       "topUpPending": "Complément en route :",
       "voucher": "Pièce {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Afficher moins",
       "subtitle": "La petite caisse dans toutes les unités, directions et projets : ce qui est détenu, ce qui demande une action et où l'argent est allé.",
       "thresholdsLink": "Seuils",
-      "title": "Tableau de bord financier"
+      "title": "Tableau de bord"
     },
     "column": {
       "allocation": "Allocation",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Réception confirmée le {{date}}",
     "approvedNote": "Déjà approuvée. Changer l'unité, le dépositaire ou le montant la renvoie en approbation ; les seuils et l'objet, non.",
     "availableMarker": "Reste {{percent}} %",
-    "backToAcknowledgements": "Retour aux accusés de réception",
     "backToList": "Retour aux allocations",
     "balanceTitle": "Solde",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} est déjà ouverte pour cette unité. Demandez plutôt des fonds via les demandes de fonds supplémentaires.",
       "thresholdRange": "Les seuils sont des pourcentages entiers de 1 à 99.",
       "watchAboveNear": "Le repère de surveillance doit être au-dessus du repère de seuil.",
-      "notDisburser": "Vous n'êtes pas autorisé à verser : vous ne pouvez pas émettre d'allocations.",
-      "notRecipient": "{{name}} n'est pas un bénéficiaire autorisé et ne peut pas détenir de petite caisse."
+      "cannotIssue": "Seule la Finance émet des allocations : votre rôle ne verse pas la petite caisse.",
+      "notCustodian": "{{name}} ne peut pas détenir de petite caisse. Attribuez-lui d'abord le rôle Dépositaire."
     },
     "chooseLevelFirst": "Choisissez d'abord le niveau",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Rechercher une référence, une unité, un dépositaire ou un objet",
     "subtitle": "Fonds remis à un département, une unité, un projet ou un dépositaire, et ce que chacun détient aujourd'hui. Les fonds supplémentaires pour une allocation existante passent par les demandes de fonds supplémentaires.",
     "thresholdsValue": "Surveillance {{watch}} % · Seuil {{near}} %",
-    "tile": {
-      "active": "Allocations actives",
-      "activeNote": "{{amount}} alimentés",
-      "attention": "À surveiller",
-      "attentionNote": "Proches du seuil ou dépassées : {{count}}",
-      "available": "Disponible maintenant",
-      "availableNote": "après {{amount}} réservés",
-      "awaiting": "En attente d'accusé de réception",
-      "summary": "Synthèse des allocations"
-    },
     "title": "Allocations de petite caisse",
     "toast": {
       "cancelled": "{{reference}} a été annulée.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} a été envoyée pour approbation."
     },
     "topUpOnItsWay": "{{amount}} supplémentaires sont en route ({{references}}) et attendent l'accusé de réception.",
-    "noRecipients": "Aucun bénéficiaire autorisé dans cette unité. Ajoutez-en un dans Verseurs et bénéficiaires."
+    "noCustodians": "Aucun dépositaire dans cette unité. Attribuez d'abord le rôle Dépositaire à une personne de l'unité."
   },
   "file": {
     "aiNotRead": "Non numérisé",

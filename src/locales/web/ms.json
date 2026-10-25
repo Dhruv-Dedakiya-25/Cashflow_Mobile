@@ -3,6 +3,7 @@
     "add": "Tambah",
     "addEntity": "Tambah {{entity}}",
     "back": "Kembali",
+    "backTo": "Kembali ke {{page}}",
     "cancel": "Batal",
     "clearAll": "Kosongkan semua",
     "close": "Tutup",
@@ -37,6 +38,11 @@
       "saveDraft": "Simpan draf",
       "submit": "Hantar untuk kelulusan",
       "submitForApproval": "Kemukakan untuk kelulusan"
+    },
+    "view": {
+      "label": "Paparan senarai",
+      "all": "Semua",
+      "pending": "Belum selesai"
     },
     "filter": {
       "allStatuses": "Semua status",
@@ -171,6 +177,13 @@
       "invalid": "Nama pengguna atau kata laluan tidak sah.",
       "tooMany": "Terlalu banyak percubaan. Tunggu seminit dan cuba lagi.",
       "noApi": "Tidak dapat mencapai pelayan. Cuba lagi sebentar nanti."
+    },
+    "idle": {
+      "title": "Anda masih di sana?",
+      "body": "Demi keselamatan anda, anda akan dilog keluar dalam {{seconds}} saat.",
+      "stay": "Kekal log masuk",
+      "signOut": "Log keluar sekarang",
+      "signedOut": "Anda telah dilog keluar selepas {{minutes}} minit tanpa aktiviti."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Dokumen Sokongan",
     "availableNow": "{{amount}} tersedia sekarang",
-    "backToInbox": "Kembali ke Peti Kelulusan",
+    "backToInbox": "Kembali ke Peti Masuk",
     "changes": {
       "after": "Dibetulkan selepas {{name}} mengembalikannya pada {{time}}:",
       "title": "Diubah sejak dikembalikan"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Luluskan",
       "comment": "Ulasan (perlu untuk mengembalikan atau menolak)",
-      "noMoney": "Meluluskan tidak menggerakkan wang. Hanya Penyelesaian Kewangan yang membayar.",
+      "noMoney": "Meluluskan tidak menggerakkan wang. Hanya Penyelesaian Bayaran yang membayar.",
       "placeholder": "Apakah yang perlu diketahui atau dibetulkan oleh pemohon?",
       "reasonNeeded": "Berikan sebab untuk mengembalikan atau menolak. Pemohon akan melihatnya.",
       "reject": "Tolak",
@@ -336,22 +349,24 @@
       "decided": "Permohonan ini telah diputuskan.",
       "notEnoughCash": "{{reference}} hanya ada OMR {{available}} tersedia, dan baki tidak boleh di bawah sifar. Kembalikan permohonan, atau minta tambahan tunai daripada Kewangan dahulu.",
       "notYourStep": "Langkah ini tidak menunggu anda.",
-      "ownRequest": "Anda tidak boleh memutuskan permohonan yang melibatkan anda."
+      "ownRequest": "Anda tidak boleh memutuskan permohonan yang melibatkan anda.",
+      "notFinanceStep": "Hanya langkah Kewangan boleh menukar amaun, VAT, unit dan cara pembayaran."
     },
     "refusalHint": "{{reference}} hanya ada {{available}} tersedia, dan baki tidak boleh di bawah sifar. Kembalikannya, atau minta tambahan tunai daripada Kewangan dahulu.",
     "search": "Cari rujukan, orang atau tujuan",
     "sentAt": "dihantar {{time}}",
-    "subtitle": "Permohonan yang menunggu keputusan anda, semua dalam skop anda, dan yang telah anda putuskan.",
+    "subtitle": "Yang menunggu anda: permintaan untuk diputuskan dan tunai untuk diakui terima.",
+    "archive": {
+      "title": "Arkib Peti Masuk",
+      "subtitle": "Semua yang tidak lagi menunggu anda: permintaan dalam skop anda, keputusan anda dan tunai yang dibayar."
+    },
     "tile": {
       "decided": "Diputuskan oleh Anda",
       "decidedNote": "Diluluskan, dikembalikan atau ditolak",
-      "overdue": "Lewat tempoh",
-      "overdueNote": "Melebihi masa yang dibenarkan oleh Tetapan Aliran Kerja",
       "scope": "Dalam Kelulusan",
-      "summary": "Ringkasan kelulusan",
-      "waiting": "Menunggu Anda"
+      "summary": "Ringkasan kelulusan"
     },
-    "title": "Peti Kelulusan",
+    "title": "Peti Masuk",
     "toast": {
       "approve": "{{reference}} telah diluluskan.",
       "reject": "{{reference}} telah ditolak.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Diputuskan oleh saya",
       "scope": "Semua dalam skop saya",
-      "waiting": "Menunggu saya"
+      "waiting": "Menunggu saya",
+      "cash": "Tunai untuk diakui terima",
+      "cashArchive": "Tunai dibayar"
     },
     "views": "Paparan peti kelulusan",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Menunggu keputusan anda pada langkah {{n}}: {{step}}.",
     "yoursToWatch": "Anda ialah pihak dalam permohonan ini, jadi anda tidak boleh memutuskannya. Ia menunggu {{names}} pada langkah {{n}}.",
-    "openSourceRecord": "Buka peruntukan"
+    "openSourceRecord": "Buka peruntukan",
+    "finance": {
+      "title": "Ditetapkan oleh Kewangan",
+      "hint": "Penuntut memberikan jumlah bil. Semak, kemudian tetapkan VAT, unit yang dicaj dan cara pembayaran; semuanya disimpan bersama kelulusan anda."
+    }
   },
   "ack": {
     "action": "Sahkan terima",
@@ -437,7 +458,7 @@
       "chooseCategory": "Pilih kategori perbelanjaan.",
       "chooseEmployee": "Pilih pekerja.",
       "costUnit": "Pilih unit yang disertai pekerja ini. Unit tidak aktif tidak boleh dicaj.",
-      "merchant": "Masukkan peniaga atau penerima.",
+      "merchant": "Masukkan peniaga atau pembekal.",
       "purpose": "Terangkan tujuan perniagaan dalam beberapa perkataan.",
       "vendor": "Vendor ini tidak aktif. Pilih yang lain, atau taip nama peniaga."
     },
@@ -459,13 +480,13 @@
       "employee": "Pekerja",
       "enteredBy": "Dimasukkan oleh",
       "for": "Untuk",
-      "merchant": "Peniaga / Penerima Bayaran",
+      "merchant": "Peniaga / Pembekal",
       "submitFor": "Hantar untuk"
     },
     "filter": {
       "allEmployees": "Semua pekerja"
     },
-    "merchantHint": "Pilih daripada Induk Vendor, atau taip nama peniaga atau penerima jika tiada dalam senarai.",
+    "merchantHint": "Pilih daripada Induk Vendor, atau taip nama peniaga atau pembekal jika tiada dalam senarai.",
     "merchantPlaceholder": "Cari vendor atau taip nama baharu…",
     "noAttachment": "Tiada lampiran",
     "noMerchant": "Tidak dinyatakan",
@@ -558,13 +579,13 @@
       "receipt": "Resit / Bil",
       "receiptNo": "No. Resit / Invois",
       "settlement": "Kaedah bayaran",
-      "vatTreatment": "Layanan VAT"
+      "vatTreatment": "Layanan VAT",
+      "billTotal": "Jumlah bil"
     },
     "filter": {
       "allBases": "Semua asas tuntutan",
       "allSettlements": "Semua kaedah bayaran"
     },
-    "fromScan": "Diisi daripada Imbas Resit. AI membacanya dengan keyakinan {{confidence}}%: semak setiap nilai dengan resit sebelum menghantar.",
     "leftOf": "Baki {{left}} daripada {{amount}}",
     "new": "Bayaran Balik Baharu",
     "newSubtitle": "Hantar perbelanjaan sebenar untuk dibayar balik.",
@@ -574,8 +595,6 @@
     "notEditable": "Tuntutan ini sudah melepasi tahap pembetulan: ia tidak boleh diubah lagi.",
     "notInLedger": "Tidak dicatat: dibayar bersama gaji",
     "notScanned": "Dimuat naik tanpa bacaan AI. Nilai ditaip sendiri.",
-    "openScan": "Imbas dan biar AI mengisi tuntutan",
-    "orScan": "Ada resit di tangan?",
     "preApprovalHint": "Hanya permohonan diluluskan pekerja ini yang masih berbaki disenaraikan.",
     "preApprovalPlaceholder": "Pilih permohonan yang diluluskan…",
     "receiptHint": "Lepaskan resit di sini, atau pilih fail",
@@ -592,7 +611,8 @@
       "amount": "Amaun dan VAT",
       "charge": "Caj dan Bayaran",
       "expense": "Perbelanjaan",
-      "receipt": "Resit / Bil"
+      "receipt": "Resit / Bil",
+      "bill": "Amaun"
     },
     "settlement": {
       "pettyCash": "Tunai Runcit",
@@ -609,7 +629,7 @@
       "noAllocation": "Unit ini tiada peruntukan aktif. Kewangan mungkin membayarnya dengan cara lain.",
       "noAllocationBlocked": "Unit ini tiada peruntukan aktif, jadi ia tidak boleh dibayar daripada tunai runcit. Pilih Gaji Pekerja, atau tanya Kewangan.",
       "preApprovalLeft": "Baki dalam",
-      "routeLater": "Pelulus dipaparkan di sini setelah amaun dan unit diisi.",
+      "routeLater": "Pelulus dipaparkan di sini setelah amaun diisi.",
       "salary": "Dibayar bersama gaji: tiada baki tunai runcit berubah.",
       "short": "Melebihi yang tersedia dalam peruntukan. Kewangan perlu menambahnya dahulu.",
       "shortBlocked": "Melebihi yang tersedia dalam peruntukan, dan baki tidak boleh di bawah sifar. Kurangkan amaun, pilih Gaji Pekerja, atau minta tambahan.",
@@ -640,7 +660,16 @@
       "exclusive": "Dimasukkan sebagai {{amount}} sebelum VAT {{rate}}%.",
       "inclusive": "Dimasukkan sebagai {{amount}} termasuk VAT {{rate}}%.",
       "none": "Dimasukkan sebagai {{amount}}. Bil tiada VAT."
-    }
+    },
+    "entry": {
+      "title": "Bagaimana anda mahu mengisi tuntutan ini?",
+      "manual": "Kemasukan data manual",
+      "manualHint": "Taip butiran sendiri dan lampirkan resit.",
+      "scanHint": "Muat naik atau ambil gambar resit. AI membaca peniaga, tarikh, amaun dan kategori untuk anda semak.",
+      "reading": "AI sedang membaca resit…",
+      "read": "AI membaca resit dengan keyakinan {{confidence}}% dan mengisi tuntutan. Semak setiap nilai sebelum menghantar."
+    },
+    "financeDecides": "Kewangan menetapkan VAT, unit yang dicaj dan cara anda dibayar semasa meluluskan."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Bayaran Balik Perbelanjaan",
       "noMovements": "Belum ada pergerakan.",
       "noRequests": "Belum ada permohonan. Mulakan satu di atas.",
-      "openInbox": "Peti Kelulusan",
+      "openInbox": "Peti Masuk",
       "overdue": "Lewat: {{count}}",
       "paidOn": "{{amount}} dibayar pada {{date}}",
       "preExpenseBehalf": "Pra-Perbelanjaan bagi Pihak Lain",
@@ -700,7 +729,7 @@
         "returned": "Dikembalikan kepada Saya",
         "returnedNote": "Perlu tindakan"
       },
-      "title": "Papan Pemuka Saya",
+      "title": "Papan pemuka",
       "toAcknowledge": "Tunai yang dibayar kepada anda menunggu pengesahan anda ({{count}})",
       "topUpPending": "Tambahan tunai dalam proses:",
       "voucher": "Baucar {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Tunjuk kurang",
       "subtitle": "Tunai runcit di semua unit perniagaan, jabatan dan projek: apa yang dipegang, apa yang perlu diambil tindakan dan ke mana wang pergi.",
       "thresholdsLink": "Ambang",
-      "title": "Papan pemuka kewangan"
+      "title": "Papan pemuka"
     },
     "column": {
       "allocation": "Peruntukan",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Diakui terima {{date}}",
     "approvedNote": "Sudah diluluskan. Menukar unit, penjaga atau jumlah menghantarnya semula untuk kelulusan; ambang dan tujuan tidak.",
     "availableMarker": "Tinggal {{percent}}%",
-    "backToAcknowledgements": "Kembali ke Pengakuan Terima",
     "backToList": "Kembali ke Peruntukan",
     "balanceTitle": "Baki",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} sudah dibuka untuk unit ini. Mohon tunai tambahan melalui Permohonan Tunai Tambahan sebaliknya.",
       "thresholdRange": "Ambang ialah peratusan bulat dari 1 hingga 99.",
       "watchAboveNear": "Tanda pantau mesti di atas tanda ambang.",
-      "notDisburser": "Anda tidak didayakan untuk pengagihan, jadi anda tidak boleh mengeluarkan peruntukan.",
-      "notRecipient": "{{name}} bukan penerima yang didayakan dan tidak boleh memegang tunai runcit."
+      "cannotIssue": "Hanya Kewangan yang mengeluarkan peruntukan: peranan anda tidak membayar tunai runcit.",
+      "notCustodian": "{{name}} tidak boleh memegang tunai runcit. Berikan peranan Penjaga Tunai dahulu."
     },
     "chooseLevelFirst": "Pilih peringkat dahulu",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Cari rujukan, unit, penjaga atau tujuan",
     "subtitle": "Tunai yang diberikan kepada jabatan, unit perniagaan, projek atau penjaga, dan apa yang dipegang setiap satu sekarang. Tunai tambahan untuk peruntukan sedia ada dimohon melalui Permohonan Tunai Tambahan.",
     "thresholdsValue": "Pantau {{watch}}% · Ambang {{near}}%",
-    "tile": {
-      "active": "Peruntukan aktif",
-      "activeNote": "{{amount}} dibiayai",
-      "attention": "Perlu Perhatian",
-      "attentionNote": "Hampir ambang atau melebihi had: {{count}}",
-      "available": "Tersedia sekarang",
-      "availableNote": "selepas {{amount}} dirizab",
-      "awaiting": "Menunggu pengakuan terima",
-      "summary": "Ringkasan peruntukan"
-    },
     "title": "Peruntukan Tunai Runcit",
     "toast": {
       "cancelled": "{{reference}} telah dibatalkan.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} telah dihantar untuk kelulusan."
     },
     "topUpOnItsWay": "{{amount}} lagi dalam perjalanan ({{references}}) dan menunggu pengakuan terima.",
-    "noRecipients": "Tiada penerima yang didayakan dalam unit ini. Tambah satu di Pengagih & Penerima."
+    "noCustodians": "Tiada Penjaga Tunai dalam unit ini. Berikan peranan Penjaga Tunai kepada seseorang dalam unit ini dahulu."
   },
   "file": {
     "aiNotRead": "Tidak diimbas",

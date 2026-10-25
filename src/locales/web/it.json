@@ -3,6 +3,7 @@
     "add": "Aggiungi",
     "addEntity": "Aggiungi {{entity}}",
     "back": "Indietro",
+    "backTo": "Torna a {{page}}",
     "cancel": "Annulla",
     "clearAll": "Cancella tutto",
     "close": "Chiudi",
@@ -37,6 +38,11 @@
       "saveDraft": "Salva bozza",
       "submit": "Invia in approvazione",
       "submitForApproval": "Invia per approvazione"
+    },
+    "view": {
+      "label": "Viste dell'elenco",
+      "all": "Tutte",
+      "pending": "In sospeso"
     },
     "filter": {
       "allStatuses": "Tutti gli stati",
@@ -171,6 +177,13 @@
       "invalid": "Nome utente o password non validi.",
       "tooMany": "Troppi tentativi. Attendi un minuto e riprova.",
       "noApi": "Impossibile raggiungere il server. Riprova tra poco."
+    },
+    "idle": {
+      "title": "Sei ancora lì?",
+      "body": "Per la tua sicurezza, verrai disconnesso tra {{seconds}} secondi.",
+      "stay": "Resta connesso",
+      "signOut": "Esci ora",
+      "signedOut": "Sei stato disconnesso dopo {{minutes}} minuti di inattività."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Documento di supporto",
     "availableNow": "{{amount}} disponibili ora",
-    "backToInbox": "Torna alla casella approvazioni",
+    "backToInbox": "Torna a In arrivo",
     "changes": {
       "after": "Corretta dopo la restituzione da parte di {{name}} il {{time}}:",
       "title": "Modificata dopo la restituzione"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Approva",
       "comment": "Commento (necessario per restituire o respingere)",
-      "noMoney": "Approvare non sposta denaro. Paga solo la Liquidazione finanziaria.",
+      "noMoney": "Approvare non sposta denaro. Paga solo la Regolazione pagamenti.",
       "placeholder": "Cosa deve sapere o correggere il richiedente?",
       "reasonNeeded": "Indica un motivo per restituire o respingere. Il richiedente lo vedrà.",
       "reject": "Rifiuta",
@@ -336,22 +349,24 @@
       "decided": "Questa richiesta è già stata decisa.",
       "notEnoughCash": "{{reference}} ha solo OMR {{available}} disponibili, e un saldo non può scendere sotto zero. Restituisci la richiesta o chiedi prima un'integrazione alla Finanza.",
       "notYourStep": "Questo passo non è in attesa di te.",
-      "ownRequest": "Non puoi decidere una richiesta di cui sei parte."
+      "ownRequest": "Non puoi decidere una richiesta di cui sei parte.",
+      "notFinanceStep": "Solo la fase della Finanza può modificare importo, IVA, unità e modalità di pagamento."
     },
     "refusalHint": "{{reference}} ha solo {{available}} disponibili, e un saldo non può scendere sotto zero. Restituiscila o chiedi prima un'integrazione alla Finanza.",
     "search": "Cerca riferimento, persona o scopo",
     "sentAt": "inviata {{time}}",
-    "subtitle": "Richieste in attesa della tua decisione, tutto ciò che rientra nel tuo ambito e ciò che hai deciso.",
+    "subtitle": "Ciò che ti aspetta: richieste da decidere e contanti da confermare.",
+    "archive": {
+      "title": "Archivio In arrivo",
+      "subtitle": "Tutto ciò che non ti aspetta più: le richieste del tuo ambito, le tue decisioni e i contanti erogati."
+    },
     "tile": {
       "decided": "Decise da te",
       "decidedNote": "Approvate, restituite o respinte",
-      "overdue": "Scaduto",
-      "overdueNote": "Oltre il tempo consentito dalla configurazione flussi",
       "scope": "In approvazione",
-      "summary": "Riepilogo approvazioni",
-      "waiting": "In attesa di te"
+      "summary": "Riepilogo approvazioni"
     },
-    "title": "Casella approvazioni",
+    "title": "In arrivo",
     "toast": {
       "approve": "{{reference}} è stata approvata.",
       "reject": "{{reference}} è stata respinta.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Decise da me",
       "scope": "Tutto il mio ambito",
-      "waiting": "In attesa di me"
+      "waiting": "In attesa di me",
+      "cash": "Contanti da confermare",
+      "cashArchive": "Contanti erogati"
     },
     "views": "Viste della casella",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "In attesa della tua decisione al passo {{n}}: {{step}}.",
     "yoursToWatch": "Sei parte di questa richiesta, quindi non puoi deciderla. È in attesa di {{names}} al passo {{n}}.",
-    "openSourceRecord": "Apri l'assegnazione"
+    "openSourceRecord": "Apri l'assegnazione",
+    "finance": {
+      "title": "Stabilito dalla Finanza",
+      "hint": "Il richiedente ha indicato il totale dello scontrino. Verificalo, poi stabilisci IVA, unità addebitata e modalità di pagamento; vengono salvati con la tua approvazione."
+    }
   },
   "ack": {
     "action": "Prendi visione",
@@ -437,7 +458,7 @@
       "chooseCategory": "Scegli una categoria di spesa.",
       "chooseEmployee": "Scegli il dipendente.",
       "costUnit": "Scegli un'unità a cui appartiene questo dipendente. Le unità inattive non possono essere addebitate.",
-      "merchant": "Indica l'esercente o il beneficiario.",
+      "merchant": "Indica l'esercente o il fornitore.",
       "purpose": "Descrivi lo scopo aziendale in poche parole.",
       "vendor": "Questo fornitore è inattivo. Scegline un altro o digita il nome dell'esercente."
     },
@@ -459,13 +480,13 @@
       "employee": "Dipendente",
       "enteredBy": "Inserito da",
       "for": "Per",
-      "merchant": "Esercente / Beneficiario",
+      "merchant": "Esercente / Fornitore",
       "submitFor": "Presenta per"
     },
     "filter": {
       "allEmployees": "Tutti i dipendenti"
     },
-    "merchantHint": "Scegli dall'anagrafica fornitori, oppure digita esercente o beneficiario se non è in elenco.",
+    "merchantHint": "Scegli dall'anagrafica fornitori, oppure digita esercente o fornitore se non è in elenco.",
     "merchantPlaceholder": "Cerca un fornitore o digita un nuovo nome…",
     "noAttachment": "Nessun allegato",
     "noMerchant": "Non indicato",
@@ -558,13 +579,13 @@
       "receipt": "Ricevuta / fattura",
       "receiptNo": "N. ricevuta / fattura",
       "settlement": "Metodo di pagamento",
-      "vatTreatment": "Trattamento IVA"
+      "vatTreatment": "Trattamento IVA",
+      "billTotal": "Totale dello scontrino"
     },
     "filter": {
       "allBases": "Tutte le basi di richiesta",
       "allSettlements": "Tutti i metodi di pagamento"
     },
-    "fromScan": "Compilato da Scansione ricevute. L'IA l'ha letto con affidabilità del {{confidence}}%: verifica ogni valore sulla ricevuta prima di inviare.",
     "leftOf": "{{left}} rimanenti su {{amount}}",
     "new": "Nuovo rimborso",
     "newSubtitle": "Presenta una spesa effettiva per il rimborso.",
@@ -574,8 +595,6 @@
     "notEditable": "Questa richiesta non è più correggibile né modificabile.",
     "notInLedger": "Non registrato: pagato con lo stipendio",
     "notScanned": "Caricato senza lettura IA. I valori sono stati digitati.",
-    "openScan": "Scansionala e lascia che l'IA compili la richiesta",
-    "orScan": "Hai la ricevuta a portata di mano?",
     "preApprovalHint": "Sono elencate solo le richieste approvate di questo dipendente con residuo.",
     "preApprovalPlaceholder": "Scegli una richiesta approvata…",
     "receiptHint": "Trascina qui la ricevuta o scegli un file",
@@ -592,7 +611,8 @@
       "amount": "Importo e IVA",
       "charge": "Addebito e pagamento",
       "expense": "Spesa",
-      "receipt": "Ricevuta / fattura"
+      "receipt": "Ricevuta / fattura",
+      "bill": "Importo"
     },
     "settlement": {
       "pettyCash": "Piccola cassa",
@@ -609,7 +629,7 @@
       "noAllocation": "Questa unità non ha un'assegnazione attiva. La Finanza potrebbe pagare in altro modo.",
       "noAllocationBlocked": "Questa unità non ha un'assegnazione attiva, quindi non si può pagare con la piccola cassa. Scegli Stipendio del dipendente o chiedi alla Finanza.",
       "preApprovalLeft": "Rimanente su",
-      "routeLater": "Chi approva compare qui dopo aver inserito importo e unità.",
+      "routeLater": "Chi approva compare qui dopo aver inserito l'importo.",
       "salary": "Pagato con lo stipendio: nessun saldo di piccola cassa cambia.",
       "short": "Più del disponibile nell'assegnazione. La Finanza dovrà prima reintegrarla.",
       "shortBlocked": "Più del disponibile nell'assegnazione, e un saldo non può scendere sotto zero. Riduci l'importo, scegli Stipendio del dipendente o chiedi un reintegro.",
@@ -640,7 +660,16 @@
       "exclusive": "Inserito come {{amount}} prima dell'IVA {{rate}}%.",
       "inclusive": "Inserito come {{amount}} IVA {{rate}}% inclusa.",
       "none": "Inserito come {{amount}}. La fattura non riporta IVA."
-    }
+    },
+    "entry": {
+      "title": "Come vuoi inserire questo rimborso?",
+      "manual": "Inserimento manuale",
+      "manualHint": "Inserisci i dati tu stesso e allega lo scontrino.",
+      "scanHint": "Carica o fotografa lo scontrino. L'IA legge esercente, data, importi e categoria, che poi controlli.",
+      "reading": "L'IA sta leggendo lo scontrino…",
+      "read": "L'IA ha letto lo scontrino con il {{confidence}}% di certezza e ha compilato il rimborso. Controlla ogni valore prima di inviare."
+    },
+    "financeDecides": "La Finanza stabilisce IVA, unità addebitata e modalità di pagamento quando approva."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Rimborso spese",
       "noMovements": "Ancora nessun movimento.",
       "noRequests": "Ancora nessuna richiesta. Iniziane una qui sopra.",
-      "openInbox": "Casella approvazioni",
+      "openInbox": "In arrivo",
       "overdue": "In ritardo: {{count}}",
       "paidOn": "{{amount}} pagato il {{date}}",
       "preExpenseBehalf": "Spesa preventiva per conto di altri",
@@ -700,7 +729,7 @@
         "returned": "Restituite a me",
         "returnedNote": "Richiede un intervento"
       },
-      "title": "La mia dashboard",
+      "title": "Cruscotto",
       "toAcknowledge": "Del contante pagato a te attende la tua conferma ({{count}})",
       "topUpPending": "Integrazione in arrivo:",
       "voucher": "Buono {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Mostra meno",
       "subtitle": "La piccola cassa in tutte le unità di business, i reparti e i progetti: cosa c'è, cosa richiede un'azione e dove sono andati i soldi.",
       "thresholdsLink": "Soglie",
-      "title": "Cruscotto finanziario"
+      "title": "Cruscotto"
     },
     "column": {
       "allocation": "Assegnazione",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Ricezione confermata il {{date}}",
     "approvedNote": "Già approvata. Cambiare unità, custode o importo la rimanda in approvazione; soglie e scopo no.",
     "availableMarker": "Resta il {{percent}}%",
-    "backToAcknowledgements": "Torna alle conferme di ricezione",
     "backToList": "Torna alle assegnazioni",
     "balanceTitle": "Saldo",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} è già aperta per questa unità. Richiedi invece altro contante con le richieste di contante aggiuntivo.",
       "thresholdRange": "Le soglie sono percentuali intere da 1 a 99.",
       "watchAboveNear": "Il limite di monitoraggio deve essere sopra il limite di soglia.",
-      "notDisburser": "Non sei abilitato all'erogazione, quindi non puoi emettere assegnazioni.",
-      "notRecipient": "{{name}} non è un destinatario abilitato e non può custodire la piccola cassa."
+      "cannotIssue": "Solo la Finanza emette assegnazioni: il tuo ruolo non eroga la piccola cassa.",
+      "notCustodian": "{{name}} non può custodire la piccola cassa. Assegna prima il ruolo Custode."
     },
     "chooseLevelFirst": "Scegli prima il livello",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Cerca riferimento, unità, custode o scopo",
     "subtitle": "Contante affidato a un reparto, unità di business, progetto o custode, e ciò che ciascuno detiene ora. Altro contante per un'assegnazione esistente passa dalle richieste di contante aggiuntivo.",
     "thresholdsValue": "Monitoraggio {{watch}}% · Soglia {{near}}%",
-    "tile": {
-      "active": "Assegnazioni attive",
-      "activeNote": "{{amount}} finanziati",
-      "attention": "Richiede attenzione",
-      "attentionNote": "Vicine alla soglia o superate: {{count}}",
-      "available": "Disponibile ora",
-      "availableNote": "dopo {{amount}} riservati",
-      "awaiting": "In attesa di conferma di ricezione",
-      "summary": "Riepilogo assegnazioni"
-    },
     "title": "Assegnazioni di piccola cassa",
     "toast": {
       "cancelled": "{{reference}} è stata annullata.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} è stata inviata in approvazione."
     },
     "topUpOnItsWay": "Altri {{amount}} sono in arrivo ({{references}}) e attendono conferma di ricezione.",
-    "noRecipients": "Nessun destinatario abilitato in questa unità. Aggiungine uno in Erogatori e destinatari."
+    "noCustodians": "Nessun custode in questa unità. Assegna prima il ruolo Custode a qualcuno dell'unità."
   },
   "file": {
     "aiNotRead": "Non scansionato",

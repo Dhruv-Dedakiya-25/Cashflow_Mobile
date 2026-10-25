@@ -44,7 +44,6 @@
     "resentTitle": "Dikirim ulang",
     "viewClaim": "Lihat klaim",
     "cameraDenied": "CashFlow memerlukan kamera untuk memotret nota. Izinkan di Pengaturan, atau pilih foto saja.",
-    "manual": "Ketik detail secara manual",
     "sampleNote": "Pembacaan contoh: di demo setiap nota terbaca seperti contoh ini, dan fotonya tetap di ponsel ini.",
     "choosePdf": "Pilih PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "AI sedang membaca nota…",
       "checkEach": "Periksa setiap nilai dengan nota. Nilai dengan keyakinan di bawah {{min}}% disorot.",
       "chooseCategory": "Pilih kategori.",
-      "chooseUnit": "Pilih ke mana klaim dibebankan.",
       "noPreApproval": "Tidak ada",
       "tooLarge": "Berkas lebih dari {{mb}} MB. Pilih yang lebih kecil."
     },

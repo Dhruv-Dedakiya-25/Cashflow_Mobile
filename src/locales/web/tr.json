@@ -3,6 +3,7 @@
     "add": "Ekle",
     "addEntity": "{{entity}} ekle",
     "back": "Geri",
+    "backTo": "{{page}} sayfasına dön",
     "cancel": "İptal",
     "clearAll": "Tümünü temizle",
     "close": "Kapat",
@@ -37,6 +38,11 @@
       "saveDraft": "Taslağı kaydet",
       "submit": "Onaya gönder",
       "submitForApproval": "Onaya gönder"
+    },
+    "view": {
+      "label": "Liste görünümleri",
+      "all": "Tümü",
+      "pending": "Bekleyen"
     },
     "filter": {
       "allStatuses": "Tüm durumlar",
@@ -171,6 +177,13 @@
       "invalid": "Kullanıcı adı veya parola geçersiz.",
       "tooMany": "Çok fazla deneme. Bir dakika bekleyip yeniden deneyin.",
       "noApi": "Sunucuya ulaşılamıyor. Birazdan yeniden deneyin."
+    },
+    "idle": {
+      "title": "Hâlâ orada mısınız?",
+      "body": "Güvenliğiniz için {{seconds}} saniye içinde oturumunuz kapatılacak.",
+      "stay": "Oturumu açık tut",
+      "signOut": "Şimdi çıkış yap",
+      "signedOut": "{{minutes}} dakika hareketsizlik nedeniyle oturumunuz kapatıldı."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Destekleyici belge",
     "availableNow": "Şu an {{amount}} kullanılabilir",
-    "backToInbox": "Onay Kutusu'na dön",
+    "backToInbox": "Gelen Kutusuna dön",
     "changes": {
       "after": "{{name}} tarafından {{time}} tarihinde iade edildikten sonra düzeltildi:",
       "title": "İade edildikten sonra değişti"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Onayla",
       "comment": "Yorum (iade veya ret için gerekli)",
-      "noMoney": "Onaylamak para hareket ettirmez. Yalnızca Finansal Ödeme öder.",
+      "noMoney": "Onaylamak para hareket ettirmez. Yalnızca Ödeme İşlemleri öder.",
       "placeholder": "Talep sahibi neyi bilmeli veya düzeltmeli?",
       "reasonNeeded": "İade veya ret için bir neden yazın. Talep sahibi bunu görecek.",
       "reject": "Reddet",
@@ -336,22 +349,24 @@
       "decided": "Bu talep için zaten karar verildi.",
       "notEnoughCash": "{{reference}} içinde yalnızca OMR {{available}} var ve bakiye sıfırın altına inemez. Talebi iade edin veya önce Finans'tan ek ödenek isteyin.",
       "notYourStep": "Bu adım sizi beklemiyor.",
-      "ownRequest": "Tarafı olduğunuz bir talep için karar veremezsiniz."
+      "ownRequest": "Tarafı olduğunuz bir talep için karar veremezsiniz.",
+      "notFinanceStep": "Tutarı, KDV'yi, birimi ve ödeme yöntemini yalnızca Finans adımı değiştirebilir."
     },
     "refusalHint": "{{reference}} içinde yalnızca {{available}} var ve bakiye sıfırın altına inemez. İade edin veya önce Finans'tan ek ödenek isteyin.",
     "search": "Referans, kişi veya amaç ara",
     "sentAt": "gönderildi {{time}}",
-    "subtitle": "Kararınızı bekleyen talepler, kapsamınızdaki her şey ve karar verdikleriniz.",
+    "subtitle": "Sizi bekleyenler: karar verilecek talepler ve teslim onayı verilecek nakit.",
+    "archive": {
+      "title": "Gelen Kutusu Arşivi",
+      "subtitle": "Artık sizi beklemeyen her şey: kapsamınızdaki talepler, kararlarınız ve ödenen nakit."
+    },
     "tile": {
       "decided": "Karar Verdikleriniz",
       "decidedNote": "Onaylanan, iade edilen veya reddedilen",
-      "overdue": "Vadesi geçmiş",
-      "overdueNote": "İş akışı ayarlarının izin verdiği süreyi aştı",
       "scope": "Onayda",
-      "summary": "Onay özeti",
-      "waiting": "Sizi Bekleyen"
+      "summary": "Onay özeti"
     },
-    "title": "Onay Kutusu",
+    "title": "Gelen Kutusu",
     "toast": {
       "approve": "{{reference}} onaylandı.",
       "reject": "{{reference}} reddedildi.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Karar verdiklerim",
       "scope": "Kapsamımdaki tümü",
-      "waiting": "Beni bekleyenler"
+      "waiting": "Beni bekleyenler",
+      "cash": "Onaylanacak nakit",
+      "cashArchive": "Ödenen nakit"
     },
     "views": "Kutu görünümleri",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "{{n}}. adımda kararınızı bekliyor: {{step}}.",
     "yoursToWatch": "Bu talebin tarafı olduğunuz için karar veremezsiniz. {{n}}. adımda {{names}} bekleniyor.",
-    "openSourceRecord": "Tahsisi aç"
+    "openSourceRecord": "Tahsisi aç",
+    "finance": {
+      "title": "Finans belirler",
+      "hint": "Talep sahibi fatura toplamını girdi. Kontrol edin, ardından KDV'yi, gider yazılacak birimi ve ödeme yöntemini belirleyin; onayınızla birlikte kaydedilir."
+    }
   },
   "ack": {
     "action": "Onayla",
@@ -437,7 +458,7 @@
       "chooseCategory": "Masraf kategorisi seçin.",
       "chooseEmployee": "Çalışanı seçin.",
       "costUnit": "Bu çalışanın bağlı olduğu bir birim seçin. Pasif birimlere gider yazılamaz.",
-      "merchant": "Satıcıyı veya alacaklıyı girin.",
+      "merchant": "Satıcıyı veya tedarikçiyi girin.",
       "purpose": "İş amacını birkaç kelimeyle açıklayın.",
       "vendor": "Bu tedarikçi pasif. Başka birini seçin veya satıcının adını yazın."
     },
@@ -459,13 +480,13 @@
       "employee": "Çalışan",
       "enteredBy": "Giren",
       "for": "İçin",
-      "merchant": "Satıcı / Alacaklı",
+      "merchant": "Satıcı / Tedarikçi",
       "submitFor": "Kimin için"
     },
     "filter": {
       "allEmployees": "Tüm çalışanlar"
     },
-    "merchantHint": "Tedarikçi kaydından seçin ya da listede yoksa satıcı veya alacaklı adını yazın.",
+    "merchantHint": "Tedarikçi kaydından seçin ya da listede yoksa satıcı veya tedarikçi adını yazın.",
     "merchantPlaceholder": "Tedarikçi arayın veya yeni bir ad yazın…",
     "noAttachment": "Ek yok",
     "noMerchant": "Belirtilmedi",
@@ -558,13 +579,13 @@
       "receipt": "Fiş / fatura",
       "receiptNo": "Fiş / Fatura No.",
       "settlement": "Ödeme yöntemi",
-      "vatTreatment": "KDV uygulaması"
+      "vatTreatment": "KDV uygulaması",
+      "billTotal": "Fatura toplamı"
     },
     "filter": {
       "allBases": "Tüm talep dayanakları",
       "allSettlements": "Tüm ödeme yöntemleri"
     },
-    "fromScan": "Fiş taramasından dolduruldu. Yapay zekâ %{{confidence}} güvenle okudu: göndermeden önce her değeri fişle karşılaştırın.",
     "leftOf": "{{amount}} içinden {{left}} kaldı",
     "new": "Yeni Masraf İadesi",
     "newSubtitle": "İade için gerçek bir harcama gönderin.",
@@ -574,8 +595,6 @@
     "notEditable": "Bu talep düzeltme aşamasını geçti: artık değiştirilemez.",
     "notInLedger": "İşlenmedi: maaşla ödendi",
     "notScanned": "Yapay zekâ okuması olmadan yüklendi. Değerler elle yazıldı.",
-    "openScan": "Tarayın, yapay zekâ talebi doldursun",
-    "orScan": "Fiş elinizde mi?",
     "preApprovalHint": "Yalnızca bu çalışanın bakiyesi olan onaylı talepleri listelenir.",
     "preApprovalPlaceholder": "Onaylı bir talep seçin…",
     "receiptHint": "Fişi buraya bırakın veya bir dosya seçin",
@@ -592,7 +611,8 @@
       "amount": "Tutar ve KDV",
       "charge": "Gider yazma ve ödeme",
       "expense": "Harcama",
-      "receipt": "Fiş / fatura"
+      "receipt": "Fiş / fatura",
+      "bill": "Tutar"
     },
     "settlement": {
       "pettyCash": "Küçük Kasa",
@@ -609,7 +629,7 @@
       "noAllocation": "Bu birimin etkin tahsisi yok. Finans başka bir yolla ödeyebilir.",
       "noAllocationBlocked": "Bu birimin etkin tahsisi yok, bu yüzden küçük kasadan ödenemez. Çalışan maaşını seçin veya Finansa danışın.",
       "preApprovalLeft": "Kalan:",
-      "routeLater": "Tutar ve birim girildiğinde onaylayan burada görünür.",
+      "routeLater": "Tutar girildiğinde onaylayan burada görünür.",
       "salary": "Maaşla ödenir: hiçbir küçük kasa bakiyesi değişmez.",
       "short": "Tahsisin kullanılabilir tutarından fazla. Finansın önce takviye yapması gerekir.",
       "shortBlocked": "Tahsisin kullanılabilir tutarından fazla ve bakiye sıfırın altına inemez. Tutarı düşürün, Çalışan maaşını seçin veya takviye isteyin.",
@@ -640,7 +660,16 @@
       "exclusive": "{{amount}} olarak girildi, %{{rate}} KDV öncesi.",
       "inclusive": "{{amount}} olarak girildi, %{{rate}} KDV dahil.",
       "none": "{{amount}} olarak girildi. Faturada KDV yok."
-    }
+    },
+    "entry": {
+      "title": "Bu talebi nasıl girmek istersiniz?",
+      "manual": "Elle veri girişi",
+      "manualHint": "Bilgileri kendiniz yazın ve fişi ekleyin.",
+      "scanHint": "Fişi yükleyin veya fotoğrafını çekin. Yapay zekâ işletmeyi, tarihi, tutarları ve kategoriyi okur, siz kontrol edersiniz.",
+      "reading": "Yapay zekâ fişi okuyor…",
+      "read": "Yapay zekâ fişi %{{confidence}} güvenle okudu ve talebi doldurdu. Göndermeden önce her değeri kontrol edin."
+    },
+    "financeDecides": "Finans, onaylarken KDV'yi, gider yazılacak birimi ve size nasıl ödeneceğini belirler."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Masraf İadesi",
       "noMovements": "Henüz hareket yok.",
       "noRequests": "Henüz talep yok. Yukarıdan bir tane başlatın.",
-      "openInbox": "Onay Kutusu",
+      "openInbox": "Gelen Kutusu",
       "overdue": "Gecikmiş: {{count}}",
       "paidOn": "{{amount}}, {{date}} tarihinde ödendi",
       "preExpenseBehalf": "Başkası Adına Harcama Öncesi",
@@ -700,7 +729,7 @@
         "returned": "Bana İade Edilen",
         "returnedNote": "İşlem gerekli"
       },
-      "title": "Panom",
+      "title": "Panel",
       "toAcknowledge": "Size ödenen nakit onayınızı bekliyor ({{count}})",
       "topUpPending": "Ek ödenek yolda:",
       "voucher": "Fiş {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Daha az göster",
       "subtitle": "Tüm iş birimleri, departmanlar ve projelerde küçük kasa: elde ne var, ne işlem bekliyor ve para nereye gitti.",
       "thresholdsLink": "Eşikler",
-      "title": "Finans panosu"
+      "title": "Panel"
     },
     "column": {
       "allocation": "Tahsis",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Teslim onayı {{date}}",
     "approvedNote": "Zaten onaylandı. Birimi, sorumluyu veya tutarı değiştirmek onu yeniden onaya gönderir; eşikler ve amaç göndermez.",
     "availableMarker": "%{{percent}} kaldı",
-    "backToAcknowledgements": "Teslim onaylarına dön",
     "backToList": "Tahsislere dön",
     "balanceTitle": "Bakiye",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} bu birim için zaten açık. Bunun yerine ek nakit talepleriyle daha fazla nakit isteyin.",
       "thresholdRange": "Eşikler 1 ile 99 arasında tam yüzdelerdir.",
       "watchAboveNear": "İzleme işareti eşik işaretinin üzerinde olmalıdır.",
-      "notDisburser": "Nakit vermeye yetkili değilsiniz, bu yüzden tahsis düzenleyemezsiniz.",
-      "notRecipient": "{{name}} yetkili bir alıcı değil ve küçük kasa tutamaz."
+      "cannotIssue": "Tahsisleri yalnızca Finans düzenler: rolünüz küçük kasa ödemesi yapmaz.",
+      "notCustodian": "{{name}} küçük kasa tutamaz. Önce Kasa sorumlusu rolünü verin."
     },
     "chooseLevelFirst": "Önce düzeyi seçin",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Referans, birim, sorumlu veya amaç arayın",
     "subtitle": "Bir departmana, iş birimine, projeye veya kasa sorumlusuna verilen nakit ve her birinin şu an elinde olan. Mevcut bir tahsis için ek nakit, ek nakit talepleriyle istenir.",
     "thresholdsValue": "İzleme %{{watch}} · Eşik %{{near}}",
-    "tile": {
-      "active": "Etkin tahsisler",
-      "activeNote": "{{amount}} fonlandı",
-      "attention": "Dikkat Gerekiyor",
-      "attentionNote": "Eşiğe yakın veya aşılmış: {{count}}",
-      "available": "Şu an kullanılabilir",
-      "availableNote": "{{amount}} ayrıldıktan sonra",
-      "awaiting": "Teslim onayı bekliyor",
-      "summary": "Tahsis özeti"
-    },
     "title": "Küçük Kasa Tahsisleri",
     "toast": {
       "cancelled": "{{reference}} iptal edildi.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} onaya gönderildi."
     },
     "topUpOnItsWay": "{{amount}} daha yolda ({{references}}) ve teslim onayı bekliyor.",
-    "noRecipients": "Bu birimde yetkili alıcı yok. Nakit Verenler ve Alıcılar sayfasından ekleyin."
+    "noCustodians": "Bu birimde kasa sorumlusu yok. Önce birimden birine Kasa sorumlusu rolünü verin."
   },
   "file": {
     "aiNotRead": "Taranmadı",

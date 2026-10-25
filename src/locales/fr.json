@@ -44,7 +44,6 @@
     "resentTitle": "Renvoyée",
     "viewClaim": "Voir la demande",
     "cameraDenied": "CashFlow a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
-    "manual": "Saisir les détails à la main",
     "sampleNote": "Lecture d'exemple : dans la démo, chaque reçu se lit comme cet exemple, et la photo reste sur ce téléphone.",
     "choosePdf": "Choisir un PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "L'IA lit le reçu…",
       "checkEach": "Vérifiez chaque valeur avec le reçu. Les valeurs sûres à moins de {{min}} % sont surlignées.",
       "chooseCategory": "Choisissez une catégorie.",
-      "chooseUnit": "Choisissez où imputer la demande.",
       "noPreApproval": "Aucune",
       "tooLarge": "Le fichier dépasse {{mb}} Mo. Choisissez-en un plus petit."
     },

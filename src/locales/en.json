@@ -46,7 +46,6 @@
     "resentTitle": "Sent again",
     "viewClaim": "View the claim",
     "cameraDenied": "CashFlow needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
-    "manual": "Enter details by hand",
     "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
     "choosePdf": "Choose a PDF"
   },
@@ -160,7 +159,6 @@
       "reading": "AI is reading the receipt…",
       "checkEach": "Check each value against the receipt. Values under {{min}}% sure are highlighted.",
       "chooseCategory": "Choose a category.",
-      "chooseUnit": "Choose where the claim is charged.",
       "noPreApproval": "None",
       "tooLarge": "The file is larger than {{mb}} MB. Choose a smaller one."
     },

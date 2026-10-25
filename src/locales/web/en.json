@@ -3,6 +3,7 @@
     "add": "Add",
     "addEntity": "Add {{entity}}",
     "back": "Back",
+    "backTo": "Back to {{page}}",
     "cancel": "Cancel",
     "clearAll": "Clear all",
     "close": "Close",
@@ -37,6 +38,11 @@
       "saveDraft": "Save Draft",
       "submit": "Send for approval",
       "submitForApproval": "Submit for Approval"
+    },
+    "view": {
+      "label": "List views",
+      "all": "All",
+      "pending": "Pending"
     },
     "filter": {
       "allStatuses": "All statuses",
@@ -171,6 +177,13 @@
       "invalid": "Invalid username or password.",
       "tooMany": "Too many attempts. Wait a minute and try again.",
       "noApi": "Cannot reach the server. Try again shortly."
+    },
+    "idle": {
+      "title": "Are you still there?",
+      "body": "For your security, you will be signed out in {{seconds}} seconds.",
+      "stay": "Stay signed in",
+      "signOut": "Sign out now",
+      "signedOut": "You were signed out after {{minutes}} minutes without activity."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Supporting Document",
     "availableNow": "{{amount}} available now",
-    "backToInbox": "Back to Approval Inbox",
+    "backToInbox": "Back to Inbox",
     "changes": {
       "after": "Corrected after {{name}} returned it on {{time}}:",
       "title": "Changed since it was returned"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Approve",
       "comment": "Comment (needed to return or reject)",
-      "noMoney": "Approving moves no money. Only Finance Settlement pays.",
+      "noMoney": "Approving moves no money. Only Payment Settlement pays.",
       "placeholder": "What should the requester know, or correct?",
       "reasonNeeded": "Give a reason to return or reject. The requester will see it.",
       "reject": "Reject",
@@ -336,22 +349,24 @@
       "decided": "This request has already been decided.",
       "notEnoughCash": "{{reference}} has only OMR {{available}} available, and a balance cannot go below zero. Return the request, or ask Finance for a top-up first.",
       "notYourStep": "This step is not waiting for you.",
-      "ownRequest": "You cannot decide a request you are part of."
+      "ownRequest": "You cannot decide a request you are part of.",
+      "notFinanceStep": "Only the Finance step can change the amount, VAT, unit and payment method."
     },
     "refusalHint": "{{reference}} has only {{available}} available, and a balance cannot go below zero. Return it, or ask Finance for a top-up first.",
     "search": "Search reference, person or purpose",
     "sentAt": "sent {{time}}",
-    "subtitle": "Requests waiting for your decision, everything in your scope, and what you have decided.",
+    "subtitle": "What is waiting for you: requests to decide and cash to acknowledge.",
+    "archive": {
+      "title": "Inbox Archival",
+      "subtitle": "Everything no longer waiting for you: requests in your scope, your decisions and the cash paid out."
+    },
     "tile": {
       "decided": "Decided by You",
       "decidedNote": "Approved, returned or rejected",
-      "overdue": "Overdue",
-      "overdueNote": "Past the time Workflow Setup allows",
       "scope": "Under Approval",
-      "summary": "Approval summary",
-      "waiting": "Waiting for You"
+      "summary": "Approval summary"
     },
-    "title": "Approval Inbox",
+    "title": "Inbox",
     "toast": {
       "approve": "{{reference}} was approved.",
       "reject": "{{reference}} was rejected.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Decided by me",
       "scope": "All in my scope",
-      "waiting": "Waiting for me"
+      "waiting": "Waiting for me",
+      "cash": "Cash to acknowledge",
+      "cashArchive": "Cash paid out"
     },
     "views": "Inbox views",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Waiting for your decision at step {{n}}: {{step}}.",
     "yoursToWatch": "You are part of this request, so you cannot decide it. It is waiting for {{names}} at step {{n}}.",
-    "openSourceRecord": "Open the allocation"
+    "openSourceRecord": "Open the allocation",
+    "finance": {
+      "title": "Set by Finance",
+      "hint": "The claimant gave the bill total. Check it, then set the VAT, the unit it is charged to and how it is paid; they are saved with your approval."
+    }
   },
   "ack": {
     "action": "Acknowledge",
@@ -437,7 +458,7 @@
       "chooseCategory": "Choose an expense category.",
       "chooseEmployee": "Choose the employee.",
       "costUnit": "Choose a unit this employee belongs to. Inactive units cannot be charged.",
-      "merchant": "Enter the merchant or payee.",
+      "merchant": "Enter the merchant or supplier.",
       "purpose": "Describe the business purpose in a few words.",
       "vendor": "This vendor is inactive. Choose another, or type the merchant's name."
     },
@@ -459,13 +480,13 @@
       "employee": "Employee",
       "enteredBy": "Entered By",
       "for": "For",
-      "merchant": "Merchant / Payee",
+      "merchant": "Merchant / Supplier",
       "submitFor": "Submit For"
     },
     "filter": {
       "allEmployees": "All employees"
     },
-    "merchantHint": "Pick from the Vendor Master, or type the merchant or payee if it is not listed.",
+    "merchantHint": "Pick from the Vendor Master, or type the merchant or supplier if it is not listed.",
     "merchantPlaceholder": "Search vendor or type a new name…",
     "noAttachment": "No attachment",
     "noMerchant": "Not given",
@@ -558,13 +579,13 @@
       "receipt": "Receipt / Bill",
       "receiptNo": "Receipt / Invoice No.",
       "settlement": "Payment Method",
-      "vatTreatment": "VAT Treatment"
+      "vatTreatment": "VAT Treatment",
+      "billTotal": "Bill total"
     },
     "filter": {
       "allBases": "All claim bases",
       "allSettlements": "All payment methods"
     },
-    "fromScan": "Filled in from Receipt Scan. AI read it with {{confidence}}% confidence: check each value against the receipt before you submit.",
     "leftOf": "{{left}} left of {{amount}}",
     "new": "New Reimbursement",
     "newSubtitle": "Submit an actual expense for reimbursement.",
@@ -574,8 +595,6 @@
     "notEditable": "This claim is past correction: it can no longer be changed.",
     "notInLedger": "Not posted: paid with salary",
     "notScanned": "Uploaded without AI reading. The values were typed in.",
-    "openScan": "Scan it and let AI fill the claim",
-    "orScan": "Have the receipt to hand?",
     "preApprovalHint": "Only this employee's approved requests with money left are listed.",
     "preApprovalPlaceholder": "Choose an approved request…",
     "receiptHint": "Drop the receipt here, or choose a file",
@@ -592,7 +611,8 @@
       "amount": "Amount and VAT",
       "charge": "Charging and Payment",
       "expense": "Expense",
-      "receipt": "Receipt / Bill"
+      "receipt": "Receipt / Bill",
+      "bill": "Amount"
     },
     "settlement": {
       "pettyCash": "Petty Cash",
@@ -609,7 +629,7 @@
       "noAllocation": "This unit has no active allocation. Finance may pay it another way.",
       "noAllocationBlocked": "This unit has no active allocation, so it cannot be paid from petty cash. Choose Employee Salary, or ask Finance.",
       "preApprovalLeft": "Left on",
-      "routeLater": "Who approves it shows here once the amount and unit are filled in.",
+      "routeLater": "Who approves it shows here once the amount is filled in.",
       "salary": "Paid with salary: no petty cash balance changes.",
       "short": "More than the allocation has available. Finance will need to top it up first.",
       "shortBlocked": "More than the allocation has available, and a balance cannot go below zero. Lower the amount, choose Employee Salary, or ask for a top-up.",
@@ -640,7 +660,16 @@
       "exclusive": "Entered as {{amount}} before {{rate}}% VAT.",
       "inclusive": "Entered as {{amount}} including {{rate}}% VAT.",
       "none": "Entered as {{amount}}. The bill carries no VAT."
-    }
+    },
+    "entry": {
+      "title": "How do you want to enter this claim?",
+      "manual": "Manual data entry",
+      "manualHint": "Type the details yourself and attach the receipt.",
+      "scanHint": "Upload or photograph the receipt. AI reads the merchant, date, amounts and category for you to check.",
+      "reading": "AI is reading the receipt…",
+      "read": "AI read the receipt with {{confidence}}% confidence and filled in the claim. Check each value before you submit."
+    },
+    "financeDecides": "Finance sets the VAT, the unit it is charged to and how you are paid when it approves."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Reimbursement",
       "noMovements": "No movements yet.",
       "noRequests": "No requests yet. Start one above.",
-      "openInbox": "Approval Inbox",
+      "openInbox": "Inbox",
       "overdue": "Overdue: {{count}}",
       "paidOn": "{{amount}} paid on {{date}}",
       "preExpenseBehalf": "Pre-Expense on Behalf",
@@ -700,7 +729,7 @@
         "returned": "Returned to Me",
         "returnedNote": "Action needed"
       },
-      "title": "My Dashboard",
+      "title": "Dashboard",
       "toAcknowledge": "Cash paid to you is waiting for your acknowledgement ({{count}})",
       "topUpPending": "Top-up on its way:",
       "voucher": "Voucher {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Show fewer",
       "subtitle": "Petty cash across business units, departments and projects: what is held, what needs action and where it went.",
       "thresholdsLink": "Thresholds",
-      "title": "Finance Dashboard"
+      "title": "Dashboard"
     },
     "column": {
       "allocation": "Allocation",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Acknowledged {{date}}",
     "approvedNote": "Already approved. Changing the unit, custodian or amount sends it back for approval; thresholds and purpose do not.",
     "availableMarker": "{{percent}}% left",
-    "backToAcknowledgements": "Back to Acknowledgements",
     "backToList": "Back to Allocations",
     "balanceTitle": "Balance",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} is already open for this unit. Ask for more cash through Additional Cash Requests instead.",
       "thresholdRange": "Thresholds are whole percentages from 1 to 99.",
       "watchAboveNear": "The watch mark must be above the near-threshold mark.",
-      "notDisburser": "You are not enabled for disbursement, so you cannot issue allocations.",
-      "notRecipient": "{{name}} is not an enabled recipient and cannot hold petty cash."
+      "cannotIssue": "Only Finance issues allocations: your role does not pay out petty cash.",
+      "notCustodian": "{{name}} cannot hold petty cash. Give them the Custodian role first."
     },
     "chooseLevelFirst": "Choose the level first",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Search reference, unit, custodian or purpose",
     "subtitle": "Cash issued to a department, business unit, project or custodian, and what each holds now. More cash for an existing allocation goes through Additional Cash Requests.",
     "thresholdsValue": "Watch {{watch}}% · Near {{near}}%",
-    "tile": {
-      "active": "Active allocations",
-      "activeNote": "{{amount}} funded",
-      "attention": "Needs Attention",
-      "attentionNote": "Near threshold or exceeded: {{count}}",
-      "available": "Available now",
-      "availableNote": "after {{amount}} reserved",
-      "awaiting": "Awaiting acknowledgement",
-      "summary": "Allocation summary"
-    },
     "title": "Petty Cash Allocations",
     "toast": {
       "cancelled": "{{reference}} was cancelled.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} was sent for approval."
     },
     "topUpOnItsWay": "{{amount}} more is on its way ({{references}}) and waits for acknowledgement.",
-    "noRecipients": "No enabled recipients in this unit. Add one on Disbursers & Recipients."
+    "noCustodians": "No Custodians in this unit. Give someone in it the Custodian role first."
   },
   "file": {
     "aiNotRead": "Not scanned",

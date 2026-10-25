@@ -44,7 +44,6 @@
     "resentTitle": "Yeniden gönderildi",
     "viewClaim": "Talebi görüntüle",
     "cameraDenied": "CashFlow'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
-    "manual": "Bilgileri elle girin",
     "sampleNote": "Örnek okuma: demoda her fiş bu örnek gibi okunur ve fotoğraf bu telefonda kalır.",
     "choosePdf": "PDF seç"
   },
@@ -158,7 +157,6 @@
       "reading": "Yapay zekâ fişi okuyor…",
       "checkEach": "Her değeri fişle karşılaştırın. %{{min}} altında emin olunan değerler vurgulanır.",
       "chooseCategory": "Bir kategori seçin.",
-      "chooseUnit": "Talebin nereye yansıtılacağını seçin.",
       "noPreApproval": "Yok",
       "tooLarge": "Dosya {{mb}} MB'tan büyük. Daha küçük bir dosya seçin."
     },

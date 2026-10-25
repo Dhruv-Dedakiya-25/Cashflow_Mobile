@@ -3,6 +3,7 @@
     "add": "Hinzufügen",
     "addEntity": "{{entity}} hinzufügen",
     "back": "Zurück",
+    "backTo": "Zurück zu {{page}}",
     "cancel": "Abbrechen",
     "clearAll": "Alle löschen",
     "close": "Schließen",
@@ -37,6 +38,11 @@
       "saveDraft": "Entwurf speichern",
       "submit": "Zur Genehmigung senden",
       "submitForApproval": "Zur Genehmigung einreichen"
+    },
+    "view": {
+      "label": "Listenansichten",
+      "all": "Alle",
+      "pending": "Offen"
     },
     "filter": {
       "allStatuses": "Alle Status",
@@ -171,6 +177,13 @@
       "invalid": "Ungültiger Benutzername oder ungültiges Passwort.",
       "tooMany": "Zu viele Versuche. Warten Sie eine Minute und versuchen Sie es erneut.",
       "noApi": "Der Server ist nicht erreichbar. Versuchen Sie es gleich noch einmal."
+    },
+    "idle": {
+      "title": "Sind Sie noch da?",
+      "body": "Zu Ihrer Sicherheit werden Sie in {{seconds}} Sekunden abgemeldet.",
+      "stay": "Angemeldet bleiben",
+      "signOut": "Jetzt abmelden",
+      "signedOut": "Sie wurden nach {{minutes}} Minuten ohne Aktivität abgemeldet."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Nachweisdokument",
     "availableNow": "{{amount}} jetzt verfügbar",
-    "backToInbox": "Zurück zum Freigabe-Eingang",
+    "backToInbox": "Zurück zum Posteingang",
     "changes": {
       "after": "Korrigiert, nachdem {{name}} ihn am {{time}} zurückgegeben hatte:",
       "title": "Seit der Rückgabe geändert"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Genehmigen",
       "comment": "Kommentar (für Rückgabe oder Ablehnung erforderlich)",
-      "noMoney": "Eine Genehmigung bewegt kein Geld. Gezahlt wird nur über die Finanzabwicklung.",
+      "noMoney": "Eine Genehmigung bewegt kein Geld. Gezahlt wird nur über die Zahlungsabwicklung.",
       "placeholder": "Was soll der Antragsteller wissen oder korrigieren?",
       "reasonNeeded": "Geben Sie einen Grund für Rückgabe oder Ablehnung an. Der Antragsteller sieht ihn.",
       "reject": "Ablehnen",
@@ -336,22 +349,24 @@
       "decided": "Über diesen Antrag wurde bereits entschieden.",
       "notEnoughCash": "{{reference}} hat nur OMR {{available}} verfügbar, und ein Saldo darf nicht unter null fallen. Geben Sie den Antrag zurück oder bitten Sie die Finanzabteilung zuerst um eine Aufstockung.",
       "notYourStep": "Dieser Schritt wartet nicht auf Sie.",
-      "ownRequest": "Sie können keinen Antrag entscheiden, an dem Sie beteiligt sind."
+      "ownRequest": "Sie können keinen Antrag entscheiden, an dem Sie beteiligt sind.",
+      "notFinanceStep": "Nur der Schritt der Finanzabteilung kann Betrag, MwSt., Einheit und Auszahlungsweg ändern."
     },
     "refusalHint": "{{reference}} hat nur {{available}} verfügbar, und ein Saldo darf nicht unter null fallen. Geben Sie ihn zurück oder bitten Sie die Finanzabteilung zuerst um eine Aufstockung.",
     "search": "Referenz, Person oder Zweck suchen",
     "sentAt": "eingereicht {{time}}",
-    "subtitle": "Anträge, die auf Ihre Entscheidung warten, alles in Ihrem Bereich und was Sie entschieden haben.",
+    "subtitle": "Was auf Sie wartet: Anträge zur Entscheidung und Bargeld zur Bestätigung.",
+    "archive": {
+      "title": "Posteingang-Archiv",
+      "subtitle": "Alles, was nicht mehr auf Sie wartet: Anträge in Ihrem Bereich, Ihre Entscheidungen und ausgezahltes Bargeld."
+    },
     "tile": {
       "decided": "Von Ihnen entschieden",
       "decidedNote": "Genehmigt, zurückgegeben oder abgelehnt",
-      "overdue": "Überfällig",
-      "overdueNote": "Länger als die Workflow-Einrichtung erlaubt",
       "scope": "In Genehmigung",
-      "summary": "Übersicht der Genehmigungen",
-      "waiting": "Wartet auf Sie"
+      "summary": "Übersicht der Genehmigungen"
     },
-    "title": "Freigabe-Eingang",
+    "title": "Posteingang",
     "toast": {
       "approve": "{{reference}} wurde genehmigt.",
       "reject": "{{reference}} wurde abgelehnt.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Von mir entschieden",
       "scope": "Alles in meinem Bereich",
-      "waiting": "Wartet auf mich"
+      "waiting": "Wartet auf mich",
+      "cash": "Zu bestätigendes Bargeld",
+      "cashArchive": "Ausgezahltes Bargeld"
     },
     "views": "Ansichten des Eingangs",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Wartet auf Ihre Entscheidung in Schritt {{n}}: {{step}}.",
     "yoursToWatch": "Sie sind an diesem Antrag beteiligt und können ihn daher nicht entscheiden. Er wartet auf {{names}} in Schritt {{n}}.",
-    "openSourceRecord": "Zuweisung öffnen"
+    "openSourceRecord": "Zuweisung öffnen",
+    "finance": {
+      "title": "Von der Finanzabteilung festgelegt",
+      "hint": "Der Antragsteller hat die Rechnungssumme angegeben. Prüfen Sie sie und legen Sie MwSt., belastete Einheit und Auszahlungsweg fest; sie werden mit Ihrer Genehmigung gespeichert."
+    }
   },
   "ack": {
     "action": "Bestätigen",
@@ -437,7 +458,7 @@
       "chooseCategory": "Wählen Sie eine Ausgabenkategorie.",
       "chooseEmployee": "Wählen Sie den Mitarbeiter.",
       "costUnit": "Wählen Sie eine Einheit, zu der dieser Mitarbeiter gehört. Inaktive Einheiten können nicht belastet werden.",
-      "merchant": "Geben Sie den Händler oder Zahlungsempfänger ein.",
+      "merchant": "Geben Sie den Händler oder Lieferanten ein.",
       "purpose": "Beschreiben Sie den geschäftlichen Zweck in wenigen Worten.",
       "vendor": "Dieser Lieferant ist inaktiv. Wählen Sie einen anderen oder tippen Sie den Namen des Händlers ein."
     },
@@ -459,13 +480,13 @@
       "employee": "Mitarbeiter",
       "enteredBy": "Erfasst von",
       "for": "Für",
-      "merchant": "Händler / Zahlungsempfänger",
+      "merchant": "Händler / Lieferant",
       "submitFor": "Einreichen für"
     },
     "filter": {
       "allEmployees": "Alle Mitarbeiter"
     },
-    "merchantHint": "Aus dem Lieferantenstamm wählen oder Händler bzw. Zahlungsempfänger eintippen, falls nicht gelistet.",
+    "merchantHint": "Aus dem Lieferantenstamm wählen oder Händler bzw. Lieferanten eintippen, falls nicht gelistet.",
     "merchantPlaceholder": "Lieferant suchen oder neuen Namen eingeben…",
     "noAttachment": "Kein Anhang",
     "noMerchant": "Nicht angegeben",
@@ -558,13 +579,13 @@
       "receipt": "Beleg / Rechnung",
       "receiptNo": "Beleg-/Rechnungsnr.",
       "settlement": "Zahlungsmethode",
-      "vatTreatment": "MwSt.-Behandlung"
+      "vatTreatment": "MwSt.-Behandlung",
+      "billTotal": "Rechnungssumme"
     },
     "filter": {
       "allBases": "Alle Abrechnungsgrundlagen",
       "allSettlements": "Alle Zahlungsarten"
     },
-    "fromScan": "Aus dem Beleg-Scan ausgefüllt. Die KI hat ihn mit {{confidence}} % Konfidenz gelesen: Prüfen Sie jeden Wert vor dem Einreichen am Beleg.",
     "leftOf": "{{left}} übrig von {{amount}}",
     "new": "Neue Erstattung",
     "newSubtitle": "Reichen Sie eine tatsächliche Ausgabe zur Erstattung ein.",
@@ -574,8 +595,6 @@
     "notEditable": "Diese Abrechnung ist nicht mehr korrigierbar und kann nicht mehr geändert werden.",
     "notInLedger": "Nicht gebucht: mit dem Gehalt gezahlt",
     "notScanned": "Ohne KI-Auslesung hochgeladen. Die Werte wurden eingetippt.",
-    "openScan": "Scannen Sie ihn und lassen Sie die KI die Abrechnung ausfüllen",
-    "orScan": "Haben Sie den Beleg zur Hand?",
     "preApprovalHint": "Nur genehmigte Anträge dieses Mitarbeiters mit Restbetrag werden angezeigt.",
     "preApprovalPlaceholder": "Genehmigten Antrag wählen…",
     "receiptHint": "Beleg hier ablegen oder Datei wählen",
@@ -592,7 +611,8 @@
       "amount": "Betrag und MwSt.",
       "charge": "Belastung und Zahlung",
       "expense": "Ausgabe",
-      "receipt": "Beleg / Rechnung"
+      "receipt": "Beleg / Rechnung",
+      "bill": "Betrag"
     },
     "settlement": {
       "pettyCash": "Handkasse",
@@ -609,7 +629,7 @@
       "noAllocation": "Diese Einheit hat keine aktive Zuweisung. Die Finanzabteilung zahlt eventuell auf anderem Weg.",
       "noAllocationBlocked": "Diese Einheit hat keine aktive Zuweisung, daher kann nicht aus der Handkasse gezahlt werden. Wählen Sie das Gehalt oder fragen Sie die Finanzabteilung.",
       "preApprovalLeft": "Übrig auf",
-      "routeLater": "Wer genehmigt, erscheint hier, sobald Betrag und Einheit ausgefüllt sind.",
+      "routeLater": "Wer genehmigt, erscheint hier, sobald der Betrag ausgefüllt ist.",
       "salary": "Mit dem Gehalt gezahlt: Kein Handkassensaldo ändert sich.",
       "short": "Mehr, als die Zuweisung verfügbar hat. Die Finanzabteilung muss zuerst aufstocken.",
       "shortBlocked": "Mehr, als die Zuweisung verfügbar hat, und ein Saldo darf nicht unter null fallen. Senken Sie den Betrag, wählen Sie das Gehalt oder beantragen Sie eine Aufstockung.",
@@ -640,7 +660,16 @@
       "exclusive": "Erfasst als {{amount}} vor {{rate}} % MwSt.",
       "inclusive": "Erfasst als {{amount}} inklusive {{rate}} % MwSt.",
       "none": "Erfasst als {{amount}}. Die Rechnung enthält keine MwSt."
-    }
+    },
+    "entry": {
+      "title": "Wie möchten Sie diesen Antrag erfassen?",
+      "manual": "Manuelle Eingabe",
+      "manualHint": "Geben Sie die Angaben selbst ein und hängen Sie den Beleg an.",
+      "scanHint": "Laden Sie den Beleg hoch oder fotografieren Sie ihn. Die KI liest Händler, Datum, Beträge und Kategorie, Sie prüfen sie.",
+      "reading": "Die KI liest den Beleg…",
+      "read": "Die KI hat den Beleg mit {{confidence}} % Sicherheit gelesen und den Antrag ausgefüllt. Prüfen Sie jeden Wert vor dem Einreichen."
+    },
+    "financeDecides": "Die Finanzabteilung legt bei der Genehmigung MwSt., belastete Einheit und Auszahlungsweg fest."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Spesenerstattung",
       "noMovements": "Noch keine Bewegungen.",
       "noRequests": "Noch keine Anträge. Starten Sie oben einen.",
-      "openInbox": "Freigabe-Eingang",
+      "openInbox": "Posteingang",
       "overdue": "Überfällig: {{count}}",
       "paidOn": "{{amount}} ausgezahlt am {{date}}",
       "preExpenseBehalf": "Vorab-Ausgabe für andere",
@@ -700,7 +729,7 @@
         "returned": "An mich zurückgegeben",
         "returnedNote": "Handlung erforderlich"
       },
-      "title": "Mein Dashboard",
+      "title": "Dashboard",
       "toAcknowledge": "An Sie ausgezahltes Bargeld wartet auf Ihre Bestätigung ({{count}})",
       "topUpPending": "Aufstockung unterwegs:",
       "voucher": "Beleg {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Weniger anzeigen",
       "subtitle": "Handkassen über alle Geschäftsbereiche, Abteilungen und Projekte: was vorhanden ist, was zu tun ist und wohin das Geld ging.",
       "thresholdsLink": "Schwellen",
-      "title": "Finanz-Dashboard"
+      "title": "Dashboard"
     },
     "column": {
       "allocation": "Zuweisung",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Empfang bestätigt am {{date}}",
     "approvedNote": "Bereits genehmigt. Eine Änderung von Einheit, Verwahrer oder Betrag schickt sie zurück in die Genehmigung; Schwellen und Zweck nicht.",
     "availableMarker": "Noch {{percent}} %",
-    "backToAcknowledgements": "Zurück zu den Empfangsbestätigungen",
     "backToList": "Zurück zu den Zuweisungen",
     "balanceTitle": "Saldo",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} ist für diese Einheit bereits offen. Beantragen Sie stattdessen mehr Bargeld über Anträge auf zusätzliches Bargeld.",
       "thresholdRange": "Schwellen sind ganze Prozentwerte von 1 bis 99.",
       "watchAboveNear": "Die Beobachtungsmarke muss über der Schwellenmarke liegen.",
-      "notDisburser": "Sie sind nicht für Auszahlungen freigegeben und können daher keine Zuweisungen ausgeben.",
-      "notRecipient": "{{name}} ist kein freigegebener Empfänger und darf keine Handkasse verwahren."
+      "cannotIssue": "Nur die Finanzabteilung gibt Zuweisungen aus: Ihre Rolle zahlt keine Handkasse aus.",
+      "notCustodian": "{{name}} darf keine Handkasse verwahren. Weisen Sie zuerst die Rolle Verwahrer zu."
     },
     "chooseLevelFirst": "Wählen Sie zuerst die Ebene",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Referenz, Einheit, Verwahrer oder Zweck suchen",
     "subtitle": "Bargeld, das einer Abteilung, Geschäftseinheit, einem Projekt oder Verwahrer ausgegeben wurde, und was jeder jetzt hält. Mehr Bargeld für eine bestehende Zuweisung läuft über Anträge auf zusätzliches Bargeld.",
     "thresholdsValue": "Beobachten {{watch}}% · Schwelle {{near}}%",
-    "tile": {
-      "active": "Aktive Zuweisungen",
-      "activeNote": "{{amount}} finanziert",
-      "attention": "Handlungsbedarf",
-      "attentionNote": "Nahe der Schwelle oder überschritten: {{count}}",
-      "available": "Jetzt verfügbar",
-      "availableNote": "nach {{amount}} reserviert",
-      "awaiting": "Wartet auf Empfangsbestätigung",
-      "summary": "Übersicht der Zuweisungen"
-    },
     "title": "Handkassen-Zuweisungen",
     "toast": {
       "cancelled": "{{reference}} wurde storniert.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} wurde zur Genehmigung gesendet."
     },
     "topUpOnItsWay": "Weitere {{amount}} sind unterwegs ({{references}}) und warten auf Empfangsbestätigung.",
-    "noRecipients": "Keine freigegebenen Empfänger in dieser Einheit. Fügen Sie unter Auszahler & Empfänger einen hinzu."
+    "noCustodians": "Keine Verwahrer in dieser Einheit. Weisen Sie zuerst jemandem in der Einheit die Rolle Verwahrer zu."
   },
   "file": {
     "aiNotRead": "Nicht gescannt",

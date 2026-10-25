@@ -44,7 +44,6 @@
     "resentTitle": "已重新提交",
     "viewClaim": "查看报销单",
     "cameraDenied": "CashFlow 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
-    "manual": "手动填写",
     "sampleNote": "示例识别：演示版中每张票据都按此示例识别，照片只保存在本机。",
     "choosePdf": "选择 PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "AI 正在识别票据…",
       "checkEach": "请对照票据核对每个值。置信度低于 {{min}}% 的值已标出。",
       "chooseCategory": "请选择类别。",
-      "chooseUnit": "请选择报销的计入单位。",
       "noPreApproval": "无",
       "tooLarge": "文件大于 {{mb}} MB，请选择较小的文件。"
     },

@@ -44,7 +44,6 @@
     "resentTitle": "Inviato di nuovo",
     "viewClaim": "Vedi il rimborso",
     "cameraDenied": "CashFlow ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
-    "manual": "Inserisci i dati a mano",
     "sampleNote": "Lettura di esempio: nella demo ogni scontrino viene letto come questo esempio, e la foto resta su questo telefono.",
     "choosePdf": "Scegli un PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "L'IA sta leggendo lo scontrino…",
       "checkEach": "Confronta ogni valore con lo scontrino. I valori con meno del {{min}}% di certezza sono evidenziati.",
       "chooseCategory": "Scegli una categoria.",
-      "chooseUnit": "Scegli dove addebitare il rimborso.",
       "noPreApproval": "Nessuna",
       "tooLarge": "Il file supera {{mb}} MB. Scegline uno più piccolo."
     },

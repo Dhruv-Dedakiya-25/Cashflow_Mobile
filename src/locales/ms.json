@@ -44,7 +44,6 @@
     "resentTitle": "Dihantar semula",
     "viewClaim": "Lihat tuntutan",
     "cameraDenied": "CashFlow memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
-    "manual": "Taip butiran sendiri",
     "sampleNote": "Bacaan contoh: dalam demo setiap resit dibaca seperti contoh ini, dan foto kekal di telefon ini.",
     "choosePdf": "Pilih PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "AI sedang membaca resit…",
       "checkEach": "Semak setiap nilai dengan resit. Nilai dengan keyakinan di bawah {{min}}% diserlahkan.",
       "chooseCategory": "Pilih kategori.",
-      "chooseUnit": "Pilih ke mana tuntutan dicaj.",
       "noPreApproval": "Tiada",
       "tooLarge": "Fail melebihi {{mb}} MB. Pilih fail yang lebih kecil."
     },

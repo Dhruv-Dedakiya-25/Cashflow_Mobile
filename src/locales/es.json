@@ -44,7 +44,6 @@
     "resentTitle": "Enviado de nuevo",
     "viewClaim": "Ver el reembolso",
     "cameraDenied": "CashFlow necesita la cámara para fotografiar recibos. Permítala en Ajustes o elija una foto.",
-    "manual": "Escribir los detalles",
     "sampleNote": "Lectura de ejemplo: en la demo cada recibo se lee como este ejemplo, y la foto se queda en este teléfono.",
     "choosePdf": "Elegir un PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "La IA está leyendo el recibo…",
       "checkEach": "Compare cada valor con el recibo. Se resaltan los valores con menos del {{min}} % de certeza.",
       "chooseCategory": "Elija una categoría.",
-      "chooseUnit": "Elija a dónde se imputa el reembolso.",
       "noPreApproval": "Ninguna",
       "tooLarge": "El archivo supera los {{mb}} MB. Elija uno más pequeño."
     },

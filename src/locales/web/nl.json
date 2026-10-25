@@ -3,6 +3,7 @@
     "add": "Toevoegen",
     "addEntity": "{{entity}} toevoegen",
     "back": "Terug",
+    "backTo": "Terug naar {{page}}",
     "cancel": "Annuleren",
     "clearAll": "Alles wissen",
     "close": "Sluiten",
@@ -37,6 +38,11 @@
       "saveDraft": "Concept opslaan",
       "submit": "Ter goedkeuring sturen",
       "submitForApproval": "Ter goedkeuring indienen"
+    },
+    "view": {
+      "label": "Lijstweergaven",
+      "all": "Alle",
+      "pending": "In behandeling"
     },
     "filter": {
       "allStatuses": "Alle statussen",
@@ -171,6 +177,13 @@
       "invalid": "Ongeldige gebruikersnaam of ongeldig wachtwoord.",
       "tooMany": "Te veel pogingen. Wacht een minuut en probeer het opnieuw.",
       "noApi": "Kan de server niet bereiken. Probeer het zo meteen opnieuw."
+    },
+    "idle": {
+      "title": "Bent u er nog?",
+      "body": "Voor uw veiligheid wordt u over {{seconds}} seconden uitgelogd.",
+      "stay": "Ingelogd blijven",
+      "signOut": "Nu uitloggen",
+      "signedOut": "U bent uitgelogd na {{minutes}} minuten zonder activiteit."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Ondersteunend document",
     "availableNow": "{{amount}} nu beschikbaar",
-    "backToInbox": "Terug naar Goedkeuringen",
+    "backToInbox": "Terug naar Inbox",
     "changes": {
       "after": "Gecorrigeerd nadat {{name}} hem op {{time}} terugstuurde:",
       "title": "Gewijzigd sinds het werd teruggestuurd"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Goedkeuren",
       "comment": "Opmerking (nodig om terug te sturen of af te wijzen)",
-      "noMoney": "Goedkeuren verplaatst geen geld. Alleen Financiële afwikkeling betaalt.",
+      "noMoney": "Goedkeuren verplaatst geen geld. Alleen Betalingsafhandeling betaalt.",
       "placeholder": "Wat moet de aanvrager weten of corrigeren?",
       "reasonNeeded": "Geef een reden om terug te sturen of af te wijzen. De aanvrager ziet die.",
       "reject": "Afwijzen",
@@ -336,22 +349,24 @@
       "decided": "Over deze aanvraag is al beslist.",
       "notEnoughCash": "{{reference}} heeft maar OMR {{available}} beschikbaar, en een saldo mag niet onder nul. Stuur de aanvraag terug of vraag Financiën eerst om een aanvulling.",
       "notYourStep": "Deze stap wacht niet op u.",
-      "ownRequest": "U kunt niet beslissen over een aanvraag waarbij u betrokken bent."
+      "ownRequest": "U kunt niet beslissen over een aanvraag waarbij u betrokken bent.",
+      "notFinanceStep": "Alleen de stap van Financiën kan bedrag, btw, eenheid en betaalwijze wijzigen."
     },
     "refusalHint": "{{reference}} heeft maar {{available}} beschikbaar, en een saldo mag niet onder nul. Stuur hem terug of vraag Financiën eerst om een aanvulling.",
     "search": "Zoek referentie, persoon of doel",
     "sentAt": "ingediend {{time}}",
-    "subtitle": "Aanvragen die op uw beslissing wachten, alles binnen uw bereik en wat u hebt beslist.",
+    "subtitle": "Wat op u wacht: aanvragen om te beslissen en contanten om te bevestigen.",
+    "archive": {
+      "title": "Inbox-archief",
+      "subtitle": "Alles wat niet meer op u wacht: aanvragen in uw bereik, uw beslissingen en uitbetaalde contanten."
+    },
     "tile": {
       "decided": "Door u beslist",
       "decidedNote": "Goedgekeurd, teruggestuurd of afgewezen",
-      "overdue": "Achterstallig",
-      "overdueNote": "Langer dan de workflow-instellingen toestaan",
       "scope": "In goedkeuring",
-      "summary": "Overzicht goedkeuringen",
-      "waiting": "Wacht op u"
+      "summary": "Overzicht goedkeuringen"
     },
-    "title": "Goedkeuringen",
+    "title": "Inbox",
     "toast": {
       "approve": "{{reference}} is goedgekeurd.",
       "reject": "{{reference}} is afgewezen.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Door mij beslist",
       "scope": "Alles binnen mijn bereik",
-      "waiting": "Wacht op mij"
+      "waiting": "Wacht op mij",
+      "cash": "Contanten te bevestigen",
+      "cashArchive": "Uitbetaalde contanten"
     },
     "views": "Weergaven van goedkeuringen",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Wacht op uw beslissing bij stap {{n}}: {{step}}.",
     "yoursToWatch": "U bent betrokken bij deze aanvraag en kunt er dus niet over beslissen. Hij wacht op {{names}} bij stap {{n}}.",
-    "openSourceRecord": "Toewijzing openen"
+    "openSourceRecord": "Toewijzing openen",
+    "finance": {
+      "title": "Door Financiën bepaald",
+      "hint": "De indiener gaf het totaal van de bon. Controleer het en bepaal de btw, de eenheid en de betaalwijze; ze worden met uw goedkeuring opgeslagen."
+    }
   },
   "ack": {
     "action": "Bevestigen",
@@ -437,7 +458,7 @@
       "chooseCategory": "Kies een uitgavencategorie.",
       "chooseEmployee": "Kies de medewerker.",
       "costUnit": "Kies een eenheid waartoe deze medewerker behoort. Inactieve eenheden kunnen niet worden belast.",
-      "merchant": "Vul de winkel of begunstigde in.",
+      "merchant": "Vul de winkel of leverancier in.",
       "purpose": "Beschrijf het zakelijke doel in een paar woorden.",
       "vendor": "Deze leverancier is inactief. Kies een andere of typ de naam van de winkel."
     },
@@ -459,13 +480,13 @@
       "employee": "Medewerker",
       "enteredBy": "Ingevoerd door",
       "for": "Voor",
-      "merchant": "Handelaar / Begunstigde",
+      "merchant": "Handelaar / Leverancier",
       "submitFor": "Indienen voor"
     },
     "filter": {
       "allEmployees": "Alle medewerkers"
     },
-    "merchantHint": "Kies uit het leveranciersbestand, of typ de winkel of begunstigde als die niet in de lijst staat.",
+    "merchantHint": "Kies uit het leveranciersbestand, of typ de winkel of leverancier als die niet in de lijst staat.",
     "merchantPlaceholder": "Zoek een leverancier of typ een nieuwe naam…",
     "noAttachment": "Geen bijlage",
     "noMerchant": "Niet opgegeven",
@@ -558,13 +579,13 @@
       "receipt": "Bon / factuur",
       "receiptNo": "Bon-/factuurnr.",
       "settlement": "Betaalmethode",
-      "vatTreatment": "Btw-behandeling"
+      "vatTreatment": "Btw-behandeling",
+      "billTotal": "Totaal van de bon"
     },
     "filter": {
       "allBases": "Alle declaratiegrondslagen",
       "allSettlements": "Alle betaalwijzen"
     },
-    "fromScan": "Ingevuld via Bon scannen. AI las hem met {{confidence}}% zekerheid: controleer elke waarde op de bon voordat u indient.",
     "leftOf": "{{left}} over van {{amount}}",
     "new": "Nieuwe declaratie",
     "newSubtitle": "Dien een werkelijke uitgave in ter vergoeding.",
@@ -574,8 +595,6 @@
     "notEditable": "Deze declaratie kan niet meer worden gecorrigeerd of gewijzigd.",
     "notInLedger": "Niet geboekt: betaald met salaris",
     "notScanned": "Geüpload zonder AI-uitlezing. De waarden zijn ingetypt.",
-    "openScan": "Scan hem en laat AI de declaratie invullen",
-    "orScan": "Heeft u de bon bij de hand?",
     "preApprovalHint": "Alleen goedgekeurde aanvragen van deze medewerker met saldo worden getoond.",
     "preApprovalPlaceholder": "Kies een goedgekeurde aanvraag…",
     "receiptHint": "Sleep de bon hierheen, of kies een bestand",
@@ -592,7 +611,8 @@
       "amount": "Bedrag en btw",
       "charge": "Belasting en betaling",
       "expense": "Uitgave",
-      "receipt": "Bon / factuur"
+      "receipt": "Bon / factuur",
+      "bill": "Bedrag"
     },
     "settlement": {
       "pettyCash": "Kleine kas",
@@ -609,7 +629,7 @@
       "noAllocation": "Deze eenheid heeft geen actieve toewijzing. Financiën betaalt mogelijk op een andere manier.",
       "noAllocationBlocked": "Deze eenheid heeft geen actieve toewijzing, dus betalen uit de kleine kas kan niet. Kies Salaris van de medewerker of vraag het Financiën.",
       "preApprovalLeft": "Over op",
-      "routeLater": "Wie goedkeurt verschijnt hier zodra bedrag en eenheid zijn ingevuld.",
+      "routeLater": "Wie goedkeurt verschijnt hier zodra het bedrag is ingevuld.",
       "salary": "Betaald met salaris: geen kleinekassaldo verandert.",
       "short": "Meer dan de toewijzing beschikbaar heeft. Financiën moet haar eerst aanvullen.",
       "shortBlocked": "Meer dan de toewijzing beschikbaar heeft, en een saldo mag niet onder nul. Verlaag het bedrag, kies Salaris van de medewerker of vraag een aanvulling.",
@@ -640,7 +660,16 @@
       "exclusive": "Ingevoerd als {{amount}} vóór {{rate}}% btw.",
       "inclusive": "Ingevoerd als {{amount}} inclusief {{rate}}% btw.",
       "none": "Ingevoerd als {{amount}}. De rekening bevat geen btw."
-    }
+    },
+    "entry": {
+      "title": "Hoe wilt u deze declaratie invoeren?",
+      "manual": "Handmatig invoeren",
+      "manualHint": "Vul de gegevens zelf in en voeg de bon toe.",
+      "scanHint": "Upload of fotografeer de bon. De AI leest de winkel, datum, bedragen en categorie, die u controleert.",
+      "reading": "De AI leest de bon…",
+      "read": "De AI las de bon met {{confidence}}% zekerheid en vulde de declaratie in. Controleer elke waarde voordat u indient."
+    },
+    "financeDecides": "Financiën bepaalt bij het goedkeuren de btw, de eenheid die wordt belast en hoe u wordt betaald."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Onkostendeclaratie",
       "noMovements": "Nog geen mutaties.",
       "noRequests": "Nog geen aanvragen. Start er hierboven een.",
-      "openInbox": "Goedkeuringen",
+      "openInbox": "Inbox",
       "overdue": "Te laat: {{count}}",
       "paidOn": "{{amount}} uitbetaald op {{date}}",
       "preExpenseBehalf": "Uitgave vooraf namens een ander",
@@ -700,7 +729,7 @@
         "returned": "Aan mij teruggestuurd",
         "returnedNote": "Actie vereist"
       },
-      "title": "Mijn dashboard",
+      "title": "Dashboard",
       "toAcknowledge": "Aan u uitbetaald geld wacht op uw bevestiging ({{count}})",
       "topUpPending": "Aanvulling onderweg:",
       "voucher": "Bon {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Minder tonen",
       "subtitle": "De kleine kas in alle bedrijfsonderdelen, afdelingen en projecten: wat er is, wat actie vraagt en waar het geld heen ging.",
       "thresholdsLink": "Drempels",
-      "title": "Financieel dashboard"
+      "title": "Dashboard"
     },
     "column": {
       "allocation": "Toewijzing",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Ontvangst bevestigd op {{date}}",
     "approvedNote": "Al goedgekeurd. Het wijzigen van eenheid, beheerder of bedrag stuurt hem terug ter goedkeuring; drempels en doel niet.",
     "availableMarker": "Nog {{percent}}%",
-    "backToAcknowledgements": "Terug naar ontvangstbevestigingen",
     "backToList": "Terug naar toewijzingen",
     "balanceTitle": "Saldo",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} staat al open voor deze eenheid. Vraag in plaats daarvan meer geld aan via aanvragen extra contant geld.",
       "thresholdRange": "Drempels zijn hele percentages van 1 tot 99.",
       "watchAboveNear": "De opletmarkering moet boven de drempelmarkering liggen.",
-      "notDisburser": "U bent niet ingeschakeld voor uitkering en kunt dus geen toewijzingen uitgeven.",
-      "notRecipient": "{{name}} is geen ingeschakelde ontvanger en kan geen kleine kas beheren."
+      "cannotIssue": "Alleen Financiën geeft toewijzingen uit: uw rol keert geen kleine kas uit.",
+      "notCustodian": "{{name}} kan geen kleine kas beheren. Geef eerst de rol Kasbeheerder."
     },
     "chooseLevelFirst": "Kies eerst het niveau",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Zoek referentie, eenheid, beheerder of doel",
     "subtitle": "Contant geld uitgegeven aan een afdeling, bedrijfsonderdeel, project of beheerder, en wat elk nu in handen heeft. Meer geld voor een bestaande toewijzing loopt via aanvragen extra contant geld.",
     "thresholdsValue": "Opletten {{watch}}% · Drempel {{near}}%",
-    "tile": {
-      "active": "Actieve toewijzingen",
-      "activeNote": "{{amount}} gefinancierd",
-      "attention": "Aandacht nodig",
-      "attentionNote": "Bijna bij de drempel of overschreden: {{count}}",
-      "available": "Nu beschikbaar",
-      "availableNote": "na {{amount}} gereserveerd",
-      "awaiting": "Wacht op ontvangstbevestiging",
-      "summary": "Overzicht toewijzingen"
-    },
     "title": "Kleine-kastoewijzingen",
     "toast": {
       "cancelled": "{{reference}} is geannuleerd.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} is ter goedkeuring gestuurd."
     },
     "topUpOnItsWay": "Nog {{amount}} is onderweg ({{references}}) en wacht op ontvangstbevestiging.",
-    "noRecipients": "Geen ingeschakelde ontvangers in deze eenheid. Voeg er een toe bij Uitkeerders & ontvangers."
+    "noCustodians": "Geen kasbeheerders in deze eenheid. Geef eerst iemand in deze eenheid de rol Kasbeheerder."
   },
   "file": {
     "aiNotRead": "Niet gescand",

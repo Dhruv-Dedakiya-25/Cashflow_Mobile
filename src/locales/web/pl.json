@@ -3,6 +3,7 @@
     "add": "Dodaj",
     "addEntity": "Dodaj {{entity}}",
     "back": "Wstecz",
+    "backTo": "Wróć do: {{page}}",
     "cancel": "Anuluj",
     "clearAll": "Wyczyść wszystko",
     "close": "Zamknij",
@@ -37,6 +38,11 @@
       "saveDraft": "Zapisz wersję roboczą",
       "submit": "Wyślij do zatwierdzenia",
       "submitForApproval": "Prześlij do zatwierdzenia"
+    },
+    "view": {
+      "label": "Widoki listy",
+      "all": "Wszystkie",
+      "pending": "Oczekujące"
     },
     "filter": {
       "allStatuses": "Wszystkie statusy",
@@ -171,6 +177,13 @@
       "invalid": "Nieprawidłowa nazwa użytkownika lub hasło.",
       "tooMany": "Zbyt wiele prób. Odczekaj minutę i spróbuj ponownie.",
       "noApi": "Nie można połączyć się z serwerem. Spróbuj ponownie za chwilę."
+    },
+    "idle": {
+      "title": "Czy nadal tu jesteś?",
+      "body": "Dla Twojego bezpieczeństwa zostaniesz wylogowany za {{seconds}} s.",
+      "stay": "Pozostań zalogowany",
+      "signOut": "Wyloguj teraz",
+      "signedOut": "Wylogowano po {{minutes}} min bez aktywności."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Dokument potwierdzający",
     "availableNow": "Teraz dostępne {{amount}}",
-    "backToInbox": "Powrót do skrzynki zatwierdzeń",
+    "backToInbox": "Wróć do skrzynki",
     "changes": {
       "after": "Poprawiony po zwrocie przez {{name}} w dniu {{time}}:",
       "title": "Zmieniony od zwrotu"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Zatwierdź",
       "comment": "Komentarz (wymagany przy zwrocie lub odrzuceniu)",
-      "noMoney": "Zatwierdzenie nie przesuwa pieniędzy. Płaci tylko Rozliczenie finansowe.",
+      "noMoney": "Zatwierdzenie nie przesuwa pieniędzy. Płaci tylko Rozliczanie płatności.",
       "placeholder": "Co wnioskodawca powinien wiedzieć lub poprawić?",
       "reasonNeeded": "Podaj powód zwrotu lub odrzucenia. Wnioskodawca go zobaczy.",
       "reject": "Odrzuć",
@@ -336,22 +349,24 @@
       "decided": "O tym wniosku już zdecydowano.",
       "notEnoughCash": "W {{reference}} dostępne jest tylko OMR {{available}}, a saldo nie może spaść poniżej zera. Zwróć wniosek lub najpierw poproś dział finansów o doładowanie.",
       "notYourStep": "Ten krok nie czeka na Ciebie.",
-      "ownRequest": "Nie możesz decydować o wniosku, którego jesteś stroną."
+      "ownRequest": "Nie możesz decydować o wniosku, którego jesteś stroną.",
+      "notFinanceStep": "Tylko krok działu finansów może zmienić kwotę, VAT, jednostkę i sposób wypłaty."
     },
     "refusalHint": "W {{reference}} dostępne jest tylko {{available}}, a saldo nie może spaść poniżej zera. Zwróć go lub najpierw poproś dział finansów o doładowanie.",
     "search": "Szukaj numeru, osoby lub celu",
     "sentAt": "wysłano {{time}}",
-    "subtitle": "Wnioski czekające na Twoją decyzję, wszystko w Twoim zakresie i to, o czym zdecydowałeś.",
+    "subtitle": "Co na Ciebie czeka: wnioski do decyzji i gotówka do potwierdzenia.",
+    "archive": {
+      "title": "Archiwum skrzynki",
+      "subtitle": "Wszystko, co już na Ciebie nie czeka: wnioski z Twojego zakresu, Twoje decyzje i wypłacona gotówka."
+    },
     "tile": {
       "decided": "Zdecydowane przez Ciebie",
       "decidedNote": "Zatwierdzone, zwrócone lub odrzucone",
-      "overdue": "Przeterminowana",
-      "overdueNote": "Dłużej, niż pozwala konfiguracja obiegu",
       "scope": "W akceptacji",
-      "summary": "Podsumowanie zatwierdzeń",
-      "waiting": "Czekają na Ciebie"
+      "summary": "Podsumowanie zatwierdzeń"
     },
-    "title": "Skrzynka zatwierdzeń",
+    "title": "Skrzynka",
     "toast": {
       "approve": "Zatwierdzono {{reference}}.",
       "reject": "Odrzucono {{reference}}.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Zdecydowane przeze mnie",
       "scope": "Wszystko w moim zakresie",
-      "waiting": "Czekają na mnie"
+      "waiting": "Czekają na mnie",
+      "cash": "Gotówka do potwierdzenia",
+      "cashArchive": "Wypłacona gotówka"
     },
     "views": "Widoki skrzynki",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Czeka na Twoją decyzję w kroku {{n}}: {{step}}.",
     "yoursToWatch": "Jesteś stroną tego wniosku, więc nie możesz o nim decydować. Czeka na {{names}} w kroku {{n}}.",
-    "openSourceRecord": "Otwórz przydział"
+    "openSourceRecord": "Otwórz przydział",
+    "finance": {
+      "title": "Ustala dział finansów",
+      "hint": "Wnioskodawca podał sumę rachunku. Sprawdź ją, a następnie ustal VAT, obciążaną jednostkę i sposób wypłaty; zostaną zapisane z Twoim zatwierdzeniem."
+    }
   },
   "ack": {
     "action": "Potwierdź",
@@ -437,7 +458,7 @@
       "chooseCategory": "Wybierz kategorię wydatku.",
       "chooseEmployee": "Wybierz pracownika.",
       "costUnit": "Wybierz jednostkę, do której należy ten pracownik. Nieaktywnych jednostek nie można obciążyć.",
-      "merchant": "Podaj sprzedawcę lub odbiorcę.",
+      "merchant": "Podaj sprzedawcę lub dostawcę.",
       "purpose": "Opisz krótko cel służbowy.",
       "vendor": "Ten dostawca jest nieaktywny. Wybierz innego lub wpisz nazwę sprzedawcy."
     },
@@ -459,13 +480,13 @@
       "employee": "Pracownik",
       "enteredBy": "Wprowadził(a)",
       "for": "Dla",
-      "merchant": "Sprzedawca / Odbiorca",
+      "merchant": "Sprzedawca / Dostawca",
       "submitFor": "Składane dla"
     },
     "filter": {
       "allEmployees": "Wszyscy pracownicy"
     },
-    "merchantHint": "Wybierz z kartoteki dostawców albo wpisz sprzedawcę lub odbiorcę, jeśli go nie ma na liście.",
+    "merchantHint": "Wybierz z kartoteki dostawców albo wpisz sprzedawcę lub dostawcę, jeśli go nie ma na liście.",
     "merchantPlaceholder": "Szukaj dostawcy lub wpisz nową nazwę…",
     "noAttachment": "Brak załącznika",
     "noMerchant": "Nie podano",
@@ -558,13 +579,13 @@
       "receipt": "Paragon / rachunek",
       "receiptNo": "Nr paragonu / faktury",
       "settlement": "Metoda płatności",
-      "vatTreatment": "Traktowanie VAT"
+      "vatTreatment": "Traktowanie VAT",
+      "billTotal": "Suma rachunku"
     },
     "filter": {
       "allBases": "Wszystkie podstawy rozliczenia",
       "allSettlements": "Wszystkie metody płatności"
     },
-    "fromScan": "Wypełnione ze skanu paragonu. AI odczytała go z pewnością {{confidence}}%: przed wysłaniem porównaj każdą wartość z paragonem.",
     "leftOf": "Pozostało {{left}} z {{amount}}",
     "new": "Nowy zwrot kosztów",
     "newSubtitle": "Złóż faktyczny wydatek do zwrotu.",
@@ -574,8 +595,6 @@
     "notEditable": "Tego rozliczenia nie można już poprawić ani zmienić.",
     "notInLedger": "Niezaksięgowane: wypłacone z pensją",
     "notScanned": "Przesłano bez odczytu AI. Wartości wpisano ręcznie.",
-    "openScan": "Zeskanuj go, a AI wypełni rozliczenie",
-    "orScan": "Masz paragon pod ręką?",
     "preApprovalHint": "Wyświetlane są tylko zaakceptowane wnioski tego pracownika z saldem.",
     "preApprovalPlaceholder": "Wybierz zaakceptowany wniosek…",
     "receiptHint": "Upuść tu paragon lub wybierz plik",
@@ -592,7 +611,8 @@
       "amount": "Kwota i VAT",
       "charge": "Obciążenie i płatność",
       "expense": "Wydatek",
-      "receipt": "Paragon / rachunek"
+      "receipt": "Paragon / rachunek",
+      "bill": "Kwota"
     },
     "settlement": {
       "pettyCash": "Kasa podręczna",
@@ -609,7 +629,7 @@
       "noAllocation": "Ta jednostka nie ma aktywnego przydziału. Dział finansów może wypłacić inaczej.",
       "noAllocationBlocked": "Ta jednostka nie ma aktywnego przydziału, więc nie można wypłacić z kasy podręcznej. Wybierz Wynagrodzenie pracownika lub zapytaj dział finansów.",
       "preApprovalLeft": "Pozostało w",
-      "routeLater": "Akceptujący pojawi się tu po wpisaniu kwoty i jednostki.",
+      "routeLater": "Akceptujący pojawi się tu po wpisaniu kwoty.",
       "salary": "Wypłacane z pensją: żadne saldo kasy podręcznej się nie zmienia.",
       "short": "Więcej, niż jest dostępne w przydziale. Dział finansów musi go najpierw uzupełnić.",
       "shortBlocked": "Więcej, niż jest dostępne w przydziale, a saldo nie może spaść poniżej zera. Zmniejsz kwotę, wybierz Wynagrodzenie pracownika lub poproś o uzupełnienie.",
@@ -640,7 +660,16 @@
       "exclusive": "Wprowadzono {{amount}} przed VAT {{rate}}%.",
       "inclusive": "Wprowadzono {{amount}} z VAT {{rate}}%.",
       "none": "Wprowadzono {{amount}}. Rachunek nie zawiera VAT."
-    }
+    },
+    "entry": {
+      "title": "Jak chcesz wprowadzić ten wniosek?",
+      "manual": "Ręczne wprowadzanie danych",
+      "manualHint": "Wpisz dane samodzielnie i załącz paragon.",
+      "scanHint": "Prześlij lub sfotografuj paragon. AI odczyta sklep, datę, kwoty i kategorię, a Ty je sprawdzisz.",
+      "reading": "AI odczytuje paragon…",
+      "read": "AI odczytało paragon z pewnością {{confidence}}% i wypełniło wniosek. Sprawdź każdą wartość przed wysłaniem."
+    },
+    "financeDecides": "Dział finansów ustala VAT, obciążaną jednostkę i sposób wypłaty przy zatwierdzaniu."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Zwrot wydatków",
       "noMovements": "Brak operacji.",
       "noRequests": "Brak wniosków. Rozpocznij pierwszy powyżej.",
-      "openInbox": "Skrzynka zatwierdzeń",
+      "openInbox": "Skrzynka",
       "overdue": "Po terminie: {{count}}",
       "paidOn": "{{amount}} wypłacono {{date}}",
       "preExpenseBehalf": "Wydatek wstępny w czyimś imieniu",
@@ -700,7 +729,7 @@
         "returned": "Zwrócone do mnie",
         "returnedNote": "Wymaga działania"
       },
-      "title": "Mój pulpit",
+      "title": "Pulpit",
       "toAcknowledge": "Wypłacona Ci gotówka czeka na Twoje potwierdzenie ({{count}})",
       "topUpPending": "Doładowanie w drodze:",
       "voucher": "Dowód {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Pokaż mniej",
       "subtitle": "Kasa podręczna we wszystkich jednostkach biznesowych, działach i projektach: co jest, co wymaga działania i dokąd poszły pieniądze.",
       "thresholdsLink": "Progi",
-      "title": "Panel finansowy"
+      "title": "Pulpit"
     },
     "column": {
       "allocation": "Przydział",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Odbiór potwierdzono {{date}}",
     "approvedNote": "Już zatwierdzony. Zmiana jednostki, opiekuna lub kwoty odeśle go do zatwierdzenia; progów i celu — nie.",
     "availableMarker": "Zostało {{percent}}%",
-    "backToAcknowledgements": "Powrót do potwierdzeń",
     "backToList": "Powrót do przydziałów",
     "balanceTitle": "Saldo",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} jest już otwarty dla tej jednostki. Zamiast tego poproś o więcej gotówki przez wnioski o dodatkową gotówkę.",
       "thresholdRange": "Progi to całkowite wartości procentowe od 1 do 99.",
       "watchAboveNear": "Znacznik obserwacji musi być powyżej znacznika progu.",
-      "notDisburser": "Nie masz uprawnień do wypłat, więc nie możesz wydawać przydziałów.",
-      "notRecipient": "{{name}} nie jest uprawnionym odbiorcą i nie może przechowywać kasy podręcznej."
+      "cannotIssue": "Przydziały wydaje tylko dział finansów: Twoja rola nie wypłaca kasy podręcznej.",
+      "notCustodian": "{{name}} nie może przechowywać kasy podręcznej. Najpierw nadaj rolę Opiekun kasy."
     },
     "chooseLevelFirst": "Najpierw wybierz poziom",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Szukaj numeru, jednostki, opiekuna lub celu",
     "subtitle": "Gotówka wydana działowi, jednostce biznesowej, projektowi lub opiekunowi oraz to, co każdy ma teraz. Dodatkową gotówkę na istniejący przydział zamawia się przez wnioski o dodatkową gotówkę.",
     "thresholdsValue": "Obserwacja {{watch}}% · Próg {{near}}%",
-    "tile": {
-      "active": "Aktywne przydziały",
-      "activeNote": "Zasilono {{amount}}",
-      "attention": "Wymaga uwagi",
-      "attentionNote": "Blisko progu lub przekroczone: {{count}}",
-      "available": "Dostępne teraz",
-      "availableNote": "po rezerwacji {{amount}}",
-      "awaiting": "Czeka na potwierdzenie odbioru",
-      "summary": "Podsumowanie przydziałów"
-    },
     "title": "Przydziały kasy podręcznej",
     "toast": {
       "cancelled": "{{reference}} anulowano.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} wysłano do zatwierdzenia."
     },
     "topUpOnItsWay": "Kolejne {{amount}} są w drodze ({{references}}) i czekają na potwierdzenie odbioru.",
-    "noRecipients": "W tej jednostce nie ma uprawnionych odbiorców. Dodaj kogoś w Wypłacający i odbiorcy."
+    "noCustodians": "W tej jednostce nie ma opiekunów kasy. Najpierw nadaj komuś z jednostki rolę Opiekun kasy."
   },
   "file": {
     "aiNotRead": "Nie zeskanowano",

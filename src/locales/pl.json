@@ -44,7 +44,6 @@
     "resentTitle": "Wysłano ponownie",
     "viewClaim": "Zobacz wniosek",
     "cameraDenied": "CashFlow potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
-    "manual": "Wpisz dane ręcznie",
     "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon odczytuje się jak ten przykład, a zdjęcie zostaje na telefonie.",
     "choosePdf": "Wybierz PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "AI odczytuje paragon…",
       "checkEach": "Porównaj każdą wartość z paragonem. Wartości o pewności poniżej {{min}}% są wyróżnione.",
       "chooseCategory": "Wybierz kategorię.",
-      "chooseUnit": "Wybierz, gdzie zaksięgować wniosek.",
       "noPreApproval": "Brak",
       "tooLarge": "Plik jest większy niż {{mb}} MB. Wybierz mniejszy."
     },

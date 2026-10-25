@@ -3,6 +3,7 @@
     "add": "Tambah",
     "addEntity": "Tambah {{entity}}",
     "back": "Kembali",
+    "backTo": "Kembali ke {{page}}",
     "cancel": "Batal",
     "clearAll": "Hapus semua",
     "close": "Tutup",
@@ -37,6 +38,11 @@
       "saveDraft": "Simpan draf",
       "submit": "Kirim untuk persetujuan",
       "submitForApproval": "Ajukan untuk disetujui"
+    },
+    "view": {
+      "label": "Tampilan daftar",
+      "all": "Semua",
+      "pending": "Tertunda"
     },
     "filter": {
       "allStatuses": "Semua status",
@@ -171,6 +177,13 @@
       "invalid": "Nama pengguna atau kata sandi salah.",
       "tooMany": "Terlalu banyak percobaan. Tunggu satu menit, lalu coba lagi.",
       "noApi": "Tidak dapat menghubungi server. Coba lagi sebentar lagi."
+    },
+    "idle": {
+      "title": "Apakah Anda masih di sana?",
+      "body": "Demi keamanan Anda, Anda akan keluar dalam {{seconds}} detik.",
+      "stay": "Tetap masuk",
+      "signOut": "Keluar sekarang",
+      "signedOut": "Anda telah keluar setelah {{minutes}} menit tanpa aktivitas."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Dokumen Pendukung",
     "availableNow": "{{amount}} tersedia sekarang",
-    "backToInbox": "Kembali ke Kotak Persetujuan",
+    "backToInbox": "Kembali ke Kotak Masuk",
     "changes": {
       "after": "Diperbaiki setelah {{name}} mengembalikannya pada {{time}}:",
       "title": "Diubah sejak dikembalikan"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Setujui",
       "comment": "Komentar (wajib untuk mengembalikan atau menolak)",
-      "noMoney": "Menyetujui tidak memindahkan uang. Hanya Penyelesaian Keuangan yang membayar.",
+      "noMoney": "Menyetujui tidak memindahkan uang. Hanya Penyelesaian Pembayaran yang membayar.",
       "placeholder": "Apa yang perlu diketahui atau diperbaiki pemohon?",
       "reasonNeeded": "Berikan alasan untuk mengembalikan atau menolak. Pemohon akan melihatnya.",
       "reject": "Tolak",
@@ -336,22 +349,24 @@
       "decided": "Permintaan ini sudah diputuskan.",
       "notEnoughCash": "{{reference}} hanya memiliki OMR {{available}} tersedia, dan saldo tidak boleh di bawah nol. Kembalikan permintaan, atau minta tambahan dana dari Keuangan terlebih dahulu.",
       "notYourStep": "Langkah ini tidak menunggu Anda.",
-      "ownRequest": "Anda tidak dapat memutuskan permintaan yang melibatkan Anda."
+      "ownRequest": "Anda tidak dapat memutuskan permintaan yang melibatkan Anda.",
+      "notFinanceStep": "Hanya langkah Keuangan yang dapat mengubah jumlah, PPN, unit, dan cara pembayaran."
     },
     "refusalHint": "{{reference}} hanya memiliki {{available}} tersedia, dan saldo tidak boleh di bawah nol. Kembalikan, atau minta tambahan dana dari Keuangan terlebih dahulu.",
     "search": "Cari referensi, orang, atau tujuan",
     "sentAt": "dikirim {{time}}",
-    "subtitle": "Permintaan yang menunggu keputusan Anda, semua dalam cakupan Anda, dan yang sudah Anda putuskan.",
+    "subtitle": "Yang menunggu Anda: permintaan untuk diputuskan dan uang tunai untuk dikonfirmasi.",
+    "archive": {
+      "title": "Arsip Kotak Masuk",
+      "subtitle": "Semua yang tidak lagi menunggu Anda: permintaan dalam cakupan Anda, keputusan Anda, dan uang tunai yang dibayarkan."
+    },
     "tile": {
       "decided": "Anda Putuskan",
       "decidedNote": "Disetujui, dikembalikan, atau ditolak",
-      "overdue": "Terlambat",
-      "overdueNote": "Melewati waktu yang diizinkan Pengaturan Alur Kerja",
       "scope": "Dalam Persetujuan",
-      "summary": "Ringkasan persetujuan",
-      "waiting": "Menunggu Anda"
+      "summary": "Ringkasan persetujuan"
     },
-    "title": "Kotak Persetujuan",
+    "title": "Kotak Masuk",
     "toast": {
       "approve": "{{reference}} telah disetujui.",
       "reject": "{{reference}} telah ditolak.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Saya putuskan",
       "scope": "Semua dalam cakupan saya",
-      "waiting": "Menunggu saya"
+      "waiting": "Menunggu saya",
+      "cash": "Uang tunai untuk dikonfirmasi",
+      "cashArchive": "Uang tunai dibayarkan"
     },
     "views": "Tampilan kotak persetujuan",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Menunggu keputusan Anda di langkah {{n}}: {{step}}.",
     "yoursToWatch": "Anda adalah pihak dalam permintaan ini, jadi tidak dapat memutuskannya. Permintaan ini menunggu {{names}} di langkah {{n}}.",
-    "openSourceRecord": "Buka alokasi"
+    "openSourceRecord": "Buka alokasi",
+    "finance": {
+      "title": "Ditetapkan Keuangan",
+      "hint": "Pengaju memberikan total tagihan. Periksa, lalu tetapkan PPN, unit yang dibebankan, dan cara pembayarannya; semuanya disimpan bersama persetujuan Anda."
+    }
   },
   "ack": {
     "action": "Konfirmasi",
@@ -437,7 +458,7 @@
       "chooseCategory": "Pilih kategori pengeluaran.",
       "chooseEmployee": "Pilih karyawan.",
       "costUnit": "Pilih unit tempat karyawan ini bernaung. Unit tidak aktif tidak dapat dibebani.",
-      "merchant": "Masukkan pedagang atau penerima.",
+      "merchant": "Masukkan pedagang atau pemasok.",
       "purpose": "Jelaskan tujuan bisnisnya dalam beberapa kata.",
       "vendor": "Vendor ini tidak aktif. Pilih yang lain, atau ketik nama pedagang."
     },
@@ -459,13 +480,13 @@
       "employee": "Karyawan",
       "enteredBy": "Dimasukkan oleh",
       "for": "Untuk",
-      "merchant": "Pedagang / Penerima",
+      "merchant": "Pedagang / Pemasok",
       "submitFor": "Ajukan untuk"
     },
     "filter": {
       "allEmployees": "Semua karyawan"
     },
-    "merchantHint": "Pilih dari Master Vendor, atau ketik nama pedagang atau penerima jika tidak tercantum.",
+    "merchantHint": "Pilih dari Master Vendor, atau ketik nama pedagang atau pemasok jika tidak tercantum.",
     "merchantPlaceholder": "Cari vendor atau ketik nama baru…",
     "noAttachment": "Tidak ada lampiran",
     "noMerchant": "Tidak diisi",
@@ -558,13 +579,13 @@
       "receipt": "Kuitansi / Tagihan",
       "receiptNo": "No. Struk / Faktur",
       "settlement": "Metode pembayaran",
-      "vatTreatment": "Perlakuan PPN"
+      "vatTreatment": "Perlakuan PPN",
+      "billTotal": "Total tagihan"
     },
     "filter": {
       "allBases": "Semua dasar klaim",
       "allSettlements": "Semua metode pembayaran"
     },
-    "fromScan": "Diisi dari Pindai Kuitansi. AI membacanya dengan keyakinan {{confidence}}%: periksa setiap nilai terhadap kuitansi sebelum mengajukan.",
     "leftOf": "sisa {{left}} dari {{amount}}",
     "new": "Penggantian Biaya Baru",
     "newSubtitle": "Ajukan pengeluaran nyata untuk diganti.",
@@ -574,8 +595,6 @@
     "notEditable": "Klaim ini sudah melewati tahap perbaikan: tidak bisa diubah lagi.",
     "notInLedger": "Tidak dicatat: dibayar bersama gaji",
     "notScanned": "Diunggah tanpa pembacaan AI. Nilai diketik manual.",
-    "openScan": "Pindai dan biarkan AI mengisi klaim",
-    "orScan": "Kuitansinya ada?",
     "preApprovalHint": "Hanya permintaan disetujui milik karyawan ini yang masih bersisa yang ditampilkan.",
     "preApprovalPlaceholder": "Pilih permintaan yang disetujui…",
     "receiptHint": "Letakkan kuitansi di sini, atau pilih file",
@@ -592,7 +611,8 @@
       "amount": "Jumlah dan PPN",
       "charge": "Pembebanan dan Pembayaran",
       "expense": "Pengeluaran",
-      "receipt": "Kuitansi / Tagihan"
+      "receipt": "Kuitansi / Tagihan",
+      "bill": "Jumlah"
     },
     "settlement": {
       "pettyCash": "Kas Kecil",
@@ -609,7 +629,7 @@
       "noAllocation": "Unit ini tidak memiliki alokasi aktif. Keuangan mungkin membayarnya dengan cara lain.",
       "noAllocationBlocked": "Unit ini tidak memiliki alokasi aktif, jadi tidak dapat dibayar dari kas kecil. Pilih Gaji Karyawan, atau tanyakan ke Keuangan.",
       "preApprovalLeft": "Sisa di",
-      "routeLater": "Penyetuju akan tampil di sini setelah jumlah dan unit diisi.",
+      "routeLater": "Penyetuju akan tampil di sini setelah jumlah diisi.",
       "salary": "Dibayar bersama gaji: tidak ada saldo kas kecil yang berubah.",
       "short": "Melebihi yang tersedia di alokasi. Keuangan perlu menambahnya terlebih dahulu.",
       "shortBlocked": "Melebihi yang tersedia di alokasi, dan saldo tidak boleh di bawah nol. Turunkan jumlah, pilih Gaji Karyawan, atau minta tambahan.",
@@ -640,7 +660,16 @@
       "exclusive": "Dimasukkan sebagai {{amount}} sebelum PPN {{rate}}%.",
       "inclusive": "Dimasukkan sebagai {{amount}} termasuk PPN {{rate}}%.",
       "none": "Dimasukkan sebagai {{amount}}. Tagihan tidak mengandung PPN."
-    }
+    },
+    "entry": {
+      "title": "Bagaimana Anda ingin mengisi klaim ini?",
+      "manual": "Isi data manual",
+      "manualHint": "Ketik detailnya sendiri dan lampirkan nota.",
+      "scanHint": "Unggah atau foto nota. AI membaca merchant, tanggal, jumlah, dan kategori untuk Anda periksa.",
+      "reading": "AI sedang membaca nota…",
+      "read": "AI membaca nota dengan keyakinan {{confidence}}% dan mengisi klaim. Periksa setiap nilai sebelum mengirim."
+    },
+    "financeDecides": "Keuangan menetapkan PPN, unit yang dibebankan, dan cara Anda dibayar saat menyetujui."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Penggantian Biaya",
       "noMovements": "Belum ada mutasi.",
       "noRequests": "Belum ada permintaan. Mulai satu di atas.",
-      "openInbox": "Kotak Persetujuan",
+      "openInbox": "Kotak Masuk",
       "overdue": "Terlambat: {{count}}",
       "paidOn": "{{amount}} dibayar pada {{date}}",
       "preExpenseBehalf": "Pra-Pengeluaran atas Nama Orang Lain",
@@ -700,7 +729,7 @@
         "returned": "Dikembalikan ke Saya",
         "returnedNote": "Perlu tindakan"
       },
-      "title": "Dasbor Saya",
+      "title": "Dasbor",
       "toAcknowledge": "Kas yang dibayarkan kepada Anda menunggu konfirmasi Anda ({{count}})",
       "topUpPending": "Tambahan dana dalam proses:",
       "voucher": "Voucher {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Tampilkan lebih sedikit",
       "subtitle": "Kas kecil di semua unit bisnis, departemen, dan proyek: apa yang ada, apa yang perlu ditindaklanjuti, dan ke mana uangnya pergi.",
       "thresholdsLink": "Ambang",
-      "title": "Dasbor keuangan"
+      "title": "Dasbor"
     },
     "column": {
       "allocation": "Alokasi",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Diterima {{date}}",
     "approvedNote": "Sudah disetujui. Mengubah unit, pemegang kas, atau jumlah akan mengembalikannya untuk persetujuan; ambang dan tujuan tidak.",
     "availableMarker": "Tersisa {{percent}}%",
-    "backToAcknowledgements": "Kembali ke Tanda Terima",
     "backToList": "Kembali ke Alokasi",
     "balanceTitle": "Saldo",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} sudah terbuka untuk unit ini. Ajukan tambahan uang melalui Permintaan Kas Tambahan.",
       "thresholdRange": "Ambang adalah persentase bulat dari 1 sampai 99.",
       "watchAboveNear": "Tanda pantau harus di atas tanda batas.",
-      "notDisburser": "Anda tidak diaktifkan untuk pencairan, jadi tidak dapat menerbitkan alokasi.",
-      "notRecipient": "{{name}} bukan penerima aktif dan tidak dapat memegang kas kecil."
+      "cannotIssue": "Hanya Keuangan yang menerbitkan alokasi: peran Anda tidak mencairkan kas kecil.",
+      "notCustodian": "{{name}} tidak dapat memegang kas kecil. Berikan dulu peran Pemegang Kas."
     },
     "chooseLevelFirst": "Pilih tingkat terlebih dahulu",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Cari referensi, unit, pemegang kas, atau tujuan",
     "subtitle": "Uang tunai yang diberikan kepada departemen, unit bisnis, proyek, atau pemegang kas, dan yang dimiliki masing-masing sekarang. Tambahan uang untuk alokasi yang ada diajukan melalui Permintaan Kas Tambahan.",
     "thresholdsValue": "Pantau {{watch}}% · Batas {{near}}%",
-    "tile": {
-      "active": "Alokasi aktif",
-      "activeNote": "{{amount}} didanai",
-      "attention": "Perlu Perhatian",
-      "attentionNote": "Mendekati batas atau terlampaui: {{count}}",
-      "available": "Tersedia sekarang",
-      "availableNote": "setelah {{amount}} dicadangkan",
-      "awaiting": "Menunggu tanda terima",
-      "summary": "Ringkasan alokasi"
-    },
     "title": "Alokasi Kas Kecil",
     "toast": {
       "cancelled": "{{reference}} telah dibatalkan.",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} telah dikirim untuk persetujuan."
     },
     "topUpOnItsWay": "{{amount}} lagi sedang dalam perjalanan ({{references}}) dan menunggu tanda terima.",
-    "noRecipients": "Tidak ada penerima aktif di unit ini. Tambahkan di Pencair & Penerima."
+    "noCustodians": "Tidak ada Pemegang Kas di unit ini. Berikan dulu peran Pemegang Kas kepada seseorang di unit ini."
   },
   "file": {
     "aiNotRead": "Belum dipindai",

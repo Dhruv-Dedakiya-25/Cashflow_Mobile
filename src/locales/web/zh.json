@@ -3,6 +3,7 @@
     "add": "添加",
     "addEntity": "添加{{entity}}",
     "back": "返回",
+    "backTo": "返回{{page}}",
     "cancel": "取消",
     "clearAll": "全部清除",
     "close": "关闭",
@@ -37,6 +38,11 @@
       "saveDraft": "保存草稿",
       "submit": "提交审批",
       "submitForApproval": "提交审批"
+    },
+    "view": {
+      "label": "列表视图",
+      "all": "全部",
+      "pending": "待处理"
     },
     "filter": {
       "allStatuses": "全部状态",
@@ -171,6 +177,13 @@
       "invalid": "用户名或密码无效。",
       "tooMany": "尝试次数过多。请等待一分钟后再试。",
       "noApi": "无法连接服务器。请稍后再试。"
+    },
+    "idle": {
+      "title": "您还在吗？",
+      "body": "为了您的安全，您将在 {{seconds}} 秒后退出登录。",
+      "stay": "保持登录",
+      "signOut": "立即退出",
+      "signedOut": "由于 {{minutes}} 分钟无操作，您已退出登录。"
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "支持文件",
     "availableNow": "当前可用 {{amount}}",
-    "backToInbox": "返回审批收件箱",
+    "backToInbox": "返回待办",
     "changes": {
       "after": "{{name}} 于 {{time}} 退回后已修改：",
       "title": "退回后已修改"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "批准",
       "comment": "意见（退回或驳回时必填）",
-      "noMoney": "批准不会动用资金。只有财务结算会付款。",
+      "noMoney": "批准不会动用资金。只有付款结算会付款。",
       "placeholder": "申请人需要了解或修改什么？",
       "reasonNeeded": "请填写退回或驳回的原因。申请人会看到。",
       "reject": "驳回",
@@ -336,22 +349,24 @@
       "decided": "此申请已有决定。",
       "notEnoughCash": "{{reference}} 仅有 OMR {{available}} 可用，且余额不能低于零。请退回申请，或先请财务追加。",
       "notYourStep": "此步骤不在等待您。",
-      "ownRequest": "您不能决定自己作为相关方的申请。"
+      "ownRequest": "您不能决定自己作为相关方的申请。",
+      "notFinanceStep": "只有财务步骤可以更改金额、增值税、计入单位和付款方式。"
     },
     "refusalHint": "{{reference}} 仅有 {{available}} 可用，且余额不能低于零。请退回，或先请财务追加。",
     "search": "搜索编号、人员或用途",
     "sentAt": "提交于 {{time}}",
-    "subtitle": "等待您决定的申请、您范围内的全部申请，以及您已决定的申请。",
+    "subtitle": "等待您处理的事项：待决定的申请和待签收的现金。",
+    "archive": {
+      "title": "待办归档",
+      "subtitle": "不再等待您处理的事项：您范围内的申请、您的决定以及已发放的现金。"
+    },
     "tile": {
       "decided": "您已决定",
       "decidedNote": "已批准、退回或驳回",
-      "overdue": "逾期",
-      "overdueNote": "超过审批流程设置允许的时间",
       "scope": "审批中",
-      "summary": "审批概览",
-      "waiting": "待您处理"
+      "summary": "审批概览"
     },
-    "title": "审批收件箱",
+    "title": "待办",
     "toast": {
       "approve": "{{reference}} 已批准。",
       "reject": "{{reference}} 已驳回。",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "我已决定",
       "scope": "我范围内的全部",
-      "waiting": "待我处理"
+      "waiting": "待我处理",
+      "cash": "待签收现金",
+      "cashArchive": "已发放现金"
     },
     "views": "收件箱视图",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "在第 {{n}} 步等待您决定：{{step}}。",
     "yoursToWatch": "您是此申请的相关方，因此不能决定。它在第 {{n}} 步等待 {{names}}。",
-    "openSourceRecord": "打开拨付"
+    "openSourceRecord": "打开拨付",
+    "finance": {
+      "title": "由财务确定",
+      "hint": "申请人已填写票据总额。请核对后确定增值税、计入的单位和付款方式；这些将随您的审批一并保存。"
+    }
   },
   "ack": {
     "action": "确认",
@@ -437,7 +458,7 @@
       "chooseCategory": "请选择费用类别。",
       "chooseEmployee": "请选择员工。",
       "costUnit": "请选择此员工所属的单位。停用的单位不能计入。",
-      "merchant": "请输入商户或收款方。",
+      "merchant": "请输入商户或供应商。",
       "purpose": "请简要说明业务用途。",
       "vendor": "此供应商已停用。请选择其他供应商，或输入商户名称。"
     },
@@ -459,13 +480,13 @@
       "employee": "员工",
       "enteredBy": "录入人",
       "for": "用于",
-      "merchant": "商户 / 收款人",
+      "merchant": "商户 / 供应商",
       "submitFor": "申请对象"
     },
     "filter": {
       "allEmployees": "全部员工"
     },
-    "merchantHint": "从供应商主数据中选择；如不在列表中，请输入商户或收款方名称。",
+    "merchantHint": "从供应商主数据中选择；如不在列表中，请输入商户或供应商名称。",
     "merchantPlaceholder": "搜索供应商或输入新名称…",
     "noAttachment": "无附件",
     "noMerchant": "未填写",
@@ -558,13 +579,13 @@
       "receipt": "票据 / 发票",
       "receiptNo": "收据 / 发票号",
       "settlement": "付款方式",
-      "vatTreatment": "增值税处理"
+      "vatTreatment": "增值税处理",
+      "billTotal": "票据总额"
     },
     "filter": {
       "allBases": "全部报销依据",
       "allSettlements": "全部支付方式"
     },
-    "fromScan": "已根据票据扫描填写。AI 识别置信度为 {{confidence}}%：提交前请逐项与票据核对。",
     "leftOf": "{{amount}} 中剩余 {{left}}",
     "new": "新建报销",
     "newSubtitle": "提交实际费用以报销。",
@@ -574,8 +595,6 @@
     "notEditable": "此报销单已过修改阶段，不能再更改。",
     "notInLedger": "未入账：随工资发放",
     "notScanned": "上传时未经 AI 识别。数值为手工录入。",
-    "openScan": "扫描后由 AI 填写报销单",
-    "orScan": "手边有票据吗？",
     "preApprovalHint": "仅列出此员工有余额的已批准申请。",
     "preApprovalPlaceholder": "选择已批准的申请…",
     "receiptHint": "将票据拖到此处，或选择文件",
@@ -592,7 +611,8 @@
       "amount": "金额与增值税",
       "charge": "计入与支付",
       "expense": "费用",
-      "receipt": "票据 / 发票"
+      "receipt": "票据 / 发票",
+      "bill": "金额"
     },
     "settlement": {
       "pettyCash": "备用金",
@@ -609,7 +629,7 @@
       "noAllocation": "此单位没有生效的拨款。财务可能以其他方式支付。",
       "noAllocationBlocked": "此单位没有生效的拨款，因此不能从备用金支付。请选择员工工资，或咨询财务。",
       "preApprovalLeft": "剩余于",
-      "routeLater": "填写金额和单位后，此处会显示审批人。",
+      "routeLater": "填写金额后，此处会显示审批人。",
       "salary": "随工资发放：备用金余额不变。",
       "short": "超过拨款可用金额。财务需先补充。",
       "shortBlocked": "超过拨款可用金额，且余额不能低于零。请降低金额、选择员工工资，或申请补充。",
@@ -640,7 +660,16 @@
       "exclusive": "录入为 {{amount}}，未含 {{rate}}% 增值税。",
       "inclusive": "录入为 {{amount}}，含 {{rate}}% 增值税。",
       "none": "录入为 {{amount}}。该票据无增值税。"
-    }
+    },
+    "entry": {
+      "title": "您想如何填写这笔报销？",
+      "manual": "手动录入",
+      "manualHint": "自行填写详情并附上票据。",
+      "scanHint": "上传或拍摄票据。AI 识别商户、日期、金额和类别，由您核对。",
+      "reading": "AI 正在识别票据…",
+      "read": "AI 以 {{confidence}}% 的置信度识别了票据并填写了报销单。提交前请核对每一项。"
+    },
+    "financeDecides": "财务在审批时确定增值税、计入的单位和付款方式。"
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "费用报销",
       "noMovements": "尚无变动。",
       "noRequests": "尚无申请。请在上方发起。",
-      "openInbox": "审批收件箱",
+      "openInbox": "待办",
       "overdue": "已逾期：{{count}}",
       "paidOn": "{{amount}}，于 {{date}} 支付",
       "preExpenseBehalf": "代他人申请事前费用",
@@ -700,7 +729,7 @@
         "returned": "退回给我",
         "returnedNote": "需要处理"
       },
-      "title": "我的仪表板",
+      "title": "仪表板",
       "toAcknowledge": "付给您的现金正等待您确认收款（{{count}}）",
       "topUpPending": "追加资金在途：",
       "voucher": "凭证 {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "收起",
       "subtitle": "各业务单元、部门和项目的备用金：持有多少、哪些需要处理、钱花到了哪里。",
       "thresholdsLink": "阈值",
-      "title": "财务看板"
+      "title": "仪表板"
     },
     "column": {
       "allocation": "拨付",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "{{date}} 已签收",
     "approvedNote": "已批准。更改单位、保管人或金额将重新审批；更改阈值和用途则不会。",
     "availableMarker": "剩余 {{percent}}%",
-    "backToAcknowledgements": "返回签收确认",
     "backToList": "返回拨付",
     "balanceTitle": "余额",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} 已为该单位开立。请改为通过追加备用金申请更多现金。",
       "thresholdRange": "阈值为 1 到 99 的整数百分比。",
       "watchAboveNear": "关注线必须高于阈值线。",
-      "notDisburser": "您未被允许发放，因此不能发起拨付。",
-      "notRecipient": "{{name}} 不是已启用的收款人，不能保管备用金。"
+      "cannotIssue": "只有财务可以发起拨付：您的角色不发放备用金。",
+      "notCustodian": "{{name}} 不能保管备用金。请先为其分配“保管人”角色。"
     },
     "chooseLevelFirst": "请先选择层级",
     "column": {
@@ -921,16 +949,6 @@
     "search": "搜索编号、单位、保管人或用途",
     "subtitle": "拨付给部门、业务单元、项目或保管人的现金，以及各自当前持有的金额。现有拨付需要更多现金，请通过追加备用金申请。",
     "thresholdsValue": "关注 {{watch}}% · 阈值 {{near}}%",
-    "tile": {
-      "active": "生效中的拨付",
-      "activeNote": "已注资 {{amount}}",
-      "attention": "需要关注",
-      "attentionNote": "接近阈值或已超支：{{count}}",
-      "available": "当前可用",
-      "availableNote": "已预留 {{amount}}",
-      "awaiting": "待签收确认",
-      "summary": "拨付概览"
-    },
     "title": "备用金拨付",
     "toast": {
       "cancelled": "{{reference}} 已取消。",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} 已提交审批。"
     },
     "topUpOnItsWay": "另有 {{amount}} 正在途中（{{references}}），等待签收确认。",
-    "noRecipients": "该单位没有已启用的收款人。请在“发放人与收款人”中添加。"
+    "noCustodians": "该单位没有保管人。请先为该单位中的某人分配“保管人”角色。"
   },
   "file": {
     "aiNotRead": "未扫描",

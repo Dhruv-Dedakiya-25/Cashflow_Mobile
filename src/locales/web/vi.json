@@ -3,6 +3,7 @@
     "add": "Thêm",
     "addEntity": "Thêm {{entity}}",
     "back": "Quay lại",
+    "backTo": "Quay lại {{page}}",
     "cancel": "Hủy",
     "clearAll": "Xóa tất cả",
     "close": "Đóng",
@@ -37,6 +38,11 @@
       "saveDraft": "Lưu bản nháp",
       "submit": "Gửi phê duyệt",
       "submitForApproval": "Gửi phê duyệt"
+    },
+    "view": {
+      "label": "Chế độ xem danh sách",
+      "all": "Tất cả",
+      "pending": "Đang chờ"
     },
     "filter": {
       "allStatuses": "Tất cả trạng thái",
@@ -171,6 +177,13 @@
       "invalid": "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
       "tooMany": "Quá nhiều lần thử. Hãy đợi một phút rồi thử lại.",
       "noApi": "Không thể kết nối máy chủ. Hãy thử lại sau giây lát."
+    },
+    "idle": {
+      "title": "Bạn vẫn còn đó chứ?",
+      "body": "Vì sự an toàn của bạn, bạn sẽ bị đăng xuất sau {{seconds}} giây.",
+      "stay": "Duy trì đăng nhập",
+      "signOut": "Đăng xuất ngay",
+      "signedOut": "Bạn đã bị đăng xuất sau {{minutes}} phút không hoạt động."
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "Tài liệu kèm theo",
     "availableNow": "Hiện có {{amount}}",
-    "backToInbox": "Quay lại Hộp phê duyệt",
+    "backToInbox": "Quay lại hộp thư",
     "changes": {
       "after": "Đã sửa sau khi {{name}} trả lại lúc {{time}}:",
       "title": "Đã sửa sau khi bị trả lại"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "Phê duyệt",
       "comment": "Nhận xét (bắt buộc khi trả lại hoặc từ chối)",
-      "noMoney": "Phê duyệt không chuyển tiền. Chỉ Thanh toán tài chính mới chi trả.",
+      "noMoney": "Phê duyệt không chuyển tiền. Chỉ Thanh toán chi trả mới chi trả.",
       "placeholder": "Người yêu cầu cần biết hoặc sửa điều gì?",
       "reasonNeeded": "Nêu lý do trả lại hoặc từ chối. Người yêu cầu sẽ thấy lý do này.",
       "reject": "Từ chối",
@@ -336,22 +349,24 @@
       "decided": "Yêu cầu này đã được quyết định.",
       "notEnoughCash": "{{reference}} chỉ còn OMR {{available}} khả dụng, và số dư không được âm. Hãy trả lại yêu cầu, hoặc nhờ Tài chính bổ sung trước.",
       "notYourStep": "Bước này không chờ bạn.",
-      "ownRequest": "Bạn không thể quyết định yêu cầu mà bạn là một bên."
+      "ownRequest": "Bạn không thể quyết định yêu cầu mà bạn là một bên.",
+      "notFinanceStep": "Chỉ bước Tài chính mới được thay đổi số tiền, VAT, đơn vị và cách chi trả."
     },
     "refusalHint": "{{reference}} chỉ còn {{available}} khả dụng, và số dư không được âm. Hãy trả lại, hoặc nhờ Tài chính bổ sung trước.",
     "search": "Tìm số tham chiếu, người hoặc mục đích",
     "sentAt": "gửi lúc {{time}}",
-    "subtitle": "Các yêu cầu đang chờ bạn quyết định, mọi thứ trong phạm vi của bạn, và những gì bạn đã quyết định.",
+    "subtitle": "Những việc đang chờ bạn: yêu cầu cần quyết định và tiền mặt cần xác nhận đã nhận.",
+    "archive": {
+      "title": "Lưu trữ hộp thư",
+      "subtitle": "Mọi thứ không còn chờ bạn: yêu cầu trong phạm vi của bạn, quyết định của bạn và tiền mặt đã chi."
+    },
     "tile": {
       "decided": "Bạn đã quyết định",
       "decidedNote": "Đã duyệt, trả lại hoặc từ chối",
-      "overdue": "Quá hạn",
-      "overdueNote": "Quá thời gian Thiết lập quy trình cho phép",
       "scope": "Đang phê duyệt",
-      "summary": "Tóm tắt phê duyệt",
-      "waiting": "Đang chờ bạn"
+      "summary": "Tóm tắt phê duyệt"
     },
-    "title": "Hộp phê duyệt",
+    "title": "Hộp thư",
     "toast": {
       "approve": "Đã duyệt {{reference}}.",
       "reject": "Đã từ chối {{reference}}.",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "Tôi đã quyết định",
       "scope": "Tất cả trong phạm vi của tôi",
-      "waiting": "Đang chờ tôi"
+      "waiting": "Đang chờ tôi",
+      "cash": "Tiền mặt cần xác nhận",
+      "cashArchive": "Tiền mặt đã chi"
     },
     "views": "Các chế độ xem hộp phê duyệt",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "Đang chờ bạn quyết định ở bước {{n}}: {{step}}.",
     "yoursToWatch": "Bạn là một bên của yêu cầu này nên không thể quyết định. Yêu cầu đang chờ {{names}} ở bước {{n}}.",
-    "openSourceRecord": "Mở phân bổ"
+    "openSourceRecord": "Mở phân bổ",
+    "finance": {
+      "title": "Do Tài chính quyết định",
+      "hint": "Người yêu cầu đã nhập tổng hóa đơn. Hãy kiểm tra, rồi quyết định VAT, đơn vị chịu chi phí và cách chi trả; chúng được lưu cùng phê duyệt của bạn."
+    }
   },
   "ack": {
     "action": "Xác nhận",
@@ -437,7 +458,7 @@
       "chooseCategory": "Chọn danh mục chi phí.",
       "chooseEmployee": "Chọn nhân viên.",
       "costUnit": "Chọn đơn vị mà nhân viên này thuộc về. Không thể tính vào đơn vị không hoạt động.",
-      "merchant": "Nhập cửa hàng hoặc người nhận.",
+      "merchant": "Nhập cửa hàng hoặc nhà cung cấp.",
       "purpose": "Mô tả ngắn gọn mục đích công việc.",
       "vendor": "Nhà cung cấp này không hoạt động. Chọn nhà cung cấp khác hoặc nhập tên cửa hàng."
     },
@@ -459,13 +480,13 @@
       "employee": "Nhân viên",
       "enteredBy": "Người nhập",
       "for": "Cho",
-      "merchant": "Người bán / Người nhận tiền",
+      "merchant": "Người bán / Nhà cung cấp",
       "submitFor": "Gửi cho"
     },
     "filter": {
       "allEmployees": "Tất cả nhân viên"
     },
-    "merchantHint": "Chọn từ danh mục nhà cung cấp, hoặc nhập tên cửa hàng hay người nhận nếu chưa có.",
+    "merchantHint": "Chọn từ danh mục nhà cung cấp, hoặc nhập tên cửa hàng hay nhà cung cấp nếu chưa có.",
     "merchantPlaceholder": "Tìm nhà cung cấp hoặc nhập tên mới…",
     "noAttachment": "Không có tệp đính kèm",
     "noMerchant": "Không nêu",
@@ -558,13 +579,13 @@
       "receipt": "Hóa đơn / biên lai",
       "receiptNo": "Số biên lai / hóa đơn",
       "settlement": "Phương thức thanh toán",
-      "vatTreatment": "Cách tính VAT"
+      "vatTreatment": "Cách tính VAT",
+      "billTotal": "Tổng hóa đơn"
     },
     "filter": {
       "allBases": "Tất cả căn cứ đề nghị",
       "allSettlements": "Tất cả phương thức thanh toán"
     },
-    "fromScan": "Điền từ Quét hóa đơn. AI đọc với độ tin cậy {{confidence}}%: hãy đối chiếu từng giá trị với hóa đơn trước khi gửi.",
     "leftOf": "Còn {{left}} trên {{amount}}",
     "new": "Hoàn ứng mới",
     "newSubtitle": "Gửi khoản chi thực tế để được hoàn ứng.",
@@ -574,8 +595,6 @@
     "notEditable": "Đề nghị này đã qua giai đoạn sửa: không thể thay đổi nữa.",
     "notInLedger": "Chưa ghi sổ: trả cùng lương",
     "notScanned": "Tải lên không qua AI đọc. Các giá trị được nhập tay.",
-    "openScan": "Quét và để AI điền đề nghị",
-    "orScan": "Bạn có sẵn hóa đơn?",
     "preApprovalHint": "Chỉ hiển thị các đề nghị đã duyệt còn số dư của nhân viên này.",
     "preApprovalPlaceholder": "Chọn một đề nghị đã duyệt…",
     "receiptHint": "Thả hóa đơn vào đây, hoặc chọn tệp",
@@ -592,7 +611,8 @@
       "amount": "Số tiền và VAT",
       "charge": "Tính chi phí và thanh toán",
       "expense": "Khoản chi",
-      "receipt": "Hóa đơn / biên lai"
+      "receipt": "Hóa đơn / biên lai",
+      "bill": "Số tiền"
     },
     "settlement": {
       "pettyCash": "Quỹ tiền mặt nhỏ",
@@ -609,7 +629,7 @@
       "noAllocation": "Đơn vị này không có khoản cấp nào đang hoạt động. Tài chính có thể trả theo cách khác.",
       "noAllocationBlocked": "Đơn vị này không có khoản cấp nào đang hoạt động, nên không thể trả từ quỹ tiền mặt nhỏ. Chọn Lương nhân viên, hoặc hỏi Tài chính.",
       "preApprovalLeft": "Còn lại trong",
-      "routeLater": "Người duyệt sẽ hiện ở đây khi đã nhập số tiền và đơn vị.",
+      "routeLater": "Người duyệt sẽ hiện ở đây khi đã nhập số tiền.",
       "salary": "Trả cùng lương: không số dư quỹ tiền mặt nhỏ nào thay đổi.",
       "short": "Vượt quá số khả dụng của khoản cấp. Tài chính cần bổ sung trước.",
       "shortBlocked": "Vượt quá số khả dụng của khoản cấp, và số dư không được âm. Giảm số tiền, chọn Lương nhân viên, hoặc xin bổ sung.",
@@ -640,7 +660,16 @@
       "exclusive": "Nhập là {{amount}} trước VAT {{rate}}%.",
       "inclusive": "Nhập là {{amount}} đã gồm VAT {{rate}}%.",
       "none": "Nhập là {{amount}}. Hóa đơn không có VAT."
-    }
+    },
+    "entry": {
+      "title": "Bạn muốn nhập yêu cầu này bằng cách nào?",
+      "manual": "Nhập dữ liệu thủ công",
+      "manualHint": "Tự nhập thông tin và đính kèm hóa đơn.",
+      "scanHint": "Tải lên hoặc chụp ảnh hóa đơn. AI đọc cửa hàng, ngày, số tiền và danh mục để bạn kiểm tra.",
+      "reading": "AI đang đọc hóa đơn…",
+      "read": "AI đã đọc hóa đơn với độ chắc chắn {{confidence}}% và điền yêu cầu. Kiểm tra từng giá trị trước khi gửi."
+    },
+    "financeDecides": "Phòng Tài chính quyết định VAT, đơn vị chịu chi phí và cách chi trả khi phê duyệt."
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "Hoàn ứng chi phí",
       "noMovements": "Chưa có biến động.",
       "noRequests": "Chưa có yêu cầu. Hãy bắt đầu ở trên.",
-      "openInbox": "Hộp phê duyệt",
+      "openInbox": "Hộp thư",
       "overdue": "Quá hạn: {{count}}",
       "paidOn": "{{amount}} đã chi ngày {{date}}",
       "preExpenseBehalf": "Trước khi chi thay người khác",
@@ -700,7 +729,7 @@
         "returned": "Trả lại cho tôi",
         "returnedNote": "Cần xử lý"
       },
-      "title": "Bảng điều khiển của tôi",
+      "title": "Bảng điều khiển",
       "toAcknowledge": "Tiền mặt đã chi cho bạn đang chờ bạn xác nhận ({{count}})",
       "topUpPending": "Khoản bổ sung đang xử lý:",
       "voucher": "Phiếu {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "Thu gọn",
       "subtitle": "Quỹ tiền mặt nhỏ ở mọi đơn vị kinh doanh, phòng ban và dự án: đang giữ bao nhiêu, việc gì cần xử lý và tiền đã đi đâu.",
       "thresholdsLink": "Ngưỡng",
-      "title": "Bảng điều khiển tài chính"
+      "title": "Bảng điều khiển"
     },
     "column": {
       "allocation": "Phân bổ",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "Đã xác nhận nhận ngày {{date}}",
     "approvedNote": "Đã phê duyệt. Đổi đơn vị, người giữ quỹ hoặc số tiền sẽ đưa về phê duyệt lại; ngưỡng và mục đích thì không.",
     "availableMarker": "Còn {{percent}}%",
-    "backToAcknowledgements": "Quay lại Xác nhận nhận tiền",
     "backToList": "Quay lại Phân bổ",
     "balanceTitle": "Số dư",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} đang mở cho đơn vị này. Hãy yêu cầu thêm tiền qua Yêu cầu bổ sung tiền mặt.",
       "thresholdRange": "Ngưỡng là số phần trăm nguyên từ 1 đến 99.",
       "watchAboveNear": "Mốc theo dõi phải cao hơn mốc ngưỡng.",
-      "notDisburser": "Bạn không được phép chi tiền nên không thể cấp phân bổ.",
-      "notRecipient": "{{name}} không phải người nhận được bật nên không thể giữ quỹ tiền mặt nhỏ."
+      "cannotIssue": "Chỉ bộ phận Tài chính mới cấp phân bổ: vai trò của bạn không chi quỹ tiền mặt nhỏ.",
+      "notCustodian": "{{name}} không thể giữ quỹ tiền mặt nhỏ. Hãy gán vai trò Người giữ quỹ trước."
     },
     "chooseLevelFirst": "Chọn cấp trước",
     "column": {
@@ -921,16 +949,6 @@
     "search": "Tìm theo số, đơn vị, người giữ quỹ hoặc mục đích",
     "subtitle": "Tiền mặt cấp cho phòng ban, đơn vị kinh doanh, dự án hoặc người giữ quỹ, và số mỗi bên đang giữ. Tiền bổ sung cho phân bổ hiện có được yêu cầu qua Yêu cầu bổ sung tiền mặt.",
     "thresholdsValue": "Theo dõi {{watch}}% · Ngưỡng {{near}}%",
-    "tile": {
-      "active": "Phân bổ đang hoạt động",
-      "activeNote": "Đã cấp {{amount}}",
-      "attention": "Cần chú ý",
-      "attentionNote": "Sắp chạm ngưỡng hoặc vượt mức: {{count}}",
-      "available": "Có thể dùng ngay",
-      "availableNote": "sau khi giữ lại {{amount}}",
-      "awaiting": "Chờ xác nhận đã nhận",
-      "summary": "Tóm tắt phân bổ"
-    },
     "title": "Phân bổ quỹ tiền mặt nhỏ",
     "toast": {
       "cancelled": "Đã hủy {{reference}}.",
@@ -939,7 +957,7 @@
       "submitted": "Đã gửi phê duyệt {{reference}}."
     },
     "topUpOnItsWay": "Thêm {{amount}} đang trên đường ({{references}}) và chờ xác nhận nhận tiền.",
-    "noRecipients": "Đơn vị này chưa có người nhận nào được bật. Hãy thêm ở trang Người chi & Người nhận."
+    "noCustodians": "Đơn vị này chưa có Người giữ quỹ. Hãy gán vai trò Người giữ quỹ cho một người trong đơn vị trước."
   },
   "file": {
     "aiNotRead": "Chưa quét",

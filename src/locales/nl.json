@@ -44,7 +44,6 @@
     "resentTitle": "Opnieuw verstuurd",
     "viewClaim": "Declaratie bekijken",
     "cameraDenied": "CashFlow heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
-    "manual": "Gegevens zelf invoeren",
     "sampleNote": "Voorbeeldlezing: in de demo leest elke bon als dit voorbeeld, en de foto blijft op deze telefoon.",
     "choosePdf": "Kies een pdf"
   },
@@ -158,7 +157,6 @@
       "reading": "De AI leest de bon…",
       "checkEach": "Controleer elke waarde met de bon. Waarden met minder dan {{min}}% zekerheid zijn gemarkeerd.",
       "chooseCategory": "Kies een categorie.",
-      "chooseUnit": "Kies waar de declaratie wordt geboekt.",
       "noPreApproval": "Geen",
       "tooLarge": "Het bestand is groter dan {{mb}} MB. Kies een kleiner bestand."
     },

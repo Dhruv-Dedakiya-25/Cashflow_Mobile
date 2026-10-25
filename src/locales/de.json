@@ -44,7 +44,6 @@
     "resentTitle": "Erneut gesendet",
     "viewClaim": "Antrag ansehen",
     "cameraDenied": "CashFlow braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
-    "manual": "Angaben von Hand eingeben",
     "sampleNote": "Beispiel-Auslesung: In der Demo wird jeder Beleg als dieses Beispiel gelesen, und das Foto bleibt auf diesem Telefon.",
     "choosePdf": "PDF auswählen"
   },
@@ -158,7 +157,6 @@
       "reading": "Die KI liest den Beleg…",
       "checkEach": "Prüfen Sie jeden Wert anhand des Belegs. Werte unter {{min}} % Sicherheit sind markiert.",
       "chooseCategory": "Wählen Sie eine Kategorie.",
-      "chooseUnit": "Wählen Sie, wohin der Antrag gebucht wird.",
       "noPreApproval": "Keine",
       "tooLarge": "Die Datei ist größer als {{mb}} MB. Wählen Sie eine kleinere."
     },

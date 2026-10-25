@@ -44,7 +44,6 @@
     "resentTitle": "Đã gửi lại",
     "viewClaim": "Xem yêu cầu",
     "cameraDenied": "CashFlow cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
-    "manual": "Nhập thông tin thủ công",
     "sampleNote": "Đọc mẫu: trong bản demo, mọi hóa đơn đều được đọc như mẫu này, và ảnh chỉ lưu trên điện thoại này.",
     "choosePdf": "Chọn PDF"
   },
@@ -158,7 +157,6 @@
       "reading": "AI đang đọc hóa đơn…",
       "checkEach": "Đối chiếu từng giá trị với hóa đơn. Các giá trị có độ chắc chắn dưới {{min}}% được tô sáng.",
       "chooseCategory": "Chọn một danh mục.",
-      "chooseUnit": "Chọn nơi ghi nhận yêu cầu.",
       "noPreApproval": "Không có",
       "tooLarge": "Tệp lớn hơn {{mb}} MB. Hãy chọn tệp nhỏ hơn."
     },

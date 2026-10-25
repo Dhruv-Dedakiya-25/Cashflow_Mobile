@@ -3,6 +3,7 @@
     "add": "追加",
     "addEntity": "{{entity}}を追加",
     "back": "戻る",
+    "backTo": "{{page}}に戻る",
     "cancel": "キャンセル",
     "clearAll": "すべてクリア",
     "close": "閉じる",
@@ -37,6 +38,11 @@
       "saveDraft": "下書きを保存",
       "submit": "承認に回す",
       "submitForApproval": "承認へ提出"
+    },
+    "view": {
+      "label": "一覧の表示",
+      "all": "すべて",
+      "pending": "保留中"
     },
     "filter": {
       "allStatuses": "すべてのステータス",
@@ -171,6 +177,13 @@
       "invalid": "ユーザー名またはパスワードが正しくありません。",
       "tooMany": "試行回数が多すぎます。1 分待ってからもう一度お試しください。",
       "noApi": "サーバーに接続できません。しばらくしてからもう一度お試しください。"
+    },
+    "idle": {
+      "title": "まだ操作していますか？",
+      "body": "セキュリティのため、{{seconds}} 秒後にサインアウトします。",
+      "stay": "サインインを続ける",
+      "signOut": "今すぐサインアウト",
+      "signedOut": "{{minutes}} 分間操作がなかったため、サインアウトしました。"
     }
   },
   "scan": {
@@ -251,7 +264,7 @@
     },
     "attachmentTitle": "添付書類",
     "availableNow": "現在 {{amount}} 利用可能",
-    "backToInbox": "承認受信箱に戻る",
+    "backToInbox": "受信トレイに戻る",
     "changes": {
       "after": "{{name}} が {{time}} に差し戻した後の修正：",
       "title": "差し戻し後に変更あり"
@@ -268,7 +281,7 @@
     "decision": {
       "approve": "承認",
       "comment": "コメント（差し戻し・却下の場合は必須）",
-      "noMoney": "承認してもお金は動きません。支払うのは財務精算のみです。",
+      "noMoney": "承認してもお金は動きません。支払うのは支払精算のみです。",
       "placeholder": "申請者が知っておくべきこと、修正すべきことは？",
       "reasonNeeded": "差し戻しまたは却下の理由を入力してください。申請者に表示されます。",
       "reject": "却下",
@@ -336,22 +349,24 @@
       "decided": "この申請はすでに判断済みです。",
       "notEnoughCash": "{{reference}} の利用可能額は OMR {{available}} のみで、残高はマイナスにできません。申請を差し戻すか、先に財務部へ追加入金を依頼してください。",
       "notYourStep": "このステップはあなたを待っていません。",
-      "ownRequest": "自分が当事者の申請は判断できません。"
+      "ownRequest": "自分が当事者の申請は判断できません。",
+      "notFinanceStep": "金額・付加価値税・負担部門・支払方法を変更できるのは財務のステップだけです。"
     },
     "refusalHint": "{{reference}} の利用可能額は {{available}} のみで、残高はマイナスにできません。差し戻すか、先に財務部へ追加入金を依頼してください。",
     "search": "番号・人・目的で検索",
     "sentAt": "{{time}} に提出",
-    "subtitle": "あなたの判断を待つ申請、あなたの範囲のすべて、あなたが判断した申請。",
+    "subtitle": "あなたを待っているもの：判断待ちの申請と受領確認待ちの現金。",
+    "archive": {
+      "title": "受信トレイのアーカイブ",
+      "subtitle": "もうあなたを待っていないもの：担当範囲の申請、あなたの判断、払い出された現金。"
+    },
     "tile": {
       "decided": "あなたが判断済み",
       "decidedNote": "承認・差し戻し・却下",
-      "overdue": "延滞",
-      "overdueNote": "ワークフロー設定の許容時間を超過",
       "scope": "承認中",
-      "summary": "承認の概要",
-      "waiting": "あなたの対応待ち"
+      "summary": "承認の概要"
     },
-    "title": "承認受信箱",
+    "title": "受信トレイ",
     "toast": {
       "approve": "{{reference}} を承認しました。",
       "reject": "{{reference}} を却下しました。",
@@ -360,7 +375,9 @@
     "view": {
       "decided": "自分が判断済み",
       "scope": "自分の範囲のすべて",
-      "waiting": "自分の対応待ち"
+      "waiting": "自分の対応待ち",
+      "cash": "受領確認待ちの現金",
+      "cashArchive": "払い出された現金"
     },
     "views": "受信箱の表示",
     "where": {
@@ -371,7 +388,11 @@
     },
     "yourTurn": "ステップ {{n}} であなたの判断を待っています：{{step}}。",
     "yoursToWatch": "あなたはこの申請の当事者のため判断できません。ステップ {{n}} で {{names}} を待っています。",
-    "openSourceRecord": "配分を開く"
+    "openSourceRecord": "配分を開く",
+    "finance": {
+      "title": "財務が設定",
+      "hint": "申請者は請求書の合計を入力しています。確認のうえ、付加価値税、負担部門、支払方法を設定してください。承認と同時に保存されます。"
+    }
   },
   "ack": {
     "action": "確認する",
@@ -437,7 +458,7 @@
       "chooseCategory": "経費カテゴリを選んでください。",
       "chooseEmployee": "社員を選んでください。",
       "costUnit": "この社員が所属する部門・プロジェクトを選んでください。無効な単位には計上できません。",
-      "merchant": "店舗名または支払先を入力してください。",
+      "merchant": "店舗名または仕入先を入力してください。",
       "purpose": "業務上の目的を簡潔に記入してください。",
       "vendor": "この取引先は無効です。別の取引先を選ぶか、店舗名を入力してください。"
     },
@@ -459,13 +480,13 @@
       "employee": "従業員",
       "enteredBy": "入力者",
       "for": "対象",
-      "merchant": "店舗 / 支払先",
+      "merchant": "店舗 / 仕入先",
       "submitFor": "申請対象"
     },
     "filter": {
       "allEmployees": "全社員"
     },
-    "merchantHint": "取引先マスターから選ぶか、一覧にない場合は店舗名または支払先を入力してください。",
+    "merchantHint": "取引先マスターから選ぶか、一覧にない場合は店舗名または仕入先を入力してください。",
     "merchantPlaceholder": "取引先を検索するか新しい名前を入力…",
     "noAttachment": "添付なし",
     "noMerchant": "未入力",
@@ -558,13 +579,13 @@
       "receipt": "領収書 / 請求書",
       "receiptNo": "レシート / 請求書番号",
       "settlement": "支払方法",
-      "vatTreatment": "VAT の扱い"
+      "vatTreatment": "VAT の扱い",
+      "billTotal": "請求書の合計"
     },
     "filter": {
       "allBases": "すべての精算区分",
       "allSettlements": "すべての支払方法"
     },
-    "fromScan": "領収書スキャンから入力しました。AI の読み取り信頼度は {{confidence}}% です。送信前に各値を領収書と照合してください。",
     "leftOf": "{{amount}} のうち残り {{left}}",
     "new": "新規経費精算",
     "newSubtitle": "実際に発生した経費の精算を申請します。",
@@ -574,8 +595,6 @@
     "notEditable": "この精算は修正期間を過ぎたため、変更できません。",
     "notInLedger": "記帳なし: 給与で支払い",
     "notScanned": "AI 読み取りなしでアップロード。値は手入力です。",
-    "openScan": "スキャンすると AI が精算を入力します",
-    "orScan": "領収書がお手元にありますか？",
     "preApprovalHint": "この社員の残額のある承認済み申請だけが表示されます。",
     "preApprovalPlaceholder": "承認済み申請を選択…",
     "receiptHint": "ここに領収書をドロップするか、ファイルを選択",
@@ -592,7 +611,8 @@
       "amount": "金額と VAT",
       "charge": "計上と支払い",
       "expense": "経費",
-      "receipt": "領収書 / 請求書"
+      "receipt": "領収書 / 請求書",
+      "bill": "金額"
     },
     "settlement": {
       "pettyCash": "小口現金",
@@ -609,7 +629,7 @@
       "noAllocation": "この単位には有効な割当がありません。財務部が別の方法で支払う場合があります。",
       "noAllocationBlocked": "この単位には有効な割当がないため、小口現金からは支払えません。社員の給与を選ぶか、財務部に問い合わせてください。",
       "preApprovalLeft": "残額",
-      "routeLater": "金額と単位を入力すると、承認者がここに表示されます。",
+      "routeLater": "金額を入力すると、承認者がここに表示されます。",
       "salary": "給与で支払い: 小口現金の残高は変わりません。",
       "short": "割当の利用可能額を超えています。先に財務部の補充が必要です。",
       "shortBlocked": "割当の利用可能額を超えており、残高はマイナスにできません。金額を減らすか、社員の給与を選ぶか、補充を申請してください。",
@@ -640,7 +660,16 @@
       "exclusive": "{{amount}}（VAT {{rate}}% 前）で入力。",
       "inclusive": "{{amount}}（VAT {{rate}}% 込み）で入力。",
       "none": "{{amount}} で入力。請求書に VAT はありません。"
-    }
+    },
+    "entry": {
+      "title": "この申請をどのように入力しますか？",
+      "manual": "手入力",
+      "manualHint": "詳細を自分で入力し、領収書を添付します。",
+      "scanHint": "領収書をアップロードまたは撮影します。AI が店舗、日付、金額、カテゴリを読み取るので、内容を確認してください。",
+      "reading": "AI が領収書を読み取っています…",
+      "read": "AI が確信度 {{confidence}}% で領収書を読み取り、申請を入力しました。提出前に各値を確認してください。"
+    },
+    "financeDecides": "付加価値税、負担部門、支払方法は財務が承認時に決めます。"
   },
   "dash": {
     "my": {
@@ -672,7 +701,7 @@
       "newReimbursement": "経費精算",
       "noMovements": "取引はまだありません。",
       "noRequests": "申請はまだありません。上から始めてください。",
-      "openInbox": "承認受信箱",
+      "openInbox": "受信トレイ",
       "overdue": "期限超過：{{count}}",
       "paidOn": "{{amount}}、{{date}} に支払",
       "preExpenseBehalf": "代理で事前経費",
@@ -700,7 +729,7 @@
         "returned": "差し戻し",
         "returnedNote": "対応が必要"
       },
-      "title": "マイダッシュボード",
+      "title": "ダッシュボード",
       "toAcknowledge": "あなたへの支払が受領確認を待っています（{{count}}）",
       "topUpPending": "追加入金の手続き中：",
       "voucher": "伝票 {{voucher}}",
@@ -744,7 +773,7 @@
       "showFewer": "表示を減らす",
       "subtitle": "事業部、部門、プロジェクト全体の小口現金：手元にある額、対応が必要なこと、お金の行き先。",
       "thresholdsLink": "しきい値",
-      "title": "財務ダッシュボード"
+      "title": "ダッシュボード"
     },
     "column": {
       "allocation": "配分",
@@ -778,7 +807,6 @@
     "acknowledgedOn": "{{date}} に受領確認",
     "approvedNote": "承認済みです。単位、管理者、金額を変更すると再承認になります。しきい値と目的は再承認不要です。",
     "availableMarker": "残り {{percent}}%",
-    "backToAcknowledgements": "受領確認に戻る",
     "backToList": "配分に戻る",
     "balanceTitle": "残高",
     "band": {
@@ -810,8 +838,8 @@
       "scopeTaken": "{{reference}} がこの単位で既に有効です。代わりに追加現金の申請で現金を依頼してください。",
       "thresholdRange": "しきい値は 1 から 99 の整数パーセントです。",
       "watchAboveNear": "要注意の目安はしきい値の目安より高くしてください。",
-      "notDisburser": "払出が許可されていないため、配分を発行できません。",
-      "notRecipient": "{{name}} は有効な受取人ではないため、小口現金を保管できません。"
+      "cannotIssue": "配分を発行できるのは財務部のみです。あなたのロールは小口現金を払い出しません。",
+      "notCustodian": "{{name}} は小口現金を保管できません。先に「現金管理者」ロールを割り当ててください。"
     },
     "chooseLevelFirst": "先にレベルを選択してください",
     "column": {
@@ -921,16 +949,6 @@
     "search": "参照番号、単位、管理者、目的で検索",
     "subtitle": "部門、事業部、プロジェクト、または管理者に渡した現金と、各々が現在保有している額です。既存の配分に現金を追加する場合は、追加現金の申請から依頼します。",
     "thresholdsValue": "要注意 {{watch}}% · しきい値 {{near}}%",
-    "tile": {
-      "active": "有効な配分",
-      "activeNote": "{{amount}} 入金済み",
-      "attention": "要対応",
-      "attentionNote": "しきい値に接近または超過：{{count}}",
-      "available": "現在の利用可能額",
-      "availableNote": "{{amount}} 留保後",
-      "awaiting": "受領確認待ち",
-      "summary": "配分の概要"
-    },
     "title": "小口現金の配分",
     "toast": {
       "cancelled": "{{reference}} を取り消しました。",
@@ -939,7 +957,7 @@
       "submitted": "{{reference}} を承認に回しました。"
     },
     "topUpOnItsWay": "さらに {{amount}} が手配中（{{references}}）で、受領確認を待っています。",
-    "noRecipients": "この単位に有効な受取人がいません。「払出者と受取人」で追加してください。"
+    "noCustodians": "この単位に現金管理者がいません。先に単位内の誰かに「現金管理者」ロールを割り当ててください。"
   },
   "file": {
     "aiNotRead": "未スキャン",

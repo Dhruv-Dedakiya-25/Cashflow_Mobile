@@ -88,7 +88,7 @@ export default function ScanScreen() {
       <View style={{ gap: space.md }}>
         <View style={{ flexDirection: 'row', gap: space.md }}>
           <Tile icon={IconCamera} label={t('scan.takePhoto')} onPress={takePhoto} primary badge={aiReads ? t('scan.ai') : undefined} />
-          <Tile icon={IconKeyboard} label={t('scan.manual')} onPress={() => router.push({ pathname: '/scan-review', params: { manual: '1' } })} />
+          <Tile icon={IconKeyboard} label={t('web:reimb.entry.manual')} onPress={() => router.push({ pathname: '/scan-review', params: { manual: '1' } })} />
         </View>
         <View style={{ flexDirection: 'row', gap: space.md }}>
           <Tile icon={IconPhoto} label={t('scan.choosePhoto')} onPress={choosePhoto} />
