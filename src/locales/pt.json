@@ -15,7 +15,6 @@
     "company": "Caixa pequeno de toda a empresa",
     "ofFloats": "de {{amount}} · Alocações: {{count}}",
     "ofFloat": "de {{amount}}",
-    "pending": "Ainda não pago",
     "seeAll": "Ver todas as alocações",
     "team": "Caixa pequeno das suas unidades"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Fotografar a nota",
     "ai": "IA",
     "choosePhoto": "Escolher das fotos",
-    "claimDetails": "Detalhes do reembolso",
     "sentTitle": "Enviado para aprovação",
     "sentText": "{{reference}} agora aguarda {{name}}.",
     "resentTitle": "Enviado novamente",
     "viewClaim": "Ver o reembolso",
-    "cameraDenied": "O CashFlow precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
+    "cameraDenied": "O PettyCashPlus precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
     "sampleNote": "Leitura de exemplo: na demonstração todo recibo é lido como este exemplo, e a foto fica neste telefone.",
     "choosePdf": "Escolher um PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Escuro"
   },
   "inbox": {
-    "toDecide": "Para aprovação",
-    "toAcknowledge": "Para confirmação",
     "submitted": "Enviado há {{time}}"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Suas unidades"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Unidades de negócio",
-      "department": "Departamentos",
-      "project": "Projetos",
-      "custodian": "Custodiantes"
-    },
     "heldBy": "Com {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Já os guardei"
     },
     "password": {
-      "title": "Escolha uma nova senha",
-      "hint": "Um administrador definiu sua senha. Escolha a sua para continuar.",
-      "current": "Senha atual",
-      "new": "Nova senha",
-      "repeat": "Repita a nova senha",
-      "mismatch": "As duas novas senhas não são iguais.",
-      "missing": "Preencha os três campos.",
-      "save": "Salvar e entrar novamente"
+      "missing": "Preencha os três campos."
     },
     "twoFactorOff": "O login em duas etapas não está configurado",
     "claim": {

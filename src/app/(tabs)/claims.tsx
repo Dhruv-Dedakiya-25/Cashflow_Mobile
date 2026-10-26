@@ -18,11 +18,11 @@ import { category, nameOf, omr, vendor } from '@/lib/format';
 import { claimsFor, useMockState, useSession } from '@/mock/store';
 import { space, usePalette } from '@/theme/tokens';
 
-type Filter = 'all' | 'open' | 'returned' | 'paid';
+// The web's Reimbursements views: Pending is sent and not yet paid, or sent back for correction.
+type Filter = 'all' | 'pending' | 'paid';
 const matches: Record<Filter, (s: RequestStatus) => boolean> = {
   all: () => true,
-  open: (s) => s === 'submitted' || s === 'inApproval' || s === 'approved',
-  returned: (s) => s === 'returned',
+  pending: (s) => s === 'submitted' || s === 'inApproval' || s === 'returned' || s === 'approved',
   paid: (s) => s === 'paid',
 };
 
@@ -58,10 +58,9 @@ export default function ClaimsScreen() {
         value={filter}
         onChange={setFilter}
         options={[
-          { value: 'all', label: t('web:status.all') },
-          { value: 'open', label: t('web:txn.status.inApproval'), count: count('open') },
-          { value: 'returned', label: t('web:txn.status.returned'), count: count('returned') },
-          { value: 'paid', label: t('web:txn.status.paid') },
+          { value: 'all', label: t('web:txn.view.all'), count: count('all') },
+          { value: 'pending', label: t('web:txn.view.pending'), count: count('pending') },
+          { value: 'paid', label: t('web:txn.status.paid'), count: count('paid') },
         ]}
       />
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space.sm, flexWrap: 'wrap' }}>

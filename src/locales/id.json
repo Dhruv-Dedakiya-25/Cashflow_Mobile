@@ -15,7 +15,6 @@
     "company": "Kas kecil di seluruh perusahaan",
     "ofFloats": "dari {{amount}} · Alokasi: {{count}}",
     "ofFloat": "dari {{amount}}",
-    "pending": "Belum dibayar",
     "seeAll": "Lihat semua alokasi",
     "team": "Kas kecil di unit Anda"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Foto nota",
     "ai": "AI",
     "choosePhoto": "Pilih dari foto",
-    "claimDetails": "Detail klaim",
     "sentTitle": "Dikirim untuk persetujuan",
     "sentText": "{{reference}} kini menunggu {{name}}.",
     "resentTitle": "Dikirim ulang",
     "viewClaim": "Lihat klaim",
-    "cameraDenied": "CashFlow memerlukan kamera untuk memotret nota. Izinkan di Pengaturan, atau pilih foto saja.",
+    "cameraDenied": "PettyCashPlus memerlukan kamera untuk memotret nota. Izinkan di Pengaturan, atau pilih foto saja.",
     "sampleNote": "Pembacaan contoh: di demo setiap nota terbaca seperti contoh ini, dan fotonya tetap di ponsel ini.",
     "choosePdf": "Pilih PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Gelap"
   },
   "inbox": {
-    "toDecide": "Untuk persetujuan",
-    "toAcknowledge": "Untuk konfirmasi",
     "submitted": "Dikirim {{time}} lalu"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Unit Anda"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Unit bisnis",
-      "department": "Departemen",
-      "project": "Proyek",
-      "custodian": "Pemegang kas"
-    },
     "heldBy": "Dipegang oleh {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Sudah saya simpan"
     },
     "password": {
-      "title": "Pilih kata sandi baru",
-      "hint": "Administrator menetapkan kata sandi Anda. Pilih kata sandi sendiri untuk melanjutkan.",
-      "current": "Kata sandi saat ini",
-      "new": "Kata sandi baru",
-      "repeat": "Ulangi kata sandi baru",
-      "mismatch": "Kedua kata sandi baru tidak sama.",
-      "missing": "Isi ketiga kolom.",
-      "save": "Simpan dan masuk lagi"
+      "missing": "Isi ketiga kolom."
     },
     "twoFactorOff": "Masuk dua langkah belum diatur",
     "claim": {

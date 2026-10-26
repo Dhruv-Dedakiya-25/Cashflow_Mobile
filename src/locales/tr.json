@@ -15,7 +15,6 @@
     "company": "Şirket genelinde küçük kasa",
     "ofFloats": "{{amount}} içinden · Tahsis: {{count}}",
     "ofFloat": "{{amount}} içinden",
-    "pending": "Henüz ödenmedi",
     "seeAll": "Tüm tahsisleri gör",
     "team": "Birimlerinizdeki küçük kasa"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Fişin fotoğrafını çekin",
     "ai": "YZ",
     "choosePhoto": "Fotoğraflardan seç",
-    "claimDetails": "Talep ayrıntıları",
     "sentTitle": "Onaya gönderildi",
     "sentText": "{{reference}} şimdi {{name}} onayını bekliyor.",
     "resentTitle": "Yeniden gönderildi",
     "viewClaim": "Talebi görüntüle",
-    "cameraDenied": "CashFlow'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
+    "cameraDenied": "PettyCashPlus'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
     "sampleNote": "Örnek okuma: demoda her fiş bu örnek gibi okunur ve fotoğraf bu telefonda kalır.",
     "choosePdf": "PDF seç"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Koyu"
   },
   "inbox": {
-    "toDecide": "Onay bekleyen",
-    "toAcknowledge": "Teslim onayı bekleyen",
     "submitted": "{{time}} önce gönderildi"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Birimleriniz"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "İş birimleri",
-      "department": "Departmanlar",
-      "project": "Projeler",
-      "custodian": "Kasa sorumluları"
-    },
     "heldBy": "Sorumlu: {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Kaydettim"
     },
     "password": {
-      "title": "Yeni bir parola seçin",
-      "hint": "Parolanızı bir yönetici belirledi. Devam etmek için kendi parolanızı seçin.",
-      "current": "Mevcut parola",
-      "new": "Yeni parola",
-      "repeat": "Yeni parolayı tekrarlayın",
-      "mismatch": "İki yeni parola aynı değil.",
-      "missing": "Üç alanı da doldurun.",
-      "save": "Kaydet ve yeniden giriş yap"
+      "missing": "Üç alanı da doldurun."
     },
     "twoFactorOff": "İki adımlı giriş ayarlanmadı",
     "claim": {

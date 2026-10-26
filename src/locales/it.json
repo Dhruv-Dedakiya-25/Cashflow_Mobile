@@ -15,7 +15,6 @@
     "company": "Piccola cassa in tutta l'azienda",
     "ofFloats": "su {{amount}} · Assegnazioni: {{count}}",
     "ofFloat": "su {{amount}}",
-    "pending": "Non ancora pagato",
     "seeAll": "Vedi tutte le assegnazioni",
     "team": "Piccola cassa nelle tue unità"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Fotografa lo scontrino",
     "ai": "IA",
     "choosePhoto": "Scegli dalle foto",
-    "claimDetails": "Dettagli del rimborso",
     "sentTitle": "Inviato per approvazione",
     "sentText": "{{reference}} ora attende {{name}}.",
     "resentTitle": "Inviato di nuovo",
     "viewClaim": "Vedi il rimborso",
-    "cameraDenied": "CashFlow ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
+    "cameraDenied": "PettyCashPlus ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
     "sampleNote": "Lettura di esempio: nella demo ogni scontrino viene letto come questo esempio, e la foto resta su questo telefono.",
     "choosePdf": "Scegli un PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Scuro"
   },
   "inbox": {
-    "toDecide": "Per approvazione",
-    "toAcknowledge": "Per conferma",
     "submitted": "Inviato {{time}} fa"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Le tue unità"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Unità di business",
-      "department": "Reparti",
-      "project": "Progetti",
-      "custodian": "Custodi"
-    },
     "heldBy": "Custodita da {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Li ho salvati"
     },
     "password": {
-      "title": "Scegli una nuova password",
-      "hint": "Un amministratore ha impostato la tua password. Scegline una tua per continuare.",
-      "current": "Password attuale",
-      "new": "Nuova password",
-      "repeat": "Ripeti la nuova password",
-      "mismatch": "Le due nuove password non coincidono.",
-      "missing": "Compila tutti e tre i campi.",
-      "save": "Salva e accedi di nuovo"
+      "missing": "Compila tutti e tre i campi."
     },
     "twoFactorOff": "L'accesso a due fattori non è configurato",
     "claim": {

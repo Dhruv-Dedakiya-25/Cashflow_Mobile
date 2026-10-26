@@ -44,6 +44,9 @@ const sections = [
   ['pages', 'report'],
   ['pages', 'payment'],
   ['masters', 'workflow.example.why'],
+  // The change-password dialog's words, kept at the top of the web's pages namespace.
+  ...['changePassword', 'passwordChangeRequiredHint', 'currentPassword', 'newPassword', 'passwordRule',
+    'confirmNewPassword', 'passwordsDoNotMatch', 'updatePassword'].map((key) => ['pages', key]),
 ];
 
 const pick = (tree, path) => path.split('.').reduce((node, key) => node?.[key], tree);

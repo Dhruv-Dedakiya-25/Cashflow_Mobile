@@ -15,7 +15,6 @@
     "company": "Tunai runcit seluruh syarikat",
     "ofFloats": "daripada {{amount}} · Peruntukan: {{count}}",
     "ofFloat": "daripada {{amount}}",
-    "pending": "Belum dibayar",
     "seeAll": "Lihat semua peruntukan",
     "team": "Tunai runcit dalam unit anda"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Ambil gambar bil",
     "ai": "AI",
     "choosePhoto": "Pilih daripada foto",
-    "claimDetails": "Butiran tuntutan",
     "sentTitle": "Dihantar untuk kelulusan",
     "sentText": "{{reference}} kini menunggu {{name}}.",
     "resentTitle": "Dihantar semula",
     "viewClaim": "Lihat tuntutan",
-    "cameraDenied": "CashFlow memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
+    "cameraDenied": "PettyCashPlus memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
     "sampleNote": "Bacaan contoh: dalam demo setiap resit dibaca seperti contoh ini, dan foto kekal di telefon ini.",
     "choosePdf": "Pilih PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Gelap"
   },
   "inbox": {
-    "toDecide": "Untuk kelulusan",
-    "toAcknowledge": "Untuk pengesahan",
     "submitted": "Dihantar {{time}} lalu"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Unit anda"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Unit perniagaan",
-      "department": "Jabatan",
-      "project": "Projek",
-      "custodian": "Penjaga tunai"
-    },
     "heldBy": "Dipegang oleh {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Saya sudah menyimpannya"
     },
     "password": {
-      "title": "Pilih kata laluan baharu",
-      "hint": "Pentadbir menetapkan kata laluan anda. Pilih kata laluan sendiri untuk meneruskan.",
-      "current": "Kata laluan semasa",
-      "new": "Kata laluan baharu",
-      "repeat": "Ulang kata laluan baharu",
-      "mismatch": "Kedua-dua kata laluan baharu tidak sama.",
-      "missing": "Isi ketiga-tiga medan.",
-      "save": "Simpan dan log masuk semula"
+      "missing": "Isi ketiga-tiga medan."
     },
     "twoFactorOff": "Log masuk dua langkah belum ditetapkan",
     "claim": {

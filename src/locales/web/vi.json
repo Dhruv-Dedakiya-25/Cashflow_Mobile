@@ -1200,5 +1200,13 @@
         "selfApproval": "Bỏ qua: người đề nghị sẽ tự phê duyệt yêu cầu của mình"
       }
     }
-  }
+  },
+  "changePassword": "Đổi mật khẩu",
+  "passwordChangeRequiredHint": "Mật khẩu của bạn do quản trị viên đặt. Hãy chọn mật khẩu mới chỉ mình bạn biết trước khi tiếp tục.",
+  "currentPassword": "Mật khẩu hiện tại",
+  "newPassword": "Mật khẩu mới",
+  "passwordRule": "Tối thiểu 12 ký tự, gồm chữ hoa, chữ thường và chữ số.",
+  "confirmNewPassword": "Xác nhận mật khẩu mới",
+  "passwordsDoNotMatch": "Mật khẩu không khớp.",
+  "updatePassword": "Cập nhật mật khẩu"
 }

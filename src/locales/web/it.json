@@ -1200,5 +1200,13 @@
         "selfApproval": "Saltato: il richiedente approverebbe la propria richiesta"
       }
     }
-  }
+  },
+  "changePassword": "Cambia password",
+  "passwordChangeRequiredHint": "Un amministratore ha impostato la tua password. Scegline una nuova che conosci solo tu prima di continuare.",
+  "currentPassword": "Password attuale",
+  "newPassword": "Nuova password",
+  "passwordRule": "Almeno 12 caratteri, con una lettera maiuscola, una minuscola e una cifra.",
+  "confirmNewPassword": "Conferma la nuova password",
+  "passwordsDoNotMatch": "Le password non coincidono.",
+  "updatePassword": "Aggiorna la password"
 }

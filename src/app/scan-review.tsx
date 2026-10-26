@@ -165,13 +165,13 @@ function DemoScanReview() {
 
           <Card style={{ gap: space.lg }}>
             <SectionHeader title={t('web:scan.receiptTitle')} />
-            <Field label={t('web:scan.field.merchant')} value={merchant} onChangeText={(v) => { setMerchant(v); touch('merchant'); }} error={errors.merchant} warn={low('merchant')} />
+            <Field label={t('web:claim.field.merchant')} value={merchant} onChangeText={(v) => { setMerchant(v); touch('merchant'); }} error={errors.merchant} warn={low('merchant')} />
             <View style={{ flexDirection: 'row', gap: space.md }}>
               <View style={{ flex: 1 }}>
-                <Field label={t('web:scan.field.expenseDate')} value={date} onChangeText={(v) => { setDate(v); touch('expenseDate'); }} hint={/^\d{4}-\d{2}-\d{2}$/.test(date) ? longDate(date, code) : undefined} warn={low('expenseDate')} keyboardType="numbers-and-punctuation" />
+                <Field label={t('web:reimb.field.expenseDate')} value={date} onChangeText={(v) => { setDate(v); touch('expenseDate'); }} hint={/^\d{4}-\d{2}-\d{2}$/.test(date) ? longDate(date, code) : undefined} warn={low('expenseDate')} keyboardType="numbers-and-punctuation" />
               </View>
               <View style={{ flex: 1 }}>
-                <Field label={t('web:scan.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
+                <Field label={t('web:reimb.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
               </View>
             </View>
             <Field
@@ -185,14 +185,14 @@ function DemoScanReview() {
             />
             <View style={{ gap: 6 }}>
               <AppText variant="small" weight="medium" tone="secondary">
-                {t('web:scan.field.category')}
+                {t('web:claim.field.category')}
               </AppText>
               <Chips value={categoryId} onChange={setCategoryId} options={categories.map((c) => ({ value: c.id, label: nameOf(c, code) }))} />
             </View>
           </Card>
 
           <Card style={{ gap: space.lg }}>
-            <SectionHeader title={t('scan.claimDetails')} />
+            <SectionHeader title={t('web:reimb.detailsTitle')} />
             <Field label={t('web:reimb.field.description')} value={description} onChangeText={setDescription} placeholder={t('web:reimb.descriptionPlaceholder')} multiline error={errors.description} />
           </Card>
         </>

@@ -1200,5 +1200,13 @@
         "selfApproval": "スキップ：申請者が自分の申請を承認することになります"
       }
     }
-  }
+  },
+  "changePassword": "パスワードを変更",
+  "passwordChangeRequiredHint": "パスワードは管理者によって設定されました。続行する前に、自分だけが知っている新しいパスワードを設定してください。",
+  "currentPassword": "現在のパスワード",
+  "newPassword": "新しいパスワード",
+  "passwordRule": "12 文字以上で、大文字・小文字・数字をそれぞれ 1 つ以上含めてください。",
+  "confirmNewPassword": "新しいパスワードの確認",
+  "passwordsDoNotMatch": "パスワードが一致しません。",
+  "updatePassword": "パスワードを更新"
 }

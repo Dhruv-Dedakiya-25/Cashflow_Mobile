@@ -68,7 +68,7 @@ export default function PettyCashScreen() {
         onChange={setLevel}
         options={[
           { value: 'all', label: t('web:status.all'), count: positions.length },
-          ...groups.map((g) => ({ value: g.level, label: t(`pettyCash.level.${g.level}`), count: g.count })),
+          ...groups.map((g) => ({ value: g.level, label: t(`web:allocation.level.${g.level}`), count: g.count })),
         ]}
       />
       {groups
@@ -77,7 +77,7 @@ export default function PettyCashScreen() {
           <View key={g.level} style={{ gap: space.sm }}>
             <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: space.sm }}>
               <View style={{ flex: 1 }}>
-                <SectionHeader title={t(`pettyCash.level.${g.level}`)} />
+                <SectionHeader title={t(`web:allocation.level.${g.level}`)} />
               </View>
               <AppText variant="small" weight="semibold" style={{ fontVariant: ['tabular-nums'] }}>
                 {amount(g.available, language.code)}

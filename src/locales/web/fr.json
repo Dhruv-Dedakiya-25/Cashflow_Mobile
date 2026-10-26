@@ -1200,5 +1200,13 @@
         "selfApproval": "Ignorée : le demandeur approuverait sa propre demande"
       }
     }
-  }
+  },
+  "changePassword": "Changer le mot de passe",
+  "passwordChangeRequiredHint": "Un administrateur a défini votre mot de passe. Choisissez-en un nouveau que vous seul connaissez avant de continuer.",
+  "currentPassword": "Mot de passe actuel",
+  "newPassword": "Nouveau mot de passe",
+  "passwordRule": "Au moins 12 caractères, dont une majuscule, une minuscule et un chiffre.",
+  "confirmNewPassword": "Confirmer le nouveau mot de passe",
+  "passwordsDoNotMatch": "Les mots de passe ne correspondent pas.",
+  "updatePassword": "Mettre à jour le mot de passe"
 }

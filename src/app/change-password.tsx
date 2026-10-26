@@ -18,7 +18,7 @@ export default function ChangePasswordScreen() {
 
   const save = async () => {
     if (!current || !next) return setError(t('live.password.missing'));
-    if (next !== repeat) return setError(t('live.password.mismatch'));
+    if (next !== repeat) return setError(t('web:passwordsDoNotMatch'));
     setBusy(true);
     setError(null);
     try {
@@ -31,9 +31,10 @@ export default function ChangePasswordScreen() {
     }
   };
 
-  const field = (label: string, value: string, set: (v: string) => void, autoComplete: 'current-password' | 'new-password') => (
+  const field = (label: string, value: string, set: (v: string) => void, autoComplete: 'current-password' | 'new-password', hint?: string) => (
     <Field
       label={label}
+      hint={hint}
       value={value}
       onChangeText={(v) => {
         set(v);
@@ -48,12 +49,12 @@ export default function ChangePasswordScreen() {
   );
 
   return (
-    <SignInFrame title={t('live.password.title')} hint={t('live.password.hint')}>
-      {field(t('live.password.current'), current, setCurrent, 'current-password')}
-      {field(t('live.password.new'), next, setNext, 'new-password')}
-      {field(t('live.password.repeat'), repeat, setRepeat, 'new-password')}
+    <SignInFrame title={t('web:changePassword')} hint={t('web:passwordChangeRequiredHint')}>
+      {field(t('web:currentPassword'), current, setCurrent, 'current-password')}
+      {field(t('web:newPassword'), next, setNext, 'new-password', t('web:passwordRule'))}
+      {field(t('web:confirmNewPassword'), repeat, setRepeat, 'new-password')}
       {error ? <AppText tone="danger">{error}</AppText> : null}
-      <Button label={t('live.password.save')} loading={busy} onPress={save} />
+      <Button label={t('web:updatePassword')} loading={busy} onPress={save} />
       <Button label={t('profile.signOut')} tone="ghost" onPress={logout} />
     </SignInFrame>
   );

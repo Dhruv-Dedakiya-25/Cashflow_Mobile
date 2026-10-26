@@ -15,7 +15,6 @@
     "company": "Kasa podręczna w całej firmie",
     "ofFloats": "z {{amount}} · Przydziały: {{count}}",
     "ofFloat": "z {{amount}}",
-    "pending": "Jeszcze niezapłacone",
     "seeAll": "Zobacz wszystkie przydziały",
     "team": "Kasa podręczna w Twoich jednostkach"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Zrób zdjęcie paragonu",
     "ai": "AI",
     "choosePhoto": "Wybierz ze zdjęć",
-    "claimDetails": "Szczegóły wniosku",
     "sentTitle": "Wysłano do zatwierdzenia",
     "sentText": "{{reference}} czeka teraz na: {{name}}.",
     "resentTitle": "Wysłano ponownie",
     "viewClaim": "Zobacz wniosek",
-    "cameraDenied": "CashFlow potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
+    "cameraDenied": "PettyCashPlus potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
     "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon odczytuje się jak ten przykład, a zdjęcie zostaje na telefonie.",
     "choosePdf": "Wybierz PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Ciemny"
   },
   "inbox": {
-    "toDecide": "Do zatwierdzenia",
-    "toAcknowledge": "Do potwierdzenia",
     "submitted": "Wysłano {{time}} temu"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Twoje jednostki"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Jednostki biznesowe",
-      "department": "Działy",
-      "project": "Projekty",
-      "custodian": "Opiekunowie kasy"
-    },
     "heldBy": "U: {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Zapisałem/zapisałam je"
     },
     "password": {
-      "title": "Wybierz nowe hasło",
-      "hint": "Hasło ustawił administrator. Aby kontynuować, wybierz własne.",
-      "current": "Obecne hasło",
-      "new": "Nowe hasło",
-      "repeat": "Powtórz nowe hasło",
-      "mismatch": "Nowe hasła nie są takie same.",
-      "missing": "Wypełnij wszystkie trzy pola.",
-      "save": "Zapisz i zaloguj się ponownie"
+      "missing": "Wypełnij wszystkie trzy pola."
     },
     "twoFactorOff": "Logowanie dwuetapowe nie jest skonfigurowane",
     "claim": {

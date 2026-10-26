@@ -1200,5 +1200,13 @@
         "selfApproval": "Übersprungen: Die antragstellende Person würde ihren eigenen Antrag freigeben"
       }
     }
-  }
+  },
+  "changePassword": "Passwort ändern",
+  "passwordChangeRequiredHint": "Ein Administrator hat Ihr Passwort festgelegt. Wählen Sie ein neues, das nur Sie kennen, bevor Sie fortfahren.",
+  "currentPassword": "Aktuelles Passwort",
+  "newPassword": "Neues Passwort",
+  "passwordRule": "Mindestens 12 Zeichen, darunter ein Großbuchstabe, ein Kleinbuchstabe und eine Ziffer.",
+  "confirmNewPassword": "Neues Passwort bestätigen",
+  "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+  "updatePassword": "Passwort aktualisieren"
 }

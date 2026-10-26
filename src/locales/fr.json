@@ -15,7 +15,6 @@
     "company": "Petite caisse de toute l'entreprise",
     "ofFloats": "sur {{amount}} · Allocations : {{count}}",
     "ofFloat": "sur {{amount}}",
-    "pending": "Pas encore payé",
     "seeAll": "Voir toutes les allocations",
     "team": "Petite caisse de vos unités"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Photographier le reçu",
     "ai": "IA",
     "choosePhoto": "Choisir dans les photos",
-    "claimDetails": "Détails de la demande",
     "sentTitle": "Envoyée pour approbation",
     "sentText": "{{reference}} attend maintenant {{name}}.",
     "resentTitle": "Renvoyée",
     "viewClaim": "Voir la demande",
-    "cameraDenied": "CashFlow a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
+    "cameraDenied": "PettyCashPlus a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
     "sampleNote": "Lecture d'exemple : dans la démo, chaque reçu se lit comme cet exemple, et la photo reste sur ce téléphone.",
     "choosePdf": "Choisir un PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Sombre"
   },
   "inbox": {
-    "toDecide": "Pour approbation",
-    "toAcknowledge": "Pour confirmation",
     "submitted": "Envoyée il y a {{time}}"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Vos unités"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Unités d'affaires",
-      "department": "Services",
-      "project": "Projets",
-      "custodian": "Dépositaires"
-    },
     "heldBy": "Détenue par {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Je les ai enregistrés"
     },
     "password": {
-      "title": "Choisir un nouveau mot de passe",
-      "hint": "Un administrateur a défini votre mot de passe. Choisissez le vôtre pour continuer.",
-      "current": "Mot de passe actuel",
-      "new": "Nouveau mot de passe",
-      "repeat": "Répéter le nouveau mot de passe",
-      "mismatch": "Les deux nouveaux mots de passe ne sont pas identiques.",
-      "missing": "Remplissez les trois champs.",
-      "save": "Enregistrer et se reconnecter"
+      "missing": "Remplissez les trois champs."
     },
     "twoFactorOff": "La connexion à deux facteurs n'est pas configurée",
     "claim": {

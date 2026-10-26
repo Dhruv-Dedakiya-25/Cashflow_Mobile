@@ -15,7 +15,6 @@
     "company": "Handkasse im ganzen Unternehmen",
     "ofFloats": "von {{amount}} · Zuweisungen: {{count}}",
     "ofFloat": "von {{amount}}",
-    "pending": "Noch nicht bezahlt",
     "seeAll": "Alle Zuweisungen ansehen",
     "team": "Handkasse in Ihren Einheiten"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Beleg fotografieren",
     "ai": "KI",
     "choosePhoto": "Aus Fotos auswählen",
-    "claimDetails": "Antragsdetails",
     "sentTitle": "Zur Genehmigung gesendet",
     "sentText": "{{reference}} wartet jetzt auf {{name}}.",
     "resentTitle": "Erneut gesendet",
     "viewClaim": "Antrag ansehen",
-    "cameraDenied": "CashFlow braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
+    "cameraDenied": "PettyCashPlus braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
     "sampleNote": "Beispiel-Auslesung: In der Demo wird jeder Beleg als dieses Beispiel gelesen, und das Foto bleibt auf diesem Telefon.",
     "choosePdf": "PDF auswählen"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Dunkel"
   },
   "inbox": {
-    "toDecide": "Zur Genehmigung",
-    "toAcknowledge": "Zur Bestätigung",
     "submitted": "Vor {{time}} gesendet"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Ihre Einheiten"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Geschäftseinheiten",
-      "department": "Abteilungen",
-      "project": "Projekte",
-      "custodian": "Verwahrer"
-    },
     "heldBy": "Verwahrt von {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Ich habe sie gespeichert"
     },
     "password": {
-      "title": "Neues Passwort wählen",
-      "hint": "Ein Administrator hat Ihr Passwort festgelegt. Wählen Sie ein eigenes, um fortzufahren.",
-      "current": "Aktuelles Passwort",
-      "new": "Neues Passwort",
-      "repeat": "Neues Passwort wiederholen",
-      "mismatch": "Die beiden neuen Passwörter stimmen nicht überein.",
-      "missing": "Füllen Sie alle drei Felder aus.",
-      "save": "Speichern und neu anmelden"
+      "missing": "Füllen Sie alle drei Felder aus."
     },
     "twoFactorOff": "Zwei-Faktor-Anmeldung ist nicht eingerichtet",
     "claim": {

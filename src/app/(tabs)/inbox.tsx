@@ -117,8 +117,8 @@ export default function InboxScreen() {
           value={tab}
           onChange={setTab}
           options={[
-            { value: 'decide', label: t('inbox.toDecide'), count: items.length },
-            { value: 'acknowledge', label: t('inbox.toAcknowledge'), count: acks.length },
+            { value: 'decide', label: t('web:approval.view.waiting'), count: items.length },
+            { value: 'acknowledge', label: t('web:approval.view.cash'), count: acks.length },
           ]}
         />
       ) : null}

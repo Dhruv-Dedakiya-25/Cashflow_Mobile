@@ -326,11 +326,11 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
 
           <Card style={{ gap: space.lg }}>
             <SectionHeader title={t('web:scan.receiptTitle')} />
-            <Field label={t('web:scan.field.merchant')} value={merchant} onChangeText={(v) => { setMerchant(v); touch('merchant'); }} error={errors.merchant} warn={low('merchant')} />
+            <Field label={t('web:claim.field.merchant')} value={merchant} onChangeText={(v) => { setMerchant(v); touch('merchant'); }} error={errors.merchant} warn={low('merchant')} />
             <View style={{ flexDirection: 'row', gap: space.md }}>
               <View style={{ flex: 1 }}>
                 <Field
-                  label={t('web:scan.field.expenseDate')}
+                  label={t('web:reimb.field.expenseDate')}
                   value={date}
                   onChangeText={(v) => { setDate(v); touch('expenseDate'); }}
                   error={errors.date}
@@ -341,7 +341,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
                 />
               </View>
               <View style={{ flex: 1 }}>
-                <Field label={t('web:scan.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
+                <Field label={t('web:reimb.field.receiptNo')} value={receiptNo} onChangeText={(v) => { setReceiptNo(v); touch('receiptNo'); }} warn={low('receiptNo')} />
               </View>
             </View>
             <Field
@@ -384,7 +384,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
           </Card>
 
           <Card style={{ gap: space.lg }}>
-            <SectionHeader title={t('scan.claimDetails')} />
+            <SectionHeader title={t('web:reimb.detailsTitle')} />
             <Field label={t('web:reimb.field.description')} value={description} onChangeText={setDescription} placeholder={t('web:reimb.descriptionPlaceholder')} multiline error={errors.description} />
 
             {options.preApprovals.length ? (

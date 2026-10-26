@@ -15,7 +15,6 @@
     "company": "Kleine kas in het hele bedrijf",
     "ofFloats": "van {{amount}} · Toewijzingen: {{count}}",
     "ofFloat": "van {{amount}}",
-    "pending": "Nog niet betaald",
     "seeAll": "Alle toewijzingen bekijken",
     "team": "Kleine kas in uw eenheden"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Maak een foto van de bon",
     "ai": "AI",
     "choosePhoto": "Kiezen uit foto's",
-    "claimDetails": "Gegevens van de declaratie",
     "sentTitle": "Ter goedkeuring verstuurd",
     "sentText": "{{reference}} wacht nu op {{name}}.",
     "resentTitle": "Opnieuw verstuurd",
     "viewClaim": "Declaratie bekijken",
-    "cameraDenied": "CashFlow heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
+    "cameraDenied": "PettyCashPlus heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
     "sampleNote": "Voorbeeldlezing: in de demo leest elke bon als dit voorbeeld, en de foto blijft op deze telefoon.",
     "choosePdf": "Kies een pdf"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Donker"
   },
   "inbox": {
-    "toDecide": "Ter goedkeuring",
-    "toAcknowledge": "Ter bevestiging",
     "submitted": "{{time}} geleden verstuurd"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Uw eenheden"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Bedrijfseenheden",
-      "department": "Afdelingen",
-      "project": "Projecten",
-      "custodian": "Kasbeheerders"
-    },
     "heldBy": "Beheerd door {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Ik heb ze bewaard"
     },
     "password": {
-      "title": "Kies een nieuw wachtwoord",
-      "hint": "Een beheerder heeft uw wachtwoord ingesteld. Kies uw eigen wachtwoord om verder te gaan.",
-      "current": "Huidig wachtwoord",
-      "new": "Nieuw wachtwoord",
-      "repeat": "Herhaal het nieuwe wachtwoord",
-      "mismatch": "De twee nieuwe wachtwoorden zijn niet gelijk.",
-      "missing": "Vul alle drie de velden in.",
-      "save": "Opslaan en opnieuw inloggen"
+      "missing": "Vul alle drie de velden in."
     },
     "twoFactorOff": "Inloggen in twee stappen is niet ingesteld",
     "claim": {

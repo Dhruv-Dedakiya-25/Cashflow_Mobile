@@ -16,7 +16,6 @@
     "ofFloats": "of {{amount}} in {{count}} allocations",
     "ofFloats_one": "of {{amount}} in {{count}} allocation",
     "ofFloat": "of {{amount}}",
-    "pending": "Not paid yet",
     "seeAll": "See every allocation",
     "team": "Petty cash in your units"
   },
@@ -40,12 +39,11 @@
     "takePhoto": "Take a photo of the bill",
     "ai": "AI",
     "choosePhoto": "Choose from photos",
-    "claimDetails": "Claim details",
     "sentTitle": "Sent for approval",
     "sentText": "{{reference}} is now waiting for {{name}}.",
     "resentTitle": "Sent again",
     "viewClaim": "View the claim",
-    "cameraDenied": "CashFlow needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
+    "cameraDenied": "PettyCashPlus needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
     "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
     "choosePdf": "Choose a PDF"
   },
@@ -61,8 +59,6 @@
     "themeDark": "Dark"
   },
   "inbox": {
-    "toDecide": "For Approval",
-    "toAcknowledge": "For Acknowledgement",
     "submitted": "Sent {{time}} ago"
   },
   "review": {
@@ -94,12 +90,6 @@
     "scopeTeam": "Your units"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Business units",
-      "department": "Departments",
-      "project": "Projects",
-      "custodian": "Custodians"
-    },
     "heldBy": "Held by {{name}}"
   },
   "period": {
@@ -144,14 +134,7 @@
       "saved": "I have saved them"
     },
     "password": {
-      "title": "Choose a new password",
-      "hint": "An administrator set your password. Choose your own to continue.",
-      "current": "Current password",
-      "new": "New password",
-      "repeat": "Repeat the new password",
-      "mismatch": "The two new passwords are not the same.",
-      "missing": "Fill in all three fields.",
-      "save": "Save and sign in again"
+      "missing": "Fill in all three fields."
     },
     "twoFactorOff": "Two-factor sign-in is not set up",
     "claim": {

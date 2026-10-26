@@ -1200,5 +1200,13 @@
         "selfApproval": "Skipped: the submitter would approve their own request"
       }
     }
-  }
+  },
+  "changePassword": "Change Password",
+  "passwordChangeRequiredHint": "An administrator set your password. Choose a new one that only you know before you continue.",
+  "currentPassword": "Current password",
+  "newPassword": "New password",
+  "passwordRule": "At least 12 characters, including an upper-case letter, a lower-case letter and a digit.",
+  "confirmNewPassword": "Confirm new password",
+  "passwordsDoNotMatch": "The passwords do not match.",
+  "updatePassword": "Update Password"
 }

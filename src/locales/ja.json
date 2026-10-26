@@ -15,7 +15,6 @@
     "company": "全社の小口現金",
     "ofFloats": "{{amount}} 中 · 配分 {{count}} 件",
     "ofFloat": "{{amount}} 中",
-    "pending": "未払い",
     "seeAll": "すべての配分を見る",
     "team": "担当部門の小口現金"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "領収書を撮影",
     "ai": "AI",
     "choosePhoto": "写真から選択",
-    "claimDetails": "申請の詳細",
     "sentTitle": "承認に回しました",
     "sentText": "{{reference}} は {{name}} さんの承認待ちです。",
     "resentTitle": "再提出しました",
     "viewClaim": "申請を見る",
-    "cameraDenied": "領収書の撮影には CashFlow にカメラへのアクセスが必要です。設定で許可するか、写真を選んでください。",
+    "cameraDenied": "領収書の撮影には PettyCashPlus にカメラへのアクセスが必要です。設定で許可するか、写真を選んでください。",
     "sampleNote": "サンプル読み取り：デモではどの領収書もこのサンプルとして読み取られ、写真はこの端末に残ります。",
     "choosePdf": "PDF を選択"
   },
@@ -59,8 +57,6 @@
     "themeDark": "ダーク"
   },
   "inbox": {
-    "toDecide": "承認待ち",
-    "toAcknowledge": "受領確認待ち",
     "submitted": "{{time}}前に送信"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "担当部門"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "事業部",
-      "department": "部署",
-      "project": "プロジェクト",
-      "custodian": "現金管理者"
-    },
     "heldBy": "管理者：{{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "保存しました"
     },
     "password": {
-      "title": "新しいパスワードを設定",
-      "hint": "パスワードは管理者が設定しました。続けるにはご自身のパスワードを設定してください。",
-      "current": "現在のパスワード",
-      "new": "新しいパスワード",
-      "repeat": "新しいパスワード（確認）",
-      "mismatch": "新しいパスワードが一致しません。",
-      "missing": "3つの欄をすべて入力してください。",
-      "save": "保存して再度サインイン"
+      "missing": "3つの欄をすべて入力してください。"
     },
     "twoFactorOff": "2段階認証が設定されていません",
     "claim": {

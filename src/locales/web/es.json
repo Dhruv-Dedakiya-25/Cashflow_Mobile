@@ -1200,5 +1200,13 @@
         "selfApproval": "Omitido: el solicitante aprobaría su propia solicitud"
       }
     }
-  }
+  },
+  "changePassword": "Cambiar contraseña",
+  "passwordChangeRequiredHint": "Un administrador estableció su contraseña. Elija una nueva que solo usted conozca antes de continuar.",
+  "currentPassword": "Contraseña actual",
+  "newPassword": "Nueva contraseña",
+  "passwordRule": "Al menos 12 caracteres, con una mayúscula, una minúscula y un número.",
+  "confirmNewPassword": "Confirmar la nueva contraseña",
+  "passwordsDoNotMatch": "Las contraseñas no coinciden.",
+  "updatePassword": "Actualizar contraseña"
 }

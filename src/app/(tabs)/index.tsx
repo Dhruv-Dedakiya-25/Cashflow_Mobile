@@ -182,7 +182,7 @@ export default function HomeScreen() {
               <View key={g.level} style={{ gap: 6 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: space.sm }}>
                   <AppText variant="small" weight="semibold" style={{ flex: 1 }} numberOfLines={1}>
-                    {t(`pettyCash.level.${g.level}`)} ({g.count})
+                    {t(`web:allocation.level.${g.level}`)} ({g.count})
                   </AppText>
                   <AppText variant="small" weight="semibold" style={{ fontVariant: ['tabular-nums'] }}>
                     {amount(g.available, language.code)}
@@ -257,7 +257,7 @@ export default function HomeScreen() {
           series={[
             { key: 'pettyCash', label: t('web:dash.chart.pettyCash'), color: palette.primary },
             { key: 'salary', label: t('web:dash.chart.salary'), color: palette.teal },
-            { key: 'pending', label: t('home.pending'), color: palette.warning },
+            { key: 'pending', label: t('web:report.metric.pending'), color: palette.warning },
           ]}
         />
       </Card>

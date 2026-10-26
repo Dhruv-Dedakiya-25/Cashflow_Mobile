@@ -1200,5 +1200,13 @@
         "selfApproval": "Dilewati: pemohon akan menyetujui permintaannya sendiri"
       }
     }
-  }
+  },
+  "changePassword": "Ubah kata sandi",
+  "passwordChangeRequiredHint": "Administrator telah menetapkan kata sandi Anda. Pilih kata sandi baru yang hanya Anda ketahui sebelum melanjutkan.",
+  "currentPassword": "Kata sandi saat ini",
+  "newPassword": "Kata sandi baru",
+  "passwordRule": "Minimal 12 karakter, termasuk huruf besar, huruf kecil, dan angka.",
+  "confirmNewPassword": "Konfirmasi kata sandi baru",
+  "passwordsDoNotMatch": "Kata sandi tidak cocok.",
+  "updatePassword": "Perbarui kata sandi"
 }

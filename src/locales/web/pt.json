@@ -1200,5 +1200,13 @@
         "selfApproval": "Pulada: o solicitante aprovaria a própria solicitação"
       }
     }
-  }
+  },
+  "changePassword": "Alterar palavra-passe",
+  "passwordChangeRequiredHint": "Um administrador definiu sua senha. Escolha uma nova que só você conheça antes de continuar.",
+  "currentPassword": "Palavra-passe atual",
+  "newPassword": "Nova palavra-passe",
+  "passwordRule": "Pelo menos 12 caracteres, incluindo uma letra maiúscula, uma letra minúscula e um algarismo.",
+  "confirmNewPassword": "Confirmar a nova palavra-passe",
+  "passwordsDoNotMatch": "As palavras-passe não coincidem.",
+  "updatePassword": "Atualizar palavra-passe"
 }

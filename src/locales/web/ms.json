@@ -1200,5 +1200,13 @@
         "selfApproval": "Dilangkau: pemohon akan meluluskan permohonannya sendiri"
       }
     }
-  }
+  },
+  "changePassword": "Tukar kata laluan",
+  "passwordChangeRequiredHint": "Pentadbir telah menetapkan kata laluan anda. Pilih kata laluan baharu yang hanya anda ketahui sebelum meneruskan.",
+  "currentPassword": "Kata laluan semasa",
+  "newPassword": "Kata laluan baharu",
+  "passwordRule": "Sekurang-kurangnya 12 aksara, termasuk huruf besar, huruf kecil dan digit.",
+  "confirmNewPassword": "Sahkan kata laluan baharu",
+  "passwordsDoNotMatch": "Kata laluan tidak sepadan.",
+  "updatePassword": "Kemas kini kata laluan"
 }

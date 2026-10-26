@@ -15,7 +15,6 @@
     "company": "회사 전체 소액 현금",
     "ofFloats": "{{amount}} 중 · 배정 {{count}}건",
     "ofFloat": "{{amount}} 중",
-    "pending": "아직 지급 안 됨",
     "seeAll": "모든 배정 보기",
     "team": "담당 부서의 소액 현금"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "영수증 촬영",
     "ai": "AI",
     "choosePhoto": "사진에서 선택",
-    "claimDetails": "청구 상세",
     "sentTitle": "승인 요청됨",
     "sentText": "{{reference}}이(가) {{name}}님의 승인을 기다리고 있습니다.",
     "resentTitle": "다시 제출됨",
     "viewClaim": "청구 보기",
-    "cameraDenied": "영수증을 촬영하려면 CashFlow에 카메라 권한이 필요합니다. 설정에서 허용하거나 사진을 선택하세요.",
+    "cameraDenied": "영수증을 촬영하려면 PettyCashPlus에 카메라 권한이 필요합니다. 설정에서 허용하거나 사진을 선택하세요.",
     "sampleNote": "샘플 판독: 데모에서는 모든 영수증이 이 샘플로 판독되며, 사진은 이 휴대폰에만 남습니다.",
     "choosePdf": "PDF 선택"
   },
@@ -59,8 +57,6 @@
     "themeDark": "다크"
   },
   "inbox": {
-    "toDecide": "승인 대기",
-    "toAcknowledge": "수령 확인 대기",
     "submitted": "{{time}} 전 제출"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "담당 부서"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "사업부",
-      "department": "부서",
-      "project": "프로젝트",
-      "custodian": "현금 관리자"
-    },
     "heldBy": "관리자: {{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "저장했습니다"
     },
     "password": {
-      "title": "새 비밀번호 설정",
-      "hint": "관리자가 비밀번호를 설정했습니다. 계속하려면 직접 비밀번호를 정하세요.",
-      "current": "현재 비밀번호",
-      "new": "새 비밀번호",
-      "repeat": "새 비밀번호 다시 입력",
-      "mismatch": "두 새 비밀번호가 일치하지 않습니다.",
-      "missing": "세 칸을 모두 입력하세요.",
-      "save": "저장하고 다시 로그인"
+      "missing": "세 칸을 모두 입력하세요."
     },
     "twoFactorOff": "2단계 로그인이 설정되지 않았습니다",
     "claim": {

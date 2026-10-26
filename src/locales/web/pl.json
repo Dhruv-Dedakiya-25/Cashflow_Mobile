@@ -1200,5 +1200,13 @@
         "selfApproval": "Pominięto: wnioskodawca zatwierdziłby własny wniosek"
       }
     }
-  }
+  },
+  "changePassword": "Zmień hasło",
+  "passwordChangeRequiredHint": "Twoje hasło ustawił administrator. Zanim przejdziesz dalej, wybierz nowe hasło, które znasz tylko Ty.",
+  "currentPassword": "Obecne hasło",
+  "newPassword": "Nowe hasło",
+  "passwordRule": "Co najmniej 12 znaków, w tym wielka litera, mała litera i cyfra.",
+  "confirmNewPassword": "Potwierdź nowe hasło",
+  "passwordsDoNotMatch": "Hasła nie są zgodne.",
+  "updatePassword": "Zaktualizuj hasło"
 }

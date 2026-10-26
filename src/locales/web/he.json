@@ -1200,5 +1200,13 @@
         "selfApproval": "דולג: מגיש הבקשה היה מאשר את הבקשה של עצמו"
       }
     }
-  }
+  },
+  "changePassword": "שינוי סיסמה",
+  "passwordChangeRequiredHint": "מנהל מערכת הגדיר את הסיסמה שלכם. בחרו סיסמה חדשה שרק אתם מכירים לפני שתמשיכו.",
+  "currentPassword": "הסיסמה הנוכחית",
+  "newPassword": "סיסמה חדשה",
+  "passwordRule": "לפחות 12 תווים, כולל אות גדולה, אות קטנה וספרה.",
+  "confirmNewPassword": "אישור הסיסמה החדשה",
+  "passwordsDoNotMatch": "הסיסמאות אינן תואמות.",
+  "updatePassword": "עדכון הסיסמה"
 }

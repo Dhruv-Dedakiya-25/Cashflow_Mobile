@@ -1200,5 +1200,13 @@
         "selfApproval": "Atlandı: talep sahibi kendi talebini onaylamış olurdu"
       }
     }
-  }
+  },
+  "changePassword": "Parolayı değiştir",
+  "passwordChangeRequiredHint": "Parolanızı bir yönetici belirledi. Devam etmeden önce yalnızca sizin bildiğiniz yeni bir parola seçin.",
+  "currentPassword": "Mevcut parola",
+  "newPassword": "Yeni parola",
+  "passwordRule": "En az 12 karakter; bir büyük harf, bir küçük harf ve bir rakam içermelidir.",
+  "confirmNewPassword": "Yeni parolayı onaylayın",
+  "passwordsDoNotMatch": "Parolalar eşleşmiyor.",
+  "updatePassword": "Parolayı güncelle"
 }

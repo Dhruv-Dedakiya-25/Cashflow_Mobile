@@ -1200,5 +1200,13 @@
         "selfApproval": "已跳过：申请人将审批自己的申请"
       }
     }
-  }
+  },
+  "changePassword": "修改密码",
+  "passwordChangeRequiredHint": "您的密码由管理员设置。请先设置一个只有您知道的新密码，然后再继续。",
+  "currentPassword": "当前密码",
+  "newPassword": "新密码",
+  "passwordRule": "至少 12 个字符，须包含大写字母、小写字母和数字。",
+  "confirmNewPassword": "确认新密码",
+  "passwordsDoNotMatch": "两次输入的密码不一致。",
+  "updatePassword": "更新密码"
 }

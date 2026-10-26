@@ -15,7 +15,6 @@
     "company": "全公司备用金",
     "ofFloats": "共 {{amount}} · 拨付 {{count}} 笔",
     "ofFloat": "共 {{amount}}",
-    "pending": "尚未支付",
     "seeAll": "查看全部拨付",
     "team": "您所在单位的备用金"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "拍摄票据",
     "ai": "AI",
     "choosePhoto": "从相册选择",
-    "claimDetails": "报销详情",
     "sentTitle": "已提交审批",
     "sentText": "{{reference}} 正在等待 {{name}} 审批。",
     "resentTitle": "已重新提交",
     "viewClaim": "查看报销单",
-    "cameraDenied": "CashFlow 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
+    "cameraDenied": "PettyCashPlus 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
     "sampleNote": "示例识别：演示版中每张票据都按此示例识别，照片只保存在本机。",
     "choosePdf": "选择 PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "深色"
   },
   "inbox": {
-    "toDecide": "待审批",
-    "toAcknowledge": "待确认收款",
     "submitted": "{{time}}前提交"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "您所在单位"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "业务单元",
-      "department": "部门",
-      "project": "项目",
-      "custodian": "保管人"
-    },
     "heldBy": "保管人：{{name}}"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "我已保存"
     },
     "password": {
-      "title": "设置新密码",
-      "hint": "您的密码由管理员设置。请设置自己的密码以继续。",
-      "current": "当前密码",
-      "new": "新密码",
-      "repeat": "再次输入新密码",
-      "mismatch": "两次输入的新密码不一致。",
-      "missing": "请填写全部三个字段。",
-      "save": "保存并重新登录"
+      "missing": "请填写全部三个字段。"
     },
     "twoFactorOff": "尚未设置双重验证登录",
     "claim": {

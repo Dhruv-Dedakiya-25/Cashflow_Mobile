@@ -1200,5 +1200,13 @@
         "selfApproval": "Overgeslagen: de aanvrager zou de eigen aanvraag goedkeuren"
       }
     }
-  }
+  },
+  "changePassword": "Wachtwoord wijzigen",
+  "passwordChangeRequiredHint": "Een beheerder heeft uw wachtwoord ingesteld. Kies een nieuw wachtwoord dat alleen u kent voordat u verdergaat.",
+  "currentPassword": "Huidig wachtwoord",
+  "newPassword": "Nieuw wachtwoord",
+  "passwordRule": "Minimaal 12 tekens, met een hoofdletter, een kleine letter en een cijfer.",
+  "confirmNewPassword": "Nieuw wachtwoord bevestigen",
+  "passwordsDoNotMatch": "De wachtwoorden komen niet overeen.",
+  "updatePassword": "Wachtwoord bijwerken"
 }

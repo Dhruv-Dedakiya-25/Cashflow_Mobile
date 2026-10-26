@@ -15,7 +15,6 @@
     "company": "Quỹ tiền mặt nhỏ toàn công ty",
     "ofFloats": "trên {{amount}} · Phân bổ: {{count}}",
     "ofFloat": "trên {{amount}}",
-    "pending": "Chưa thanh toán",
     "seeAll": "Xem tất cả phân bổ",
     "team": "Quỹ tiền mặt nhỏ của đơn vị bạn"
   },
@@ -38,12 +37,11 @@
     "takePhoto": "Chụp ảnh hóa đơn",
     "ai": "AI",
     "choosePhoto": "Chọn từ ảnh",
-    "claimDetails": "Chi tiết yêu cầu",
     "sentTitle": "Đã gửi phê duyệt",
     "sentText": "{{reference}} đang chờ {{name}}.",
     "resentTitle": "Đã gửi lại",
     "viewClaim": "Xem yêu cầu",
-    "cameraDenied": "CashFlow cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
+    "cameraDenied": "PettyCashPlus cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
     "sampleNote": "Đọc mẫu: trong bản demo, mọi hóa đơn đều được đọc như mẫu này, và ảnh chỉ lưu trên điện thoại này.",
     "choosePdf": "Chọn PDF"
   },
@@ -59,8 +57,6 @@
     "themeDark": "Tối"
   },
   "inbox": {
-    "toDecide": "Cần phê duyệt",
-    "toAcknowledge": "Cần xác nhận",
     "submitted": "Đã gửi {{time}} trước"
   },
   "review": {
@@ -92,12 +88,6 @@
     "scopeTeam": "Đơn vị của bạn"
   },
   "pettyCash": {
-    "level": {
-      "businessUnit": "Đơn vị kinh doanh",
-      "department": "Phòng ban",
-      "project": "Dự án",
-      "custodian": "Người giữ quỹ"
-    },
     "heldBy": "Do {{name}} giữ"
   },
   "period": {
@@ -142,14 +132,7 @@
       "saved": "Tôi đã lưu"
     },
     "password": {
-      "title": "Chọn mật khẩu mới",
-      "hint": "Quản trị viên đã đặt mật khẩu cho bạn. Hãy chọn mật khẩu của riêng bạn để tiếp tục.",
-      "current": "Mật khẩu hiện tại",
-      "new": "Mật khẩu mới",
-      "repeat": "Nhập lại mật khẩu mới",
-      "mismatch": "Hai mật khẩu mới không giống nhau.",
-      "missing": "Điền đủ cả ba ô.",
-      "save": "Lưu và đăng nhập lại"
+      "missing": "Điền đủ cả ba ô."
     },
     "twoFactorOff": "Chưa thiết lập đăng nhập hai bước",
     "claim": {
