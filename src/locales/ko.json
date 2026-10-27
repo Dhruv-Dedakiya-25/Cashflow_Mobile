@@ -7,11 +7,7 @@
     "reports": "보고서"
   },
   "home": {
-    "morning": "좋은 아침입니다",
-    "afternoon": "안녕하세요",
-    "evening": "좋은 저녁입니다",
-    "subtitle": "소액 현금을 한눈에 확인하세요.",
-    "hello": "{{greeting}}, {{name}}님",
+    "hello": "안녕하세요, {{name}}님",
     "company": "회사 전체 소액 현금",
     "ofFloats": "{{amount}} 중 · 배정 {{count}}건",
     "ofFloat": "{{amount}} 중",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}}이(가) {{name}}님의 승인을 기다리고 있습니다.",
     "resentTitle": "다시 제출됨",
     "viewClaim": "청구 보기",
-    "cameraDenied": "영수증을 촬영하려면 PettyCashPlus에 카메라 권한이 필요합니다. 설정에서 허용하거나 사진을 선택하세요.",
+    "cameraDenied": "영수증을 촬영하려면 PettyCash Plus에 카메라 권한이 필요합니다. 설정에서 허용하거나 사진을 선택하세요.",
     "sampleNote": "샘플 판독: 데모에서는 모든 영수증이 이 샘플로 판독되며, 사진은 이 휴대폰에만 남습니다.",
     "choosePdf": "PDF 선택"
   },

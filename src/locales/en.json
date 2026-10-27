@@ -7,11 +7,7 @@
     "reports": "Reports"
   },
   "home": {
-    "morning": "Good morning",
-    "afternoon": "Good afternoon",
-    "evening": "Good evening",
-    "subtitle": "Your petty cash at a glance.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Hello, {{name}}",
     "company": "Petty cash across the company",
     "ofFloats": "of {{amount}} in {{count}} allocations",
     "ofFloats_one": "of {{amount}} in {{count}} allocation",
@@ -43,7 +39,7 @@
     "sentText": "{{reference}} is now waiting for {{name}}.",
     "resentTitle": "Sent again",
     "viewClaim": "View the claim",
-    "cameraDenied": "PettyCashPlus needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
+    "cameraDenied": "PettyCash Plus needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
     "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
     "choosePdf": "Choose a PDF"
   },

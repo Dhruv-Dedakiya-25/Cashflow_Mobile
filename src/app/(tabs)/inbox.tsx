@@ -58,6 +58,7 @@ function ApprovalRow({ item, first }: { item: ApprovalItem; first: boolean }) {
           </AppText>
         </View>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: space.sm }}>
+          {item.outcomeUnread ? <Pill label={t(`web:txn.status.${item.status}`)} bg={palette.warningSoft} fg={palette.warning} /> : null}
           {overdue ? <Pill label={t('web:txn.path.overdue')} bg={palette.dangerSoft} fg={palette.danger} /> : null}
           {since ? (
             <AppText variant="caption" tone={overdue ? 'danger' : 'muted'}>
@@ -99,7 +100,7 @@ export default function InboxScreen() {
   const items = useMemo(
     () =>
       user
-        ? (inbox.data ?? []).filter((i) => i.canDecide).sort((a, b) => Number(isItemOverdue(b)) - Number(isItemOverdue(a)) || (a.submittedAtUtc ?? '').localeCompare(b.submittedAtUtc ?? ''))
+        ? (inbox.data ?? []).filter((i) => i.canDecide || i.outcomeUnread).sort((a, b) => Number(isItemOverdue(b)) - Number(isItemOverdue(a)) || (a.submittedAtUtc ?? '').localeCompare(b.submittedAtUtc ?? ''))
         : inboxFor(state, personId),
     [user, inbox.data, state, personId],
   );

@@ -7,11 +7,7 @@
     "reports": "Informes"
   },
   "home": {
-    "morning": "Buenos días",
-    "afternoon": "Buenas tardes",
-    "evening": "Buenas noches",
-    "subtitle": "Tu caja chica de un vistazo.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Hola, {{name}}",
     "company": "Caja chica de toda la empresa",
     "ofFloats": "de {{amount}} · Asignaciones: {{count}}",
     "ofFloat": "de {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} espera ahora a {{name}}.",
     "resentTitle": "Enviado de nuevo",
     "viewClaim": "Ver el reembolso",
-    "cameraDenied": "PettyCashPlus necesita la cámara para fotografiar recibos. Permítala en Ajustes o elija una foto.",
+    "cameraDenied": "PettyCash Plus necesita la cámara para fotografiar recibos. Permítala en Ajustes o elija una foto.",
     "sampleNote": "Lectura de ejemplo: en la demo cada recibo se lee como este ejemplo, y la foto se queda en este teléfono.",
     "choosePdf": "Elegir un PDF"
   },

@@ -7,11 +7,7 @@
     "reports": "Report"
   },
   "home": {
-    "morning": "Buongiorno",
-    "afternoon": "Buon pomeriggio",
-    "evening": "Buonasera",
-    "subtitle": "La tua piccola cassa in breve.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Ciao, {{name}}",
     "company": "Piccola cassa in tutta l'azienda",
     "ofFloats": "su {{amount}} · Assegnazioni: {{count}}",
     "ofFloat": "su {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} ora attende {{name}}.",
     "resentTitle": "Inviato di nuovo",
     "viewClaim": "Vedi il rimborso",
-    "cameraDenied": "PettyCashPlus ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
+    "cameraDenied": "PettyCash Plus ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
     "sampleNote": "Lettura di esempio: nella demo ogni scontrino viene letto come questo esempio, e la foto resta su questo telefono.",
     "choosePdf": "Scegli un PDF"
   },

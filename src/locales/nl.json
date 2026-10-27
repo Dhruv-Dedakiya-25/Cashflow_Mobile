@@ -7,11 +7,7 @@
     "reports": "Rapporten"
   },
   "home": {
-    "morning": "Goedemorgen",
-    "afternoon": "Goedemiddag",
-    "evening": "Goedenavond",
-    "subtitle": "Je kleine kas in één oogopslag.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Hallo, {{name}}",
     "company": "Kleine kas in het hele bedrijf",
     "ofFloats": "van {{amount}} · Toewijzingen: {{count}}",
     "ofFloat": "van {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} wacht nu op {{name}}.",
     "resentTitle": "Opnieuw verstuurd",
     "viewClaim": "Declaratie bekijken",
-    "cameraDenied": "PettyCashPlus heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
+    "cameraDenied": "PettyCash Plus heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
     "sampleNote": "Voorbeeldlezing: in de demo leest elke bon als dit voorbeeld, en de foto blijft op deze telefoon.",
     "choosePdf": "Kies een pdf"
   },

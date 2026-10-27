@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PettyCashPlus",
+    "name": "PettyCash Plus",
     "slug": "cashflow-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -46,8 +46,8 @@
       [
         "expo-image-picker",
         {
-          "cameraPermission": "PettyCashPlus uses the camera to photograph your receipts.",
-          "photosPermission": "PettyCashPlus opens your photos so you can attach a receipt.",
+          "cameraPermission": "PettyCash Plus uses the camera to photograph your receipts.",
+          "photosPermission": "PettyCash Plus opens your photos so you can attach a receipt.",
           "microphonePermission": false
         }
       ],

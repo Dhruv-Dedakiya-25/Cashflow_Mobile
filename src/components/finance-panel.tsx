@@ -49,7 +49,8 @@ export function FinancePanel({ claim, value, onChange, error }: { claim: Reimbur
   const set = (change: Partial<FinanceDraft>) => onChange({ ...value, ...change });
   const current = `${value.costLevel}:${value.costId}`;
   const choices = useUnitChoices(claim.beneficiaryId);
-  const fixedUnit = claim.basis === 'preApproved';
+  // A claim against a pre-approval starts on the pre-approval's unit; Finance may still charge it elsewhere.
+  const onPreApprovalUnit = claim.basis === 'preApproved' && value.costLevel === claim.costLevel && value.costId === claim.costId;
   const amounts = computeVat(Number(value.amount) > 0 ? Number(value.amount) : 0, value.vatTreatment, claim.vatRate);
 
   return (
@@ -87,23 +88,19 @@ export function FinancePanel({ claim, value, onChange, error }: { claim: Reimbur
         <AppText variant="small" weight="medium" tone="secondary">
           {t('web:claim.field.chargedTo')}
         </AppText>
-        {fixedUnit ? (
-          <>
-            <AppText weight="medium">{nameOf(unit(value.costId), code)}</AppText>
-            <AppText variant="caption" tone="muted">
-              {t('web:reimb.costFromPreApproval')}
-            </AppText>
-          </>
-        ) : (
-          <Chips
-            value={current}
-            onChange={(key) => {
-              const [costLevel, costId] = key.split(':') as [CostLevel, string];
-              set({ costLevel, costId });
-            }}
-            options={[...new Set([current, ...choices])].map((key) => ({ value: key, label: nameOf(unit(key.split(':')[1]), code) }))}
-          />
-        )}
+        <Chips
+          value={current}
+          onChange={(key) => {
+            const [costLevel, costId] = key.split(':') as [CostLevel, string];
+            set({ costLevel, costId });
+          }}
+          options={[...new Set([current, ...choices])].map((key) => ({ value: key, label: nameOf(unit(key.split(':')[1]), code) }))}
+        />
+        {onPreApprovalUnit ? (
+          <AppText variant="caption" tone="muted">
+            {t('web:reimb.costFromPreApproval')}
+          </AppText>
+        ) : null}
       </View>
 
       <View style={{ gap: 6 }}>

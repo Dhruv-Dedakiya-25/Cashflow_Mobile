@@ -7,11 +7,7 @@
     "reports": "Raporlar"
   },
   "home": {
-    "morning": "Günaydın",
-    "afternoon": "İyi günler",
-    "evening": "İyi akşamlar",
-    "subtitle": "Küçük kasanız bir bakışta.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Merhaba, {{name}}",
     "company": "Şirket genelinde küçük kasa",
     "ofFloats": "{{amount}} içinden · Tahsis: {{count}}",
     "ofFloat": "{{amount}} içinden",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} şimdi {{name}} onayını bekliyor.",
     "resentTitle": "Yeniden gönderildi",
     "viewClaim": "Talebi görüntüle",
-    "cameraDenied": "PettyCashPlus'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
+    "cameraDenied": "PettyCash Plus'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
     "sampleNote": "Örnek okuma: demoda her fiş bu örnek gibi okunur ve fotoğraf bu telefonda kalır.",
     "choosePdf": "PDF seç"
   },

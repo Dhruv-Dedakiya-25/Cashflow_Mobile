@@ -176,6 +176,8 @@ export interface ApprovalItem {
   canDecide: boolean;
   /** The last decision the signed-in person made on it, if any. */
   myDecision?: { action: 'approved' | 'returned' | 'rejected'; atUtc: string };
+  /** The person's own request, returned or rejected since they last opened it: it waits in their Inbox. */
+  outcomeUnread?: boolean;
   flags: ApprovalFlag[];
 }
 

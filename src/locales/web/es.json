@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "El inicio de sesión en dos pasos puede estar desactivado, ser opcional u obligatorio por rol.",
     "username": "Correo o nombre de usuario",
-    "signInHintApi": "Inicie sesión con su cuenta de CashFlow.",
+    "signInHintApi": "Inicie sesión con su cuenta de PettyCash Plus.",
     "error": {
       "invalid": "Nombre de usuario o contraseña no válidos.",
       "tooMany": "Demasiados intentos. Espere un minuto y vuelva a intentarlo.",
@@ -587,9 +587,7 @@
       "allSettlements": "Todos los métodos de pago"
     },
     "leftOf": "Quedan {{left}} de {{amount}}",
-    "new": "Nuevo reembolso",
     "newSubtitle": "Presente un gasto real para su reembolso.",
-    "newTitle": "Nuevo reembolso de gasto",
     "noAllocationNow": "Ahora no hay asignación activa para esta unidad",
     "noReceipt": "No hay recibo adjunto.",
     "notEditable": "Esta reclamación ya no admite corrección: no se puede modificar.",
@@ -643,7 +641,6 @@
       "summary": "Resumen de reembolsos",
       "toPay": "Aprobado, pendiente de pago"
     },
-    "title": "Reembolsos de gastos",
     "toast": {
       "deleted": "{{reference}} se eliminó.",
       "saved": "{{reference}} se guardó como borrador.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Corrija y envíe de nuevo, o retire",
       "summary": "Resumen de gastos previos"
     },
-    "title": "Solicitudes de aprobación previa de gastos",
     "toast": {
       "deleted": "{{reference}} se eliminó.",
       "saved": "{{reference}} se guardó como borrador.",

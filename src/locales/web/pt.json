@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "O login em dois fatores pode ficar desativado, ser opcional ou obrigatório por função.",
     "username": "E-mail ou nome de usuário",
-    "signInHintApi": "Inicie sessão com sua conta CashFlow.",
+    "signInHintApi": "Inicie sessão com sua conta PettyCash Plus.",
     "error": {
       "invalid": "Nome de usuário ou senha inválidos.",
       "tooMany": "Tentativas demais. Aguarde um minuto e tente novamente.",
@@ -587,9 +587,7 @@
       "allSettlements": "Todas as formas de pagamento"
     },
     "leftOf": "{{left}} restantes de {{amount}}",
-    "new": "Novo reembolso",
     "newSubtitle": "Envie uma despesa real para reembolso.",
-    "newTitle": "Novo reembolso de despesa",
     "noAllocationNow": "No momento não há alocação ativa para esta unidade",
     "noReceipt": "Nenhum recibo anexado.",
     "notEditable": "Este pedido não pode mais ser corrigido nem alterado.",
@@ -643,7 +641,6 @@
       "summary": "Resumo de reembolsos",
       "toPay": "Aprovado, aguardando pagamento"
     },
-    "title": "Reembolsos de despesas",
     "toast": {
       "deleted": "{{reference}} foi excluída.",
       "saved": "{{reference}} foi salva como rascunho.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Corrija e reenvie, ou retire",
       "summary": "Resumo de pré-despesas"
     },
-    "title": "Solicitações de aprovação prévia de despesa",
     "toast": {
       "deleted": "{{reference}} foi excluída.",
       "saved": "{{reference}} foi salva como rascunho.",

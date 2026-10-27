@@ -17,6 +17,9 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+# EAS credentials download: holds the .p12 password
+credentials.json
+credentials/
 
 # Metro
 .metro-health-check*

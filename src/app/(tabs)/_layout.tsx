@@ -31,7 +31,7 @@ export default function TabLayout() {
   const inbox = useInbox(showInbox);
   const acks = useAcknowledgements(showInbox && acknowledges);
   const waiting = user
-    ? (inbox.data?.filter((i) => i.canDecide).length ?? 0) + (acks.data?.filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).length ?? 0)
+    ? (inbox.data?.filter((i) => i.canDecide || i.outcomeUnread).length ?? 0) + (acks.data?.filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).length ?? 0)
     : inboxFor(state, personId).length + acksFor(state, personId).length;
 
   const tabs = [

@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "2단계 로그인은 끄거나, 선택 사항으로 두거나, 역할별로 필수로 지정할 수 있습니다.",
     "username": "이메일 또는 사용자 이름",
-    "signInHintApi": "CashFlow 계정으로 로그인하세요.",
+    "signInHintApi": "PettyCash Plus 계정으로 로그인하세요.",
     "error": {
       "invalid": "사용자 이름 또는 비밀번호가 올바르지 않습니다.",
       "tooMany": "시도 횟수가 너무 많습니다. 1분 후에 다시 시도하세요.",
@@ -587,9 +587,7 @@
       "allSettlements": "모든 지급 방법"
     },
     "leftOf": "{{amount}} 중 {{left}} 남음",
-    "new": "새 경비 환급",
     "newSubtitle": "실제 지출한 경비의 환급을 신청합니다.",
-    "newTitle": "새 경비 환급",
     "noAllocationNow": "현재 이 단위에는 활성 배정이 없습니다",
     "noReceipt": "첨부된 영수증이 없습니다.",
     "notEditable": "이 청구는 수정 단계를 지나 더 이상 변경할 수 없습니다.",
@@ -643,7 +641,6 @@
       "summary": "환급 요약",
       "toPay": "승인됨, 지급 대기"
     },
-    "title": "경비 환급",
     "toast": {
       "deleted": "{{reference}}을(를) 삭제했습니다.",
       "saved": "{{reference}}을(를) 초안으로 저장했습니다.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "수정해 다시 보내거나 철회하세요",
       "summary": "사전 지출 요약"
     },
-    "title": "사전 지출 승인 요청",
     "toast": {
       "deleted": "{{reference}}을(를) 삭제했습니다.",
       "saved": "{{reference}}을(를) 초안으로 저장했습니다.",

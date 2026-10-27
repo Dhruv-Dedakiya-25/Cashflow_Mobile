@@ -7,11 +7,7 @@
     "reports": "דוחות"
   },
   "home": {
-    "morning": "בוקר טוב",
-    "afternoon": "צהריים טובים",
-    "evening": "ערב טוב",
-    "subtitle": "הקופה הקטנה שלך במבט אחד.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "שלום, {{name}}",
     "company": "קופה קטנה בכל החברה",
     "ofFloats": "מתוך {{amount}} · הקצאות: {{count}}",
     "ofFloat": "מתוך {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} ממתינה כעת ל{{name}}.",
     "resentTitle": "נשלח שוב",
     "viewClaim": "הצגת הבקשה",
-    "cameraDenied": "PettyCashPlus צריכה את המצלמה כדי לצלם קבלות. אפשרו זאת בהגדרות, או בחרו תמונה.",
+    "cameraDenied": "PettyCash Plus צריכה את המצלמה כדי לצלם קבלות. אפשרו זאת בהגדרות, או בחרו תמונה.",
     "sampleNote": "קריאה לדוגמה: בהדגמה כל קבלה נקראת כמו הדוגמה הזו, והתמונה נשארת בטלפון.",
     "choosePdf": "בחירת PDF"
   },

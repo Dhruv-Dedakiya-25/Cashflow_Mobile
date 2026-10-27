@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, View } from 'react-native';
 
-import { decide as decideLive, holds, useReview } from '@/api/live';
+import { decide as decideLive, holds, useOutcomeRead, useReview } from '@/api/live';
 import type { RequestKind, RouteStep } from '@/api/types';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
@@ -39,6 +39,7 @@ export default function ReviewScreen() {
   // Live: the review the API gives the approver; demo: the request in the sample store.
   const reviewQuery = useReview(kind, user ? id : '');
   const review = user ? reviewQuery.data : undefined;
+  useOutcomeRead(kind, review?.item.id, review?.item.status);
 
   const claim = user ? (review?.request.kind === 'reimbursement' ? review.request.record : undefined) : kind === 'reimbursement' ? state.claims.find((c) => c.id === id) : undefined;
   const other = user ? undefined : kind !== 'reimbursement' ? state.others.find((o) => o.id === id) : undefined;
@@ -61,6 +62,10 @@ export default function ReviewScreen() {
   const canDecide = item ? item.canDecide : (claim ?? other)!.status === 'inApproval' && !!step?.approverIds.includes(personId);
   const nextStep = request.currentStep !== undefined ? request.route.slice(request.currentStep + 1).find((s) => s.state === 'waiting') : undefined;
   const nextNames = nextStep?.approverIds.map((p) => nameOf(person(p), code)).join(', ');
+  // Once decided, who decided and why, as the web's review page shows it: the requester reads it here.
+  const status = item ? item.status : (claim ?? other)!.status;
+  const ended = status === 'submitted' || status === 'inApproval' ? undefined
+    : [...request.history].reverse().find((h) => ['approved', 'returned', 'rejected', 'cancelled'].includes(h.action));
   const position = review ? review.allocation : claim?.settlement === 'pettyCash' ? state.positions.find((p) => p.scopeId === claim.costId) : undefined;
   const merchant = claim ? (claim.vendorId ? nameOf(vendor(claim.vendorId), code) : claim.payeeName ?? '') : '';
   // Finance's step: a role step whose role pays claims, as the server decides; in the demo, the Finance persona's.
@@ -164,6 +169,18 @@ export default function ReviewScreen() {
           <Pill label={nameOf(unit(unitId), code)} bg={palette.surfaceStrong} fg={palette.textSecondary} />
         </View>
       </Card>
+
+      {ended ? (
+        <View style={{ flexDirection: 'row', gap: space.sm, backgroundColor: ended.action === 'approved' ? palette.successSoft : ended.action === 'returned' ? palette.warningSoft : palette.dangerSoft, borderRadius: radius.lg, padding: space.md }}>
+          <IconInfoCircle size={20} color={ended.action === 'approved' ? palette.success : ended.action === 'returned' ? palette.warning : palette.danger} />
+          <View style={{ flex: 1, gap: 2 }}>
+            <AppText variant="small" weight="semibold">
+              {t(`web:approval.ended.${ended.action}`, { name: nameOf(person(ended.actorId), code), time: dateTime(ended.atUtc, code) })}
+            </AppText>
+            {ended.comment ? <AppText variant="small">{ended.comment}</AppText> : null}
+          </View>
+        </View>
+      ) : null}
 
       {claim && claim.createdById !== claim.beneficiaryId ? (
         <View style={{ flexDirection: 'row', gap: space.sm, backgroundColor: palette.warningSoft, borderRadius: radius.lg, padding: space.md }}>

@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "双重验证登录可以关闭、设为可选，或按角色强制启用。",
     "username": "邮箱或用户名",
-    "signInHintApi": "使用您的 CashFlow 账户登录。",
+    "signInHintApi": "使用您的 PettyCash Plus 账户登录。",
     "error": {
       "invalid": "用户名或密码无效。",
       "tooMany": "尝试次数过多。请等待一分钟后再试。",
@@ -587,9 +587,7 @@
       "allSettlements": "全部支付方式"
     },
     "leftOf": "{{amount}} 中剩余 {{left}}",
-    "new": "新建报销",
     "newSubtitle": "提交实际费用以报销。",
-    "newTitle": "新建费用报销",
     "noAllocationNow": "此单位目前没有生效的拨款",
     "noReceipt": "未附票据。",
     "notEditable": "此报销单已过修改阶段，不能再更改。",
@@ -643,7 +641,6 @@
       "summary": "报销汇总",
       "toPay": "已批准，待付款"
     },
-    "title": "费用报销",
     "toast": {
       "deleted": "已删除 {{reference}}。",
       "saved": "{{reference}} 已存为草稿。",
@@ -1051,7 +1048,6 @@
       "returnedNote": "修改后重新提交，或撤回",
       "summary": "事前费用汇总"
     },
-    "title": "事前费用审批申请",
     "toast": {
       "deleted": "已删除 {{reference}}。",
       "saved": "{{reference}} 已存为草稿。",

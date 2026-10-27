@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Masuk dua faktor bisa nonaktif, opsional, atau wajib per peran.",
     "username": "Email atau nama pengguna",
-    "signInHintApi": "Masuk dengan akun CashFlow Anda.",
+    "signInHintApi": "Masuk dengan akun PettyCash Plus Anda.",
     "error": {
       "invalid": "Nama pengguna atau kata sandi salah.",
       "tooMany": "Terlalu banyak percobaan. Tunggu satu menit, lalu coba lagi.",
@@ -587,9 +587,7 @@
       "allSettlements": "Semua metode pembayaran"
     },
     "leftOf": "sisa {{left}} dari {{amount}}",
-    "new": "Penggantian Biaya Baru",
     "newSubtitle": "Ajukan pengeluaran nyata untuk diganti.",
-    "newTitle": "Penggantian Biaya Baru",
     "noAllocationNow": "Saat ini tidak ada alokasi aktif untuk unit ini",
     "noReceipt": "Tidak ada kuitansi terlampir.",
     "notEditable": "Klaim ini sudah melewati tahap perbaikan: tidak bisa diubah lagi.",
@@ -643,7 +641,6 @@
       "summary": "Ringkasan penggantian",
       "toPay": "Disetujui, Menunggu Pembayaran"
     },
-    "title": "Penggantian Biaya",
     "toast": {
       "deleted": "{{reference}} telah dihapus.",
       "saved": "{{reference}} disimpan sebagai draf.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Perbaiki dan kirim ulang, atau tarik",
       "summary": "Ringkasan pra-pengeluaran"
     },
-    "title": "Permintaan Persetujuan Pra-Pengeluaran",
     "toast": {
       "deleted": "{{reference}} telah dihapus.",
       "saved": "{{reference}} disimpan sebagai draf.",

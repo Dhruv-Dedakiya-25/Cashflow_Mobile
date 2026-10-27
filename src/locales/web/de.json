@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Die Zwei-Faktor-Anmeldung kann aus, optional oder je Rolle Pflicht sein.",
     "username": "E-Mail oder Benutzername",
-    "signInHintApi": "Melden Sie sich mit Ihrem CashFlow-Konto an.",
+    "signInHintApi": "Melden Sie sich mit Ihrem PettyCash Plus-Konto an.",
     "error": {
       "invalid": "Ungültiger Benutzername oder ungültiges Passwort.",
       "tooMany": "Zu viele Versuche. Warten Sie eine Minute und versuchen Sie es erneut.",
@@ -587,9 +587,7 @@
       "allSettlements": "Alle Zahlungsarten"
     },
     "leftOf": "{{left}} übrig von {{amount}}",
-    "new": "Neue Erstattung",
     "newSubtitle": "Reichen Sie eine tatsächliche Ausgabe zur Erstattung ein.",
-    "newTitle": "Neue Ausgabenerstattung",
     "noAllocationNow": "Derzeit keine aktive Zuweisung für diese Einheit",
     "noReceipt": "Kein Beleg angehängt.",
     "notEditable": "Diese Abrechnung ist nicht mehr korrigierbar und kann nicht mehr geändert werden.",
@@ -643,7 +641,6 @@
       "summary": "Übersicht Erstattungen",
       "toPay": "Genehmigt, Zahlung ausstehend"
     },
-    "title": "Ausgabenerstattungen",
     "toast": {
       "deleted": "{{reference}} wurde gelöscht.",
       "saved": "{{reference}} wurde als Entwurf gespeichert.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Korrigieren und erneut senden oder zurückziehen",
       "summary": "Übersicht Vorab-Ausgaben"
     },
-    "title": "Anträge auf Vorabgenehmigung von Ausgaben",
     "toast": {
       "deleted": "{{reference}} wurde gelöscht.",
       "saved": "{{reference}} wurde als Entwurf gespeichert.",

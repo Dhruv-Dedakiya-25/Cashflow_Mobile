@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Two-factor sign-in can be off, optional or required by role.",
     "username": "Email or username",
-    "signInHintApi": "Sign in with your CashFlow account.",
+    "signInHintApi": "Sign in with your PettyCash Plus account.",
     "error": {
       "invalid": "Invalid username or password.",
       "tooMany": "Too many attempts. Wait a minute and try again.",
@@ -587,9 +587,7 @@
       "allSettlements": "All payment methods"
     },
     "leftOf": "{{left}} left of {{amount}}",
-    "new": "New Reimbursement",
     "newSubtitle": "Submit an actual expense for reimbursement.",
-    "newTitle": "New Expense Reimbursement",
     "noAllocationNow": "No active allocation for this unit now",
     "noReceipt": "No receipt is attached.",
     "notEditable": "This claim is past correction: it can no longer be changed.",
@@ -643,7 +641,6 @@
       "summary": "Reimbursement summary",
       "toPay": "Approved, Awaiting Payment"
     },
-    "title": "Expense Reimbursements",
     "toast": {
       "deleted": "{{reference}} was deleted.",
       "saved": "{{reference}} was saved as a draft.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Correct and send again, or withdraw",
       "summary": "Pre-expense summary"
     },
-    "title": "Pre-Expense Approval Requests",
     "toast": {
       "deleted": "{{reference}} was deleted.",
       "saved": "{{reference}} was saved as a draft.",

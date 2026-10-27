@@ -7,11 +7,7 @@
     "reports": "レポート"
   },
   "home": {
-    "morning": "おはようございます",
-    "afternoon": "こんにちは",
-    "evening": "こんばんは",
-    "subtitle": "小口現金をひと目で確認。",
-    "hello": "{{greeting}}、{{name}}さん",
+    "hello": "こんにちは、{{name}}さん",
     "company": "全社の小口現金",
     "ofFloats": "{{amount}} 中 · 配分 {{count}} 件",
     "ofFloat": "{{amount}} 中",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} は {{name}} さんの承認待ちです。",
     "resentTitle": "再提出しました",
     "viewClaim": "申請を見る",
-    "cameraDenied": "領収書の撮影には PettyCashPlus にカメラへのアクセスが必要です。設定で許可するか、写真を選んでください。",
+    "cameraDenied": "領収書の撮影には PettyCash Plus にカメラへのアクセスが必要です。設定で許可するか、写真を選んでください。",
     "sampleNote": "サンプル読み取り：デモではどの領収書もこのサンプルとして読み取られ、写真はこの端末に残ります。",
     "choosePdf": "PDF を選択"
   },

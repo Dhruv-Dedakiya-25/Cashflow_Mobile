@@ -17,12 +17,6 @@ import { accountOf, amount, nameOf, omr, percent, person, unit } from '@/lib/for
 import { myDashboard, useMockState, useSession } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
-function greetingKey(hour: number) {
-  if (hour < 12) return 'home.morning';
-  if (hour < 17) return 'home.afternoon';
-  return 'home.evening';
-}
-
 function Tile({ label, value, note, tone }: { label: string; value: string; note: string; tone?: 'warning' | 'danger' | 'primary' }) {
   const palette = usePalette();
   const accent = tone === 'warning' ? palette.warning : tone === 'danger' ? palette.danger : tone === 'primary' ? palette.primary : palette.text;
@@ -78,14 +72,12 @@ export default function HomeScreen() {
   const dash = user ? myQuery.data : sampleDash;
   const sampleMe = person(personId);
   const me = user ? accountOf(user, language.code) : { name: nameOf(sampleMe, language.code), nameEn: sampleMe?.nameEn ?? '', id: personId };
-  const now = new Date();
-  const today = new Intl.DateTimeFormat(`${language.code}-u-nu-latn`, { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
+  const today = new Intl.DateTimeFormat(`${language.code}-u-nu-latn`, { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
   const firstName = me.name.split(' ')[0];
 
   const header = {
-    eyebrow: today,
-    title: t('home.hello', { greeting: t(greetingKey(now.getHours())), name: firstName }),
-    subtitle: t('home.subtitle'),
+    title: t('home.hello', { name: firstName }),
+    subtitle: today,
     action: (
       <Pressable onPress={() => router.push('/profile')} accessibilityRole="button" accessibilityLabel={t('profile.title')} hitSlop={8}>
         <Avatar name={me.nameEn} id={me.id} size={46} />

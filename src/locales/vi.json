@@ -7,11 +7,7 @@
     "reports": "Báo cáo"
   },
   "home": {
-    "morning": "Chào buổi sáng",
-    "afternoon": "Chào buổi chiều",
-    "evening": "Chào buổi tối",
-    "subtitle": "Quỹ tiền mặt nhỏ của bạn trong nháy mắt.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Xin chào, {{name}}",
     "company": "Quỹ tiền mặt nhỏ toàn công ty",
     "ofFloats": "trên {{amount}} · Phân bổ: {{count}}",
     "ofFloat": "trên {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} đang chờ {{name}}.",
     "resentTitle": "Đã gửi lại",
     "viewClaim": "Xem yêu cầu",
-    "cameraDenied": "PettyCashPlus cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
+    "cameraDenied": "PettyCash Plus cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
     "sampleNote": "Đọc mẫu: trong bản demo, mọi hóa đơn đều được đọc như mẫu này, và ảnh chỉ lưu trên điện thoại này.",
     "choosePdf": "Chọn PDF"
   },

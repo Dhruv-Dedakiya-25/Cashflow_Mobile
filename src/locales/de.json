@@ -7,11 +7,7 @@
     "reports": "Berichte"
   },
   "home": {
-    "morning": "Guten Morgen",
-    "afternoon": "Guten Tag",
-    "evening": "Guten Abend",
-    "subtitle": "Ihre Handkasse auf einen Blick.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Hallo, {{name}}",
     "company": "Handkasse im ganzen Unternehmen",
     "ofFloats": "von {{amount}} · Zuweisungen: {{count}}",
     "ofFloat": "von {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} wartet jetzt auf {{name}}.",
     "resentTitle": "Erneut gesendet",
     "viewClaim": "Antrag ansehen",
-    "cameraDenied": "PettyCashPlus braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
+    "cameraDenied": "PettyCash Plus braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
     "sampleNote": "Beispiel-Auslesung: In der Demo wird jeder Beleg als dieses Beispiel gelesen, und das Foto bleibt auf diesem Telefon.",
     "choosePdf": "PDF auswählen"
   },

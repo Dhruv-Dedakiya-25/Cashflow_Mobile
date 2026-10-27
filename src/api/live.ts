@@ -1,6 +1,6 @@
 /** The live screens' data from the CashFlow API, cached so a screen opens at once and refreshes behind. */
 import { focusManager, keepPreviousData, QueryClient, useInfiniteQuery, useQuery } from '@tanstack/react-query';
-import { useSyncExternalStore } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import { AppState, Platform } from 'react-native';
 
 import { updateUser } from '@/auth/session';
@@ -169,6 +169,18 @@ export async function submitClaim(input: ClaimInput, editing?: ReimbursementView
 }
 
 // ---- Approvals and acknowledgements -----------------------------------------------------
+
+/**
+ * Called by a request's own screen: once its requester has opened a return or rejection, it
+ * leaves their Inbox. The API ignores anyone else's visit.
+ */
+export const useOutcomeRead = (kind: RequestKind, id?: string, status?: string) =>
+  useEffect(() => {
+    if (!live || !id || (status !== 'returned' && status !== 'rejected')) return;
+    apiPost(`/Approval/markRead/${kind}/${id}`)
+      .then(() => queryClient.invalidateQueries({ queryKey: ['inbox'] }))
+      .catch(() => undefined);
+  }, [kind, id, status]);
 
 /** The Approval Inbox: everything the person has been part of; the screen shows what they can decide now. */
 export const useInbox = (enabled = true) =>

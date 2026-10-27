@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Logowanie dwuskładnikowe może być wyłączone, opcjonalne lub wymagane dla roli.",
     "username": "E-mail lub nazwa użytkownika",
-    "signInHintApi": "Zaloguj się na swoje konto CashFlow.",
+    "signInHintApi": "Zaloguj się na swoje konto PettyCash Plus.",
     "error": {
       "invalid": "Nieprawidłowa nazwa użytkownika lub hasło.",
       "tooMany": "Zbyt wiele prób. Odczekaj minutę i spróbuj ponownie.",
@@ -587,9 +587,7 @@
       "allSettlements": "Wszystkie metody płatności"
     },
     "leftOf": "Pozostało {{left}} z {{amount}}",
-    "new": "Nowy zwrot kosztów",
     "newSubtitle": "Złóż faktyczny wydatek do zwrotu.",
-    "newTitle": "Nowy zwrot wydatku",
     "noAllocationNow": "Ta jednostka nie ma teraz aktywnego przydziału",
     "noReceipt": "Nie dołączono paragonu.",
     "notEditable": "Tego rozliczenia nie można już poprawić ani zmienić.",
@@ -643,7 +641,6 @@
       "summary": "Podsumowanie zwrotów",
       "toPay": "Zaakceptowane, czeka na płatność"
     },
-    "title": "Zwroty wydatków",
     "toast": {
       "deleted": "Usunięto {{reference}}.",
       "saved": "{{reference}} zapisano jako szkic.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Popraw i wyślij ponownie albo wycofaj",
       "summary": "Podsumowanie wniosków przed wydatkiem"
     },
-    "title": "Wnioski o wstępną akceptację wydatków",
     "toast": {
       "deleted": "Usunięto {{reference}}.",
       "saved": "{{reference}} zapisano jako szkic.",

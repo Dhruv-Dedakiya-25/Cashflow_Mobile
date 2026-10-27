@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 
-/** PettyCashPlus's mark: the app icon (document and plus on white) as a rounded tile. */
+/** PettyCash Plus's mark: the app icon (document and plus on white) as a rounded tile. */
 export function BrandMark({ size = 48 }: { size?: number }) {
   return (
     <Image

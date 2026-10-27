@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Đăng nhập hai lớp có thể tắt, tùy chọn hoặc bắt buộc theo vai trò.",
     "username": "Email hoặc tên người dùng",
-    "signInHintApi": "Đăng nhập bằng tài khoản CashFlow của bạn.",
+    "signInHintApi": "Đăng nhập bằng tài khoản PettyCash Plus của bạn.",
     "error": {
       "invalid": "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
       "tooMany": "Quá nhiều lần thử. Hãy đợi một phút rồi thử lại.",
@@ -587,9 +587,7 @@
       "allSettlements": "Tất cả phương thức thanh toán"
     },
     "leftOf": "Còn {{left}} trên {{amount}}",
-    "new": "Hoàn ứng mới",
     "newSubtitle": "Gửi khoản chi thực tế để được hoàn ứng.",
-    "newTitle": "Hoàn ứng chi phí mới",
     "noAllocationNow": "Hiện đơn vị này không có khoản cấp nào đang hoạt động",
     "noReceipt": "Chưa đính kèm hóa đơn.",
     "notEditable": "Đề nghị này đã qua giai đoạn sửa: không thể thay đổi nữa.",
@@ -643,7 +641,6 @@
       "summary": "Tóm tắt hoàn ứng",
       "toPay": "Đã duyệt, chờ thanh toán"
     },
-    "title": "Hoàn ứng chi phí",
     "toast": {
       "deleted": "Đã xóa {{reference}}.",
       "saved": "Đã lưu {{reference}} dưới dạng bản nháp.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Sửa và gửi lại, hoặc rút lại",
       "summary": "Tóm tắt đề nghị trước khi chi"
     },
-    "title": "Đề nghị phê duyệt trước khi chi",
     "toast": {
       "deleted": "Đã xóa {{reference}}.",
       "saved": "Đã lưu {{reference}} dưới dạng bản nháp.",

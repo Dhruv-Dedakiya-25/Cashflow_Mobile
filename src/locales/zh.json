@@ -7,11 +7,7 @@
     "reports": "报表"
   },
   "home": {
-    "morning": "早上好",
-    "afternoon": "下午好",
-    "evening": "晚上好",
-    "subtitle": "一眼掌握您的备用金。",
-    "hello": "{{greeting}}，{{name}}",
+    "hello": "你好，{{name}}",
     "company": "全公司备用金",
     "ofFloats": "共 {{amount}} · 拨付 {{count}} 笔",
     "ofFloat": "共 {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} 正在等待 {{name}} 审批。",
     "resentTitle": "已重新提交",
     "viewClaim": "查看报销单",
-    "cameraDenied": "PettyCashPlus 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
+    "cameraDenied": "PettyCash Plus 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
     "sampleNote": "示例识别：演示版中每张票据都按此示例识别，照片只保存在本机。",
     "choosePdf": "选择 PDF"
   },

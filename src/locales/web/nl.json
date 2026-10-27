@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Aanmelden in twee stappen kan uit, optioneel of per rol verplicht zijn.",
     "username": "E-mail of gebruikersnaam",
-    "signInHintApi": "Meld u aan met uw CashFlow-account.",
+    "signInHintApi": "Meld u aan met uw PettyCash Plus-account.",
     "error": {
       "invalid": "Ongeldige gebruikersnaam of ongeldig wachtwoord.",
       "tooMany": "Te veel pogingen. Wacht een minuut en probeer het opnieuw.",
@@ -587,9 +587,7 @@
       "allSettlements": "Alle betaalwijzen"
     },
     "leftOf": "{{left}} over van {{amount}}",
-    "new": "Nieuwe declaratie",
     "newSubtitle": "Dien een werkelijke uitgave in ter vergoeding.",
-    "newTitle": "Nieuwe onkostendeclaratie",
     "noAllocationNow": "Nu geen actieve toewijzing voor deze eenheid",
     "noReceipt": "Geen bon bijgevoegd.",
     "notEditable": "Deze declaratie kan niet meer worden gecorrigeerd of gewijzigd.",
@@ -643,7 +641,6 @@
       "summary": "Overzicht declaraties",
       "toPay": "Goedgekeurd, wacht op betaling"
     },
-    "title": "Onkostendeclaraties",
     "toast": {
       "deleted": "{{reference}} is verwijderd.",
       "saved": "{{reference}} is opgeslagen als concept.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Corrigeer en verstuur opnieuw, of trek in",
       "summary": "Overzicht aanvragen vooraf"
     },
-    "title": "Aanvragen voor voorafgaande goedkeuring van uitgaven",
     "toast": {
       "deleted": "{{reference}} is verwijderd.",
       "saved": "{{reference}} is opgeslagen als concept.",

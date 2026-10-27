@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "二要素サインインは、オフ、任意、またはロールごとに必須にできます。",
     "username": "メールアドレスまたはユーザー名",
-    "signInHintApi": "CashFlow アカウントでサインインしてください。",
+    "signInHintApi": "PettyCash Plus アカウントでサインインしてください。",
     "error": {
       "invalid": "ユーザー名またはパスワードが正しくありません。",
       "tooMany": "試行回数が多すぎます。1 分待ってからもう一度お試しください。",
@@ -587,9 +587,7 @@
       "allSettlements": "すべての支払方法"
     },
     "leftOf": "{{amount}} のうち残り {{left}}",
-    "new": "新規経費精算",
     "newSubtitle": "実際に発生した経費の精算を申請します。",
-    "newTitle": "新しい経費精算",
     "noAllocationNow": "現在この単位に有効な割当はありません",
     "noReceipt": "領収書は添付されていません。",
     "notEditable": "この精算は修正期間を過ぎたため、変更できません。",
@@ -643,7 +641,6 @@
       "summary": "経費精算の概要",
       "toPay": "承認済み・支払待ち"
     },
-    "title": "経費精算",
     "toast": {
       "deleted": "{{reference}} を削除しました。",
       "saved": "{{reference}} を下書きとして保存しました。",
@@ -1051,7 +1048,6 @@
       "returnedNote": "修正して再送するか、取り下げてください",
       "summary": "事前経費の概要"
     },
-    "title": "事前経費承認申請",
     "toast": {
       "deleted": "{{reference}} を削除しました。",
       "saved": "{{reference}} を下書きとして保存しました。",

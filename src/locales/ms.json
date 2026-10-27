@@ -7,11 +7,7 @@
     "reports": "Laporan"
   },
   "home": {
-    "morning": "Selamat pagi",
-    "afternoon": "Selamat tengah hari",
-    "evening": "Selamat petang",
-    "subtitle": "Wang runcit anda sepintas lalu.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Helo, {{name}}",
     "company": "Tunai runcit seluruh syarikat",
     "ofFloats": "daripada {{amount}} · Peruntukan: {{count}}",
     "ofFloat": "daripada {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} kini menunggu {{name}}.",
     "resentTitle": "Dihantar semula",
     "viewClaim": "Lihat tuntutan",
-    "cameraDenied": "PettyCashPlus memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
+    "cameraDenied": "PettyCash Plus memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
     "sampleNote": "Bacaan contoh: dalam demo setiap resit dibaca seperti contoh ini, dan foto kekal di telefon ini.",
     "choosePdf": "Pilih PDF"
   },

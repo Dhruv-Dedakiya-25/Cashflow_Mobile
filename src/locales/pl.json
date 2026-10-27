@@ -7,11 +7,7 @@
     "reports": "Raporty"
   },
   "home": {
-    "morning": "Dzień dobry",
-    "afternoon": "Dzień dobry",
-    "evening": "Dobry wieczór",
-    "subtitle": "Twoja kasa podręczna w skrócie.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Witaj, {{name}}",
     "company": "Kasa podręczna w całej firmie",
     "ofFloats": "z {{amount}} · Przydziały: {{count}}",
     "ofFloat": "z {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} czeka teraz na: {{name}}.",
     "resentTitle": "Wysłano ponownie",
     "viewClaim": "Zobacz wniosek",
-    "cameraDenied": "PettyCashPlus potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
+    "cameraDenied": "PettyCash Plus potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
     "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon odczytuje się jak ten przykład, a zdjęcie zostaje na telefonie.",
     "choosePdf": "Wybierz PDF"
   },

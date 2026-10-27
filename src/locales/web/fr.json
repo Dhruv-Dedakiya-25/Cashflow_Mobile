@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "La connexion à deux facteurs peut être désactivée, facultative ou obligatoire selon le rôle.",
     "username": "E-mail ou nom d’utilisateur",
-    "signInHintApi": "Connectez-vous avec votre compte CashFlow.",
+    "signInHintApi": "Connectez-vous avec votre compte PettyCash Plus.",
     "error": {
       "invalid": "Nom d'utilisateur ou mot de passe incorrect.",
       "tooMany": "Trop de tentatives. Patientez une minute, puis réessayez.",
@@ -587,9 +587,7 @@
       "allSettlements": "Tous les modes de paiement"
     },
     "leftOf": "{{left}} restant sur {{amount}}",
-    "new": "Nouveau remboursement",
     "newSubtitle": "Soumettez une dépense réelle pour remboursement.",
-    "newTitle": "Nouveau remboursement de dépense",
     "noAllocationNow": "Aucune dotation active pour cette unité actuellement",
     "noReceipt": "Aucun reçu joint.",
     "notEditable": "Cette demande ne peut plus être corrigée ni modifiée.",
@@ -643,7 +641,6 @@
       "summary": "Synthèse des remboursements",
       "toPay": "Approuvé, en attente de paiement"
     },
-    "title": "Remboursements de dépenses",
     "toast": {
       "deleted": "{{reference}} a été supprimée.",
       "saved": "{{reference}} a été enregistrée en brouillon.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Corrigez et renvoyez, ou retirez",
       "summary": "Synthèse des demandes préalables"
     },
-    "title": "Demandes d'approbation préalable de dépense",
     "toast": {
       "deleted": "{{reference}} a été supprimée.",
       "saved": "{{reference}} a été enregistrée en brouillon.",

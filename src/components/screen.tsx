@@ -9,10 +9,8 @@ import { contentColumn, space, usePalette } from '@/theme/tokens';
 
 type ScreenProps = {
   title: string;
-  /** A small line above the title, such as the date. */
-  eyebrow?: string;
   subtitle?: string;
-  /** Shown at the end of the title row, such as the settings button. */
+  /** Shown at the top end of the title row, such as the profile button. */
   action?: ReactNode;
   /** Pull down to reload, with the spinner shown while `refreshing`. */
   onRefresh?: () => void;
@@ -21,7 +19,7 @@ type ScreenProps = {
 };
 
 /** A tab's page: safe-area aware, scrolls, title row at the top. */
-export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing = false, children }: ScreenProps) {
+export function Screen({ title, subtitle, action, onRefresh, refreshing = false, children }: ScreenProps) {
   const palette = usePalette();
   const insets = useSafeAreaInsets();
   const { isRTL } = useLanguage();
@@ -36,13 +34,8 @@ export function Screen({ title, eyebrow, subtitle, action, onRefresh, refreshing
           paddingBottom: space.xxxl,
           gap: space.xl,
         }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: space.md }}>
           <View style={{ flex: 1, gap: 2 }}>
-            {eyebrow ? (
-              <AppText variant="small" weight="medium" tone="muted">
-                {eyebrow}
-              </AppText>
-            ) : null}
             <AppText variant="heading" weight="bold" accessibilityRole="header">
               {title}
             </AppText>

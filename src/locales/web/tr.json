@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "İki adımlı giriş kapalı, isteğe bağlı veya role göre zorunlu olabilir.",
     "username": "E-posta veya kullanıcı adı",
-    "signInHintApi": "CashFlow hesabınızla giriş yapın.",
+    "signInHintApi": "PettyCash Plus hesabınızla giriş yapın.",
     "error": {
       "invalid": "Kullanıcı adı veya parola geçersiz.",
       "tooMany": "Çok fazla deneme. Bir dakika bekleyip yeniden deneyin.",
@@ -587,9 +587,7 @@
       "allSettlements": "Tüm ödeme yöntemleri"
     },
     "leftOf": "{{amount}} içinden {{left}} kaldı",
-    "new": "Yeni Masraf İadesi",
     "newSubtitle": "İade için gerçek bir harcama gönderin.",
-    "newTitle": "Yeni masraf iadesi",
     "noAllocationNow": "Şu anda bu birimin etkin tahsisi yok",
     "noReceipt": "Ekli fiş yok.",
     "notEditable": "Bu talep düzeltme aşamasını geçti: artık değiştirilemez.",
@@ -643,7 +641,6 @@
       "summary": "Masraf iadesi özeti",
       "toPay": "Onaylandı, ödeme bekliyor"
     },
-    "title": "Masraf İadeleri",
     "toast": {
       "deleted": "{{reference}} silindi.",
       "saved": "{{reference}} taslak olarak kaydedildi.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Düzeltip yeniden gönderin veya geri çekin",
       "summary": "Harcama öncesi özeti"
     },
-    "title": "Harcama Öncesi Onay Talepleri",
     "toast": {
       "deleted": "{{reference}} silindi.",
       "saved": "{{reference}} taslak olarak kaydedildi.",

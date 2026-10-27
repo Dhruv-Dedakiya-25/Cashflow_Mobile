@@ -26,7 +26,7 @@ export function SignInFrame({ title, hint, demo, children }: { title: string; hi
               <BrandMark />
               <View style={{ flex: 1 }}>
                 <AppText variant="title" weight="bold" style={{ color: palette.heroText }}>
-                  PettyCashPlus
+                  PettyCash Plus
                 </AppText>
                 <AppText variant="small" style={{ color: palette.heroMuted }}>
                   {t('web:auth.brandTagline')}

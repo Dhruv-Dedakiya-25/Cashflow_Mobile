@@ -7,11 +7,7 @@
     "reports": "Relatórios"
   },
   "home": {
-    "morning": "Bom dia",
-    "afternoon": "Boa tarde",
-    "evening": "Boa noite",
-    "subtitle": "Seu caixa pequeno num relance.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Olá, {{name}}",
     "company": "Caixa pequeno de toda a empresa",
     "ofFloats": "de {{amount}} · Alocações: {{count}}",
     "ofFloat": "de {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} agora aguarda {{name}}.",
     "resentTitle": "Enviado novamente",
     "viewClaim": "Ver o reembolso",
-    "cameraDenied": "O PettyCashPlus precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
+    "cameraDenied": "O PettyCash Plus precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
     "sampleNote": "Leitura de exemplo: na demonstração todo recibo é lido como este exemplo, e a foto fica neste telefone.",
     "choosePdf": "Escolher um PDF"
   },

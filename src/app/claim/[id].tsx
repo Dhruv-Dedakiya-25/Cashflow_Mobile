@@ -3,7 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, View } from 'react-native';
 
-import { useClaim } from '@/api/live';
+import { useClaim, useOutcomeRead } from '@/api/live';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath } from '@/components/approval-path';
@@ -25,6 +25,7 @@ export default function ClaimScreen() {
   const { claims } = useMockState();
   const { user } = useAppSession();
   const live = useClaim(id);
+  useOutcomeRead('reimbursement', live.data?.id, live.data?.status);
   const claim = user ? live.data : claims.find((c) => c.id === id);
   const code = language.code;
 

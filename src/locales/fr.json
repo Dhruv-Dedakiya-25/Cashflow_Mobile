@@ -7,11 +7,7 @@
     "reports": "Rapports"
   },
   "home": {
-    "morning": "Bonjour",
-    "afternoon": "Bon après-midi",
-    "evening": "Bonsoir",
-    "subtitle": "Votre petite caisse en un coup d'œil.",
-    "hello": "{{greeting}}, {{name}}",
+    "hello": "Bonjour, {{name}}",
     "company": "Petite caisse de toute l'entreprise",
     "ofFloats": "sur {{amount}} · Allocations : {{count}}",
     "ofFloat": "sur {{amount}}",
@@ -41,7 +37,7 @@
     "sentText": "{{reference}} attend maintenant {{name}}.",
     "resentTitle": "Renvoyée",
     "viewClaim": "Voir la demande",
-    "cameraDenied": "PettyCashPlus a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
+    "cameraDenied": "PettyCash Plus a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
     "sampleNote": "Lecture d'exemple : dans la démo, chaque reçu se lit comme cet exemple, et la photo reste sur ce téléphone.",
     "choosePdf": "Choisir un PDF"
   },

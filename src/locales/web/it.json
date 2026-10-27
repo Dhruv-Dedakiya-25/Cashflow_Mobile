@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "L'accesso a due fattori può essere disattivato, facoltativo o obbligatorio per ruolo.",
     "username": "Email o nome utente",
-    "signInHintApi": "Accedi con il tuo account CashFlow.",
+    "signInHintApi": "Accedi con il tuo account PettyCash Plus.",
     "error": {
       "invalid": "Nome utente o password non validi.",
       "tooMany": "Troppi tentativi. Attendi un minuto e riprova.",
@@ -587,9 +587,7 @@
       "allSettlements": "Tutti i metodi di pagamento"
     },
     "leftOf": "{{left}} rimanenti su {{amount}}",
-    "new": "Nuovo rimborso",
     "newSubtitle": "Presenta una spesa effettiva per il rimborso.",
-    "newTitle": "Nuovo rimborso spese",
     "noAllocationNow": "Al momento nessuna assegnazione attiva per questa unità",
     "noReceipt": "Nessuna ricevuta allegata.",
     "notEditable": "Questa richiesta non è più correggibile né modificabile.",
@@ -643,7 +641,6 @@
       "summary": "Riepilogo rimborsi",
       "toPay": "Approvato, in attesa di pagamento"
     },
-    "title": "Rimborsi spese",
     "toast": {
       "deleted": "{{reference}} è stata eliminata.",
       "saved": "{{reference}} è stata salvata come bozza.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Correggi e reinvia, oppure ritira",
       "summary": "Riepilogo spese preventive"
     },
-    "title": "Richieste di approvazione preventiva di spesa",
     "toast": {
       "deleted": "{{reference}} è stata eliminata.",
       "saved": "{{reference}} è stata salvata come bozza.",

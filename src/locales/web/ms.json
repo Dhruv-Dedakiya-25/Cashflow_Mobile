@@ -172,7 +172,7 @@
     },
     "twoFactorNote": "Log masuk dua faktor boleh dimatikan, pilihan atau wajib mengikut peranan.",
     "username": "E-mel atau nama pengguna",
-    "signInHintApi": "Log masuk dengan akaun CashFlow anda.",
+    "signInHintApi": "Log masuk dengan akaun PettyCash Plus anda.",
     "error": {
       "invalid": "Nama pengguna atau kata laluan tidak sah.",
       "tooMany": "Terlalu banyak percubaan. Tunggu seminit dan cuba lagi.",
@@ -587,9 +587,7 @@
       "allSettlements": "Semua kaedah bayaran"
     },
     "leftOf": "Baki {{left}} daripada {{amount}}",
-    "new": "Bayaran Balik Baharu",
     "newSubtitle": "Hantar perbelanjaan sebenar untuk dibayar balik.",
-    "newTitle": "Bayaran Balik Perbelanjaan Baharu",
     "noAllocationNow": "Tiada peruntukan aktif untuk unit ini sekarang",
     "noReceipt": "Tiada resit dilampirkan.",
     "notEditable": "Tuntutan ini sudah melepasi tahap pembetulan: ia tidak boleh diubah lagi.",
@@ -643,7 +641,6 @@
       "summary": "Ringkasan bayaran balik",
       "toPay": "Diluluskan, Menunggu Bayaran"
     },
-    "title": "Bayaran Balik Perbelanjaan",
     "toast": {
       "deleted": "{{reference}} telah dipadam.",
       "saved": "{{reference}} disimpan sebagai draf.",
@@ -1051,7 +1048,6 @@
       "returnedNote": "Betulkan dan hantar semula, atau tarik balik",
       "summary": "Ringkasan pra-perbelanjaan"
     },
-    "title": "Permohonan Kelulusan Pra-Perbelanjaan",
     "toast": {
       "deleted": "{{reference}} telah dipadam.",
       "saved": "{{reference}} disimpan sebagai draf.",
