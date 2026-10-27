@@ -15,7 +15,9 @@ import { amount, nameOf, person, shortDate, sinceParts, unit } from '@/lib/forma
 import { acksFor, inboxFor, isItemOverdue, useMockState, useSession } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
-type Tab = 'decide' | 'acknowledge';
+type Tab = 'all' | 'decide' | 'acknowledge';
+/** A line of the All tab: a request to decide or cash to acknowledge, and since when it has waited. */
+type Entry = { key: string; overdue: boolean; since: string } & ({ item: ApprovalItem } | { ack: AckView });
 
 // What the approver should look at closely, as the web's inbox flags it.
 const flagIcons: Record<ApprovalFlag, Icon> = {
@@ -82,10 +84,48 @@ function ApprovalRow({ item, first }: { item: ApprovalItem; first: boolean }) {
   );
 }
 
-export default function InboxScreen() {
+/** Cash paid to the person that they have not confirmed yet; opens the acknowledgement. */
+function AckCard({ a }: { a: AckView }) {
   const { t } = useTranslation();
   const palette = usePalette();
   const { language } = useLanguage();
+  return (
+    <Card onPress={() => router.push({ pathname: '/acknowledge/[id]', params: { id: a.id } })} style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
+      <View style={{ width: 46, height: 46, borderRadius: radius.lg, backgroundColor: palette.warningSoft, alignItems: 'center', justifyContent: 'center' }}>
+        <IconCoins size={24} color={palette.warning} />
+      </View>
+      <View style={{ flex: 1, gap: 2 }}>
+        <AppText weight="semibold">{ackTitle(t, a)}</AppText>
+        <AppText variant="small" tone="secondary">
+          {nameOf(unit(a.unitId), language.code)} · {a.reference}
+        </AppText>
+        <AppText variant="caption" tone="muted">
+          {t('ack.paidOn', { date: shortDate(a.paidOn, language.code) })}
+          {a.method ? ` · ${t(`web:payment.method.${a.method}`)}` : ''}
+        </AppText>
+      </View>
+      <AppText weight="bold" style={{ fontVariant: ['tabular-nums'] }}>
+        {amount(a.amount, language.code)}
+      </AppText>
+    </Card>
+  );
+}
+
+function Empty({ text }: { text: string }) {
+  const palette = usePalette();
+  return (
+    <View style={{ alignItems: 'center', gap: space.md, paddingVertical: space.xxxl }}>
+      <IconCircleCheck size={44} color={palette.success} strokeWidth={1.5} />
+      <AppText tone="muted" align="center">
+        {text}
+      </AppText>
+    </View>
+  );
+}
+
+export default function InboxScreen() {
+  const { t } = useTranslation();
+  const palette = usePalette();
   const params = useLocalSearchParams<{ tab?: Tab }>();
   const state = useMockState();
   const { personId } = useSession();
@@ -94,7 +134,9 @@ export default function InboxScreen() {
   // A role that does not acknowledge (an employee) has no For Acknowledgement tab: its cash counts when paid.
   const acknowledges = !user || holds(user, 'Acknowledgements', 'acknowledge');
   const ackQuery = useAcknowledgements(acknowledges);
-  const [tab, setTab] = useState<Tab>(acknowledges && params.tab === 'acknowledge' ? 'acknowledge' : 'decide');
+  const [chosen, setTab] = useState<Tab>(params.tab === 'acknowledge' ? 'acknowledge' : 'all');
+  // Without cash to acknowledge there are no tabs: the list is what waits for a decision.
+  const tab = acknowledges ? chosen : 'decide';
   // Live: of everything the person has been part of, what waits for their decision now, overdue first,
   // and the cash paid to them that they have not confirmed yet.
   const items = useMemo(
@@ -108,6 +150,15 @@ export default function InboxScreen() {
     () => (user ? (ackQuery.data ?? []).filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).map(toAckView) : acksFor(state, personId)),
     [user, ackQuery.data, state, personId],
   );
+  // All: both lists in one, overdue first, then whatever has waited longest.
+  const all: Entry[] = useMemo(
+    () =>
+      [
+        ...items.map((item): Entry => ({ key: `r-${item.kind}-${item.id}`, overdue: isItemOverdue(item), since: item.submittedAtUtc ?? '', item })),
+        ...acks.map((ack): Entry => ({ key: `a-${ack.id}`, overdue: false, since: ack.paidOn, ack })),
+      ].sort((a, b) => Number(b.overdue) - Number(a.overdue) || a.since.localeCompare(b.since)),
+    [items, acks],
+  );
   const failed = user ? (inbox.error ?? ackQuery.error) : null;
   const loading = user && (!inbox.data || (acknowledges && !ackQuery.data));
 
@@ -118,6 +169,7 @@ export default function InboxScreen() {
           value={tab}
           onChange={setTab}
           options={[
+            { value: 'all', label: t('web:approval.view.all'), count: all.length },
             { value: 'decide', label: t('web:approval.view.waiting'), count: items.length },
             { value: 'acknowledge', label: t('web:approval.view.cash'), count: acks.length },
           ]}
@@ -133,6 +185,22 @@ export default function InboxScreen() {
         ) : (
           <ActivityIndicator color={palette.primary} style={{ paddingVertical: space.xxxl }} />
         )
+      ) : tab === 'all' ? (
+        all.length ? (
+          <View style={{ gap: space.md }}>
+            {all.map((e) =>
+              'item' in e ? (
+                <Card key={e.key} padded={false} style={{ gap: 0, overflow: 'hidden' }}>
+                  <ApprovalRow item={e.item} first />
+                </Card>
+              ) : (
+                <AckCard key={e.key} a={e.ack} />
+              ),
+            )}
+          </View>
+        ) : (
+          <Empty text={t('web:approval.empty.all')} />
+        )
       ) : tab === 'decide' ? (
         items.length ? (
           <Card padded={false} style={{ gap: 0, overflow: 'hidden' }}>
@@ -141,12 +209,7 @@ export default function InboxScreen() {
             ))}
           </Card>
         ) : (
-          <View style={{ alignItems: 'center', gap: space.md, paddingVertical: space.xxxl }}>
-            <IconCircleCheck size={44} color={palette.success} strokeWidth={1.5} />
-            <AppText tone="muted" align="center">
-              {t('web:approval.empty.waiting')}
-            </AppText>
-          </View>
+          <Empty text={t('web:approval.empty.waiting')} />
         )
       ) : acks.length ? (
         <View style={{ gap: space.md }}>
@@ -154,33 +217,11 @@ export default function InboxScreen() {
             {t('web:ack.bannerHint')}
           </AppText>
           {acks.map((a) => (
-            <Card key={a.id} onPress={() => router.push({ pathname: '/acknowledge/[id]', params: { id: a.id } })} style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
-              <View style={{ width: 46, height: 46, borderRadius: radius.lg, backgroundColor: palette.warningSoft, alignItems: 'center', justifyContent: 'center' }}>
-                <IconCoins size={24} color={palette.warning} />
-              </View>
-              <View style={{ flex: 1, gap: 2 }}>
-                <AppText weight="semibold">{ackTitle(t, a)}</AppText>
-                <AppText variant="small" tone="secondary">
-                  {nameOf(unit(a.unitId), language.code)} · {a.reference}
-                </AppText>
-                <AppText variant="caption" tone="muted">
-                  {t('ack.paidOn', { date: shortDate(a.paidOn, language.code) })}
-                  {a.method ? ` · ${t(`web:payment.method.${a.method}`)}` : ''}
-                </AppText>
-              </View>
-              <AppText weight="bold" style={{ fontVariant: ['tabular-nums'] }}>
-                {amount(a.amount, language.code)}
-              </AppText>
-            </Card>
+            <AckCard key={a.id} a={a} />
           ))}
         </View>
       ) : (
-        <View style={{ alignItems: 'center', gap: space.md, paddingVertical: space.xxxl }}>
-          <IconCircleCheck size={44} color={palette.success} strokeWidth={1.5} />
-          <AppText tone="muted" align="center">
-            {t('web:ack.bannerNone')}
-          </AppText>
-        </View>
+        <Empty text={t('web:ack.bannerNone')} />
       )}
     </Screen>
   );

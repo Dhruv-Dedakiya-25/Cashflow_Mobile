@@ -64,7 +64,8 @@
       "submitted": "提交了审批",
       "title": "历史",
       "reallocated": "重新分配了",
-      "takenOver": "接手了"
+      "takenOver": "接手了",
+      "approvedDirectly": "提交了：未经审批步骤即获批准"
     },
     "notFound": "该记录不存在，或不在您的查看范围内。",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "{{name}} 于 {{time}} 驳回",
         "returned": "{{name}} 于 {{time}} 退回"
       },
+      "noApproval": "无需审批：提交后即获批准。",
+      "noApprovalPreview": "无需审批：您提交后即获批准。",
       "notSent": "尚未提交审批。",
       "overdue": "逾期",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "{{span}}后到期",
     "empty": {
+      "all": "没有等待您处理的事项。",
       "decided": "您尚未决定任何申请。",
       "scope": "您的范围内尚无提交审批的申请。",
       "waiting": "没有等待您决定的事项。"
@@ -377,7 +381,8 @@
       "scope": "我范围内的全部",
       "waiting": "待我处理",
       "cash": "待签收现金",
-      "cashArchive": "已发放现金"
+      "cashArchive": "已发放现金",
+      "all": "全部"
     },
     "views": "收件箱视图",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "关注 {{watch}}% · 阈值 {{near}}%",
     "title": "备用金拨付",
     "toast": {
+      "approved": "{{reference}} 已批准。",
       "cancelled": "{{reference}} 已取消。",
       "deleted": "草稿 {{reference}} 已删除。",
       "saved": "{{reference}} 已保存。",
       "submitted": "{{reference}} 已提交审批。"
     },
     "topUpOnItsWay": "另有 {{amount}} 正在途中（{{references}}），等待签收确认。",
-    "noCustodians": "该单位没有保管人。请先为该单位中的某人分配“保管人”角色。"
+    "noCustodians": "该单位没有保管人。请先为该单位中的某人分配“保管人”角色。",
+    "send": "提交"
   },
   "file": {
     "aiNotRead": "未扫描",

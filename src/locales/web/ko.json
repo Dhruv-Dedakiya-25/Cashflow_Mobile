@@ -64,7 +64,8 @@
       "submitted": "님이 승인 요청했습니다",
       "title": "기록",
       "reallocated": "님이 재배정했습니다",
-      "takenOver": "님이 인수했습니다"
+      "takenOver": "님이 인수했습니다",
+      "approvedDirectly": "님이 보냈습니다: 승인 단계 없이 승인됨"
     },
     "notFound": "이 기록이 없거나, 볼 수 있는 범위 밖에 있습니다.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "{{name}}님이 {{time}}에 거부",
         "returned": "{{name}}님이 {{time}}에 반려"
       },
+      "noApproval": "승인이 필요 없습니다: 보내는 즉시 승인되었습니다.",
+      "noApprovalPreview": "승인이 필요 없습니다: 보내는 즉시 승인됩니다.",
       "notSent": "아직 승인 요청하지 않았습니다.",
       "overdue": "연체",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "{{span}} 후 기한",
     "empty": {
+      "all": "기다리는 항목이 없습니다.",
       "decided": "아직 결정한 요청이 없습니다.",
       "scope": "내 범위에서 승인 요청된 항목이 없습니다.",
       "waiting": "결정을 기다리는 항목이 없습니다."
@@ -377,7 +381,8 @@
       "scope": "내 범위 전체",
       "waiting": "내 결정 대기",
       "cash": "수령 확인할 현금",
-      "cashArchive": "지급된 현금"
+      "cashArchive": "지급된 현금",
+      "all": "전체"
     },
     "views": "승인함 보기",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "주의 {{watch}}% · 근접 {{near}}%",
     "title": "소액 현금 배정",
     "toast": {
+      "approved": "{{reference}}이(가) 승인되었습니다.",
       "cancelled": "{{reference}}을(를) 취소했습니다.",
       "deleted": "초안 {{reference}}을(를) 삭제했습니다.",
       "saved": "{{reference}}을(를) 저장했습니다.",
       "submitted": "{{reference}}을(를) 승인 요청했습니다."
     },
     "topUpOnItsWay": "{{amount}}이(가) 더 오는 중이며({{references}}) 수령 확인을 기다리고 있습니다.",
-    "noCustodians": "이 단위에 현금 관리자가 없습니다. 먼저 단위 내 누군가에게 현금 관리자 역할을 부여하세요."
+    "noCustodians": "이 단위에 현금 관리자가 없습니다. 먼저 단위 내 누군가에게 현금 관리자 역할을 부여하세요.",
+    "send": "보내기"
   },
   "file": {
     "aiNotRead": "스캔 안 함",

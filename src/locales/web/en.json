@@ -64,7 +64,8 @@
       "submitted": "sent it for approval",
       "title": "History",
       "reallocated": "reallocated it",
-      "takenOver": "took it over"
+      "takenOver": "took it over",
+      "approvedDirectly": "sent it: approved without approval steps"
     },
     "notFound": "This record does not exist, or it is outside what you can see.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Rejected by {{name}} on {{time}}",
         "returned": "Returned by {{name}} on {{time}}"
       },
+      "noApproval": "No approval needed: approved as soon as it was sent.",
+      "noApprovalPreview": "No approval needed: approved as soon as you send it.",
       "notSent": "Not sent for approval yet.",
       "overdue": "Overdue",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Due in {{span}}",
     "empty": {
+      "all": "Nothing is waiting for you.",
       "decided": "You have not decided any requests yet.",
       "scope": "No requests have been sent for approval in your scope.",
       "waiting": "Nothing is waiting for your decision."
@@ -377,7 +381,8 @@
       "scope": "All in my scope",
       "waiting": "Waiting for me",
       "cash": "Cash to acknowledge",
-      "cashArchive": "Cash paid out"
+      "cashArchive": "Cash paid out",
+      "all": "All"
     },
     "views": "Inbox views",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Watch {{watch}}% · Near {{near}}%",
     "title": "Petty Cash Allocations",
     "toast": {
+      "approved": "{{reference}} was approved.",
       "cancelled": "{{reference}} was cancelled.",
       "deleted": "Draft {{reference}} was deleted.",
       "saved": "{{reference}} was saved.",
       "submitted": "{{reference}} was sent for approval."
     },
     "topUpOnItsWay": "{{amount}} more is on its way ({{references}}) and waits for acknowledgement.",
-    "noCustodians": "No Custodians in this unit. Give someone in it the Custodian role first."
+    "noCustodians": "No Custodians in this unit. Give someone in it the Custodian role first.",
+    "send": "Send"
   },
   "file": {
     "aiNotRead": "Not scanned",

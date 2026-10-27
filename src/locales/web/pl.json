@@ -64,7 +64,8 @@
       "submitted": "— wysłanie do zatwierdzenia",
       "title": "Historia",
       "reallocated": "— przekazanie",
-      "takenOver": "— przejęcie"
+      "takenOver": "— przejęcie",
+      "approvedDirectly": "— wysłanie: zatwierdzono bez kroków zatwierdzania"
     },
     "notFound": "Ten rekord nie istnieje lub jest poza Twoim zakresem widoczności.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Odrzucone: {{name}}, {{time}}",
         "returned": "Zwrócone: {{name}}, {{time}}"
       },
+      "noApproval": "Zatwierdzanie niepotrzebne: zatwierdzono od razu po wysłaniu.",
+      "noApprovalPreview": "Zatwierdzanie niepotrzebne: zostanie zatwierdzony od razu po wysłaniu.",
       "notSent": "Jeszcze nie wysłano do zatwierdzenia.",
       "overdue": "Przeterminowana",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Termin za {{span}}",
     "empty": {
+      "all": "Nic na Ciebie nie czeka.",
       "decided": "Nie zdecydowałeś jeszcze o żadnym wniosku.",
       "scope": "W Twoim zakresie nie wysłano żadnych wniosków do zatwierdzenia.",
       "waiting": "Nic nie czeka na Twoją decyzję."
@@ -377,7 +381,8 @@
       "scope": "Wszystko w moim zakresie",
       "waiting": "Czekają na mnie",
       "cash": "Gotówka do potwierdzenia",
-      "cashArchive": "Wypłacona gotówka"
+      "cashArchive": "Wypłacona gotówka",
+      "all": "Wszystkie"
     },
     "views": "Widoki skrzynki",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Obserwacja {{watch}}% · Próg {{near}}%",
     "title": "Przydziały kasy podręcznej",
     "toast": {
+      "approved": "{{reference}} zatwierdzono.",
       "cancelled": "{{reference}} anulowano.",
       "deleted": "Szkic {{reference}} usunięto.",
       "saved": "{{reference}} zapisano.",
       "submitted": "{{reference}} wysłano do zatwierdzenia."
     },
     "topUpOnItsWay": "Kolejne {{amount}} są w drodze ({{references}}) i czekają na potwierdzenie odbioru.",
-    "noCustodians": "W tej jednostce nie ma opiekunów kasy. Najpierw nadaj komuś z jednostki rolę Opiekun kasy."
+    "noCustodians": "W tej jednostce nie ma opiekunów kasy. Najpierw nadaj komuś z jednostki rolę Opiekun kasy.",
+    "send": "Wyślij"
   },
   "file": {
     "aiNotRead": "Nie zeskanowano",

@@ -64,7 +64,8 @@
       "submitted": "enviou para aprovação",
       "title": "Histórico",
       "reallocated": "realocou",
-      "takenOver": "assumiu"
+      "takenOver": "assumiu",
+      "approvedDirectly": "enviou: aprovada sem etapas de aprovação"
     },
     "notFound": "Este registro não existe ou está fora do que você pode ver.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Rejeitada por {{name}} em {{time}}",
         "returned": "Devolvida por {{name}} em {{time}}"
       },
+      "noApproval": "Sem necessidade de aprovação: aprovada assim que foi enviada.",
+      "noApprovalPreview": "Sem necessidade de aprovação: aprovada assim que você enviar.",
       "notSent": "Ainda não enviada para aprovação.",
       "overdue": "Em atraso",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Vence em {{span}}",
     "empty": {
+      "all": "Nada aguarda você.",
       "decided": "Você ainda não decidiu nenhuma solicitação.",
       "scope": "Nenhuma solicitação foi enviada para aprovação no seu escopo.",
       "waiting": "Nada aguarda sua decisão."
@@ -377,7 +381,8 @@
       "scope": "Todo o meu escopo",
       "waiting": "Aguardando por mim",
       "cash": "Dinheiro a confirmar",
-      "cashArchive": "Dinheiro pago"
+      "cashArchive": "Dinheiro pago",
+      "all": "Todas"
     },
     "views": "Visões da caixa",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Observação {{watch}}% · Limite {{near}}%",
     "title": "Alocações de caixa pequeno",
     "toast": {
+      "approved": "{{reference}} foi aprovada.",
       "cancelled": "{{reference}} foi cancelada.",
       "deleted": "O rascunho {{reference}} foi excluído.",
       "saved": "{{reference}} foi salva.",
       "submitted": "{{reference}} foi enviada para aprovação."
     },
     "topUpOnItsWay": "Mais {{amount}} estão a caminho ({{references}}) aguardando confirmação.",
-    "noCustodians": "Nenhum custodiante nesta unidade. Atribua primeiro a função Custodiante a alguém da unidade."
+    "noCustodians": "Nenhum custodiante nesta unidade. Atribua primeiro a função Custodiante a alguém da unidade.",
+    "send": "Enviar"
   },
   "file": {
     "aiNotRead": "Não digitalizado",

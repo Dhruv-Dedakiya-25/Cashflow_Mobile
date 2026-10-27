@@ -64,7 +64,8 @@
       "submitted": "mengirimnya untuk persetujuan",
       "title": "Riwayat",
       "reallocated": "mengalihkannya",
-      "takenOver": "mengambil alihnya"
+      "takenOver": "mengambil alihnya",
+      "approvedDirectly": "mengirimnya: disetujui tanpa langkah persetujuan"
     },
     "notFound": "Catatan ini tidak ada, atau di luar cakupan yang dapat Anda lihat.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Ditolak oleh {{name}} pada {{time}}",
         "returned": "Dikembalikan oleh {{name}} pada {{time}}"
       },
+      "noApproval": "Tidak perlu persetujuan: langsung disetujui begitu dikirim.",
+      "noApprovalPreview": "Tidak perlu persetujuan: langsung disetujui begitu Anda mengirimnya.",
       "notSent": "Belum dikirim untuk persetujuan.",
       "overdue": "Terlambat",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Jatuh tempo dalam {{span}}",
     "empty": {
+      "all": "Tidak ada yang menunggu Anda.",
       "decided": "Anda belum memutuskan permintaan apa pun.",
       "scope": "Belum ada permintaan yang dikirim untuk persetujuan dalam cakupan Anda.",
       "waiting": "Tidak ada yang menunggu keputusan Anda."
@@ -377,7 +381,8 @@
       "scope": "Semua dalam cakupan saya",
       "waiting": "Menunggu saya",
       "cash": "Uang tunai untuk dikonfirmasi",
-      "cashArchive": "Uang tunai dibayarkan"
+      "cashArchive": "Uang tunai dibayarkan",
+      "all": "Semua"
     },
     "views": "Tampilan kotak persetujuan",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Pantau {{watch}}% · Batas {{near}}%",
     "title": "Alokasi Kas Kecil",
     "toast": {
+      "approved": "{{reference}} telah disetujui.",
       "cancelled": "{{reference}} telah dibatalkan.",
       "deleted": "Draf {{reference}} telah dihapus.",
       "saved": "{{reference}} telah disimpan.",
       "submitted": "{{reference}} telah dikirim untuk persetujuan."
     },
     "topUpOnItsWay": "{{amount}} lagi sedang dalam perjalanan ({{references}}) dan menunggu tanda terima.",
-    "noCustodians": "Tidak ada Pemegang Kas di unit ini. Berikan dulu peran Pemegang Kas kepada seseorang di unit ini."
+    "noCustodians": "Tidak ada Pemegang Kas di unit ini. Berikan dulu peran Pemegang Kas kepada seseorang di unit ini.",
+    "send": "Kirim"
   },
   "file": {
     "aiNotRead": "Belum dipindai",

@@ -64,7 +64,8 @@
       "submitted": "が承認に回しました",
       "title": "履歴",
       "reallocated": "が再配分しました",
-      "takenOver": "が引き継ぎました"
+      "takenOver": "が引き継ぎました",
+      "approvedDirectly": "が送信しました：承認ステップなしで承認"
     },
     "notFound": "このレコードは存在しないか、閲覧できる範囲外です。",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "{{name}} が {{time}} に却下",
         "returned": "{{name}} が {{time}} に差し戻し"
       },
+      "noApproval": "承認は不要です：送信した時点で承認されました。",
+      "noApprovalPreview": "承認は不要です：送信すると同時に承認されます。",
       "notSent": "まだ承認に回していません。",
       "overdue": "延滞",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "期限まで {{span}}",
     "empty": {
+      "all": "あなたを待っているものはありません。",
       "decided": "まだ判断した申請はありません。",
       "scope": "あなたの範囲で承認に回された申請はありません。",
       "waiting": "あなたの判断を待っているものはありません。"
@@ -377,7 +381,8 @@
       "scope": "自分の範囲のすべて",
       "waiting": "自分の対応待ち",
       "cash": "受領確認待ちの現金",
-      "cashArchive": "払い出された現金"
+      "cashArchive": "払い出された現金",
+      "all": "すべて"
     },
     "views": "受信箱の表示",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "要注意 {{watch}}% · しきい値 {{near}}%",
     "title": "小口現金の配分",
     "toast": {
+      "approved": "{{reference}} が承認されました。",
       "cancelled": "{{reference}} を取り消しました。",
       "deleted": "下書き {{reference}} を削除しました。",
       "saved": "{{reference}} を保存しました。",
       "submitted": "{{reference}} を承認に回しました。"
     },
     "topUpOnItsWay": "さらに {{amount}} が手配中（{{references}}）で、受領確認を待っています。",
-    "noCustodians": "この単位に現金管理者がいません。先に単位内の誰かに「現金管理者」ロールを割り当ててください。"
+    "noCustodians": "この単位に現金管理者がいません。先に単位内の誰かに「現金管理者」ロールを割り当ててください。",
+    "send": "送信"
   },
   "file": {
     "aiNotRead": "未スキャン",

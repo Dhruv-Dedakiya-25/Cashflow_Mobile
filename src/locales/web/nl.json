@@ -64,7 +64,8 @@
       "submitted": "heeft deze ter goedkeuring gestuurd",
       "title": "Geschiedenis",
       "reallocated": "heeft deze overgedragen",
-      "takenOver": "heeft deze overgenomen"
+      "takenOver": "heeft deze overgenomen",
+      "approvedDirectly": "heeft deze verstuurd: goedgekeurd zonder goedkeuringsstappen"
     },
     "notFound": "Dit record bestaat niet, of valt buiten wat u mag zien.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Afgewezen door {{name}} op {{time}}",
         "returned": "Teruggestuurd door {{name}} op {{time}}"
       },
+      "noApproval": "Geen goedkeuring nodig: goedgekeurd zodra deze werd verstuurd.",
+      "noApprovalPreview": "Geen goedkeuring nodig: goedgekeurd zodra u deze verstuurt.",
       "notSent": "Nog niet ter goedkeuring gestuurd.",
       "overdue": "Achterstallig",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Over {{span}}",
     "empty": {
+      "all": "Er wacht niets op u.",
       "decided": "U hebt nog over geen enkele aanvraag beslist.",
       "scope": "Er zijn binnen uw bereik geen aanvragen ter goedkeuring ingediend.",
       "waiting": "Er wacht niets op uw beslissing."
@@ -377,7 +381,8 @@
       "scope": "Alles binnen mijn bereik",
       "waiting": "Wacht op mij",
       "cash": "Contanten te bevestigen",
-      "cashArchive": "Uitbetaalde contanten"
+      "cashArchive": "Uitbetaalde contanten",
+      "all": "Alle"
     },
     "views": "Weergaven van goedkeuringen",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Opletten {{watch}}% · Drempel {{near}}%",
     "title": "Kleine-kastoewijzingen",
     "toast": {
+      "approved": "{{reference}} is goedgekeurd.",
       "cancelled": "{{reference}} is geannuleerd.",
       "deleted": "Concept {{reference}} is verwijderd.",
       "saved": "{{reference}} is opgeslagen.",
       "submitted": "{{reference}} is ter goedkeuring gestuurd."
     },
     "topUpOnItsWay": "Nog {{amount}} is onderweg ({{references}}) en wacht op ontvangstbevestiging.",
-    "noCustodians": "Geen kasbeheerders in deze eenheid. Geef eerst iemand in deze eenheid de rol Kasbeheerder."
+    "noCustodians": "Geen kasbeheerders in deze eenheid. Geef eerst iemand in deze eenheid de rol Kasbeheerder.",
+    "send": "Versturen"
   },
   "file": {
     "aiNotRead": "Niet gescand",

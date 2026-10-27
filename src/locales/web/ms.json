@@ -64,7 +64,8 @@
       "submitted": "menghantarnya untuk kelulusan",
       "title": "Sejarah",
       "reallocated": "memperuntukkannya semula",
-      "takenOver": "mengambil alihnya"
+      "takenOver": "mengambil alihnya",
+      "approvedDirectly": "menghantarnya: diluluskan tanpa langkah kelulusan"
     },
     "notFound": "Rekod ini tidak wujud, atau di luar skop yang anda boleh lihat.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Ditolak oleh {{name}} pada {{time}}",
         "returned": "Dikembalikan oleh {{name}} pada {{time}}"
       },
+      "noApproval": "Tiada kelulusan diperlukan: diluluskan sebaik sahaja dihantar.",
+      "noApprovalPreview": "Tiada kelulusan diperlukan: diluluskan sebaik sahaja anda menghantarnya.",
       "notSent": "Belum dihantar untuk kelulusan.",
       "overdue": "Lewat tempoh",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Tamat tempoh dalam {{span}}",
     "empty": {
+      "all": "Tiada apa-apa yang menunggu anda.",
       "decided": "Anda belum memutuskan sebarang permohonan.",
       "scope": "Tiada permohonan dihantar untuk kelulusan dalam skop anda.",
       "waiting": "Tiada apa-apa yang menunggu keputusan anda."
@@ -377,7 +381,8 @@
       "scope": "Semua dalam skop saya",
       "waiting": "Menunggu saya",
       "cash": "Tunai untuk diakui terima",
-      "cashArchive": "Tunai dibayar"
+      "cashArchive": "Tunai dibayar",
+      "all": "Semua"
     },
     "views": "Paparan peti kelulusan",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Pantau {{watch}}% · Ambang {{near}}%",
     "title": "Peruntukan Tunai Runcit",
     "toast": {
+      "approved": "{{reference}} telah diluluskan.",
       "cancelled": "{{reference}} telah dibatalkan.",
       "deleted": "Draf {{reference}} telah dipadam.",
       "saved": "{{reference}} telah disimpan.",
       "submitted": "{{reference}} telah dihantar untuk kelulusan."
     },
     "topUpOnItsWay": "{{amount}} lagi dalam perjalanan ({{references}}) dan menunggu pengakuan terima.",
-    "noCustodians": "Tiada Penjaga Tunai dalam unit ini. Berikan peranan Penjaga Tunai kepada seseorang dalam unit ini dahulu."
+    "noCustodians": "Tiada Penjaga Tunai dalam unit ini. Berikan peranan Penjaga Tunai kepada seseorang dalam unit ini dahulu.",
+    "send": "Hantar"
   },
   "file": {
     "aiNotRead": "Tidak diimbas",

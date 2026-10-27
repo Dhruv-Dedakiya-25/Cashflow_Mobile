@@ -64,7 +64,8 @@
       "submitted": "đã gửi phê duyệt",
       "title": "Lịch sử",
       "reallocated": "đã chuyển phân bổ",
-      "takenOver": "đã nhận bàn giao"
+      "takenOver": "đã nhận bàn giao",
+      "approvedDirectly": "đã gửi: được duyệt mà không qua bước phê duyệt"
     },
     "notFound": "Bản ghi này không tồn tại, hoặc nằm ngoài phạm vi bạn được xem.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "{{name}} từ chối lúc {{time}}",
         "returned": "{{name}} trả lại lúc {{time}}"
       },
+      "noApproval": "Không cần phê duyệt: đã được duyệt ngay khi gửi.",
+      "noApprovalPreview": "Không cần phê duyệt: được duyệt ngay khi bạn gửi.",
       "notSent": "Chưa gửi phê duyệt.",
       "overdue": "Quá hạn",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Đến hạn sau {{span}}",
     "empty": {
+      "all": "Không có gì đang chờ bạn.",
       "decided": "Bạn chưa quyết định yêu cầu nào.",
       "scope": "Chưa có yêu cầu nào được gửi phê duyệt trong phạm vi của bạn.",
       "waiting": "Không có gì đang chờ bạn quyết định."
@@ -377,7 +381,8 @@
       "scope": "Tất cả trong phạm vi của tôi",
       "waiting": "Đang chờ tôi",
       "cash": "Tiền mặt cần xác nhận",
-      "cashArchive": "Tiền mặt đã chi"
+      "cashArchive": "Tiền mặt đã chi",
+      "all": "Tất cả"
     },
     "views": "Các chế độ xem hộp phê duyệt",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Theo dõi {{watch}}% · Ngưỡng {{near}}%",
     "title": "Phân bổ quỹ tiền mặt nhỏ",
     "toast": {
+      "approved": "Đã phê duyệt {{reference}}.",
       "cancelled": "Đã hủy {{reference}}.",
       "deleted": "Đã xóa bản nháp {{reference}}.",
       "saved": "Đã lưu {{reference}}.",
       "submitted": "Đã gửi phê duyệt {{reference}}."
     },
     "topUpOnItsWay": "Thêm {{amount}} đang trên đường ({{references}}) và chờ xác nhận nhận tiền.",
-    "noCustodians": "Đơn vị này chưa có Người giữ quỹ. Hãy gán vai trò Người giữ quỹ cho một người trong đơn vị trước."
+    "noCustodians": "Đơn vị này chưa có Người giữ quỹ. Hãy gán vai trò Người giữ quỹ cho một người trong đơn vị trước.",
+    "send": "Gửi"
   },
   "file": {
     "aiNotRead": "Chưa quét",

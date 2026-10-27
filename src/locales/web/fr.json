@@ -64,7 +64,8 @@
       "submitted": "l'a envoyée pour approbation",
       "title": "Historique",
       "reallocated": "l'a réaffectée",
-      "takenOver": "l'a reprise"
+      "takenOver": "l'a reprise",
+      "approvedDirectly": "l'a envoyée : approuvée sans étapes d'approbation"
     },
     "notFound": "Cet enregistrement n'existe pas ou se trouve hors de votre périmètre.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Rejetée par {{name}} le {{time}}",
         "returned": "Retournée par {{name}} le {{time}}"
       },
+      "noApproval": "Aucune approbation requise : approuvée dès son envoi.",
+      "noApprovalPreview": "Aucune approbation requise : approuvée dès que vous l'envoyez.",
       "notSent": "Pas encore envoyée pour approbation.",
       "overdue": "En retard",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Échéance dans {{span}}",
     "empty": {
+      "all": "Rien ne vous attend.",
       "decided": "Vous n'avez encore décidé d'aucune demande.",
       "scope": "Aucune demande n'a été soumise à approbation dans votre périmètre.",
       "waiting": "Rien n'attend votre décision."
@@ -377,7 +381,8 @@
       "scope": "Tout mon périmètre",
       "waiting": "En attente de moi",
       "cash": "Espèces à confirmer",
-      "cashArchive": "Espèces versées"
+      "cashArchive": "Espèces versées",
+      "all": "Toutes"
     },
     "views": "Vues de la boîte d'approbation",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Surveillance {{watch}} % · Seuil {{near}} %",
     "title": "Allocations de petite caisse",
     "toast": {
+      "approved": "{{reference}} a été approuvée.",
       "cancelled": "{{reference}} a été annulée.",
       "deleted": "Le brouillon {{reference}} a été supprimé.",
       "saved": "{{reference}} a été enregistrée.",
       "submitted": "{{reference}} a été envoyée pour approbation."
     },
     "topUpOnItsWay": "{{amount}} supplémentaires sont en route ({{references}}) et attendent l'accusé de réception.",
-    "noCustodians": "Aucun dépositaire dans cette unité. Attribuez d'abord le rôle Dépositaire à une personne de l'unité."
+    "noCustodians": "Aucun dépositaire dans cette unité. Attribuez d'abord le rôle Dépositaire à une personne de l'unité.",
+    "send": "Envoyer"
   },
   "file": {
     "aiNotRead": "Non numérisé",

@@ -64,7 +64,8 @@
       "submitted": "onaya gönderdi",
       "title": "Geçmiş",
       "reallocated": "devretti",
-      "takenOver": "devraldı"
+      "takenOver": "devraldı",
+      "approvedDirectly": "gönderdi: onay adımları olmadan onaylandı"
     },
     "notFound": "Bu kayıt yok ya da görebileceğiniz kapsamın dışında.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "{{name}} tarafından {{time}} tarihinde reddedildi",
         "returned": "{{name}} tarafından {{time}} tarihinde iade edildi"
       },
+      "noApproval": "Onay gerekmez: gönderildiği anda onaylandı.",
+      "noApprovalPreview": "Onay gerekmez: gönderdiğiniz anda onaylanır.",
       "notSent": "Henüz onaya gönderilmedi.",
       "overdue": "Vadesi geçmiş",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "{{span}} içinde",
     "empty": {
+      "all": "Sizi bekleyen bir şey yok.",
       "decided": "Henüz hiçbir talep için karar vermediniz.",
       "scope": "Kapsamınızda onaya gönderilmiş talep yok.",
       "waiting": "Kararınızı bekleyen bir şey yok."
@@ -377,7 +381,8 @@
       "scope": "Kapsamımdaki tümü",
       "waiting": "Beni bekleyenler",
       "cash": "Onaylanacak nakit",
-      "cashArchive": "Ödenen nakit"
+      "cashArchive": "Ödenen nakit",
+      "all": "Tümü"
     },
     "views": "Kutu görünümleri",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "İzleme %{{watch}} · Eşik %{{near}}",
     "title": "Küçük Kasa Tahsisleri",
     "toast": {
+      "approved": "{{reference}} onaylandı.",
       "cancelled": "{{reference}} iptal edildi.",
       "deleted": "{{reference}} taslağı silindi.",
       "saved": "{{reference}} kaydedildi.",
       "submitted": "{{reference}} onaya gönderildi."
     },
     "topUpOnItsWay": "{{amount}} daha yolda ({{references}}) ve teslim onayı bekliyor.",
-    "noCustodians": "Bu birimde kasa sorumlusu yok. Önce birimden birine Kasa sorumlusu rolünü verin."
+    "noCustodians": "Bu birimde kasa sorumlusu yok. Önce birimden birine Kasa sorumlusu rolünü verin.",
+    "send": "Gönder"
   },
   "file": {
     "aiNotRead": "Taranmadı",

@@ -64,7 +64,8 @@
       "submitted": "l'ha inviata in approvazione",
       "title": "Cronologia",
       "reallocated": "l'ha riassegnata",
-      "takenOver": "l'ha presa in carico"
+      "takenOver": "l'ha presa in carico",
+      "approvedDirectly": "l'ha inviata: approvata senza passaggi di approvazione"
     },
     "notFound": "Questo record non esiste o è fuori da ciò che puoi vedere.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Respinta da {{name}} il {{time}}",
         "returned": "Restituita da {{name}} il {{time}}"
       },
+      "noApproval": "Nessuna approvazione necessaria: approvata appena inviata.",
+      "noApprovalPreview": "Nessuna approvazione necessaria: approvata appena la invii.",
       "notSent": "Non ancora inviata in approvazione.",
       "overdue": "Scaduto",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Scade tra {{span}}",
     "empty": {
+      "all": "Nulla ti attende.",
       "decided": "Non hai ancora deciso nessuna richiesta.",
       "scope": "Nel tuo ambito non sono state inviate richieste in approvazione.",
       "waiting": "Nulla attende la tua decisione."
@@ -377,7 +381,8 @@
       "scope": "Tutto il mio ambito",
       "waiting": "In attesa di me",
       "cash": "Contanti da confermare",
-      "cashArchive": "Contanti erogati"
+      "cashArchive": "Contanti erogati",
+      "all": "Tutte"
     },
     "views": "Viste della casella",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Monitoraggio {{watch}}% · Soglia {{near}}%",
     "title": "Assegnazioni di piccola cassa",
     "toast": {
+      "approved": "{{reference}} è stata approvata.",
       "cancelled": "{{reference}} è stata annullata.",
       "deleted": "La bozza {{reference}} è stata eliminata.",
       "saved": "{{reference}} è stata salvata.",
       "submitted": "{{reference}} è stata inviata in approvazione."
     },
     "topUpOnItsWay": "Altri {{amount}} sono in arrivo ({{references}}) e attendono conferma di ricezione.",
-    "noCustodians": "Nessun custode in questa unità. Assegna prima il ruolo Custode a qualcuno dell'unità."
+    "noCustodians": "Nessun custode in questa unità. Assegna prima il ruolo Custode a qualcuno dell'unità.",
+    "send": "Invia"
   },
   "file": {
     "aiNotRead": "Non scansionato",

@@ -64,7 +64,8 @@
       "submitted": "hat ihn zur Genehmigung gesendet",
       "title": "Verlauf",
       "reallocated": "hat sie umverteilt",
-      "takenOver": "hat sie übernommen"
+      "takenOver": "hat sie übernommen",
+      "approvedDirectly": "hat ihn gesendet: ohne Freigabeschritte genehmigt"
     },
     "notFound": "Dieser Datensatz existiert nicht oder liegt außerhalb Ihres Sichtbereichs.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Abgelehnt von {{name}} am {{time}}",
         "returned": "Zurückgegeben von {{name}} am {{time}}"
       },
+      "noApproval": "Keine Genehmigung nötig: genehmigt, sobald sie gesendet wurde.",
+      "noApprovalPreview": "Keine Genehmigung nötig: genehmigt, sobald Sie sie senden.",
       "notSent": "Noch nicht zur Genehmigung gesendet.",
       "overdue": "Überfällig",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Fällig in {{span}}",
     "empty": {
+      "all": "Nichts wartet auf Sie.",
       "decided": "Sie haben noch keinen Antrag entschieden.",
       "scope": "In Ihrem Bereich wurden keine Anträge zur Genehmigung eingereicht.",
       "waiting": "Nichts wartet auf Ihre Entscheidung."
@@ -377,7 +381,8 @@
       "scope": "Alles in meinem Bereich",
       "waiting": "Wartet auf mich",
       "cash": "Zu bestätigendes Bargeld",
-      "cashArchive": "Ausgezahltes Bargeld"
+      "cashArchive": "Ausgezahltes Bargeld",
+      "all": "Alle"
     },
     "views": "Ansichten des Eingangs",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Beobachten {{watch}}% · Schwelle {{near}}%",
     "title": "Handkassen-Zuweisungen",
     "toast": {
+      "approved": "{{reference}} wurde genehmigt.",
       "cancelled": "{{reference}} wurde storniert.",
       "deleted": "Entwurf {{reference}} wurde gelöscht.",
       "saved": "{{reference}} wurde gespeichert.",
       "submitted": "{{reference}} wurde zur Genehmigung gesendet."
     },
     "topUpOnItsWay": "Weitere {{amount}} sind unterwegs ({{references}}) und warten auf Empfangsbestätigung.",
-    "noCustodians": "Keine Verwahrer in dieser Einheit. Weisen Sie zuerst jemandem in der Einheit die Rolle Verwahrer zu."
+    "noCustodians": "Keine Verwahrer in dieser Einheit. Weisen Sie zuerst jemandem in der Einheit die Rolle Verwahrer zu.",
+    "send": "Senden"
   },
   "file": {
     "aiNotRead": "Nicht gescannt",

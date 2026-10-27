@@ -64,7 +64,8 @@
       "submitted": "la envió a aprobación",
       "title": "Historial",
       "reallocated": "la reasignó",
-      "takenOver": "la asumió"
+      "takenOver": "la asumió",
+      "approvedDirectly": "la envió: aprobada sin pasos de aprobación"
     },
     "notFound": "Este registro no existe o está fuera de lo que puede ver.",
     "path": {
@@ -73,6 +74,8 @@
         "rejected": "Rechazada por {{name}} el {{time}}",
         "returned": "Devuelta por {{name}} el {{time}}"
       },
+      "noApproval": "No requiere aprobación: aprobada en cuanto se envió.",
+      "noApprovalPreview": "No requiere aprobación: se aprueba en cuanto la envíe.",
       "notSent": "Aún no enviada a aprobación.",
       "overdue": "Vencido",
       "state": {
@@ -297,6 +300,7 @@
     },
     "dueIn": "Vence en {{span}}",
     "empty": {
+      "all": "Nada le espera.",
       "decided": "Aún no ha decidido ninguna solicitud.",
       "scope": "No se han enviado solicitudes a aprobación en su ámbito.",
       "waiting": "Nada espera su decisión."
@@ -377,7 +381,8 @@
       "scope": "Todo mi ámbito",
       "waiting": "Esperan por mí",
       "cash": "Efectivo por confirmar",
-      "cashArchive": "Efectivo pagado"
+      "cashArchive": "Efectivo pagado",
+      "all": "Todas"
     },
     "views": "Vistas de la bandeja",
     "where": {
@@ -948,13 +953,15 @@
     "thresholdsValue": "Vigilancia {{watch}} % · Umbral {{near}} %",
     "title": "Asignaciones de caja chica",
     "toast": {
+      "approved": "{{reference}} se aprobó.",
       "cancelled": "{{reference}} se canceló.",
       "deleted": "Se eliminó el borrador {{reference}}.",
       "saved": "{{reference}} se guardó.",
       "submitted": "{{reference}} se envió a aprobación."
     },
     "topUpOnItsWay": "Hay {{amount}} más en camino ({{references}}) a la espera de acuse.",
-    "noCustodians": "No hay custodios en esta unidad. Asigne primero el rol Custodio a alguien de la unidad."
+    "noCustodians": "No hay custodios en esta unidad. Asigne primero el rol Custodio a alguien de la unidad.",
+    "send": "Enviar"
   },
   "file": {
     "aiNotRead": "No escaneado",

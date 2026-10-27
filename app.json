@@ -18,6 +18,7 @@
       }
     },
     "android": {
+      "package": "com.pettycashplus.app",
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
