@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Disetujui / Tersedia Saya",
         "approvedNote": "Pra-pengeluaran disetujui untuk diklaim: {{count}}",
-        "awaiting": "Menunggu persetujuan",
+        "awaiting": "Permintaan Saya dalam Persetujuan",
         "nothingReturned": "Tidak ada yang perlu diperbaiki",
         "paid": "Dibayar Bulan Ini",
         "paidNote": "Klaim dibayar: {{count}}",

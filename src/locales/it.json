@@ -39,7 +39,18 @@
     "viewClaim": "Vedi il rimborso",
     "cameraDenied": "PettyCash Plus ha bisogno della fotocamera per fotografare gli scontrini. Consentila nelle Impostazioni o scegli una foto.",
     "sampleNote": "Lettura di esempio: nella demo ogni scontrino viene letto come questo esempio, e la foto resta su questo telefono.",
-    "choosePdf": "Scegli un PDF"
+    "choosePdf": "Scegli un PDF",
+    "edit": {
+      "title": "Modifica foto",
+      "hint": "Trascina gli angoli fino alla ricevuta, o dentro la cornice per spostarla. Pizzica o tocca due volte per ingrandire.",
+      "rotateLeft": "Ruota a sinistra",
+      "rotateRight": "Ruota a destra",
+      "reset": "Ripristina",
+      "done": "Usa foto",
+      "retake": "Riscatta",
+      "straighten": "Raddrizza",
+      "undo": "Annulla"
+    }
   },
   "profile": {
     "title": "Profilo",
@@ -150,6 +161,13 @@
       "noShare": "La condivisione non è disponibile su questo dispositivo.",
       "more": "Mostra altri ({{shown}} di {{total}})"
     },
-    "offline": "Impossibile raggiungere il server. Ciò che vedi è stato caricato prima e potrebbe non essere aggiornato."
+    "offline": "Impossibile raggiungere il server. Ciò che vedi è stato caricato prima e potrebbe non essere aggiornato.",
+    "lock": {
+      "title": "Ciao di nuovo, {{name}}",
+      "hint": "Sblocca con Face ID, l'impronta digitale o il codice del telefono.",
+      "unlock": "Sblocca",
+      "prompt": "Sblocca PettyCash Plus",
+      "usePassword": "Accedi con la password"
+    }
   }
 }

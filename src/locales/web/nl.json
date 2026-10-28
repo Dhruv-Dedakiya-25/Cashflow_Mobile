@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Mijn goedgekeurd / beschikbaar",
         "approvedNote": "Goedgekeurde uitgaven vooraf om te declareren: {{count}}",
-        "awaiting": "Wacht op goedkeuring",
+        "awaiting": "Mijn aanvragen in goedkeuring",
         "nothingReturned": "Niets te corrigeren",
         "paid": "Deze maand betaald",
         "paidNote": "Betaalde declaraties: {{count}}",

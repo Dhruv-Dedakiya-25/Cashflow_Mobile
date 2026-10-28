@@ -39,7 +39,18 @@
     "viewClaim": "Voir la demande",
     "cameraDenied": "PettyCash Plus a besoin de l'appareil photo pour photographier les reçus. Autorisez-le dans les Réglages, ou choisissez plutôt une photo.",
     "sampleNote": "Lecture d'exemple : dans la démo, chaque reçu se lit comme cet exemple, et la photo reste sur ce téléphone.",
-    "choosePdf": "Choisir un PDF"
+    "choosePdf": "Choisir un PDF",
+    "edit": {
+      "title": "Modifier la photo",
+      "hint": "Faites glisser les coins jusqu'au reçu, ou le cadre pour le déplacer. Pincez ou touchez deux fois pour zoomer.",
+      "rotateLeft": "Pivoter à gauche",
+      "rotateRight": "Pivoter à droite",
+      "reset": "Réinitialiser",
+      "done": "Utiliser la photo",
+      "retake": "Reprendre",
+      "straighten": "Redresser",
+      "undo": "Annuler"
+    }
   },
   "profile": {
     "title": "Profil",
@@ -150,6 +161,13 @@
       "noShare": "Le partage n'est pas disponible sur cet appareil.",
       "more": "Afficher plus ({{shown}} sur {{total}})"
     },
-    "offline": "Impossible de joindre le serveur. Ce que vous voyez a été chargé plus tôt et n'est peut-être pas à jour."
+    "offline": "Impossible de joindre le serveur. Ce que vous voyez a été chargé plus tôt et n'est peut-être pas à jour.",
+    "lock": {
+      "title": "Bon retour, {{name}}",
+      "hint": "Déverrouillez avec Face ID, votre empreinte ou le code de votre téléphone.",
+      "unlock": "Déverrouiller",
+      "prompt": "Déverrouiller PettyCash Plus",
+      "usePassword": "Se connecter avec le mot de passe"
+    }
   }
 }

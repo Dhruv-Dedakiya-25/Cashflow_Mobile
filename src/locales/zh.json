@@ -39,7 +39,18 @@
     "viewClaim": "查看报销单",
     "cameraDenied": "PettyCash Plus 需要使用相机拍摄票据。请在设置中允许，或改为选择照片。",
     "sampleNote": "示例识别：演示版中每张票据都按此示例识别，照片只保存在本机。",
-    "choosePdf": "选择 PDF"
+    "choosePdf": "选择 PDF",
+    "edit": {
+      "title": "编辑照片",
+      "hint": "拖动四角贴合收据，或拖动框内移动它。双指张开或双击可放大。",
+      "rotateLeft": "向左旋转",
+      "rotateRight": "向右旋转",
+      "reset": "重置",
+      "done": "使用照片",
+      "retake": "重拍",
+      "straighten": "拉直",
+      "undo": "撤销"
+    }
   },
   "profile": {
     "title": "个人资料",
@@ -150,6 +161,13 @@
       "noShare": "此设备不支持分享。",
       "more": "显示更多（{{shown}} / {{total}}）"
     },
-    "offline": "无法连接服务器。当前显示的是之前加载的内容，可能不是最新的。"
+    "offline": "无法连接服务器。当前显示的是之前加载的内容，可能不是最新的。",
+    "lock": {
+      "title": "欢迎回来，{{name}}",
+      "hint": "使用面容 ID、指纹或手机密码解锁。",
+      "unlock": "解锁",
+      "prompt": "解锁 PettyCash Plus",
+      "usePassword": "改用密码登录"
+    }
   }
 }

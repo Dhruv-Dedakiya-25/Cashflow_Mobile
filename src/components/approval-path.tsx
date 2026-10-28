@@ -8,16 +8,22 @@ import { useLanguage } from '@/i18n';
 import { dateTime, nameOf, person } from '@/lib/format';
 import { space, usePalette } from '@/theme/tokens';
 
+/** A step's number as the screens show it: passed-over steps are hidden, so they are not counted. */
+export const shownStepNo = (route: RouteStep[], index: number) =>
+  route.slice(0, index + 1).filter((s) => s.state !== 'skipped').length;
+
 /** The steps a request goes through, each with who decides it and where it stands. */
 export function ApprovalPath({ route }: { route: RouteStep[] }) {
   const { t } = useTranslation();
   const palette = usePalette();
   const { language } = useLanguage();
   if (!route.length) return <AppText tone="muted">{t('web:txn.path.notSent')}</AppText>;
+  // A step the request has no use for (no project, say) is left out, as on the web.
+  const shown = route.filter((s) => s.state !== 'skipped');
 
   return (
     <View>
-      {route.map((step, i) => {
+      {shown.map((step, i) => {
         const look = {
           approved: { color: palette.success, bg: palette.successSoft, icon: IconCheck },
           pending: { color: palette.warning, bg: palette.warningSoft, icon: IconClock },
@@ -30,10 +36,9 @@ export function ApprovalPath({ route }: { route: RouteStep[] }) {
         const approvers = step.approverIds.map((id) => person(id));
         const names = approvers.map((p) => nameOf(p, language.code)).join(', ');
         const decider = person(step.approvedByIds[0] ?? step.approverIds[0]);
-        const last = i === route.length - 1;
+        const last = i === shown.length - 1;
         let note: string;
-        if (step.state === 'skipped') note = t(`web:workflow.example.why.${step.skipReason}`, { defaultValue: t('web:txn.path.state.skipped') });
-        else if ((step.state === 'approved' || step.state === 'returned' || step.state === 'rejected') && step.decidedAtUtc)
+        if ((step.state === 'approved' || step.state === 'returned' || step.state === 'rejected') && step.decidedAtUtc)
           note = t(`web:txn.path.decidedBy.${step.state}`, { name: nameOf(decider, language.code), time: dateTime(step.decidedAtUtc, language.code) });
         else if (step.state === 'pending' && step.startedAtUtc) note = t('web:txn.path.waitingSince', { time: dateTime(step.startedAtUtc, language.code), hours: step.slaHours });
         else note = t('web:txn.path.state.waiting');

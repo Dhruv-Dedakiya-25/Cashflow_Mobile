@@ -724,7 +724,7 @@
       "tile": {
         "approved": "I miei approvati / disponibili",
         "approvedNote": "Spese preventive approvate da rimborsare: {{count}}",
-        "awaiting": "In attesa di approvazione",
+        "awaiting": "Mie richieste in approvazione",
         "nothingReturned": "Niente da correggere",
         "paid": "Pagato questo mese",
         "paidNote": "Richieste pagate: {{count}}",

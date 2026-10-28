@@ -39,7 +39,18 @@
     "viewClaim": "Antrag ansehen",
     "cameraDenied": "PettyCash Plus braucht die Kamera, um Belege zu fotografieren. Erlauben Sie den Zugriff in den Einstellungen oder wählen Sie stattdessen ein Foto.",
     "sampleNote": "Beispiel-Auslesung: In der Demo wird jeder Beleg als dieses Beispiel gelesen, und das Foto bleibt auf diesem Telefon.",
-    "choosePdf": "PDF auswählen"
+    "choosePdf": "PDF auswählen",
+    "edit": {
+      "title": "Foto bearbeiten",
+      "hint": "Ziehen Sie die Ecken an den Beleg oder im Rahmen, um ihn zu verschieben. Zum Zoomen mit zwei Fingern ziehen oder doppelt tippen.",
+      "rotateLeft": "Nach links drehen",
+      "rotateRight": "Nach rechts drehen",
+      "reset": "Zurücksetzen",
+      "done": "Foto verwenden",
+      "retake": "Neu aufnehmen",
+      "straighten": "Begradigen",
+      "undo": "Rückgängig"
+    }
   },
   "profile": {
     "title": "Profil",
@@ -150,6 +161,13 @@
       "noShare": "Teilen ist auf diesem Gerät nicht verfügbar.",
       "more": "Mehr anzeigen ({{shown}} von {{total}})"
     },
-    "offline": "Der Server ist nicht erreichbar. Was Sie sehen, wurde früher geladen und ist möglicherweise nicht aktuell."
+    "offline": "Der Server ist nicht erreichbar. Was Sie sehen, wurde früher geladen und ist möglicherweise nicht aktuell.",
+    "lock": {
+      "title": "Willkommen zurück, {{name}}",
+      "hint": "Mit Face ID, Fingerabdruck oder dem Code Ihres Telefons entsperren.",
+      "unlock": "Entsperren",
+      "prompt": "PettyCash Plus entsperren",
+      "usePassword": "Stattdessen mit Passwort anmelden"
+    }
   }
 }

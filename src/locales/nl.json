@@ -39,7 +39,18 @@
     "viewClaim": "Declaratie bekijken",
     "cameraDenied": "PettyCash Plus heeft de camera nodig om bonnen te fotograferen. Sta dit toe in Instellingen, of kies een foto.",
     "sampleNote": "Voorbeeldlezing: in de demo leest elke bon als dit voorbeeld, en de foto blijft op deze telefoon.",
-    "choosePdf": "Kies een pdf"
+    "choosePdf": "Kies een pdf",
+    "edit": {
+      "title": "Foto bewerken",
+      "hint": "Sleep de hoeken naar de bon, of binnen het kader om het te verplaatsen. Knijp of tik twee keer om in te zoomen.",
+      "rotateLeft": "Linksom draaien",
+      "rotateRight": "Rechtsom draaien",
+      "reset": "Herstellen",
+      "done": "Foto gebruiken",
+      "retake": "Opnieuw",
+      "straighten": "Rechtzetten",
+      "undo": "Ongedaan maken"
+    }
   },
   "profile": {
     "title": "Profiel",
@@ -150,6 +161,13 @@
       "noShare": "Delen is op dit apparaat niet beschikbaar.",
       "more": "Meer tonen ({{shown}} van {{total}})"
     },
-    "offline": "De server is niet bereikbaar. Wat u ziet is eerder geladen en is mogelijk niet actueel."
+    "offline": "De server is niet bereikbaar. Wat u ziet is eerder geladen en is mogelijk niet actueel.",
+    "lock": {
+      "title": "Welkom terug, {{name}}",
+      "hint": "Ontgrendel met Face ID, uw vingerafdruk of de toegangscode van uw telefoon.",
+      "unlock": "Ontgrendelen",
+      "prompt": "PettyCash Plus ontgrendelen",
+      "usePassword": "Inloggen met wachtwoord"
+    }
   }
 }

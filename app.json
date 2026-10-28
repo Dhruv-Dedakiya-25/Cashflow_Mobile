@@ -55,7 +55,13 @@
       [
         "expo-secure-store",
         {
-          "faceIDPermission": false
+          "faceIDPermission": "PettyCash Plus uses Face ID to unlock the app."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "PettyCash Plus uses Face ID to unlock the app."
         }
       ],
       "expo-sharing"

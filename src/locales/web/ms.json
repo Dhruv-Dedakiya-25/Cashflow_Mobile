@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Diluluskan / Tersedia Saya",
         "approvedNote": "Pra-perbelanjaan diluluskan untuk dituntut: {{count}}",
-        "awaiting": "Menunggu kelulusan",
+        "awaiting": "Permohonan Saya dalam Kelulusan",
         "nothingReturned": "Tiada apa untuk dibetulkan",
         "paid": "Dibayar Bulan Ini",
         "paidNote": "Tuntutan dibayar: {{count}}",

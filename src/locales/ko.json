@@ -39,7 +39,18 @@
     "viewClaim": "청구 보기",
     "cameraDenied": "영수증을 촬영하려면 PettyCash Plus에 카메라 권한이 필요합니다. 설정에서 허용하거나 사진을 선택하세요.",
     "sampleNote": "샘플 판독: 데모에서는 모든 영수증이 이 샘플로 판독되며, 사진은 이 휴대폰에만 남습니다.",
-    "choosePdf": "PDF 선택"
+    "choosePdf": "PDF 선택",
+    "edit": {
+      "title": "사진 편집",
+      "hint": "모서리를 끌어 영수증에 맞추거나, 틀 안쪽을 끌어 옮기세요. 확대하려면 손가락을 벌리거나 두 번 탭하세요.",
+      "rotateLeft": "왼쪽으로 회전",
+      "rotateRight": "오른쪽으로 회전",
+      "reset": "초기화",
+      "done": "사진 사용",
+      "retake": "다시 찍기",
+      "straighten": "수평 맞추기",
+      "undo": "실행 취소"
+    }
   },
   "profile": {
     "title": "프로필",
@@ -150,6 +161,13 @@
       "noShare": "이 기기에서는 공유할 수 없습니다.",
       "more": "더 보기 ({{total}}건 중 {{shown}}건)"
     },
-    "offline": "서버에 연결할 수 없습니다. 지금 보이는 내용은 이전에 불러온 것이라 최신이 아닐 수 있습니다."
+    "offline": "서버에 연결할 수 없습니다. 지금 보이는 내용은 이전에 불러온 것이라 최신이 아닐 수 있습니다.",
+    "lock": {
+      "title": "다시 오신 것을 환영합니다, {{name}}님",
+      "hint": "Face ID, 지문 또는 휴대폰 암호로 잠금을 해제하세요.",
+      "unlock": "잠금 해제",
+      "prompt": "PettyCash Plus 잠금 해제",
+      "usePassword": "비밀번호로 로그인"
+    }
   }
 }

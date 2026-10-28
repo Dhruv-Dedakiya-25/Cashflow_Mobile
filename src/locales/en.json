@@ -41,7 +41,18 @@
     "viewClaim": "View the claim",
     "cameraDenied": "PettyCash Plus needs the camera to photograph receipts. Allow it in Settings, or choose a photo instead.",
     "sampleNote": "Sample reading: in the demo every receipt reads as this sample, and the photo stays on this phone.",
-    "choosePdf": "Choose a PDF"
+    "choosePdf": "Choose a PDF",
+    "edit": {
+      "title": "Edit photo",
+      "hint": "Drag the corners to fit the receipt, or inside the frame to move it. Pinch or double-tap to zoom.",
+      "rotateLeft": "Rotate left",
+      "rotateRight": "Rotate right",
+      "reset": "Reset",
+      "done": "Use photo",
+      "retake": "Retake",
+      "straighten": "Straighten",
+      "undo": "Undo"
+    }
   },
   "profile": {
     "title": "Profile",
@@ -152,6 +163,13 @@
       "noShare": "Sharing is not available on this device.",
       "more": "Show more ({{shown}} of {{total}})"
     },
-    "offline": "Cannot reach the server. What you see was loaded earlier and may be out of date."
+    "offline": "Cannot reach the server. What you see was loaded earlier and may be out of date.",
+    "lock": {
+      "title": "Welcome back, {{name}}",
+      "hint": "Unlock with Face ID, your fingerprint or your phone's passcode.",
+      "unlock": "Unlock",
+      "prompt": "Unlock PettyCash Plus",
+      "usePassword": "Sign in with password instead"
+    }
   }
 }

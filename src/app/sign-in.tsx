@@ -2,7 +2,7 @@ import { IconCheck, IconLock, IconShieldCheck, IconUser } from '@tabler/icons-re
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Pressable, Switch, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { AppText } from '@/components/app-text';
 import { LiveSignIn } from '@/components/live-sign-in';
@@ -28,7 +28,6 @@ function DemoSignIn() {
   const palette = usePalette();
   const { language } = useLanguage();
   const [persona, setPersona] = useState<Persona>('employee');
-  const [keepSignedIn, setKeepSignedIn] = useState(true);
   const chosen = personas.find((p) => p.persona === persona)!;
 
   const submit = () => {
@@ -69,11 +68,6 @@ function DemoSignIn() {
 
       <Field label={t('web:auth.username')} value={chosen.username} editable={false} right={<IconUser size={18} color={palette.textMuted} />} />
       <Field label={t('web:auth.password')} value="••••••••" editable={false} secureTextEntry hint={t('web:auth.passwordDemoHint')} right={<IconLock size={18} color={palette.textMuted} />} />
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <AppText>{t('web:auth.rememberMe')}</AppText>
-        <Switch value={keepSignedIn} onValueChange={setKeepSignedIn} accessibilityLabel={t('web:auth.rememberMe')} trackColor={{ true: palette.primary, false: palette.border }} />
-      </View>
 
       <Button label={t('web:auth.signInButton')} onPress={submit} />
 

@@ -724,7 +724,7 @@
       "tile": {
         "approved": "내 승인 / 사용 가능",
         "approvedNote": "청구할 승인된 사전 지출: {{count}}",
-        "awaiting": "승인 대기",
+        "awaiting": "승인 중인 내 요청",
         "nothingReturned": "수정할 항목 없음",
         "paid": "이번 달 지급",
         "paidNote": "지급된 청구: {{count}}",

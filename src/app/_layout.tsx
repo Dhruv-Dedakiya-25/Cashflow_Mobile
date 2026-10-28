@@ -10,11 +10,13 @@ import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { Platform, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import { queryClient, useLookups } from '@/api/live';
+import { clearLock, lockApplies, lockKeptSession, useLocked, watchAway } from '@/auth/lock';
 import { restoreSession } from '@/auth/session';
 import { personaFor, useAppSession } from '@/auth/use-app-session';
+import { LockScreen } from '@/components/lock-screen';
 import { StartingUp } from '@/components/starting-up';
 import { authMode } from '@/config';
 import { restoreThemeChoice, useColorScheme } from '@/hooks/use-color-scheme';
@@ -40,10 +42,16 @@ function App() {
   const palette = usePalette();
   const app = useAppSession();
   const lookups = useLookups(app.signedIn && !app.mustChangePassword);
+  const locked = useLocked();
 
+  // A kept session opens behind the lock, so nothing of it shows before Face ID or a fingerprint.
   useEffect(() => {
-    Promise.all([restoreLanguage(), restoreThemeChoice(), authMode === 'api' ? restoreSession() : undefined]).finally(() => setLanguageReady(true));
+    Promise.all([restoreLanguage(), restoreThemeChoice(), authMode === 'api' ? restoreSession().then(lockKeptSession) : undefined]).finally(() => setLanguageReady(true));
   }, []);
+  useEffect(() => (lockApplies ? watchAway() : undefined), []);
+  useEffect(() => {
+    if (!app.signedIn) clearLock();
+  }, [app.signedIn]);
 
   // Live mode: the tabs not yet on the API show the sample persona nearest the person's rights,
   // and signing out drops everything loaded for them, so the next person sees none of it.
@@ -105,6 +113,12 @@ function App() {
             </Stack.Protected>
           </Stack>
           )}
+          {/* Over the screens rather than instead of them: unlocking returns to where the person was. */}
+          {lockApplies && locked && app.user ? (
+            <View style={StyleSheet.absoluteFill}>
+              <LockScreen user={app.user} />
+            </View>
+          ) : null}
         </View>
       </View>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />

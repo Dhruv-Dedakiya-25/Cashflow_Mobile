@@ -724,7 +724,7 @@
       "tile": {
         "approved": "מאושר לי / זמין",
         "approvedNote": "הוצאות מראש מאושרות לתביעה: {{count}}",
-        "awaiting": "ממתין לאישור",
+        "awaiting": "הבקשות שלי בתהליך אישור",
         "nothingReturned": "אין מה לתקן",
         "paid": "שולם החודש",
         "paidNote": "תביעות ששולמו: {{count}}",

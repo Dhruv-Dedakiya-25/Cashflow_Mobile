@@ -2,7 +2,7 @@ import { IconEye, IconEyeOff, IconInfoCircle, IconShieldCheck } from '@tabler/ic
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Pressable, Switch, TextInput, View } from 'react-native';
+import { Pressable, TextInput, View } from 'react-native';
 
 import { AppText } from '@/components/app-text';
 import { SignInFrame } from '@/components/sign-in-frame';
@@ -18,7 +18,6 @@ export function LiveSignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [keepSignedIn, setKeepSignedIn] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const passwordInput = useRef<TextInput>(null);
@@ -29,7 +28,8 @@ export function LiveSignIn() {
     setBusy(true);
     setError(null);
     try {
-      const challenge = await login(username.trim(), password, keepSignedIn);
+      // Always kept: the app lock guards it, and signing out forgets it.
+      const challenge = await login(username.trim(), password, true);
       // Without a challenge the session has started, and the app moves on to Home by itself.
       if (challenge) router.push(challenge.kind === 'enroll' ? '/two-factor-setup' : '/two-factor');
     } catch (e) {
@@ -86,11 +86,6 @@ export function LiveSignIn() {
           </Pressable>
         }
       />
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <AppText>{t('web:auth.rememberMe')}</AppText>
-        <Switch value={keepSignedIn} onValueChange={setKeepSignedIn} accessibilityLabel={t('web:auth.rememberMe')} trackColor={{ true: palette.primary, false: palette.border }} />
-      </View>
 
       {error ? <AppText tone="danger">{error}</AppText> : null}
 

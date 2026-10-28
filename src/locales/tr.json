@@ -39,7 +39,18 @@
     "viewClaim": "Talebi görüntüle",
     "cameraDenied": "PettyCash Plus'un fiş fotoğrafı çekmek için kameraya ihtiyacı var. Ayarlar'dan izin verin veya bir fotoğraf seçin.",
     "sampleNote": "Örnek okuma: demoda her fiş bu örnek gibi okunur ve fotoğraf bu telefonda kalır.",
-    "choosePdf": "PDF seç"
+    "choosePdf": "PDF seç",
+    "edit": {
+      "title": "Fotoğrafı düzenle",
+      "hint": "Köşeleri fişe denk gelecek şekilde ya da taşımak için çerçevenin içinden sürükleyin. Yakınlaştırmak için iki parmakla açın veya iki kez dokunun.",
+      "rotateLeft": "Sola döndür",
+      "rotateRight": "Sağa döndür",
+      "reset": "Sıfırla",
+      "done": "Fotoğrafı kullan",
+      "retake": "Yeniden çek",
+      "straighten": "Düzelt",
+      "undo": "Geri al"
+    }
   },
   "profile": {
     "title": "Profil",
@@ -150,6 +161,13 @@
       "noShare": "Bu cihazda paylaşım kullanılamıyor.",
       "more": "Daha fazla göster ({{shown}} / {{total}})"
     },
-    "offline": "Sunucuya ulaşılamıyor. Gördükleriniz daha önce yüklendi ve güncel olmayabilir."
+    "offline": "Sunucuya ulaşılamıyor. Gördükleriniz daha önce yüklendi ve güncel olmayabilir.",
+    "lock": {
+      "title": "Tekrar hoş geldiniz, {{name}}",
+      "hint": "Face ID, parmak izi veya telefonunuzun şifresiyle kilidi açın.",
+      "unlock": "Kilidi aç",
+      "prompt": "PettyCash Plus kilidini aç",
+      "usePassword": "Bunun yerine parolayla oturum aç"
+    }
   }
 }

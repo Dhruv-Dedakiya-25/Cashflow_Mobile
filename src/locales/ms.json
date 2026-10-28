@@ -39,7 +39,18 @@
     "viewClaim": "Lihat tuntutan",
     "cameraDenied": "PettyCash Plus memerlukan kamera untuk mengambil gambar resit. Benarkan dalam Tetapan, atau pilih foto.",
     "sampleNote": "Bacaan contoh: dalam demo setiap resit dibaca seperti contoh ini, dan foto kekal di telefon ini.",
-    "choosePdf": "Pilih PDF"
+    "choosePdf": "Pilih PDF",
+    "edit": {
+      "title": "Sunting foto",
+      "hint": "Seret penjuru ke tepi resit, atau seret di dalam bingkai untuk mengalihkannya. Cubit atau ketik dua kali untuk zum.",
+      "rotateLeft": "Putar ke kiri",
+      "rotateRight": "Putar ke kanan",
+      "reset": "Set semula",
+      "done": "Guna foto",
+      "retake": "Ambil semula",
+      "straighten": "Luruskan",
+      "undo": "Buat asal"
+    }
   },
   "profile": {
     "title": "Profil",
@@ -150,6 +161,13 @@
       "noShare": "Perkongsian tidak tersedia pada peranti ini.",
       "more": "Tunjukkan lagi ({{shown}} daripada {{total}})"
     },
-    "offline": "Tidak dapat menghubungi pelayan. Apa yang anda lihat dimuatkan lebih awal dan mungkin tidak terkini."
+    "offline": "Tidak dapat menghubungi pelayan. Apa yang anda lihat dimuatkan lebih awal dan mungkin tidak terkini.",
+    "lock": {
+      "title": "Selamat kembali, {{name}}",
+      "hint": "Buka kunci dengan Face ID, cap jari atau kod laluan telefon anda.",
+      "unlock": "Buka kunci",
+      "prompt": "Buka kunci PettyCash Plus",
+      "usePassword": "Log masuk dengan kata laluan"
+    }
   }
 }

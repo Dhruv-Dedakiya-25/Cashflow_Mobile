@@ -724,7 +724,7 @@
       "tile": {
         "approved": "My Approved / Available",
         "approvedNote": "Approved pre-expenses to claim: {{count}}",
-        "awaiting": "Awaiting Approval",
+        "awaiting": "My Requests in Approval",
         "nothingReturned": "Nothing to correct",
         "paid": "Paid This Month",
         "paidNote": "Claims paid: {{count}}",

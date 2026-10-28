@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Onaylanan / Kullanılabilir",
         "approvedNote": "Talep edilecek onaylı harcama öncesi: {{count}}",
-        "awaiting": "Onay bekliyor",
+        "awaiting": "Onaydaki Taleplerim",
         "nothingReturned": "Düzeltilecek bir şey yok",
         "paid": "Bu ay ödenen",
         "paidNote": "Ödenen talepler: {{count}}",

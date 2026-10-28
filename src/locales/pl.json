@@ -39,7 +39,18 @@
     "viewClaim": "Zobacz wniosek",
     "cameraDenied": "PettyCash Plus potrzebuje aparatu, by fotografować paragony. Zezwól na dostęp w Ustawieniach lub wybierz zdjęcie.",
     "sampleNote": "Przykładowy odczyt: w wersji demo każdy paragon odczytuje się jak ten przykład, a zdjęcie zostaje na telefonie.",
-    "choosePdf": "Wybierz PDF"
+    "choosePdf": "Wybierz PDF",
+    "edit": {
+      "title": "Edytuj zdjęcie",
+      "hint": "Przeciągnij narożniki do krawędzi paragonu albo wnętrze ramki, aby ją przesunąć. Rozsuń palce lub stuknij dwukrotnie, aby powiększyć.",
+      "rotateLeft": "Obróć w lewo",
+      "rotateRight": "Obróć w prawo",
+      "reset": "Przywróć",
+      "done": "Użyj zdjęcia",
+      "retake": "Zrób ponownie",
+      "straighten": "Wyprostuj",
+      "undo": "Cofnij"
+    }
   },
   "profile": {
     "title": "Profil",
@@ -150,6 +161,13 @@
       "noShare": "Udostępnianie nie jest dostępne na tym urządzeniu.",
       "more": "Pokaż więcej ({{shown}} z {{total}})"
     },
-    "offline": "Brak połączenia z serwerem. Widoczne dane wczytano wcześniej i mogą być nieaktualne."
+    "offline": "Brak połączenia z serwerem. Widoczne dane wczytano wcześniej i mogą być nieaktualne.",
+    "lock": {
+      "title": "Witaj ponownie, {{name}}",
+      "hint": "Odblokuj za pomocą Face ID, odcisku palca lub kodu telefonu.",
+      "unlock": "Odblokuj",
+      "prompt": "Odblokuj PettyCash Plus",
+      "usePassword": "Zaloguj się hasłem"
+    }
   }
 }

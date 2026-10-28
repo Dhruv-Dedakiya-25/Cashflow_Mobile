@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Mes approuvés / disponibles",
         "approvedNote": "Dépenses préalables approuvées à réclamer : {{count}}",
-        "awaiting": "En attente d'approbation",
+        "awaiting": "Mes demandes en cours d'approbation",
         "nothingReturned": "Rien à corriger",
         "paid": "Payé ce mois-ci",
         "paidNote": "Demandes payées : {{count}}",

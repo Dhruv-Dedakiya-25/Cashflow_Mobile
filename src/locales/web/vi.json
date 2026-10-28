@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Đã duyệt / khả dụng của tôi",
         "approvedNote": "Khoản trước khi chi đã duyệt để hoàn ứng: {{count}}",
-        "awaiting": "Chờ phê duyệt",
+        "awaiting": "Yêu cầu của tôi đang chờ duyệt",
         "nothingReturned": "Không có gì cần sửa",
         "paid": "Đã trả tháng này",
         "paidNote": "Đề nghị đã trả: {{count}}",

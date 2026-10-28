@@ -724,7 +724,7 @@
       "tile": {
         "approved": "承認済み / 利用可能",
         "approvedNote": "精算できる承認済み事前経費：{{count}}",
-        "awaiting": "承認待ち",
+        "awaiting": "承認中の自分の申請",
         "nothingReturned": "修正するものはありません",
         "paid": "今月の支払額",
         "paidNote": "支払済みの精算: {{count}}",

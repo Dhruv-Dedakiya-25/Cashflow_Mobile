@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Meus aprovados / disponíveis",
         "approvedNote": "Pré-despesas aprovadas a reembolsar: {{count}}",
-        "awaiting": "A aguardar aprovação",
+        "awaiting": "Os meus pedidos em aprovação",
         "nothingReturned": "Nada a corrigir",
         "paid": "Pago neste mês",
         "paidNote": "Pedidos pagos: {{count}}",

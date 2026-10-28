@@ -724,7 +724,7 @@
       "tile": {
         "approved": "我的已批准 / 可用",
         "approvedNote": "待报销的已批准事前费用：{{count}}",
-        "awaiting": "等待审批",
+        "awaiting": "我的审批中申请",
         "nothingReturned": "无需修改",
         "paid": "本月已付",
         "paidNote": "已付报销单：{{count}}",

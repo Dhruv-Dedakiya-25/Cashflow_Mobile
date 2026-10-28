@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Meine genehmigten / verfügbaren",
         "approvedNote": "Genehmigte Vorab-Ausgaben zum Abrechnen: {{count}}",
-        "awaiting": "Wartet auf Genehmigung",
+        "awaiting": "Meine Anträge in Genehmigung",
         "nothingReturned": "Nichts zu korrigieren",
         "paid": "Diesen Monat gezahlt",
         "paidNote": "Gezahlte Abrechnungen: {{count}}",

@@ -2,8 +2,8 @@
  * The live session: the /api/AppAuth calls, and where each part is kept.
  *
  *   access token    -> memory only. It lasts 15 minutes and is renewed with the refresh token.
- *   refresh token   -> memory, and the Keychain or Keystore when "Keep me signed in" is on, so
- *                      the app opens signed in. Single use: every refresh replaces it.
+ *   refresh token   -> memory, and the Keychain or Keystore, so the app opens signed in behind
+ *                      the app lock (lock.ts). Single use: every refresh replaces it.
  *   trusted device  -> the Keychain or Keystore, after "Trust this device"; it skips the code
  *                      at later sign-ins until it expires, and survives signing out.
  *   signed-in user  -> AsyncStorage. Not a secret: it lets the app open offline, before the
@@ -62,6 +62,7 @@ export const useAuth = () =>
   );
 
 export const getAccessToken = () => accessToken;
+export const getAuthState = () => state;
 
 // The web build has no Keychain; live mode there keeps the tokens in memory only.
 const secure = {

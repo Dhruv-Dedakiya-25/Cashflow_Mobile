@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Mis aprobados / disponibles",
         "approvedNote": "Gastos previos aprobados por reclamar: {{count}}",
-        "awaiting": "Pendiente de aprobación",
+        "awaiting": "Mis solicitudes en aprobación",
         "nothingReturned": "Nada que corregir",
         "paid": "Pagado este mes",
         "paidNote": "Reclamaciones pagadas: {{count}}",

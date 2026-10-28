@@ -724,7 +724,7 @@
       "tile": {
         "approved": "Moje zatwierdzone / dostępne",
         "approvedNote": "Zatwierdzone wydatki wstępne do rozliczenia: {{count}}",
-        "awaiting": "Oczekuje na zatwierdzenie",
+        "awaiting": "Moje wnioski w trakcie zatwierdzania",
         "nothingReturned": "Nic do poprawienia",
         "paid": "Wypłacono w tym miesiącu",
         "paidNote": "Wypłacone rozliczenia: {{count}}",

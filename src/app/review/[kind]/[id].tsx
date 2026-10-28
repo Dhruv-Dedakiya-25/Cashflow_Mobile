@@ -8,7 +8,7 @@ import { decide as decideLive, holds, useOutcomeRead, useReview } from '@/api/li
 import type { RequestKind, RouteStep } from '@/api/types';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
-import { ApprovalPath } from '@/components/approval-path';
+import { ApprovalPath, shownStepNo } from '@/components/approval-path';
 import { FinancePanel, financeDraftOf, financeInputOf, type FinanceDraft } from '@/components/finance-panel';
 import { Page } from '@/components/page';
 import { ReceiptPaper } from '@/components/receipt-paper';
@@ -74,7 +74,7 @@ export default function ReviewScreen() {
   const settlement = draft?.settlement ?? claim?.settlement;
 
   const outcome = nextStep
-    ? t('web:approval.outcome.next', { step: request.route.indexOf(nextStep) + 1, names: nextNames })
+    ? t('web:approval.outcome.next', { step: shownStepNo(request.route, request.route.indexOf(nextStep)), names: nextNames })
     : t(kind === 'reimbursement' ? (settlement === 'salary' ? 'web:approval.outcome.salary' : 'web:approval.outcome.claim') : kind === 'preExpense' ? 'web:approval.outcome.preExpense' : 'web:approval.outcome.cash');
 
   const submit = async (action: DecisionAction) => {
@@ -138,6 +138,12 @@ export default function ReviewScreen() {
       footer={
         canDecide ? (
           <View style={{ gap: space.sm }}>
+            {/* Here, beside the buttons, and not under the reason box, which is often scrolled out of sight. */}
+            {error ? (
+              <AppText variant="small" tone="danger" accessibilityRole="alert">
+                {error}
+              </AppText>
+            ) : null}
             <Button label={t('web:approval.decision.approve')} tone="success" icon={IconCheck} loading={sending} onPress={() => submit('approve')} />
             <View style={{ flexDirection: 'row', gap: space.sm }}>
               <View style={{ flex: 1 }}>
@@ -310,7 +316,6 @@ export default function ReviewScreen() {
             value={comment}
             onChangeText={(v) => { setComment(v); setError(null); }}
             multiline
-            error={error ?? undefined}
           />
           <AppText variant="caption" tone="muted">
             {t('web:approval.decision.noMoney')}
@@ -318,7 +323,7 @@ export default function ReviewScreen() {
         </Card>
       ) : step ? (
         <AppText variant="small" tone="muted">
-          {t('web:approval.othersTurn', { names: step.approverIds.map((p) => nameOf(person(p), code)).join(', '), n: request.currentStep! + 1 })}
+          {t('web:approval.othersTurn', { names: step.approverIds.map((p) => nameOf(person(p), code)).join(', '), n: shownStepNo(request.route, request.currentStep!) })}
         </AppText>
       ) : null}
     </Page>

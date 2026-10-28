@@ -39,7 +39,18 @@
     "viewClaim": "Xem yêu cầu",
     "cameraDenied": "PettyCash Plus cần camera để chụp hóa đơn. Hãy cho phép trong Cài đặt, hoặc chọn ảnh thay thế.",
     "sampleNote": "Đọc mẫu: trong bản demo, mọi hóa đơn đều được đọc như mẫu này, và ảnh chỉ lưu trên điện thoại này.",
-    "choosePdf": "Chọn PDF"
+    "choosePdf": "Chọn PDF",
+    "edit": {
+      "title": "Chỉnh sửa ảnh",
+      "hint": "Kéo các góc cho khớp với hóa đơn, hoặc kéo bên trong khung để di chuyển. Chụm hoặc chạm hai lần để phóng to.",
+      "rotateLeft": "Xoay trái",
+      "rotateRight": "Xoay phải",
+      "reset": "Đặt lại",
+      "done": "Dùng ảnh",
+      "retake": "Chụp lại",
+      "straighten": "Làm thẳng",
+      "undo": "Hoàn tác"
+    }
   },
   "profile": {
     "title": "Hồ sơ",
@@ -150,6 +161,13 @@
       "noShare": "Thiết bị này không hỗ trợ chia sẻ.",
       "more": "Xem thêm ({{shown}} / {{total}})"
     },
-    "offline": "Không kết nối được máy chủ. Nội dung bạn thấy được tải trước đó và có thể chưa cập nhật."
+    "offline": "Không kết nối được máy chủ. Nội dung bạn thấy được tải trước đó và có thể chưa cập nhật.",
+    "lock": {
+      "title": "Chào mừng trở lại, {{name}}",
+      "hint": "Mở khóa bằng Face ID, vân tay hoặc mật mã điện thoại.",
+      "unlock": "Mở khóa",
+      "prompt": "Mở khóa PettyCash Plus",
+      "usePassword": "Đăng nhập bằng mật khẩu"
+    }
   }
 }

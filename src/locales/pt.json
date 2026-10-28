@@ -39,7 +39,18 @@
     "viewClaim": "Ver o reembolso",
     "cameraDenied": "O PettyCash Plus precisa da câmera para fotografar recibos. Permita nos Ajustes ou escolha uma foto.",
     "sampleNote": "Leitura de exemplo: na demonstração todo recibo é lido como este exemplo, e a foto fica neste telefone.",
-    "choosePdf": "Escolher um PDF"
+    "choosePdf": "Escolher um PDF",
+    "edit": {
+      "title": "Editar fotografia",
+      "hint": "Arraste os cantos até ao recibo, ou dentro da moldura para a mover. Afaste os dedos ou toque duas vezes para ampliar.",
+      "rotateLeft": "Rodar para a esquerda",
+      "rotateRight": "Rodar para a direita",
+      "reset": "Repor",
+      "done": "Usar fotografia",
+      "retake": "Repetir",
+      "straighten": "Endireitar",
+      "undo": "Anular"
+    }
   },
   "profile": {
     "title": "Perfil",
@@ -150,6 +161,13 @@
       "noShare": "O compartilhamento não está disponível neste dispositivo.",
       "more": "Mostrar mais ({{shown}} de {{total}})"
     },
-    "offline": "Não foi possível conectar ao servidor. O que você vê foi carregado antes e pode estar desatualizado."
+    "offline": "Não foi possível conectar ao servidor. O que você vê foi carregado antes e pode estar desatualizado.",
+    "lock": {
+      "title": "Olá de novo, {{name}}",
+      "hint": "Desbloqueie com Face ID, impressão digital ou o código do telemóvel.",
+      "unlock": "Desbloquear",
+      "prompt": "Desbloquear PettyCash Plus",
+      "usePassword": "Iniciar sessão com a palavra-passe"
+    }
   }
 }

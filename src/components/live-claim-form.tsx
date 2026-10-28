@@ -14,6 +14,7 @@ import type { AttachmentInfo, ClaimInput, ClaimOptions, DocumentOptions, Extract
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { Page } from '@/components/page';
+import { usePhotoEditor } from '@/components/photo-editor';
 import { isPhoto, ReceiptPhoto } from '@/components/receipt-photo';
 import { Button, Card, Chips, Field, SectionHeader } from '@/components/ui';
 import { useLanguage } from '@/i18n';
@@ -90,6 +91,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
   const { language } = useLanguage();
   const code = language.code;
   const hasFile = !!(params.uri || params.pdf);
+  const { edit, editor } = usePhotoEditor();
 
   const [stage, setStage] = useState<Stage>(hasFile ? 'preparing' : 'review');
   const [receipt, setReceipt] = useState<AttachmentInfo | undefined>(editing?.receipt);
@@ -175,16 +177,23 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
       setAttaching(false);
     }
   };
-  const photoOf = (r: ImagePicker.ImagePickerResult): Source | undefined => (r.canceled ? undefined : { uri: r.assets[0].uri, width: r.assets[0].width });
+  // A photo is cropped and turned first; Retake picks again, Cancel attaches nothing.
+  const photoOf = async (launch: () => Promise<ImagePicker.ImagePickerResult>): Promise<Source | undefined> => {
+    const photo = await edit(async () => {
+      const r = await launch();
+      return r.canceled ? undefined : r.assets[0];
+    });
+    return photo && { uri: photo.uri, width: photo.width };
+  };
   const takePhoto = () =>
     attach(async () => {
       if (!(await ImagePicker.requestCameraPermissionsAsync()).granted) {
         setCameraDenied(true);
         return undefined;
       }
-      return photoOf(await ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] }));
+      return photoOf(() => ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] }));
     });
-  const choosePhoto = () => attach(async () => photoOf(await ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] })));
+  const choosePhoto = () => attach(() => photoOf(() => ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] })));
   const choosePdf = () =>
     attach(async () => {
       const r = await DocumentPicker.getDocumentAsync({ type: 'application/pdf', copyToCacheDirectory: true });
@@ -402,6 +411,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
           </Card>
         </>
       )}
+      {editor}
     </Page>
   );
 }

@@ -8,6 +8,7 @@ import { Pressable, View } from 'react-native';
 
 import { useDocumentOptions } from '@/api/live';
 import { AppText } from '@/components/app-text';
+import { usePhotoEditor, type Photo } from '@/components/photo-editor';
 import { Screen } from '@/components/screen';
 import { Card } from '@/components/ui';
 import { authMode } from '@/config';
@@ -60,20 +61,26 @@ export default function ScanScreen() {
   const documents = useDocumentOptions();
   const aiReads = authMode === 'api' ? !!documents.data?.extractionEnabled : true;
 
-  const open = (photo?: ImagePicker.ImagePickerAsset) =>
+  const { edit, editor } = usePhotoEditor();
+  const open = (photo?: Photo) =>
     router.push({ pathname: '/scan-review', params: photo ? { uri: photo.uri, width: String(photo.width) } : { sample: '1' } });
+
+  // A photo is cropped and turned before AI reads it; Retake picks again, Cancel goes nowhere.
+  const editThenOpen = async (launch: () => Promise<ImagePicker.ImagePickerResult>) => {
+    const photo = await edit(async () => {
+      const result = await launch();
+      return result.canceled ? undefined : result.assets[0];
+    });
+    if (photo) open(photo);
+  };
 
   const takePhoto = async () => {
     const permission = await ImagePicker.requestCameraPermissionsAsync();
     if (!permission.granted) return setDenied(true);
-    const result = await ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] });
-    if (!result.canceled) open(result.assets[0]);
+    await editThenOpen(() => ImagePicker.launchCameraAsync({ quality: 0.8, mediaTypes: ['images'] }));
   };
 
-  const choosePhoto = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] });
-    if (!result.canceled) open(result.assets[0]);
-  };
+  const choosePhoto = () => editThenOpen(() => ImagePicker.launchImageLibraryAsync({ quality: 0.8, mediaTypes: ['images'] }));
 
   // A PDF bill is stored as it is; AI reads photos only, so its details are typed in.
   const choosePdf = async () => {
@@ -116,6 +123,7 @@ export default function ScanScreen() {
         ))}
       </Card>
 
+      {editor}
     </Screen>
   );
 }
