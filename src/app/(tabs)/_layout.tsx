@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { holds, useAcknowledgements, useInbox, useMyDashboard } from '@/api/live';
-import { useAppSession } from '@/auth/use-app-session';
+import { useAppSession, useApproves } from '@/auth/use-app-session';
 import { ScanButton, TabButton } from '@/components/tab-buttons';
 import { useLanguage } from '@/i18n';
 import { acksFor, inboxFor, useMockState, useSession } from '@/mock/store';
@@ -34,24 +34,29 @@ export default function TabLayout() {
     ? (inbox.data?.filter((i) => i.canDecide || i.outcomeUnread).length ?? 0) + (acks.data?.filter((a) => a.recipientId === user.employeeId && !a.acknowledgement).length ?? 0)
     : inboxFor(state, personId).length + acksFor(state, personId).length;
 
-  const tabs = [
+  const home = (
     <TabTrigger key="home" name="home" href="/" asChild>
       <TabButton icon={IconHome} label={t('tabs.home')} />
-    </TabTrigger>,
+    </TabTrigger>
+  );
+  const claims = (
     <TabTrigger key="claims" name="claims" href="/claims" asChild>
       <TabButton icon={IconReceipt} label={t('tabs.claims')} />
-    </TabTrigger>,
-    showInbox ? (
-      <TabTrigger key="inbox" name="inbox" href="/inbox" asChild>
-        <TabButton icon={IconInbox} label={t('tabs.inbox')} badge={waiting} />
-      </TabTrigger>
-    ) : null,
-    showReports ? (
-      <TabTrigger key="reports" name="reports" href="/reports" asChild>
-        <TabButton icon={IconChartBar} label={t('tabs.reports')} />
-      </TabTrigger>
-    ) : null,
-  ].filter(Boolean);
+    </TabTrigger>
+  );
+  const inboxTab = showInbox ? (
+    <TabTrigger key="inbox" name="inbox" href="/inbox" asChild>
+      <TabButton icon={IconInbox} label={t('tabs.inbox')} badge={waiting} />
+    </TabTrigger>
+  ) : null;
+  const reports = showReports ? (
+    <TabTrigger key="reports" name="reports" href="/reports" asChild>
+      <TabButton icon={IconChartBar} label={t('tabs.reports')} />
+    </TabTrigger>
+  ) : null;
+  // An approver's work starts in the Inbox, so it comes straight after Home; for everyone else, their claims do.
+  const approves = useApproves();
+  const tabs = (approves ? [home, inboxTab, claims, reports] : [home, claims, inboxTab, reports]).filter(Boolean);
   // Submit Bill sits in the middle: second of three, third of four or five.
   tabs.splice(Math.floor((tabs.length + 1) / 2), 0, (
     <TabTrigger key="scan" name="scan" href="/scan" asChild>

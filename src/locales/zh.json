@@ -12,7 +12,9 @@
     "ofFloats": "共 {{amount}} · 拨付 {{count}} 笔",
     "ofFloat": "共 {{amount}}",
     "seeAll": "查看全部拨付",
-    "team": "您所在单位的备用金"
+    "team": "您所在单位的备用金",
+    "decisions": "等待我决定",
+    "inApproval": "我的审批中申请（{{count}}）"
   },
   "settings": {
     "language": "语言",

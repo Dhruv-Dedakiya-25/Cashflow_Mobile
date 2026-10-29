@@ -12,7 +12,9 @@
     "ofFloats": "از {{amount}} · تخصیص‌ها: {{count}}",
     "ofFloat": "از {{amount}}",
     "seeAll": "دیدن همه تخصیص‌ها",
-    "team": "تنخواه در واحدهای شما"
+    "team": "تنخواه در واحدهای شما",
+    "decisions": "در انتظار تصمیم من",
+    "inApproval": "درخواست‌های من در حال تأیید ({{count}})"
   },
   "settings": {
     "language": "زبان",

@@ -12,7 +12,9 @@
     "ofFloats": "su {{amount}} · Assegnazioni: {{count}}",
     "ofFloat": "su {{amount}}",
     "seeAll": "Vedi tutte le assegnazioni",
-    "team": "Piccola cassa nelle tue unità"
+    "team": "Piccola cassa nelle tue unità",
+    "decisions": "In attesa della mia decisione",
+    "inApproval": "Mie richieste in approvazione ({{count}})"
   },
   "settings": {
     "language": "Lingua",

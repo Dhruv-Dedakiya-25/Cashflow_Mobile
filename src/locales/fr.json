@@ -12,7 +12,9 @@
     "ofFloats": "sur {{amount}} · Allocations : {{count}}",
     "ofFloat": "sur {{amount}}",
     "seeAll": "Voir toutes les allocations",
-    "team": "Petite caisse de vos unités"
+    "team": "Petite caisse de vos unités",
+    "decisions": "En attente de ma décision",
+    "inApproval": "Mes demandes en cours d'approbation ({{count}})"
   },
   "settings": {
     "language": "Langue",

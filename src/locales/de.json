@@ -12,7 +12,9 @@
     "ofFloats": "von {{amount}} · Zuweisungen: {{count}}",
     "ofFloat": "von {{amount}}",
     "seeAll": "Alle Zuweisungen ansehen",
-    "team": "Handkasse in Ihren Einheiten"
+    "team": "Handkasse in Ihren Einheiten",
+    "decisions": "Wartet auf meine Entscheidung",
+    "inApproval": "Meine Anträge in Genehmigung ({{count}})"
   },
   "settings": {
     "language": "Sprache",

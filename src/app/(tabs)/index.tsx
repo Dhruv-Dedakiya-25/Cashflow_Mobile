@@ -1,11 +1,11 @@
-import { IconAlertTriangle, IconChevronLeft, IconChevronRight, IconClock, IconCoins, IconInbox } from '@tabler/icons-react-native';
+import { IconAlertTriangle, IconChevronLeft, IconChevronRight, IconClock, IconCoins, IconHourglassHigh, IconInbox } from '@tabler/icons-react-native';
 import { router } from 'expo-router';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 
 import { useClaims, useMyDashboard } from '@/api/live';
-import { useAppSession } from '@/auth/use-app-session';
+import { useAppSession, useApproves } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ClaimRow } from '@/components/claim-row';
 import { MonthBars } from '@/components/month-bars';
@@ -17,11 +17,11 @@ import { accountOf, amount, nameOf, omr, percent, person, unit } from '@/lib/for
 import { myDashboard, useMockState, useSession } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
-function Tile({ label, value, note, tone }: { label: string; value: string; note: string; tone?: 'warning' | 'danger' | 'primary' }) {
+function Tile({ label, value, note, tone, onPress }: { label: string; value: string; note: string; tone?: 'warning' | 'danger' | 'primary'; onPress?: () => void }) {
   const palette = usePalette();
   const accent = tone === 'warning' ? palette.warning : tone === 'danger' ? palette.danger : tone === 'primary' ? palette.primary : palette.text;
   return (
-    <Card style={{ flex: 1, gap: 4, padding: space.md }}>
+    <Card onPress={onPress} style={{ flex: 1, gap: 4, padding: space.md }}>
       <AppText variant="caption" tone="secondary" numberOfLines={2}>
         {label}
       </AppText>
@@ -63,6 +63,7 @@ export default function HomeScreen() {
   const state = useMockState();
   const { personId } = useSession();
   const { user } = useAppSession();
+  const approves = useApproves();
   // Live: the person's own dashboard from the API; demo: the same figures worked out from the sample.
   const myQuery = useMyDashboard();
   // The dashboard's recent requests carry no category; the claims list does, for the icon.
@@ -117,8 +118,20 @@ export default function HomeScreen() {
         </AppText>
       </View>
 
+      {/* An approver sees what waits for them (0 when the API sends nothing) beside what came back to them,
+          and their own requests below; everyone else keeps their own requests in the tile. */}
       <View style={{ flexDirection: 'row', gap: space.md }}>
-        <Tile label={t('web:dash.my.tile.awaiting')} value={String(dash.awaitingCount)} note={omr(dash.awaitingAmount, language.code)} tone="warning" />
+        {approves ? (
+          <Tile
+            label={t('home.decisions')}
+            value={String(dash.approvals?.total ?? 0)}
+            note={dash.approvals?.overdue ? t('web:dash.my.overdue', { count: dash.approvals.overdue }) : t('web:dash.my.openInbox')}
+            tone={dash.approvals?.overdue ? 'danger' : 'primary'}
+            onPress={() => router.navigate('/inbox')}
+          />
+        ) : (
+          <Tile label={t('web:dash.my.tile.awaiting')} value={String(dash.awaitingCount)} note={omr(dash.awaitingAmount, language.code)} tone="warning" />
+        )}
         <Tile
           label={t('web:dash.my.tile.returned')}
           value={String(dash.returnedCount)}
@@ -127,13 +140,13 @@ export default function HomeScreen() {
         />
       </View>
 
-      {dash.approvals && dash.approvals.total > 0 ? (
+      {approves ? (
         <ActionRow
-          icon={IconInbox}
-          tone={palette.primary}
-          title={t('web:dash.my.decisionsTitle', { count: dash.approvals.total })}
-          note={dash.approvals.overdue ? t('web:dash.my.overdue', { count: dash.approvals.overdue }) : t('web:dash.my.openInbox')}
-          onPress={() => router.navigate('/inbox')}
+          icon={IconHourglassHigh}
+          tone={palette.warning}
+          title={t('home.inApproval', { count: dash.awaitingCount })}
+          note={omr(dash.awaitingAmount, language.code)}
+          onPress={() => router.navigate('/claims')}
         />
       ) : null}
 

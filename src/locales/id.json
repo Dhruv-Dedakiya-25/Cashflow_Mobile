@@ -12,7 +12,9 @@
     "ofFloats": "dari {{amount}} · Alokasi: {{count}}",
     "ofFloat": "dari {{amount}}",
     "seeAll": "Lihat semua alokasi",
-    "team": "Kas kecil di unit Anda"
+    "team": "Kas kecil di unit Anda",
+    "decisions": "Menunggu Keputusan Saya",
+    "inApproval": "Permintaan Saya dalam Persetujuan ({{count}})"
   },
   "settings": {
     "language": "Bahasa",

@@ -12,7 +12,9 @@
     "ofFloats": "trên {{amount}} · Phân bổ: {{count}}",
     "ofFloat": "trên {{amount}}",
     "seeAll": "Xem tất cả phân bổ",
-    "team": "Quỹ tiền mặt nhỏ của đơn vị bạn"
+    "team": "Quỹ tiền mặt nhỏ của đơn vị bạn",
+    "decisions": "Chờ tôi quyết định",
+    "inApproval": "Yêu cầu của tôi đang chờ duyệt ({{count}})"
   },
   "settings": {
     "language": "Ngôn ngữ",

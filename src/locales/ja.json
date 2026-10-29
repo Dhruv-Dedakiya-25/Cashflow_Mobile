@@ -12,7 +12,9 @@
     "ofFloats": "{{amount}} 中 · 配分 {{count}} 件",
     "ofFloat": "{{amount}} 中",
     "seeAll": "すべての配分を見る",
-    "team": "担当部門の小口現金"
+    "team": "担当部門の小口現金",
+    "decisions": "私の判断待ち",
+    "inApproval": "承認中の自分の申請（{{count}}）"
   },
   "settings": {
     "language": "言語",

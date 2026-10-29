@@ -12,7 +12,9 @@
     "ofFloats": "de {{amount}} · Alocações: {{count}}",
     "ofFloat": "de {{amount}}",
     "seeAll": "Ver todas as alocações",
-    "team": "Caixa pequeno das suas unidades"
+    "team": "Caixa pequeno das suas unidades",
+    "decisions": "Aguardando minha decisão",
+    "inApproval": "Os meus pedidos em aprovação ({{count}})"
   },
   "settings": {
     "language": "Idioma",

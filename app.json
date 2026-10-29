@@ -9,6 +9,8 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "bundleIdentifier": "om.co.sactech.cashflow",
+      "supportsTablet": true,
+      "requireFullScreen": true,
       "icon": {
         "light": "./assets/images/icon.png",
         "dark": "./assets/images/icon-dark.png"

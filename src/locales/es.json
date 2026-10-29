@@ -12,7 +12,9 @@
     "ofFloats": "de {{amount}} · Asignaciones: {{count}}",
     "ofFloat": "de {{amount}}",
     "seeAll": "Ver todas las asignaciones",
-    "team": "Caja chica de sus unidades"
+    "team": "Caja chica de sus unidades",
+    "decisions": "Esperando mi decisión",
+    "inApproval": "Mis solicitudes en aprobación ({{count}})"
   },
   "settings": {
     "language": "Idioma",

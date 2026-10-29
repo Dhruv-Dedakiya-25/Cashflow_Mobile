@@ -12,7 +12,9 @@
     "ofFloats": "{{amount}} içinden · Tahsis: {{count}}",
     "ofFloat": "{{amount}} içinden",
     "seeAll": "Tüm tahsisleri gör",
-    "team": "Birimlerinizdeki küçük kasa"
+    "team": "Birimlerinizdeki küçük kasa",
+    "decisions": "Kararımı Bekleyen",
+    "inApproval": "Onaydaki Taleplerim ({{count}})"
   },
   "settings": {
     "language": "Dil",

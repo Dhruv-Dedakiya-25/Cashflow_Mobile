@@ -23,3 +23,10 @@ export function useAppSession() {
   }
   return { starting: false, signedIn: !!session, user: undefined, mustChangePassword: false };
 }
+
+/** Whether the person decides requests: the live user's role, or any demo persona but the employee. */
+export function useApproves() {
+  const { user } = useAppSession();
+  const { session } = useMockState();
+  return user ? holds(user, 'ApprovalInbox') : !!session && session.persona !== 'employee';
+}

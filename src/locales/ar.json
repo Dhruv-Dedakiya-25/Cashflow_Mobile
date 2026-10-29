@@ -12,7 +12,9 @@
     "ofFloats": "من {{amount}} · العُهد: {{count}}",
     "ofFloat": "من {{amount}}",
     "seeAll": "عرض كل المخصصات",
-    "team": "العهدة النقدية في وحداتك"
+    "team": "العهدة النقدية في وحداتك",
+    "decisions": "بانتظار قراري",
+    "inApproval": "طلباتي قيد الموافقة ({{count}})"
   },
   "settings": {
     "language": "اللغة",

@@ -12,7 +12,9 @@
     "ofFloats": "van {{amount}} · Toewijzingen: {{count}}",
     "ofFloat": "van {{amount}}",
     "seeAll": "Alle toewijzingen bekijken",
-    "team": "Kleine kas in uw eenheden"
+    "team": "Kleine kas in uw eenheden",
+    "decisions": "Wacht op mijn beslissing",
+    "inApproval": "Mijn aanvragen in goedkeuring ({{count}})"
   },
   "settings": {
     "language": "Taal",

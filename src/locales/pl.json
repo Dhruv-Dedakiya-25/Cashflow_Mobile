@@ -12,7 +12,9 @@
     "ofFloats": "z {{amount}} · Przydziały: {{count}}",
     "ofFloat": "z {{amount}}",
     "seeAll": "Zobacz wszystkie przydziały",
-    "team": "Kasa podręczna w Twoich jednostkach"
+    "team": "Kasa podręczna w Twoich jednostkach",
+    "decisions": "Czeka na moją decyzję",
+    "inApproval": "Moje wnioski w trakcie zatwierdzania ({{count}})"
   },
   "settings": {
     "language": "Język",

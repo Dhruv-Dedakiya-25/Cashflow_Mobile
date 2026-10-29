@@ -13,7 +13,9 @@
     "ofFloats_one": "of {{amount}} in {{count}} allocation",
     "ofFloat": "of {{amount}}",
     "seeAll": "See every allocation",
-    "team": "Petty cash in your units"
+    "team": "Petty cash in your units",
+    "decisions": "Waiting for My Decision",
+    "inApproval": "My Requests in Approval ({{count}})"
   },
   "settings": {
     "language": "Language",

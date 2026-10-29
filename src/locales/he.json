@@ -12,7 +12,9 @@
     "ofFloats": "מתוך {{amount}} · הקצאות: {{count}}",
     "ofFloat": "מתוך {{amount}}",
     "seeAll": "כל ההקצאות",
-    "team": "קופה קטנה ביחידות שלך"
+    "team": "קופה קטנה ביחידות שלך",
+    "decisions": "ממתין להחלטתי",
+    "inApproval": "הבקשות שלי בתהליך אישור ({{count}})"
   },
   "settings": {
     "language": "שפה",

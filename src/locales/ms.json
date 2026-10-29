@@ -12,7 +12,9 @@
     "ofFloats": "daripada {{amount}} · Peruntukan: {{count}}",
     "ofFloat": "daripada {{amount}}",
     "seeAll": "Lihat semua peruntukan",
-    "team": "Tunai runcit dalam unit anda"
+    "team": "Tunai runcit dalam unit anda",
+    "decisions": "Menunggu Keputusan Saya",
+    "inApproval": "Permohonan Saya dalam Kelulusan ({{count}})"
   },
   "settings": {
     "language": "Bahasa",

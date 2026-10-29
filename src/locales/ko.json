@@ -12,7 +12,9 @@
     "ofFloats": "{{amount}} 중 · 배정 {{count}}건",
     "ofFloat": "{{amount}} 중",
     "seeAll": "모든 배정 보기",
-    "team": "담당 부서의 소액 현금"
+    "team": "담당 부서의 소액 현금",
+    "decisions": "나의 결정 대기",
+    "inApproval": "승인 중인 내 요청 ({{count}})"
   },
   "settings": {
     "language": "언어",
