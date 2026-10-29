@@ -6,7 +6,7 @@ import { ActivityIndicator, View } from 'react-native';
 
 import { decide as decideLive, holds, useOutcomeRead, useReview } from '@/api/live';
 import type { RequestKind, RouteStep } from '@/api/types';
-import { useAppSession } from '@/auth/use-app-session';
+import { useAppSession, useApproves } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath, shownStepNo } from '@/components/approval-path';
 import { FinancePanel, financeDraftOf, financeInputOf, type FinanceDraft } from '@/components/finance-panel';
@@ -15,7 +15,7 @@ import { ReceiptPaper } from '@/components/receipt-paper';
 import { ReceiptPhoto } from '@/components/receipt-photo';
 import { Avatar, Button, Card, DetailRow, Field, Pill, SectionHeader } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { category, dateTime, longDate, nameOf, omr, person, providerName, unit, vendor } from '@/lib/format';
+import { category, dateTime, longDate, nameOf, omr, person, unit, vendor } from '@/lib/format';
 import { decide, useMockState, useSession, type DecisionAction } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -27,6 +27,7 @@ export default function ReviewScreen() {
   const code = language.code;
   const state = useMockState();
   const { personId, persona } = useSession();
+  const approves = useApproves();
   const [comment, setComment] = useState('');
   const [error, setError] = useState<string | null>(null);
   // What happened, worked out when deciding: afterwards the request has already moved on.
@@ -265,7 +266,7 @@ export default function ReviewScreen() {
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, paddingBottom: space.sm }}>
               <IconSparkles size={18} color={palette.primary} />
               <AppText variant="small" tone="primary">
-                {t('web:scan.readBy', { provider: providerName(claim.extraction.provider) })} · {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
+                {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
               </AppText>
             </View>
           ) : null}
@@ -290,10 +291,12 @@ export default function ReviewScreen() {
         </Card>
       ) : null}
 
-      <Card>
-        <SectionHeader title={t('web:txn.path.title')} />
-        <ApprovalPath route={request.route} />
-      </Card>
+      {approves ? (
+        <Card>
+          <SectionHeader title={t('web:txn.path.title')} />
+          <ApprovalPath route={request.route} />
+        </Card>
+      ) : null}
 
       {draft ? (
         <FinancePanel

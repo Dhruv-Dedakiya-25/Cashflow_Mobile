@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, View } from 'react-native';
 
 import { useClaim, useOutcomeRead } from '@/api/live';
-import { useAppSession } from '@/auth/use-app-session';
+import { useAppSession, useApproves } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
 import { ApprovalPath } from '@/components/approval-path';
 import { CategoryIcon } from '@/components/claim-row';
@@ -13,7 +13,7 @@ import { ReceiptPaper } from '@/components/receipt-paper';
 import { ReceiptPhoto } from '@/components/receipt-photo';
 import { Button, Card, DetailRow, SectionHeader, StatusPill } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { category, dateTime, longDate, nameOf, omr, person, providerName, unit, vendor } from '@/lib/format';
+import { category, dateTime, longDate, nameOf, omr, person, unit, vendor } from '@/lib/format';
 import { useMockState } from '@/mock/store';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -24,6 +24,7 @@ export default function ClaimScreen() {
   const { language } = useLanguage();
   const { claims } = useMockState();
   const { user } = useAppSession();
+  const approves = useApproves();
   const live = useClaim(id);
   useOutcomeRead('reimbursement', live.data?.id, live.data?.status);
   const claim = user ? live.data : claims.find((c) => c.id === id);
@@ -93,7 +94,7 @@ export default function ClaimScreen() {
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
               <IconSparkles size={18} color={palette.primary} />
               <AppText variant="small" tone="primary">
-                {t('web:scan.readBy', { provider: providerName(claim.extraction.provider) })} · {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
+                {t('web:scan.aiConfidence', { confidence: Math.round(claim.extraction.confidence) })}
               </AppText>
             </View>
           ) : null}
@@ -116,32 +117,37 @@ export default function ClaimScreen() {
         {claim.payment ? <DetailRow label={t('web:reimb.amount.paid')} value={`${claim.payment.voucherNo} · ${longDate(claim.payment.paidOn, code)}`} /> : null}
       </Card>
 
-      <Card>
-        <SectionHeader title={t('web:txn.path.title')} />
-        <ApprovalPath route={claim.route} />
-      </Card>
+      {/* Someone who only raises their own requests sees where it stands, not its route and history. */}
+      {approves ? (
+        <Card>
+          <SectionHeader title={t('web:txn.path.title')} />
+          <ApprovalPath route={claim.route} />
+        </Card>
+      ) : null}
 
-      <Card style={{ gap: space.sm }}>
-        <SectionHeader title={t('web:txn.history.title')} />
-        {[...claim.history].reverse().map((h) => (
-          <View key={h.id} style={{ gap: 2, paddingVertical: space.xs }}>
-            <AppText variant="small">
-              <AppText variant="small" weight="semibold">
-                {nameOf(person(h.actorId), code)}
-              </AppText>{' '}
-              {t(`web:txn.history.${h.action}`)}
-            </AppText>
-            {h.comment ? (
-              <AppText variant="small" tone="secondary">
-                “{h.comment}”
+      {approves ? (
+        <Card style={{ gap: space.sm }}>
+          <SectionHeader title={t('web:txn.history.title')} />
+          {[...claim.history].reverse().map((h) => (
+            <View key={h.id} style={{ gap: 2, paddingVertical: space.xs }}>
+              <AppText variant="small">
+                <AppText variant="small" weight="semibold">
+                  {nameOf(person(h.actorId), code)}
+                </AppText>{' '}
+                {t(`web:txn.history.${h.action}`)}
               </AppText>
-            ) : null}
-            <AppText variant="caption" tone="muted">
-              {dateTime(h.atUtc, code)}
-            </AppText>
-          </View>
-        ))}
-      </Card>
+              {h.comment ? (
+                <AppText variant="small" tone="secondary">
+                  “{h.comment}”
+                </AppText>
+              ) : null}
+              <AppText variant="caption" tone="muted">
+                {dateTime(h.atUtc, code)}
+              </AppText>
+            </View>
+          ))}
+        </Card>
+      ) : null}
     </Page>
   );
 }

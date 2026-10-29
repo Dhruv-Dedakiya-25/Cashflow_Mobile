@@ -63,7 +63,13 @@
     "theme": "Weergave",
     "themeAuto": "Automatisch",
     "themeLight": "Licht",
-    "themeDark": "Donker"
+    "themeDark": "Donker",
+    "lock": {
+      "title": "Ontgrendelen met Face ID of vingerafdruk",
+      "onHint": "Gevraagd bij het openen van de app en na 5 minuten weg.",
+      "offHint": "Uit: u logt elke keer dat u de app opent in met uw wachtwoord.",
+      "unavailable": "Stel Face ID, een vingerafdruk of een toegangscode in op deze telefoon om dit te gebruiken."
+    }
   },
   "inbox": {
     "submitted": "{{time}} geleden verstuurd"

@@ -63,7 +63,13 @@
     "theme": "Tampilan",
     "themeAuto": "Otomatis",
     "themeLight": "Terang",
-    "themeDark": "Gelap"
+    "themeDark": "Gelap",
+    "lock": {
+      "title": "Buka dengan Face ID atau sidik jari",
+      "onHint": "Diminta saat membuka aplikasi dan setelah 5 menit ditinggal.",
+      "offHint": "Mati: Anda masuk dengan kata sandi setiap kali membuka aplikasi.",
+      "unavailable": "Atur Face ID, sidik jari, atau kode sandi di ponsel ini untuk menggunakannya."
+    }
   },
   "inbox": {
     "submitted": "Dikirim {{time}} lalu"

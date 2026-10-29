@@ -24,9 +24,15 @@ export function useAppSession() {
   return { starting: false, signedIn: !!session, user: undefined, mustChangePassword: false };
 }
 
-/** Whether the person decides requests: the live user's role, or any demo persona but the employee. */
+/** Kinds of request someone may decide, by the right that decides them, as on the web. */
+const DECIDING_MODULES = ['Allocations', 'AdditionalCash', 'PreExpense', 'Reimbursements', 'Reallocations'];
+
+/**
+ * Whether the person decides requests of any kind: the live user's role, or any demo persona but
+ * the employee. The Inbox right alone is not enough: employees hold it to see what came back to them.
+ */
 export function useApproves() {
   const { user } = useAppSession();
   const { session } = useMockState();
-  return user ? holds(user, 'ApprovalInbox') : !!session && session.persona !== 'employee';
+  return user ? DECIDING_MODULES.some((m) => holds(user, m, 'approve')) : !!session && session.persona !== 'employee';
 }

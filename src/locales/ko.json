@@ -63,7 +63,13 @@
     "theme": "화면 모드",
     "themeAuto": "자동",
     "themeLight": "라이트",
-    "themeDark": "다크"
+    "themeDark": "다크",
+    "lock": {
+      "title": "Face ID 또는 지문으로 잠금 해제",
+      "onHint": "앱을 열 때와 5분 이상 자리를 비운 뒤에 요청합니다.",
+      "offHint": "끔: 앱을 열 때마다 비밀번호로 로그인합니다.",
+      "unavailable": "사용하려면 이 휴대폰에 Face ID, 지문 또는 암호를 설정하세요."
+    }
   },
   "inbox": {
     "submitted": "{{time}} 전 제출"

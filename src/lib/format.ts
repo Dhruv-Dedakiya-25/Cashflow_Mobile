@@ -22,9 +22,6 @@ export function amount(value: number, code: string): string {
 
 export const omr = (value: number, code: string) => `OMR ${amount(value, code)}`;
 
-/** The AI provider as the API names it ("gemini"), as people know it. */
-export const providerName = (provider: string) => ({ gemini: 'Google Gemini', ollama: 'Ollama' })[provider.toLowerCase()] ?? provider;
-
 /** A share to one decimal, as the web shows it: 8.716… becomes 8.7%. */
 export const percent = (value: number, code: string) => {
   try {

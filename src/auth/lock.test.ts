@@ -4,8 +4,12 @@ import { AppState, type AppStateStatus } from 'react-native';
 
 import { getAuthState, signOutHere } from '@/auth/session';
 
-import { AWAY_MS, clearLock, isLocked, lockKeptSession, unlock, watchAway } from './lock';
+import { AWAY_MS, clearLock, isLocked, lockKeptSession, setLockEnabled, unlock, watchAway } from './lock';
 
+jest.mock('@react-native-async-storage/async-storage', () => {
+  const saved = new Map<string, string>();
+  return { __esModule: true, default: { getItem: async (k: string) => saved.get(k) ?? null, setItem: async (k: string, v: string) => void saved.set(k, v) } };
+});
 jest.mock('@/config', () => ({ authMode: 'api', apiBaseUrl: '' }));
 jest.mock('@/auth/session', () => ({ getAuthState: jest.fn(), signOutHere: jest.fn(async () => undefined) }));
 jest.mock('expo-local-authentication', () => ({
@@ -68,5 +72,24 @@ describe('app lock', () => {
     await new Promise((r) => setTimeout(r, 0));
     expect(isLocked()).toBe(true);
     clock.mockRestore();
+  });
+
+  it('lets the person turn the lock off: a fresh open then asks for the password', async () => {
+    level.mockResolvedValue(LocalAuthentication.SecurityLevel.BIOMETRIC_STRONG);
+    expect(await setLockEnabled(false, 'Unlock', 'Cancel')).toBe(true);
+    await lockKeptSession();
+    expect(isLocked()).toBe(false);
+    expect(signOutHere).toHaveBeenCalled();
+
+    // Turning it back on needs Face ID or a fingerprint to succeed first.
+    jest.mocked(LocalAuthentication.authenticateAsync).mockResolvedValue({ success: false, error: 'user_cancel' });
+    expect(await setLockEnabled(true, 'Unlock', 'Cancel')).toBe(false);
+    await lockKeptSession();
+    expect(isLocked()).toBe(false);
+
+    jest.mocked(LocalAuthentication.authenticateAsync).mockResolvedValue({ success: true });
+    expect(await setLockEnabled(true, 'Unlock', 'Cancel')).toBe(true);
+    await lockKeptSession();
+    expect(isLocked()).toBe(true);
   });
 });

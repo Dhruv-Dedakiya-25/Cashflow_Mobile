@@ -63,7 +63,13 @@
     "theme": "Aspetto",
     "themeAuto": "Automatico",
     "themeLight": "Chiaro",
-    "themeDark": "Scuro"
+    "themeDark": "Scuro",
+    "lock": {
+      "title": "Sblocca con Face ID o impronta",
+      "onHint": "Richiesto all'apertura dell'app e dopo 5 minuti di assenza.",
+      "offHint": "Disattivato: accedi con la password ogni volta che apri l'app.",
+      "unavailable": "Configura Face ID, un'impronta o un codice su questo telefono per usarlo."
+    }
   },
   "inbox": {
     "submitted": "Inviato {{time}} fa"

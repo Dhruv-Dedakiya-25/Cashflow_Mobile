@@ -63,7 +63,13 @@
     "theme": "Darstellung",
     "themeAuto": "Automatisch",
     "themeLight": "Hell",
-    "themeDark": "Dunkel"
+    "themeDark": "Dunkel",
+    "lock": {
+      "title": "Mit Face ID oder Fingerabdruck entsperren",
+      "onHint": "Wird beim Öffnen der App und nach 5 Minuten Abwesenheit abgefragt.",
+      "offHint": "Aus: Sie melden sich bei jedem Öffnen der App mit Ihrem Passwort an.",
+      "unavailable": "Richten Sie Face ID, einen Fingerabdruck oder einen Code auf diesem Telefon ein, um dies zu nutzen."
+    }
   },
   "inbox": {
     "submitted": "Vor {{time}} gesendet"

@@ -63,7 +63,13 @@
     "theme": "Apparence",
     "themeAuto": "Automatique",
     "themeLight": "Clair",
-    "themeDark": "Sombre"
+    "themeDark": "Sombre",
+    "lock": {
+      "title": "Déverrouiller avec Face ID ou l'empreinte",
+      "onHint": "Demandé à l'ouverture de l'app et après 5 minutes d'absence.",
+      "offHint": "Désactivé : vous vous connectez avec votre mot de passe à chaque ouverture.",
+      "unavailable": "Configurez Face ID, une empreinte ou un code sur ce téléphone pour l'utiliser."
+    }
   },
   "inbox": {
     "submitted": "Envoyée il y a {{time}}"

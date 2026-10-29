@@ -1,11 +1,12 @@
-import { IconChevronLeft, IconChevronRight, IconInfoCircle, IconLanguage, IconLogout, IconShieldCheck, IconShieldOff, IconSunMoon, type Icon } from '@tabler/icons-react-native';
+import { IconChevronLeft, IconChevronRight, IconFaceId, IconFingerprint, IconInfoCircle, IconLanguage, IconLogout, IconShieldCheck, IconShieldOff, IconSunMoon, type Icon } from '@tabler/icons-react-native';
 import Constants from 'expo-constants';
 import { router } from 'expo-router';
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Pressable, View } from 'react-native';
+import { Platform, Pressable, Switch, View } from 'react-native';
 
 import { useMyTwoFactor } from '@/api/live';
+import { canCheckOwner, lockApplies, setLockEnabled, useLockEnabled } from '@/auth/lock';
 import { logout } from '@/auth/session';
 import { useAppSession } from '@/auth/use-app-session';
 import { AppText } from '@/components/app-text';
@@ -35,6 +36,46 @@ function Row({ icon: IconComponent, label, value, onPress, first, tone }: { icon
       {typeof value === 'string' ? <AppText tone="secondary">{value}</AppText> : value}
       {onPress ? <Chevron size={18} color={palette.textMuted} /> : null}
     </Pressable>
+  );
+}
+
+/** Face ID / fingerprint on or off for this phone. A phone with no way to check its owner cannot turn it on. */
+function LockRow() {
+  const { t } = useTranslation();
+  const palette = usePalette();
+  const enabled = useLockEnabled();
+  const [canCheck, setCanCheck] = useState<boolean>();
+  const [busy, setBusy] = useState(false);
+  useEffect(() => {
+    canCheckOwner().then(setCanCheck, () => setCanCheck(false));
+  }, []);
+  const on = enabled && canCheck !== false;
+
+  const toggle = async (next: boolean) => {
+    setBusy(true);
+    await setLockEnabled(next, t('live.lock.prompt'), t('web:action.cancel'));
+    setBusy(false);
+  };
+
+  return (
+    <View style={{ paddingHorizontal: space.lg, paddingVertical: space.md, gap: space.sm, borderTopWidth: 1, borderTopColor: palette.border }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.md }}>
+        <View style={{ width: 34, height: 34, borderRadius: radius.md, backgroundColor: `${palette.primary}1A`, alignItems: 'center', justifyContent: 'center' }}>
+          {Platform.OS === 'ios' ? <IconFaceId size={18} color={palette.primary} /> : <IconFingerprint size={18} color={palette.primary} />}
+        </View>
+        <AppText style={{ flex: 1 }}>{t('profile.lock.title')}</AppText>
+        <Switch
+          value={on}
+          onValueChange={(next) => void toggle(next)}
+          disabled={busy || canCheck !== true}
+          accessibilityLabel={t('profile.lock.title')}
+          trackColor={{ true: palette.primary, false: palette.border }}
+        />
+      </View>
+      <AppText variant="caption" tone="muted">
+        {t(canCheck === false ? 'profile.lock.unavailable' : on ? 'profile.lock.onHint' : 'profile.lock.offHint')}
+      </AppText>
+    </View>
   );
 }
 
@@ -101,6 +142,7 @@ export default function ProfileScreen() {
             {t('profile.appearance')}
           </AppText>
         </View>
+        {lockApplies ? <LockRow /> : null}
         {twoFactor !== undefined ? (
           <Row
             icon={twoFactor ? IconShieldCheck : IconShieldOff}

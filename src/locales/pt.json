@@ -63,7 +63,13 @@
     "theme": "Aparência",
     "themeAuto": "Automático",
     "themeLight": "Claro",
-    "themeDark": "Escuro"
+    "themeDark": "Escuro",
+    "lock": {
+      "title": "Desbloquear com Face ID ou impressão digital",
+      "onHint": "Pedido ao abrir a app e após 5 minutos de ausência.",
+      "offHint": "Desligado: inicia sessão com a palavra-passe sempre que abre a app.",
+      "unavailable": "Configure Face ID, uma impressão digital ou um código neste telemóvel para o usar."
+    }
   },
   "inbox": {
     "submitted": "Enviado há {{time}}"

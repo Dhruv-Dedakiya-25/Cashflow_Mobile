@@ -2,10 +2,12 @@
  * The app lock. After the first password sign-in the phone keeps the session; opening the app
  * again, fresh or after five minutes away, asks for Face ID, a fingerprint or the phone's
  * passcode. A phone with none of these asks for the password instead, and signing out always
- * does.
+ * does. The person can turn the lock off in Profile (on until they do): then a fresh open asks
+ * for the password, and coming back from the background asks nothing.
  *
  * Live mode on a phone only: the web build keeps no session between visits, and demo mode has none.
  */
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useSyncExternalStore } from 'react';
 import { AppState, Platform } from 'react-native';
@@ -15,8 +17,11 @@ import { authMode } from '@/config';
 
 export const AWAY_MS = 5 * 60_000;
 export const lockApplies = authMode === 'api' && Platform.OS !== 'web';
+const PREFERENCE_KEY = 'cashflow.appLock';
 
 let locked = false;
+/** The person's choice on this phone; read from storage when a kept session opens. */
+let enabled = true;
 const listeners = new Set<() => void>();
 const setLocked = (next: boolean) => {
   locked = next;
@@ -25,21 +30,38 @@ const setLocked = (next: boolean) => {
 
 export const isLocked = () => locked;
 
-export const useLocked = () =>
-  useSyncExternalStore(
-    (listener) => {
-      listeners.add(listener);
-      return () => listeners.delete(listener);
-    },
-    () => locked,
-  );
+const subscribe = (listener: () => void) => {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+};
+export const useLocked = () => useSyncExternalStore(subscribe, () => locked);
+export const useLockEnabled = () => useSyncExternalStore(subscribe, () => enabled);
 
-/** A session the phone kept is opening: lock it, or end it when the phone cannot tell who holds it. */
+/** Whether this phone can check its owner at all: Face ID, a fingerprint, or at least a passcode. */
+export const canCheckOwner = async () =>
+  (await LocalAuthentication.getEnrolledLevelAsync().catch(() => LocalAuthentication.SecurityLevel.NONE)) !== LocalAuthentication.SecurityLevel.NONE;
+
+/** A session the phone kept is opening: lock it, or end it when the lock is off or the phone cannot check. */
 export async function lockKeptSession() {
-  if (!lockApplies || getAuthState().status !== 'signedIn') return;
-  const level = await LocalAuthentication.getEnrolledLevelAsync().catch(() => LocalAuthentication.SecurityLevel.NONE);
-  if (level === LocalAuthentication.SecurityLevel.NONE) await signOutHere();
-  else setLocked(true);
+  if (!lockApplies) return;
+  enabled = (await AsyncStorage.getItem(PREFERENCE_KEY).catch(() => null)) !== 'off';
+  if (getAuthState().status !== 'signedIn') return;
+  if (enabled && (await canCheckOwner())) setLocked(true);
+  else await signOutHere();
+}
+
+/** Profile's switch. Turning it on asks for Face ID or a fingerprint once, so it is known to work. */
+export async function setLockEnabled(on: boolean, promptMessage: string, cancelLabel: string) {
+  if (on) {
+    const result = await LocalAuthentication.authenticateAsync({ promptMessage, cancelLabel, disableDeviceFallback: false }).catch(() => ({ success: false }));
+    if (!result.success) return false;
+  }
+  enabled = on;
+  listeners.forEach((l) => l());
+  await AsyncStorage.setItem(PREFERENCE_KEY, on ? 'on' : 'off').catch(() => undefined);
+  return true;
 }
 
 /** Face ID or a fingerprint, with the phone's passcode when those fail or are not set up. */
@@ -65,7 +87,8 @@ export function watchAway() {
     else if (next === 'active' && leftAt !== null) {
       const away = Date.now() - leftAt;
       leftAt = null;
-      if (away >= AWAY_MS) void lockKeptSession();
+      // With the lock off, coming back asks nothing; only a fresh open asks for the password.
+      if (away >= AWAY_MS && enabled) void lockKeptSession();
     }
   });
   return () => sub.remove();

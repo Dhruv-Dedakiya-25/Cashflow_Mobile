@@ -63,7 +63,13 @@
     "theme": "Görünüm",
     "themeAuto": "Otomatik",
     "themeLight": "Açık",
-    "themeDark": "Koyu"
+    "themeDark": "Koyu",
+    "lock": {
+      "title": "Face ID veya parmak iziyle kilidi aç",
+      "onHint": "Uygulamayı açtığınızda ve 5 dakika uzak kaldıktan sonra sorulur.",
+      "offHint": "Kapalı: uygulamayı her açtığınızda parolanızla oturum açarsınız.",
+      "unavailable": "Kullanmak için bu telefonda Face ID, parmak izi veya şifre ayarlayın."
+    }
   },
   "inbox": {
     "submitted": "{{time}} önce gönderildi"

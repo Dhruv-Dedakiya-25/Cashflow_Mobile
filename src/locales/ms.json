@@ -63,7 +63,13 @@
     "theme": "Penampilan",
     "themeAuto": "Automatik",
     "themeLight": "Cerah",
-    "themeDark": "Gelap"
+    "themeDark": "Gelap",
+    "lock": {
+      "title": "Buka kunci dengan Face ID atau cap jari",
+      "onHint": "Diminta apabila membuka aplikasi dan selepas 5 minit ditinggalkan.",
+      "offHint": "Mati: anda log masuk dengan kata laluan setiap kali membuka aplikasi.",
+      "unavailable": "Sediakan Face ID, cap jari atau kod laluan pada telefon ini untuk menggunakannya."
+    }
   },
   "inbox": {
     "submitted": "Dihantar {{time}} lalu"

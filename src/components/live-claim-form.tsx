@@ -18,7 +18,7 @@ import { usePhotoEditor } from '@/components/photo-editor';
 import { isPhoto, ReceiptPhoto } from '@/components/receipt-photo';
 import { Button, Card, Chips, Field, SectionHeader } from '@/components/ui';
 import { useLanguage } from '@/i18n';
-import { amount, categoryChoices, longDate, nameOf, payeeOf, providerName, vendor } from '@/lib/format';
+import { amount, categoryChoices, longDate, nameOf, payeeOf, vendor } from '@/lib/format';
 import { omanToday } from '@/mock/clock';
 import { radius, space, usePalette } from '@/theme/tokens';
 
@@ -315,7 +315,7 @@ function ClaimForm({ params, options, documents, editing, beneficiaryId }: { par
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
                 <IconSparkles size={20} color={palette.primary} />
                 <AppText weight="semibold" tone="primary" style={{ flex: 1 }}>
-                  {t('web:scan.readBy', { provider: providerName(extraction.provider) })} · {t('web:scan.aiConfidence', { confidence: Math.round(extraction.confidence) })}
+                  {t('web:scan.aiConfidence', { confidence: Math.round(extraction.confidence) })}
                 </AppText>
               </View>
               <AppText variant="small" tone="secondary">

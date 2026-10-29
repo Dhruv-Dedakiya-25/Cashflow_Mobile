@@ -63,7 +63,13 @@
     "theme": "Apariencia",
     "themeAuto": "Automático",
     "themeLight": "Claro",
-    "themeDark": "Oscuro"
+    "themeDark": "Oscuro",
+    "lock": {
+      "title": "Desbloquear con Face ID o huella",
+      "onHint": "Se pide al abrir la app y tras 5 minutos fuera.",
+      "offHint": "Desactivado: inicia sesión con su contraseña cada vez que abre la app.",
+      "unavailable": "Configure Face ID, una huella o un código en este teléfono para usarlo."
+    }
   },
   "inbox": {
     "submitted": "Enviado hace {{time}}"

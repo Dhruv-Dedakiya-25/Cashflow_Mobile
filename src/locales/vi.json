@@ -63,7 +63,13 @@
     "theme": "Giao diện",
     "themeAuto": "Tự động",
     "themeLight": "Sáng",
-    "themeDark": "Tối"
+    "themeDark": "Tối",
+    "lock": {
+      "title": "Mở khóa bằng Face ID hoặc vân tay",
+      "onHint": "Được hỏi khi mở ứng dụng và sau 5 phút rời đi.",
+      "offHint": "Tắt: bạn đăng nhập bằng mật khẩu mỗi lần mở ứng dụng.",
+      "unavailable": "Hãy thiết lập Face ID, vân tay hoặc mật mã trên điện thoại này để sử dụng."
+    }
   },
   "inbox": {
     "submitted": "Đã gửi {{time}} trước"

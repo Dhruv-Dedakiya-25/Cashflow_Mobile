@@ -63,7 +63,13 @@
     "theme": "Wygląd",
     "themeAuto": "Automatyczny",
     "themeLight": "Jasny",
-    "themeDark": "Ciemny"
+    "themeDark": "Ciemny",
+    "lock": {
+      "title": "Odblokuj Face ID lub odciskiem palca",
+      "onHint": "Wymagane przy otwieraniu aplikacji i po 5 minutach nieobecności.",
+      "offHint": "Wyłączone: przy każdym otwarciu aplikacji logujesz się hasłem.",
+      "unavailable": "Aby z tego korzystać, ustaw na tym telefonie Face ID, odcisk palca lub kod."
+    }
   },
   "inbox": {
     "submitted": "Wysłano {{time}} temu"

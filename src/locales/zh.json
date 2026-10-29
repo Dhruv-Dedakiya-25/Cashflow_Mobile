@@ -63,7 +63,13 @@
     "theme": "外观",
     "themeAuto": "自动",
     "themeLight": "浅色",
-    "themeDark": "深色"
+    "themeDark": "深色",
+    "lock": {
+      "title": "使用面容 ID 或指纹解锁",
+      "onHint": "打开应用时以及离开 5 分钟后会要求验证。",
+      "offHint": "关闭：每次打开应用都需用密码登录。",
+      "unavailable": "要使用此功能，请在这部手机上设置面容 ID、指纹或密码。"
+    }
   },
   "inbox": {
     "submitted": "{{time}}前提交"

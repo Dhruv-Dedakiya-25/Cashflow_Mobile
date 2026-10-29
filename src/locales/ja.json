@@ -63,7 +63,13 @@
     "theme": "外観",
     "themeAuto": "自動",
     "themeLight": "ライト",
-    "themeDark": "ダーク"
+    "themeDark": "ダーク",
+    "lock": {
+      "title": "Face ID または指紋でロック解除",
+      "onHint": "アプリを開いたときと、5分以上離れた後に求められます。",
+      "offHint": "オフ: アプリを開くたびにパスワードでサインインします。",
+      "unavailable": "使用するには、この端末で Face ID、指紋、またはパスコードを設定してください。"
+    }
   },
   "inbox": {
     "submitted": "{{time}}前に送信"
